@@ -2,60 +2,61 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6E3DAE893
-	for <lists+linux-snps-arc@lfdr.de>; Mon, 29 Apr 2019 19:15:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 597F5E8A2
+	for <lists+linux-snps-arc@lfdr.de>; Mon, 29 Apr 2019 19:17:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:Date
 	:Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	List-Owner; bh=isbgHp3f8oauLSzrZdT9de6rilBEc3yxRdmLp00WkH8=; b=Sviyzz4XnWP38Y
-	pCRIS0oGb4DVfL3jLc+J9eJHMyxqd8cjghjeqbYTJXBtlQRJE0oKnFlhy7qzfxhX8feXrWTialWM3
-	6fKdjUsOxzmUbn4Wxeys0p/2pjjvosyumvcvdV3IZcgOKXJKv66/yD5RO1vBKQpCBg1TAOc5cCKdS
-	oZuQKhrp698Me7quYhEWUDnyW+Jh06DicMgrg/Adub4WoWLJHb3V7bg1HzhRLw/Vj0nVlUsDhp8e5
-	yQHSqskOTeRKUVK+nbSLipgfmE9If8VR0qCJnHAHvMynlIWas9otx9sPZ0XpgZfsEl+/AXLbt8Old
-	oDn1BIJhYVo3IrvmDgkg==;
+	List-Owner; bh=bENhBUv/IWBaWStNjCVabMP92c+P6/E7xlou8hCcEOM=; b=uD5WqopRodqKyf
+	dXjJdvUzSjak8MdbgA5d2bvK53XpvffKcIq3ew0SRus57M5wbytrfCZENomW/9m+fOPBeWMk3iLAp
+	HLqOCxZn09xr6WqyHr/Sx85cbKHZvP4JU4iZ5U8bjHu+PX7iit0K5DLqYsjvaRq52GSeRjwORStvQ
+	vaJLBVl40v98RP3D1meA3ieKpTsEekbJcONdFyaZPgx4ph3zAmA7ypZv54gVYW3SAkBfPFMt908MQ
+	M9cyUHH0mZZLI1CZah0HcKrLDkU5RLyqq6DP8vkrNVSTXREdn74X7kRWOm7GaroggO0Bt05y1Et3J
+	gzHdoi++RqogGU4rwR4w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hL9rt-0001dc-5o; Mon, 29 Apr 2019 17:15:05 +0000
-Received: from smtprelay-out1.synopsys.com ([198.182.47.102])
+	id 1hL9uf-0003FV-3F; Mon, 29 Apr 2019 17:17:57 +0000
+Received: from dc2-smtprelay2.synopsys.com ([198.182.61.142]
+ helo=smtprelay-out1.synopsys.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hL9ro-0001cA-53
- for linux-snps-arc@lists.infradead.org; Mon, 29 Apr 2019 17:15:01 +0000
-Received: from mailhost.synopsys.com (dc8-mailhost1.synopsys.com
- [10.13.135.209])
+ id 1hL9uc-0003FA-Bh
+ for linux-snps-arc@lists.infradead.org; Mon, 29 Apr 2019 17:17:55 +0000
+Received: from mailhost.synopsys.com (dc8-mailhost2.synopsys.com
+ [10.13.135.210])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
  (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 11F41C00A0;
- Mon, 29 Apr 2019 17:14:56 +0000 (UTC)
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 4B5F9C009B;
+ Mon, 29 Apr 2019 17:17:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1556558097; bh=KiymCE0SEjFh+yxlLj/PIdQ6Vg47QwbSiN8/7YvmW/E=;
+ t=1556558271; bh=rx21fwalFzJuwLlEFvldeNsp0iEkfMYCHIUJGt12hfY=;
  h=From:To:CC:Subject:Date:References:From;
- b=TyBhTrfrv5ATDBT+TOcsUvEPyeYxUckG4dUgJgQqNiWR2PukgVsWPvvkpx5VSAf/d
- sTn8S0dg9ReMItRmlndG8IRnBts0IjpSmoEbLIbwIU/npUVv1o+4NRbTh++4cmYvG3
- eD49na40rtQBgHRPQhWN5AI68MovdwOkec2221UO9lQuabK4df+7b69miLpnfdxXP1
- 6xlQOKtfkCIUx1xf/siKcvwxfll0KVPIIZOidvbf27srTs9Ru64fbJAKatBfJNO8px
- ssLHT0CICERo05dWpirW9eIqoeoWl7xbKlQWzZ7mrmEuKP1PwBxDz1P7gnbFAjiDYO
- prUwuqTB5ef+A==
-Received: from US01WXQAHTC1.internal.synopsys.com
- (us01wxqahtc1.internal.synopsys.com [10.12.238.230])
- (using TLSv1.2 with cipher AES128-SHA256 (128/128 bits))
+ b=j9vr3RNo7bxDoJ3ou1UiEVj4zkM4uS3kpvE6nJh3tGICOpGKubVQDEWb5sKe9r14m
+ rROXe9L4PqDyh+9gDEbeeszLO950QSAUY+4OylAVQehPboAy8WNmMlSgZ/SHl6VVtL
+ 0fBhz4xVENQhJEDcAaUMS/deHBfNPRRXVSIi0wNQqGXFGB9pThb1kojWzYJmNz0FiL
+ F8rOPdaaxFpOwpwYiIQo5CrPOvzokiwQ8XqlTXWZZQZwedVBig0ZcX+JPLhQMEH9sf
+ /Ag+ZHDFnZj3unGASH6n2jRuOO0VbDudMIEWtz2zrCqQUwfZp3YNTSlx+It3ZFupt0
+ vPdLqg1cJjikg==
+Received: from us01wehtc1.internal.synopsys.com
+ (us01wehtc1-vip.internal.synopsys.com [10.12.239.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-SHA384 (256/256 bits))
  (No client certificate requested)
- by mailhost.synopsys.com (Postfix) with ESMTPS id 8338FA0072;
- Mon, 29 Apr 2019 17:14:54 +0000 (UTC)
+ by mailhost.synopsys.com (Postfix) with ESMTPS id EDD0FA007A;
+ Mon, 29 Apr 2019 17:17:50 +0000 (UTC)
 Received: from us01wembx1.internal.synopsys.com ([169.254.1.223]) by
- US01WXQAHTC1.internal.synopsys.com ([::1]) with mapi id 14.03.0415.000; Mon,
- 29 Apr 2019 10:14:54 -0700
+ us01wehtc1.internal.synopsys.com ([::1]) with mapi id 14.03.0415.000; Mon, 29
+ Apr 2019 10:17:51 -0700
 From: Vineet Gupta <Vineet.Gupta1@synopsys.com>
-To: Arnaldo Carvalho de Melo <arnaldo.melo@gmail.com>
+To: Arnaldo Carvalho de Melo <acme@kernel.org>
 Subject: Re: perf tools build broken after v5.1-rc1
 Thread-Topic: perf tools build broken after v5.1-rc1
 Thread-Index: AQHU9whSYuAYlq2eD0OAivz0M0d5Nw==
-Date: Mon, 29 Apr 2019 17:14:54 +0000
-Message-ID: <C2D7FE5348E1B147BCA15975FBA2307501A2505837@us01wembx1.internal.synopsys.com>
+Date: Mon, 29 Apr 2019 17:17:50 +0000
+Message-ID: <C2D7FE5348E1B147BCA15975FBA2307501A250584C@us01wembx1.internal.synopsys.com>
 References: <eeb83498-f37f-e234-4941-2731b81dc78c@synopsys.com>
- <20190422152027.GB11750@kernel.org> <20190425214800.GC21829@kernel.org>
+ <20190422152027.GB11750@kernel.org>
 Accept-Language: en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
@@ -63,8 +64,8 @@ X-MS-TNEF-Correlator:
 x-originating-ip: [10.13.184.19]
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190429_101500_197711_2DC22665 
-X-CRM114-Status: UNSURE (   9.78  )
+X-CRM114-CacheID: sfid-20190429_101754_398546_759562A3 
+X-CRM114-Status: UNSURE (   9.23  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -90,120 +91,35 @@ List-Post: <mailto:linux-snps-arc@lists.infradead.org>
 List-Help: <mailto:linux-snps-arc-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-snps-arc>, 
  <mailto:linux-snps-arc-request@lists.infradead.org?subject=subscribe>
-Cc: Arnaldo Carvalho de Melo <acme@redhat.com>, Arnd Bergmann <arnd@arndb.de>,
- lkml <linux-kernel@vger.kernel.org>,
- "linux-perf-users@vger.kernel.org" <linux-perf-users@vger.kernel.org>,
- Jiri Olsa <jolsa@kernel.org>, Namhyung Kim <namhyung@kernel.org>,
- arcml <linux-snps-arc@lists.infradead.org>
+Cc: "linux-perf-users@vger.kernel.org" <linux-perf-users@vger.kernel.org>,
+ Arnd Bergmann <arnd@arndb.de>, lkml <linux-kernel@vger.kernel.org>,
+ Arnaldo Carvalho de Melo <acme@redhat.com>, Jiri Olsa <jolsa@kernel.org>,
+ Namhyung
+ Kim <namhyung@kernel.org>, arcml <linux-snps-arc@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-snps-arc" <linux-snps-arc-bounces@lists.infradead.org>
 Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org
 
-On 4/25/19 2:48 PM, Arnaldo Carvalho de Melo wrote:
-> Em Mon, Apr 22, 2019 at 12:20:27PM -0300, Arnaldo Carvalho de Melo escreveu:
->> Em Fri, Apr 19, 2019 at 04:32:58PM -0700, Vineet Gupta escreveu:
->>> When building perf for ARC (v5.1-rc2) I get the following
->>  
->>> | In file included from bench/futex-hash.c:26:
->>> | bench/futex.h: In function 'futex_wait':
->>> | bench/futex.h:37:10: error: 'SYS_futex' undeclared (first use in this function);
->>  
->>> git bisect led to 1a787fc5ba18ac767e635c58d06a0b46876184e3 ("tools headers uapi:
->>> Sync copy of asm-generic/unistd.h with the kernel sources")
->> Humm, I have to check why this:
+On 4/22/19 8:31 AM, Arnaldo Carvalho de Melo wrote:
+>> A quick fix for ARC will be to create our own version but I presume all existing
+>> arches using generic syscall abi are affected. Thoughts ? In lack of ideas I'll
+>> send out a patch for ARC.
 >>
->> [perfbuilder@quaco ~]$ podman images | grep ARC
->> docker.io/acmel/linux-perf-tools-build-fedora                24-x-ARC-uClibc          4c259582a8e6   5 weeks ago      846 MB
->> [perfbuilder@quaco ~]$
->>
->> isn't catching this... :-\
->>
->> FROM docker.io/fedora:24
->> MAINTAINER Arnaldo Carvalho de Melo <acme@kernel.org>
->> ENV TOOLCHAIN=arc_gnu_2017.09-rc2_prebuilt_uclibc_le_arc700_linux_install
->> ENV CROSS=arc-linux-
->> ENV SOURCEFILE=${TOOLCHAIN}.tar.gz
->> RUN dnf -y install make flex bison binutils gcc wget tar bzip2 bc findutils xz
->> RUN wget https://urldefense.proofpoint.com/v2/url?u=https-3A__github.com_foss-2Dfor-2Dsynopsys-2Ddwc-2Darc-2Dprocessors_toolchain_releases_download_arc-2D2017.09-2Drc2_-24-257BSOURCEFILE-257D&d=DwIDaQ&c=DPL6_X_6JkXFx7AXWqB0tg&r=7FgpX6o3vAhwMrMhLh-4ZJey5kjdNUwOL2CWsFwR4T8&m=HjtufCLozrW47pS5C2YH3safLHQE7eEtmHFZsSWrz1M&s=29g4oKvGuYcLgheCUvZh3wojhhljivpLd8aj7Ur4sKQ&e=
->> <SNIP>
->> COPY rx_and_build.sh /
->> ENV EXTRA_MAKE_ARGS=NO_LIBBPF=1
->> ENV ARCH=arc
->> ENV CROSS_COMPILE=/${TOOLCHAIN}/bin/${CROSS}
->> ENV EXTRA_CFLAGS=-matomic
-> So, now I have a libnuma crossbuilt in this container that allows me to
-> build a ARC perf binary linked with zlib and numactl-devel, but only
-> after I applied the fix below.
->
-> Can you please provide the feature detection header in the build? I.e.
-> what I have with my ARC cross build container right now, after applying
-> the patch below is:
->
-> [perfbuilder@60d5802468f6 perf]$ make $EXTRA_MAKE_ARGS ARCH=$ARCH CROSS_COMPILE=$CROSS_COMPILE EXTRA_CFLAGS="$EXTRA_CFLAGS" -C /git/perf/tools/perf O=/tmp/build/perf
-> make: Entering directory '/git/perf/tools/perf'
->   BUILD:   Doing 'make -j8' parallel build
-> sh: line 0: command: -c: invalid option
-> command: usage: command [-pVv] command [arg ...]
->
-> Auto-detecting system features:
-> ...                         dwarf: [ OFF ]
-> ...            dwarf_getlocations: [ OFF ]
-> ...                         glibc: [ on  ]
+>> P.S. Why do we need the unistd.h duplication in tools directory, given it could
+>> have used the in-tree unistd headers directly ?
+> I have to write down the explanation and have it in a file, but we can't
+> use anything in the kernel from outside tools/ to avoid adding a burden
+> to kernel developers that would then have to make sure that the changes
+> that they make outside tools/ don't break things living there.
 
-Not related to current issue, this run uses a uClibc toolchain and yet it is
-detecting glibc - doesn't seem right to me.
-
-> ...                          gtk2: [ OFF ]
-> ...                      libaudit: [ OFF ]
-> ...                        libbfd: [ OFF ]
-> ...                        libelf: [ OFF ]
-> ...                       libnuma: [ on  ]
-
-Wondering why that is - for me numa is off - even when using a glibc toolchain.
-
-> ...        numa_num_possible_cpus: [ on  ]
-> ...                       libperl: [ OFF ]
-> ...                     libpython: [ OFF ]
-> ...                      libslang: [ OFF ]
-> ...                     libcrypto: [ OFF ]
-> ...                     libunwind: [ OFF ]
-> ...            libdw-dwarf-unwind: [ OFF ]
-> ...                          zlib: [ OFF ]
-> ...                          lzma: [ OFF ]
-> ...                     get_cpuid: [ OFF ]
-> ...                           bpf: [ on  ]
-> ...                        libaio: [ OFF ]
-> ...        disassembler-four-args: [ OFF ]
->
->
-
-For my glibc toolchain, here's the feature detection output
-
-Auto-detecting system features:
-...                         dwarf: [ on  ]
-...            dwarf_getlocations: [ OFF ]
-...                         glibc: [ on  ]
-...                          gtk2: [ OFF ]
-...                      libaudit: [ OFF ]
-...                        libbfd: [ OFF ]
-...                        libelf: [ on  ]
-...                       libnuma: [ OFF ]
-...        numa_num_possible_cpus: [ OFF ]
-...                       libperl: [ OFF ]
-...                     libpython: [ OFF ]
-...                      libslang: [ OFF ]
-...                     libcrypto: [ OFF ]
-...                     libunwind: [ OFF ]
-...            libdw-dwarf-unwind: [ OFF ]
-...                          zlib: [ OFF ]
-...                          lzma: [ OFF ]
-...                     get_cpuid: [ OFF ]
-...                           bpf: [ on  ]
-...                        libaio: [ on  ]
-...        disassembler-four-args: [ OFF ]
-
-
+That is a sound guiding principle in general but I don't agree here. unistd is
+backbone of kernel user interface it has to work and can't possibly be broken even
+when kernel devs add a new syscall is added or condition-alize existing one. So
+adding a copy - and deferring the propagation of in-kernel unistd to usersapce
+won't necessarily help with anything and it just adds the burden of keeping them
+in sync. Granted we won't necessarily need all the bleeding edge (new syscall
+updates) into that header, its still more work.
 
 _______________________________________________
 linux-snps-arc mailing list
