@@ -2,44 +2,69 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 33E1310E2A
-	for <lists+linux-snps-arc@lfdr.de>; Wed,  1 May 2019 22:42:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BCEB210E34
+	for <lists+linux-snps-arc@lfdr.de>; Wed,  1 May 2019 22:45:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:To:Date:Message-Id:
+	References:In-Reply-To:From:Subject:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NwDRYnmQgi1cg9wPZPAEdFjj23511+sVMmDcuPdLQ/8=; b=RJC88UrReRGfE2
-	9HVwuuWrK3Mu9Mzl+0WniDtbJzHiA1f7Dcyp+qC7lJbJoWPyluEgzO/+qh8QMK2kN3dVtzzaYV0AC
-	mMSVNlQoMhqLH+uAcL7WaDfAGhGawLKu5O226WuiGF69BXW8D/gwQnK3jOEhjvOvVL5XTsosZf8g+
-	/bTJFzB2L/Hi3WK7AKH3S2WHU5C2OCzNoTbSSbwHjA9W2jPVLu3QGRO1ALcAM8hbFft2y8ixxJSfJ
-	WdnJZWOZ29QtAJIVWIhVRp261m+qFXaprxs1AOGppGjhSYiL0Mb8yipWYyD2GGCSXTbjMHaUlV1FZ
-	qwj4GB+h/T1zQHktj8jQ==;
+	List-Owner; bh=4Ip+qtcBNvaohnZyx67TNaK3MNZIzBXAhpeui46nqMw=; b=n+lVEXamvD8wlf
+	AkiDZLZ5VDvbuu7EsoH6q9f0jfvSaY2HoDSiYqyIzVDgMIKMbi2SH/vjm2XCwuItomxHcZdP2O+Vh
+	7LHOVr8mva0w8+YBIPU02Hijtac//3wJrqh0h5bbNf36VTBtSI3n/CwK8yy9cLFgoroItg1Krbxp4
+	pmBNLLEeKsrFXXfykp0wQtw0jwVi2ucjj2TAsQX0h4pCliwlvnEQSocOx96yosbqp2bf3bJjvlGfN
+	IPzaqpgZ94tsE112YjM4VYI5sg+nO927CmqnC5nsoWqnK7AA4GtTe1n9IbW8RlMvs3nf8WepHkhwv
+	GW7crl+8JwNJUJh1+x2w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hLw3F-0000TH-Os; Wed, 01 May 2019 20:42:01 +0000
-Received: from adsl-173-228-226-134.prtc.net ([173.228.226.134]
- helo=quaco.ghostprotocols.net)
- by bombadil.infradead.org with esmtpsa (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hLw2W-0000NS-LX
- for linux-snps-arc@lists.infradead.org; Wed, 01 May 2019 20:41:59 +0000
-Received: by quaco.ghostprotocols.net (Postfix, from userid 1000)
- id 9B4674111F; Wed,  1 May 2019 16:41:15 -0400 (EDT)
-Date: Wed, 1 May 2019 16:41:15 -0400
-From: Arnaldo Carvalho de Melo <acme@kernel.org>
-To: Arnd Bergmann <arnd@arndb.de>
-Subject: Re: perf tools build broken after v5.1-rc1
-Message-ID: <20190501204115.GF21436@kernel.org>
-References: <eeb83498-f37f-e234-4941-2731b81dc78c@synopsys.com>
- <20190422152027.GB11750@kernel.org>
- <C2D7FE5348E1B147BCA15975FBA2307501A250584C@us01wembx1.internal.synopsys.com>
- <CAK8P3a2JrAApXDws+t=q8AnKFkHJZSox7gsgwW-xEJTfs_mdzw@mail.gmail.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAK8P3a2JrAApXDws+t=q8AnKFkHJZSox7gsgwW-xEJTfs_mdzw@mail.gmail.com>
-X-Url: http://acmel.wordpress.com
-User-Agent: Mutt/1.11.3 (2019-02-01)
+	id 1hLw6F-0001yB-Bf; Wed, 01 May 2019 20:45:07 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hLw6C-0001Tj-NI
+ for linux-snps-arc@lists.infradead.org; Wed, 01 May 2019 20:45:05 +0000
+Subject: Re: [GIT PULL] ARC updates for 5.1 final
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1556743504;
+ bh=5pgg8fJghgmAbVKUgViGhwp2W0Iw3pFuUL8623j/+G4=;
+ h=From:In-Reply-To:References:Date:To:Cc:From;
+ b=RfQZF0j82xXCLTeS+xWKQRBLtxURGEUp7QN9jvZqGwdiDdKrd3SwcaOFg8DxOk6yB
+ Q2h7qjOHUuiozCBzJ+NaiyUT9QOiZoP7SNV0abs+CerUGkdJ/vKbyKEefXvgyR4dus
+ jdk8dnMYBlUuV4eSS9hFChkrHPmDITTi2q3Dml5A=
+From: pr-tracker-bot@kernel.org
+In-Reply-To: <ab49ac97-deee-e2db-71c7-5544b09aca4f@synopsys.com>
+References: <ab49ac97-deee-e2db-71c7-5544b09aca4f@synopsys.com>
+X-PR-Tracked-List-Id: <linux-kernel.vger.kernel.org>
+X-PR-Tracked-Message-Id: <ab49ac97-deee-e2db-71c7-5544b09aca4f@synopsys.com>
+X-PR-Tracked-Remote: git://git.kernel.org/pub/scm/linux/kernel/git/vgupta/arc.git/
+ tags/arc-5.1-final
+X-PR-Tracked-Commit-Id: 55c0c4c793b538fb438bcc72481b9dc2f79fe5a9
+X-PR-Merge-Tree: torvalds/linux.git
+X-PR-Merge-Refname: refs/heads/master
+X-PR-Merge-Commit-Id: 65beea4c3a526320b019ca5c010da41533dafaf5
+Message-Id: <155674350397.10978.6664250901055231758.pr-tracker-bot@kernel.org>
+Date: Wed, 01 May 2019 20:45:03 +0000
+To: Vineet Gupta <Vineet.Gupta1@synopsys.com>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20190501_134504_788616_EEEB9E90 
+X-CRM114-Status: UNSURE (   1.11  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.3 (-----)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (-5.3 points)
+ pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-snps-arc@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -51,51 +76,28 @@ List-Post: <mailto:linux-snps-arc@lists.infradead.org>
 List-Help: <mailto:linux-snps-arc-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-snps-arc>, 
  <mailto:linux-snps-arc-request@lists.infradead.org?subject=subscribe>
-Cc: "linux-perf-users@vger.kernel.org" <linux-perf-users@vger.kernel.org>,
- Vineet Gupta <Vineet.Gupta1@synopsys.com>, lkml <linux-kernel@vger.kernel.org>,
- Arnaldo Carvalho de Melo <acme@redhat.com>, Jiri Olsa <jolsa@kernel.org>,
- Namhyung Kim <namhyung@kernel.org>, arcml <linux-snps-arc@lists.infradead.org>
+Cc: Eugeniy Paltsev <Eugeniy.Paltsev@synopsys.com>,
+ arcml <linux-snps-arc@lists.infradead.org>,
+ Linus Torvalds <torvalds@linux-foundation.org>,
+ lkml <linux-kernel@vger.kernel.org>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-snps-arc" <linux-snps-arc-bounces@lists.infradead.org>
 Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org
 
-Em Tue, Apr 30, 2019 at 06:12:35PM +0200, Arnd Bergmann escreveu:
-> On Mon, Apr 29, 2019 at 7:17 PM Vineet Gupta <Vineet.Gupta1@synopsys.com> wrote:
-> >
-> > On 4/22/19 8:31 AM, Arnaldo Carvalho de Melo wrote:
-> > >> A quick fix for ARC will be to create our own version but I presume all existing
-> > >> arches using generic syscall abi are affected. Thoughts ? In lack of ideas I'll
-> > >> send out a patch for ARC.
-> > >>
-> > >> P.S. Why do we need the unistd.h duplication in tools directory, given it could
-> > >> have used the in-tree unistd headers directly ?
-> > > I have to write down the explanation and have it in a file, but we can't
-> > > use anything in the kernel from outside tools/ to avoid adding a burden
-> > > to kernel developers that would then have to make sure that the changes
-> > > that they make outside tools/ don't break things living there.
-> >
-> > That is a sound guiding principle in general but I don't agree here. unistd is
-> > backbone of kernel user interface it has to work and can't possibly be broken even
-> > when kernel devs add a new syscall is added or condition-alize existing one. So
-> > adding a copy - and deferring the propagation of in-kernel unistd to usersapce
-> > won't necessarily help with anything and it just adds the burden of keeping them
-> > in sync. Granted we won't necessarily need all the bleeding edge (new syscall
-> > updates) into that header, its still more work.
-> 
-> I think more importantly, it seems completely broken to sync a file from
-> asm-generic but not the arch specific file that includes it.
-> 
-> The 1a787fc5ba18ac7 commit copied over the changes for arm64, but
-> missed all the other architectures changed in c8ce48f06503 and the
-> related commits.
+The pull request you sent on Wed, 1 May 2019 09:09:56 -0700:
 
-Right, I have a patch copying the missing headers, and that fixed the
-build with the glibc-based toolchain, but then broke the uCLibc one :-\
+> git://git.kernel.org/pub/scm/linux/kernel/git/vgupta/arc.git/ tags/arc-5.1-final
 
-I'm travelling, so coulnd't get back to this, will try as possible.
+has been merged into torvalds/linux.git:
+https://git.kernel.org/torvalds/c/65beea4c3a526320b019ca5c010da41533dafaf5
 
-- Arnaldo
+Thank you!
+
+-- 
+Deet-doot-dot, I am a bot.
+https://korg.wiki.kernel.org/userdoc/prtracker
 
 _______________________________________________
 linux-snps-arc mailing list
