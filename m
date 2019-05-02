@@ -2,8 +2,8 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 38461120E1
-	for <lists+linux-snps-arc@lfdr.de>; Thu,  2 May 2019 19:15:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7990D12065
+	for <lists+linux-snps-arc@lfdr.de>; Thu,  2 May 2019 18:41:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
@@ -18,28 +18,12 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	/SNwf5qvLfnsx+sgsEMw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hMFIc-00038O-G5; Thu, 02 May 2019 17:15:10 +0000
-Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
- by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hMFIY-0002ao-C6
- for linux-snps-arc@bombadil.infradead.org; Thu, 02 May 2019 17:15:06 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=merlin.20170209; h=In-Reply-To:Content-Type:MIME-Version:
- References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=/D28fWfWdJzUHVix7BI9GxltmT2+d98lgi6IpUKEDdY=; b=bHoC1kbJydCzuA8FCVNu3R2KU
- JyeJB+4hIv//W9nUVkWfQdKyZbamq3kqIIkWLdF0ikd2LRmcHTlwz+5d9JwjBv/Qh0HbBMFzAegXG
- 3K0CW1rH3C2WEnbQVxAnZQ6ykxiGtKMdXQ6A4ooAgN/9zw+cYM1ImKGRpiqEYnssgwoAAqb8CQBQl
- MOnPREboFSAbgQ4FhHdckFDNObKxJqUxhmKD8ntZ2jAP68/P2+UnKi3AL0K4YO10ypbwJ1BPFdLeG
- Nb5a9jpu2ysBvrZbwQp1NW+dkfPPSO/+FIwEuh8Bx96WjmeCNKUkiGuXokvr0pXp/tP7ib2ZrhhMx
- XkqUdJPoQ==;
+	id 1hMElf-0007Wa-2s; Thu, 02 May 2019 16:41:07 +0000
 Received: from adsl-173-228-226-134.prtc.net ([173.228.226.134]
  helo=quaco.ghostprotocols.net)
- by merlin.infradead.org with esmtpsa (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hMFIW-0001c7-8Q
- for linux-snps-arc@lists.infradead.org; Thu, 02 May 2019 17:15:04 +0000
+ by bombadil.infradead.org with esmtpsa (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hMEld-0007WM-VV
+ for linux-snps-arc@lists.infradead.org; Thu, 02 May 2019 16:41:06 +0000
 Received: by quaco.ghostprotocols.net (Postfix, from userid 1000)
  id CCC24403AD; Thu,  2 May 2019 12:41:04 -0400 (EDT)
 Date: Thu, 2 May 2019 12:41:04 -0400
