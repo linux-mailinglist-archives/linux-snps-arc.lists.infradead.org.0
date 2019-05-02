@@ -2,74 +2,63 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2831C11C54
-	for <lists+linux-snps-arc@lfdr.de>; Thu,  2 May 2019 17:12:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D93C612031
+	for <lists+linux-snps-arc@lfdr.de>; Thu,  2 May 2019 18:31:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=6LoRDvywzroKN/kdsgeE0Yu9e8kmImP8i2dt5+hR4gE=; b=e9X
-	T6T9sve2Q2bcBcsyvBE03YkBQ2qGlgkgAKMFt0fEoM97Cy/s8VMlCNwI3ZCFxjuTMMYI9xKu0bmLX
-	NWqwsCyCMHnfyob6lZPeMWK4HrkxRhAN3YCbF1OIK9bVFjjDSh/ODU6fasAGUfYyuKLp/cPf5P/mi
-	+Ggama8mF+NVC1xtXw3s+uIray3aG5aiua0WcSN8hHtucXRrBUyr0v7kcsL3M7+CBELLBmUkgadJ3
-	D6vAVcxBd5QoBqO98X5V7E3rpp9qq28raLdTDlGHHZ+FOBErkiG5vEgMHRFQL+htYf2ktDNPOvs5/
-	HseT8ge99eVmOY2OS5ds8bXwQezywnw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=8s6VM1AB+j3Ak+jM51pcnrQPAdMcmbj2DTqPxT+ywAE=; b=h9hLk9UM18sezG
+	12MHqT69zihkgsVQBGva3C6PQI4X0sKJu1zj+LHY5+mBEpeVcx0x5EMmd4Q5f2YhKVpWM2ftJPRTL
+	VgK6PTnrjGKeITuEuJHaks747SNHsXYgXNZyW7lKDACpUoSkMuU7mrj277NWDTCozn26qHsm0tZIp
+	9z5dWxQk/N/P1zv+OBRA5WJ6v/lsrpxIxpsJTC7cc6jDpRGS4/9oy+yfLOcXFpKWOoLhAIjs94EFm
+	5lVS3nxMFf9NPtP4R+ansot/DBdvdGmIzXIXGZfW4GFlcHNT2DeBrOVelEInmyMooTFrLHFYf11Ew
+	HvUsjoQt/bfAAAZDzbbw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hMDO9-0007f3-Sk; Thu, 02 May 2019 15:12:45 +0000
-Received: from dc8-smtprelay2.synopsys.com ([198.182.47.102]
- helo=smtprelay-out1.synopsys.com)
+	id 1hMEbs-0002Q1-In; Thu, 02 May 2019 16:31:00 +0000
+Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hMDO7-0007eE-0w
- for linux-snps-arc@lists.infradead.org; Thu, 02 May 2019 15:12:44 +0000
-Received: from mailhost.synopsys.com (dc2-mailhost2.synopsys.com
- [10.12.135.162])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
- (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 1DF77C01F1;
- Thu,  2 May 2019 15:12:42 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1556809962; bh=nbxnvC5IsjfFaLonIOAbwjN79asF92ckV1yrBYSaHus=;
- h=From:To:Cc:Subject:Date:From;
- b=j1pLWpADLhsfNTWATom9WObhnk570vMXr7kPhUx+D390jR7MkcziBiqgQx7mSPLZj
- dl5F0VQIBjCaMZG3EZPtDykg4PQ8P9/q3ps53NVvB13xOJKHw6dLXVO7TPoaOkYe5Q
- 7XtYLmsvMIW3Wm8l871apSCNuXZaPWQbJiJpKQZbdOSxIicrZpQlIVWRDDAb45yvB7
- pnFHdOr8ns4MtCc2nfapPZTmQbt892/ggvK/9uC8GzU+vsOXcayuMgJBC88cfth8mw
- 7iGHzdhGdAEHrH31y2tM134FTIF300YpmR3HO9hwpqJ49ctTOHChZHTcnH6UL+sYyG
- yI6JmLg+cEtQA==
-Received: from de02.synopsys.com (germany.internal.synopsys.com [10.225.17.21])
- by mailhost.synopsys.com (Postfix) with ESMTP id CB4D0A0256;
- Thu,  2 May 2019 15:12:34 +0000 (UTC)
-Received: from de02dwia024.internal.synopsys.com
- (de02dwia024.internal.synopsys.com [10.225.19.81])
- by de02.synopsys.com (Postfix) with ESMTP id D9C103F475;
- Thu,  2 May 2019 17:12:33 +0200 (CEST)
-From: Jose Abreu <Jose.Abreu@synopsys.com>
-To: devicetree@vger.kernel.org, linux-snps-arc@lists.infradead.org,
- linux-kernel@vger.kernel.org
-Subject: [PATCH] ARC: [plat-hsdk]: Add missing multicast filter bins number to
- GMAC node
-Date: Thu,  2 May 2019 17:12:32 +0200
-Message-Id: <7f36bbadc0df4c93c396690dab59f34775de3874.1556788240.git.joabreu@synopsys.com>
-X-Mailer: git-send-email 2.7.4
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190502_081243_072684_AFDC42F6 
-X-CRM114-Status: GOOD (  10.46  )
-X-Spam-Score: -0.2 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ id 1hMEbr-0002PU-4Y
+ for linux-snps-arc@bombadil.infradead.org; Thu, 02 May 2019 16:30:59 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=merlin.20170209; h=In-Reply-To:Content-Type:MIME-Version:
+ References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=K9IyyI8mKVGbRJcQqxKVgNuye7sb0n1WK2AwTwP2rRo=; b=S1QKiHDdIYif4VvzkTCOQNdNL
+ L0GjkEfj6INdTUShbk4vckLu4Dy7xN/Pfh8brmq/jc3/JNM1OLPAaASBtUneZPEKQXJWyzFH1uYg+
+ Bdpxtb9yXZDWtrycYxEt12FdSomfyZIEfjDiqpU11eOeZD8WuWWzbiCtiawk+aaqWV+jCSfrTDD3L
+ Jnq0oEWmr2Ftoa//fY+kDT/iacCHKVL9VAsJO3hbJuM0x6eWlBYIaKoP/FcjAmE3Bc1Z2mMRYEclW
+ rndOjv/DQdkqFTp9sSNiP0wsuR/fdrH6kPRA2vu3cUasYigOdKA4DN6G65ED0anLzB9HhdWU0xwrd
+ LJjPTAQZQ==;
+Received: from adsl-173-228-226-134.prtc.net ([173.228.226.134]
+ helo=quaco.ghostprotocols.net)
+ by merlin.infradead.org with esmtpsa (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hMDq3-0000aO-Ny
+ for linux-snps-arc@lists.infradead.org; Thu, 02 May 2019 15:41:35 +0000
+Received: by quaco.ghostprotocols.net (Postfix, from userid 1000)
+ id 2D8B5403AD; Thu,  2 May 2019 11:41:34 -0400 (EDT)
+Date: Thu, 2 May 2019 11:41:34 -0400
+From: Arnaldo Carvalho de Melo <acme@kernel.org>
+To: Vineet Gupta <Vineet.Gupta1@synopsys.com>
+Subject: Re: perf tools build broken after v5.1-rc1
+Message-ID: <20190502154134.GA23984@kernel.org>
+References: <eeb83498-f37f-e234-4941-2731b81dc78c@synopsys.com>
+ <20190422152027.GB11750@kernel.org>
+ <C2D7FE5348E1B147BCA15975FBA2307501A250584C@us01wembx1.internal.synopsys.com>
+ <CAK8P3a2JrAApXDws+t=q8AnKFkHJZSox7gsgwW-xEJTfs_mdzw@mail.gmail.com>
+ <20190501204115.GF21436@kernel.org>
+ <C2D7FE5348E1B147BCA15975FBA2307501A2506BF3@us01wembx1.internal.synopsys.com>
+ <20190502143618.GH21436@kernel.org>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190502143618.GH21436@kernel.org>
+X-Url: http://acmel.wordpress.com
+User-Agent: Mutt/1.11.3 (2019-02-01)
 X-BeenThere: linux-snps-arc@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -81,43 +70,78 @@ List-Post: <mailto:linux-snps-arc@lists.infradead.org>
 List-Help: <mailto:linux-snps-arc-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-snps-arc>, 
  <mailto:linux-snps-arc-request@lists.infradead.org?subject=subscribe>
-Cc: Jose Abreu <Jose.Abreu@synopsys.com>, Mark Rutland <mark.rutland@arm.com>,
- Vineet Gupta <Vineet.Gupta1@synopsys.com>,
- Joao Pinto <Joao.Pinto@synopsys.com>, Rob Herring <robh+dt@kernel.org>
-MIME-Version: 1.0
+Cc: "linux-perf-users@vger.kernel.org" <linux-perf-users@vger.kernel.org>,
+ Rich Felker <dalias@libc.org>, Arnd Bergmann <arnd@arndb.de>,
+ lkml <linux-kernel@vger.kernel.org>,
+ Arnaldo Carvalho de Melo <acme@redhat.com>, Jiri Olsa <jolsa@kernel.org>,
+ Namhyung Kim <namhyung@kernel.org>, arcml <linux-snps-arc@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-snps-arc" <linux-snps-arc-bounces@lists.infradead.org>
 Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org
 
-GMAC controller on HSDK boards supports 256 Hash Table size so we need to
-add the multicast filter bins property. This allows for the Hash filter
-to work properly using stmmac driver.
+Em Thu, May 02, 2019 at 10:36:18AM -0400, Arnaldo Carvalho de Melo escreveu:
+> Em Wed, May 01, 2019 at 09:17:52PM +0000, Vineet Gupta escreveu:
+> > On 5/1/19 1:41 PM, Arnaldo Carvalho de Melo wrote:
+> > >> The 1a787fc5ba18ac7 commit copied over the changes for arm64, but
+> > >> missed all the other architectures changed in c8ce48f06503 and the
+> > >> related commits.
+> > > Right, I have a patch copying the missing headers, and that fixed the
+> > > build with the glibc-based toolchain, but then broke the uCLibc one :-\
+>  
+> > tools/perf/util/cloexec.c  #includes <sys/syscall.h> which for glibc includes
+> > asm/unistd.h
+>  
+> > uClibc <sys/syscall.h> OTOH #include <bits/sysnum.h> containign#define __NR_*
+> > (generated by parsing kernel's unistd). This header does the right thing by
+> > chekcing for redefs, but in the end we still collide with newly added
+> > tools/arc/arc/*/**/unistd.h which doesn't have conditional definitions. I'm sure
+> > this is not an ARC problem, any uClibc build would be affected. Do you have a arm
+> > uclibc toolchain to test ?
+> 
+> This solves it for fedora:29,
+> arc_gnu_2017.09-rc2_prebuilt_uclibc_le_arc700_linux_install,
+> arc_gnu_2019.03-rc1_prebuilt_uclibc_le_archs_linux_install and
+> arc_gnu_2019.03-rc1_prebuilt_glibc_le_archs_linux_install.
+> 
+> Also ok with:
+> 
+>   make -C tools/perf build-test
+> 
+> Now build testing with the full set of containers.
 
-Signed-off-by: Jose Abreu <joabreu@synopsys.com>
-Cc: Joao Pinto <jpinto@synopsys.com>
-Cc: Rob Herring <robh+dt@kernel.org>
-Cc: Mark Rutland <mark.rutland@arm.com>
-Cc: Vineet Gupta <vgupta@synopsys.com>
----
- arch/arc/boot/dts/hsdk.dts | 1 +
- 1 file changed, 1 insertion(+)
+So far, and the alpine ones use musl libc:
 
-diff --git a/arch/arc/boot/dts/hsdk.dts b/arch/arc/boot/dts/hsdk.dts
-index 69bc1c9e8e50..b0f059377ab0 100644
---- a/arch/arc/boot/dts/hsdk.dts
-+++ b/arch/arc/boot/dts/hsdk.dts
-@@ -187,6 +187,7 @@
- 			interrupt-names = "macirq";
- 			phy-mode = "rgmii";
- 			snps,pbl = <32>;
-+			snps,multicast-filter-bins = <256>;
- 			clocks = <&gmacclk>;
- 			clock-names = "stmmaceth";
- 			phy-handle = <&phy0>;
--- 
-2.7.4
+[perfbuilder@quaco ~]$ export PERF_TARBALL=http://192.168.124.1/perf/perf-5.1.0-rc6.tar.xz
+[perfbuilder@quaco ~]$ time dm
+   1 alpine:3.4                    : Ok   gcc (Alpine 5.3.0) 5.3.0
+   2 alpine:3.5                    : Ok   gcc (Alpine 6.2.1) 6.2.1 20160822
+   3 alpine:3.6                    : Ok   gcc (Alpine 6.3.0) 6.3.0
+   4 alpine:3.7                    : Ok   gcc (Alpine 6.4.0) 6.4.0
+   5 alpine:3.8                    : Ok   gcc (Alpine 6.4.0) 6.4.0
+   6 alpine:3.9                    : Ok   gcc (Alpine 8.3.0) 8.3.0
+   7 alpine:edge                   : Ok   gcc (Alpine 8.3.0) 8.3.0
+   8 amazonlinux:1                 : Ok   gcc (GCC) 4.8.5 20150623 (Red Hat 4.8.5-28)
+   9 android-ndk:r12b-arm          : Ok   arm-linux-androideabi-gcc (GCC) 4.9.x 20150123 (prerelease)
+  10 android-ndk:r15c-arm          : Ok   arm-linux-androideabi-gcc (GCC) 4.9.x 20150123 (prerelease)
+  11 centos:5                      : Ok   gcc (GCC) 4.1.2 20080704 (Red Hat 4.1.2-55)
+  12 centos:6                      : Ok   gcc (GCC) 4.4.7 20120313 (Red Hat 4.4.7-23)
+  13 centos:7                      : Ok   gcc (GCC) 4.8.5 20150623 (Red Hat 4.8.5-36)
+  14 debian:8                      : Ok   gcc (Debian 4.9.2-10+deb8u2) 4.9.2
+  15 debian:9                      : Ok   gcc (Debian 6.3.0-18+deb9u1) 6.3.0 20170516
+  16 debian:experimental           : Ok   gcc (Debian 8.3.0-6) 8.3.0
+  17 debian:experimental-x-arm64   : Ok   aarch64-linux-gnu-gcc (Debian 8.3.0-4) 8.3.0
+  18 debian:experimental-x-mips    : Ok   mips-linux-gnu-gcc (Debian 8.3.0-4) 8.3.0
+  19 debian:experimental-x-mips64  : Ok   mips64-linux-gnuabi64-gcc (Debian 8.3.0-2) 8.3.0
+  20 debian:experimental-x-mipsel  : Ok   mipsel-linux-gnu-gcc (Debian 8.3.0-4) 8.3.0
+  21 fedora:20                     : Ok   gcc (GCC) 4.8.3 20140911 (Red Hat 4.8.3-7)
+  22 fedora:22                     : Ok   gcc (GCC) 5.3.1 20160406 (Red Hat 5.3.1-6)
+  23 fedora:23                     : Ok   gcc (GCC) 5.3.1 20160406 (Red Hat 5.3.1-6)
+  24 fedora:24                     : Ok   gcc (GCC) 6.3.1 20161221 (Red Hat 6.3.1-1)
+  25 fedora:24-x-ARC-uClibc        : Ok   arc-linux-gcc (ARCompact ISA Linux uClibc toolchain 2017.09-rc2) 7.1.1 20170710
 
+
+- Arnaldo
 
 _______________________________________________
 linux-snps-arc mailing list
