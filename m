@@ -2,71 +2,75 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2A95011F9B
-	for <lists+linux-snps-arc@lfdr.de>; Thu,  2 May 2019 17:57:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 73DED11FBB
+	for <lists+linux-snps-arc@lfdr.de>; Thu,  2 May 2019 18:09:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=C9Q+4TkbkmDmW+S05Gkwq1U9xO5TgMcS1RYEvsip9UM=; b=GkTjG+g+CIsM23
-	w/KfSP+214MXbJNamz3SHDn+KFKBlxPE/QiWcmvGDmqWb/tcd+OPGNp5qwbeRsb5qMHe665ckwXe4
-	RIzmaul1IeSvUZMqI1qkPDKgdaX/hegnd5BprdqTJcX8DZFOShClE8V2GTtrQsPqQxJTUjcEQ1Pt+
-	svSpblaXdsoIyHZTvIvVfkVBJVOqNz7KiklFSSlnnf54zD+QH+WdKyYBJu8jGNnCJBKI2rPRFVVta
-	rO5NPjY1WIdwh5W6dhmGEoraRzx/eNg6X+KZ5fBW4929bDDa8dlznsB1JnrVwYeuYJUiUE+F0Pcv6
-	ALVnJ8hKVUFuqheyDYew==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:Date
+	:Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	List-Owner; bh=RxUSKKnYVRrVvY5J6rV4GPAnxS7amHGyMv9VnAS8zCg=; b=rOeRbtbDmInjbi
+	1ECT9nb7l7pznPVrJd67/W4Bw/sg3ReK1HLPwBbvpnLJOsYZxIwTxWOb/SJZ1zmI7gEiIv50EjcMc
+	ad0/Dirp4lBlWvzt7csfOChcCTJ52VH9l/EJ3zjfgIW5mej9tPgBJhIWFEZI+4v1dhg/g3TIKjyvz
+	7CJDVogjs7CdJqIzFcnpmvmu7xsSbPUueWW8nL1lkT59BY3iCySrG1SFGH0zy8ehSDhVmC2jMc9Gv
+	Xc/izLiqjGFBEHqixIV9h8ht8QkRqJN6DAh3fSgecfcBQmSs26SjQpt1RMUi5Vz5oUkYA2s7rzZsV
+	74aCPMUm5QmThrXnr+UQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hME58-0007sb-P1; Thu, 02 May 2019 15:57:10 +0000
-Received: from dc2-smtprelay2.synopsys.com ([198.182.61.142]
+	id 1hMEHN-0002xU-2h; Thu, 02 May 2019 16:09:49 +0000
+Received: from dc8-smtprelay2.synopsys.com ([198.182.47.102]
  helo=smtprelay-out1.synopsys.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hME56-0007sG-KA
- for linux-snps-arc@lists.infradead.org; Thu, 02 May 2019 15:57:09 +0000
-Received: from mailhost.synopsys.com (dc8-mailhost1.synopsys.com
- [10.13.135.209])
+ id 1hMEHK-0002wB-97
+ for linux-snps-arc@lists.infradead.org; Thu, 02 May 2019 16:09:47 +0000
+Received: from mailhost.synopsys.com (dc2-mailhost2.synopsys.com
+ [10.12.135.162])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
  (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 323CBC020C;
- Thu,  2 May 2019 15:57:03 +0000 (UTC)
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 7320EC008E;
+ Thu,  2 May 2019 16:09:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1556812623; bh=RBOX3eQrC5rsRBXO9Yo4WNgviqeI5NSvve/zb+XLVxc=;
- h=From:To:CC:Subject:Date:In-Reply-To:References:From;
- b=Y9N0v0jbsVcHuNWEyS1eF82Jf4TrB1GjTxL4ay82AZzmkjfu9VriSg14I27lP0YdC
- fQEqLS2NlVx9dDvL4mFiu+c+/9kpgO72N6F/2v+ZtNs4AW0Xg84LLUq4P/MCC9N1DV
- rqsN7sYzVG0fDGI36mF3d6qChyQ4AfjURSYmMLyy5kj1/6Elmzy1g4MsrAQo1nZrHE
- AHslJ8cnBPiJjPWui/RyUJz/RDflxwpyS6i8MUfjgSg9svZpoTp/CvDojnVgBFMWxQ
- tuIE91wmOvITeiZo35AtcBJ/860RMj8IrTtpt6awXJ4Mz6XjwdhPq31e6lCA2cJseX
- NfdwXAyzG/1Zw==
-Received: from US01WEHTC2.internal.synopsys.com
- (us01wehtc2.internal.synopsys.com [10.12.239.237])
+ t=1556813387; bh=ZZLsxdALENIFAq/ZqpCY+bZ9XDVuO0IJPaRJlyuz5qA=;
+ h=From:To:CC:Subject:Date:References:From;
+ b=fpRgyNolEfVEsyjoHqH27Rg51l3txWxZEnqNXhoE4kcO/6wrKE6tRoQ5EELR6YICB
+ Bm1a+Nt6pq2oDTSj2wsglm/HYH5bIqnToDRcFYAMRxsB57ml9fWtL4ERXmCfu4RF8F
+ GMrjjEJ9pliBbYOE/tR4Ah2ZClCBUNscy72H9qjQj1anmx5E9JZQJuziOb01wCAiT+
+ wFyiZAxkWBfnJBuJUFlgVni7Syn9vtOOn6dC3gdfYseO+5llvxjEP5G5ai5b7fLRsk
+ IBjxPovewoCbjKZFhvez2cjDbwQLV9qxB7BZtarBFfc4MmHh9LWNk5jqzeJJTfWzRn
+ ajg0aiVTAkEPw==
+Received: from US01WXQAHTC1.internal.synopsys.com
+ (us01wxqahtc1.internal.synopsys.com [10.12.238.230])
  (using TLSv1.2 with cipher AES128-SHA256 (128/128 bits))
  (No client certificate requested)
- by mailhost.synopsys.com (Postfix) with ESMTPS id BEF7BA005D;
- Thu,  2 May 2019 15:57:04 +0000 (UTC)
-Received: from IN01WEHTCB.internal.synopsys.com (10.144.199.106) by
- US01WEHTC2.internal.synopsys.com (10.12.239.237) with Microsoft SMTP Server
- (TLS) id 14.3.408.0; Thu, 2 May 2019 08:57:04 -0700
-Received: from IN01WEHTCA.internal.synopsys.com (10.144.199.103) by
- IN01WEHTCB.internal.synopsys.com (10.144.199.105) with Microsoft SMTP Server
- (TLS) id 14.3.408.0; Thu, 2 May 2019 21:27:12 +0530
-Received: from vineetg-Latitude-E7450.internal.synopsys.com (10.10.161.89) by
- IN01WEHTCA.internal.synopsys.com (10.144.199.243) with Microsoft
- SMTP Server (TLS) id 14.3.408.0; Thu, 2 May 2019 21:27:12 +0530
+ by mailhost.synopsys.com (Postfix) with ESMTPS id 4E8FEA00A5;
+ Thu,  2 May 2019 16:09:44 +0000 (UTC)
+Received: from us01wembx1.internal.synopsys.com ([169.254.1.223]) by
+ US01WXQAHTC1.internal.synopsys.com ([::1]) with mapi id 14.03.0415.000; Thu,
+ 2 May 2019 09:09:43 -0700
 From: Vineet Gupta <Vineet.Gupta1@synopsys.com>
-To: Alexei Starovoitov <ast@kernel.org>, Daniel Borkmann <daniel@iogearbox.net>
-Subject: [PATCH v2] tools/bpf: fix perf build error with uClibc (seen on ARC)
-Date: Thu, 2 May 2019 08:56:50 -0700
-Message-ID: <1556812610-27957-1-git-send-email-vgupta@synopsys.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <CAH3MdRVkUFfwKkgT-pi-RLBpcEf6n0bAwWZOu-=7+qctPTCpkw@mail.gmail.com>
-References: <CAH3MdRVkUFfwKkgT-pi-RLBpcEf6n0bAwWZOu-=7+qctPTCpkw@mail.gmail.com>
+To: Arnaldo Carvalho de Melo <arnaldo.melo@gmail.com>
+Subject: Re: perf tools build broken after v5.1-rc1
+Thread-Topic: perf tools build broken after v5.1-rc1
+Thread-Index: AQHU9whSYuAYlq2eD0OAivz0M0d5Nw==
+Date: Thu, 2 May 2019 16:09:43 +0000
+Message-ID: <C2D7FE5348E1B147BCA15975FBA2307501A2506D04@us01wembx1.internal.synopsys.com>
+References: <eeb83498-f37f-e234-4941-2731b81dc78c@synopsys.com>
+ <20190422152027.GB11750@kernel.org>
+ <C2D7FE5348E1B147BCA15975FBA2307501A250584C@us01wembx1.internal.synopsys.com>
+ <CAK8P3a2JrAApXDws+t=q8AnKFkHJZSox7gsgwW-xEJTfs_mdzw@mail.gmail.com>
+ <20190501204115.GF21436@kernel.org>
+ <C2D7FE5348E1B147BCA15975FBA2307501A2506BF3@us01wembx1.internal.synopsys.com>
+ <20190502143618.GH21436@kernel.org>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-originating-ip: [10.13.184.19]
 MIME-Version: 1.0
-X-Originating-IP: [10.10.161.89]
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190502_085708_669435_AEC80815 
-X-CRM114-Status: GOOD (  10.64  )
+X-CRM114-CacheID: sfid-20190502_090946_332132_9CDAE600 
+X-CRM114-Status: GOOD (  10.40  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -91,56 +95,76 @@ List-Post: <mailto:linux-snps-arc@lists.infradead.org>
 List-Help: <mailto:linux-snps-arc-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-snps-arc>, 
  <mailto:linux-snps-arc-request@lists.infradead.org?subject=subscribe>
-Cc: Wang Nan <wangnan0@huawei.com>, Song Liu <songliubraving@fb.com>,
- netdev@vger.kernel.org, Vineet Gupta <Vineet.Gupta1@synopsys.com>,
- linux-kernel@vger.kernel.org, arnaldo.melo@gmail.com,
- linux-perf-users@vger.kernel.org, Y Song <ys114321@gmail.com>,
- Yonghong Song <yhs@fb.com>, bpf@vger.kernel.org,
- linux-snps-arc@lists.infradead.org, Martin KaFai Lau <kafai@fb.com>
+Cc: "linux-perf-users@vger.kernel.org" <linux-perf-users@vger.kernel.org>,
+ Rich Felker <dalias@libc.org>, Arnd Bergmann <arnd@arndb.de>,
+ lkml <linux-kernel@vger.kernel.org>, Arnaldo
+ Carvalho de Melo <acme@redhat.com>, Jiri
+ Olsa <jolsa@kernel.org>, Namhyung Kim <namhyung@kernel.org>,
+ arcml <linux-snps-arc@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-snps-arc" <linux-snps-arc-bounces@lists.infradead.org>
 Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org
 
-When build perf for ARC recently, there was a build failure due to lack
-of __NR_bpf.
+On 5/2/19 7:36 AM, Arnaldo Carvalho de Melo wrote:
+> Em Wed, May 01, 2019 at 09:17:52PM +0000, Vineet Gupta escreveu:
+>> On 5/1/19 1:41 PM, Arnaldo Carvalho de Melo wrote:
+>>>> The 1a787fc5ba18ac7 commit copied over the changes for arm64, but
+>>>> missed all the other architectures changed in c8ce48f06503 and the
+>>>> related commits.
+>>> Right, I have a patch copying the missing headers, and that fixed the
+>>> build with the glibc-based toolchain, but then broke the uCLibc one :-\
+>  
+>> tools/perf/util/cloexec.c  #includes <sys/syscall.h> which for glibc includes
+>> asm/unistd.h
+>  
+>> uClibc <sys/syscall.h> OTOH #include <bits/sysnum.h> containign#define __NR_*
+>> (generated by parsing kernel's unistd). This header does the right thing by
+>> chekcing for redefs, but in the end we still collide with newly added
+>> tools/arc/arc/*/**/unistd.h which doesn't have conditional definitions. I'm sure
+>> this is not an ARC problem, any uClibc build would be affected. Do you have a arm
+>> uclibc toolchain to test ?
+> This solves it for fedora:29,
+> arc_gnu_2017.09-rc2_prebuilt_uclibc_le_arc700_linux_install,
+> arc_gnu_2019.03-rc1_prebuilt_uclibc_le_archs_linux_install and
+> arc_gnu_2019.03-rc1_prebuilt_glibc_le_archs_linux_install.
+>
+> Also ok with:
+>
+>   make -C tools/perf build-test
+>
+> Now build testing with the full set of containers.
+>
+> - Arnaldo
+>
+> commit 1931594a680dba28e98b526192dd065430c850c0
+> Author: Arnaldo Carvalho de Melo <acme@redhat.com>
+> Date:   Thu May 2 09:26:23 2019 -0400
+>
+>     perf tools: Remove needless asm/unistd.h include fixing build in some places
+>     
+>     We were including sys/syscall.h and asm/unistd.h, since sys/syscall.h
+>     includes asm/unistd.h, sometimes this leads to the redefinition of
+>     defines, breaking the build.
+>     
+>     Noticed on ARC with uCLibc.
 
-| Auto-detecting system features:
-|
-| ...                     get_cpuid: [ OFF ]
-| ...                           bpf: [ on  ]
-|
-| #  error __NR_bpf not defined. libbpf does not support your arch.
-    ^~~~~
-| bpf.c: In function 'sys_bpf':
-| bpf.c:66:17: error: '__NR_bpf' undeclared (first use in this function)
-|  return syscall(__NR_bpf, cmd, attr, size);
-|                 ^~~~~~~~
-|                 sys_bpf
+Thx for this Arnaldo.
 
-Signed-off-by: Vineet Gupta <vgupta@synopsys.com>
----
-v1 -> v2
-  - Only add syscall nr for ARC, as asm-generic won't work with arm/sh [Y Song]
----
- tools/lib/bpf/bpf.c | 2 ++
- 1 file changed, 2 insertions(+)
+While this takes care of immediate issues, for the long term, are you open to idea
+of removing the header duplicity.
+We could use a "less evil" idiom of copying only the minimal bits (since the sync
+onus remains one way or the other)
+e.g. I spotted below in bpf code and also seen in other ah-hoc multi arch projects
 
-diff --git a/tools/lib/bpf/bpf.c b/tools/lib/bpf/bpf.c
-index 9cd015574e83..d82edadf7589 100644
---- a/tools/lib/bpf/bpf.c
-+++ b/tools/lib/bpf/bpf.c
-@@ -46,6 +46,8 @@
- #  define __NR_bpf 349
- # elif defined(__s390__)
- #  define __NR_bpf 351
-+# elif defined(__arc__)
-+#  define __NR_bpf 280
- # else
- #  error __NR_bpf not defined. libbpf does not support your arch.
- # endif
--- 
-2.7.4
+#ifdef __NR_xx
+# if defined (__arch_y__)
+
+# elif defined (__arch_z__)
+
+# endif
+#endif
+
 
 
 _______________________________________________
