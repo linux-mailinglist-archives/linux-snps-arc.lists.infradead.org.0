@@ -2,95 +2,96 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9E1EB17295
-	for <lists+linux-snps-arc@lfdr.de>; Wed,  8 May 2019 09:29:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0C59F172CD
+	for <lists+linux-snps-arc@lfdr.de>; Wed,  8 May 2019 09:47:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VKLzZwMwxryi2stisMFvl7mwrlAgc3RFjL6FNP+mg4o=; b=p5pqH+p/UdVdZ/
-	WJ7Z5pz7Ca3Nl90pkoXBn9wto0Hyo2gf81aYf4usN/HKhQE+Ue76KeFifvKNZSj2oDHBLan6+Gb9W
-	NsSE2eQzbzBDMygPTJep9AxgkBmKDiY6dG8wTKMFNHv6NptxrQphLVQZYMygD1Yr44n1zV4y5llQ2
-	M02OB/ZId7Ypsx1mJnURbKO9Hwjpa9TDXPm//evUggMY5s8aRFNQS1SAO4bdKtZNxdSqA6bJaEtut
-	9aKQX8L2B6xMGbEE6Ao2S+15DVlKsPcFGqoqkt6yCKugHfcIcl0JFuqTnlmItoNC+UX/0fLPAn/WX
-	0iNHyXNHGCSAHai0HOPA==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:To:From:Subject:
+	MIME-Version:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=wsT0CrkfisTq74beDlAAsVHK6SZByyWzfNYlgsuxKd4=; b=HHX
+	COwa6aheHYaW+UEwQ521aCuSGgsWf6PiDbghDn2E9ODrcHl4TvGdA0TmSwjZuG6ovaMa+sDVhTLA3
+	oh7x9kt2UFbFilAj5kxKbaw1LWU6yflsR9g1Z728Zt5+GHSzr/4/vdBG0z1BIXV6MvwJlgqkuib/r
+	RCtYNxNg2S7jry80r7hp3j5Z/zPIk5orpKECvHjyIcXVuTIw/79uX4PfYVteUcJ+swiD15dP5Uo2k
+	xTLqtflb+Q1fpEPoF1SrdcHPb2hZmV8LPl+fcYFLfX+A2p40K9WCL5x3RT34wjEoElmu5xaW+U9be
+	yzNAlwvrDWINIhImj4kp+kMxivty35g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hOH0k-0008Jb-CW; Wed, 08 May 2019 07:29:06 +0000
-Received: from smtprelay-out1.synopsys.com ([198.182.47.102])
+	id 1hOHIj-0007zZ-N6; Wed, 08 May 2019 07:47:41 +0000
+Received: from mx0b-001b2d01.pphosted.com ([148.163.158.5]
+ helo=mx0a-001b2d01.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hOH0i-0008In-2E
- for linux-snps-arc@lists.infradead.org; Wed, 08 May 2019 07:29:05 +0000
-Received: from mailhost.synopsys.com (dc2-mailhost1.synopsys.com
- [10.12.135.161])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
- (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id A3689C00E5;
- Wed,  8 May 2019 07:29:05 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1557300545; bh=TgHt3b2Gg9tpKFC4TR7N7CkLAgIAaku1jGPKdCF3QAc=;
- h=From:To:CC:Subject:Date:References:In-Reply-To:From;
- b=Y1YmsR77akkGn/MrWnXmnnXm/mj1phLENM6JaNxyd715tYf0VKlEQTsDFAeh+R5lP
- jWnpGUdeHezx6OEAf3+0zx187aq9Viy6HebCPA6XOVpwWTfcJM6/xzJ/MYy0jBouIR
- o4AtuLJeXAcmcw6vHjWRtPqpxPZjFjQUmtdRcjQKP/vUsTRCDYvPafyLST/GC8NuTI
- BUKA8EvWeO8IKMlYC/VbMSWiHl4shXXfqTohqQo2OUNR4voauzfdUj776qJtVab0X4
- dlIbjAEpLL/mFrhqZDVjP3DpetAFaVmvz8X6462nGSsQbAwt8vuNLo9JkoKs4d+ezi
- hLAtXw6+qeSYg==
-Received: from us01wehtc1.internal.synopsys.com
- (us01wehtc1-vip.internal.synopsys.com [10.12.239.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-SHA384 (256/256 bits))
- (No client certificate requested)
- by mailhost.synopsys.com (Postfix) with ESMTPS id EFD57A02AB;
- Wed,  8 May 2019 07:29:00 +0000 (UTC)
-Received: from DE02WEHTCB.internal.synopsys.com (10.225.19.94) by
- us01wehtc1.internal.synopsys.com (10.12.239.231) with Microsoft SMTP Server
- (TLS) id 14.3.408.0; Wed, 8 May 2019 00:29:01 -0700
-Received: from DE02WEMBXB.internal.synopsys.com ([fe80::95ce:118a:8321:a099])
- by DE02WEHTCB.internal.synopsys.com ([::1]) with mapi id
- 14.03.0415.000; Wed, 8 May 2019 09:28:58 +0200
-From: Jose Abreu <Jose.Abreu@synopsys.com>
-To: Eugeniy Paltsev <Eugeniy.Paltsev@synopsys.com>,
- "Jose.Abreu@synopsys.com" <Jose.Abreu@synopsys.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Vineet Gupta <Vineet.Gupta1@synopsys.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "linux-snps-arc@lists.infradead.org" <linux-snps-arc@lists.infradead.org>
-Subject: RE: [PATCH] ARC: [plat-hsdk]: Add missing multicast filter bins
- number to GMAC node
-Thread-Topic: [PATCH] ARC: [plat-hsdk]: Add missing multicast filter bins
- number to GMAC node
-Thread-Index: AQHVAMdCOflFMqXaVU6/uA7yDRRMYqZX2A8AgAZ1TQCAApAzUA==
-Date: Wed, 8 May 2019 07:28:57 +0000
-Message-ID: <78EB27739596EE489E55E81C33FEC33A0B478870@DE02WEMBXB.internal.synopsys.com>
-References: <7f36bbadc0df4c93c396690dab59f34775de3874.1556788240.git.joabreu@synopsys.com>
- <56933076-879c-78a0-4bae-2613203b93b1@synopsys.com>
- <1557166759.17021.9.camel@synopsys.com>
-In-Reply-To: <1557166759.17021.9.camel@synopsys.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-originating-ip: [10.107.19.176]
+ id 1hOHIg-0007zB-5h
+ for linux-snps-arc@lists.infradead.org; Wed, 08 May 2019 07:47:39 +0000
+Received: from pps.filterd (m0098414.ppops.net [127.0.0.1])
+ by mx0b-001b2d01.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
+ x487gQkw098138
+ for <linux-snps-arc@lists.infradead.org>; Wed, 8 May 2019 03:47:34 -0400
+Received: from e06smtp05.uk.ibm.com (e06smtp05.uk.ibm.com [195.75.94.101])
+ by mx0b-001b2d01.pphosted.com with ESMTP id 2sbr22r5c3-1
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=NOT)
+ for <linux-snps-arc@lists.infradead.org>; Wed, 08 May 2019 03:47:34 -0400
+Received: from localhost
+ by e06smtp05.uk.ibm.com with IBM ESMTP SMTP Gateway: Authorized Use Only!
+ Violators will be prosecuted
+ for <linux-snps-arc@lists.infradead.org> from <noreply@ellerman.id.au>;
+ Wed, 8 May 2019 08:47:32 +0100
+Received: from b06cxnps4076.portsmouth.uk.ibm.com (9.149.109.198)
+ by e06smtp05.uk.ibm.com (192.168.101.135) with IBM ESMTP SMTP Gateway:
+ Authorized Use Only! Violators will be prosecuted; 
+ (version=TLSv1/SSLv3 cipher=AES256-GCM-SHA384 bits=256/256)
+ Wed, 8 May 2019 08:47:30 +0100
+Received: from d06av25.portsmouth.uk.ibm.com (d06av25.portsmouth.uk.ibm.com
+ [9.149.105.61])
+ by b06cxnps4076.portsmouth.uk.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP id
+ x487lTXI50331848
+ (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Wed, 8 May 2019 07:47:29 GMT
+Received: from d06av25.portsmouth.uk.ibm.com (unknown [127.0.0.1])
+ by IMSVA (Postfix) with ESMTP id 56D5211C054;
+ Wed,  8 May 2019 07:47:29 +0000 (GMT)
+Received: from d06av25.portsmouth.uk.ibm.com (unknown [127.0.0.1])
+ by IMSVA (Postfix) with ESMTP id 0702D11C04A;
+ Wed,  8 May 2019 07:47:29 +0000 (GMT)
+Received: from ozlabs.au.ibm.com (unknown [9.192.253.14])
+ by d06av25.portsmouth.uk.ibm.com (Postfix) with ESMTP;
+ Wed,  8 May 2019 07:47:28 +0000 (GMT)
+Received: from bran.ozlabs.ibm.com (haven.au.ibm.com [9.192.254.114])
+ by ozlabs.au.ibm.com (Postfix) with ESMTP id C7854A0218;
+ Wed,  8 May 2019 17:47:27 +1000 (AEST)
+Received: from 07b04a9130af (ka2.ozlabs.ibm.com [10.61.145.21])
+ by bran.ozlabs.ibm.com (Postfix) with ESMTP id 83E8DE00D3;
+ Wed,  8 May 2019 17:47:27 +1000 (AEST)
 MIME-Version: 1.0
+Subject: kisskb: OK linus/axs101_defconfig/arcompact Wed May 08, 17:46
+From: noreply@ellerman.id.au
+To: Vineet.Gupta1@synopsys.com, Alexey.Brodkin@synopsys.com,
+ linux-snps-arc@lists.infradead.org
+Date: Wed, 08 May 2019 07:47:27 -0000
+X-TM-AS-GCONF: 00
+x-cbid: 19050807-0020-0000-0000-0000033A704F
+X-IBM-AV-DETECTION: SAVI=unused REMOTE=unused XFE=unused
+x-cbparentid: 19050807-0021-0000-0000-0000218D0FD0
+Message-Id: <20190508074727.1.53872@07b04a9130af>
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
+ definitions=2019-05-08_05:, , signatures=0
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ priorityscore=1501
+ malwarescore=0 suspectscore=2 phishscore=0 bulkscore=0 spamscore=0
+ clxscore=1034 lowpriorityscore=0 mlxscore=0 impostorscore=0
+ mlxlogscore=479 adultscore=0 classifier=spam adjust=0 reason=mlx
+ scancount=1 engine=8.0.1-1810050000 definitions=main-1905080050
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190508_002904_106694_713D9C32 
-X-CRM114-Status: UNSURE (   6.71  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190508_004738_336884_EDD03E75 
+X-CRM114-Status: GOOD (  12.80  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [148.163.158.5 listed in list.dnswl.org]
 X-BeenThere: linux-snps-arc@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -102,28 +103,31 @@ List-Post: <mailto:linux-snps-arc@lists.infradead.org>
 List-Help: <mailto:linux-snps-arc-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-snps-arc>, 
  <mailto:linux-snps-arc-request@lists.infradead.org?subject=subscribe>
-Cc: Alexey Brodkin <Alexey.Brodkin@synopsys.com>,
- "Vineet.Gupta1@synopsys.com" <Vineet.Gupta1@synopsys.com>,
- "Joao.Pinto@synopsys.com" <Joao.Pinto@synopsys.com>,
- "Eugeniy.Paltsev@synopsys.com" <Eugeniy.Paltsev@synopsys.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-snps-arc" <linux-snps-arc-bounces@lists.infradead.org>
 Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org
 
-From: Eugeniy Paltsev <paltsev@synopsys.com>
-Date: Mon, May 06, 2019 at 19:19:20
+OK linus/axs101_defconfig/arcompact Wed May 08, 17:46
 
-> Hi,
-> 
-> I'll check this in the next few days.
-> 
+http://kisskb.ellerman.id.au/kisskb/buildresult/13794331/
 
-I also noticed that FIFO size entry is missing. DWMAC1000 does not 
-support automatic FIFO size detection so this entry needs to be added.
+Commit:   Merge branch 'parisc-5.2-1' of git://git.kernel.org/pub/scm/linux/kernel/git/deller/parisc-linux
+          d3511f53bb2475f2a4e8460bee5a1ae6dea2a433
+Compiler: arc-buildroot-linux-uclibc-gcc (Buildroot 2015.08.1) 4.8.4 / GNU ld (GNU Binutils) 2.23.2
 
-Thanks,
-Jose Miguel Abreu
+No errors found in log
+
+Possible warnings (5)
+----------------------
+
+arch/arc/mm/tlb.c:914:2: warning: variable length array 'pd0' is used [-Wvla]
+arch/arc/include/asm/cmpxchg.h:95:29: warning: value computed is not used [-Wunused-value]
+arch/arc/include/asm/cmpxchg.h:95:29: warning: value computed is not used [-Wunused-value]
+net/ipv4/tcp_input.c:4315:49: warning: array subscript is above array bounds [-Warray-bounds]
+arch/arc/include/asm/cmpxchg.h:95:29: warning: value computed is not used [-Wunused-value]
+
+
 _______________________________________________
 linux-snps-arc mailing list
 linux-snps-arc@lists.infradead.org
