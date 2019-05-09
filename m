@@ -2,95 +2,82 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B84C0192AF
-	for <lists+linux-snps-arc@lfdr.de>; Thu,  9 May 2019 21:13:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4901E1937C
+	for <lists+linux-snps-arc@lfdr.de>; Thu,  9 May 2019 22:36:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:To:From:Subject:
-	MIME-Version:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:Date
+	:Subject:To:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=T2VawTuGTs+U6VPOeqb1wSJoso71AbjhoRpRi3cCwdA=; b=p19
-	DSdPumS3UYr955RvYf29+Kf5Br4Edt8yg/FjioJzTQu9/1mO0K8lbiUtBVS7SQ9V5s2T7iy2jcqwK
-	tTJgEF2HnBCqjE3Gr0A6wmBODN2v0zM6O/h7bxAj06a35IWTVhbhYuMHwggROyQBnfmCZgJ8LK3sN
-	arlYQJPfOJfRKmrMkZGtYNiLWXCsCbimm6X/tv1+K84A9J074EuG7t192ghkuvvpm/ZUwOwPWrgBN
-	JwoP/zrcdXCic1+7UPDbcfSKpemlLrWffCTnxXlCAt8bvYqoi0o6m4nIvQaRg9p4rIyDslq4vebdD
-	bEJMCplDr0H2azh9EhWll+XeOI8hJQA==;
+	List-Owner; bh=uP71SHiR1oR8594/aHJCm1y4U3CMBYjAtFtCxtktn6Y=; b=cG1ekpwYtY93au
+	+8AHnhQ+F0Tq4Sr9BJceigDGzuuNIbMfi082U7auW1jOepZm6bMc/WICBB4ucmgXXyhHmV1bMotci
+	T+7eHlgVWTao5bC+98H0b0TLow6Uxru6SknQ5YL3AfyRPIwZaqbU0zvZ6CRYStmf/iLPlyOoE9rpa
+	zZRO4vZ0TXDjsw6wj1mB1bxM0sNNCAi4WtAG3Eb87r7XT1jc2wXCErag7iUu3PByV5SOyXhETFd1a
+	rLszLn4HNNytSWAm3aRvxKB9B1HVQhGgnPkW87Dgymv66N4LU/CH9r0+4Nh7MtqVDfk791GRP0ceR
+	8SXpw0rMG7pnjUQo0KkQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hOoTa-0006X8-Ew; Thu, 09 May 2019 19:13:06 +0000
-Received: from mx0a-001b2d01.pphosted.com ([148.163.156.1])
+	id 1hOpmH-0002Jq-Ql; Thu, 09 May 2019 20:36:29 +0000
+Received: from smtprelay-out1.synopsys.com ([198.182.47.102])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hOoTW-0006Wh-IF
- for linux-snps-arc@lists.infradead.org; Thu, 09 May 2019 19:13:04 +0000
-Received: from pps.filterd (m0098393.ppops.net [127.0.0.1])
- by mx0a-001b2d01.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
- x49J8hsq045170
- for <linux-snps-arc@lists.infradead.org>; Thu, 9 May 2019 15:13:02 -0400
-Received: from e06smtp02.uk.ibm.com (e06smtp02.uk.ibm.com [195.75.94.98])
- by mx0a-001b2d01.pphosted.com with ESMTP id 2scr8mmq1q-1
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=NOT)
- for <linux-snps-arc@lists.infradead.org>; Thu, 09 May 2019 15:13:01 -0400
-Received: from localhost
- by e06smtp02.uk.ibm.com with IBM ESMTP SMTP Gateway: Authorized Use Only!
- Violators will be prosecuted
- for <linux-snps-arc@lists.infradead.org> from <noreply@ellerman.id.au>;
- Thu, 9 May 2019 20:12:59 +0100
-Received: from b06cxnps4074.portsmouth.uk.ibm.com (9.149.109.196)
- by e06smtp02.uk.ibm.com (192.168.101.132) with IBM ESMTP SMTP Gateway:
- Authorized Use Only! Violators will be prosecuted; 
- (version=TLSv1/SSLv3 cipher=AES256-GCM-SHA384 bits=256/256)
- Thu, 9 May 2019 20:12:57 +0100
-Received: from d06av23.portsmouth.uk.ibm.com (d06av23.portsmouth.uk.ibm.com
- [9.149.105.59])
- by b06cxnps4074.portsmouth.uk.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP id
- x49JCu6c34996238
- (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Thu, 9 May 2019 19:12:56 GMT
-Received: from d06av23.portsmouth.uk.ibm.com (unknown [127.0.0.1])
- by IMSVA (Postfix) with ESMTP id 89612A4055;
- Thu,  9 May 2019 19:12:56 +0000 (GMT)
-Received: from d06av23.portsmouth.uk.ibm.com (unknown [127.0.0.1])
- by IMSVA (Postfix) with ESMTP id 3A09EA4051;
- Thu,  9 May 2019 19:12:56 +0000 (GMT)
-Received: from ozlabs.au.ibm.com (unknown [9.192.253.14])
- by d06av23.portsmouth.uk.ibm.com (Postfix) with ESMTP;
- Thu,  9 May 2019 19:12:56 +0000 (GMT)
-Received: from bran.ozlabs.ibm.com (haven.au.ibm.com [9.192.254.114])
- by ozlabs.au.ibm.com (Postfix) with ESMTP id 37F2FA01FF;
- Fri, 10 May 2019 05:12:55 +1000 (AEST)
-Received: from 07b04a9130af (ka2.ozlabs.ibm.com [10.61.145.21])
- by bran.ozlabs.ibm.com (Postfix) with ESMTP id 2C775E00D3;
- Fri, 10 May 2019 05:12:55 +1000 (AEST)
+ id 1hOpmC-0002E0-Q4
+ for linux-snps-arc@lists.infradead.org; Thu, 09 May 2019 20:36:27 +0000
+Received: from mailhost.synopsys.com (dc2-mailhost2.synopsys.com
+ [10.12.135.162])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
+ (No client certificate requested)
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 213D3C003A
+ for <linux-snps-arc@lists.infradead.org>; Thu,  9 May 2019 20:36:26 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
+ t=1557434187; bh=y02kD0y3RdfGKT+ygRWj2DQ47UHx9CxWuKMpH+oy6ts=;
+ h=From:To:Subject:Date:References:From;
+ b=GclsBX4l+llZa93DFKb24epOmcrvLz9JwQ/AG0Lwqkkqz/Ygk9I4fE876WS4N6q9s
+ iE2TmC/yFSpXCGOA4bihtybTnpDhU/g/y5z7pibgPtpp7DWqlh+Hh6kzPIlA5d4j5f
+ Bfwva/DSy/FXP3GHjvfcfKOki2MnVpqCZtiPVROZFB+gZrmaRX/L2LbtEjAyj3rd9U
+ POdodG5oYIEQN6QGdtQeNKnaRB6xdkY28ZlUtB+tCnlLlDWiT66pS9fyH92Z+gL+Yi
+ zcyTyC5SM+LV/pWbB1s5ptPA4J3p92uQQ466HhPl2NfweY0bqYAf6cumX1EFzcomra
+ LTxggzlz8p/3g==
+Received: from US01WXQAHTC1.internal.synopsys.com
+ (us01wxqahtc1.internal.synopsys.com [10.12.238.230])
+ (using TLSv1.2 with cipher AES128-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mailhost.synopsys.com (Postfix) with ESMTPS id 1A882A0095
+ for <linux-snps-arc@lists.infradead.org>; Thu,  9 May 2019 20:36:21 +0000 (UTC)
+Received: from us01wembx1.internal.synopsys.com ([169.254.1.223]) by
+ US01WXQAHTC1.internal.synopsys.com ([::1]) with mapi id 14.03.0415.000; Thu,
+ 9 May 2019 13:36:21 -0700
+From: Vineet Gupta <Vineet.Gupta1@synopsys.com>
+To: Alexey Brodkin <Alexey.Brodkin@synopsys.com>,
+ "linux-snps-arc@lists.infradead.org" <linux-snps-arc@lists.infradead.org>
+Subject: Re: [GLIBC] ARC: Add multilib support
+Thread-Topic: [GLIBC] ARC: Add multilib support
+Thread-Index: AQHVBbIGeypuugOC0kifIwBKf7EjMg==
+Date: Thu, 9 May 2019 20:36:21 +0000
+Message-ID: <C2D7FE5348E1B147BCA15975FBA2307501A250BAAE@us01wembx1.internal.synopsys.com>
+References: <20190508152333.2949-1-abrodkin@synopsys.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-originating-ip: [10.13.184.19]
 MIME-Version: 1.0
-Subject: kisskb: OK linus/axs101_defconfig/arcompact Fri May 10, 05:12
-From: noreply@ellerman.id.au
-To: Vineet.Gupta1@synopsys.com, Alexey.Brodkin@synopsys.com,
- linux-snps-arc@lists.infradead.org
-Date: Thu, 09 May 2019 19:12:55 -0000
-X-TM-AS-GCONF: 00
-x-cbid: 19050919-0008-0000-0000-000002E50472
-X-IBM-AV-DETECTION: SAVI=unused REMOTE=unused XFE=unused
-x-cbparentid: 19050919-0009-0000-0000-000022518C9B
-Message-Id: <20190509191255.1.30430@07b04a9130af>
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
- definitions=2019-05-09_02:, , signatures=0
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- priorityscore=1501
- malwarescore=0 suspectscore=2 phishscore=0 bulkscore=0 spamscore=0
- clxscore=1034 lowpriorityscore=0 mlxscore=0 impostorscore=0
- mlxlogscore=545 adultscore=0 classifier=spam adjust=0 reason=mlx
- scancount=1 engine=8.0.1-1810050000 definitions=main-1905090110
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190509_121302_609524_1F6F21B5 
-X-CRM114-Status: GOOD (  11.54  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190509_133624_892999_4D84BD42 
+X-CRM114-Status: GOOD (  14.17  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [148.163.156.1 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-snps-arc@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -107,32 +94,132 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-snps-arc" <linux-snps-arc-bounces@lists.infradead.org>
 Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org
 
-OK linus/axs101_defconfig/arcompact Fri May 10, 05:12
+On 5/8/19 8:23 AM, Alexey Brodkin wrote:
+> Based on preprocessor defines we determine which type of ARC core
+> we're targeting and set slibdir accordingly so that on installation
+> of libraries to sysroot libs for different ARC cores end up in different
+> locations which match ARC Linux multilib spec.
+>
+> Note though it all only happens if 2 conditions happen simultaneously:
+>  1. Glibc configured with "--prefix=/usr"
 
-http://kisskb.ellerman.id.au/kisskb/buildresult/13797807/
+So how can we do this in a typical cross compile setup.
 
-Commit:   Merge tag 'for-linus' of git://git.kernel.org/pub/scm/linux/kernel/git/rdma/rdma
-          dce45af5c2e9e85f22578f2f8065f225f5d11764
-Compiler: arc-buildroot-linux-uclibc-gcc (Buildroot 2015.08.1) 4.8.4 / GNU ld (GNU Binutils) 2.23.2
+>  2. "-mcpu=xxx" exists in CC passed to Glibc's configure script
+>
+> I.e. when we build Glibc for default CPU libs are installed in default
+> location.
+>
+> Signed-off-by: Alexey Brodkin <abrodkin@synopsys.com>
+> ---
+>  sysdeps/unix/sysv/linux/arc/configure    | 329 ++++++++++++++++++++++++++++++-
+>  sysdeps/unix/sysv/linux/arc/configure.ac |  70 +++++++
+>  2 files changed, 398 insertions(+), 1 deletion(-)
+>  mode change 100644 => 100755 sysdeps/unix/sysv/linux/arc/configure
 
-No errors found in log
+skipping generated file
+ 
+> diff --git a/sysdeps/unix/sysv/linux/arc/configure.ac b/sysdeps/unix/sysv/linux/arc/configure.ac
+> index a9528032d32..3615db8eabc 100644
+> --- a/sysdeps/unix/sysv/linux/arc/configure.ac
+> +++ b/sysdeps/unix/sysv/linux/arc/configure.ac
+> @@ -2,3 +2,73 @@ GLIBC_PROVIDES dnl See aclocal.m4 in the top level source directory.
+>  # Local configure fragment for sysdeps/unix/sysv/linux/arc.
+>  
+>  arch_minimum_kernel=3.9.0
+> +
+> +# If "-mcpu=xxx" found in passed CC assume we're building for
+> +# non-default CPU and thus we need to install libs in non-default location.
+> +if AC_TRY_COMMAND([echo $CC | grep -F "mcpu" > /dev/null]);
+> +then
+> +	libc_cv_arc_arch=no
+> +
+> +	# If this is ARCompact-based core
+> +	AC_EGREP_CPP(yes, [#ifdef __ARC700__
+> +			   yes
+> +			   #endif
+> +	],libc_cv_arc_arch=arc700)
+> +
+> +	# If this is ARCv2-based core
+> +	AC_EGREP_CPP(yes, [#ifdef __ARCHS__
+> +			   yes
+> +			   #endif
+> +	],libc_cv_arc_arch=hs)
+> +
+> +	if test $libc_cv_arc_arch = no; then
+> +	  AC_MSG_ERROR([Unable to determine ARC architecture])
+> +	fi
+> +
+> +	if test $libc_cv_arc_arch = arc700; then
+> +		# NPS400
+> +		AC_EGREP_CPP(yes, [#ifdef __NPS400__
+> +				   yes
+> +				   #endif
+> +		],libc_cv_arc_arch=nps400)
 
-Possible warnings (12)
-----------------------
+I don't see any activity on NPS front so best to skip that in new code for now.
 
-<stdin>:1388:2: warning: #warning syscall open_tree not implemented [-Wcpp]
-<stdin>:1391:2: warning: #warning syscall move_mount not implemented [-Wcpp]
-<stdin>:1394:2: warning: #warning syscall fsopen not implemented [-Wcpp]
-<stdin>:1397:2: warning: #warning syscall fsconfig not implemented [-Wcpp]
-<stdin>:1400:2: warning: #warning syscall fsmount not implemented [-Wcpp]
-<stdin>:1403:2: warning: #warning syscall fspick not implemented [-Wcpp]
-arch/arc/mm/tlb.c:914:2: warning: variable length array 'pd0' is used [-Wvla]
-arch/arc/include/asm/cmpxchg.h:95:29: warning: value computed is not used [-Wunused-value]
-net/xfrm/xfrm_policy.c:3492:15: warning: array subscript is above array bounds [-Warray-bounds]
-arch/arc/include/asm/cmpxchg.h:95:29: warning: value computed is not used [-Wunused-value]
-arch/arc/include/asm/cmpxchg.h:95:29: warning: value computed is not used [-Wunused-value]
-net/ipv4/tcp_input.c:4315:49: warning: array subscript is above array bounds [-Warray-bounds]
 
+> +	else
+> +		# Base-line HS38 + HW multiplier
+> +		AC_EGREP_CPP(yes, [#ifdef __ARC_MPY__
+> +				   yes
+> +				   #endif
+> +		],libc_cv_arc_arch=archs)
+> +
+> +		# Base-line HS38 + HW quad-multiplier
+> +		AC_EGREP_CPP(yes, [#ifdef __ARC_MPY_QMACW__
+> +				   yes
+> +				   #endif
+> +		],libc_cv_arc_arch=hs38)
+> +
+> +		# Base-line HS38 + HW quad-multiplier + FPU
+> +		AC_EGREP_CPP(yes, [#ifdef __ARC_FPU_DP__
+> +				   yes
+> +				   #endif
+> +		],libc_cv_arc_arch=hs38_linux)
+> +	fi
+> +
+
+This zoo makes sense for gcc - for say baremetal stuff, but we don't want to spend
+time (even machine time) building glibc for those.
+You can assume MPY to be always present when running linux/glibc.
+
+> +	case $libc_cv_arc_arch in
+> +	arc700)
+> +	  LIBC_SLIBDIR_RTLDDIR([lib/arc700], [lib/arc700])
+> +	  ;;
+> +	nps400)
+> +	  LIBC_SLIBDIR_RTLDDIR([lib/nps400], [lib/nps400])
+
+
+> +	  ;;
+> +	hs)
+> +	  LIBC_SLIBDIR_RTLDDIR([lib/hs], [lib/hs])
+
+Looking at
+https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/wiki/Understanding-GCC-mcpu-optio
+
+I'd recommend drop above
+
+
+> +	  ;;
+> +	archs)
+> +	  LIBC_SLIBDIR_RTLDDIR([lib/archs], [lib/archs])
+> +	  ;;
+
+ditto
+
+> +	hs38)
+> +	  LIBC_SLIBDIR_RTLDDIR([lib/hs38], [lib/hs38])
+> +	  ;;
+> +	hs38_linux)
+> +	  LIBC_SLIBDIR_RTLDDIR([lib/hs38_linux], [lib/hs38_linux])
+> +	  ;;
+> +	esac
+> +fi
+
+-Vineet
 
 _______________________________________________
 linux-snps-arc mailing list
