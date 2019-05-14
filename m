@@ -2,132 +2,105 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 979E31BD05
-	for <lists+linux-snps-arc@lfdr.de>; Mon, 13 May 2019 20:11:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 832A11CE29
+	for <lists+linux-snps-arc@lfdr.de>; Tue, 14 May 2019 19:40:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JkZ7+aCvij+2w7ic66ALF+5iX3NzR+H1YHDuaFQFJMU=; b=jAfWgetavE5iP5
-	OmkckakUofcvy+O8U8i5hNuy9mrMccPc7nhmTp/q30bTvDNdLzP4NQ3a8vtzGxCdHoaSd7qtfIGQW
-	6kbmilD+1ioEB/TSqF9n2VK77zUh1J9Ov+/sckPg1UHUtpJihkz2jw5AUcyVysx2hEQCaN7124dzo
-	956ZNW7aLDQOtRmUAzTp/QbAlhU/9iZ5tTxFCXuMsayaJf629QiYqybqqMU13iwgPMeU072yNkUTy
-	wC1xqbRzW33ibLKIpfS4NlOZORbG+wSt258AyadIWSJKVRqiiuQtp9T0jjMXKkZKfXqqu3xAWFr3M
-	9SXhPIPh4nROfb9Ye8Nw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=O9n4Lwnsywv6o4Q15ph7v0rktonMD7oF64QRw10/eZA=; b=ezjlzye5XlYrQM
+	JCs/vG/2VTDIX7hFyYvpRFosLstf48i2Ux1XMbas1ougFcqblV6yakVQZw8YJiEoiAPZI30TQ5eW1
+	BG3g6qipgQ0E+aFJ2tQ/o9fkdkD46vgLRl/z+hTMVq+AOnkw4mD4HOjTSEeYGP4TSTgmyCRa93iAq
+	s6KEzyw1qa+wHfKAY+HoiVvh+2aBiW6uNLn2NU8K1xQaZJMm+c5oKijxuIi+Iz6DJIz4qfAALqKty
+	yLV1QVQta6ZQM+9f7v/hmRtJhwbjcNc4CBr5g2YMgAOMM+0k1MnQYZEX9HPXQay/ve4IZAL5BuW5b
+	6lcsKzYt56QDjz7vxm6g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQFQR-0000KW-BP; Mon, 13 May 2019 18:11:47 +0000
-Received: from smtprelay-out1.synopsys.com ([198.182.47.102])
+	id 1hQbPl-00005I-Af; Tue, 14 May 2019 17:40:33 +0000
+Received: from mail-eopbgr810095.outbound.protection.outlook.com
+ ([40.107.81.95] helo=NAM01-BY2-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQFQO-0000KC-NU
- for linux-snps-arc@lists.infradead.org; Mon, 13 May 2019 18:11:46 +0000
-Received: from mailhost.synopsys.com (badc-mailhost1.synopsys.com
- [10.192.0.17])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
- (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 1357CC01E3;
- Mon, 13 May 2019 18:11:48 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1557771108; bh=pGSKux1p55Pb1d120mTxSJIOc007D5yWWyT9ySgtwes=;
- h=Subject:To:CC:References:From:Date:In-Reply-To:From;
- b=CKvKqUgeHez7daT5sXOXxrcP+pHxoFEWyAx44ob9GmmHj/fDcNC5Tj+4hg1GMypNV
- gXyDC12WneIGX2BMIdjdRg/emYo5KHJu5+zKbbA8o7iLZjaPQzYO+hR9CnM5j4Eypo
- ggnWyknkUqFXfV6IdrfblzfnyeyfQCh4fwX+56awFpaW6dmeTQR40cq9GKM1iU9Mfm
- R4ZBdo16S2ARmgSU+ngAK33i6Ze9p6h6AsFtcdIoWWi0FG6I5Sc/OIqFOU5av60C5J
- RyU+2BrWTfC0fYRoblKVIMQ03XzHGYzHs3jZ1nRcJCI5+8sq+vsCe2XsJ1QGDo5zWR
- rT/dtYf5Sxp6Q==
-Received: from US01WEHTC3.internal.synopsys.com
- (us01wehtc3.internal.synopsys.com [10.15.84.232])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-SHA384 (256/256 bits))
- (No client certificate requested)
- by mailhost.synopsys.com (Postfix) with ESMTPS id 75FFCA005A;
- Mon, 13 May 2019 18:11:41 +0000 (UTC)
-Received: from IN01WEHTCA.internal.synopsys.com (10.144.199.104) by
- US01WEHTC3.internal.synopsys.com (10.15.84.232) with Microsoft SMTP Server
- (TLS) id 14.3.408.0; Mon, 13 May 2019 11:11:41 -0700
-Received: from IN01WEHTCB.internal.synopsys.com (10.144.199.105) by
- IN01WEHTCA.internal.synopsys.com (10.144.199.103) with Microsoft SMTP Server
- (TLS) id 14.3.408.0; Mon, 13 May 2019 23:41:52 +0530
-Received: from [10.10.161.89] (10.10.161.89) by
- IN01WEHTCB.internal.synopsys.com (10.144.199.243) with Microsoft SMTP Server
- (TLS) id 14.3.408.0; Mon, 13 May 2019 23:41:39 +0530
-Subject: Re: [PATCH v2] ARC: Send SIGSEGV if userspace process accesses kernel
- virtual memory
-To: Eugeniy Paltsev <Eugeniy.Paltsev@synopsys.com>,
- <linux-snps-arc@lists.infradead.org>
-Newsgroups: gmane.linux.kernel,gmane.linux.kernel.arc
-References: <20190513172800.27940-1-Eugeniy.Paltsev@synopsys.com>
-From: Vineet Gupta <Vineet.Gupta1@synopsys.com>
-Openpgp: preference=signencrypt
-Autocrypt: addr=vgupta@synopsys.com; keydata=
- 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
- hhqBJlyU6MVUa6vZNv8E
-Message-ID: <771bef88-7691-18d4-76a7-6d6eafcc1b37@synopsys.com>
-Date: Mon, 13 May 2019 11:11:35 -0700
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
-MIME-Version: 1.0
-In-Reply-To: <20190513172800.27940-1-Eugeniy.Paltsev@synopsys.com>
+ id 1hQbPd-0008VU-3P
+ for linux-snps-arc@lists.infradead.org; Tue, 14 May 2019 17:40:27 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=impinj.com;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=hQDxnY1/HgEhhDuoyFjpYuAmgm0Xg0oF73+zQh0PFYQ=;
+ b=oPx2ZGzkNiOIQtxFyPtW9f44npJHVPYjov1lTK349Y992uhViKdiuMmdpZ2SJE83zhU2cP0yyGufuY1vRgEiN4pBshrwbiYr0clc0Cf81zLZAYxst7Ag7EEXCFA7l5kKUupbUdyishUebmUWdcgufB2/5FdOMobX+F3xVggr/E4=
+Received: from MWHPR0601MB3708.namprd06.prod.outlook.com (10.167.236.38) by
+ MWHPR0601MB3722.namprd06.prod.outlook.com (10.167.236.139) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.1900.16; Tue, 14 May 2019 17:40:15 +0000
+Received: from MWHPR0601MB3708.namprd06.prod.outlook.com
+ ([fe80::b496:85ab:4cb0:5876]) by MWHPR0601MB3708.namprd06.prod.outlook.com
+ ([fe80::b496:85ab:4cb0:5876%2]) with mapi id 15.20.1878.024; Tue, 14 May 2019
+ 17:40:15 +0000
+From: Trent Piepho <tpiepho@impinj.com>
+To: "linux-snps-arc@lists.infradead.org" <linux-snps-arc@lists.infradead.org>
+Subject: [PATCH] ARC: [hsdk]  Use rgmii-id mode for ethernet phy
+Thread-Topic: [PATCH] ARC: [hsdk]  Use rgmii-id mode for ethernet phy
+Thread-Index: AQHVCnwWZvHY/aB82kKLhDqmJpCCsg==
+Date: Tue, 14 May 2019 17:40:15 +0000
+Message-ID: <20190514173941.20046-1-tpiepho@impinj.com>
+Accept-Language: en-US
 Content-Language: en-US
-X-Originating-IP: [10.10.161.89]
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-clientproxiedby: BYAPR05CA0041.namprd05.prod.outlook.com
+ (2603:10b6:a03:74::18) To MWHPR0601MB3708.namprd06.prod.outlook.com
+ (2603:10b6:301:7c::38)
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=tpiepho@impinj.com; 
+x-ms-exchange-messagesentrepresentingtype: 1
+x-mailer: git-send-email 2.14.5
+x-originating-ip: [216.207.205.253]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 9ca0efb5-0e0e-4024-03b5-08d6d8933942
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(2017052603328)(7193020);
+ SRVR:MWHPR0601MB3722; 
+x-ms-traffictypediagnostic: MWHPR0601MB3722:
+x-microsoft-antispam-prvs: <MWHPR0601MB3722E392D8740EC4215663E4D3080@MWHPR0601MB3722.namprd06.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:8882;
+x-forefront-prvs: 0037FD6480
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10019020)(376002)(396003)(39850400004)(136003)(366004)(346002)(189003)(199004)(386003)(66476007)(66556008)(2351001)(64756008)(66446008)(5640700003)(14444005)(6916009)(6506007)(1076003)(73956011)(316002)(478600001)(5660300002)(66946007)(6436002)(6486002)(102836004)(256004)(54906003)(14454004)(36756003)(8676002)(186003)(476003)(50226002)(53936002)(4326008)(71190400001)(2906002)(81156014)(81166006)(6512007)(2501003)(8936002)(71200400001)(99286004)(7736002)(26005)(486006)(86362001)(305945005)(68736007)(52116002)(66066001)(6116002)(3846002)(25786009)(2616005);
+ DIR:OUT; SFP:1102; SCL:1; SRVR:MWHPR0601MB3722;
+ H:MWHPR0601MB3708.namprd06.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: impinj.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: G5RqJ07QKKSRx8H14g+z6PiXS3keuplBmo3gwgk74eXaaFjHVpLWnNZ/mjoZS0AguqA4Ev5uz6+xEysmyNd7avPEHtDhiNmWHpgGd9UUNDlkxdYJom7GzbhMgUPrBSTbhooX0LGjBT2gkNmgOvyfbTS9DE3Y0wK2NATgArcqp0jdacWCFZVuggTgiPpM3FZbWBq8y4QzKes68pcfSXphp0KmkJPnMqrGyDJzFMEccyqZDt0ie1Q8Cb1CINz7YDb86XChRnp+R9VrMHDkKPC7JvZDCnYq546FxBVbTBgr1Cji3Boq3zv/vN50d8hYpZYh4dy/i262mCOfq2c4xumWyyllvGY2sp6n/4teRuqXACAWFDA8lwTTN4csXy1DzNgoL3wc5lOxuiozcWjZvTDG1CcKNBZfajCUN7sSOYzPulI=
+MIME-Version: 1.0
+X-OriginatorOrg: impinj.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 9ca0efb5-0e0e-4024-03b5-08d6d8933942
+X-MS-Exchange-CrossTenant-originalarrivaltime: 14 May 2019 17:40:15.5075 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 6de70f0f-7357-4529-a415-d8cbb7e93e5e
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: MWHPR0601MB3722
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190513_111144_771179_5830F153 
-X-CRM114-Status: GOOD (  22.01  )
+X-CRM114-CacheID: sfid-20190514_104025_905211_8F85BB53 
+X-CRM114-Status: GOOD (  10.30  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.81.95 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-snps-arc@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -139,102 +112,47 @@ List-Post: <mailto:linux-snps-arc@lists.infradead.org>
 List-Help: <mailto:linux-snps-arc-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-snps-arc>, 
  <mailto:linux-snps-arc-request@lists.infradead.org?subject=subscribe>
-Cc: Alexey Brodkin <Alexey.Brodkin@synopsys.com>, linux-kernel@vger.kernel.org
+Cc: Vineet Gupta <vgupta@synopsys.com>, Alexey Brodkin <abrodkin@synopsys.com>,
+ Trent Piepho <tpiepho@impinj.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-snps-arc" <linux-snps-arc-bounces@lists.infradead.org>
 Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org
 
-On 5/13/19 10:28 AM, Eugeniy Paltsev wrote:
-> As of today if userspace process tries to access address which belongs
-> to kernel virtual memory area and kernel have mapping for this address
-> that process hangs instead of receiving SIGSEGV and being killed.
-> 
-> Steps to reproduce:
-> Create userspace application which reads from the beginning of
-> kernel-space virtual memory area (I.E. read from 0x7000_0000 on most
-> of existing platforms):
-> ------------------------>8-----------------
->  #include <stdlib.h>
->  #include <stdint.h>
-> 
->  int main(int argc, char *argv[])
->  {
->  	volatile uint32_t temp;
-> 
->  	temp = *(uint32_t *)(0x70000000);
->  }
-> ------------------------>8-----------------
-> That application hangs after such memory access.
-> 
-> Fix that by checking which access (user or kernel) caused the exception
-> before handling kernel virtual address fault.
-> 
-> Fix that by checking that VMALLOC_FAULT was caused in kernel mode
-> before trying to handle it.
+If internal delays are desired on the RGMII link, "rgmii-id" should be
+used as the phy-mode rather than "rgmii" .
 
-Merge both the line above, say ... "Ensure that kernel virtual addresses are only
-handled for faults in kernel mode"
+This dts has properties to set the delay values, but they are ignored.
+I suspect this is a mistake.
 
-> Thus we can use @no_context label, removing the need for
-> @bad_area_nosemaphore and untangling the code mess a bit.
+While the driver should disable delay based on the current DT, it does
+not, and instead leaves the PHY in the pin strapping default.  Which is
+usually to have delays very close to the unused values the hsdk DT.
+Which is why the phy would work even if the delays in the DT are
+ignored.
 
-Say ... "And while we are here, remove @bad_area_nosemaphore label, untangling the
-code mess a bit"
+Cc: Alexey Brodkin <abrodkin@synopsys.com>
+Cc: Vineet Gupta <vgupta@synopsys.com>
+Signed-off-by: Trent Piepho <tpiepho@impinj.com>
+---
+ arch/arc/boot/dts/hsdk.dts | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-> 
-> Cc: <stable@vger.kernel.org> # 4.20+
-
-Why just 4.20, this needs to go back as far as possible !
-
-> Signed-off-by: Vineet Gupta <vgupta@synopsys.com>
-> Signed-off-by: Eugeniy Paltsev <Eugeniy.Paltsev@synopsys.com>
-> ---
->  arch/arc/mm/fault.c | 9 +++------
->  1 file changed, 3 insertions(+), 6 deletions(-)
-> 
-> diff --git a/arch/arc/mm/fault.c b/arch/arc/mm/fault.c
-> index 8df1638259f3..6836095251ed 100644
-> --- a/arch/arc/mm/fault.c
-> +++ b/arch/arc/mm/fault.c
-> @@ -66,7 +66,7 @@ void do_page_fault(unsigned long address, struct pt_regs *regs)
->  	struct vm_area_struct *vma = NULL;
->  	struct task_struct *tsk = current;
->  	struct mm_struct *mm = tsk->mm;
-> -	int si_code = 0;
-> +	int si_code = SEGV_MAPERR;
->  	int ret;
->  	vm_fault_t fault;
->  	int write = regs->ecr_cause & ECR_C_PROTV_STORE;  /* ST/EX */
-> @@ -81,16 +81,14 @@ void do_page_fault(unsigned long address, struct pt_regs *regs)
->  	 * only copy the information from the master page table,
->  	 * nothing more.
->  	 */
-> -	if (address >= VMALLOC_START) {
-> +	if (address >= VMALLOC_START && !user_mode(regs)) {
->  		ret = handle_kernel_vaddr_fault(address);
->  		if (unlikely(ret))
-> -			goto bad_area_nosemaphore;
-> +			goto no_context;
->  		else
->  			return;
->  	}
->  
-> -	si_code = SEGV_MAPERR;
-> -
->  	/*
->  	 * If we're in an interrupt or have no user
->  	 * context, we must not take the fault..
-> @@ -198,7 +196,6 @@ void do_page_fault(unsigned long address, struct pt_regs *regs)
->  bad_area:
->  	up_read(&mm->mmap_sem);
->  
-> -bad_area_nosemaphore:
->  	/* User mode accesses just cause a SIGSEGV */
->  	if (user_mode(regs)) {
->  		tsk->thread.fault_address = address;
-> 
-
+diff --git a/arch/arc/boot/dts/hsdk.dts b/arch/arc/boot/dts/hsdk.dts
+index 7425bb0f2d1b..d77b27894ab6 100644
+--- a/arch/arc/boot/dts/hsdk.dts
++++ b/arch/arc/boot/dts/hsdk.dts
+@@ -185,7 +185,7 @@
+ 			reg = <0x8000 0x2000>;
+ 			interrupts = <10>;
+ 			interrupt-names = "macirq";
+-			phy-mode = "rgmii";
++			phy-mode = "rgmii-id";
+ 			snps,pbl = <32>;
+ 			clocks = <&gmacclk>;
+ 			clock-names = "stmmaceth";
+-- 
+2.14.5
 
 _______________________________________________
 linux-snps-arc mailing list
