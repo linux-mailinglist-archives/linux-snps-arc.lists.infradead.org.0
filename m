@@ -2,96 +2,83 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 681F61E522
-	for <lists+linux-snps-arc@lfdr.de>; Wed, 15 May 2019 00:23:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0EA311E61F
+	for <lists+linux-snps-arc@lfdr.de>; Wed, 15 May 2019 02:30:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:To:From:Subject:
-	MIME-Version:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=XhPJwxq2AO0ysE/bCS6zmc1jl2ouTracrk41AC8wBNs=; b=QA9
-	QyvCKjOpNSfXUz9S04tQHJZ3I1jsoMfNnReiCK9Tsej31GdgepywhXuY4pl6QOLbKbsumSHYllAtt
-	73VDpFq/UwFuyf66XTT7Ad2e4nb4t9Gy3WcfBF0jsUA43g0Lj7iIC9Ykr7rzYknIk02ESpwKxbyBs
-	ouaC3pWFx14cuakn5oQpRtI3Rh/985oGHoi038azRFxYiNO+WelAT7+j70p7ERZjDCCNbV8bUI6iP
-	q3r1Q2/r954Dlt9csWQ2SKF/R3sXUzqi+GNnOgcrYji19sykF1Y1mP3P+FfYdR9m7p9TszvxudjRA
-	OP8ZfhaNF1ZYD1yY/8x5Zt61mEI037g==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=oMhryI44lSSPpo1YxMM2ZiaSkD0k5aGQ8J/Y7tefgGs=; b=XkpzRKbgGB8jlc
+	FDJ1jB+3YQ75+5wiYn5N2UN5ZAUMyF3ubyCstn5ALmz93X4/equgIiLHMlMH1C4WmU1TJQI3edGmP
+	+oxIck11gQ4h537d9pk6yV8eLnRC4Vs/YIsoAAH6cr84cjJBc+HxcOApVKl9BEcayBTXeRqXoH27a
+	lgRbNfpwl7CLdxF7UEtRg1e2xnjGCDtn/ir6waMoTLAZ7Fg2E4G3rVlkOW+xeKzmy9Le+fzqhQFhz
+	mPoeP77gdF0bj0qMYNiuPkxOPsXD4iCudc8BFxVGFzj6S24rUwvOFNYekk9RKRO1I+4rmSWZ5BJmG
+	DoWgSqTrcNml4meHhyZQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQfpM-00039D-4f; Tue, 14 May 2019 22:23:16 +0000
-Received: from mx0b-001b2d01.pphosted.com ([148.163.158.5]
- helo=mx0a-001b2d01.pphosted.com)
+	id 1hQhnz-0002gm-Lg; Wed, 15 May 2019 00:29:59 +0000
+Received: from dc8-smtprelay2.synopsys.com ([198.182.47.102]
+ helo=smtprelay-out1.synopsys.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQfpJ-00038f-0I
- for linux-snps-arc@lists.infradead.org; Tue, 14 May 2019 22:23:14 +0000
-Received: from pps.filterd (m0098413.ppops.net [127.0.0.1])
- by mx0b-001b2d01.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
- x4EMBwlm082478
- for <linux-snps-arc@lists.infradead.org>; Tue, 14 May 2019 18:23:12 -0400
-Received: from e06smtp05.uk.ibm.com (e06smtp05.uk.ibm.com [195.75.94.101])
- by mx0b-001b2d01.pphosted.com with ESMTP id 2sg66qrgq8-1
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=NOT)
- for <linux-snps-arc@lists.infradead.org>; Tue, 14 May 2019 18:23:11 -0400
-Received: from localhost
- by e06smtp05.uk.ibm.com with IBM ESMTP SMTP Gateway: Authorized Use Only!
- Violators will be prosecuted
- for <linux-snps-arc@lists.infradead.org> from <noreply@ellerman.id.au>;
- Tue, 14 May 2019 23:23:10 +0100
-Received: from b06cxnps4076.portsmouth.uk.ibm.com (9.149.109.198)
- by e06smtp05.uk.ibm.com (192.168.101.135) with IBM ESMTP SMTP Gateway:
- Authorized Use Only! Violators will be prosecuted; 
- (version=TLSv1/SSLv3 cipher=AES256-GCM-SHA384 bits=256/256)
- Tue, 14 May 2019 23:23:07 +0100
-Received: from b06wcsmtp001.portsmouth.uk.ibm.com
- (b06wcsmtp001.portsmouth.uk.ibm.com [9.149.105.160])
- by b06cxnps4076.portsmouth.uk.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP id
- x4EMN6KI42991830
- (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Tue, 14 May 2019 22:23:06 GMT
-Received: from b06wcsmtp001.portsmouth.uk.ibm.com (unknown [127.0.0.1])
- by IMSVA (Postfix) with ESMTP id 9B2B6A4064;
- Tue, 14 May 2019 22:23:06 +0000 (GMT)
-Received: from b06wcsmtp001.portsmouth.uk.ibm.com (unknown [127.0.0.1])
- by IMSVA (Postfix) with ESMTP id 4CD5DA4054;
- Tue, 14 May 2019 22:23:06 +0000 (GMT)
-Received: from ozlabs.au.ibm.com (unknown [9.192.253.14])
- by b06wcsmtp001.portsmouth.uk.ibm.com (Postfix) with ESMTP;
- Tue, 14 May 2019 22:23:06 +0000 (GMT)
-Received: from bran.ozlabs.ibm.com (haven.au.ibm.com [9.192.254.114])
- by ozlabs.au.ibm.com (Postfix) with ESMTP id 49BECA010E;
- Wed, 15 May 2019 08:23:05 +1000 (AEST)
-Received: from 64d84000ca61 (ka2.ozlabs.ibm.com [10.61.145.21])
- by bran.ozlabs.ibm.com (Postfix) with ESMTP id 40BC0E00D5;
- Wed, 15 May 2019 08:23:05 +1000 (AEST)
+ id 1hQhnw-0002gF-Kq
+ for linux-snps-arc@lists.infradead.org; Wed, 15 May 2019 00:29:57 +0000
+Received: from mailhost.synopsys.com (badc-mailhost2.synopsys.com
+ [10.192.0.18])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
+ (No client certificate requested)
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id F1AE8C125A;
+ Wed, 15 May 2019 00:29:59 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
+ t=1557880200; bh=ttubcOyDHXHRg/8lR8MMWbv3JXxGF5+A18qKO7mrXcU=;
+ h=From:To:CC:Subject:Date:From;
+ b=LeCQCmQOrVbiDkKATUytS/bNqgblVr+C8prM38lmtf3oDKZQWqYv2zFOiSzX1gLJ+
+ wrses5UYFDSyTMnewoDTq8j79xAgl7CDOs86ZVkQZXT7Q7Sl/r2x9qTFb6UYViM+LT
+ /+rZAkM7V57JJrgFNDbhQYqE/NBP1JgRD5AiSI4xCKIPcAB1AEQ6XxG25bo6q/YfqF
+ 4ej9nWFl9nIipAsiY9w3S+d9CjVsgDHqBXkdDC/06O8D5U2PYwHMrAL5y9CrZDmQcc
+ PJXoH3mwatA1n12KxDtx/azkIAMCG3u91pvdujPIaA7wWAKTzjorGQKYMXmFftbK3i
+ GBmSJJ5FvBOMA==
+Received: from US01WEHTC3.internal.synopsys.com
+ (us01wehtc3.internal.synopsys.com [10.15.84.232])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mailhost.synopsys.com (Postfix) with ESMTPS id 35C1FA005A;
+ Wed, 15 May 2019 00:29:52 +0000 (UTC)
+Received: from IN01WEHTCB.internal.synopsys.com (10.144.199.106) by
+ US01WEHTC3.internal.synopsys.com (10.15.84.232) with Microsoft SMTP Server
+ (TLS) id 14.3.408.0; Tue, 14 May 2019 17:29:52 -0700
+Received: from IN01WEHTCA.internal.synopsys.com (10.144.199.103) by
+ IN01WEHTCB.internal.synopsys.com (10.144.199.105) with Microsoft SMTP Server
+ (TLS) id 14.3.408.0; Wed, 15 May 2019 05:59:49 +0530
+Received: from vineetg-Latitude-E7450.internal.synopsys.com (10.13.182.230) by
+ IN01WEHTCA.internal.synopsys.com (10.144.199.243) with Microsoft
+ SMTP Server (TLS) id 14.3.408.0; Wed, 15 May 2019 06:00:00 +0530
+From: Vineet Gupta <Vineet.Gupta1@synopsys.com>
+To: <linux-snps-arc@lists.infradead.org>
+Subject: [PATCH 0/9] ARC do_page_fault rework
+Date: Tue, 14 May 2019 17:29:27 -0700
+Message-ID: <1557880176-24964-1-git-send-email-vgupta@synopsys.com>
+X-Mailer: git-send-email 2.7.4
 MIME-Version: 1.0
-Subject: kisskb: OK linus/axs101_defconfig/arcompact Wed May 15, 08:22
-From: noreply@ellerman.id.au
-To: Vineet.Gupta1@synopsys.com, Alexey.Brodkin@synopsys.com,
- linux-snps-arc@lists.infradead.org
-Date: Tue, 14 May 2019 22:23:05 -0000
-X-TM-AS-GCONF: 00
-x-cbid: 19051422-0020-0000-0000-0000033CB31B
-X-IBM-AV-DETECTION: SAVI=unused REMOTE=unused XFE=unused
-x-cbparentid: 19051422-0021-0000-0000-0000218F7171
-Message-Id: <20190514222305.1.49752@64d84000ca61>
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
- definitions=2019-05-14_13:, , signatures=0
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- priorityscore=1501
- malwarescore=0 suspectscore=2 phishscore=0 bulkscore=0 spamscore=0
- clxscore=1034 lowpriorityscore=0 mlxscore=0 impostorscore=0
- mlxlogscore=559 adultscore=0 classifier=spam adjust=0 reason=mlx
- scancount=1 engine=8.0.1-1810050000 definitions=main-1905140146
+X-Originating-IP: [10.13.182.230]
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190514_152313_166002_87B59111 
-X-CRM114-Status: GOOD (  12.75  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190514_172956_692330_72B80739 
+X-CRM114-Status: UNSURE (   8.18  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [148.163.158.5 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-snps-arc@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -103,36 +90,43 @@ List-Post: <mailto:linux-snps-arc@lists.infradead.org>
 List-Help: <mailto:linux-snps-arc-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-snps-arc>, 
  <mailto:linux-snps-arc-request@lists.infradead.org?subject=subscribe>
+Cc: paltsev@snyopsys.com, Vineet Gupta <Vineet.Gupta1@synopsys.com>,
+ linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-snps-arc" <linux-snps-arc-bounces@lists.infradead.org>
 Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org
 
-OK linus/axs101_defconfig/arcompact Wed May 15, 08:22
+This was on my todo list and Eugeniy's patch in this area pestered me to
+finish it finally.
 
-http://kisskb.ellerman.id.au/kisskb/buildresult/13802662/
+The ideas it to cleanup/tidyup ancient do_page_fault() code and make
+it more readable and hopefully better generated code. There are only
+a few/subtle functional changes
+ - Eugeniy's fix to prevent user space looping
+ - reduction in mmap_sem hold times
 
-Commit:   Merge tag 'iommu-updates-v5.2' of ssh://gitolite.kernel.org/pub/scm/linux/kernel/git/joro/iommu
-          a13f0655503a4a89df67fdc7cac6a7810795d4b3
-Compiler: arc-buildroot-linux-uclibc-gcc (Buildroot 2015.08.1) 4.8.4 / GNU ld (GNU Binutils) 2.23.2
+Also this could have been 1 single patch but this is tricky part of mm
+handling so better done as bite sized pieces to track down any regressions
 
-No errors found in log
+Eugeniy Paltsev (1):
+  ARC: mm: SIGSEGV userspace trying to access kernel virtual memory
 
-Possible warnings (12)
-----------------------
+Vineet Gupta (8):
+  ARC: mm: do_page_fault refactor #1: remove label @good_area
+  ARC: mm: do_page_fault refactor #2: remove short lived variable
+  ARC: mm: do_page_fault refactor #3: tidyup vma access permission code
+  ARC: mm: do_page_fault refactor #4: consolidate retry related logic
+  ARC: mm: do_page_fault refactor #5: scoot no_context to end
+  ARC: mm: do_page_fault refactor #6: error handlers to use same pattern
+  ARC: mm: do_page_fault refactor #7: fold the various error handling
+  ARC: mm: do_page_fault refactor #8: release mmap_sem sooner
 
-<stdin>:1388:2: warning: #warning syscall open_tree not implemented [-Wcpp]
-<stdin>:1391:2: warning: #warning syscall move_mount not implemented [-Wcpp]
-<stdin>:1394:2: warning: #warning syscall fsopen not implemented [-Wcpp]
-<stdin>:1397:2: warning: #warning syscall fsconfig not implemented [-Wcpp]
-<stdin>:1400:2: warning: #warning syscall fsmount not implemented [-Wcpp]
-<stdin>:1403:2: warning: #warning syscall fspick not implemented [-Wcpp]
-arch/arc/mm/tlb.c:914:2: warning: variable length array 'pd0' is used [-Wvla]
-arch/arc/include/asm/cmpxchg.h:95:29: warning: value computed is not used [-Wunused-value]
-arch/arc/include/asm/cmpxchg.h:95:29: warning: value computed is not used [-Wunused-value]
-arch/arc/include/asm/cmpxchg.h:95:29: warning: value computed is not used [-Wunused-value]
-net/xfrm/xfrm_policy.c:3492:15: warning: array subscript is above array bounds [-Warray-bounds]
-net/ipv4/tcp_input.c:4321:49: warning: array subscript is above array bounds [-Warray-bounds]
+ arch/arc/mm/fault.c | 192 +++++++++++++++++++++-------------------------------
+ 1 file changed, 79 insertions(+), 113 deletions(-)
+
+-- 
+2.7.4
 
 
 _______________________________________________
