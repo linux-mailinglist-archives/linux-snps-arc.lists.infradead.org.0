@@ -2,72 +2,72 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 09A2E1E62C
-	for <lists+linux-snps-arc@lfdr.de>; Wed, 15 May 2019 02:30:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 81E6C1E631
+	for <lists+linux-snps-arc@lfdr.de>; Wed, 15 May 2019 02:30:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RJqzY8sAcdW98TNBTNEu/dZ6Yi82WrcF5BaPiMaK1no=; b=t36v+q831S+C81
-	eXfQKEqHGGxbx67oMdLiKwa/HIpZ7Ixt0s0171KYvC1iHDLjvKSzVXgAcFQN8G7mkulbIM21vX6g4
-	cqVfLKzJfB4nN979SP8xxuD03kiofR4fSI72ToxueqRpuekFjrpcvrw2EzN24IBBWrv7tgSOaFWPE
-	gjZQ8Kfbyh8CCXz9X0pMznrM9whowVximUjxqOjuNBdu6IT6vqC/GV47Wmk+2MKZzrQaRDnteSDnR
-	Bg+IfgDm9CwhKo5tIt4YV/7iFY4eCI9vGkzxk4Lz3ohPPzNOg9onABoKj/zX9aLteAZJmPSOqV8mk
-	qzVqax4mWPXEQddM0Kvg==;
+	List-Owner; bh=GrDGzQ1aF56feyZQy7NxS6tAcgSfP5jniaoljCGtO3c=; b=MwL0oiG2YgY1aO
+	Jy/VTVGRIPKHHR0VD6Qb4OyOhSlICB+8I4iE0F1lL5TOyCDc0iGKWIyaIHeCX3FL7zlsRBn+fRmTw
+	eBnxCOcXJ4/yRp3ygA/O0e8FrmrrnTKvyvu18/NurYZeCnL72gtuOE85VDV2Xc0pyu9t+BxUvw9kw
+	JdZZldxpNo5m9dUfYYWSOLPfxHYxiTSzqlr4twzNiixkfAoXndbyL5d5UUHiBZup4SfwOaHqfyzht
+	4bG3NEPfqtHc5Jdq3Dd+ANdFctpTxc2W5mnGZby+bwvtSmD40Pv720jfjzskhVxyl94xycIQZ5GA6
+	RvaQ8/q+j+GlIAvKS6gg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQhoS-00041F-Ou; Wed, 15 May 2019 00:30:28 +0000
-Received: from dc8-smtprelay2.synopsys.com ([198.182.47.102]
+	id 1hQhoa-00044u-7P; Wed, 15 May 2019 00:30:36 +0000
+Received: from dc2-smtprelay2.synopsys.com ([198.182.61.142]
  helo=smtprelay-out1.synopsys.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQhoN-0003zJ-Ny
- for linux-snps-arc@lists.infradead.org; Wed, 15 May 2019 00:30:25 +0000
-Received: from mailhost.synopsys.com (dc8-mailhost1.synopsys.com
- [10.13.135.209])
+ id 1hQhoW-00043T-Hm
+ for linux-snps-arc@lists.infradead.org; Wed, 15 May 2019 00:30:34 +0000
+Received: from mailhost.synopsys.com (dc8-mailhost2.synopsys.com
+ [10.13.135.210])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
  (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id B03D3C125E;
- Wed, 15 May 2019 00:30:28 +0000 (UTC)
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id D57C2C0A77;
+ Wed, 15 May 2019 00:30:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1557880228; bh=CkssZQXbYGkx2a0Vqjl+j1ujpM6IPwBxaO1c+mSzFC8=;
+ t=1557880222; bh=5nGJv3FYZ4K8QvJw3tH/+4ah4G8NKr7npBJJdtbIcCU=;
  h=From:To:CC:Subject:Date:In-Reply-To:References:From;
- b=iAAAIgADu34z/litm3pucblHNQRXJlaflfx52hSVCbmaB1nNtutAfZ4AO8V91VFkT
- UPiirFkjjjLb3rWrp+3wYOfvDNyOJA7Lo37dKWIMLAHYLQLVss7al+CWoDfsnqO0j7
- /brEta0Gkb0ajB0JbfwWuO428hPdnIGuEb5jKSyl6SLG+wuFq9LJwTWCJHdbodQ1+Q
- 5xRfD8jj92p5RhNBJMuDH0kY9gQ8HVNsl1cOYstUkagSlv367SfY2LygaWqon58rcJ
- iVSj2uY9bSDUreQpAM8UTCiElm0YJ7cGGTelAA84OgZarcc0phXPsmF6/yUuGGtdWB
- KErzE9oY9CcfQ==
-Received: from US01WXQAHTC1.internal.synopsys.com
- (us01wxqahtc1.internal.synopsys.com [10.12.238.230])
- (using TLSv1.2 with cipher AES128-SHA256 (128/128 bits))
+ b=dxUetF3qUJUHHlevAE6m9jwQCZvx5OOcNg2+jVz5i7cLUOBRhCAhkOzlgeHBt4WDS
+ RHLDjZKA8FU3rDUPnI3vhurYt4wOt6bcBiLfDdMlSMThKlTtlpc90jQY9G3KpXeGsM
+ LPnjSyUJn4h+LP1QkcLiIPRyqBVC87QFt/J4odXpi+Ufu8DhByVj9kpVzgCnCiP1RM
+ QTF7fSscMqlWfHE3VOOyBqq2xtUyqSa/IRDB83We81ZdEBEg7yX+indgkT3S1+ph/W
+ tOrT4Z9gSBRlLv8Zd0X6g75pP8t3JeGYZSRoFGZfwwCHBttf4YZD1u1kpmmg1CwNQ6
+ usCyvNyjo7jrQ==
+Received: from us01wehtc1.internal.synopsys.com
+ (us01wehtc1-vip.internal.synopsys.com [10.12.239.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-SHA384 (256/256 bits))
  (No client certificate requested)
- by mailhost.synopsys.com (Postfix) with ESMTPS id 8F22CA023D;
- Wed, 15 May 2019 00:30:23 +0000 (UTC)
+ by mailhost.synopsys.com (Postfix) with ESMTPS id 380E6A0068;
+ Wed, 15 May 2019 00:30:32 +0000 (UTC)
 Received: from IN01WEHTCB.internal.synopsys.com (10.144.199.106) by
- US01WXQAHTC1.internal.synopsys.com (10.12.238.230) with Microsoft SMTP Server
- (TLS) id 14.3.408.0; Tue, 14 May 2019 17:30:21 -0700
+ us01wehtc1.internal.synopsys.com (10.12.239.235) with Microsoft SMTP Server
+ (TLS) id 14.3.408.0; Tue, 14 May 2019 17:30:26 -0700
 Received: from IN01WEHTCA.internal.synopsys.com (10.144.199.103) by
  IN01WEHTCB.internal.synopsys.com (10.144.199.105) with Microsoft SMTP Server
- (TLS) id 14.3.408.0; Wed, 15 May 2019 06:00:18 +0530
+ (TLS) id 14.3.408.0; Wed, 15 May 2019 06:00:23 +0530
 Received: from vineetg-Latitude-E7450.internal.synopsys.com (10.13.182.230) by
  IN01WEHTCA.internal.synopsys.com (10.144.199.243) with Microsoft
- SMTP Server (TLS) id 14.3.408.0; Wed, 15 May 2019 06:00:29 +0530
+ SMTP Server (TLS) id 14.3.408.0; Wed, 15 May 2019 06:00:34 +0530
 From: Vineet Gupta <Vineet.Gupta1@synopsys.com>
 To: <linux-snps-arc@lists.infradead.org>
-Subject: [PATCH 8/9] ARC: mm: do_page_fault refactor #7: fold the various
- error handling
-Date: Tue, 14 May 2019 17:29:35 -0700
-Message-ID: <1557880176-24964-9-git-send-email-vgupta@synopsys.com>
+Subject: [PATCH 9/9] ARC: mm: do_page_fault refactor #8: release mmap_sem
+ sooner
+Date: Tue, 14 May 2019 17:29:36 -0700
+Message-ID: <1557880176-24964-10-git-send-email-vgupta@synopsys.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1557880176-24964-1-git-send-email-vgupta@synopsys.com>
 References: <1557880176-24964-1-git-send-email-vgupta@synopsys.com>
 MIME-Version: 1.0
 X-Originating-IP: [10.13.182.230]
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190514_173023_784695_DE345BEF 
-X-CRM114-Status: GOOD (  12.95  )
+X-CRM114-CacheID: sfid-20190514_173032_593328_99FB0EDF 
+X-CRM114-Status: GOOD (  13.23  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -92,98 +92,85 @@ List-Post: <mailto:linux-snps-arc@lists.infradead.org>
 List-Help: <mailto:linux-snps-arc-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-snps-arc>, 
  <mailto:linux-snps-arc-request@lists.infradead.org?subject=subscribe>
-Cc: paltsev@snyopsys.com, Vineet Gupta <Vineet.Gupta1@synopsys.com>,
- linux-kernel@vger.kernel.org
+Cc: Peter Zijlstra <peterz@infradead.org>, paltsev@snyopsys.com,
+ Vineet Gupta <Vineet.Gupta1@synopsys.com>, linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-snps-arc" <linux-snps-arc-bounces@lists.infradead.org>
 Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org
 
- - single up_read() call vs. 4
- - so much easier on eyes
+In case of successful page fault handling, this patch releases mmap_sem
+before updating the perf stat event for major/minor faults. So even
+though the contention reduction is NOT supe rhigh, it is still an
+improvement.
 
-Technically it seems like @bad_area label moved up, but even in old
-regime, it was a special case of delivering SIGSEGV unconditionally
-which we now do as well, although with checks.
+There's an additional code size improvement as we only have 2 up_read()
+calls now.
 
+Note to myself:
+--------------
+
+1. Given the way it is done, we are forced to move @bad_area label earlier
+   causing the various "goto bad_area" cases to hit perf stat code.
+
+ - PERF_COUNT_SW_PAGE_FAULTS is NOW updated for access errors which is what
+   arm/arm64 seem to be doing as well (with slightly different code)
+ - PERF_COUNT_SW_PAGE_FAULTS_{MAJ,MIN} must NOT be updated for the
+   error case which is guarded by now setting @fault initial value
+   to VM_FAULT_ERROR which serves both cases when handle_mm_fault()
+   returns error or is not called at all.
+
+2. arm/arm64 use two homebrew fault flags VM_FAULT_BAD{MAP,MAPACCESS}
+   which I was inclined to add too but seems not needed for ARC
+
+ - given that we have everything is 1 function we cabn stil use goto
+ - we setup si_code at the right place (arm* do that in the end)
+ - we init fault already to error value which guards entry into perf
+   stats event update
+
+Cc: Peter Zijlstra <peterz@infradead.org>
 Signed-off-by: Vineet Gupta <vgupta@synopsys.com>
 ---
- arch/arc/mm/fault.c | 46 +++++++++++++---------------------------------
- 1 file changed, 13 insertions(+), 33 deletions(-)
+ arch/arc/mm/fault.c | 9 ++++-----
+ 1 file changed, 4 insertions(+), 5 deletions(-)
 
 diff --git a/arch/arc/mm/fault.c b/arch/arc/mm/fault.c
-index 0e1a222a97ad..20402217d9da 100644
+index 20402217d9da..e93ea06c214c 100644
 --- a/arch/arc/mm/fault.c
 +++ b/arch/arc/mm/fault.c
-@@ -66,7 +66,7 @@ void do_page_fault(unsigned long address, struct pt_regs *regs)
- 	struct vm_area_struct *vma = NULL;
- 	struct task_struct *tsk = current;
+@@ -68,7 +68,7 @@ void do_page_fault(unsigned long address, struct pt_regs *regs)
  	struct mm_struct *mm = tsk->mm;
--	int si_code = SEGV_MAPERR;
-+	int sig, si_code = SEGV_MAPERR;
+ 	int sig, si_code = SEGV_MAPERR;
  	unsigned int write = 0, exec = 0, mask;
- 	vm_fault_t fault;			/* handle_mm_fault() output */
+-	vm_fault_t fault;			/* handle_mm_fault() output */
++	vm_fault_t fault = VM_FAULT_ERROR;	/* handle_mm_fault() output */
  	unsigned int flags;			/* handle_mm_fault() input */
-@@ -177,47 +177,27 @@ void do_page_fault(unsigned long address, struct pt_regs *regs)
+ 
+ 	/*
+@@ -155,6 +155,9 @@ void do_page_fault(unsigned long address, struct pt_regs *regs)
+ 		}
+ 	}
+ 
++bad_area:
++	up_read(&mm->mmap_sem);
++
+ 	/*
+ 	 * Major/minor page fault accounting
+ 	 * (in case of retry we only land here once)
+@@ -173,13 +176,9 @@ void do_page_fault(unsigned long address, struct pt_regs *regs)
+ 		}
+ 
+ 		/* Normal return path: fault Handled Gracefully */
+-		up_read(&mm->mmap_sem);
  		return;
  	}
  
--	if (fault & VM_FAULT_OOM)
--		goto out_of_memory;
--	else if (fault & VM_FAULT_SIGSEGV)
--		goto bad_area;
--	else if (fault & VM_FAULT_SIGBUS)
--		goto do_sigbus;
+-bad_area:
+-	up_read(&mm->mmap_sem);
 -
--	/* no man's land */
--	BUG();
--
--	/*
--	 * Something tried to access memory that isn't in our memory map..
--	 * Fix it, but check if it's kernel or user first..
--	 */
- bad_area:
- 	up_read(&mm->mmap_sem);
- 
  	if (!user_mode(regs))
  		goto no_context;
  
--	tsk->thread.fault_address = address;
--	force_sig_fault(SIGSEGV, si_code, (void __user *)address, tsk);
--	return;
--
--out_of_memory:
--	up_read(&mm->mmap_sem);
--
--	if (!user_mode(regs))
--		goto no_context;
--
--	pagefault_out_of_memory();
--	return;
--
--do_sigbus:
--	up_read(&mm->mmap_sem);
-+	if (fault & VM_FAULT_OOM) {
-+		pagefault_out_of_memory();
-+		return;
-+	}
- 
--	if (!user_mode(regs))
--		goto no_context;
-+	if (fault & VM_FAULT_SIGBUS) {
-+		sig = SIGBUS;
-+		si_code = BUS_ADRERR;
-+	}
-+	else {
-+		sig = SIGSEGV;
-+	}
- 
- 	tsk->thread.fault_address = address;
--	force_sig_fault(SIGBUS, BUS_ADRERR, (void __user *)address, tsk);
-+	force_sig_fault(sig, si_code, (void __user *)address, tsk);
- 	return;
- 
- no_context:
 -- 
 2.7.4
 
