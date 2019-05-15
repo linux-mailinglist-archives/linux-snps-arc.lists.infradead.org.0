@@ -2,101 +2,122 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EB3961F9C6
-	for <lists+linux-snps-arc@lfdr.de>; Wed, 15 May 2019 20:16:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 401F41F9D9
+	for <lists+linux-snps-arc@lfdr.de>; Wed, 15 May 2019 20:21:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wCWnrzs+6VQ96gK0IYQxZdqIKUYvFCXALHR0P8jprrg=; b=rqrBjr/uawYwpG
-	URMhepL35c+e7EOj6a6NOss0BQfSIg27c1ioZSYavoONnVuHoEyJtoi0UNiMvmckVHNBX4fa/E3nT
-	ScgajXh/f4Qp2EIIu9gsXuyPJElpDTvjtbjjpIyLyhrhCB9StGGjRReFUpstF6/9ZY4iLpz1dOlRp
-	K+hLIBTNxEf0aoLLmhg+eFr1XLU20yMaD8RCg1Fo8vPNKTbxP23b0b7tC4o+ubIJkMj0rOEOJK6hw
-	GqcNKruzi5jSizgbXKbRF16+L7Vw4uuDwSmrQBGusPG98x3DWeusTjMWy7p9lXmPRpTqHlqIKrG2W
-	9tB1n4N7BvsE3gcj/9qA==;
+	List-Owner; bh=RpJSrNc8uLg8wo6hfs7R8Z5X9mpncigAb0O6Xbw8m+o=; b=AlkCsVfJ62e9B2
+	M9tgb3UgRVlrmg021akc5PX8+Crz78dsJx7F1cyY9/uOlaRn7TOhYSKRq3EaNuRxFe7COr5YiUMrn
+	RzOfMuz0c6X/pZqfQqsqRlT4Y4eJVrZFj/WxtmCM7t6T7biKhzj59ZQFK8kMbjoGpQdiKEaRhaGBX
+	eYOwvBXyN5kS/S8J1dv6dyc5BVrKtFD7QkCJvenj76bvbLxD3hpB1G+thmZyj10ON/WMJsnxHJp1T
+	7C6ldE9poSmKegHagKczKiLxphVZ8iTYBqzKLW61VcXHzC2CKaD2CYNDOfFXx5s3KzOVUE8cwAt0n
+	C4Gv098S/Onaaca6GK2Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQyRr-0006zn-Ij; Wed, 15 May 2019 18:16:15 +0000
-Received: from mail-cys01nam02on072b.outbound.protection.outlook.com
- ([2a01:111:f400:fe45::72b]
- helo=NAM02-CY1-obe.outbound.protection.outlook.com)
+	id 1hQyX4-0008N7-Vs; Wed, 15 May 2019 18:21:38 +0000
+Received: from dc2-smtprelay2.synopsys.com ([198.182.61.142]
+ helo=smtprelay-out1.synopsys.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQyRo-0006yz-15
- for linux-snps-arc@lists.infradead.org; Wed, 15 May 2019 18:16:14 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=impinj.com;
- s=selector2;
+ id 1hQyX2-0008Mj-5D
+ for linux-snps-arc@lists.infradead.org; Wed, 15 May 2019 18:21:37 +0000
+Received: from mailhost.synopsys.com (dc2-mailhost2.synopsys.com
+ [10.12.135.162])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
+ (No client certificate requested)
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 1D196C0073;
+ Wed, 15 May 2019 18:21:25 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
+ t=1557944485; bh=KprSgh9YQQB+EAIK3fvm2XuJvnVrgOC0lzilNtHLML8=;
+ h=From:To:CC:Subject:Date:References:In-Reply-To:From;
+ b=dLVuJwUaE+/ZBe4vZwDqyeoJmTVWTwESDxZ+lxxpHF8HN3vp/rfB61k7gkh8JzJzE
+ 5GLnZVTgS4GfaU3sl8boB+QO0H//y9deiTBEEymvw9YfoB4reAaANbPeMWvW+wBPbY
+ YfMgX1ISxCx3xKWtezm5TjzQX26ZYG7mlIrtfhWVvpey5Ft33GaRYt1fmk874T/1SD
+ cNlvKoND/o/5TmvRwxxT+hd5Bu//jPVxpr4ah/N55rz+6y5m85jC7ZH5TU31i7TakD
+ QPEy7u4zD7N2YY9OP9G3k+3cCn3/9lh9hrFgvXfyIpTM9Pe74L+aod/ZGorGRqGjxY
+ UddJRDMR5RO+w==
+Received: from US01WEHTC2.internal.synopsys.com
+ (us01wehtc2.internal.synopsys.com [10.12.239.237])
+ (using TLSv1.2 with cipher AES128-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mailhost.synopsys.com (Postfix) with ESMTPS id D6B11A0095;
+ Wed, 15 May 2019 18:21:34 +0000 (UTC)
+Received: from US01HYBRID2.internal.synopsys.com (10.15.246.24) by
+ US01WEHTC2.internal.synopsys.com (10.12.239.237) with Microsoft SMTP Server
+ (TLS) id 14.3.408.0; Wed, 15 May 2019 11:21:34 -0700
+Received: from NAM01-BN3-obe.outbound.protection.outlook.com (10.13.134.195)
+ by mrs.synopsys.com (10.15.246.24) with Microsoft SMTP Server (TLS) id
+ 14.3.408.0; Wed, 15 May 2019 11:21:34 -0700
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=synopsys.onmicrosoft.com; s=selector1-synopsys-onmicrosoft-com;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=QRQ4OEl3uvJgNS/99XhgTm3d2+Hu/nziCEpl4rhNBWg=;
- b=AwCzIUXH8YYHZitTXitirdb3w8CQ/6Eqj2MCi8o3prAHPCT7keGrfxWfq7JUkc31u36spaHV9P1Rs5+vLaN8iaaQCyh1l80j1dgMLX5U4DxoDuW4OFzkPuqBeyHZTwVOC+WV4LJrc41+MdU4NxuYNqr7ogbRbjxllDIN/+es8Yw=
-Received: from MWHPR0601MB3708.namprd06.prod.outlook.com (10.167.236.38) by
- MWHPR0601MB3610.namprd06.prod.outlook.com (10.167.236.12) with Microsoft SMTP
+ bh=KprSgh9YQQB+EAIK3fvm2XuJvnVrgOC0lzilNtHLML8=;
+ b=OgT4knbg+yMQRwIrGfNwZmoloTxSVKWEjxZVT/FMOye4xV205y7LRtg7AaKczDHaa5wiRa7u4DaTeAiohYHVnrbuaYYtF54DZtgtC4XnFe1CbwdTjwXgJkXnqS0du7360Lj0jJ/IbgVOIstP3+sMsZAwwYhMZbYdOau7i1HVhxM=
+Received: from CY4PR1201MB0120.namprd12.prod.outlook.com (10.172.78.14) by
+ CY4PR1201MB0055.namprd12.prod.outlook.com (10.172.77.142) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.1900.16; Wed, 15 May 2019 18:16:06 +0000
-Received: from MWHPR0601MB3708.namprd06.prod.outlook.com
- ([fe80::b496:85ab:4cb0:5876]) by MWHPR0601MB3708.namprd06.prod.outlook.com
- ([fe80::b496:85ab:4cb0:5876%2]) with mapi id 15.20.1878.024; Wed, 15 May 2019
- 18:16:06 +0000
-From: Trent Piepho <tpiepho@impinj.com>
-To: "Alexey.Brodkin@synopsys.com" <Alexey.Brodkin@synopsys.com>
-Subject: Re: [PATCH] ARC: [hsdk]  Use rgmii-id mode for ethernet phy
+ 15.20.1900.17; Wed, 15 May 2019 18:21:32 +0000
+Received: from CY4PR1201MB0120.namprd12.prod.outlook.com
+ ([fe80::adca:add8:5f2f:b8c1]) by CY4PR1201MB0120.namprd12.prod.outlook.com
+ ([fe80::adca:add8:5f2f:b8c1%7]) with mapi id 15.20.1878.024; Wed, 15 May 2019
+ 18:21:32 +0000
+From: Alexey Brodkin <Alexey.Brodkin@synopsys.com>
+To: Trent Piepho <tpiepho@impinj.com>
+Subject: RE: [PATCH] ARC: [hsdk]  Use rgmii-id mode for ethernet phy
 Thread-Topic: [PATCH] ARC: [hsdk]  Use rgmii-id mode for ethernet phy
-Thread-Index: AQHVCnwWZvHY/aB82kKLhDqmJpCCsqZq6FsggAASgoCAAV7scIAAJcSA
-Date: Wed, 15 May 2019 18:16:06 +0000
-Message-ID: <1557944165.4229.130.camel@impinj.com>
+Thread-Index: AQHVCnwWZvHY/aB82kKLhDqmJpCCsqZq6FsggAASgoCAAV7scIAAJcSAgAAAvlA=
+Date: Wed, 15 May 2019 18:21:32 +0000
+Message-ID: <CY4PR1201MB012035404ADFC7415B2DCA2BA1090@CY4PR1201MB0120.namprd12.prod.outlook.com>
 References: <20190514173941.20046-1-tpiepho@impinj.com>
  <CY4PR1201MB01201A8B76EE3A4D2094B646A1080@CY4PR1201MB0120.namprd12.prod.outlook.com>
  <1557860695.4229.88.camel@impinj.com>
  <CY4PR1201MB0120392117C0EC116D20788DA1090@CY4PR1201MB0120.namprd12.prod.outlook.com>
-In-Reply-To: <CY4PR1201MB0120392117C0EC116D20788DA1090@CY4PR1201MB0120.namprd12.prod.outlook.com>
+ <1557944165.4229.130.camel@impinj.com>
+In-Reply-To: <1557944165.4229.130.camel@impinj.com>
 Accept-Language: en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
 X-MS-TNEF-Correlator: 
 authentication-results: spf=none (sender IP is )
- smtp.mailfrom=tpiepho@impinj.com; 
-x-originating-ip: [216.207.205.253]
+ smtp.mailfrom=abrodkin@synopsys.com; 
+x-originating-ip: [84.204.78.101]
 x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: bdfcea4f-5069-40ea-6405-08d6d9616609
+x-ms-office365-filtering-correlation-id: 959c746b-3b56-4c50-0024-08d6d9622842
 x-microsoft-antispam: BCL:0; PCL:0;
  RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(2017052603328)(7193020);
- SRVR:MWHPR0601MB3610; 
-x-ms-traffictypediagnostic: MWHPR0601MB3610:
-x-ms-exchange-purlcount: 1
-x-microsoft-antispam-prvs: <MWHPR0601MB3610E60F9EAAFB39939EF938D3090@MWHPR0601MB3610.namprd06.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:9508;
+ SRVR:CY4PR1201MB0055; 
+x-ms-traffictypediagnostic: CY4PR1201MB0055:
+x-microsoft-antispam-prvs: <CY4PR1201MB0055177F7F1C244B3A66D72AA1090@CY4PR1201MB0055.namprd12.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:10000;
 x-forefront-prvs: 0038DE95A2
 x-forefront-antispam-report: SFV:NSPM;
- SFS:(10019020)(366004)(39850400004)(136003)(346002)(396003)(376002)(13464003)(189003)(199004)(966005)(53936002)(6436002)(2906002)(103116003)(54906003)(14454004)(2501003)(316002)(5640700003)(99286004)(6306002)(229853002)(6486002)(5660300002)(478600001)(86362001)(2351001)(6512007)(6246003)(8936002)(446003)(305945005)(81156014)(8676002)(11346002)(81166006)(66066001)(476003)(2616005)(36756003)(66446008)(64756008)(66556008)(76116006)(91956017)(7736002)(66476007)(68736007)(66946007)(73956011)(6916009)(186003)(486006)(76176011)(26005)(71190400001)(71200400001)(6116002)(3846002)(102836004)(4326008)(5024004)(256004)(14444005)(6506007)(53546011)(25786009);
- DIR:OUT; SFP:1102; SCL:1; SRVR:MWHPR0601MB3610;
- H:MWHPR0601MB3708.namprd06.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: impinj.com does not designate
+ SFS:(10019020)(346002)(39850400004)(366004)(396003)(136003)(376002)(199004)(189003)(102836004)(7736002)(305945005)(99286004)(26005)(316002)(8676002)(8936002)(186003)(33656002)(55016002)(64756008)(6436002)(9686003)(3846002)(486006)(74316002)(6116002)(81156014)(66066001)(446003)(11346002)(476003)(66556008)(66476007)(66946007)(76116006)(73956011)(53936002)(6916009)(66446008)(52536014)(229853002)(81166006)(2906002)(4326008)(6246003)(68736007)(25786009)(5660300002)(76176011)(7696005)(478600001)(6506007)(54906003)(71190400001)(71200400001)(14454004)(86362001)(5024004)(256004)(14444005);
+ DIR:OUT; SFP:1102; SCL:1; SRVR:CY4PR1201MB0055;
+ H:CY4PR1201MB0120.namprd12.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: synopsys.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: QfI0aHWHKl9Pk4GnBGDN36kwBaKtjemhyhdI2zg8Oo8eTaA/rc+p4jiHAjRcUlAxsg0kaBUg1uye3qsvBrIHq8h5GZwVR3/AWkUhm/afD+vT18IaXvbkgwIMqYf5m3f+d5vGwl8KYB51trwfPl3kFW+9VrA8Oqs4y2PZBnUFhp0krN8/TOPuNybp6qzDhuz7tsImDK/rTUWxzzQjHTnjhpWz2all8g9oqbuY4wXR/xnTNvrinjoHt5lpySeeL0b0fII/cfA4X/71HCEY/TqT3Q8ONQoSW33bxVhKX6lDb3ux6QHrHE5HZ0xjT+ezWyaYZaInJVBcjxOGeSse8nDGDvDgOdQOUtYB1yYzhNw5rkCvJUTg/Z7iyIeOkHh7i3Tmg70YdptV6U73+/2hxJEjQe/FWYklGgJDh3q6rYMX/7o=
-Content-ID: <E2F68D4C0A8F5D438E4FEF5CF686F2BA@namprd06.prod.outlook.com>
+x-microsoft-antispam-message-info: 6a+IJIuwDsMbjrm0y6gs+So+eXuH5976C+AkdmuzZ8GDQwFio8eFjUuNG5MyXA8FS/8W3/5bdZgfBbtCnQnE4xq+wlLbvetdMl9RLeOKZqCI8fRglpNPxvJGWD4PoaPwBiHHMuS9BSHaqWkghmG/ZprIxVAzxygk4+YOw5ZvHfurGGn1kpNkJG+6VTmFt5aHreRuwprvWmgxIeRGo04wArt+U5UQ5jvnjshq3DAvLnTWD+d4awo/Aa/DpND63/vUA4Xs8fjA+aI6GTZL4MOPc9bHLW/DtsEOMByeA6SszT8EgBpwXCFsq/YUaoHOZaHrx4VlC5zCMlQUxws522vMZBr1GrQGPsLnlmwTRjOdU9EFRGEGSADPUak0NBwNSt+8Dpo3nR4pusAQ8vMzFApIapX9NQIipNndt+DJpQ5V/PE=
 MIME-Version: 1.0
-X-OriginatorOrg: impinj.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: bdfcea4f-5069-40ea-6405-08d6d9616609
-X-MS-Exchange-CrossTenant-originalarrivaltime: 15 May 2019 18:16:06.5029 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 959c746b-3b56-4c50-0024-08d6d9622842
+X-MS-Exchange-CrossTenant-originalarrivaltime: 15 May 2019 18:21:32.3489 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 6de70f0f-7357-4529-a415-d8cbb7e93e5e
+X-MS-Exchange-CrossTenant-id: c33c9f88-1eb7-4099-9700-16013fd9e8aa
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: MWHPR0601MB3610
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: CY4PR1201MB0055
+X-OriginatorOrg: synopsys.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190515_111612_077667_BD19036A 
-X-CRM114-Status: GOOD (  18.99  )
+X-CRM114-CacheID: sfid-20190515_112136_258782_171A8348 
+X-CRM114-Status: GOOD (  19.07  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a01:111:f400:fe45:0:0:0:72b listed in]
- [list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -124,56 +145,49 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-snps-arc" <linux-snps-arc-bounces@lists.infradead.org>
 Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org
 
-On Wed, 2019-05-15 at 16:21 +0000, Alexey Brodkin wrote:
-> > -----Original Message-----
-> > From: Trent Piepho <tpiepho@impinj.com>
-> > Sent: Tuesday, May 14, 2019 10:05 PM
-> > To: Alexey Brodkin <abrodkin@synopsys.com>
-> > Cc: Vineet.Gupta1@synopsys.com; Eugeniy.Paltsev@synopsys.com; linux-snps-arc@lists.infradead.org
-> > Subject: Re: [PATCH] ARC: [hsdk] Use rgmii-id mode for ethernet phy
-> > 
-> > On Tue, 2019-05-14 at 18:22 +0000, Alexey Brodkin wrote:
-> > > > Subject: [PATCH] ARC: [hsdk] Use rgmii-id mode for ethernet phy
-> > > > 
-> > > > If internal delays are desired on the RGMII link, "rgmii-id" should be
-> > > > used as the phy-mode rather than "rgmii" .
-> > > > 
-> > > > This dts has properties to set the delay values, but they are ignored.
-> > > > I suspect this is a mistake.
-> > > > 
-> But we have another boards where DP83865 PHY is used,
-> these are AXS101 & AXS103 which share the same base-board .dtsi,
-> see https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/arch/arc/boot/dts/axs10x_mb.dtsi#n75
-> 
-> Even though it's not immediately clear there's a TI PHY as there's
-> no PHY node at all but see what we have in the bootlog:
-> > NatSemi DP83865 stmmac-0:01: attached PHY driver [NatSemi DP83865] ...
-> 
-> I guess I need to add PHY node and use suggested by you "rgmii-id", right?
+Hi Trent,
 
-The dp83865 is a different driver than the dp83867.  My check of it
-didn't find any evidence of it doing anything w.r.t. rgmii clock skew. 
-A quick check of dp83865 datasheet shows it's a very different device
-than the dp83867.
+[snip]
 
-> > work, then drop, then come up as 1000 mbps and work.  This took about
-> > 7-8 seconds instead of about 3 seconds.  With a switch interposed
-> > between the devices, the Intel PHY does not see a down link (the switch
-> > is on), so this doesn't happen.  Probably not your problem, as I could
-> > only see this in u-boot by the time Linux has booted the phy will have
-> > activated the link and gotten past this screwy 10 mbps thing.
+> > Even though it's not immediately clear there's a TI PHY as there's
+> > no PHY node at all but see what we have in the bootlog:
+> > > NatSemi DP83865 stmmac-0:01: attached PHY driver [NatSemi DP83865] ...
+> >
+> > I guess I need to add PHY node and use suggested by you "rgmii-id", right?
 > 
-> Hm, that's interesting... I think at least on some of our machines we do
-> have Intel controllers and most probably Intel PHYs as well so that might
-> very well be the case. Do you know if that "ultra low power mode" could be
-> somehow easily disabled?
+> The dp83865 is a different driver than the dp83867.  My check of it
+> didn't find any evidence of it doing anything w.r.t. rgmii clock skew.
+> A quick check of dp83865 datasheet shows it's a very different device
+> than the dp83867.
 
-If the machine with the intel phy is running windows, there is a driver
-option (device manager, properties, advanced..) for it.  Driver version
-12.15.22.6 from 4/5/2016 does not have a control, while version
-12.17.10.6 from 4/3/2018 does have the control.  Those are my only two
-data points.  I don't know how to control this feature from Linux. 
-Never used an Intel phy on an embedded device.
+Ok so I'll just add a generic PHY node to AXS10x motherboard.
+
+> > > work, then drop, then come up as 1000 mbps and work.  This took about
+> > > 7-8 seconds instead of about 3 seconds.  With a switch interposed
+> > > between the devices, the Intel PHY does not see a down link (the switch
+> > > is on), so this doesn't happen.  Probably not your problem, as I could
+> > > only see this in u-boot by the time Linux has booted the phy will have
+> > > activated the link and gotten past this screwy 10 mbps thing.
+> >
+> > Hm, that's interesting... I think at least on some of our machines we do
+> > have Intel controllers and most probably Intel PHYs as well so that might
+> > very well be the case. Do you know if that "ultra low power mode" could be
+> > somehow easily disabled?
+> 
+> If the machine with the intel phy is running windows, there is a driver
+> option (device manager, properties, advanced..) for it.  Driver version
+> 12.15.22.6 from 4/5/2016 does not have a control, while version
+> 12.17.10.6 from 4/3/2018 does have the control.  Those are my only two
+> data points.  I don't know how to control this feature from Linux.
+> Never used an Intel phy on an embedded device.
+
+Thanks for this info. Our servers are running Linux so we'll see.
+Though I just understood that we connect our boards via a switch typically
+so it shouldn't be a problem of "ultra low-power" anything.
+
+Anyways thanks for your input.
+
+-Alexey
 _______________________________________________
 linux-snps-arc mailing list
 linux-snps-arc@lists.infradead.org
