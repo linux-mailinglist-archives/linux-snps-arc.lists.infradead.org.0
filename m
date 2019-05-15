@@ -2,95 +2,72 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 653C71E824
-	for <lists+linux-snps-arc@lfdr.de>; Wed, 15 May 2019 08:09:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1C53C1EC6D
+	for <lists+linux-snps-arc@lfdr.de>; Wed, 15 May 2019 12:54:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:To:From:Subject:
-	MIME-Version:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=QAiPT1Bnv1JX5jcjE+lNLEZ5cGMWDBLsb80q36cDeiY=; b=U3R
-	yvFoZfzn1biDRqjCDASRlfVkXtTRcCQw17EDnHRwYA8HNFcUDdrSY3uyosdmZgMDI4LQ3sqyDwoSM
-	bj1WgM9nOzEDgPl0+6xRmE14wvTWkPYqfPSZJKtQqk4e7PEHOYe4W91fvs90dsITqWGSJiR3hYCji
-	EGaoR8D6Gl56mjge+ll5JoHDh7bVPkLqfuH+t9t7QGL2rM9fb52WPwFVOq98Da7foaLODDlP2E7gS
-	WJ9YOS/70xDmzIfWFJR/HUeHcDc2iU8K6Vch+5lbNNjXlwsenJixtLwBV2iRg4fIuih/z+awQQBlL
-	CxSaq0jco7ty3d5y9sdD4gb313ah1jg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:
+	References:In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=aVyrj6nnYoHPLdXWdcfoN22jclHVqJ3EnT1EgnBjgiA=; b=PmvY2okYvyve/0i6BRJBrjis94
+	JUUicXBKMC4WNXdpKA5ogKdX93b16DYtTy7ZcnJO1k8ev22gNlqm5f9ZhoqvXvFaUzRnEEO9MiMxw
+	FXJkafgKzV6WXDQjrTpXuw4aXa/w8DM9SpXTaDdOOjqyOx7wKoMqONEeQxfUJQHhiuXDM49xw9u/d
+	rJq0KcwhFdVZcaBumCRdhqiUbfyW2JfECJaitXViILx4DgGk3bkCvOGKPM/4RX3ymDiJElI59bdxW
+	uQOD0rpVYbZlmT1vY+ExPvltH56+ubPWqVKFqfAIb8Ql9kKTI38B30hbouxbX0ZpyuarwsN/5xenq
+	iv0MmF9A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQn64-00021n-4N; Wed, 15 May 2019 06:09:00 +0000
-Received: from mx0a-001b2d01.pphosted.com ([148.163.156.1])
+	id 1hQrYg-0006Td-RA; Wed, 15 May 2019 10:54:50 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQn61-00021S-6q
- for linux-snps-arc@lists.infradead.org; Wed, 15 May 2019 06:08:58 +0000
-Received: from pps.filterd (m0098404.ppops.net [127.0.0.1])
- by mx0a-001b2d01.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
- x4F62NBP010557
- for <linux-snps-arc@lists.infradead.org>; Wed, 15 May 2019 02:08:57 -0400
-Received: from e06smtp07.uk.ibm.com (e06smtp07.uk.ibm.com [195.75.94.103])
- by mx0a-001b2d01.pphosted.com with ESMTP id 2sgcaeae4y-1
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=NOT)
- for <linux-snps-arc@lists.infradead.org>; Wed, 15 May 2019 02:08:56 -0400
-Received: from localhost
- by e06smtp07.uk.ibm.com with IBM ESMTP SMTP Gateway: Authorized Use Only!
- Violators will be prosecuted
- for <linux-snps-arc@lists.infradead.org> from <noreply@ellerman.id.au>;
- Wed, 15 May 2019 07:08:53 +0100
-Received: from b06cxnps3074.portsmouth.uk.ibm.com (9.149.109.194)
- by e06smtp07.uk.ibm.com (192.168.101.137) with IBM ESMTP SMTP Gateway:
- Authorized Use Only! Violators will be prosecuted; 
- (version=TLSv1/SSLv3 cipher=AES256-GCM-SHA384 bits=256/256)
- Wed, 15 May 2019 07:08:50 +0100
-Received: from b06wcsmtp001.portsmouth.uk.ibm.com
- (b06wcsmtp001.portsmouth.uk.ibm.com [9.149.105.160])
- by b06cxnps3074.portsmouth.uk.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP id
- x4F68n7950856184
- (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Wed, 15 May 2019 06:08:49 GMT
-Received: from b06wcsmtp001.portsmouth.uk.ibm.com (unknown [127.0.0.1])
- by IMSVA (Postfix) with ESMTP id 17176A4062;
- Wed, 15 May 2019 06:08:49 +0000 (GMT)
-Received: from b06wcsmtp001.portsmouth.uk.ibm.com (unknown [127.0.0.1])
- by IMSVA (Postfix) with ESMTP id BCA8FA4060;
- Wed, 15 May 2019 06:08:48 +0000 (GMT)
-Received: from ozlabs.au.ibm.com (unknown [9.192.253.14])
- by b06wcsmtp001.portsmouth.uk.ibm.com (Postfix) with ESMTP;
- Wed, 15 May 2019 06:08:48 +0000 (GMT)
-Received: from bran.ozlabs.ibm.com (haven.au.ibm.com [9.192.254.114])
- by ozlabs.au.ibm.com (Postfix) with ESMTP id ADDCFA01BF;
- Wed, 15 May 2019 16:08:47 +1000 (AEST)
-Received: from 64d84000ca61 (ka2.ozlabs.ibm.com [10.61.145.21])
- by bran.ozlabs.ibm.com (Postfix) with ESMTP id A326DE00D5;
- Wed, 15 May 2019 16:08:47 +1000 (AEST)
-MIME-Version: 1.0
-Subject: kisskb: OK linus/axs101_defconfig/arcompact Wed May 15, 16:07
-From: noreply@ellerman.id.au
-To: Vineet.Gupta1@synopsys.com, Alexey.Brodkin@synopsys.com,
- linux-snps-arc@lists.infradead.org
-Date: Wed, 15 May 2019 06:08:47 -0000
-X-TM-AS-GCONF: 00
-x-cbid: 19051506-0028-0000-0000-0000036DD0B7
-X-IBM-AV-DETECTION: SAVI=unused REMOTE=unused XFE=unused
-x-cbparentid: 19051506-0029-0000-0000-0000242D653F
-Message-Id: <20190515060847.1.36295@64d84000ca61>
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
- definitions=2019-05-15_05:, , signatures=0
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- priorityscore=1501
- malwarescore=0 suspectscore=2 phishscore=0 bulkscore=0 spamscore=0
- clxscore=1034 lowpriorityscore=0 mlxscore=0 impostorscore=0
- mlxlogscore=517 adultscore=0 classifier=spam adjust=0 reason=mlx
- scancount=1 engine=8.0.1-1810050000 definitions=main-1905150040
+ id 1hQrYd-0006TA-4h
+ for linux-snps-arc@lists.infradead.org; Wed, 15 May 2019 10:54:49 +0000
+Received: from localhost (unknown [23.100.24.84])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id E2C2920881;
+ Wed, 15 May 2019 10:54:45 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1557917686;
+ bh=YFXLOnWqq0QgNpzJqzI8dLsqphnEKMKon1apQRlDlAI=;
+ h=Date:From:To:To:To:To:CC:Cc:Cc:Subject:In-Reply-To:References:
+ From;
+ b=qwrPYxVXt6kdexmIyBHX2yTspkumXG4ef33F8msWZSdEBsRvFoxZW9rH5jcUfBuvc
+ sfcVc7Lwa22eo54Eaiut/ewjDEd0Pp+CvfChph7OtyzLvWT3W8JSMMSahiIsmHhEGE
+ Exz+6gdrSzT/1JyBNRK5YGeAUnPaSRWZOiuC/00E=
+Date: Wed, 15 May 2019 10:54:45 +0000
+From: Sasha Levin <sashal@kernel.org>
+To: Sasha Levin <sashal@kernel.org>
+To: Vineet Gupta <Vineet.Gupta1@synopsys.com>
+To: Eugeniy Paltsev <Eugeniy.Paltsev@synopsys.com>
+To: <linux-snps-arc@lists.infradead.org>
+Subject: Re: [PATCH 1/9] ARC: mm: SIGSEGV userspace trying to access kernel
+ virtual memory
+In-Reply-To: <1557880176-24964-2-git-send-email-vgupta@synopsys.com>
+References: <1557880176-24964-2-git-send-email-vgupta@synopsys.com>
+Message-Id: <20190515105445.E2C2920881@mail.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190514_230857_253422_295148F5 
-X-CRM114-Status: GOOD (  12.08  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190515_035447_430381_DF878ADD 
+X-CRM114-Status: UNSURE (   7.63  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [148.163.156.1 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-snps-arc@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -102,37 +79,116 @@ List-Post: <mailto:linux-snps-arc@lists.infradead.org>
 List-Help: <mailto:linux-snps-arc-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-snps-arc>, 
  <mailto:linux-snps-arc-request@lists.infradead.org?subject=subscribe>
+Cc: , paltsev@snyopsys.com, linux-kernel@vger.kernel.org,
+ stable@vger.kernel.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-snps-arc" <linux-snps-arc-bounces@lists.infradead.org>
 Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org
 
-OK linus/axs101_defconfig/arcompact Wed May 15, 16:07
+Hi,
 
-http://kisskb.ellerman.id.au/kisskb/buildresult/13804319/
+[This is an automated email]
 
-Commit:   Merge tag 'ovl-update-5.2' of git://git.kernel.org/pub/scm/linux/kernel/git/mszeredi/vfs
-          7e9890a3500d95c01511a4c45b7e7192dfa47ae2
-Compiler: arc-buildroot-linux-uclibc-gcc (Buildroot 2015.08.1) 4.8.4 / GNU ld (GNU Binutils) 2.23.2
+This commit has been processed because it contains a -stable tag.
+The stable tag indicates that it's relevant for the following trees: all
 
-No errors found in log
+The bot has tested the following trees: v5.1.1, v5.0.15, v4.19.42, v4.14.118, v4.9.175, v4.4.179, v3.18.139.
 
-Possible warnings (12)
-----------------------
+v5.1.1: Build OK!
+v5.0.15: Build OK!
+v4.19.42: Failed to apply! Possible dependencies:
+    121e38e5acdc ("ARC: mm: fix uninitialised signal code in do_page_fault")
+    15773ae938d8 ("signal/arc: Use force_sig_fault where appropriate")
 
-<stdin>:1388:2: warning: #warning syscall open_tree not implemented [-Wcpp]
-<stdin>:1391:2: warning: #warning syscall move_mount not implemented [-Wcpp]
-<stdin>:1394:2: warning: #warning syscall fsopen not implemented [-Wcpp]
-<stdin>:1397:2: warning: #warning syscall fsconfig not implemented [-Wcpp]
-<stdin>:1400:2: warning: #warning syscall fsmount not implemented [-Wcpp]
-<stdin>:1403:2: warning: #warning syscall fspick not implemented [-Wcpp]
-arch/arc/mm/tlb.c:914:2: warning: variable length array 'pd0' is used [-Wvla]
-arch/arc/include/asm/cmpxchg.h:95:29: warning: value computed is not used [-Wunused-value]
-arch/arc/include/asm/cmpxchg.h:95:29: warning: value computed is not used [-Wunused-value]
-arch/arc/include/asm/cmpxchg.h:95:29: warning: value computed is not used [-Wunused-value]
-net/ipv4/tcp_input.c:4321:49: warning: array subscript is above array bounds [-Warray-bounds]
-net/xfrm/xfrm_policy.c:3492:15: warning: array subscript is above array bounds [-Warray-bounds]
+v4.14.118: Failed to apply! Possible dependencies:
+    121e38e5acdc ("ARC: mm: fix uninitialised signal code in do_page_fault")
+    15773ae938d8 ("signal/arc: Use force_sig_fault where appropriate")
+    1fc5dce78ad1 ("arm64/sve: Low-level SVE architectural state manipulation functions")
+    2c9120f3a86a ("arm64: signal: Make force_signal_inject more robust")
+    3eb0f5193b49 ("signal: Ensure every siginfo we send has all bits initialized")
+    3f7c86b2382e ("arm64: Update fault_info table with new exception types")
+    50a7ca3c6fc8 ("mm: convert return type of handle_mm_fault() caller to vm_fault_t")
+    526c3ddb6aa2 ("signal/arm64: Document conflicts with SI_USER and SIGFPE,SIGTRAP,SIGBUS")
+    532826f3712b ("arm64: Mirror arm for unimplemented compat syscalls")
+    5f74972ce69f ("signal: Don't use structure initializers for struct siginfo")
+    92ff0674f5d8 ("arm64: mm: Rework unhandled user pagefaults to call arm64_force_sig_info")
+    94ef7ecbdf6f ("arm64: fpsimd: Correctly annotate exception helpers called from asm")
+    af40ff687bc9 ("arm64: signal: Ensure si_code is valid for all fault signals")
+    bc0ee4760364 ("arm64/sve: Core task context handling")
+    f43a54a0d916 ("signal/mips: Use force_sig_fault where appropriate")
 
+v4.9.175: Failed to apply! Possible dependencies:
+    0e3a9026396c ("arm64: mm: Update perf accounting to handle poison faults")
+    121e38e5acdc ("ARC: mm: fix uninitialised signal code in do_page_fault")
+    15773ae938d8 ("signal/arc: Use force_sig_fault where appropriate")
+    32015c235603 ("arm64: exception: handle Synchronous External Abort")
+    3eb0f5193b49 ("signal: Ensure every siginfo we send has all bits initialized")
+    3f7c86b2382e ("arm64: Update fault_info table with new exception types")
+    50a7ca3c6fc8 ("mm: convert return type of handle_mm_fault() caller to vm_fault_t")
+    526c3ddb6aa2 ("signal/arm64: Document conflicts with SI_USER and SIGFPE,SIGTRAP,SIGBUS")
+    532826f3712b ("arm64: Mirror arm for unimplemented compat syscalls")
+    5b53696a30d5 ("ACPI / APEI: Switch to use new generic UUID API")
+    5f74972ce69f ("signal: Don't use structure initializers for struct siginfo")
+    7edda0886bc3 ("acpi: apei: handle SEA notification type for ARMv8")
+    83016b204225 ("arm64: mm: print file name of faulting vma")
+    92ff0674f5d8 ("arm64: mm: Rework unhandled user pagefaults to call arm64_force_sig_info")
+    a8ada146f517 ("arm64: Update the synchronous external abort fault description")
+    af40ff687bc9 ("arm64: signal: Ensure si_code is valid for all fault signals")
+    b123718b105b ("MIPS: signal: Remove unreachable code from force_fcr31_sig().")
+    bbcc2e7b642e ("ras: acpi/apei: cper: add support for generic data v3 structure")
+    c07ab957d9af ("arm64: Call __show_regs directly")
+    e7c600f149b8 ("arm64: hwpoison: add VM_FAULT_HWPOISON[_LARGE] handling")
+    f43a54a0d916 ("signal/mips: Use force_sig_fault where appropriate")
+
+v4.4.179: Failed to apply! Possible dependencies:
+    09a6adf53d42 ("arm64: mm: unaligned access by user-land should be received as SIGBUS")
+    0a8ea52c3eb1 ("arm64: Add HAVE_REGS_AND_STACK_ACCESS_API feature")
+    0e3a9026396c ("arm64: mm: Update perf accounting to handle poison faults")
+    121e38e5acdc ("ARC: mm: fix uninitialised signal code in do_page_fault")
+    15773ae938d8 ("signal/arc: Use force_sig_fault where appropriate")
+    2dd0e8d2d2a1 ("arm64: Kprobes with single stepping support")
+    3eca86e75ec7 ("arm64: Remove fixmap include fragility")
+    50a7ca3c6fc8 ("mm: convert return type of handle_mm_fault() caller to vm_fault_t")
+    67ce16ec15ce ("arm64: mm: print out correct page table entries")
+    83016b204225 ("arm64: mm: print file name of faulting vma")
+    92ff0674f5d8 ("arm64: mm: Rework unhandled user pagefaults to call arm64_force_sig_info")
+    bbb1681ee365 ("arm64: mm: mark fault_info table const")
+    c07ab957d9af ("arm64: Call __show_regs directly")
+    cab15ce604e5 ("arm64: Introduce execute-only page access permissions")
+    d59bee887231 ("arm64: Add more test functions to insn.c")
+    e04a28d45ff3 ("arm64: debug: re-enable irqs before sending breakpoint SIGTRAP")
+    e7c600f149b8 ("arm64: hwpoison: add VM_FAULT_HWPOISON[_LARGE] handling")
+
+v3.18.139: Failed to apply! Possible dependencies:
+    04597a65c5ef ("arm64: Track system support for mixed endian EL0")
+    121e38e5acdc ("ARC: mm: fix uninitialised signal code in do_page_fault")
+    15773ae938d8 ("signal/arc: Use force_sig_fault where appropriate")
+    1b907f46db07 ("arm64: kconfig: move emulation option under kernel features")
+    2d888f48e056 ("arm64: Emulate SETEND for AArch32 tasks")
+    338d4f49d6f7 ("arm64: kernel: Add support for Privileged Access Never")
+    359b706473b4 ("arm64: Extract feature parsing code from cpu_errata.c")
+    50a7ca3c6fc8 ("mm: convert return type of handle_mm_fault() caller to vm_fault_t")
+    587064b610c7 ("arm64: Add framework for legacy instruction emulation")
+    7209c868600b ("arm64: mm: Set PSTATE.PAN from the cpu_enable_pan() call")
+    736d474f0faf ("arm64: Consolidate hotplug notifier for instruction emulation")
+    870828e57b14 ("arm64: kernel: Move config_sctlr_el1")
+    92ff0674f5d8 ("arm64: mm: Rework unhandled user pagefaults to call arm64_force_sig_info")
+    94a9e04aa16a ("arm64: alternative: Introduce feature for GICv3 CPU interface")
+    9b79f52d1a70 ("arm64: Add support for hooks to handle undefined instructions")
+    bd35a4adc413 ("arm64: Port SWP/SWPB emulation support from arm")
+    c852f3205846 ("arm64: Emulate CP15 Barrier instructions")
+    c9453a3ab1a3 ("arm64: alternatives: fix pr_fmt string for consistency")
+    ceed97ab4ff7 ("ARC: perf: Enable generic software events")
+    e7c600f149b8 ("arm64: hwpoison: add VM_FAULT_HWPOISON[_LARGE] handling")
+
+
+How should we proceed with this patch?
+
+--
+Thanks,
+Sasha
 
 _______________________________________________
 linux-snps-arc mailing list
