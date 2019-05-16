@@ -2,118 +2,122 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 18D8F20E2C
-	for <lists+linux-snps-arc@lfdr.de>; Thu, 16 May 2019 19:45:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3F29520EFF
+	for <lists+linux-snps-arc@lfdr.de>; Thu, 16 May 2019 20:58:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=g4sNQUDijSCLiftWRMYusNzTm7XeyNcbUALCqZ0Giig=; b=qYOPeL8VHBegEZ
-	xDoocqNdVEUxugnPbZMs/DRaIijHshOXZ3NN7kd8hVbPaeRdtDhG5fGN+BpbK50kBQeMmF1H19FGa
-	Nk3Vuegzh3Vi6oYKYMNplDkr2Dy1VCpl6IVgUwqY1T4KZ4nI3SFa/34UoMGrOA3+S+u4x+fPYTSjo
-	cHnmdl3R1IqZckuEwE1LNSZ0Az2rVf/m+JEG7b88bUZEDx/18b67/+SKoSzl2Uj+2eD6zZLC63ZEX
-	FIaM0Aark9v+Ooj/9ubTo65/Uc8NBwu1v7KBzZGsDn/mT6JHLRw+vnwlP7fCPl7JbAac7XN6xSTLa
-	+NHgsuFFekAaSERZSP0A==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=gCX3ikyF7wlWzU2xdDUnLMyWH8ZbWGRYZkptLyD0G7U=; b=lcr+rbR5i70WCA
+	4Xr1LGfqIFkiP/c2AEdBsi3Tx0+bhupZ3KRl67f4Beh54fmDxCt0RqPI8FfmMl9iHCxpM9zX7o6GL
+	JL4DQh//VWkRhheW3yodwVWM3zcQzM9ym1WQxk1vqVBK6LfLcA9joWPll2YToTu54svLr4K4xjFrr
+	tEcO3It4CPExIML082OgXLgRTPHCdvJLY+izppvoKBuxGfs0/TbTKld9JT8U+4fafUSMfq/8beVIo
+	kk2PkL+drR4L+opneTWueKtYWVlTZ+izD6qbitiwCLR8b+/6jTiLs0YLj2/dm5QlGp/ZAOQdfJ5R3
+	SoT6KKmY6l93CHuh5adQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hRKR8-0002OE-R3; Thu, 16 May 2019 17:44:58 +0000
-Received: from dc8-smtprelay2.synopsys.com ([198.182.47.102]
- helo=smtprelay-out1.synopsys.com)
+	id 1hRLZn-0007DD-Vj; Thu, 16 May 2019 18:57:59 +0000
+Received: from smtprelay-out1.synopsys.com ([198.182.47.102])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hRKR6-0002Ns-RY
- for linux-snps-arc@lists.infradead.org; Thu, 16 May 2019 17:44:58 +0000
-Received: from mailhost.synopsys.com (dc2-mailhost1.synopsys.com
- [10.12.135.161])
+ id 1hRLZk-0007CO-Es
+ for linux-snps-arc@lists.infradead.org; Thu, 16 May 2019 18:57:57 +0000
+Received: from mailhost.synopsys.com (dc2-mailhost2.synopsys.com
+ [10.12.135.162])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
  (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id D013DC0B97;
- Thu, 16 May 2019 17:45:01 +0000 (UTC)
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id C03D6C0B79;
+ Thu, 16 May 2019 18:58:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1558028701; bh=crxjKHxEpieoI+cLpdzkqh0oUiM/l9M6CXzyCwZkdhI=;
- h=From:To:CC:Subject:Date:References:In-Reply-To:From;
- b=ggFBjkGijkfoJM5Ozcqz40PK3kEr8j+yzWnHuC55qsD6vDzi/hT2NIIyUgppm8OXn
- vIrQpfK2DP9FCWYPunx1l3yVkmVP69SYIt6XD8IizAnZCYc6xy3itGglXaOLAh43X9
- ykRA44Z9qWCp1vTmJpESTbB93gwrIREsUnJBorpKtKLziSL9P6rPDM3BdPV+yQfFSC
- GawVZCKT9GZOEp0y3L7sM+of+QdCTsYojJFSdJmAx12F2v340uNvkVOcEC9epD2Rwa
- /G0Sbsoixy3akafk9pC9KywwdH6tN6hUEPpg+C8bzIlmbBTHsQoRhRmdHnDvedr279
- s+MiWI0dfO/Zw==
-Received: from us01wehtc1.internal.synopsys.com
- (us01wehtc1-vip.internal.synopsys.com [10.12.239.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-SHA384 (256/256 bits))
+ t=1558033080; bh=eMQapps435bX1sogA3FMOgT5Q36SpWnVxVJXju1OYeU=;
+ h=Subject:To:CC:References:From:Date:In-Reply-To:From;
+ b=JexA+fMfq9vIz6NINWpVPz4QGOnKX5YizM67yasSAPdbnagGLNYA6ookBOPpGbZMX
+ +QmBSllzUWPSJwlhmzLS7IgtSU28JqSV9EQmZ1cTXi6PbTwxIP7LWTdciKvjitQHa+
+ GIzA91zihS4feMevWCnUg6MRUsXvy7gJawdFEqG2mpwImT7LdPHmNYbbGToQdZ8JOH
+ 6N550S4L0PQaVvMompJo086y9wT1L1BT4P1G05Y6qSBZar6sJUQmdCm8rZ6xbqbxFm
+ jdXCayXcpcPcm9FVVuB1yT1vGDQxQQ3d5wcM4AlX1hUz6UjzOp/QBnXfOzekUMPaKZ
+ jmWJCLLkrJGAg==
+Received: from US01WXQAHTC1.internal.synopsys.com
+ (us01wxqahtc1.internal.synopsys.com [10.12.238.230])
+ (using TLSv1.2 with cipher AES128-SHA256 (128/128 bits))
  (No client certificate requested)
- by mailhost.synopsys.com (Postfix) with ESMTPS id C0B1CA009B;
- Thu, 16 May 2019 17:44:50 +0000 (UTC)
-Received: from US01HYBRID2.internal.synopsys.com (10.15.246.24) by
- us01wehtc1.internal.synopsys.com (10.12.239.235) with Microsoft SMTP Server
- (TLS) id 14.3.408.0; Thu, 16 May 2019 10:44:48 -0700
-Received: from NAM01-BN3-obe.outbound.protection.outlook.com (10.13.134.195)
- by mrs.synopsys.com (10.15.246.24) with Microsoft SMTP Server (TLS) id
- 14.3.408.0; Thu, 16 May 2019 10:44:48 -0700
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=synopsys.onmicrosoft.com; s=selector1-synopsys-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=rmN+AYK9mAKfOlO6Te8/lSQdYymNXwo+lfd4hh7gwRo=;
- b=XWvtEmS/5T+96RkA7s6+z+Mvcii4oqrb+kQ3YYdxhfj2iBc03PUvegQwG9nzcRnb2iS1EVazfGx+G4ktzkrQUYiMcOxAJhTcaPLr+qvLf1sYq85oe6ExfLU1O20b+mIWGVtPuTkviMYnH4Q/tH+iIdlwjA8O7aeaFkStDjkxbVo=
-Received: from CY4PR1201MB0120.namprd12.prod.outlook.com (10.172.78.14) by
- CY4PR1201MB0024.namprd12.prod.outlook.com (10.172.77.135) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.1900.17; Thu, 16 May 2019 17:44:45 +0000
-Received: from CY4PR1201MB0120.namprd12.prod.outlook.com
- ([fe80::d536:9377:4e1c:75ad]) by CY4PR1201MB0120.namprd12.prod.outlook.com
- ([fe80::d536:9377:4e1c:75ad%4]) with mapi id 15.20.1900.010; Thu, 16 May 2019
- 17:44:45 +0000
-From: Alexey Brodkin <Alexey.Brodkin@synopsys.com>
-To: Vineet Gupta <Vineet.Gupta1@synopsys.com>
-Subject: RE: [PATCH 4/9] ARC: mm: do_page_fault refactor #3: tidyup vma access
+ by mailhost.synopsys.com (Postfix) with ESMTPS id 7ECD7A0098;
+ Thu, 16 May 2019 18:57:54 +0000 (UTC)
+Received: from IN01WEHTCA.internal.synopsys.com (10.144.199.104) by
+ US01WXQAHTC1.internal.synopsys.com (10.12.238.230) with Microsoft SMTP Server
+ (TLS) id 14.3.408.0; Thu, 16 May 2019 11:57:24 -0700
+Received: from IN01WEHTCB.internal.synopsys.com (10.144.199.105) by
+ IN01WEHTCA.internal.synopsys.com (10.144.199.103) with Microsoft SMTP Server
+ (TLS) id 14.3.408.0; Fri, 17 May 2019 00:27:35 +0530
+Received: from [10.10.161.89] (10.10.161.89) by
+ IN01WEHTCB.internal.synopsys.com (10.144.199.243) with Microsoft SMTP Server
+ (TLS) id 14.3.408.0; Fri, 17 May 2019 00:27:22 +0530
+Subject: Re: [PATCH 4/9] ARC: mm: do_page_fault refactor #3: tidyup vma access
  permission code
-Thread-Topic: [PATCH 4/9] ARC: mm: do_page_fault refactor #3: tidyup vma
- access permission code
-Thread-Index: AQHVCrVzPLg+oAEwCUOQqcYrmCMW8aZuCFmg
-Date: Thu, 16 May 2019 17:44:44 +0000
-Message-ID: <CY4PR1201MB0120A3C58405DD60FF6B4359A10A0@CY4PR1201MB0120.namprd12.prod.outlook.com>
+To: Alexey Brodkin <Alexey.Brodkin@synopsys.com>
+Newsgroups: gmane.linux.kernel,gmane.linux.kernel.arc
 References: <1557880176-24964-1-git-send-email-vgupta@synopsys.com>
  <1557880176-24964-5-git-send-email-vgupta@synopsys.com>
  <1558027448.2682.11.camel@synopsys.com>
  <C2D7FE5348E1B147BCA15975FBA2307501A2517B16@us01wembx1.internal.synopsys.com>
-In-Reply-To: <C2D7FE5348E1B147BCA15975FBA2307501A2517B16@us01wembx1.internal.synopsys.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=abrodkin@synopsys.com; 
-x-originating-ip: [198.182.37.200]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 1077b586-acf5-412c-092c-08d6da262ee8
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(2017052603328)(7193020);
- SRVR:CY4PR1201MB0024; 
-x-ms-traffictypediagnostic: CY4PR1201MB0024:
-x-microsoft-antispam-prvs: <CY4PR1201MB002463280129A553DFE80501A10A0@CY4PR1201MB0024.namprd12.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:5236;
-x-forefront-prvs: 0039C6E5C5
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10019020)(396003)(136003)(366004)(376002)(346002)(39860400002)(13464003)(189003)(199004)(256004)(14454004)(14444005)(66066001)(7696005)(66946007)(76176011)(73956011)(66476007)(66556008)(64756008)(66446008)(476003)(71200400001)(11346002)(446003)(71190400001)(486006)(6636002)(4326008)(316002)(99286004)(86362001)(54906003)(68736007)(478600001)(76116006)(26005)(186003)(53936002)(6246003)(4744005)(3846002)(6116002)(33656002)(2906002)(102836004)(6506007)(53546011)(55016002)(25786009)(9686003)(305945005)(7736002)(107886003)(74316002)(6436002)(229853002)(6862004)(81166006)(5660300002)(52536014)(8676002)(81156014)(8936002);
- DIR:OUT; SFP:1102; SCL:1; SRVR:CY4PR1201MB0024;
- H:CY4PR1201MB0120.namprd12.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: synopsys.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: pdL7VN2asrODAZs1KAZmRuYYW1bxsPnqamB6kHGgDhZpjNHzS1qpVvD+oebPpQLvSM+mehomemiXO2c/NuC4Ja/b6WK50TwOuzDPn5DVQto2qWB59/wfYVF4kTeRkYNm1T6tsfWgiJtdny/4YuTuu6C6T9DpBtHildij8kogUF3IG9sgEOomWwgqmnv5hWlWipCEMjvHib5HzyzA6H+vsiVuVawXOCH6wtPqXryAxCGrG78kNGLAq8z5b6olRYPJr6tdmzaWxP4/QB4hfICPw4HHauaAO/64c+H7S13K9uAbXj3e1MUZokXsRWnN34e6xWL+48tRfRIakjxiNZVEmpIA8u2tPFS+0H511mD54+rojAEIOLj2lmyXhduNhhrgQWF+YELc987tgVUZzKloOdyTF8Q4VaqIsW7b1hQhjZo=
+ <CY4PR1201MB0120A3C58405DD60FF6B4359A10A0@CY4PR1201MB0120.namprd12.prod.outlook.com>
+From: Vineet Gupta <Vineet.Gupta1@synopsys.com>
+Openpgp: preference=signencrypt
+Autocrypt: addr=vgupta@synopsys.com; keydata=
+ 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
+ hhqBJlyU6MVUa6vZNv8E
+Message-ID: <e76d2db0-14e9-2c65-947d-a2c1ccc7b832@synopsys.com>
+Date: Thu, 16 May 2019 11:57:16 -0700
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-X-MS-Exchange-CrossTenant-Network-Message-Id: 1077b586-acf5-412c-092c-08d6da262ee8
-X-MS-Exchange-CrossTenant-originalarrivaltime: 16 May 2019 17:44:44.9274 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: c33c9f88-1eb7-4099-9700-16013fd9e8aa
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: CY4PR1201MB0024
-X-OriginatorOrg: synopsys.com
+In-Reply-To: <CY4PR1201MB0120A3C58405DD60FF6B4359A10A0@CY4PR1201MB0120.namprd12.prod.outlook.com>
+Content-Language: en-US
+X-Originating-IP: [10.10.161.89]
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190516_104456_900232_B896C8A0 
-X-CRM114-Status: GOOD (  12.12  )
+X-CRM114-CacheID: sfid-20190516_115756_503624_79D348EE 
+X-CRM114-Status: GOOD (  12.57  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -142,36 +146,31 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-snps-arc>,
 Cc: "paltsev@snyopsys.com" <paltsev@snyopsys.com>,
  "linux-snps-arc@lists.infradead.org" <linux-snps-arc@lists.infradead.org>,
  Eugeniy Paltsev <Eugeniy.Paltsev@synopsys.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Claudiu Zissulescu <Claudiu.Zissulescu@synopsys.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-snps-arc" <linux-snps-arc-bounces@lists.infradead.org>
 Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org
 
-Hi Vineet,
-
-> -----Original Message-----
-> From: Vineet Gupta <vgupta@synopsys.com>
-> Sent: Thursday, May 16, 2019 8:38 PM
-> To: Eugeniy Paltsev <paltsev@synopsys.com>
-> Cc: paltsev@snyopsys.com; linux-kernel@vger.kernel.org; Alexey Brodkin <abrodkin@synopsys.com>; linux-
-> snps-arc@lists.infradead.org
-> Subject: Re: [PATCH 4/9] ARC: mm: do_page_fault refactor #3: tidyup vma access permission code
+On 5/16/19 10:44 AM, Alexey Brodkin wrote:
+>> On 5/16/19 10:24 AM, Eugeniy Paltsev wrote:
+>>>> +	unsigned int write = 0, exec = 0, mask;
+>>> Probably it's better to use 'bool' type for 'write' and 'exec' as we really use them as a boolean
+>> variables.
+>>
+>> Right those are semantics, but the generated code for "bool" is not ideal - given
+>> it is inherently a "char" it is promoted first to an int with an additional EXTB
+>> which I really dislike.
+>> Guess it is more of a style thing.
 > 
-> On 5/16/19 10:24 AM, Eugeniy Paltsev wrote:
-> >> +	unsigned int write = 0, exec = 0, mask;
-> > Probably it's better to use 'bool' type for 'write' and 'exec' as we really use them as a boolean
-> variables.
-> 
-> Right those are semantics, but the generated code for "bool" is not ideal - given
-> it is inherently a "char" it is promoted first to an int with an additional EXTB
-> which I really dislike.
-> Guess it is more of a style thing.
+> In that sense maybe think about re-definition of "bool" type to 32-bit one
+> for entire architecture and get that benefit across the entire source tree?
 
-In that sense maybe think about re-definition of "bool" type to 32-bit one
-for entire architecture and get that benefit across the entire source tree?
+what bool maps to is driven by the ABI and while not explicit in the ARCv2 ABI
+doc, I guess it is byte and hence can't be changed just like that.
 
--Alexey
+-Vineet
 
 _______________________________________________
 linux-snps-arc mailing list
