@@ -2,61 +2,67 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EB5CC23872
-	for <lists+linux-snps-arc@lfdr.de>; Mon, 20 May 2019 15:43:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1B52C23873
+	for <lists+linux-snps-arc@lfdr.de>; Mon, 20 May 2019 15:43:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=VoWPY3Avh8OmBU8pSGfM1yi4Q3w58TTeYoyZXEcqobc=; b=K3S
-	CjqEdN7gkwfpKSmcmAw5O7K1gjey1mWwtcCTIaoKOGAM3n7LkFbLJpF9zGY7POaeefVeVUoGgowtL
-	uBgXwituAsW9BF+s3M0wK+b41z0zo+4jSvPjc+BYFq7yYZlEjH/bVnG/u+GlLYCpNvrFH+FReaxg7
-	MqOU0/7L8uYfIklAm6KtJTf86by7mdh5rxACTQ328IA3V39fB5e3HnLm7cDnnISxqhnzefvGNmmNu
-	punJEqhKE+7OsZZCBAgtNPRA1dSDGVhsch3k0133HPUe18jKTL8uQzNRccn8OFyWZxXtSQBmUuuRB
-	uymG9Uk6jw0lxn0+0vfm3dq/CX3r73A==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=wBZaRHCHDV22731LF7IWzBjRTBu12HrJJzYYIcBVaqU=; b=O/cOZ0m6ptmL/qN29QUbD28H9F
+	RoVkwUmF6JGkgDhVxbfudqcRyHMpRq5Nc3OtZRaRsFJ4LZqd3fw3FwnZ3FIR5TZnUe2L+yJnLYUer
+	rgZxryqE+CP55AvpvaUOZ2HJw7kVxlt5WN1abPSzajh9rfX7hMrEZb7PD0Cq/NcFkCERm3zt6toHe
+	YXV3E1d/2EB7tm7zejeopHJZP0VdWXdGVh56B7ask/kxIdgSRtJpEr9//8TNoaqJwJBs15SCbucVx
+	WnJiXdepoc8fd1C7MRSRpBP9UrbD5kj9k64EsIDINCnlVwpIrgUXhc4xKH80K6WUH/3Qs+R6isyt/
+	zLutT8YA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hSiZV-0007AX-Kf; Mon, 20 May 2019 13:43:21 +0000
-Received: from dc2-smtprelay2.synopsys.com ([198.182.61.142]
+	id 1hSiZV-0007Ae-PY; Mon, 20 May 2019 13:43:21 +0000
+Received: from dc8-smtprelay2.synopsys.com ([198.182.47.102]
  helo=smtprelay-out1.synopsys.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hSiZS-00079O-UJ
+ id 1hSiZT-00079j-LM
  for linux-snps-arc@lists.infradead.org; Mon, 20 May 2019 13:43:20 +0000
 Received: from mailhost.synopsys.com (dc2-mailhost2.synopsys.com
  [10.12.135.162])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
  (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id D263DC0185;
- Mon, 20 May 2019 13:43:03 +0000 (UTC)
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 4EB2BC00E3;
+ Mon, 20 May 2019 13:43:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1558359784; bh=fehVZmzAKfTYKXby0hwi6xFx6X2hjj3eoZIKDWG+gOs=;
- h=From:To:Cc:Subject:Date:From;
- b=DUISUlCcve8zdBfHCMRbWWbnYxWGCx0WXBRnv4jeTPRwV5pCO6EiV7PQ9PHXfBPBp
- MEtEzn7wk1q0gQj9OWKQlyv2VYZRugK3a6cKWlEHhjRK0o9deJyC+yqPP3HoXMqX1N
- lnxbGzPaJ4puCIxjSIY5AjcwbYZ2wxCIcwVJbvpUbbMytwenDomHUo49vAp2KPg8+S
- ItV4O3WSosinSv47Yp/zC2JqBG4mnLWpZSksFxKPZJubNJuUIBb+11nr4MYwSGodXk
- OniW/HIqNsYdYwBKDfGcj4lEVsJXB0U3q1MD0BlrPv4ITuz4ZXDJ8Qfdx6hZwMu6A7
- CQxhpROlHLDRA==
-Received: from de02.synopsys.com (de02.internal.synopsys.com [10.225.17.21])
- by mailhost.synopsys.com (Postfix) with ESMTP id 98C05A009B;
+ t=1558359805; bh=VGV0IaRcp0Os12Sgeg/6h5w+hLcWNDbOL/qVFeIQa1M=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:In-Reply-To:
+ References:From;
+ b=e4WLdHVqblAXG71aGiRXf+ND3+Gqa203EtyqAgHWYjY6I/WoDDoIYWUpTPDjvL5Ap
+ VhXjbxp9SKJgUbSl7qZ5FymZk3YdOS66kxp462wELwEApJ5gpuk2Og1i426ymsy5Mx
+ JhI0r9LimLa96zBjuiHjE9Qh2dZ3bYb3GGoN9uJTzH4G1hKGuBlxts/zXVcrXj0aMz
+ s66+W84u2yFGPahUU8ceyIdk6SLbJzAtjrVjJ6+4gujcp+HeqRmZuzx87G588jsISK
+ PR7MZ7Fww5DOggC7ZDvLoUaMtrxiMlUy0KnXNBe1gMhlIt2rGoDbpGrjDl1MmK4wyl
+ q2HsPhmLVW1lQ==
+Received: from de02.synopsys.com (germany.internal.synopsys.com [10.225.17.21])
+ by mailhost.synopsys.com (Postfix) with ESMTP id A9F96A0093;
  Mon, 20 May 2019 13:43:15 +0000 (UTC)
 Received: from de02dwia024.internal.synopsys.com
  (de02dwia024.internal.synopsys.com [10.225.19.81])
- by de02.synopsys.com (Postfix) with ESMTP id C61163CE81;
+ by de02.synopsys.com (Postfix) with ESMTP id D8E423CE8B;
  Mon, 20 May 2019 15:43:14 +0200 (CEST)
 From: Jose Abreu <Jose.Abreu@synopsys.com>
 To: devicetree@vger.kernel.org, linux-snps-arc@lists.infradead.org,
  linux-kernel@vger.kernel.org
-Subject: [PATCH 0/2] ARC: [plat-hsdk]: GMAC DT Bindings Improvements
-Date: Mon, 20 May 2019 15:43:11 +0200
-Message-Id: <cover.1558359611.git.joabreu@synopsys.com>
+Subject: [PATCH 1/2] ARC: [plat-hsdk]: Add missing multicast filter bins
+ number to GMAC node
+Date: Mon, 20 May 2019 15:43:12 +0200
+Message-Id: <efc8afc421f2461c2df4489c979545548782d857.1558359611.git.joabreu@synopsys.com>
 X-Mailer: git-send-email 2.7.4
+In-Reply-To: <cover.1558359611.git.joabreu@synopsys.com>
+References: <cover.1558359611.git.joabreu@synopsys.com>
+In-Reply-To: <cover.1558359611.git.joabreu@synopsys.com>
+References: <cover.1558359611.git.joabreu@synopsys.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190520_064318_980646_66829930 
-X-CRM114-Status: UNSURE (   6.94  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190520_064319_696867_2A82A1D6 
+X-CRM114-Status: GOOD (  11.64  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -93,23 +99,33 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-snps-arc" <linux-snps-arc-bounces@lists.infradead.org>
 Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org
 
-Add two missing bindings.
+GMAC controller on HSDK boards supports 256 Hash Table size so we need to
+add the multicast filter bins property. This allows for the Hash filter
+to work properly using stmmac driver.
 
+Signed-off-by: Jose Abreu <joabreu@synopsys.com>
 Cc: Joao Pinto <jpinto@synopsys.com>
 Cc: Rob Herring <robh+dt@kernel.org>
 Cc: Mark Rutland <mark.rutland@arm.com>
 Cc: Vineet Gupta <vgupta@synopsys.com>
 Cc: Eugeniy Paltsev <Eugeniy.Paltsev@synopsys.com>
 Cc: Alexey Brodkin <abrodkin@synopsys.com>
+---
+ arch/arc/boot/dts/hsdk.dts | 1 +
+ 1 file changed, 1 insertion(+)
 
-Jose Abreu (2):
-  ARC: [plat-hsdk]: Add missing multicast filter bins number to GMAC
-    node
-  ARC: [plat-hsdk]: Add missing FIFO size entry in GMAC node
-
- arch/arc/boot/dts/hsdk.dts | 4 ++++
- 1 file changed, 4 insertions(+)
-
+diff --git a/arch/arc/boot/dts/hsdk.dts b/arch/arc/boot/dts/hsdk.dts
+index 69bc1c9e8e50..b0f059377ab0 100644
+--- a/arch/arc/boot/dts/hsdk.dts
++++ b/arch/arc/boot/dts/hsdk.dts
+@@ -187,6 +187,7 @@
+ 			interrupt-names = "macirq";
+ 			phy-mode = "rgmii";
+ 			snps,pbl = <32>;
++			snps,multicast-filter-bins = <256>;
+ 			clocks = <&gmacclk>;
+ 			clock-names = "stmmaceth";
+ 			phy-handle = <&phy0>;
 -- 
 2.7.4
 
