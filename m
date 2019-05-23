@@ -2,53 +2,53 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E2F0628721
-	for <lists+linux-snps-arc@lfdr.de>; Thu, 23 May 2019 21:19:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9596728781
+	for <lists+linux-snps-arc@lfdr.de>; Thu, 23 May 2019 21:25:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=u3EeAsVyPhwwaunzblnyCz525msjE3iQZJxFzX7vnCM=; b=mX90e44f5BITek
-	hDiIpOmnGr2YC7jydwdAE+uFlhVtPNay8C86l724Z4XmVdsh3zfNx5lB+kA+pYAAzRh6NGEifpT6U
-	93IuBQhV3lONjcje8+QEjwWihJF/LDW9XeeOYdaG7z9KQQozrSK1JGlLn110JUfxCPXxtP1KB/xyt
-	25BcAdQQCzMoM4LEGIaTVtfrq5OfNsZ29EfpYXqLRa8ekaPt8FZuA9qNWC77maDFKrsqur26eQfNY
-	KLH7SkcirBYIce+H215mCMP7v1Fh4UZZmsFXsII1jmYSCQQQgBiUKTNHuyWov+Z5SVj5GRnMty7J6
-	EGBOfz0uHFW65E4KIJkQ==;
+	List-Owner; bh=u3EeAsVyPhwwaunzblnyCz525msjE3iQZJxFzX7vnCM=; b=p0yqn1x7Sd5kPm
+	4xW3i+LzQ+G9sFWsmYw6upbWV12dKunSFxHl89gMg53WWer99ITnJBJMLQnFj0U/iQMb2bblUieGd
+	RZWceEHLf1SP1pcBD1eXD6eRaaPxbkQVpqNChaQPbSc3mhIPMf3gurEsZrnD4SQ5CkrgzbTuELptu
+	eDj5QszxdlxRyYOySBxatarVeuqe4EsidrThKr5e9mgPNwPG/tAo0UjPaOxLEDyH0YlEaWIm+oEjN
+	SUlOdaBH9btAWGLEW2deHvaL+PLz7pjmOAp+/+thWi3ixCCsuxwx6GTG0VphUqDwo+eqiOwps///r
+	FvlO+JOR/eAH2EXWt7cw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hTtFE-0002Mo-LE; Thu, 23 May 2019 19:19:16 +0000
+	id 1hTtLO-0006WE-7r; Thu, 23 May 2019 19:25:38 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTtFB-0002Ls-PH
- for linux-snps-arc@lists.infradead.org; Thu, 23 May 2019 19:19:15 +0000
+ id 1hTtLL-0006Vh-Kx
+ for linux-snps-arc@lists.infradead.org; Thu, 23 May 2019 19:25:37 +0000
 Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
  [83.86.89.107])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 018BB20863;
- Thu, 23 May 2019 19:19:12 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id BDA2020868;
+ Thu, 23 May 2019 19:25:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1558639153;
+ s=default; t=1558639535;
  bh=q86KOwhOagZeZ7tD6NY2jFgZ6s+ArKqafjIKr0GqakM=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=hyKqTVsoiOk8N16v3vXCwQy8fqVIWX2Lhq5B7ZwNPNMeacvb7EDX7ev7y0FbZnhYh
- 8sNIQ+s+e8NUazZ5SUtoe5TOIS4qLHP/MTByyofy5qbu6bzqNIMv/VW1GIlOK2KB0h
- 9ZRgHWjnf/diziA9CcB2/cTHW3ybIfx2kZAFkxBU=
+ b=HZ9SysgSO4ECyh04l7inclYnyZf4UMl+J6dz3fa6EcQZytqdCMlunxusjRF1JJTm1
+ wSkvBB+QB2uwjm3OVh20l/EoSh+Gso0mIVFNfVdCXN0b8rJi/mjI8h2ekwRJ4TW6Pn
+ /bbYvFu3VFfIxjNUxC68hYoMQD9/iLh7SoLLmprc=
 From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 To: linux-kernel@vger.kernel.org
-Subject: [PATCH 4.19 106/114] perf bench numa: Add define for RUSAGE_THREAD if
+Subject: [PATCH 5.0 131/139] perf bench numa: Add define for RUSAGE_THREAD if
  not present
-Date: Thu, 23 May 2019 21:06:45 +0200
-Message-Id: <20190523181740.534792361@linuxfoundation.org>
+Date: Thu, 23 May 2019 21:06:59 +0200
+Message-Id: <20190523181736.167614424@linuxfoundation.org>
 X-Mailer: git-send-email 2.21.0
-In-Reply-To: <20190523181731.372074275@linuxfoundation.org>
-References: <20190523181731.372074275@linuxfoundation.org>
+In-Reply-To: <20190523181720.120897565@linuxfoundation.org>
+References: <20190523181720.120897565@linuxfoundation.org>
 User-Agent: quilt/0.66
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190523_121913_832028_32E34773 
+X-CRM114-CacheID: sfid-20190523_122535_706456_60B4B5E4 
 X-CRM114-Status: GOOD (  11.06  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
