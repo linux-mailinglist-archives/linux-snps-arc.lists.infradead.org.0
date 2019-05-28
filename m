@@ -2,64 +2,63 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 202FB2CD30
-	for <lists+linux-snps-arc@lfdr.de>; Tue, 28 May 2019 19:08:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 90DC22CD37
+	for <lists+linux-snps-arc@lfdr.de>; Tue, 28 May 2019 19:10:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TyGixrOIkn++IS9KAQe3DMb/u+5ohwHxP97/dJeasaY=; b=ZUplXoP3A+XTsJ
-	OGVqPYaLk6QKz80cQfm4F6mFdZdf7ibbiinWM52KqlO87H9imS7k0j4o0GSgby1UcrzY/UOFoWTDa
-	kuD+uvRsCCxul6YVqQuzK1P4Xv6hlcK7VpcpKVa6QJRrt8FGbYdSm6CPAvxwu1TvO3qEzMj98g8//
-	SrCXAMVputOQbr6EPKkaBo0+kpOKFFaCn9SN9/HU/SgGR71QnLkLbqMvJcl7k92S5QSPhgUPoR3gm
-	+gdWepmqCVSb6wQZLX3eSZdNbGYltnTPK4oCrc1aa/ZgHWCCDs0sPGPEYruLJ1eRgqx5yNexI/+Sa
-	BAbuILcjjoWknZ6xYmvQ==;
+	List-Owner; bh=mEb/C7EQ2XuIrW/1BHnuqV3X6RDqqDO6TrQ58AiSAoo=; b=GyFJoY7uyFxVTP
+	JbELbxhWIS1S9qZmCPeyPFyM3G+n/oXqFo3FHpMITtYOdTISr4cuWwhZVeqGDCu4WhQfVPkq3DiGZ
+	nnWVnNWw3yaUOfRhpdiCduWC0vIkh4h17ZLS2SQ3Z2I9W8lTbiH14g1mWDjWQozAvJmMmtyL0ntFG
+	cPDAjDyI9DgxEMn/OlnaiX0D57fQKGdfb4u+oR9POiW+LgBbHQytE6OqINePk5uaz16ZPj1TL+tOS
+	YAHsNEy1TvZDo1ycBC1j8O0iLpwig2Ir92R7XF/uhFDlKjUVT2LkOpAVLT0Y/mv4MvFHKMxnBJV+8
+	CwegBmMLnMOl015zm5vw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVfao-0002S4-Mu; Tue, 28 May 2019 17:08:54 +0000
-Received: from dc2-smtprelay2.synopsys.com ([198.182.61.142]
+	id 1hVfcT-0003uv-7x; Tue, 28 May 2019 17:10:37 +0000
+Received: from dc8-smtprelay2.synopsys.com ([198.182.47.102]
  helo=smtprelay-out1.synopsys.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVfak-0002RN-AZ
- for linux-snps-arc@lists.infradead.org; Tue, 28 May 2019 17:08:52 +0000
-Received: from mailhost.synopsys.com (dc8-mailhost1.synopsys.com
- [10.13.135.209])
+ id 1hVfcQ-0003uT-Bw
+ for linux-snps-arc@lists.infradead.org; Tue, 28 May 2019 17:10:35 +0000
+Received: from mailhost.synopsys.com (dc2-mailhost1.synopsys.com
+ [10.12.135.161])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
  (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id EB9E8C1F2D;
- Tue, 28 May 2019 17:08:32 +0000 (UTC)
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id BBDB7C0B37;
+ Tue, 28 May 2019 17:10:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1559063313; bh=1k8P5Qd46Ycl7mOHtTVI5tAA/ZKzjUkfAL7u1HmV3rs=;
+ t=1559063441; bh=LchI2eWfLBDHMLZRyfaGiC/saqLcWbp3hOs/bfvfbrY=;
  h=Subject:To:CC:References:From:Date:In-Reply-To:From;
- b=KSglKfj06MVk+zqhiDdChS7efuF1/uv8QzX4WjP6mjcsPQcGJmkWP15pawzV6d9+v
- bfKN4NrQOzh3RV2MYcbQcXS3Ui2VyIEFtY/ECgysrkRW0xLt0UgIHLD0zaO70KBtXO
- w/HreM3vWNT4RY3azsa95zdRG4u0wYGyuBkLrQ76j3EYe/nFoSzrKDo4vKD1EvG/uP
- EyE74sV9on8QNs+nTQxhkwSOLUheEI6F26SW6+Tdn99bpqwKTgT+WGW2wcSpYj6rQT
- IETSMyL08/EeZSQNLFhJ43eCsLfHnvY4TTkF3E+C8S4Hm7MD/47EfzRooO6YPMhNKF
- 2oDu6a7iBmziQ==
-Received: from US01WEHTC2.internal.synopsys.com
- (us01wehtc2.internal.synopsys.com [10.12.239.237])
- (using TLSv1.2 with cipher AES128-SHA256 (128/128 bits))
+ b=ZuoI4pQ4ItVFWgjcOnCDAzkER0o3GiRepAg+qbxBXVk09GNtOIT1IVLXimzvvIogF
+ vyuvHWmAr4lnojsdHWVWcLS0efphX/dHRzlQlQF5GDGab/H1lCRp3/y96837fXE7zl
+ 9yRLLIig7ZHbAvukNMnv/VnjMvzC3oFsQ++qxZfJ4X0ySZSZUZJ6jVVPG9SrbKQNvv
+ QpaAJ70VMUMXrkZOz0jGW4Uv8OW+H7n/BeOCDA2UjXlUhEnoi4QuoXi9Oidkc2O1++
+ s62gB3Tq08uU/C5kVP5lAjk4JxvVLwZA3VhOzE93xzF1mpzYyJ6TlAA5fYOqrSJF1c
+ wSqGnNKd4a/bQ==
+Received: from us01wehtc1.internal.synopsys.com
+ (us01wehtc1-vip.internal.synopsys.com [10.12.239.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-SHA384 (256/256 bits))
  (No client certificate requested)
- by mailhost.synopsys.com (Postfix) with ESMTPS id DBCAFA005D;
- Tue, 28 May 2019 17:08:48 +0000 (UTC)
+ by mailhost.synopsys.com (Postfix) with ESMTPS id CF0B7A009C;
+ Tue, 28 May 2019 17:10:32 +0000 (UTC)
 Received: from IN01WEHTCB.internal.synopsys.com (10.144.199.106) by
- US01WEHTC2.internal.synopsys.com (10.12.239.237) with Microsoft SMTP Server
- (TLS) id 14.3.408.0; Tue, 28 May 2019 10:08:48 -0700
+ us01wehtc1.internal.synopsys.com (10.12.239.231) with Microsoft SMTP Server
+ (TLS) id 14.3.408.0; Tue, 28 May 2019 10:10:32 -0700
 Received: from IN01WEHTCA.internal.synopsys.com (10.144.199.103) by
  IN01WEHTCB.internal.synopsys.com (10.144.199.105) with Microsoft SMTP Server
- (TLS) id 14.3.408.0; Tue, 28 May 2019 22:38:45 +0530
+ (TLS) id 14.3.408.0; Tue, 28 May 2019 22:40:29 +0530
 Received: from [10.13.182.230] (10.13.182.230) by
  IN01WEHTCA.internal.synopsys.com (10.144.199.243) with Microsoft SMTP Server
- (TLS) id 14.3.408.0; Tue, 28 May 2019 22:38:58 +0530
-Subject: Re: [PATCH v3] ARC: [plat-hsdk]: Add support of Vivante GPU
-To: Eugeniy Paltsev <Eugeniy.Paltsev@synopsys.com>,
+ (TLS) id 14.3.408.0; Tue, 28 May 2019 22:40:42 +0530
+Subject: Re: [PATCH] ARC: [plat-hsdk] Get rid of inappropriate PHY settings
+To: Alexey Brodkin <Alexey.Brodkin@synopsys.com>,
  <linux-snps-arc@lists.infradead.org>
-Newsgroups: gmane.linux.kernel, gmane.linux.kernel.arc,
- gmane.linux.drivers.devicetree
-References: <20190521175439.15723-1-Eugeniy.Paltsev@synopsys.com>
+Newsgroups: gmane.linux.kernel,gmane.linux.kernel.arc
+References: <20190515153340.40074-1-abrodkin@synopsys.com>
 From: Vineet Gupta <Vineet.Gupta1@synopsys.com>
 Openpgp: preference=signencrypt
 Autocrypt: addr=vgupta@synopsys.com; keydata=
@@ -85,18 +84,17 @@ Autocrypt: addr=vgupta@synopsys.com; keydata=
  d0+qKIXX1eMh0/5sDYM06/B34rQyq9HZVVPRHdvsfwCU0s3G+5Fai02mK68okr8TECOzqZtG
  cuQmkAeegdY70Bpzfbwxo45WWQq8dSRURA7KDeY5LutMphQPIP2syqgIaiEatHgwetyVCOt6
  tf3ClCidHNaGky9KcNSQ
-Message-ID: <bfe55e41-961f-9824-e613-d3f38301680a@synopsys.com>
-Date: Tue, 28 May 2019 10:08:34 -0700
+Message-ID: <968eb5f2-1a9b-f9bb-8a49-ad5221c4d274@synopsys.com>
+Date: Tue, 28 May 2019 10:10:22 -0700
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.6.1
 MIME-Version: 1.0
-In-Reply-To: <20190521175439.15723-1-Eugeniy.Paltsev@synopsys.com>
+In-Reply-To: <20190515153340.40074-1-abrodkin@synopsys.com>
 Content-Language: en-US
 X-Originating-IP: [10.13.182.230]
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190528_100850_384231_21E78976 
-X-CRM114-Status: UNSURE (   9.27  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190528_101034_409912_A91B50F9 
+X-CRM114-Status: GOOD (  11.92  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -122,19 +120,30 @@ List-Post: <mailto:linux-snps-arc@lists.infradead.org>
 List-Help: <mailto:linux-snps-arc-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-snps-arc>, 
  <mailto:linux-snps-arc-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Alexey Brodkin <Alexey.Brodkin@synopsys.com>,
- linux-kernel@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
- Lucas Stach <l.stach@pengutronix.de>
+Cc: Rob Herring <robh+dt@kernel.org>, linux-kernel@vger.kernel.org,
+ Trent Piepho <tpiepho@impinj.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-snps-arc" <linux-snps-arc-bounces@lists.infradead.org>
 Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org
 
-On 5/21/19 10:54 AM, Eugeniy Paltsev wrote:
-> HSDK board has built-in Vivante GPU IP which works perfectly fine
-> with Etnaviv driver, so let's use it.
+On 5/15/19 8:33 AM, Alexey Brodkin wrote:
+> Initial bring-up of the platform was done on FPGA prototype
+> where TI's DP83867 PHY was used. And so some specific PHY
+> options were added.
 > 
-> Signed-off-by: Eugeniy Paltsev <Eugeniy.Paltsev@synopsys.com>
+> Just to confirm this is what we get on FPGA prototype in the bootlog:
+> | TI DP83867 stmmac-0:00: attached PHY driver [TI DP83867] ...
+> 
+> On real board though we have Micrel KZS9031 PHY and we even have
+> CONFIG_MICREL_PHY=y set in hsdk_defconfig. That's what we see in the bootlog:
+> | Micrel KSZ9031 Gigabit PHY stmmac-0:00: ...
+> 
+> So essentially all TI-related bits have to go away.
+> 
+> Signed-off-by: Alexey Brodkin <abrodkin@synopsys.com>
+> Cc: Trent Piepho <tpiepho@impinj.com>
+> Cc: Rob Herring <robh+dt@kernel.org>
 
 Added to for-curr.
 
