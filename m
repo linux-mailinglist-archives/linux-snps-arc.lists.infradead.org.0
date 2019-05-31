@@ -2,127 +2,101 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 56EC130C70
-	for <lists+linux-snps-arc@lfdr.de>; Fri, 31 May 2019 12:15:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 973D730D75
+	for <lists+linux-snps-arc@lfdr.de>; Fri, 31 May 2019 13:45:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=xrbfsmtYd6JzRDg+V35iyRTeisQ3nyhQL6reWi/TtfQ=; b=Wjw6p28CP6kHq4
-	Api+FQKp7XHPyAhh0jzjjbW7nMz0EiC7rIANg4DSQxJBB7TaOdzgPpyqW00YiNyfjvnqhiskL9PxZ
-	80r9mhUjx16KWVEQOMw/HMZFyYahBWrOO6IzfkTv3JskeIIkLebK2vy3VhwtemY9nZLRvIWFxBnw5
-	PEmHd7mwwfnwfTxl5/Ow3EungpQfjM5HekwLoK3xYWg6kG5nLX5QVOf2fl09zoun0Tj/M1fA2tSPY
-	ax8H90rvWVpN0thN8aw7czt2RExO482S8ul42ySUEpGoCKQ1+m6gKAVYWQxxQZcP10x2SOQJDvrOL
-	RvOPlAwyhafR8tQwq6nw==;
+	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:In-Reply-To:
+	MIME-Version:References:Subject:To:From:Date:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=dOamOC1hA7OcNeJnnhnBx7q6JJvW3AwOji9MyuckMS0=; b=N7TTb1Bbftg1v3
+	enAJfoeElIGEILsXFGxxdozm7vF7oU7Leq2xBPY9B1pOnLg3UtQL/Qx2Juw4sn0byupZ0V8co0pet
+	52DXmPgY1I5fAgmE1+qKlOstZLQ2MYiAdBsjqqr5p5dWdVBB5tylOn05ThXQCMrAORBghsMB/Djga
+	vg9nVitmTDZgL/qMOGZdnWGQGjIu+Bu9fVK4QOfBdrlr3/e7DXXgCKqEfx0xfzicx532b9K1YF49N
+	xG9n7729SfT8VQEo+6dyjSZXkbIC3DZPmoqzsNUeaJdHdJo+UGfeLoO+0oicH3HAQuEAIRMpviZDD
+	Zsy5PacEzHO7AAHkkR9A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hWeZ3-0000ML-1c; Fri, 31 May 2019 10:15:09 +0000
-Received: from smtprelay-out1.synopsys.com ([198.182.47.102])
+	id 1hWfyl-00072s-96; Fri, 31 May 2019 11:45:47 +0000
+Received: from mx0a-001b2d01.pphosted.com ([148.163.156.1])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hWeYz-0007ff-9g
- for linux-snps-arc@lists.infradead.org; Fri, 31 May 2019 10:15:07 +0000
-Received: from mailhost.synopsys.com (dc8-mailhost1.synopsys.com
- [10.13.135.209])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
- (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 1316EC0021;
- Fri, 31 May 2019 10:15:09 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1559297710; bh=oYMFaWBXpsctHuwvT8PYf7pwmNvR/3q8b9V/pmkpnpk=;
- h=From:To:CC:Subject:Date:From;
- b=bDyRpe8xub9Nad+rFAatFesY/uc2i/9Zxumvw6Ps8H4XHeWBLNivIrzWDypQhxr/f
- gSdInQHGb/j7EFRn5ryV2DtcBEAV9ScUTIaQX3PU+GaZHzGqhaXzLXuIARh57//HFd
- 6cCCjoXmDsrRBXF83/mxmH1nHfxHtCA3+N2Qh7sP7InxQB08eX/HmUUrpXTv0goBcA
- 6UyTurdsarq8KcKKXGqlZXTZzCkWjiXMvuVzth/9pksYCb+PRSKlPl2lwi9xhERnRI
- DdLYLAxycn0Qg8C4jeW1EeVtQra2QND98+K7o6jeEdddzSBqdC+/JUpmNQ9Ekh8GeQ
- FrbBXFGBYq87A==
-Received: from US01WXQAHTC1.internal.synopsys.com
- (us01wxqahtc1.internal.synopsys.com [10.12.238.230])
- (using TLSv1.2 with cipher AES128-SHA256 (128/128 bits))
- (No client certificate requested)
- by mailhost.synopsys.com (Postfix) with ESMTPS id DB25FA005D;
- Fri, 31 May 2019 10:14:59 +0000 (UTC)
-Received: from US01HYBRID2.internal.synopsys.com (10.15.246.24) by
- US01WXQAHTC1.internal.synopsys.com (10.12.238.230) with Microsoft SMTP Server
- (TLS) id 14.3.408.0; Fri, 31 May 2019 03:14:59 -0700
-Received: from NAM03-CO1-obe.outbound.protection.outlook.com (10.13.134.195)
- by mrs.synopsys.com (10.15.246.24) with Microsoft SMTP Server (TLS) id
- 14.3.408.0; Fri, 31 May 2019 03:14:59 -0700
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=synopsys.onmicrosoft.com; s=selector1-synopsys-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=XMqnFZY0dOsfb0kFY9eW1SNhibmL1nnW4s0s9JPhSdM=;
- b=mF6LDTpvNYQUoBDwPxmfXNh7PEBDBkToUpqJ74/nxboO+B/iyRK/FRiA4dNU9ndkRzugXvyQETY+XKy3JhIn+zHGl78RctEEQWdWwafWheEEcerh4TiYD5ZxI6Vdx0vMtm3fOam6ebolUbS0cMa26JoatKMwXM41blYoBdyrTSg=
-Received: from CY4PR1201MB0120.namprd12.prod.outlook.com (10.172.78.14) by
- CY4PR1201MB0120.namprd12.prod.outlook.com (10.172.78.14) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.1922.18; Fri, 31 May 2019 10:14:57 +0000
-Received: from CY4PR1201MB0120.namprd12.prod.outlook.com
- ([fe80::d536:9377:4e1c:75ad]) by CY4PR1201MB0120.namprd12.prod.outlook.com
- ([fe80::d536:9377:4e1c:75ad%4]) with mapi id 15.20.1922.021; Fri, 31 May 2019
- 10:14:57 +0000
-From: Alexey Brodkin <Alexey.Brodkin@synopsys.com>
-To: Andreas Schwab <schwab@suse.de>
-Subject: Pass config-time variable to LIBC_SLIBDIR_RTLDDIR 
-Thread-Topic: Pass config-time variable to LIBC_SLIBDIR_RTLDDIR 
-Thread-Index: AdUXl2gFdH9S+EfRQSeLWnM3B8KM+g==
-Date: Fri, 31 May 2019 10:14:57 +0000
-Message-ID: <CY4PR1201MB01200F5CBFD010ADC371E89EA1190@CY4PR1201MB0120.namprd12.prod.outlook.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=abrodkin@synopsys.com; 
-x-originating-ip: [188.243.7.154]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 2b9ff925-9075-46bc-be00-08d6e5b0d583
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(2017052603328)(7193020);
- SRVR:CY4PR1201MB0120; 
-x-ms-traffictypediagnostic: CY4PR1201MB0120:
-x-ms-exchange-purlcount: 1
-x-microsoft-antispam-prvs: <CY4PR1201MB0120A8178EFB999107E03484A1190@CY4PR1201MB0120.namprd12.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:2000;
-x-forefront-prvs: 00540983E2
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10019020)(366004)(396003)(376002)(346002)(136003)(39860400002)(199004)(189003)(68736007)(476003)(33656002)(55016002)(99286004)(6306002)(26005)(316002)(7696005)(2906002)(81166006)(486006)(81156014)(8676002)(9686003)(8936002)(25786009)(86362001)(102836004)(14454004)(4743002)(6506007)(52536014)(966005)(6916009)(66946007)(66556008)(54906003)(73956011)(64756008)(256004)(66476007)(76116006)(53936002)(71190400001)(186003)(4326008)(5660300002)(71200400001)(305945005)(74316002)(7736002)(6116002)(66066001)(66446008)(3846002)(6436002)(478600001)(21314003);
- DIR:OUT; SFP:1102; SCL:1; SRVR:CY4PR1201MB0120;
- H:CY4PR1201MB0120.namprd12.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: synopsys.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: 6Jp9ocRoCiBMEYRLY+y/qPoCTrqyUhmiGyUoeMnjjAFVMMpOkRW6h/qzC5SYd4SEKzxcFuY9z3Q1SDhhS5ULUrg9hHQUshD4tE7l6nBnHZlJztCL3PDIjKGBlcI5ScPXQR/KahSLyGQkThUDX/eAvL6QPz/cXY4MjxkyDHcakV5tODObSldgPdXvCNM/B7eMMQvnPw5fMq2Dwxup91iSim5APEssRNL18A3ZI5Wm+Tt7dxbjUEphDljstFpHvGt/D9cQwDeLjpAlDhetfsuFGXqMlN2LHxXUB6LPyYDFY84vR8bi1xdZJyUK6kWVlpVZsnTZ0f9eXZvYmej40+79vKWxhWPKd3yarqWMSbowI/wfNKGYrKiatqe9w7RvgU+/j6v/xwke4AmK+MOH9f1dBo1etMJ4Zu47Fq7LGhb1VYs=
+ id 1hWfyi-00070v-4G
+ for linux-snps-arc@lists.infradead.org; Fri, 31 May 2019 11:45:46 +0000
+Received: from pps.filterd (m0098399.ppops.net [127.0.0.1])
+ by mx0a-001b2d01.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
+ x4VBZwuc135709
+ for <linux-snps-arc@lists.infradead.org>; Fri, 31 May 2019 07:45:41 -0400
+Received: from e17.ny.us.ibm.com (e17.ny.us.ibm.com [129.33.205.207])
+ by mx0a-001b2d01.pphosted.com with ESMTP id 2su3hq09sj-1
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=NOT)
+ for <linux-snps-arc@lists.infradead.org>; Fri, 31 May 2019 07:45:41 -0400
+Received: from localhost
+ by e17.ny.us.ibm.com with IBM ESMTP SMTP Gateway: Authorized Use Only!
+ Violators will be prosecuted
+ for <linux-snps-arc@lists.infradead.org> from <paulmck@linux.vnet.ibm.com>;
+ Fri, 31 May 2019 12:45:40 +0100
+Received: from b01cxnp22036.gho.pok.ibm.com (9.57.198.26)
+ by e17.ny.us.ibm.com (146.89.104.204) with IBM ESMTP SMTP Gateway: Authorized
+ Use Only! Violators will be prosecuted; 
+ (version=TLSv1/SSLv3 cipher=AES256-GCM-SHA384 bits=256/256)
+ Fri, 31 May 2019 12:45:36 +0100
+Received: from b01ledav003.gho.pok.ibm.com (b01ledav003.gho.pok.ibm.com
+ [9.57.199.108])
+ by b01cxnp22036.gho.pok.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP id
+ x4VBiKap41353694
+ (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Fri, 31 May 2019 11:44:20 GMT
+Received: from b01ledav003.gho.pok.ibm.com (unknown [127.0.0.1])
+ by IMSVA (Postfix) with ESMTP id BA546B2065;
+ Fri, 31 May 2019 11:44:20 +0000 (GMT)
+Received: from b01ledav003.gho.pok.ibm.com (unknown [127.0.0.1])
+ by IMSVA (Postfix) with ESMTP id 9DD40B2064;
+ Fri, 31 May 2019 11:44:20 +0000 (GMT)
+Received: from paulmck-ThinkPad-W541 (unknown [9.70.82.216])
+ by b01ledav003.gho.pok.ibm.com (Postfix) with ESMTP;
+ Fri, 31 May 2019 11:44:20 +0000 (GMT)
+Received: by paulmck-ThinkPad-W541 (Postfix, from userid 1000)
+ id 98B2B16C5D81; Fri, 31 May 2019 04:44:21 -0700 (PDT)
+Date: Fri, 31 May 2019 04:44:21 -0700
+From: "Paul E. McKenney" <paulmck@linux.ibm.com>
+To: David Laight <David.Laight@ACULAB.COM>
+Subject: Re: single copy atomicity for double load/stores on 32-bit systems
+References: <2fd3a455-6267-5d21-c530-41964a4f6ce9@synopsys.com>
+ <895ec12746c246579aed5dd98ace6e38@AcuMS.aculab.com>
 MIME-Version: 1.0
-X-MS-Exchange-CrossTenant-Network-Message-Id: 2b9ff925-9075-46bc-be00-08d6e5b0d583
-X-MS-Exchange-CrossTenant-originalarrivaltime: 31 May 2019 10:14:57.7408 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: c33c9f88-1eb7-4099-9700-16013fd9e8aa
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: abrodkin@synopsys.com
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: CY4PR1201MB0120
-X-OriginatorOrg: synopsys.com
+Content-Disposition: inline
+In-Reply-To: <895ec12746c246579aed5dd98ace6e38@AcuMS.aculab.com>
+User-Agent: Mutt/1.5.21 (2010-09-15)
+X-TM-AS-GCONF: 00
+x-cbid: 19053111-0040-0000-0000-000004F6FBE0
+X-IBM-SpamModules-Scores: 
+X-IBM-SpamModules-Versions: BY=3.00011190; HX=3.00000242; KW=3.00000007;
+ PH=3.00000004; SC=3.00000286; SDB=6.01211199; UDB=6.00636407; IPR=6.00992235; 
+ MB=3.00027130; MTD=3.00000008; XFM=3.00000015; UTC=2019-05-31 11:45:38
+X-IBM-AV-DETECTION: SAVI=unused REMOTE=unused XFE=unused
+x-cbparentid: 19053111-0041-0000-0000-0000090316D9
+Message-Id: <20190531114421.GJ28207@linux.ibm.com>
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
+ definitions=2019-05-31_06:, , signatures=0
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ priorityscore=1501
+ malwarescore=0 suspectscore=0 phishscore=0 bulkscore=0 spamscore=0
+ clxscore=1015 lowpriorityscore=0 mlxscore=0 impostorscore=0
+ mlxlogscore=999 adultscore=0 classifier=spam adjust=0 reason=mlx
+ scancount=1 engine=8.0.1-1810050000 definitions=main-1905310076
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190531_031505_442479_8E6842B6 
-X-CRM114-Status: UNSURE (   7.23  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190531_044544_276283_752254D2 
+X-CRM114-Status: GOOD (  24.97  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [148.163.156.1 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-snps-arc@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -134,55 +108,84 @@ List-Post: <mailto:linux-snps-arc@lists.infradead.org>
 List-Help: <mailto:linux-snps-arc-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-snps-arc>, 
  <mailto:linux-snps-arc-request@lists.infradead.org?subject=subscribe>
-Cc: "linux-snps-arc@lists.infradead.org" <linux-snps-arc@lists.infradead.org>,
- "libc-alpha@sourceware.org" <libc-alpha@sourceware.org>
+Reply-To: paulmck@linux.ibm.com
+Cc: "linux-arch@vger.kernel.org" <linux-arch@vger.kernel.org>,
+ Peter Zijlstra <peterz@infradead.org>,
+ 'Vineet Gupta' <Vineet.Gupta1@synopsys.com>, Will Deacon <Will.Deacon@arm.com>,
+ lkml <linux-kernel@vger.kernel.org>,
+ arcml <linux-snps-arc@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-snps-arc" <linux-snps-arc-bounces@lists.infradead.org>
 Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org
 
-Hi Andreas,
+On Fri, May 31, 2019 at 09:41:17AM +0000, David Laight wrote:
+> From: Vineet Gupta
+> > Sent: 30 May 2019 19:23
+> ...
+> > While it seems reasonable form hardware pov to not implement such atomicity by
+> > default it seems there's an additional burden on application writers. They could
+> > be happily using a lockless algorithm with just a shared flag between 2 threads
+> > w/o need for any explicit synchronization. But upgrade to a new compiler which
+> > aggressively "packs" struct rendering long long 32-bit aligned (vs. 64-bit before)
+> > causing the code to suddenly stop working. Is the onus on them to declare such
+> > memory as c11 atomic or some such.
+> 
+> A 'new' compiler can't suddenly change the alignment rules for structure elements.
+> The alignment rules will be part of the ABI.
+> 
+> More likely is that the structure itself is unexpectedly allocated on
+> an 8n+4 boundary due to code changes elsewhere.
+> 
+> It is also worth noting that for complete portability only writes to
+> 'full words' can be assumed atomic.
+> Some old Alpha's did RMW cycles for byte writes.
+> (Although I suspect Linux doesn't support those any more.)
 
-I'm trying to implement multilib support for ARC port of Glibc
-and for that we seem to need to have unique slibdir/rtlddir pair per
-each machine flavor. In our case these are at least:
- - ARC700 (legacy ARCompact architecture)
- - ARC HS38 (new gen ARCv2 architecture)
- - ARC HS38 with hardware floating-point
- - ARC HS48 (binary-compatible with HS38 but with different pipeline so
-             compiler schedules instructions differently)
- - eventually there'll be newer generations like ARCv3/v4 etc
+Any C11 or later compiler needs to generate the atomic RMW cycles if
+needed in cases like this.  To see this, consider the following code:
 
-Given we have in GCC a dedicated "-mcpu" value for each of items above
-my first thought was to "automatically" setup slibdir/rtlddir
-based on "-mcpu" value passed in CC during configuration.
+	spinlock_t l1;
+	spinlock_t l2;
+	struct foo {
+		char c1; // Protected by l1
+		char c2; // Protected by l2
+	}
 
-Something like that:
----------------------------------->8------------------------------------
-+++ b/sysdeps/unix/sysv/linux/arc/configure.ac
-@@ -2,3 +2,10 @@ GLIBC_PROVIDES dnl See aclocal.m4 in the top level source directory.
- # Local configure fragment for sysdeps/unix/sysv/linux/arc.
+	...
 
- arch_minimum_kernel=3.9.0
-+
-+# Extract "-mcpu=xxx" value from CC to install libs in a separate folder
-+arc_mcpu=[`echo $CC | grep -Po '\-mcpu=\K[^ ]+'`]
-+
-+if test "$arc_mcpu" != "" ; then
-+       LIBC_SLIBDIR_RTLDDIR([lib/${arc_mcpu}], [lib/${arc_mcpu}])
-+fi
----------------------------------->8------------------------------------
+	spin_lock(&l1);
+	fp->c1 = 42;
+	do_somthing_protected_by_l1();
+	spin_unlock(&l1);
 
-But apparently that doesn't work due to your change [1] in
-commit 128c43a2d630 ("LIBC_SLIBDIR_RTLDDIR: substitute arguments in single quotes").
+	...
 
-I guess mentioned change is not supposed to be reverted but then
-how do you think it's possible [if at all] to implement that kind of
-"automatic" setup of slibdir/rtlddir?
+	spin_lock(&l2);
+	fp->c2 = 206;
+	do_somthing_protected_by_l2();
+	spin_unlock(&l2);
 
-[1] https://sourceware.org/git/?p=glibc.git;a=commit;h=128c43a2d630
+A compiler that failed to generate atomic RMW code sequences for those
+stores to ->c1 and ->c2 would be generating a data race in the object
+code when there was no such race in the source code.  Kudos to Hans Boehm
+for having browbeat compiler writers into accepting this restriction,
+which was not particularly popular -- they wanted to be able to use
+vector units and such.  ;-)
 
--Alexey
+> Even x86 can catch you out.
+> The bit operations will do wider RMW cycles than you expect.
+
+But does the compiler automatically generate these?
+
+							Thanx, Paul
+
+> 	David
+> 
+> -
+> Registered Address Lakeside, Bramley Road, Mount Farm, Milton Keynes, MK1 1PT, UK
+> Registration No: 1397386 (Wales)
+
 
 _______________________________________________
 linux-snps-arc mailing list
