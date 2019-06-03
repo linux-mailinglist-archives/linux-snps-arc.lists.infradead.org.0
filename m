@@ -2,66 +2,85 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C6240333C7
-	for <lists+linux-snps-arc@lfdr.de>; Mon,  3 Jun 2019 17:41:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 019CA334DE
+	for <lists+linux-snps-arc@lfdr.de>; Mon,  3 Jun 2019 18:25:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:
-	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AZg0xjZRgA6g1skokczFpaGxxG0BPLI9UtVkutHez8s=; b=Mji4rol8LMY8+u
-	8zFv/NpkyqBP0zOuAuBqEokZSpTEGsp7vkEvqEXDtLpNDfAUK3LJi+AUKWVe7aRorQhg/WQVWoQT+
-	XA/YZd/qb+uatf1hbSwWITFgWiiiwGiH2eHaA+mI8W77WlK010dgik//5YIAIfrJeW9B927V6I8/Y
-	JXiafhqsWUWhqbQKB6v0UFBl7X5O2qiLNpIdGE1GPs8OZRit2siooGwqQDEjoBXBvLuXt4kd4koBF
-	elYfixmF7jHNroH9uUcaozNzcC/+b4Xpbc4hR7nwCjkyIyJQIAfn3CZLDN9yvgJcqzQMUdV/Nv2mp
-	gq3V7gwN7d3yFSbOCrBw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:Date
+	:Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	List-Owner; bh=8m1Sx1qf7YZpZLrFNyJxlsrHlWS2xzrOM5/xN9MRfaI=; b=NJvwCQLbW3crLr
+	7yxk0Z2WF7pKMCRoFvkWD2VNZhHai4alPtH1Upw12++jdixHFGLw9dys2SY5Sek+LzChKEAH1LdN7
+	JY1Y26EZ/cRP+cQB7sInsD5xxCXHKr9ylJvusgiYVGI7+/iN5K76apqtK/hYThm+1WzRmdDSS5sM4
+	1eONJCMx9vJHDtkRvHI7yFxhf0D/mtqurExl5nF483463PTVgFbnn6jg2gY0CHLREsFa93sVhTJM5
+	sdR8ZwwPE2YYWFFcrGYzM+bUBlxjDxuwYhoLRWfo7r2x4KwQ7hOUT4veQFbMjWBH1RPtulUOiclJt
+	/PlXCCXW60Bc/c83leIg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hXp5c-0003Mr-G9; Mon, 03 Jun 2019 15:41:36 +0000
-Received: from relay1.mentorg.com ([192.94.38.131])
+	id 1hXplb-0003Xl-NF; Mon, 03 Jun 2019 16:24:59 +0000
+Received: from smtprelay-out1.synopsys.com ([198.182.61.142])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hXp5Z-0003MG-JW
- for linux-snps-arc@lists.infradead.org; Mon, 03 Jun 2019 15:41:35 +0000
-Received: from nat-ies.mentorg.com ([192.94.31.2]
- helo=svr-ies-mbx-01.mgc.mentorg.com)
- by relay1.mentorg.com with esmtps (TLSv1.2:ECDHE-RSA-AES256-SHA384:256)
- id 1hXp5T-0002ZY-2j from joseph_myers@mentor.com ;
- Mon, 03 Jun 2019 08:41:27 -0700
-Received: from digraph.polyomino.org.uk (137.202.0.90) by
- svr-ies-mbx-01.mgc.mentorg.com (139.181.222.1) with Microsoft SMTP Server
- (TLS) id 15.0.1320.4; Mon, 3 Jun 2019 16:41:23 +0100
-Received: from jsm28 (helo=localhost)
- by digraph.polyomino.org.uk with local-esmtp (Exim 4.90_1)
- (envelope-from <joseph@codesourcery.com>)
- id 1hXp5O-00047S-UJ; Mon, 03 Jun 2019 15:41:22 +0000
-Date: Mon, 3 Jun 2019 15:41:22 +0000
-From: Joseph Myers <joseph@codesourcery.com>
-X-X-Sender: jsm28@digraph.polyomino.org.uk
-To: Alexey Brodkin <Alexey.Brodkin@synopsys.com>
-Subject: Re: Pass config-time variable to LIBC_SLIBDIR_RTLDDIR 
-In-Reply-To: <CY4PR1201MB01200F5CBFD010ADC371E89EA1190@CY4PR1201MB0120.namprd12.prod.outlook.com>
-Message-ID: <alpine.DEB.2.21.1906031528200.14124@digraph.polyomino.org.uk>
-References: <CY4PR1201MB01200F5CBFD010ADC371E89EA1190@CY4PR1201MB0120.namprd12.prod.outlook.com>
-User-Agent: Alpine 2.21 (DEB 202 2017-01-01)
+ id 1hXplY-0003X0-RI
+ for linux-snps-arc@lists.infradead.org; Mon, 03 Jun 2019 16:24:58 +0000
+Received: from mailhost.synopsys.com (badc-mailhost1.synopsys.com
+ [10.192.0.17])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
+ (No client certificate requested)
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id CF72AC2124;
+ Mon,  3 Jun 2019 16:24:34 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
+ t=1559579074; bh=JX+elEHAI7MoI1Kj6PhDcFRioomBwhgwjAEA09vtnIg=;
+ h=From:To:CC:Subject:Date:References:From;
+ b=cewzcBd3vYNCfDC3IhKlsGl2ELoWAKv8GHqe4/WXW/yiEuN8pwH2OZUTGi2TMEHwf
+ 9KMaMKjgt3MCVQ4zpaFkYE3YBK6o0WXALP+vdfaaPBdmdcyuHwNFCYbVKsbEba/8Zt
+ kT93PPT9bOHPGzER8qLfuE4N41BpuMs0yXUp/g4Lknp5hRtwreAOyfp0fgXIQNshiw
+ cfZi98+4IDMJwGEuQUwnPjmXUS8lW6Hfu4mls7Y+Vtmqs3TOrliVS7bGfgGCvN0IIA
+ rKwf9ai8hA4F64MmFEo8UJCF2v2lBL5+7AIesFyqcDdo9tlxfKFDQ/ZjIxDnqxKBP+
+ BcGxQw2xGBo/w==
+Received: from US01WEHTC3.internal.synopsys.com
+ (us01wehtc3.internal.synopsys.com [10.15.84.232])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mailhost.synopsys.com (Postfix) with ESMTPS id 36BD3A0079;
+ Mon,  3 Jun 2019 16:24:51 +0000 (UTC)
+Received: from us01wembx1.internal.synopsys.com ([169.254.1.22]) by
+ US01WEHTC3.internal.synopsys.com ([::1]) with mapi id 14.03.0415.000; Mon, 3
+ Jun 2019 09:24:50 -0700
+From: Vineet Gupta <Vineet.Gupta1@synopsys.com>
+To: Alexey Brodkin <Alexey.Brodkin@synopsys.com>,
+ "linux-snps-arc@lists.infradead.org" <linux-snps-arc@lists.infradead.org>
+Subject: Re: [PATCH] ARC: build: Try to guess CROSS_COMPILE with
+ cc-cross-prefix
+Thread-Topic: [PATCH] ARC: build: Try to guess CROSS_COMPILE with
+ cc-cross-prefix
+Thread-Index: AQHVGdX4wIpfF+K0XEmKZYQZNUp5WA==
+Date: Mon, 3 Jun 2019 16:24:49 +0000
+Message-ID: <C2D7FE5348E1B147BCA15975FBA2307501A2522AB4@us01wembx1.internal.synopsys.com>
+References: <20190603063119.36544-1-abrodkin@synopsys.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-originating-ip: [10.13.184.19]
 MIME-Version: 1.0
-X-Originating-IP: [137.202.0.90]
-X-ClientProxiedBy: svr-ies-mbx-02.mgc.mentorg.com (139.181.222.2) To
- svr-ies-mbx-01.mgc.mentorg.com (139.181.222.1)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190603_084133_642387_58ABFF82 
-X-CRM114-Status: GOOD (  16.41  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190603_092456_894350_54CB8496 
+X-CRM114-Status: GOOD (  12.26  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [192.94.38.131 listed in list.dnswl.org]
- 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-snps-arc@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -73,66 +92,73 @@ List-Post: <mailto:linux-snps-arc@lists.infradead.org>
 List-Help: <mailto:linux-snps-arc-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-snps-arc>, 
  <mailto:linux-snps-arc-request@lists.infradead.org?subject=subscribe>
-Cc: Andreas Schwab <schwab@suse.de>,
- "linux-snps-arc@lists.infradead.org" <linux-snps-arc@lists.infradead.org>,
- "libc-alpha@sourceware.org" <libc-alpha@sourceware.org>
+Cc: Masahiro Yamada <yamada.masahiro@socionext.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-snps-arc" <linux-snps-arc-bounces@lists.infradead.org>
 Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org
 
-On Fri, 31 May 2019, Alexey Brodkin wrote:
+On 6/2/19 11:31 PM, Alexey Brodkin wrote:
+> For a long time we used to hard-code CROSS_COMPILE prefix
+> for ARC until it started to cause problems, so we decided to
+> solely rely on CROSS_COMPILE externally set by a user:
+> commit 40660f1fcee8 ("ARC: build: Don't set CROSS_COMPILE in arch's Makefile").
+>
+> While it works perfectly fine for build-systems where the prefix
+> gets defined anyways for us human beings it's quite an annoying
+> requirement especially given most of time the same one prefix
+> "arc-linux-" is all what we need.
+>
+> It looks like finally we're getting the best of both worlds:
+>  1. W/o cross-toolchain we still may install headers, build .dtb etc
+>  2. W/ cross-toolchain get the kerne built with only ARCH=arc
+>
+> Inspired by [1] & [2].
+>
+> [1] http://lists.infradead.org/pipermail/linux-snps-arc/2019-May/005788.html
+> [2] https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=fc2b47b55f17
+>
+> A side note: even though "cc-cross-prefix" does its job it pollutes
+> console with output of "which" for all the prefixes it didn't manage to find
+> a matching cross-compiler for like that:
+> | # ARCH=arc make defconfig
+> | which: no arceb-linux-gcc in (~/.local/bin:~/bin:/usr/bin:/usr/sbin)
+> | *** Default configuration is based on 'nsim_hs_defconfig'
+>
+> Signed-off-by: Alexey Brodkin <abrodkin@synopsys.com>
+> Cc: Masahiro Yamada <yamada.masahiro@socionext.com>
+> Cc: Vineet Gupta <vgupta@synopsys.com>
 
-> Hi Andreas,
-> 
-> I'm trying to implement multilib support for ARC port of Glibc
-> and for that we seem to need to have unique slibdir/rtlddir pair per
-> each machine flavor. In our case these are at least:
->  - ARC700 (legacy ARCompact architecture)
->  - ARC HS38 (new gen ARCv2 architecture)
->  - ARC HS38 with hardware floating-point
->  - ARC HS48 (binary-compatible with HS38 but with different pipeline so
->              compiler schedules instructions differently)
+Not a big deal but I'd propose we add "Suggested-by: vgupta" since that is where
+it came from.
 
-If two processors are binary-compatible, in general you wouldn't have 
-different library directories.  (The HWCAP mechanism can be used to have a 
-single dynamic linker search different directories for optimized libraries 
-depending on the processor; put the relevant HWCAP bits in 
-HWCAP_IMPORTANT.  And of course you can just install different library 
-builds depending on the processor you'll be running the resulting OS on.)
+@Masahiro san I suppose you are OK with this, so perhaps an Ack etc would be nice
+to have.
 
-Different library directories are intended for the case where binaries for 
-different ABIs can be executed on the same system (e.g. 32-bit and 64-bit; 
-<https://sourceware.org/ml/libc-alpha/2018-01/msg00008.html> gives more 
-details of the various places that need updating to support such a 
-configuration in glibc).  For other cases of different ABIs, there should 
-be different dynamic linker names, to support multiarch configurations 
-that might run different-architecture binaries under emulation, but 
-different library directories are not required.
+Thx,
+-Vineet
 
-> Given we have in GCC a dedicated "-mcpu" value for each of items above
-> my first thought was to "automatically" setup slibdir/rtlddir
-> based on "-mcpu" value passed in CC during configuration.
+> ---
+>  arch/arc/Makefile | 4 ++++
+>  1 file changed, 4 insertions(+)
+>
+> diff --git a/arch/arc/Makefile b/arch/arc/Makefile
+> index e2b991f75bc5..9cfd2ba7a12d 100644
+> --- a/arch/arc/Makefile
+> +++ b/arch/arc/Makefile
+> @@ -8,6 +8,10 @@
+>  
+>  KBUILD_DEFCONFIG := nsim_hs_defconfig
+>  
+> +ifeq ($(CROSS_COMPILE),)
+> +CROSS_COMPILE := $(call cc-cross-prefix, arc-linux- arceb-linux-)
+> +endif
+> +
+>  cflags-y	+= -fno-common -pipe -fno-builtin -mmedium-calls -D__linux__
+>  cflags-$(CONFIG_ISA_ARCOMPACT)	+= -mA7
+>  cflags-$(CONFIG_ISA_ARCV2)	+= -mcpu=hs38
 
-Checking -mcpu in CC is a bad idea, given that the compiler might have 
-been configured with a default CPU rather than passing it on the command 
-line.
-
-Rather, you should test how the compiler behaves: either run $CC $CFLAGS 
-$CPPFLAGS -E -dM -xc /dev/null and extract and examine predefined macros, 
-or use AC_EGREP_CPP or AC_COMPILE_IFELSE for the same purpose.  (If you 
-don't have predefined macros that make all the required ABI distinctions, 
-obviously you need to add them.)  There are various examples of this in 
-existing configure / preconfigure fragments.
-
-Since there should be a finite list of known ABIs (which would be listed 
-on <https://sourceware.org/glibc/wiki/ABIList> for a port included in 
-glibc), you can then have a finite number of LIBC_SLIBDIR_RTLDDIR calls in 
-a case statement.
-
--- 
-Joseph S. Myers
-joseph@codesourcery.com
 
 _______________________________________________
 linux-snps-arc mailing list
