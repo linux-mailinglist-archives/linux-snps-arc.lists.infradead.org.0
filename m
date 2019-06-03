@@ -2,64 +2,65 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1FB693386C
-	for <lists+linux-snps-arc@lfdr.de>; Mon,  3 Jun 2019 20:43:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7521533878
+	for <lists+linux-snps-arc@lfdr.de>; Mon,  3 Jun 2019 20:45:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kk689uR4/VHpeO9SkI5vBqJxaJsDyWf16XPKUYrfzpo=; b=cJilHL0XFOfXGj
-	BF9hnQEaxKSyDUO9ne4EZb0JaviidPMeTMd9gFlG3RZGWHX0ggQHXWov/p95xAe6KtTTh8OQPoGWE
-	wvrzZgA7v5mEbvwAbKcveJC4tywxrbJhdirP5zoQ/139LUKFzKUU/i5KIGG1+0rInwigqsSo01z8M
-	5mgSFlXqi7XbBSVzYUTAgjb1SPCHjQpGKTBDeCeD59X0vlLvvFRI/dtGmha1M9bdGd12NZCrdBa6u
-	Q66YdE5AxG5T61/0SMY3D62NHCuVmLAy1FvoK7K9Ef0dLIwkpVMPOlcM0B7KTRPb5d/RCZ2No9WJB
-	+J8G8omNwZJLmwKJh4Mg==;
+	List-Owner; bh=Eod4/jiqyhSrXX1PHb9+xwLARl6fXMU97wgf5HZK6p4=; b=BYZUM/8mKv80j2
+	h6VZGQxnz6JrXDjZ5eziA4mAn+NOZxEv+ypqd45mweMGqs+xwnEZ5mhnDfKu13J4uohjcPN6g5wrq
+	AmmGxnFLJGjYrH7wii70dp6ojhg7epWono3ZuQduambMzSli4XkFOlX3p7O/gvd8Pp7BuKL3eLpDz
+	xFj7Bc7jP8/EEcLhUtyuUG5g0EsXvsTzIkTvT+dmS7PdhDGDBYiwfuSAhuVkQptQxKbg+skZ7bdvp
+	vRphq4auQWrrV2pTHFmWgHy/skwqMlPDWW4EVYZK6gVYzGG5bMl8ZGLL2s5SQvG8doVijs1QiXmZ/
+	+0edOAh2WOdhN14jkRrQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hXrvg-0005Bc-RF; Mon, 03 Jun 2019 18:43:32 +0000
-Received: from dc8-smtprelay2.synopsys.com ([198.182.47.102]
- helo=smtprelay-out1.synopsys.com)
+	id 1hXrxF-0006RQ-77; Mon, 03 Jun 2019 18:45:09 +0000
+Received: from smtprelay-out1.synopsys.com ([198.182.47.102])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hXrve-0005BE-31
- for linux-snps-arc@lists.infradead.org; Mon, 03 Jun 2019 18:43:31 +0000
-Received: from mailhost.synopsys.com (dc8-mailhost1.synopsys.com
- [10.13.135.209])
+ id 1hXrxD-0005qw-Cs
+ for linux-snps-arc@lists.infradead.org; Mon, 03 Jun 2019 18:45:08 +0000
+Received: from mailhost.synopsys.com (badc-mailhost2.synopsys.com
+ [10.192.0.18])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
  (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id CCF8FC1E03;
- Mon,  3 Jun 2019 18:43:38 +0000 (UTC)
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 388A9C1E7C;
+ Mon,  3 Jun 2019 18:45:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1559587419; bh=CHQdvmHpZ+nNkXgwTaRppfMOKNBm5bThrSa4Dlvw3O4=;
+ t=1559587515; bh=gCcSw5SmMUnuwclvmjbYEVrqMocAkqSgIMbd6lSdpaw=;
  h=Subject:To:CC:References:From:Date:In-Reply-To:From;
- b=cPJC4bgbctAhHRufhBWEQXyiDzTNCOD1l1jtppO66BWIaTQN0sf6BCC3kZW8KN1O0
- 0P4YknM0CEwgY371CHazcYw76x7cGgQ9SxsHRdgM1c2byC1lJsoepTcvO/SkDWtJQ3
- 8ifCYP1JHYcimcmwXPn0JJq9wo9rSqrsMg7/ncFdRP+Huqmk6gkW41O6u19J8YLjjj
- UYBESk46oqCN40ZL62jb92maAyL1hiYwuZmSB4GL8NlH+FBVfAWqV6W6YZJGVh9zuk
- rCI6peCKbt7PHHPfGJIBlq9bZRMRO43koCpnKtkhbqSv3eK9CkAKq8npgP9BNA4CZK
- B38HfFTgkNE5Q==
-Received: from US01WXQAHTC1.internal.synopsys.com
- (us01wxqahtc1.internal.synopsys.com [10.12.238.230])
- (using TLSv1.2 with cipher AES128-SHA256 (128/128 bits))
+ b=V1wKpwqtPYP26Le9BZy9giEwn0ggrjNmXmi2v0qFJTKQdt8tyi0et+KKpsGKH+ksJ
+ o2OmjExD1aO3qwdcVpbCpPTngcGO5SSYceAfQXh38VQqxSN+pz+KHB1sG6hoYKssFM
+ QvT9NzOMr2buEu84qBJvEEKRR9Pdkk+1Qemxcq1AmLWZDntJrdcIMTqBUSCrUVOyxM
+ HM8HZabEPDx4LR9mIvASZzsvjq0Le25L0fXno0jnRIo2Cy8H6bwcifYgyjfZ58+F+I
+ ywqJnJQIqgYH76dz32ez+ocQpWTP36jU3Z+vs744Vp3j3j/pJExY4kbiXTFHoP0POw
+ deK0X2OUJrk4w==
+Received: from US01WEHTC3.internal.synopsys.com
+ (us01wehtc3.internal.synopsys.com [10.15.84.232])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-SHA384 (256/256 bits))
  (No client certificate requested)
- by mailhost.synopsys.com (Postfix) with ESMTPS id 8E8FEA005D;
- Mon,  3 Jun 2019 18:43:28 +0000 (UTC)
+ by mailhost.synopsys.com (Postfix) with ESMTPS id 62A86A0101;
+ Mon,  3 Jun 2019 18:45:00 +0000 (UTC)
 Received: from IN01WEHTCB.internal.synopsys.com (10.144.199.106) by
- US01WXQAHTC1.internal.synopsys.com (10.12.238.230) with Microsoft SMTP Server
- (TLS) id 14.3.408.0; Mon, 3 Jun 2019 11:43:28 -0700
+ US01WEHTC3.internal.synopsys.com (10.15.84.232) with Microsoft SMTP Server
+ (TLS) id 14.3.408.0; Mon, 3 Jun 2019 11:45:00 -0700
 Received: from IN01WEHTCA.internal.synopsys.com (10.144.199.103) by
  IN01WEHTCB.internal.synopsys.com (10.144.199.105) with Microsoft SMTP Server
- (TLS) id 14.3.408.0; Tue, 4 Jun 2019 00:13:25 +0530
+ (TLS) id 14.3.408.0; Tue, 4 Jun 2019 00:14:57 +0530
 Received: from [10.10.161.35] (10.10.161.35) by
  IN01WEHTCA.internal.synopsys.com (10.144.199.243) with Microsoft SMTP Server
- (TLS) id 14.3.408.0; Tue, 4 Jun 2019 00:13:37 +0530
+ (TLS) id 14.3.408.0; Tue, 4 Jun 2019 00:15:09 +0530
 Subject: Re: single copy atomicity for double load/stores on 32-bit systems
-To: Peter Zijlstra <peterz@infradead.org>
-Newsgroups: gmane.linux.kernel, gmane.linux.kernel.arc,
- gmane.linux.kernel.cross-arch
+To: David Laight <David.Laight@ACULAB.COM>, Peter Zijlstra
+ <peterz@infradead.org>, Will Deacon <Will.Deacon@arm.com>, "Paul E. McKenney"
+ <paulmck@linux.vnet.ibm.com>
+Newsgroups: gmane.linux.kernel.arc, gmane.linux.kernel.cross-arch,
+ gmane.linux.kernel
 References: <2fd3a455-6267-5d21-c530-41964a4f6ce9@synopsys.com>
- <20190531082112.GH2623@hirez.programming.kicks-ass.net>
+ <895ec12746c246579aed5dd98ace6e38@AcuMS.aculab.com>
 From: Vineet Gupta <Vineet.Gupta1@synopsys.com>
 Openpgp: preference=signencrypt
 Autocrypt: addr=vgupta@synopsys.com; keydata=
@@ -85,18 +86,17 @@ Autocrypt: addr=vgupta@synopsys.com; keydata=
  d0+qKIXX1eMh0/5sDYM06/B34rQyq9HZVVPRHdvsfwCU0s3G+5Fai02mK68okr8TECOzqZtG
  cuQmkAeegdY70Bpzfbwxo45WWQq8dSRURA7KDeY5LutMphQPIP2syqgIaiEatHgwetyVCOt6
  tf3ClCidHNaGky9KcNSQ
-Message-ID: <77b30ed2-3211-222b-1342-051a6cde4f77@synopsys.com>
-Date: Mon, 3 Jun 2019 11:43:20 -0700
+Message-ID: <b6dbe51f-88a8-0b18-e0e7-147d8022ad54@synopsys.com>
+Date: Mon, 3 Jun 2019 11:44:52 -0700
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.7.0
 MIME-Version: 1.0
-In-Reply-To: <20190531082112.GH2623@hirez.programming.kicks-ass.net>
+In-Reply-To: <895ec12746c246579aed5dd98ace6e38@AcuMS.aculab.com>
 Content-Language: en-US
 X-Originating-IP: [10.10.161.35]
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190603_114330_138635_EAD8EDF5 
-X-CRM114-Status: UNSURE (   8.22  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190603_114507_446953_17B3BAD0 
+X-CRM114-Status: GOOD (  10.34  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -124,21 +124,27 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-snps-arc>,
  <mailto:linux-snps-arc-request@lists.infradead.org?subject=subscribe>
 Cc: "linux-arch@vger.kernel.org" <linux-arch@vger.kernel.org>,
  arcml <linux-snps-arc@lists.infradead.org>,
- "Paul E. McKenney" <paulmck@linux.vnet.ibm.com>,
- Will Deacon <Will.Deacon@arm.com>, lkml <linux-kernel@vger.kernel.org>
+ lkml <linux-kernel@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-snps-arc" <linux-snps-arc-bounces@lists.infradead.org>
 Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org
 
-On 5/31/19 1:21 AM, Peter Zijlstra wrote:
-> And I'll stand by my earlier conviction that any architecture that has a
-> native u64 (be it a 64bit arch or a 32bit with double-width
-> instructions) but has an ABI that allows u32 alignment on them is daft.
+On 5/31/19 2:41 AM, David Laight wrote:
+>> While it seems reasonable form hardware pov to not implement such atomicity by
+>> default it seems there's an additional burden on application writers. They could
+>> be happily using a lockless algorithm with just a shared flag between 2 threads
+>> w/o need for any explicit synchronization. But upgrade to a new compiler which
+>> aggressively "packs" struct rendering long long 32-bit aligned (vs. 64-bit before)
+>> causing the code to suddenly stop working. Is the onus on them to declare such
+>> memory as c11 atomic or some such.
+> A 'new' compiler can't suddenly change the alignment rules for structure elements.
+> The alignment rules will be part of the ABI.
+> 
+> More likely is that the structure itself is unexpectedly allocated on
+> an 8n+4 boundary due to code changes elsewhere.
 
-Why ? For 64-bit data on 32-bit systems, hardware doesn't claim to provide any
-single-copy atomicity for such data and software doesn't expect either.
-
+Indeed thats what I meant that the layout changed as is typical of a new compiler.
 
 _______________________________________________
 linux-snps-arc mailing list
