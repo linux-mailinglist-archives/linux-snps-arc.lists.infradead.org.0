@@ -2,45 +2,45 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E970D32E58
-	for <lists+linux-snps-arc@lfdr.de>; Mon,  3 Jun 2019 13:14:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EE42332E6E
+	for <lists+linux-snps-arc@lfdr.de>; Mon,  3 Jun 2019 13:16:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pUv8dR9khaF19j+CzzkC6yeCFFMu4HRYj6q8kVZGm+0=; b=EMqu2Oj5viPgwi
-	2Ky8x/PK42cqGXZhJLbUE7U9/32e3NdaR9vYkSs8lpY74g7TYq6sxpZsdc7REGz36S6WAK14jcAQ9
-	voL8LL2tllNxIzA54Zn4WS8ePYDt1KH8pL0uQQc46Axkq7FfDA+vZ3DGpAAj9j5YNyuUtT0nara9t
-	CbUqtB1Yh9UoImfbDNgq+mLzZ1k1vgKuvFsJD8UeLLytZXI7WfwTVNX668qEPvRzygcuhZRVk2Ih7
-	/cvNGi7GyVIXLIWnMNtsgWVHAVgClAiEXtJ0YSoAqq4zUPwycRLUexP6l4nqIdJqUuv5Bab13MOON
-	YGUBrs62Qwp0/EvMEVeQ==;
+	List-Owner; bh=gkt+K/5rkZ6teaCM/DduHjCVkTcWJYjfLpR4FKSdsSM=; b=BnKlI2IDRHnFSu
+	lFCXqr51MVV5qosIPGphuFYEnaAs0fQ1i3zMvtbLChxE7Y8Tlnl277gtN8obbz1IODWUaC+skTyKX
+	XNwZub2rOX3nCZY57JAhK+4sTo8i33GhtWdYwokwI/ON8BvvzicspAtIj5hzI/EIfMumX09mD4pLx
+	OntGVe6bSVmFvzWEw8hjw6xqI38GxpCpCqLQTxbjLbsQRD69OpUHULNzVUIB27vKnNUVzvGqGactE
+	pWMftc2Fyajf3re8vqHsjZUdufrbhc8jmr3EWDVvkowzyGoZEFyCck3s2ysAZQ68/bhntDoWw1o2/
+	+OLOccsBtBst8/3LxOxQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hXkus-0002fR-Lk; Mon, 03 Jun 2019 11:14:14 +0000
-Received: from eu-smtp-delivery-151.mimecast.com ([146.101.78.151])
+	id 1hXkxU-0004X1-Lp; Mon, 03 Jun 2019 11:16:56 +0000
+Received: from eu-smtp-delivery-151.mimecast.com ([207.82.80.151])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hXkup-0002eb-NT
- for linux-snps-arc@lists.infradead.org; Mon, 03 Jun 2019 11:14:13 +0000
+ id 1hXkxS-0004WN-25
+ for linux-snps-arc@lists.infradead.org; Mon, 03 Jun 2019 11:16:55 +0000
 Received: from AcuMS.aculab.com (156.67.243.126 [156.67.243.126]) (Using
  TLS) by relay.mimecast.com with ESMTP id
- uk-mta-133-AcFCnqi1O-qRKgiauL-8lw-1; Mon, 03 Jun 2019 12:14:04 +0100
+ uk-mta-108-o7jhmQwnN0qxpv2KrDfHtw-1; Mon, 03 Jun 2019 12:16:50 +0100
 Received: from AcuMS.Aculab.com (fd9f:af1c:a25b::d117) by AcuMS.aculab.com
  (fd9f:af1c:a25b::d117) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Mon,
- 3 Jun 2019 12:14:03 +0100
+ 3 Jun 2019 12:16:49 +0100
 Received: from AcuMS.Aculab.com ([fe80::43c:695e:880f:8750]) by
  AcuMS.aculab.com ([fe80::43c:695e:880f:8750%12]) with mapi id 15.00.1347.000; 
- Mon, 3 Jun 2019 12:14:03 +0100
+ Mon, 3 Jun 2019 12:16:49 +0100
 From: David Laight <David.Laight@ACULAB.COM>
 To: 'Masahiro Yamada' <yamada.masahiro@socionext.com>,
  "linux-kbuild@vger.kernel.org" <linux-kbuild@vger.kernel.org>
 Subject: RE: [PATCH] kbuild: use more portable 'command -v' for cc-cross-prefix
 Thread-Topic: [PATCH] kbuild: use more portable 'command -v' for
  cc-cross-prefix
-Thread-Index: AQHVGfoc7Nk6FX5Ty02s910sxgLWxaaJxI+g
-Date: Mon, 3 Jun 2019 11:14:03 +0000
-Message-ID: <863c29c5f0214c008fbcbb2aac517a5c@AcuMS.aculab.com>
+Thread-Index: AQHVGfoc7Nk6FX5Ty02s910sxgLWxaaJxwdw
+Date: Mon, 3 Jun 2019 11:16:49 +0000
+Message-ID: <3dcacca3f71c46cc98fa64b13a405b59@AcuMS.aculab.com>
 References: <20190603104902.23799-1-yamada.masahiro@socionext.com>
 In-Reply-To: <20190603104902.23799-1-yamada.masahiro@socionext.com>
 Accept-Language: en-GB, en-US
@@ -50,18 +50,19 @@ X-MS-TNEF-Correlator:
 x-ms-exchange-transport-fromentityheader: Hosted
 x-originating-ip: [10.202.205.107]
 MIME-Version: 1.0
-X-MC-Unique: AcFCnqi1O-qRKgiauL-8lw-1
+X-MC-Unique: o7jhmQwnN0qxpv2KrDfHtw-1
 X-Mimecast-Spam-Score: 0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190603_041412_044034_F8534F59 
-X-CRM114-Status: GOOD (  25.07  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190603_041654_364179_052A1BD5 
+X-CRM114-Status: UNSURE (   6.68  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [146.101.78.151 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [207.82.80.151 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-snps-arc@lists.infradead.org
@@ -92,99 +93,11 @@ From: Masahiro Yamada
 > environment, 'command -v' is a standardized way. [1]
 > 
 > 'which' is also often used in scripting, but it is not portable.
-> 
-> When I worked on commit bd55f96fa9fc ("kbuild: refactor cc-cross-prefix
-> implementation"), I was eager to use 'command -v' but it did not work.
-> (The reason is explained below.)
-> 
-> I kept 'which' as before but got rid of '> /dev/null 2>&1' as I
-> thought it was no longer needed. Sorry, I was wrong.
-> 
-> It works well on my Ubuntu machine, but Alexey Brodkin reports annoying
-> warnings from the 'which' on CentOS 7 when the given command is not
-> found in the PATH environment.
-> 
->   $ which foo
->   which: no foo in (/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin)
-> 
-> Given that behavior of 'which' is different on environment, I want
-> to try 'command -v' again.
-> 
-> The specification [1] clearly describes the behavior of 'command -v'
-> when the given command is not found:
-> 
->   Otherwise, no output shall be written and the exit status shall reflect
->   that the name was not found.
-> 
-> However, we need a little magic to use 'command -v' from Make.
-> 
-> $(shell ...) passes the argument to a subshell for execution, and
-> returns the standard output of the command.
-> 
-> Here is a trick. GNU Make may optimize this by executing the command
-> directly instead of forking a subshell, if no shell special characters
-> are found in the command line and omitting the subshell will not
-> change the behavior.
-> 
-> In this case, no shell special character is used. So, Make will try
-> to run the command directly. However, 'command' is a shell-builtin
-> command. In fact, Make has a table of shell-builtin commands because
-> it must spawn a subshell to execute them.
-> 
-> Until recently, 'command' was missing in the table.
-> 
-> This issue was fixed by the following commit:
-> 
-> | commit 1af314465e5dfe3e8baa839a32a72e83c04f26ef
-> | Author: Paul Smith <psmith@gnu.org>
-> | Date:   Sun Nov 12 18:10:28 2017 -0500
-> |
-> |     * job.c: Add "command" as a known shell built-in.
-> |
-> |     This is not a POSIX shell built-in but it's common in UNIX shells.
-> |     Reported by Nick Bowler <nbowler@draconx.ca>.
-> 
-> This is not included in any released versions of Make yet.
-> (But, some distributions may have back-ported the fix-up.)
-> 
-> To trick Make and let it fork the subshell, I added a shell special
-> character '~'. We may be able to get rid of this workaround someday,
-> but it is very far into the future.
-> 
-> [1] http://pubs.opengroup.org/onlinepubs/9699919799/utilities/command.html
-> 
-> Fixes: bd55f96fa9fc ("kbuild: refactor cc-cross-prefix implementation")
-> Cc: linux-stable <stable@vger.kernel.org> # 5.1
-> Reported-by: Alexey Brodkin <abrodkin@synopsys.com>
-> Signed-off-by: Masahiro Yamada <yamada.masahiro@socionext.com>
-> ---
-> 
->  scripts/Kbuild.include | 5 ++++-
->  1 file changed, 4 insertions(+), 1 deletion(-)
-> 
-> diff --git a/scripts/Kbuild.include b/scripts/Kbuild.include
-> index 85d758233483..5a32ca80c3f6 100644
-> --- a/scripts/Kbuild.include
-> +++ b/scripts/Kbuild.include
-> @@ -74,8 +74,11 @@ endef
->  # Usage: CROSS_COMPILE := $(call cc-cross-prefix, m68k-linux-gnu- m68k-linux-)
->  # Return first <prefix> where a <prefix>gcc is found in PATH.
->  # If no gcc found in PATH with listed prefixes return nothing
-> +#
-> +# Note: the special character '~' forces Make to invoke a shell. This workaround
-> +# is needed because this issue was only fixed after GNU Make 4.2.1 release.
->  cc-cross-prefix = $(firstword $(foreach c, $(filter-out -%, $(1)), \
-> -					$(if $(shell which $(c)gcc), $(c))))
-> +				$(if $(shell command -v $(c)gcc ~), $(c))))
 
-I see a problem here:
-	command -v foo bar
-could be deemed to be an error (extra argument).
-
-You could use:
-	$(shell sh -c "command -v $(c)gcc")
-or maybe:
-	$(shell command$${x:+} -v $(c)gcc)
+All uses of 'which' should be expunged.
+It is a bourne shell script that is trying to emulate a csh builtin.
+It is doomed to fail in corner cases.
+ISTR it has serious problems with shell functions and aliases.
 
 	David
 
