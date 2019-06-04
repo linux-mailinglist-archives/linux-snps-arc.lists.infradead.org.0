@@ -2,77 +2,74 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 961E233D98
-	for <lists+linux-snps-arc@lfdr.de>; Tue,  4 Jun 2019 05:45:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7EDB434089
+	for <lists+linux-snps-arc@lfdr.de>; Tue,  4 Jun 2019 09:41:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ApBa3lEElVqQwobiHRgQhF0KpTzI5cz7AHcDIzdteyM=; b=vENx0bwO/MJ4Jt
-	XL93QKmBvC1qXAAhnlA3P6fxThH89hj/iknf37rAYvblHeXLrsD2A1SMtgKfFIEgzUD6kITqGY+aX
-	Hfa7639JVHSAiWzy4hBf4Y6rITRNIfwq/LGPkNl8O+jT1PyL0+tWhzg9SPHGS2ZZ1EKw9DDUbdUmT
-	0dZHyy0o4oy77yLcjX00U/uEYtWf/WxGPmVDYIySPUgFU9vBwUNyrTdBjqFzMthniAlaoRc3WTFyf
-	630oKyuPJpD739+bVRsLqeBuctpSV1+GgRhnwlSwpHRdP4WWvrbqNZ2KQc717Ed914aktoJQ7AgPT
-	+E/bI0PI4go5OY13crbg==;
+	List-Owner; bh=DKMLdQp7DMd4DHGVlQ1/40WpzenVmnk5ECLQCPL6pAQ=; b=FKAcXKrH8G+4wP
+	8la1F5e+0XlNJAoAZf67norWezDXUmBf6tlc0VU4xFnSO1aD+fLAxM8B4Jz2cGLluir+cUbwL9kHY
+	4ROgrZcIHYCjFywanft71SPK24//PB9BTNZ5K9g/0yaNda2hCyXpkkgq77qbwD+Wc8jPy7VkxZTj8
+	QaWgvUQKDSSTVNjmp3mkDVyAXPFodmweSkL+vHmfQmvnORGf5beWaYhr3srHOICFO2La15hYHN5l4
+	d/Hsi8HncCamn47DYJuIX1+2uOIwU3HhxVvvEtL9AmQ9much7fvR/3LIT8ezJFopZdI5KmpOm9XXT
+	TQRvhGgHh8emAzMHie5A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hY0OB-0007kQ-6h; Tue, 04 Jun 2019 03:45:31 +0000
-Received: from conssluserg-03.nifty.com ([210.131.2.82])
+	id 1hY44P-0000QJ-7Z; Tue, 04 Jun 2019 07:41:21 +0000
+Received: from mail-lj1-f175.google.com ([209.85.208.175])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hY0O8-0007jz-De
- for linux-snps-arc@lists.infradead.org; Tue, 04 Jun 2019 03:45:30 +0000
-Received: from mail-ua1-f51.google.com (mail-ua1-f51.google.com
- [209.85.222.51]) (authenticated)
- by conssluserg-03.nifty.com with ESMTP id x543j1IP012042
- for <linux-snps-arc@lists.infradead.org>; Tue, 4 Jun 2019 12:45:02 +0900
-DKIM-Filter: OpenDKIM Filter v2.10.3 conssluserg-03.nifty.com x543j1IP012042
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nifty.com;
- s=dec2015msa; t=1559619902;
- bh=R4DTbEc9ajd/+gLs4R0E3A2qZCd8mpp6nT3mLt/MWL4=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=sSBx0AvDkKyPdfmLobt1FwXeI8jVeiK59RkpnvzCgW1NxC772shGT0Sxc6PAO3Ks8
- PDpJD75pBEKoT6FtjYqkPmeN7nHHdv/MoXFZ+KkARrl7JX7aMkTjv66C+gvwBFrf1k
- B8WFehagQofx/8TM/rEZq5ZQsCBBOmcPxP90UVmxzfiuyDbP2A1GnZ1/QcxY8pzP35
- peOxnzSOfUkm2Oyv22A6p/BEmKU4ophBttj/ymoil1dI3SwP/qqDWA9vS74RKRv/jT
- /r3Ba2dTESj1A1/ZKgvGfqHlnmrjZUEmgp2ARlAXb79sSmfu3ocxF13RuVLBIBPzcu
- YPiPeujYRKBIg==
-X-Nifty-SrcIP: [209.85.222.51]
-Received: by mail-ua1-f51.google.com with SMTP id f20so5635186ual.0
- for <linux-snps-arc@lists.infradead.org>; Mon, 03 Jun 2019 20:45:01 -0700 (PDT)
-X-Gm-Message-State: APjAAAVC8JD6Fz819evUzWdHtuTkfNlBUO7nU+MdotVx+WEB+w25zbLo
- aNuD/9B0IxDIaWVQBdb2HGGK8WFvvH7G+qIApII=
-X-Google-Smtp-Source: APXvYqzVUiWM/RaTvJFgDXA6xyHBfBmK48S0H0UYyNEUSUfOWS5M4whPygR0UYBlA4pDOL7pjG5Ty1EEttHRqBCTSd8=
-X-Received: by 2002:a9f:24a3:: with SMTP id 32mr13276265uar.109.1559619900888; 
- Mon, 03 Jun 2019 20:45:00 -0700 (PDT)
+ id 1hY44M-0000PL-LI
+ for linux-snps-arc@lists.infradead.org; Tue, 04 Jun 2019 07:41:19 +0000
+Received: by mail-lj1-f175.google.com with SMTP id i21so4138380ljj.3
+ for <linux-snps-arc@lists.infradead.org>; Tue, 04 Jun 2019 00:41:18 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=ZAHr1x2OGrSpVVmyEF6SL+BemidY5crrkYYK4WkhFYw=;
+ b=eS0PSTvn2ptZc1SaiLDFwNXcJLce2KylnwkYTc2/QSSbSssTzepoF5LN2MuCNrU6B/
+ YFyRkXALphHP61uhZmklxs9zEnHW1MFnQkFqPHDx3CW5B5oOMuLy9xXGnGEgpnPNI1Vk
+ 7XfSq/gRf1iCo3mBVgdhqMGWNpMhWzC0oG0uxgNzza5QTfUwL5LzGeuvq2LutHmYDTvj
+ Z73zlQZKCnv16B/fsH2gZVMZUqHxhCHkbW2vomao1SmaI373diZr5BbQb0D7icM9fUa1
+ IqAUSo58E+tXc5ERzbepM7/wJAzFamxA/FphoWDMZRLvYOfRn71txuRKjvdr1/hd8y5c
+ djbg==
+X-Gm-Message-State: APjAAAVJltoFb8nf/9CrYyzKokmUtGtkl7y5ij+BQodP5s96kqTa7e+S
+ 3xA/5WJJZIdu9eKXL+IC3pHWpaU8cadMkXC333s=
+X-Google-Smtp-Source: APXvYqzLztAMA/8xqZvEThx/dBoNLHWeEXrEpWdQwYRs3xI2FxEn7V2swIn8FrGUNYkkKJxgDcCVDKMKQoQ+1GalhoQ=
+X-Received: by 2002:a2e:2b8d:: with SMTP id r13mr3443413ljr.145.1559634076658; 
+ Tue, 04 Jun 2019 00:41:16 -0700 (PDT)
 MIME-Version: 1.0
-References: <20190603104902.23799-1-yamada.masahiro@socionext.com>
- <3dcacca3f71c46cc98fa64b13a405b59@AcuMS.aculab.com>
- <CAK7LNATt=P5rHrnK_8PTmjMb+tdtPg2qBgopRUDBFw_fkP2SsQ@mail.gmail.com>
- <1ca8a995328f449fa58f732ebe70e378@AcuMS.aculab.com>
-In-Reply-To: <1ca8a995328f449fa58f732ebe70e378@AcuMS.aculab.com>
-From: Masahiro Yamada <yamada.masahiro@socionext.com>
-Date: Tue, 4 Jun 2019 12:44:25 +0900
-X-Gmail-Original-Message-ID: <CAK7LNASwTS+rfZuFFcR7cz2HaOZWMjxhZUToV=74g09J72=osg@mail.gmail.com>
-Message-ID: <CAK7LNASwTS+rfZuFFcR7cz2HaOZWMjxhZUToV=74g09J72=osg@mail.gmail.com>
-Subject: Re: [PATCH] kbuild: use more portable 'command -v' for cc-cross-prefix
-To: David Laight <David.Laight@aculab.com>
+References: <2fd3a455-6267-5d21-c530-41964a4f6ce9@synopsys.com>
+ <20190531082112.GH2623@hirez.programming.kicks-ass.net>
+ <C2D7FE5348E1B147BCA15975FBA2307501A2522B5B@us01wembx1.internal.synopsys.com>
+ <20190603201324.GN28207@linux.ibm.com>
+In-Reply-To: <20190603201324.GN28207@linux.ibm.com>
+From: Geert Uytterhoeven <geert@linux-m68k.org>
+Date: Tue, 4 Jun 2019 09:41:04 +0200
+Message-ID: <CAMuHMdW-8Jt80mSyHTYmj6354-3f1=Vp_8dY-Nite1ERpUCFew@mail.gmail.com>
+Subject: Re: single copy atomicity for double load/stores on 32-bit systems
+To: "Paul E. McKenney" <paulmck@linux.ibm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190603_204528_680033_A0690C75 
-X-CRM114-Status: GOOD (  19.17  )
-X-Spam-Score: 1.0 (+)
+X-CRM114-CacheID: sfid-20190604_004118_695247_4B754B59 
+X-CRM114-Status: GOOD (  12.33  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [210.131.2.82 listed in list.dnswl.org]
+ no trust [209.85.208.175 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (geert.uytterhoeven[at]gmail.com)
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-snps-arc@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -84,98 +81,54 @@ List-Post: <mailto:linux-snps-arc@lists.infradead.org>
 List-Help: <mailto:linux-snps-arc-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-snps-arc>, 
  <mailto:linux-snps-arc-request@lists.infradead.org?subject=subscribe>
-Cc: Michal Marek <michal.lkml@markovi.net>,
- "linux-kbuild@vger.kernel.org" <linux-kbuild@vger.kernel.org>,
- Vineet Gupta <vgupta@synopsys.com>, Alexey Brodkin <abrodkin@synopsys.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- linux-stable <stable@vger.kernel.org>,
- "linux-snps-arc@lists.infradead.org" <linux-snps-arc@lists.infradead.org>
+Cc: "linux-arch@vger.kernel.org" <linux-arch@vger.kernel.org>,
+ Peter Zijlstra <peterz@infradead.org>,
+ Vineet Gupta <Vineet.Gupta1@synopsys.com>, Will Deacon <Will.Deacon@arm.com>,
+ lkml <linux-kernel@vger.kernel.org>,
+ arcml <linux-snps-arc@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-snps-arc" <linux-snps-arc-bounces@lists.infradead.org>
 Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org
 
-On Mon, Jun 3, 2019 at 9:43 PM David Laight <David.Laight@aculab.com> wrote:
->
-> From: Masahiro Yamada
-> > Sent: 03 June 2019 12:45
-> > On Mon, Jun 3, 2019 at 8:16 PM David Laight <David.Laight@aculab.com> wrote:
+Hi Paul,
+
+On Mon, Jun 3, 2019 at 10:14 PM Paul E. McKenney <paulmck@linux.ibm.com> wrote:
+> On Mon, Jun 03, 2019 at 06:08:35PM +0000, Vineet Gupta wrote:
+> > On 5/31/19 1:21 AM, Peter Zijlstra wrote:
+> > >> I'm not sure how to interpret "natural alignment" for the case of double
+> > >> load/stores on 32-bit systems where the hardware and ABI allow for 4 byte
+> > >> alignment (ARCv2 LDD/STD, ARM LDRD/STRD ....)
+> > > Natural alignment: !((uintptr_t)ptr % sizeof(*ptr))
 > > >
-> > > From: Masahiro Yamada
-> > > > Sent: 03 June 2019 11:49
-> > > >
-> > > > To print the pathname that will be used by shell in the current
-> > > > environment, 'command -v' is a standardized way. [1]
-> > > >
-> > > > 'which' is also often used in scripting, but it is not portable.
-> > >
-> > > All uses of 'which' should be expunged.
-> > > It is a bourne shell script that is trying to emulate a csh builtin.
-> > > It is doomed to fail in corner cases.
-> > > ISTR it has serious problems with shell functions and aliases.
+> > > For any u64 type, that would give 8 byte alignment. the problem
+> > > otherwise being that your data spans two lines/pages etc..
 > >
-> > OK, I do not have time to check it treewide.
-> > I expect somebody will contribute to it.
-> >
-> >
-> >
-> > BTW, I see yet another way to get the command path.
-> >
-> > 'type -path' is bash-specific.
+> > Sure, but as Paul said, if the software doesn't expect them to be atomic by
+> > default, they could span 2 hardware lines to keep the implementation simpler/sane.
 >
-> 'type' itself should be supported by all shells, but the output
-> format (esp for errors) probably varies.
->
-> > Maybe, we should do this too:
-> >
-> > diff --git a/scripts/mkuboot.sh b/scripts/mkuboot.sh
-> > index 4b1fe09e9042..77829ee4268e 100755
-> > --- a/scripts/mkuboot.sh
-> > +++ b/scripts/mkuboot.sh
-> > @@ -1,14 +1,14 @@
-> > -#!/bin/bash
-> > +#!/bin/sh
->
-> /bin/sh might be 'dash' - which is just plain broken in so many ways.
-> Try (IIRC) ${foo%${foo#bar}}
-> It might even be the original SYSV /bin/sh which doesn't support $((expr))
-> or ${foo#bar} - but that may break too much, but $SHELL might fix it.
+> I could imagine 8-byte types being only four-byte aligned on 32-bit systems,
+> but it would be quite a surprise on 64-bit systems.
 
+Or two-byte aligned?
 
-We cannot use any tool
-if you start to argue like
-"Hey, I know ancient implementation that did not work as expected".
+M68k started with a 16-bit data bus, and alignment rules were retained
+when gaining a wider data bus.
 
-Nobody can cover all corner-cases.
-That's why we have standard.
+BTW, do any platforms have issues with atomicity of 4-byte types on
+16-bit data buses? I believe some embedded ARM or PowerPC do have
+such buses.
 
-I think the reliable source is the
-Open Group Specification.
+Gr{oetje,eeting}s,
 
-The behavior of /bin/sh is defined here:
-http://pubs.opengroup.org/onlinepubs/9699919799/utilities/V3_chap02.html#tag_18_01
-
-${parameter%[word]} and ${parameter#[word]} are defined,
-so we can use them in /bin/sh scripts.
-
-
-> dash probably has the rather obscure bug in stripping '\n' from $(...)
-> output that I found and fixed in NetBSD's ash may years ago.
-> Try: foo="$(jot -b "" 130)"
-> All 130 '\n' should be deleted.
-> Mostly it fails to delete all the '\n', but it can remove extra ones!
->
->         David
->
-> -
-> Registered Address Lakeside, Bramley Road, Mount Farm, Milton Keynes, MK1 1PT, UK
-> Registration No: 1397386 (Wales)
-
-
+                        Geert
 
 -- 
-Best Regards
-Masahiro Yamada
+Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
+
+In personal conversations with technical people, I call myself a hacker. But
+when I'm talking to journalists I just say "programmer" or something like that.
+                                -- Linus Torvalds
 
 _______________________________________________
 linux-snps-arc mailing list
