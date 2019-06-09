@@ -2,70 +2,67 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CD6163A6AC
-	for <lists+linux-snps-arc@lfdr.de>; Sun,  9 Jun 2019 17:40:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1C5663A848
+	for <lists+linux-snps-arc@lfdr.de>; Sun,  9 Jun 2019 18:58:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=Qz+zZWkSm0Ve1faVnqaEf04gyqDzB6V1Cl4VP8kZJGw=; b=pdcLbypzJy6RwuYkR7eHI5jJ8q
-	pPe7l3yIZetuZTYAso8NCO0haN808ojitcDMWVrVN71Js+8JW0ZCXD4eIcW7pvohXKUD3LgZVAUHN
-	96la2xunLdkiqkk4wV7DtAc8rju726hn0OKOGUeMJpEgs4GD+bKAFsW0f/aqvv9+CGqk2g2ZbzhJO
-	1KbZ7zPElI02hp33lKFC3RY8FgA4ywCCiLiPwL45et4vudAiwT8I/ZhnvZ+YsKTpRxizuFih20tMC
-	wYu8+NQbuXwCVJLcoDjntQ//dc1SO7FJEYpXpjV2cSdHHH7FqrqdJu5/m8Mz6XsdMywHMR9zut/q7
-	gaFDaaPA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=wzIggId0gmThS/F8XiK5Otny4YoigGJC7ojN0W3awcU=; b=DBpzM0nt/6d4KP
+	rN8CqlBNNhy8qbkUdx3pfzkss995z8VjwjVPI8+Oit9jtIAfdCcymnEN1Zkaio85s4d2OcnQ34ahR
+	clHLXsDRIiSCyScR4nyayPdeS7vcpDvRg74vI2UmfXXEqS6TKVAt6vQ8pSaCC5nZ/BC/vj0eVAWEe
+	qLzKBh8cRkQUL2BmckNsioHsANRuhReF0SDKVYFgFdpvT1lNa/OZAz9kSIOeo22QwZ+aZ3JgV06NY
+	i1oVbYTHTA0pUKHqGtXMMw0TmJIZxqtPbo76xFVIZM8VsD9FU5YWLVrAKuz5/i/2zRHRwki/et1wM
+	z4YtBH21FJztKQB3pqaQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hZzw0-00060W-PK; Sun, 09 Jun 2019 15:40:40 +0000
-Received: from conuserg-11.nifty.com ([210.131.2.78])
+	id 1ha19a-0005sL-Ul; Sun, 09 Jun 2019 16:58:46 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hZzva-0005aK-Ff; Sun, 09 Jun 2019 15:40:16 +0000
-Received: from grover.flets-west.jp (softbank126125154139.bbtec.net
- [126.125.154.139]) (authenticated)
- by conuserg-11.nifty.com with ESMTP id x59Fdj4k004189;
- Mon, 10 Jun 2019 00:39:46 +0900
-DKIM-Filter: OpenDKIM Filter v2.10.3 conuserg-11.nifty.com x59Fdj4k004189
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nifty.com;
- s=dec2015msa; t=1560094786;
- bh=sepyG/8hIxhxQ9QmsdIoCmB/ivnSjIcnDWqmCNOKakA=;
+ id 1ha19Y-0005rg-Ff
+ for linux-snps-arc@lists.infradead.org; Sun, 09 Jun 2019 16:58:45 +0000
+Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
+ [83.86.89.107])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 78B1020868;
+ Sun,  9 Jun 2019 16:58:43 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1560099524;
+ bh=WoBSbLfDe3EUJR0RC3Q0R1f/4z4P6U+ScdlPh35tQkU=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=nigX/i8pIjUH/361+haohot9jBjBpNqL7RiRRkNnqmOsSwE+fBCYtVsa0T4JJpxAD
- R0DhFJAbW5JAdbjECFFEX5VoJEMv1oX0FjEneR2G5/HLNUDC3jcN34MaGNy2kmsoim
- elvIuXuwuD2TETx0T24QOgLWLFJ+frN57H+wFCNy93GSiwT1NLsXY8iGG9IrrhHfOP
- dm4C3kOGni6Favj6oitCr0i5PtAoeSEkBPrtC98w1MpZvZOlugvqm2v2kqw998xcgw
- SU0iYhusnx9hh8H0z/6I8FeDO2xYfyVQkgpaLQYXje2P6z4699R6vW70UO+cBWR6Qj
- 1FSj0v372vkWA==
-X-Nifty-SrcIP: [126.125.154.139]
-From: Masahiro Yamada <yamada.masahiro@socionext.com>
-To: Andrew Morton <akpm@linux-foundation.org>
-Subject: [PATCH 2/2] arch: replace _BITUL() in kernel-space headers with BIT()
-Date: Mon, 10 Jun 2019 00:39:41 +0900
-Message-Id: <20190609153941.17249-2-yamada.masahiro@socionext.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20190609153941.17249-1-yamada.masahiro@socionext.com>
-References: <20190609153941.17249-1-yamada.masahiro@socionext.com>
+ b=vAbeFd3KBMTqZ/IaCpprTyVYRbnYaBdebJfHBKgU3EDs4Mo3FtJ0qbMnJgd7bQ01p
+ nG4Wfm0OsX3S6cNEB2LUUEZaX2Z5tTYwbvq83Vgk/Epud3MrcJZhPrsb/BkitX+UN0
+ UnExLpSXM/EuQdmmCwB1ffMr/Shvo4U1+cEJDoc4=
+From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+To: linux-kernel@vger.kernel.org
+Subject: [PATCH 4.4 071/241] perf bench numa: Add define for RUSAGE_THREAD if
+ not present
+Date: Sun,  9 Jun 2019 18:40:13 +0200
+Message-Id: <20190609164149.820819274@linuxfoundation.org>
+X-Mailer: git-send-email 2.21.0
+In-Reply-To: <20190609164147.729157653@linuxfoundation.org>
+References: <20190609164147.729157653@linuxfoundation.org>
+User-Agent: quilt/0.66
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190609_084014_753417_AC18E166 
-X-CRM114-Status: UNSURE (   9.86  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 1.2 (+)
+X-CRM114-CacheID: sfid-20190609_095844_544046_1276991C 
+X-CRM114-Status: GOOD (  10.70  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [210.131.2.78 listed in list.dnswl.org]
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
- -0.6 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [210.131.2.78 listed in wl.mailspike.net]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.8 UPPERCASE_50_75        message body is 50-75% uppercase
+ -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-snps-arc@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,496 +74,55 @@ List-Post: <mailto:linux-snps-arc@lists.infradead.org>
 List-Help: <mailto:linux-snps-arc-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-snps-arc>, 
  <mailto:linux-snps-arc-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, linux-s390@vger.kernel.org,
- linux-kernel@vger.kernel.org, Masahiro Yamada <yamada.masahiro@socionext.com>,
- linux-snps-arc@lists.infradead.org, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Sasha Levin <sashal@kernel.org>, Arnd Bergmann <arnd@arndb.de>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Vineet Gupta <Vineet.Gupta1@synopsys.com>, stable@vger.kernel.org,
+ Arnaldo Carvalho de Melo <acme@redhat.com>, Jiri Olsa <jolsa@kernel.org>,
+ Namhyung Kim <namhyung@kernel.org>, linux-snps-arc@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-snps-arc" <linux-snps-arc-bounces@lists.infradead.org>
 Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org
 
-Now that BIT() can be used from assembly code, we can safely replace
-_BITUL() with equivalent BIT().
-
-UAPI headers are still required to use _BITUL(), but there is no more
-reason to use it in kernel headers. BIT() is shorter.
-
-Signed-off-by: Masahiro Yamada <yamada.masahiro@socionext.com>
----
-
- arch/arc/include/asm/pgtable.h          |  8 +--
- arch/arc/plat-eznps/include/plat/ctop.h | 15 ++---
- arch/arm64/include/asm/sysreg.h         | 82 ++++++++++++-------------
- arch/s390/include/asm/ctl_reg.h         | 42 ++++++-------
- arch/s390/include/asm/nmi.h             | 20 +++---
- arch/s390/include/asm/processor.h       | 20 +++---
- arch/s390/include/asm/ptrace.h          | 10 +--
- arch/s390/include/asm/setup.h           | 40 ++++++------
- arch/s390/include/asm/thread_info.h     | 34 +++++-----
- 9 files changed, 136 insertions(+), 135 deletions(-)
-
-diff --git a/arch/arc/include/asm/pgtable.h b/arch/arc/include/asm/pgtable.h
-index cf4be70d5892..8e729649d1b1 100644
---- a/arch/arc/include/asm/pgtable.h
-+++ b/arch/arc/include/asm/pgtable.h
-@@ -35,7 +35,7 @@
- #ifndef _ASM_ARC_PGTABLE_H
- #define _ASM_ARC_PGTABLE_H
- 
--#include <linux/const.h>
-+#include <linux/bits.h>
- #define __ARCH_USE_5LEVEL_HACK
- #include <asm-generic/pgtable-nopmd.h>
- #include <asm/page.h>
-@@ -218,11 +218,11 @@
- #define BITS_FOR_PTE	(PGDIR_SHIFT - PAGE_SHIFT)
- #define BITS_FOR_PGD	(32 - PGDIR_SHIFT)
- 
--#define PGDIR_SIZE	_BITUL(PGDIR_SHIFT)	/* vaddr span, not PDG sz */
-+#define PGDIR_SIZE	BIT(PGDIR_SHIFT)	/* vaddr span, not PDG sz */
- #define PGDIR_MASK	(~(PGDIR_SIZE-1))
- 
--#define	PTRS_PER_PTE	_BITUL(BITS_FOR_PTE)
--#define	PTRS_PER_PGD	_BITUL(BITS_FOR_PGD)
-+#define	PTRS_PER_PTE	BIT(BITS_FOR_PTE)
-+#define	PTRS_PER_PGD	BIT(BITS_FOR_PGD)
- 
- /*
-  * Number of entries a user land program use.
-diff --git a/arch/arc/plat-eznps/include/plat/ctop.h b/arch/arc/plat-eznps/include/plat/ctop.h
-index 309a994f64f0..a4a61531c7fb 100644
---- a/arch/arc/plat-eznps/include/plat/ctop.h
-+++ b/arch/arc/plat-eznps/include/plat/ctop.h
-@@ -10,6 +10,7 @@
- #error "Incorrect ctop.h include"
- #endif
- 
-+#include <linux/bits.h>
- #include <linux/types.h>
- #include <soc/nps/common.h>
- 
-@@ -51,19 +52,19 @@
- #define CTOP_INST_AXOR_DI_R2_R2_R3		0x4A664C06
- 
- /* Do not use D$ for address in 2G-3G */
--#define HW_COMPLY_KRN_NOT_D_CACHED		_BITUL(28)
-+#define HW_COMPLY_KRN_NOT_D_CACHED		BIT(28)
- 
- #define NPS_MSU_EN_CFG				0x80
- #define NPS_CRG_BLKID				0x480
--#define NPS_CRG_SYNC_BIT			_BITUL(0)
-+#define NPS_CRG_SYNC_BIT			BIT(0)
- #define NPS_GIM_BLKID				0x5C0
- 
- /* GIM registers and fields*/
--#define NPS_GIM_UART_LINE			_BITUL(7)
--#define NPS_GIM_DBG_LAN_EAST_TX_DONE_LINE	_BITUL(10)
--#define NPS_GIM_DBG_LAN_EAST_RX_RDY_LINE	_BITUL(11)
--#define NPS_GIM_DBG_LAN_WEST_TX_DONE_LINE	_BITUL(25)
--#define NPS_GIM_DBG_LAN_WEST_RX_RDY_LINE	_BITUL(26)
-+#define NPS_GIM_UART_LINE			BIT(7)
-+#define NPS_GIM_DBG_LAN_EAST_TX_DONE_LINE	BIT(10)
-+#define NPS_GIM_DBG_LAN_EAST_RX_RDY_LINE	BIT(11)
-+#define NPS_GIM_DBG_LAN_WEST_TX_DONE_LINE	BIT(25)
-+#define NPS_GIM_DBG_LAN_WEST_RX_RDY_LINE	BIT(26)
- 
- #ifndef __ASSEMBLY__
- /* Functional registers definition */
-diff --git a/arch/arm64/include/asm/sysreg.h b/arch/arm64/include/asm/sysreg.h
-index 902d75b60914..3bcd8294acc0 100644
---- a/arch/arm64/include/asm/sysreg.h
-+++ b/arch/arm64/include/asm/sysreg.h
-@@ -20,7 +20,7 @@
- #ifndef __ASM_SYSREG_H
- #define __ASM_SYSREG_H
- 
--#include <linux/const.h>
-+#include <linux/bits.h>
- #include <linux/stringify.h>
- 
- /*
-@@ -458,31 +458,31 @@
- #define SYS_ZCR_EL12			sys_reg(3, 5, 1, 2, 0)
- 
- /* Common SCTLR_ELx flags. */
--#define SCTLR_ELx_DSSBS	(_BITUL(44))
--#define SCTLR_ELx_ENIA	(_BITUL(31))
--#define SCTLR_ELx_ENIB	(_BITUL(30))
--#define SCTLR_ELx_ENDA	(_BITUL(27))
--#define SCTLR_ELx_EE    (_BITUL(25))
--#define SCTLR_ELx_IESB	(_BITUL(21))
--#define SCTLR_ELx_WXN	(_BITUL(19))
--#define SCTLR_ELx_ENDB	(_BITUL(13))
--#define SCTLR_ELx_I	(_BITUL(12))
--#define SCTLR_ELx_SA	(_BITUL(3))
--#define SCTLR_ELx_C	(_BITUL(2))
--#define SCTLR_ELx_A	(_BITUL(1))
--#define SCTLR_ELx_M	(_BITUL(0))
-+#define SCTLR_ELx_DSSBS	(BIT(44))
-+#define SCTLR_ELx_ENIA	(BIT(31))
-+#define SCTLR_ELx_ENIB	(BIT(30))
-+#define SCTLR_ELx_ENDA	(BIT(27))
-+#define SCTLR_ELx_EE    (BIT(25))
-+#define SCTLR_ELx_IESB	(BIT(21))
-+#define SCTLR_ELx_WXN	(BIT(19))
-+#define SCTLR_ELx_ENDB	(BIT(13))
-+#define SCTLR_ELx_I	(BIT(12))
-+#define SCTLR_ELx_SA	(BIT(3))
-+#define SCTLR_ELx_C	(BIT(2))
-+#define SCTLR_ELx_A	(BIT(1))
-+#define SCTLR_ELx_M	(BIT(0))
- 
- #define SCTLR_ELx_FLAGS	(SCTLR_ELx_M  | SCTLR_ELx_A | SCTLR_ELx_C | \
- 			 SCTLR_ELx_SA | SCTLR_ELx_I | SCTLR_ELx_IESB)
- 
- /* SCTLR_EL2 specific flags. */
--#define SCTLR_EL2_RES1	((_BITUL(4))  | (_BITUL(5))  | (_BITUL(11)) | (_BITUL(16)) | \
--			 (_BITUL(18)) | (_BITUL(22)) | (_BITUL(23)) | (_BITUL(28)) | \
--			 (_BITUL(29)))
--#define SCTLR_EL2_RES0	((_BITUL(6))  | (_BITUL(7))  | (_BITUL(8))  | (_BITUL(9))  | \
--			 (_BITUL(10)) | (_BITUL(13)) | (_BITUL(14)) | (_BITUL(15)) | \
--			 (_BITUL(17)) | (_BITUL(20)) | (_BITUL(24)) | (_BITUL(26)) | \
--			 (_BITUL(27)) | (_BITUL(30)) | (_BITUL(31)) | \
-+#define SCTLR_EL2_RES1	((BIT(4))  | (BIT(5))  | (BIT(11)) | (BIT(16)) | \
-+			 (BIT(18)) | (BIT(22)) | (BIT(23)) | (BIT(28)) | \
-+			 (BIT(29)))
-+#define SCTLR_EL2_RES0	((BIT(6))  | (BIT(7))  | (BIT(8))  | (BIT(9))  | \
-+			 (BIT(10)) | (BIT(13)) | (BIT(14)) | (BIT(15)) | \
-+			 (BIT(17)) | (BIT(20)) | (BIT(24)) | (BIT(26)) | \
-+			 (BIT(27)) | (BIT(30)) | (BIT(31)) | \
- 			 (0xffffefffUL << 32))
- 
- #ifdef CONFIG_CPU_BIG_ENDIAN
-@@ -504,23 +504,23 @@
- #endif
- 
- /* SCTLR_EL1 specific flags. */
--#define SCTLR_EL1_UCI		(_BITUL(26))
--#define SCTLR_EL1_E0E		(_BITUL(24))
--#define SCTLR_EL1_SPAN		(_BITUL(23))
--#define SCTLR_EL1_NTWE		(_BITUL(18))
--#define SCTLR_EL1_NTWI		(_BITUL(16))
--#define SCTLR_EL1_UCT		(_BITUL(15))
--#define SCTLR_EL1_DZE		(_BITUL(14))
--#define SCTLR_EL1_UMA		(_BITUL(9))
--#define SCTLR_EL1_SED		(_BITUL(8))
--#define SCTLR_EL1_ITD		(_BITUL(7))
--#define SCTLR_EL1_CP15BEN	(_BITUL(5))
--#define SCTLR_EL1_SA0		(_BITUL(4))
--
--#define SCTLR_EL1_RES1	((_BITUL(11)) | (_BITUL(20)) | (_BITUL(22)) | (_BITUL(28)) | \
--			 (_BITUL(29)))
--#define SCTLR_EL1_RES0  ((_BITUL(6))  | (_BITUL(10)) | (_BITUL(13)) | (_BITUL(17)) | \
--			 (_BITUL(27)) | (_BITUL(30)) | (_BITUL(31)) | \
-+#define SCTLR_EL1_UCI		(BIT(26))
-+#define SCTLR_EL1_E0E		(BIT(24))
-+#define SCTLR_EL1_SPAN		(BIT(23))
-+#define SCTLR_EL1_NTWE		(BIT(18))
-+#define SCTLR_EL1_NTWI		(BIT(16))
-+#define SCTLR_EL1_UCT		(BIT(15))
-+#define SCTLR_EL1_DZE		(BIT(14))
-+#define SCTLR_EL1_UMA		(BIT(9))
-+#define SCTLR_EL1_SED		(BIT(8))
-+#define SCTLR_EL1_ITD		(BIT(7))
-+#define SCTLR_EL1_CP15BEN	(BIT(5))
-+#define SCTLR_EL1_SA0		(BIT(4))
-+
-+#define SCTLR_EL1_RES1	((BIT(11)) | (BIT(20)) | (BIT(22)) | (BIT(28)) | \
-+			 (BIT(29)))
-+#define SCTLR_EL1_RES0  ((BIT(6))  | (BIT(10)) | (BIT(13)) | (BIT(17)) | \
-+			 (BIT(27)) | (BIT(30)) | (BIT(31)) | \
- 			 (0xffffefffUL << 32))
- 
- #ifdef CONFIG_CPU_BIG_ENDIAN
-@@ -735,13 +735,13 @@
- #define ZCR_ELx_LEN_SIZE	9
- #define ZCR_ELx_LEN_MASK	0x1ff
- 
--#define CPACR_EL1_ZEN_EL1EN	(_BITUL(16)) /* enable EL1 access */
--#define CPACR_EL1_ZEN_EL0EN	(_BITUL(17)) /* enable EL0 access, if EL1EN set */
-+#define CPACR_EL1_ZEN_EL1EN	(BIT(16)) /* enable EL1 access */
-+#define CPACR_EL1_ZEN_EL0EN	(BIT(17)) /* enable EL0 access, if EL1EN set */
- #define CPACR_EL1_ZEN		(CPACR_EL1_ZEN_EL1EN | CPACR_EL1_ZEN_EL0EN)
- 
- 
- /* Safe value for MPIDR_EL1: Bit31:RES1, Bit30:U:0, Bit24:MT:0 */
--#define SYS_MPIDR_SAFE_VAL	(_BITUL(31))
-+#define SYS_MPIDR_SAFE_VAL	(BIT(31))
- 
- #ifdef __ASSEMBLY__
- 
-diff --git a/arch/s390/include/asm/ctl_reg.h b/arch/s390/include/asm/ctl_reg.h
-index 4600453536c2..a59f33b201f6 100644
---- a/arch/s390/include/asm/ctl_reg.h
-+++ b/arch/s390/include/asm/ctl_reg.h
-@@ -8,27 +8,27 @@
- #ifndef __ASM_CTL_REG_H
- #define __ASM_CTL_REG_H
- 
--#include <linux/const.h>
--
--#define CR0_CLOCK_COMPARATOR_SIGN	_BITUL(63 - 10)
--#define CR0_EMERGENCY_SIGNAL_SUBMASK	_BITUL(63 - 49)
--#define CR0_EXTERNAL_CALL_SUBMASK	_BITUL(63 - 50)
--#define CR0_CLOCK_COMPARATOR_SUBMASK	_BITUL(63 - 52)
--#define CR0_CPU_TIMER_SUBMASK		_BITUL(63 - 53)
--#define CR0_SERVICE_SIGNAL_SUBMASK	_BITUL(63 - 54)
--#define CR0_UNUSED_56			_BITUL(63 - 56)
--#define CR0_INTERRUPT_KEY_SUBMASK	_BITUL(63 - 57)
--#define CR0_MEASUREMENT_ALERT_SUBMASK	_BITUL(63 - 58)
--
--#define CR2_GUARDED_STORAGE		_BITUL(63 - 59)
--
--#define CR14_UNUSED_32			_BITUL(63 - 32)
--#define CR14_UNUSED_33			_BITUL(63 - 33)
--#define CR14_CHANNEL_REPORT_SUBMASK	_BITUL(63 - 35)
--#define CR14_RECOVERY_SUBMASK		_BITUL(63 - 36)
--#define CR14_DEGRADATION_SUBMASK	_BITUL(63 - 37)
--#define CR14_EXTERNAL_DAMAGE_SUBMASK	_BITUL(63 - 38)
--#define CR14_WARNING_SUBMASK		_BITUL(63 - 39)
-+#include <linux/bits.h>
-+
-+#define CR0_CLOCK_COMPARATOR_SIGN	BIT(63 - 10)
-+#define CR0_EMERGENCY_SIGNAL_SUBMASK	BIT(63 - 49)
-+#define CR0_EXTERNAL_CALL_SUBMASK	BIT(63 - 50)
-+#define CR0_CLOCK_COMPARATOR_SUBMASK	BIT(63 - 52)
-+#define CR0_CPU_TIMER_SUBMASK		BIT(63 - 53)
-+#define CR0_SERVICE_SIGNAL_SUBMASK	BIT(63 - 54)
-+#define CR0_UNUSED_56			BIT(63 - 56)
-+#define CR0_INTERRUPT_KEY_SUBMASK	BIT(63 - 57)
-+#define CR0_MEASUREMENT_ALERT_SUBMASK	BIT(63 - 58)
-+
-+#define CR2_GUARDED_STORAGE		BIT(63 - 59)
-+
-+#define CR14_UNUSED_32			BIT(63 - 32)
-+#define CR14_UNUSED_33			BIT(63 - 33)
-+#define CR14_CHANNEL_REPORT_SUBMASK	BIT(63 - 35)
-+#define CR14_RECOVERY_SUBMASK		BIT(63 - 36)
-+#define CR14_DEGRADATION_SUBMASK	BIT(63 - 37)
-+#define CR14_EXTERNAL_DAMAGE_SUBMASK	BIT(63 - 38)
-+#define CR14_WARNING_SUBMASK		BIT(63 - 39)
- 
- #ifndef __ASSEMBLY__
- 
-diff --git a/arch/s390/include/asm/nmi.h b/arch/s390/include/asm/nmi.h
-index 1e5dc4537bf2..b160da8fa14b 100644
---- a/arch/s390/include/asm/nmi.h
-+++ b/arch/s390/include/asm/nmi.h
-@@ -12,7 +12,7 @@
- #ifndef _ASM_S390_NMI_H
- #define _ASM_S390_NMI_H
- 
--#include <linux/const.h>
-+#include <linux/bits.h>
- #include <linux/types.h>
- 
- #define MCIC_SUBCLASS_MASK	(1ULL<<63 | 1ULL<<62 | 1ULL<<61 | \
-@@ -20,15 +20,15 @@
- 				1ULL<<55 | 1ULL<<54 | 1ULL<<53 | \
- 				1ULL<<52 | 1ULL<<47 | 1ULL<<46 | \
- 				1ULL<<45 | 1ULL<<44)
--#define MCCK_CODE_SYSTEM_DAMAGE		_BITUL(63)
--#define MCCK_CODE_EXT_DAMAGE		_BITUL(63 - 5)
--#define MCCK_CODE_CP			_BITUL(63 - 9)
--#define MCCK_CODE_CPU_TIMER_VALID	_BITUL(63 - 46)
--#define MCCK_CODE_PSW_MWP_VALID		_BITUL(63 - 20)
--#define MCCK_CODE_PSW_IA_VALID		_BITUL(63 - 23)
--#define MCCK_CODE_CR_VALID		_BITUL(63 - 29)
--#define MCCK_CODE_GS_VALID		_BITUL(63 - 36)
--#define MCCK_CODE_FC_VALID		_BITUL(63 - 43)
-+#define MCCK_CODE_SYSTEM_DAMAGE		BIT(63)
-+#define MCCK_CODE_EXT_DAMAGE		BIT(63 - 5)
-+#define MCCK_CODE_CP			BIT(63 - 9)
-+#define MCCK_CODE_CPU_TIMER_VALID	BIT(63 - 46)
-+#define MCCK_CODE_PSW_MWP_VALID		BIT(63 - 20)
-+#define MCCK_CODE_PSW_IA_VALID		BIT(63 - 23)
-+#define MCCK_CODE_CR_VALID		BIT(63 - 29)
-+#define MCCK_CODE_GS_VALID		BIT(63 - 36)
-+#define MCCK_CODE_FC_VALID		BIT(63 - 43)
- 
- #ifndef __ASSEMBLY__
- 
-diff --git a/arch/s390/include/asm/processor.h b/arch/s390/include/asm/processor.h
-index b0fcbc37b637..b69beda08b1c 100644
---- a/arch/s390/include/asm/processor.h
-+++ b/arch/s390/include/asm/processor.h
-@@ -12,7 +12,7 @@
- #ifndef __ASM_S390_PROCESSOR_H
- #define __ASM_S390_PROCESSOR_H
- 
--#include <linux/const.h>
-+#include <linux/bits.h>
- 
- #define CIF_MCCK_PENDING	0	/* machine check handling is pending */
- #define CIF_ASCE_PRIMARY	1	/* primary asce needs fixup / uaccess */
-@@ -24,15 +24,15 @@
- #define CIF_MCCK_GUEST		7	/* machine check happening in guest */
- #define CIF_DEDICATED_CPU	8	/* this CPU is dedicated */
- 
--#define _CIF_MCCK_PENDING	_BITUL(CIF_MCCK_PENDING)
--#define _CIF_ASCE_PRIMARY	_BITUL(CIF_ASCE_PRIMARY)
--#define _CIF_ASCE_SECONDARY	_BITUL(CIF_ASCE_SECONDARY)
--#define _CIF_NOHZ_DELAY		_BITUL(CIF_NOHZ_DELAY)
--#define _CIF_FPU		_BITUL(CIF_FPU)
--#define _CIF_IGNORE_IRQ		_BITUL(CIF_IGNORE_IRQ)
--#define _CIF_ENABLED_WAIT	_BITUL(CIF_ENABLED_WAIT)
--#define _CIF_MCCK_GUEST		_BITUL(CIF_MCCK_GUEST)
--#define _CIF_DEDICATED_CPU	_BITUL(CIF_DEDICATED_CPU)
-+#define _CIF_MCCK_PENDING	BIT(CIF_MCCK_PENDING)
-+#define _CIF_ASCE_PRIMARY	BIT(CIF_ASCE_PRIMARY)
-+#define _CIF_ASCE_SECONDARY	BIT(CIF_ASCE_SECONDARY)
-+#define _CIF_NOHZ_DELAY		BIT(CIF_NOHZ_DELAY)
-+#define _CIF_FPU		BIT(CIF_FPU)
-+#define _CIF_IGNORE_IRQ		BIT(CIF_IGNORE_IRQ)
-+#define _CIF_ENABLED_WAIT	BIT(CIF_ENABLED_WAIT)
-+#define _CIF_MCCK_GUEST		BIT(CIF_MCCK_GUEST)
-+#define _CIF_DEDICATED_CPU	BIT(CIF_DEDICATED_CPU)
- 
- #ifndef __ASSEMBLY__
- 
-diff --git a/arch/s390/include/asm/ptrace.h b/arch/s390/include/asm/ptrace.h
-index 6f70d81c40f2..f009a13afe71 100644
---- a/arch/s390/include/asm/ptrace.h
-+++ b/arch/s390/include/asm/ptrace.h
-@@ -7,7 +7,7 @@
- #ifndef _S390_PTRACE_H
- #define _S390_PTRACE_H
- 
--#include <linux/const.h>
-+#include <linux/bits.h>
- #include <uapi/asm/ptrace.h>
- 
- #define PIF_SYSCALL		0	/* inside a system call */
-@@ -15,10 +15,10 @@
- #define PIF_SYSCALL_RESTART	2	/* restart the current system call */
- #define PIF_GUEST_FAULT		3	/* indicates program check in sie64a */
- 
--#define _PIF_SYSCALL		_BITUL(PIF_SYSCALL)
--#define _PIF_PER_TRAP		_BITUL(PIF_PER_TRAP)
--#define _PIF_SYSCALL_RESTART	_BITUL(PIF_SYSCALL_RESTART)
--#define _PIF_GUEST_FAULT	_BITUL(PIF_GUEST_FAULT)
-+#define _PIF_SYSCALL		BIT(PIF_SYSCALL)
-+#define _PIF_PER_TRAP		BIT(PIF_PER_TRAP)
-+#define _PIF_SYSCALL_RESTART	BIT(PIF_SYSCALL_RESTART)
-+#define _PIF_GUEST_FAULT	BIT(PIF_GUEST_FAULT)
- 
- #ifndef __ASSEMBLY__
- 
-diff --git a/arch/s390/include/asm/setup.h b/arch/s390/include/asm/setup.h
-index 925889d360c1..82deb8fc8319 100644
---- a/arch/s390/include/asm/setup.h
-+++ b/arch/s390/include/asm/setup.h
-@@ -6,7 +6,7 @@
- #ifndef _ASM_S390_SETUP_H
- #define _ASM_S390_SETUP_H
- 
--#include <linux/const.h>
-+#include <linux/bits.h>
- #include <uapi/asm/setup.h>
- 
- #define EP_OFFSET		0x10008
-@@ -21,25 +21,25 @@
-  * Machine features detected in early.c
-  */
- 
--#define MACHINE_FLAG_VM		_BITUL(0)
--#define MACHINE_FLAG_KVM	_BITUL(1)
--#define MACHINE_FLAG_LPAR	_BITUL(2)
--#define MACHINE_FLAG_DIAG9C	_BITUL(3)
--#define MACHINE_FLAG_ESOP	_BITUL(4)
--#define MACHINE_FLAG_IDTE	_BITUL(5)
--#define MACHINE_FLAG_DIAG44	_BITUL(6)
--#define MACHINE_FLAG_EDAT1	_BITUL(7)
--#define MACHINE_FLAG_EDAT2	_BITUL(8)
--#define MACHINE_FLAG_TOPOLOGY	_BITUL(10)
--#define MACHINE_FLAG_TE		_BITUL(11)
--#define MACHINE_FLAG_TLB_LC	_BITUL(12)
--#define MACHINE_FLAG_VX		_BITUL(13)
--#define MACHINE_FLAG_TLB_GUEST	_BITUL(14)
--#define MACHINE_FLAG_NX		_BITUL(15)
--#define MACHINE_FLAG_GS		_BITUL(16)
--#define MACHINE_FLAG_SCC	_BITUL(17)
--
--#define LPP_MAGIC		_BITUL(31)
-+#define MACHINE_FLAG_VM		BIT(0)
-+#define MACHINE_FLAG_KVM	BIT(1)
-+#define MACHINE_FLAG_LPAR	BIT(2)
-+#define MACHINE_FLAG_DIAG9C	BIT(3)
-+#define MACHINE_FLAG_ESOP	BIT(4)
-+#define MACHINE_FLAG_IDTE	BIT(5)
-+#define MACHINE_FLAG_DIAG44	BIT(6)
-+#define MACHINE_FLAG_EDAT1	BIT(7)
-+#define MACHINE_FLAG_EDAT2	BIT(8)
-+#define MACHINE_FLAG_TOPOLOGY	BIT(10)
-+#define MACHINE_FLAG_TE		BIT(11)
-+#define MACHINE_FLAG_TLB_LC	BIT(12)
-+#define MACHINE_FLAG_VX		BIT(13)
-+#define MACHINE_FLAG_TLB_GUEST	BIT(14)
-+#define MACHINE_FLAG_NX		BIT(15)
-+#define MACHINE_FLAG_GS		BIT(16)
-+#define MACHINE_FLAG_SCC	BIT(17)
-+
-+#define LPP_MAGIC		BIT(31)
- #define LPP_PID_MASK		_AC(0xffffffff, UL)
- 
- /* Offsets to entry points in kernel/head.S  */
-diff --git a/arch/s390/include/asm/thread_info.h b/arch/s390/include/asm/thread_info.h
-index ce4e17c9aad6..e582fbe59e20 100644
---- a/arch/s390/include/asm/thread_info.h
-+++ b/arch/s390/include/asm/thread_info.h
-@@ -8,7 +8,7 @@
- #ifndef _ASM_THREAD_INFO_H
- #define _ASM_THREAD_INFO_H
- 
--#include <linux/const.h>
-+#include <linux/bits.h>
- 
- /*
-  * General size of kernel stacks
-@@ -82,21 +82,21 @@ void arch_setup_new_exec(void);
- #define TIF_SECCOMP		26	/* secure computing */
- #define TIF_SYSCALL_TRACEPOINT	27	/* syscall tracepoint instrumentation */
- 
--#define _TIF_NOTIFY_RESUME	_BITUL(TIF_NOTIFY_RESUME)
--#define _TIF_SIGPENDING		_BITUL(TIF_SIGPENDING)
--#define _TIF_NEED_RESCHED	_BITUL(TIF_NEED_RESCHED)
--#define _TIF_UPROBE		_BITUL(TIF_UPROBE)
--#define _TIF_GUARDED_STORAGE	_BITUL(TIF_GUARDED_STORAGE)
--#define _TIF_PATCH_PENDING	_BITUL(TIF_PATCH_PENDING)
--#define _TIF_ISOLATE_BP		_BITUL(TIF_ISOLATE_BP)
--#define _TIF_ISOLATE_BP_GUEST	_BITUL(TIF_ISOLATE_BP_GUEST)
--
--#define _TIF_31BIT		_BITUL(TIF_31BIT)
--#define _TIF_SINGLE_STEP	_BITUL(TIF_SINGLE_STEP)
--
--#define _TIF_SYSCALL_TRACE	_BITUL(TIF_SYSCALL_TRACE)
--#define _TIF_SYSCALL_AUDIT	_BITUL(TIF_SYSCALL_AUDIT)
--#define _TIF_SECCOMP		_BITUL(TIF_SECCOMP)
--#define _TIF_SYSCALL_TRACEPOINT	_BITUL(TIF_SYSCALL_TRACEPOINT)
-+#define _TIF_NOTIFY_RESUME	BIT(TIF_NOTIFY_RESUME)
-+#define _TIF_SIGPENDING		BIT(TIF_SIGPENDING)
-+#define _TIF_NEED_RESCHED	BIT(TIF_NEED_RESCHED)
-+#define _TIF_UPROBE		BIT(TIF_UPROBE)
-+#define _TIF_GUARDED_STORAGE	BIT(TIF_GUARDED_STORAGE)
-+#define _TIF_PATCH_PENDING	BIT(TIF_PATCH_PENDING)
-+#define _TIF_ISOLATE_BP		BIT(TIF_ISOLATE_BP)
-+#define _TIF_ISOLATE_BP_GUEST	BIT(TIF_ISOLATE_BP_GUEST)
-+
-+#define _TIF_31BIT		BIT(TIF_31BIT)
-+#define _TIF_SINGLE_STEP	BIT(TIF_SINGLE_STEP)
-+
-+#define _TIF_SYSCALL_TRACE	BIT(TIF_SYSCALL_TRACE)
-+#define _TIF_SYSCALL_AUDIT	BIT(TIF_SYSCALL_AUDIT)
-+#define _TIF_SECCOMP		BIT(TIF_SECCOMP)
-+#define _TIF_SYSCALL_TRACEPOINT	BIT(TIF_SYSCALL_TRACEPOINT)
- 
- #endif /* _ASM_THREAD_INFO_H */
--- 
-2.17.1
-
-
-_______________________________________________
-linux-snps-arc mailing list
-linux-snps-arc@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-snps-arc
+WyBVcHN0cmVhbSBjb21taXQgYmY1NjFkM2MxMzQyM2ZjNTRkYWExOWI1ZDQ5ZGMxNWZhZmRiN2Fj
+YyBdCgpXaGlsZSBjcm9zcyBidWlsZGluZyBwZXJmIHRvIHRoZSBBUkMgYXJjaGl0ZWN0dXJlIG9u
+IGEgZmVkb3JhIDMwIGhvc3QsCndlIHdlcmUgZmFpbGluZyB3aXRoOgoKICAgICAgQ0MgICAgICAg
+L3RtcC9idWlsZC9wZXJmL2JlbmNoL251bWEubwogIGJlbmNoL251bWEuYzogSW4gZnVuY3Rpb24g
+4oCYd29ya2VyX3RocmVhZOKAmToKICBiZW5jaC9udW1hLmM6MTI2MToxMjogZXJyb3I6IOKAmFJV
+U0FHRV9USFJFQUTigJkgdW5kZWNsYXJlZCAoZmlyc3QgdXNlIGluIHRoaXMgZnVuY3Rpb24pOyBk
+aWQgeW91IG1lYW4g4oCYU0lHRVZfVEhSRUFE4oCZPwogICAgZ2V0cnVzYWdlKFJVU0FHRV9USFJF
+QUQsICZydXNhZ2UpOwogICAgICAgICAgICAgIF5+fn5+fn5+fn5+fn4KICAgICAgICAgICAgICBT
+SUdFVl9USFJFQUQKICBiZW5jaC9udW1hLmM6MTI2MToxMjogbm90ZTogZWFjaCB1bmRlY2xhcmVk
+IGlkZW50aWZpZXIgaXMgcmVwb3J0ZWQgb25seSBvbmNlIGZvciBlYWNoIGZ1bmN0aW9uIGl0IGFw
+cGVhcnMgaW4KCltwZXJmYnVpbGRlckA2MGQ1ODAyNDY4ZjYgcGVyZl0kIC9hcmNfZ251XzIwMTku
+MDMtcmMxX3ByZWJ1aWx0X3VjbGliY19sZV9hcmNoc19saW51eF9pbnN0YWxsL2Jpbi9hcmMtbGlu
+dXgtZ2NjIC0tdmVyc2lvbiB8IGhlYWQgLTEKYXJjLWxpbnV4LWdjYyAoQVJDdjIgSVNBIExpbnV4
+IHVDbGliYyB0b29sY2hhaW4gMjAxOS4wMy1yYzEpIDguMy4xIDIwMTkwMjI1CltwZXJmYnVpbGRl
+ckA2MGQ1ODAyNDY4ZjYgcGVyZl0kCgpUcnlpbmcgdG8gcmVwcm9kdWNlIGEgcmVwb3J0IGJ5IFZp
+bmVldCwgSSBub3RpY2VkIHRoYXQsIHdpdGgganVzdApjcm9zcy1idWlsdCB6bGliIGFuZCBudW1h
+Y3RsIGxpYnJhcmllcywgSSBlbmRlZCB1cCB3aXRoIHRoZSBhYm92ZQpmYWlsdXJlLgoKU28sIHNp
+bmNlIFJVU0FHRV9USFJFQUQgaXMgYXZhaWxhYmxlIGFzIGEgZGVmaW5lLCBjaGVjayBmb3IgdGhh
+dCBhbmQKbnVtYWN0bCBsaWJyYXJpZXMsIEkgZW5kZWQgdXAgd2l0aCB0aGUgYWJvdmUgZmFpbHVy
+ZS4KClNvLCBzaW5jZSBSVVNBR0VfVEhSRUFEIGlzIGF2YWlsYWJsZSBhcyBhIGRlZmluZSBpbiB0
+aGUgc3lzdGVtIGhlYWRlcnMsCmNoZWNrIGlmIGl0IGlzIGRlZmluZWQgaW4gdGhlICdwZXJmIGJl
+bmNoIG51bWEnIHNvdXJjZXMgYW5kIGRlZmluZSBpdCBpZgpub3QuCgpOb3cgaXQgYnVpbGRzIGFu
+ZCBJIGhhdmUgdG8gZmlndXJlIG91dCBpZiB0aGUgcHJvYmxlbSByZXBvcnRlZCBieSBWaW5lZXQK
+b25seSB0YWtlcyBwbGFjZSBpZiB3ZSBoYXZlIGxpYmVsZiBvciBzb21lIG90aGVyIGxpYnJhcnkg
+YXZhaWxhYmxlLgoKQ2M6IEFybmQgQmVyZ21hbm4gPGFybmRAYXJuZGIuZGU+CkNjOiBKaXJpIE9s
+c2EgPGpvbHNhQGtlcm5lbC5vcmc+CkNjOiBsaW51eC1zbnBzLWFyY0BsaXN0cy5pbmZyYWRlYWQu
+b3JnCkNjOiBOYW1oeXVuZyBLaW0gPG5hbWh5dW5nQGtlcm5lbC5vcmc+CkNjOiBWaW5lZXQgR3Vw
+dGEgPFZpbmVldC5HdXB0YTFAc3lub3BzeXMuY29tPgpMaW5rOiBodHRwczovL2xrbWwua2VybmVs
+Lm9yZy9uL3RpcC0yd2I0cjFnaXI5eHJldmJwcTdxcDBhbWtAZ2l0Lmtlcm5lbC5vcmcKU2lnbmVk
+LW9mZi1ieTogQXJuYWxkbyBDYXJ2YWxobyBkZSBNZWxvIDxhY21lQHJlZGhhdC5jb20+ClNpZ25l
+ZC1vZmYtYnk6IFNhc2hhIExldmluIDxzYXNoYWxAa2VybmVsLm9yZz4KLS0tCiB0b29scy9wZXJm
+L2JlbmNoL251bWEuYyB8IDQgKysrKwogMSBmaWxlIGNoYW5nZWQsIDQgaW5zZXJ0aW9ucygrKQoK
+ZGlmZiAtLWdpdCBhL3Rvb2xzL3BlcmYvYmVuY2gvbnVtYS5jIGIvdG9vbHMvcGVyZi9iZW5jaC9u
+dW1hLmMKaW5kZXggNzNkMTkyZjU3ZGMzNC4uZGY0MWRlZWQwMzIwZSAxMDA2NDQKLS0tIGEvdG9v
+bHMvcGVyZi9iZW5jaC9udW1hLmMKKysrIGIvdG9vbHMvcGVyZi9iZW5jaC9udW1hLmMKQEAgLTMy
+LDYgKzMyLDEwIEBACiAjaW5jbHVkZSA8bnVtYS5oPgogI2luY2x1ZGUgPG51bWFpZi5oPgogCisj
+aWZuZGVmIFJVU0FHRV9USFJFQUQKKyMgZGVmaW5lIFJVU0FHRV9USFJFQUQgMQorI2VuZGlmCisK
+IC8qCiAgKiBSZWd1bGFyIHByaW50b3V0IHRvIHRoZSB0ZXJtaW5hbCwgc3VwcmVzc2VkIGlmIC1x
+IGlzIHNwZWNpZmllZDoKICAqLwotLSAKMi4yMC4xCgoKCgpfX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1zbnBzLWFyYyBtYWlsaW5nIGxpc3QKbGlu
+dXgtc25wcy1hcmNAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9y
+Zy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXNucHMtYXJjCg==
