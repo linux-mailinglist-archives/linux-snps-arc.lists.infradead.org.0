@@ -2,66 +2,66 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5038341889
-	for <lists+linux-snps-arc@lfdr.de>; Wed, 12 Jun 2019 01:02:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CC33A418DE
+	for <lists+linux-snps-arc@lfdr.de>; Wed, 12 Jun 2019 01:26:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bmta3bz3KyKOgDRHlM7FeMTuNGGBu5vLZQqcVQGFhwo=; b=N/jKGYhPejsZzJ
-	shESELic3w4yK4lhT/qhml5ijRM+eUYPE37sWN6yevJRF4Sv/QTBssjfjn/uvpOir3WkJTZhgXk8F
-	qR+OiSd3eP6ZoMACiF3kK9rUFd2LayfBTwNV1xmM+M0HoaBENcXMZQAZdZmaiVkPuTT3dyeeiy9Yv
-	8DfnMaxGQ6gFg+GIsfm1RpLJir83ZlZUvN1KqNPLtKl7lEoD8tZZ6Poug/4sd4kPppsqIMmdFdNdX
-	l3Ym0bD3yJqaj0T89Tau28gFtFvmvG50FfaY5TMOkqBEiRSilNMnVu5AGAlVCIEgxowc7rjeFvbpF
-	xZ/vDcZrb1TjrJPFBlvQ==;
+	List-Owner; bh=8qr2fpk8v3ano93b0TCQsredr1dUZsFpesTIYktEj0M=; b=hT2I3kmFq0Uagg
+	4X/aeM2USO0RyQD/7YUub2DPJ3GImDuInQd4Qdc1yHMYq/OHofWZZH0q0WtzBD+HqhWteEGw/0v4s
+	c4eOOY4dRXBKn2CDbiuDcE8XUakKa7iMY3SQkSUKJ8pR0DaCZv7zER3wmhDMl8+T0pjLnM3b1l5y2
+	KmpUHCVSmWpb3wioA6XakxE1UTUJmYIIM2WPIa4i1W7FeefG0ad1uukqgeBWU0q2MDwBIfpsEkvpk
+	1kVyn0CtoIs3ZHioLciGwGkgGapg5EuVTEo+FivFgtpFbg9o8F5feMWQa4qo5N/RWFSTWkMHToR/K
+	TiQxO3FMB0IM1XyecVrQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hapmg-0007D6-4y; Tue, 11 Jun 2019 23:02:30 +0000
+	id 1haqAG-0000Tm-Lg; Tue, 11 Jun 2019 23:26:52 +0000
 Received: from dc2-smtprelay2.synopsys.com ([198.182.61.142]
  helo=smtprelay-out1.synopsys.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hapmd-0007Cf-G2
- for linux-snps-arc@lists.infradead.org; Tue, 11 Jun 2019 23:02:29 +0000
-Received: from mailhost.synopsys.com (dc8-mailhost1.synopsys.com
- [10.13.135.209])
+ id 1haqAD-0000TS-Jx
+ for linux-snps-arc@lists.infradead.org; Tue, 11 Jun 2019 23:26:51 +0000
+Received: from mailhost.synopsys.com (badc-mailhost2.synopsys.com
+ [10.192.0.18])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
  (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id E4E9AC0187;
- Tue, 11 Jun 2019 23:02:24 +0000 (UTC)
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id D9F3DC0A7A;
+ Tue, 11 Jun 2019 23:26:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1560294144; bh=d4odOJInl1KtbgoSbnVGcXDnxySNZES3Wc2GbCByY1c=;
+ t=1560295608; bh=yXXz418UXxczQTECEIV7HIqMIAxYjKiLSk3uPK4UjZk=;
  h=Subject:To:CC:References:From:Date:In-Reply-To:From;
- b=l1K26D6rRiSOtCW65/t4xUrz4kLvx7e8cPcSycM+CE2LeSgteZECebI55+7mPuF1K
- y45EQr0Bfdei1rUL3LI7fMY3d6YIkN0j7YL70RTw0o3U75aOO2Qc2F2yZPI6Drr560
- AbyhjXeghPEhbVoEy30Xp/gCsqiR9LbtVN/wmUgi8oBpSnDaVHCurRUtXpTnmohyTB
- t91m8xQl4lv51BlEeW55xI6A8QBG+q0mlGGlT14FB2kc0p3WNEiB0NWZoOhBkNelju
- dyueF8vs6stChDQpkjqIlE7fOWedPX0qgaIYuS5J7fg9gMMzkYU2AeF1CYliv3jYme
- XPfF17JXtPXbA==
-Received: from US01WXQAHTC1.internal.synopsys.com
- (us01wxqahtc1.internal.synopsys.com [10.12.238.230])
- (using TLSv1.2 with cipher AES128-SHA256 (128/128 bits))
+ b=WKK1UWhLqL3adGtuDvQ6cbOmVVr9/WWLoPpje44569vjls9M7bycPxUHqoX+cCWWc
+ k1YPfUQpWQJZD1TMTUbu4/iV9qlANBc/lX0U55dLmA4eN9fl5Z1lVKeVxd1SFVfgsr
+ DsEkpUhQJWn1LXiupCbBjeYHCWYcZZuzlgZlZRSo4LxGixtzv87d+Q3a/ZWcIu5j41
+ QILhqq9dPmkdu2ls47aXgJG6qjtxCgZ8+LMYD7DLpFzzK6wDW92+fVsHNM6SzDZ/lu
+ QyFFYYqqnVWowscsF55L/btrLg7UB17KDEL9YxnsRH9HvgRFS0D4tj/82eeu+PJCRk
+ qybnNqXzrWxbA==
+Received: from US01WEHTC3.internal.synopsys.com
+ (us01wehtc3.internal.synopsys.com [10.15.84.232])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-SHA384 (256/256 bits))
  (No client certificate requested)
- by mailhost.synopsys.com (Postfix) with ESMTPS id 61EDEA023B;
- Tue, 11 Jun 2019 23:02:24 +0000 (UTC)
+ by mailhost.synopsys.com (Postfix) with ESMTPS id A95A5A006A;
+ Tue, 11 Jun 2019 23:26:48 +0000 (UTC)
 Received: from IN01WEHTCB.internal.synopsys.com (10.144.199.106) by
- US01WXQAHTC1.internal.synopsys.com (10.12.238.230) with Microsoft SMTP Server
- (TLS) id 14.3.408.0; Tue, 11 Jun 2019 16:02:23 -0700
+ US01WEHTC3.internal.synopsys.com (10.15.84.232) with Microsoft SMTP Server
+ (TLS) id 14.3.408.0; Tue, 11 Jun 2019 16:26:48 -0700
 Received: from IN01WEHTCA.internal.synopsys.com (10.144.199.103) by
  IN01WEHTCB.internal.synopsys.com (10.144.199.105) with Microsoft SMTP Server
- (TLS) id 14.3.408.0; Wed, 12 Jun 2019 04:32:20 +0530
+ (TLS) id 14.3.408.0; Wed, 12 Jun 2019 04:56:45 +0530
 Received: from [10.10.161.35] (10.10.161.35) by
  IN01WEHTCA.internal.synopsys.com (10.144.199.243) with Microsoft SMTP Server
- (TLS) id 14.3.408.0; Wed, 12 Jun 2019 04:32:33 +0530
+ (TLS) id 14.3.408.0; Wed, 12 Jun 2019 04:56:57 +0530
 Subject: Re: ARC Assembler: bundle_align_mode directive support
-To: Eugeniy Paltsev <Eugeniy.Paltsev@synopsys.com>,
- Cupertino Miranda <Cupertino.Miranda@synopsys.com>,
- Vineet Gupta <Vineet.Gupta1@synopsys.com>
+To: Cupertino Miranda <Cupertino.Miranda@synopsys.com>,
+ Eugeniy Paltsev <Eugeniy.Paltsev@synopsys.com>
 Newsgroups: gmane.linux.kernel,gmane.linux.kernel.arc
 References: <3962a9ad199cea45b1cfadb80be551aab83b7028.camel@synopsys.com>
  <C2D7FE5348E1B147BCA15975FBA2307501A2525686@us01wembx1.internal.synopsys.com>
  <d79085cbc6126c2a4fad173934e1e9b29523abba.camel@synopsys.com>
+ <015f8668b5fff15e781722165f38fa4beacffcf1.camel@synopsys.com>
 From: Vineet Gupta <Vineet.Gupta1@synopsys.com>
 Openpgp: preference=signencrypt
 Autocrypt: addr=vgupta@synopsys.com; keydata=
@@ -87,17 +87,17 @@ Autocrypt: addr=vgupta@synopsys.com; keydata=
  d0+qKIXX1eMh0/5sDYM06/B34rQyq9HZVVPRHdvsfwCU0s3G+5Fai02mK68okr8TECOzqZtG
  cuQmkAeegdY70Bpzfbwxo45WWQq8dSRURA7KDeY5LutMphQPIP2syqgIaiEatHgwetyVCOt6
  tf3ClCidHNaGky9KcNSQ
-Message-ID: <02fcd330-8b3c-a3cb-0aa9-e91bca6b6d0f@synopsys.com>
-Date: Tue, 11 Jun 2019 16:01:50 -0700
+Message-ID: <c37d8c8d-8654-7965-bc74-0d3377766621@synopsys.com>
+Date: Tue, 11 Jun 2019 16:26:37 -0700
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.7.0
 MIME-Version: 1.0
-In-Reply-To: <d79085cbc6126c2a4fad173934e1e9b29523abba.camel@synopsys.com>
+In-Reply-To: <015f8668b5fff15e781722165f38fa4beacffcf1.camel@synopsys.com>
 Content-Language: en-US
 X-Originating-IP: [10.10.161.35]
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190611_160227_542245_796ECC50 
-X-CRM114-Status: GOOD (  28.66  )
+X-CRM114-CacheID: sfid-20190611_162649_671125_437686D9 
+X-CRM114-Status: GOOD (  33.06  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -132,184 +132,311 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-snps-arc" <linux-snps-arc-bounces@lists.infradead.org>
 Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org
 
-On 6/11/19 11:47 AM, Eugeniy Paltsev wrote:
-> Hi Vineet,
+On 6/11/19 1:40 PM, Cupertino Miranda wrote:
+> Hi Eugeniy,
 > 
-> On Mon, 2019-06-10 at 15:55 +0000, Vineet Gupta wrote:
->> On 6/8/19 11:21 AM, Eugeniy Paltsev wrote:
->>> Hi Cupertino,
->>>
->>> I tried to use ".bundle_align_mode" directive in ARC assembly, but I got following error:
->>> ----------------->8--------------
->>> Assembler messages:
->>> Error: unknown pseudo-op: `.bundle_align_mode'
->>> ----------------->8--------------
->>>
->>> Is it possible to implement it in ARC assembler?
->>> There is some context about the reason we want to have it:
->>>
->>> I'm trying to add support of jump labels for ARC in linux kernel. Jump labels
->>> provide an interface to generate static branches using self-modifying code.
->>> This allows us to implement conditional branches where changing branch
->>> direction is expensive but branch selection is basically 'free'.
->>>
->>> There is nuance in current implementation:
->>> We need to patch code by rewriting 32-bit NOP by 32-bit BRANCH instruction (or vice versa).
->>> It can be easily done with following code:
->>> ----------------->8--------------
->>> write_32_bit(new_instruction)
->>> flush_l1_dcache_range_this_cpu
->>> invalidate_l1_icache_range_all_cpu
->>> ----------------->8--------------
->>>
->>> I$ update will be atomic in most of cases except the patched instruction share
->>> two L1 cache lines (so first 16 bits of instruction are in the one cache line and
->>> last 16 bit are in another cache line).
->>> In such case we can execute half-updated instruction if we are patching live code (and we are unlucky enough :)
+> If I understand well what this optimization would do is ... this
+> optimization would replace conditional code by fixed jumps that would
+> turn out to be always happening. Like fixed ARC build aux registers
+> based conditional jumps.
+> 
+> I don't understand several things:
+>  1st. Can't we invalidate multiple icache lines, and synchronize them
+> through all CPUs?
+
+Please read his prev email once again. The issue can happen before icache sync can
+do the magic. Code update involves updating both dcache and icache lines. Further
+dcache update is propagated by hardware (cache coh unit) while icache by Linux
+cross core IPI calls. However the potential race is when the patching core's
+dcache flush is propagated to other core, but icache cross call is not not
+seen/executed by other core and that core also happens to be executing around the
+region of code being patched - such that of the 2 icache lines involved, 1 exists
+already (old) but the other doesn't (evicted a while back) so fetches the new line
+- as a result the 2 icache lines don't correspond to same instruction.
+
+
+> I am afraid no one might know the actual truth to
+> this question. :-)
+
+We do, hopefully now u do too ;-)
+
+
+> Suggestion: Can't we make use of instruction slots to perform this ?
+> Please notice ei_s is a short 16 bit instruction. 
+
+As you mention below EI_s takes an index into jump table. Simplistically each jump
+label would correspond to a unique indexes, how do we assign unique indexs for
+these instances. Remember we define the macro just once in a header as follows
+
+| static inline bool arch_static_branch_jump(struct static_key *key, bool branch)
+| {
+|	asm_volatile_goto("1:\n\t"
+|		 "b_s %l[l_yes]\n\t"
+|		 ".pushsection __jump_table,  \"aw\"\n\t"
+|		 ".word 1b, %l[l_yes], %c0\n\t"
+|		 ".popsection\n\t"
+|		 : :  "i" (&((char *)key)[branch]) :  : l_yes);
+|
+|	return false;
+|l_yes:
+|	return true;
+|}
+
+Do we have a gcc asm constraint etc to achieve that. IMO EI_S is useful for
+baremetal hand written pure asm code, not so much as targeted by compiler proper.
+
+
+> Replacing the
+> instruction with an "ei_s <index>" and a nop in case of 32 bit
+> instruction ? Do all of the Linux compatible target support instruction
+> slots ?
+> Anyway it will not solve the invalid instruction in the remaining
+> icache line.
+> 
+> For referemce, I still think this optimization is a little useless and
+> a can of worms,
+
+You mean the whole jump label framework is useless.
+
+How about looking at real code, rather than speculating about the merits of kernel
+developers: I can understand u have reservations about our meritocracy, but this
+feature was done by smarter folks ;-)
+
+The function below is used in hot schedular path:
+
+u64 sched_clock_cpu(int cpu)
+{
+	if (!static_branch_unlikely(&sched_clock_running))
+		return 0;
+
+	return sched_clock();
+}
+
+Here it reads a flag every call
+
+80304194 <sched_clock_cpu>:
+80304194:	ld	r2,[0x80713a00]
+8030419c:	brge.nt	r2,0x1,12	;803041a8 <sched_clock_cpu+0x14>
+803041a0:	mov_s	r0,0
+803041a2:	j_s.d	[blink]
+803041a4:	mov_s	r1,0
+803041a6:	nop_s
+803041a8:	b	266756	;803453ac <sched_clock>
+
+With jump label we replace the LD with a nop as that is more likely to be true.
+
+800562f8 <sched_clock_cpu>:
+800562f8:	nop
+800562fc:	mov_s	r0,0
+800562fe:	j_s.d	[blink]
+80056300:	mov_s	r1,0
+80056302:	nop_s
+80056304:	b	257676	;80095190 <sched_clock>
+
+
+> as for actual use cases the customer can know at
+> compile time all of the this constant jumps for its target.
+> No one that would care for performance would prefer this feature to
+> actual clear out of its code.
+
+????
+
+> 
+> Looking at it, It seems to me that Linux kernel should evolve to a JIT
+> compilation approach, instead of this JIT juggling one.
+
+There is in-kernel JIT compiler already, used for bigger code chunks, not so much
+for 2 or 4 bytes: every use case is different.
+
+> 
+> Best regards,
+> Cupertino
+> 
+> 
+> On Tue, 2019-06-11 at 18:47 +0000, Eugeniy Paltsev wrote:
+>> Hi Vineet,
 >>
->> While I understand your need for alignment, I don't see how you can possibly
->> execute stray lines.
->> dcache flush will be propagated by hardware (SCU) to all cores (as applicable) and
->> the icache cache flush xcall is synchronous and will have to finish on all cores
->> before we proceed to execute the cod eitself.
+>> On Mon, 2019-06-10 at 15:55 +0000, Vineet Gupta wrote:
+>>> On 6/8/19 11:21 AM, Eugeniy Paltsev wrote:
+>>>> Hi Cupertino,
+>>>>
+>>>> I tried to use ".bundle_align_mode" directive in ARC assembly,
+>>>> but I got following error:
+>>>> ----------------->8--------------
+>>>> Assembler messages:
+>>>> Error: unknown pseudo-op: `.bundle_align_mode'
+>>>> ----------------->8--------------
+>>>>
+>>>> Is it possible to implement it in ARC assembler?
+>>>> There is some context about the reason we want to have it:
+>>>>
+>>>> I'm trying to add support of jump labels for ARC in linux kernel.
+>>>> Jump labels
+>>>> provide an interface to generate static branches using self-
+>>>> modifying code.
+>>>> This allows us to implement conditional branches where changing
+>>>> branch
+>>>> direction is expensive but branch selection is basically 'free'.
+>>>>
+>>>> There is nuance in current implementation:
+>>>> We need to patch code by rewriting 32-bit NOP by 32-bit BRANCH
+>>>> instruction (or vice versa).
+>>>> It can be easily done with following code:
+>>>> ----------------->8--------------
+>>>> write_32_bit(new_instruction)
+>>>> flush_l1_dcache_range_this_cpu
+>>>> invalidate_l1_icache_range_all_cpu
+>>>> ----------------->8--------------
+>>>>
+>>>> I$ update will be atomic in most of cases except the patched
+>>>> instruction share
+>>>> two L1 cache lines (so first 16 bits of instruction are in the
+>>>> one cache line and
+>>>> last 16 bit are in another cache line).
+>>>> In such case we can execute half-updated instruction if we are
+>>>> patching live code (and we are unlucky enough :)
+>>>
+>>> While I understand your need for alignment, I don't see how you can
+>>> possibly
+>>> execute stray lines.
+>>> dcache flush will be propagated by hardware (SCU) to all cores (as
+>>> applicable) and
+>>> the icache cache flush xcall is synchronous and will have to finish
+>>> on all cores
+>>> before we proceed to execute the cod eitself.
+>>>
 >>
-> 
-> It's easy as hell - we may execute some code on one CPU and patch it on another CPU at the same moment :)
-> 
-> And here is the example of the situation when we can get the issue:
-> - Let's imagine we have SMP system with CPU#0 and CPU#1.
-> - We have instruction which share two L1 cache lines:
-> ~ ---------------------------------|--------------------------------- ~
-> ~            |instruction-Z (32-bit instruction we patch)|            ~
-> ~ ---------------------------------|--------------------------------- ~
-> ~   cache-line-X                   | cache-line-Y                     ~
-> ~ ---------------------------------|--------------------------------- ~
-> 
-> CPU#0 is trying to switch our static branch, so it will patch the code (instruction-Z)
-> CPU#1 is executing this code with our static branch, so it execute the code (with instruction-Z) that will be patched.
-> 
-> 1) CPU#0: we generate new instruction (to replace 'instruction-Z')
->    and write it with 32-bit store (st). It is written to CPU#0 L1 data cache.
-> 2) CPU#0: we call our function flush_icache_range.
->    It firstly will flush L1 data cache region on CPU#0.
->    In our example it will flush CPU#0 L1 'cache-line-X' and 'cache-line-Y' to L2 cache.
-> 3) CPU#1: we are executing code which is in 'cache-line-X'.
->    'cache-line-Y' is __NOT__ in the L1 instruction cache of CPU#1.
->    We need to execute 'instruction-Z', but only half of the instruction is in L1 instruction cache.
->    CPU#1 fetch 'cache-line-Y' to L1 instruction cache.
-> 4)  Ooops: now we have corrupted 'instruction-Z' in L1 instruction cache of CPU#1:
->    First 16 bit of this instruction (which belongs to 'cache-line-X') are old (not patched).
->    Last 16 bit of this instruction (which belongs to 'cache-line-Y') are new (patched). 
+>> It's easy as hell - we may execute some code on one CPU and patch it
+>> on another CPU at the same moment :)
+>>
+>> And here is the example of the situation when we can get the issue:
+>> - Let's imagine we have SMP system with CPU#0 and CPU#1.
+>> - We have instruction which share two L1 cache lines:
+>> ~ ---------------------------------|---------------------------------
+>> ~
+>> ~            |instruction-Z (32-bit instruction we
+>> patch)|            ~
+>> ~ ---------------------------------|---------------------------------
+>> ~
+>> ~   cache-line-X                   | cache-line-
+>> Y                     ~
+>> ~ ---------------------------------|---------------------------------
+>> ~
+>>
+>> CPU#0 is trying to switch our static branch, so it will patch the
+>> code (instruction-Z)
+>> CPU#1 is executing this code with our static branch, so it execute
+>> the code (with instruction-Z) that will be patched.
+>>
+>> 1) CPU#0: we generate new instruction (to replace 'instruction-Z')
+>>    and write it with 32-bit store (st). It is written to CPU#0 L1
+>> data cache.
+>> 2) CPU#0: we call our function flush_icache_range.
+>>    It firstly will flush L1 data cache region on CPU#0.
+>>    In our example it will flush CPU#0 L1 'cache-line-X' and 'cache-
+>> line-Y' to L2 cache.
+>> 3) CPU#1: we are executing code which is in 'cache-line-X'.
+>>    'cache-line-Y' is __NOT__ in the L1 instruction cache of CPU#1.
+>>    We need to execute 'instruction-Z', but only half of the
+>> instruction is in L1 instruction cache.
+>>    CPU#1 fetch 'cache-line-Y' to L1 instruction cache.
+>> 4)  Ooops: now we have corrupted 'instruction-Z' in L1 instruction
+>> cache of CPU#1:
+>>    First 16 bit of this instruction (which belongs to 'cache-line-X') 
+>> are old (not patched).
+>>    Last 16 bit of this instruction (which belongs to 'cache-line-Y')
+>> are new (patched).
+>>
+>>>> As of today I simply align by 4 byte instruction which can be
+>>>> patched with ".balign 4" directive:
+>>>> ----------------->8--------------
+>>>> static __always_inline bool arch_static_branch_jump(struct
+>>>> static_key *key,
+>>>>     bool branch)
+>>>> {
+>>>> asm_volatile_goto(".balign 4\n"
+>>>>  "1:\n"
+>>>>  "b %l[l_yes]\n" // <- instruction which can be patched
+>>>>  ".pushsection __jump_table, \"aw\"\n"
+>>>>  ".word 1b, %l[l_yes], %c0\n"
+>>>>  ".popsection\n"
+>>>>  : : "i" (&((char *)key)[branch]) : : l_yes);
+>>>>
+>>>> return false;
+>>>> l_yes:
+>>>> return true;
+>>>> }
+>>>> ----------------->8--------------
+>>>>
+>>>> In that case patched instruction is aligned with one 16-bit NOP
+>>>> if this is required.
+>>>> However 'align by 4' directive is much stricter than it actually
+>>>> required.
+>>>
+>>> I don't quite understand. Can u write a couple of lines of pseudo
+>>> assembly to show
+>>> what the issue is.
+>>
+>> All instructions on ARCv2 are aligned by 2 byte (even if the
+>> instruction is 4-byte long).
+>>
+>> Using '.balign' directive we align instruction which can be
+>> patched by 4 byte.
+>> So compiler will add one 'nop_s' before our instruction if it is not
+>> 4 byte aligned.
+>>
+>> So this code
+>> ------------------->8---------------
+>> -----
+>>  .balign 4
+>>  1:
+>>  b %l[l_yes]   #<- instruction which can be patched
+>> ------------------->8--------------------
+>> may turn into this:
+>> -----------------
+>> -->8--------------------
+>> bla-bla-bla
+>>  b l_yes       #<- instruction which can be patched
+>> bla-bla-bla
+>> ------------------->8--------------------
+>> or that:
+>> ----
+>> --------------->8--------------------
+>> bla-bla-bla
+>>  nop_s         # padding
+>>  b l_yes       #<- instruction which can be patched
+>> bla-bla-bla
+>> ----------------
+>> --->8--------------------
+>>
+>> In most of the cases this extra 'nop_s' is unnecessary as it is fine
+>> to have our instruction
+>> not 4 byte aligned if it doesn't cross l1 cache line boundary.
+>>
+>> It is't the huge problem - but we are adding one unnecessary 'nop'
+>> while we try to optimize hot code.
+>>
+>>>
+>>>> It's enough
+>>>> that our 32-bit instruction don't cross l1 cache line boundary.
+>>>> That will save us from adding useless NOP padding in most of the
+>>>> cases.
+>>>> It can be implemented with ".bundle_align_mode" directive which
+>>>> isn't supported by ARC AS unfortunately.
+>>>
+>>> This seems like a reasonable request (contingent to the difficulty
+>>> of
+>>> implementation in binutils). but I can't comprehend why you would
+>>> need it.
+>>
+>> If we will have ".bundle_align_mode" directive supported we can add
+>> extra 'nop_s' only if it's really required
+>> (if our instruction _really_ cross L1 cache line boundary). So we
+>> won't add useless NOP to hot code.
+>>
+>> --
+>>  Eugeniy Paltsev
 
-OK I agree there is a race: I was not thinking of case where the exact patched
-instruction is concurrently being executed on other core. Indeed we need to ensure
-it doesn't straddle icache line.
-
-We could potentially avoid all of these issues if we could use 2 byte (NOP_S +
-B_S). The added advantage is even better icache footprint. Ofcourse with B_S the
-branch range goes down from S25 to S10, but considering the use cases it might be
-enough after all.
-
--------->8-----------
-static __always_inline bool arch_static_branch(struct static_key *key, bool branch)
- {
-        asm_volatile_goto("1:\n\t"
--                "nop \n\t"
-+                "nop_s \n\t"
-                 ".pushsection __jump_table,  \"aw\"\n\t"
-                 ".word 1b, %l[l_yes], %c0\n\t"
-                 ".popsection\n\t"
-
-static __always_inline bool arch_static_branch_jump(struct static_key *key, bool
-branch)
- {
-        asm_volatile_goto("1:\n\t"
--                "b %l[l_yes]\n\t"
-+                "b_s %l[l_yes]\n\t"
--------->8-----------
-
-It indeed works, except for 1 place in networking code where S10 is not enough.
-Granted it is not future proof, I do like the effect
-
-add/remove: 0/0 grow/shrink: 0/45 up/down: 0/-244 (-244)
-function                                     old     new   delta
-udp_queue_rcv_one_skb                       1010    1006      -4
-udp_flow_hashrnd                              80      76      -4
-udp_destroy_sock                             128     124      -4
-udp4_lib_lookup2.constprop                   562     558      -4
-udp4_gro_receive                             628     624      -4
-try_to_wake_up                               876     872      -4
-tcp_splice_read                             1026    1022      -4
-tcp_recvmsg                                 2618    2614      -4
-tcp_read_sock                                508     504      -4
-switched_from_fair                           176     172      -4
-secure_ipv4_port_ephemeral                   102      98      -4
-sched_clock_cpu                               16      12      -4
-run_filter                                   232     228      -4
-process_backlog                              420     416      -4
-pick_next_task_fair                         2984    2980      -4
-netif_rx_internal                            174     170      -4
-netif_reset_xps_queues                       690     686      -4
-netif_receive_skb_list                       488     484      -4
-netif_receive_skb_internal                   242     238      -4
-load_balance                                2370    2366      -4
-inet_sendpage                                352     348      -4
-inet_sendmsg                                 244     240      -4
-inet_recvmsg                                 192     188      -4
-inet_lhash2_lookup                           414     410      -4
-inet_accept                                  252     248      -4
-housekeeping_affine                           30      26      -4
-fnhe_hashfun                                 158     154      -4
-finish_task_switch                           370     366      -4
-enqueue_task_fair                           1504    1500      -4
-do_page_fault                                658     654      -4
-dequeue_task_fair                            988     984      -4
-bpf_user_rnd_init_once                        62      58      -4
-__skb_get_hash_symmetric                     694     690      -4
-__skb_get_hash                               726     722      -4
-__schedule                                   998     994      -4
-__release_sock                               240     236      -4
-__netif_receive_skb_core                    1782    1778      -4
-__netdev_alloc_skb                           304     300      -4
-task_tick_fair                               814     806      -8
-sched_rt_period_timer                       1034    1026      -8
-netdev_pick_tx                               664     656      -8
-find_busiest_group                          2348    2340      -8
-check_preempt_wakeup                         690     682      -8
-jump_label_test                              324     312     -12
-select_task_rq_fair                         3112    3072     -40
-Total: Before=4064620, After=4064376, chg -1.000000%
-
-
-
->>> As of today I simply align by 4 byte instruction which can be patched with ".balign 4" directive:
->>> However 'align by 4' directive is much stricter than it actually required.
-...
-
-> All instructions on ARCv2 are aligned by 2 byte (even if the instruction is 4-byte long).
-> 
-> Using '.balign' directive we align instruction which can be
-> patched by 4 byte.
-> So compiler will add one 'nop_s' before our instruction if it is not 4 byte aligned.
-> 
-
-...
-
-> 
-> In most of the cases this extra 'nop_s' is unnecessary as it is fine to have our instruction
-> not 4 byte aligned if it doesn't cross l1 cache line boundary.
-> 
-> It is't the huge problem - but we are adding one unnecessary 'nop' while we try to optimize hot code.
-> 
-...
-
-> If we will have ".bundle_align_mode" directive supported we can add extra 'nop_s' only if it's really required
-> (if our instruction _really_ cross L1 cache line boundary). So we won't add useless NOP to hot code.
-
-OK understand, but this is not gating the feature. We can start off with .balign 4
-and if-n-once tools support it we can remove the alignment requirements.
-
--Vineet
 
 _______________________________________________
 linux-snps-arc mailing list
