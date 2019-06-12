@@ -2,115 +2,77 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CC33A418DE
-	for <lists+linux-snps-arc@lfdr.de>; Wed, 12 Jun 2019 01:26:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6698F423DB
+	for <lists+linux-snps-arc@lfdr.de>; Wed, 12 Jun 2019 13:18:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8qr2fpk8v3ano93b0TCQsredr1dUZsFpesTIYktEj0M=; b=hT2I3kmFq0Uagg
-	4X/aeM2USO0RyQD/7YUub2DPJ3GImDuInQd4Qdc1yHMYq/OHofWZZH0q0WtzBD+HqhWteEGw/0v4s
-	c4eOOY4dRXBKn2CDbiuDcE8XUakKa7iMY3SQkSUKJ8pR0DaCZv7zER3wmhDMl8+T0pjLnM3b1l5y2
-	KmpUHCVSmWpb3wioA6XakxE1UTUJmYIIM2WPIa4i1W7FeefG0ad1uukqgeBWU0q2MDwBIfpsEkvpk
-	1kVyn0CtoIs3ZHioLciGwGkgGapg5EuVTEo+FivFgtpFbg9o8F5feMWQa4qo5N/RWFSTWkMHToR/K
-	TiQxO3FMB0IM1XyecVrQ==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=i1TKyWYcu3w6M1oypiJMzl+ZoZH+bgDk2Y0sW6O4Wu4=; b=G4f9e/eCbUsegN
+	sdJ5rXFUyNEyt3qMPtXYPA2nHknWJaptIURYQhAYV/g5Ch4/PnX++zPEJdvGtQENw1mhL1Pc4Y0Rf
+	KG4IydNo7OIBR4nVl9ysBjjqKpFBar2gv5mi8SDoTlAh3fqEPgBK0RDqXEXjqf9/l7ysZzP4FO/wZ
+	gstZL3Bs6WMlZnYD7DVWu/lt4MD8/IrZk4h+bT9UlFmrrY0O63L79ysfrxq8gTDzsXNaozpkYU5D7
+	5qj1FqzY8K3iTZpJKDaaM1snPsOYkeolBi94YB/RXiF35UEiqp8JeYXxP9xADvEKDixLfKOdfBi+Q
+	pqAoAruwpYvnVn53ztlQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1haqAG-0000Tm-Lg; Tue, 11 Jun 2019 23:26:52 +0000
-Received: from dc2-smtprelay2.synopsys.com ([198.182.61.142]
- helo=smtprelay-out1.synopsys.com)
+	id 1hb1HD-0003Yf-35; Wed, 12 Jun 2019 11:18:47 +0000
+Received: from conssluserg-06.nifty.com ([210.131.2.91])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1haqAD-0000TS-Jx
- for linux-snps-arc@lists.infradead.org; Tue, 11 Jun 2019 23:26:51 +0000
-Received: from mailhost.synopsys.com (badc-mailhost2.synopsys.com
- [10.192.0.18])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
- (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id D9F3DC0A7A;
- Tue, 11 Jun 2019 23:26:48 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1560295608; bh=yXXz418UXxczQTECEIV7HIqMIAxYjKiLSk3uPK4UjZk=;
- h=Subject:To:CC:References:From:Date:In-Reply-To:From;
- b=WKK1UWhLqL3adGtuDvQ6cbOmVVr9/WWLoPpje44569vjls9M7bycPxUHqoX+cCWWc
- k1YPfUQpWQJZD1TMTUbu4/iV9qlANBc/lX0U55dLmA4eN9fl5Z1lVKeVxd1SFVfgsr
- DsEkpUhQJWn1LXiupCbBjeYHCWYcZZuzlgZlZRSo4LxGixtzv87d+Q3a/ZWcIu5j41
- QILhqq9dPmkdu2ls47aXgJG6qjtxCgZ8+LMYD7DLpFzzK6wDW92+fVsHNM6SzDZ/lu
- QyFFYYqqnVWowscsF55L/btrLg7UB17KDEL9YxnsRH9HvgRFS0D4tj/82eeu+PJCRk
- qybnNqXzrWxbA==
-Received: from US01WEHTC3.internal.synopsys.com
- (us01wehtc3.internal.synopsys.com [10.15.84.232])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-SHA384 (256/256 bits))
- (No client certificate requested)
- by mailhost.synopsys.com (Postfix) with ESMTPS id A95A5A006A;
- Tue, 11 Jun 2019 23:26:48 +0000 (UTC)
-Received: from IN01WEHTCB.internal.synopsys.com (10.144.199.106) by
- US01WEHTC3.internal.synopsys.com (10.15.84.232) with Microsoft SMTP Server
- (TLS) id 14.3.408.0; Tue, 11 Jun 2019 16:26:48 -0700
-Received: from IN01WEHTCA.internal.synopsys.com (10.144.199.103) by
- IN01WEHTCB.internal.synopsys.com (10.144.199.105) with Microsoft SMTP Server
- (TLS) id 14.3.408.0; Wed, 12 Jun 2019 04:56:45 +0530
-Received: from [10.10.161.35] (10.10.161.35) by
- IN01WEHTCA.internal.synopsys.com (10.144.199.243) with Microsoft SMTP Server
- (TLS) id 14.3.408.0; Wed, 12 Jun 2019 04:56:57 +0530
-Subject: Re: ARC Assembler: bundle_align_mode directive support
-To: Cupertino Miranda <Cupertino.Miranda@synopsys.com>,
- Eugeniy Paltsev <Eugeniy.Paltsev@synopsys.com>
-Newsgroups: gmane.linux.kernel,gmane.linux.kernel.arc
-References: <3962a9ad199cea45b1cfadb80be551aab83b7028.camel@synopsys.com>
- <C2D7FE5348E1B147BCA15975FBA2307501A2525686@us01wembx1.internal.synopsys.com>
- <d79085cbc6126c2a4fad173934e1e9b29523abba.camel@synopsys.com>
- <015f8668b5fff15e781722165f38fa4beacffcf1.camel@synopsys.com>
-From: Vineet Gupta <Vineet.Gupta1@synopsys.com>
-Openpgp: preference=signencrypt
-Autocrypt: addr=vgupta@synopsys.com; keydata=
- mQINBFEffBMBEADIXSn0fEQcM8GPYFZyvBrY8456hGplRnLLFimPi/BBGFA24IR+B/Vh/EFk
- B5LAyKuPEEbR3WSVB1x7TovwEErPWKmhHFbyugdCKDv7qWVj7pOB+vqycTG3i16eixB69row
- lDkZ2RQyy1i/wOtHt8Kr69V9aMOIVIlBNjx5vNOjxfOLux3C0SRl1veA8sdkoSACY3McOqJ8
- zR8q1mZDRHCfz+aNxgmVIVFN2JY29zBNOeCzNL1b6ndjU73whH/1hd9YMx2Sp149T8MBpkuQ
- cFYUPYm8Mn0dQ5PHAide+D3iKCHMupX0ux1Y6g7Ym9jhVtxq3OdUI5I5vsED7NgV9c8++baM
- 7j7ext5v0l8UeulHfj4LglTaJIvwbUrCGgtyS9haKlUHbmey/af1j0sTrGxZs1ky1cTX7yeF
- nSYs12GRiVZkh/Pf3nRLkjV+kH++ZtR1GZLqwamiYZhAHjo1Vzyl50JT9EuX07/XTyq/Bx6E
- dcJWr79ZphJ+mR2HrMdvZo3VSpXEgjROpYlD4GKUApFxW6RrZkvMzuR2bqi48FThXKhFXJBd
- JiTfiO8tpXaHg/yh/V9vNQqdu7KmZIuZ0EdeZHoXe+8lxoNyQPcPSj7LcmE6gONJR8ZqAzyk
- F5voeRIy005ZmJJ3VOH3Gw6Gz49LVy7Kz72yo1IPHZJNpSV5xwARAQABtCpWaW5lZXQgR3Vw
- dGEgKGFsaWFzKSA8dmd1cHRhQHN5bm9wc3lzLmNvbT6JAj4EEwECACgCGwMGCwkIBwMCBhUI
- AgkKCwQWAgMBAh4BAheABQJbBYpwBQkLx0HcAAoJEGnX8d3iisJeChAQAMR2UVbJyydOv3aV
- jmqP47gVFq4Qml1weP5z6czl1I8n37bIhdW0/lV2Zll+yU1YGpMgdDTHiDqnGWi4pJeu4+c5
- xsI/VqkH6WWXpfruhDsbJ3IJQ46//jb79ogjm6VVeGlOOYxx/G/RUUXZ12+CMPQo7Bv+Jb+t
- NJnYXYMND2Dlr2TiRahFeeQo8uFbeEdJGDsSIbkOV0jzrYUAPeBwdN8N0eOB19KUgPqPAC4W
- HCg2LJ/o6/BImN7bhEFDFu7gTT0nqFVZNXlOw4UcGGpM3dq/qu8ZgRE0turY9SsjKsJYKvg4
- djAaOh7H9NJK72JOjUhXY/sMBwW5vnNwFyXCB5t4ZcNxStoxrMtyf35synJVinFy6wCzH3eJ
- XYNfFsv4gjF3l9VYmGEJeI8JG/ljYQVjsQxcrU1lf8lfARuNkleUL8Y3rtxn6eZVtAlJE8q2
- hBgu/RUj79BKnWEPFmxfKsaj8of+5wubTkP0I5tXh0akKZlVwQ3lbDdHxznejcVCwyjXBSny
- d0+qKIXX1eMh0/5sDYM06/B34rQyq9HZVVPRHdvsfwCU0s3G+5Fai02mK68okr8TECOzqZtG
- cuQmkAeegdY70Bpzfbwxo45WWQq8dSRURA7KDeY5LutMphQPIP2syqgIaiEatHgwetyVCOt6
- tf3ClCidHNaGky9KcNSQ
-Message-ID: <c37d8c8d-8654-7965-bc74-0d3377766621@synopsys.com>
-Date: Tue, 11 Jun 2019 16:26:37 -0700
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.0
+ id 1hb1HA-0003RA-3O
+ for linux-snps-arc@lists.infradead.org; Wed, 12 Jun 2019 11:18:46 +0000
+Received: from mail-vs1-f44.google.com (mail-vs1-f44.google.com
+ [209.85.217.44]) (authenticated)
+ by conssluserg-06.nifty.com with ESMTP id x5CBIF5C007472
+ for <linux-snps-arc@lists.infradead.org>; Wed, 12 Jun 2019 20:18:15 +0900
+DKIM-Filter: OpenDKIM Filter v2.10.3 conssluserg-06.nifty.com x5CBIF5C007472
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nifty.com;
+ s=dec2015msa; t=1560338296;
+ bh=9qf4J6QRljcfXo5cUe4iXkNhy9Rz2w4BYyV8ixl/hPM=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=MsLZJG3O0m4XnY+kDeA6aNO0la9hMNG+YOcdfh9A+CbiK+sVJXGiOFWVgU4vEppmm
+ pH68SIue+8bShOzLSDQ2suMAkHW5W4oo4HVSumabLgvs5JkjfPG88ZlmAt4OWAt6mC
+ O4SCxENac1lwcqJzaFbezMiyxWawHnM0NGT5psLCnHfFUPBupJjaySWWZQ5YQmdTQm
+ 5AqvO2SFUJoaiaRlMjFjowrlj1+g0BDN2M4Pp4dk9Ax4I4UpxPxf9R8TVbBCoTnPHa
+ FtgPeJmmaQLrQukh8LjiLleE/6Ix1T0FA3w09RDY+efL+DE0QRAKhwH5eNkAofSuC1
+ LX9FidaSAi55g==
+X-Nifty-SrcIP: [209.85.217.44]
+Received: by mail-vs1-f44.google.com with SMTP id g24so9981913vso.8
+ for <linux-snps-arc@lists.infradead.org>; Wed, 12 Jun 2019 04:18:15 -0700 (PDT)
+X-Gm-Message-State: APjAAAUR+wOvFBsrMhm20zKE8F4eK2eOJpOl0Jg5E7u8zV1exYuQdcob
+ 7H7EJm4CfY4P/0cm4gxwNTFxenXAf98IQA4CdVQ=
+X-Google-Smtp-Source: APXvYqyiAJLzuWlm9OGNKzll2um7PpgCRjNhqR9NhMbeh8rj+9jrh3+P+45l89HNf3AKA3kzYmgmctCHy5tkeOKPtts=
+X-Received: by 2002:a67:f495:: with SMTP id o21mr28123827vsn.54.1560338294432; 
+ Wed, 12 Jun 2019 04:18:14 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <015f8668b5fff15e781722165f38fa4beacffcf1.camel@synopsys.com>
-Content-Language: en-US
-X-Originating-IP: [10.10.161.35]
+References: <20190603063119.36544-1-abrodkin@synopsys.com>
+ <C2D7FE5348E1B147BCA15975FBA2307501A2522AB4@us01wembx1.internal.synopsys.com>
+ <CY4PR1201MB012022B3EBC7F7C2788E7B06A1140@CY4PR1201MB0120.namprd12.prod.outlook.com>
+In-Reply-To: <CY4PR1201MB012022B3EBC7F7C2788E7B06A1140@CY4PR1201MB0120.namprd12.prod.outlook.com>
+From: Masahiro Yamada <yamada.masahiro@socionext.com>
+Date: Wed, 12 Jun 2019 20:17:37 +0900
+X-Gmail-Original-Message-ID: <CAK7LNAQ-NBUuB6duaQP138Jx7y0UpgqaD=wYtRC2G_c5_H=EJg@mail.gmail.com>
+Message-ID: <CAK7LNAQ-NBUuB6duaQP138Jx7y0UpgqaD=wYtRC2G_c5_H=EJg@mail.gmail.com>
+Subject: Re: [PATCH] ARC: build: Try to guess CROSS_COMPILE with
+ cc-cross-prefix
+To: Alexey Brodkin <Alexey.Brodkin@synopsys.com>,
+ Vineet Gupta <Vineet.Gupta1@synopsys.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190611_162649_671125_437686D9 
-X-CRM114-Status: GOOD (  33.06  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190612_041844_408252_8515E9A9 
+X-CRM114-Status: GOOD (  15.01  )
+X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [210.131.2.91 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-snps-arc@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -124,319 +86,68 @@ List-Help: <mailto:linux-snps-arc-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-snps-arc>, 
  <mailto:linux-snps-arc-request@lists.infradead.org?subject=subscribe>
 Cc: "linux-snps-arc@lists.infradead.org" <linux-snps-arc@lists.infradead.org>,
- Alexey Brodkin <Alexey.Brodkin@synopsys.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Claudiu Zissulescu <Claudiu.Zissulescu@synopsys.com>
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-snps-arc" <linux-snps-arc-bounces@lists.infradead.org>
 Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org
 
-On 6/11/19 1:40 PM, Cupertino Miranda wrote:
-> Hi Eugeniy,
-> 
-> If I understand well what this optimization would do is ... this
-> optimization would replace conditional code by fixed jumps that would
-> turn out to be always happening. Like fixed ARC build aux registers
-> based conditional jumps.
-> 
-> I don't understand several things:
->  1st. Can't we invalidate multiple icache lines, and synchronize them
-> through all CPUs?
+Hi.
 
-Please read his prev email once again. The issue can happen before icache sync can
-do the magic. Code update involves updating both dcache and icache lines. Further
-dcache update is propagated by hardware (cache coh unit) while icache by Linux
-cross core IPI calls. However the potential race is when the patching core's
-dcache flush is propagated to other core, but icache cross call is not not
-seen/executed by other core and that core also happens to be executing around the
-region of code being patched - such that of the 2 icache lines involved, 1 exists
-already (old) but the other doesn't (evicted a while back) so fetches the new line
-- as a result the 2 icache lines don't correspond to same instruction.
-
-
-> I am afraid no one might know the actual truth to
-> this question. :-)
-
-We do, hopefully now u do too ;-)
-
-
-> Suggestion: Can't we make use of instruction slots to perform this ?
-> Please notice ei_s is a short 16 bit instruction. 
-
-As you mention below EI_s takes an index into jump table. Simplistically each jump
-label would correspond to a unique indexes, how do we assign unique indexs for
-these instances. Remember we define the macro just once in a header as follows
-
-| static inline bool arch_static_branch_jump(struct static_key *key, bool branch)
-| {
-|	asm_volatile_goto("1:\n\t"
-|		 "b_s %l[l_yes]\n\t"
-|		 ".pushsection __jump_table,  \"aw\"\n\t"
-|		 ".word 1b, %l[l_yes], %c0\n\t"
-|		 ".popsection\n\t"
-|		 : :  "i" (&((char *)key)[branch]) :  : l_yes);
-|
-|	return false;
-|l_yes:
-|	return true;
-|}
-
-Do we have a gcc asm constraint etc to achieve that. IMO EI_S is useful for
-baremetal hand written pure asm code, not so much as targeted by compiler proper.
+On Tue, Jun 4, 2019 at 2:49 AM Alexey Brodkin
+<Alexey.Brodkin@synopsys.com> wrote:
+>
+> Hi Vineet,
+>
+> > -----Original Message-----
+> > From: Vineet Gupta <vgupta@synopsys.com>
+> > Sent: Monday, June 3, 2019 7:25 PM
+> > To: Alexey Brodkin <abrodkin@synopsys.com>; linux-snps-arc@lists.infradead.org
+> > Cc: linux-kernel@vger.kernel.org; Masahiro Yamada <yamada.masahiro@socionext.com>
+> > Subject: Re: [PATCH] ARC: build: Try to guess CROSS_COMPILE with cc-cross-prefix
+> >
+> > On 6/2/19 11:31 PM, Alexey Brodkin wrote:
+> > > For a long time we used to hard-code CROSS_COMPILE prefix
+> > > for ARC until it started to cause problems, so we decided to
+> > > solely rely on CROSS_COMPILE externally set by a user:
+> > > commit 40660f1fcee8 ("ARC: build: Don't set CROSS_COMPILE in arch's Makefile").
+> > >
+> > > While it works perfectly fine for build-systems where the prefix
+> > > gets defined anyways for us human beings it's quite an annoying
+> > > requirement especially given most of time the same one prefix
+> > > "arc-linux-" is all what we need.
+> > >
+> > > It looks like finally we're getting the best of both worlds:
+> > >  1. W/o cross-toolchain we still may install headers, build .dtb etc
+> > >  2. W/ cross-toolchain get the kerne built with only ARCH=arc
+> > >
+> > > Inspired by [1] & [2].
+> > >
+> > > [1] http://lists.infradead.org/pipermail/linux-snps-arc/2019-May/005788.html
+> > > [2] https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=fc2b47b55f17
+> > >
+> > > A side note: even though "cc-cross-prefix" does its job it pollutes
+> > > console with output of "which" for all the prefixes it didn't manage to find
+> > > a matching cross-compiler for like that:
+> > > | # ARCH=arc make defconfig
+> > > | which: no arceb-linux-gcc in (~/.local/bin:~/bin:/usr/bin:/usr/sbin)
+> > > | *** Default configuration is based on 'nsim_hs_defconfig'
 
 
-> Replacing the
-> instruction with an "ei_s <index>" and a nop in case of 32 bit
-> instruction ? Do all of the Linux compatible target support instruction
-> slots ?
-> Anyway it will not solve the invalid instruction in the remaining
-> icache line.
-> 
-> For referemce, I still think this optimization is a little useless and
-> a can of worms,
+I just noticed this patch is queued on top of v5.2-rc4.
+(2bc42bfba9b247abd)
 
-You mean the whole jump label framework is useless.
+This 'side note' is no longer needed or reproducible
+because -rc4 contains my fix-up (913ab9780fc0212).
 
-How about looking at real code, rather than speculating about the merits of kernel
-developers: I can understand u have reservations about our meritocracy, but this
-feature was done by smarter folks ;-)
+I do not know if the ARC maitainer is happy to rebase.
 
-The function below is used in hot schedular path:
-
-u64 sched_clock_cpu(int cpu)
-{
-	if (!static_branch_unlikely(&sched_clock_running))
-		return 0;
-
-	return sched_clock();
-}
-
-Here it reads a flag every call
-
-80304194 <sched_clock_cpu>:
-80304194:	ld	r2,[0x80713a00]
-8030419c:	brge.nt	r2,0x1,12	;803041a8 <sched_clock_cpu+0x14>
-803041a0:	mov_s	r0,0
-803041a2:	j_s.d	[blink]
-803041a4:	mov_s	r1,0
-803041a6:	nop_s
-803041a8:	b	266756	;803453ac <sched_clock>
-
-With jump label we replace the LD with a nop as that is more likely to be true.
-
-800562f8 <sched_clock_cpu>:
-800562f8:	nop
-800562fc:	mov_s	r0,0
-800562fe:	j_s.d	[blink]
-80056300:	mov_s	r1,0
-80056302:	nop_s
-80056304:	b	257676	;80095190 <sched_clock>
+Just for your information.
 
 
-> as for actual use cases the customer can know at
-> compile time all of the this constant jumps for its target.
-> No one that would care for performance would prefer this feature to
-> actual clear out of its code.
-
-????
-
-> 
-> Looking at it, It seems to me that Linux kernel should evolve to a JIT
-> compilation approach, instead of this JIT juggling one.
-
-There is in-kernel JIT compiler already, used for bigger code chunks, not so much
-for 2 or 4 bytes: every use case is different.
-
-> 
-> Best regards,
-> Cupertino
-> 
-> 
-> On Tue, 2019-06-11 at 18:47 +0000, Eugeniy Paltsev wrote:
->> Hi Vineet,
->>
->> On Mon, 2019-06-10 at 15:55 +0000, Vineet Gupta wrote:
->>> On 6/8/19 11:21 AM, Eugeniy Paltsev wrote:
->>>> Hi Cupertino,
->>>>
->>>> I tried to use ".bundle_align_mode" directive in ARC assembly,
->>>> but I got following error:
->>>> ----------------->8--------------
->>>> Assembler messages:
->>>> Error: unknown pseudo-op: `.bundle_align_mode'
->>>> ----------------->8--------------
->>>>
->>>> Is it possible to implement it in ARC assembler?
->>>> There is some context about the reason we want to have it:
->>>>
->>>> I'm trying to add support of jump labels for ARC in linux kernel.
->>>> Jump labels
->>>> provide an interface to generate static branches using self-
->>>> modifying code.
->>>> This allows us to implement conditional branches where changing
->>>> branch
->>>> direction is expensive but branch selection is basically 'free'.
->>>>
->>>> There is nuance in current implementation:
->>>> We need to patch code by rewriting 32-bit NOP by 32-bit BRANCH
->>>> instruction (or vice versa).
->>>> It can be easily done with following code:
->>>> ----------------->8--------------
->>>> write_32_bit(new_instruction)
->>>> flush_l1_dcache_range_this_cpu
->>>> invalidate_l1_icache_range_all_cpu
->>>> ----------------->8--------------
->>>>
->>>> I$ update will be atomic in most of cases except the patched
->>>> instruction share
->>>> two L1 cache lines (so first 16 bits of instruction are in the
->>>> one cache line and
->>>> last 16 bit are in another cache line).
->>>> In such case we can execute half-updated instruction if we are
->>>> patching live code (and we are unlucky enough :)
->>>
->>> While I understand your need for alignment, I don't see how you can
->>> possibly
->>> execute stray lines.
->>> dcache flush will be propagated by hardware (SCU) to all cores (as
->>> applicable) and
->>> the icache cache flush xcall is synchronous and will have to finish
->>> on all cores
->>> before we proceed to execute the cod eitself.
->>>
->>
->> It's easy as hell - we may execute some code on one CPU and patch it
->> on another CPU at the same moment :)
->>
->> And here is the example of the situation when we can get the issue:
->> - Let's imagine we have SMP system with CPU#0 and CPU#1.
->> - We have instruction which share two L1 cache lines:
->> ~ ---------------------------------|---------------------------------
->> ~
->> ~            |instruction-Z (32-bit instruction we
->> patch)|            ~
->> ~ ---------------------------------|---------------------------------
->> ~
->> ~   cache-line-X                   | cache-line-
->> Y                     ~
->> ~ ---------------------------------|---------------------------------
->> ~
->>
->> CPU#0 is trying to switch our static branch, so it will patch the
->> code (instruction-Z)
->> CPU#1 is executing this code with our static branch, so it execute
->> the code (with instruction-Z) that will be patched.
->>
->> 1) CPU#0: we generate new instruction (to replace 'instruction-Z')
->>    and write it with 32-bit store (st). It is written to CPU#0 L1
->> data cache.
->> 2) CPU#0: we call our function flush_icache_range.
->>    It firstly will flush L1 data cache region on CPU#0.
->>    In our example it will flush CPU#0 L1 'cache-line-X' and 'cache-
->> line-Y' to L2 cache.
->> 3) CPU#1: we are executing code which is in 'cache-line-X'.
->>    'cache-line-Y' is __NOT__ in the L1 instruction cache of CPU#1.
->>    We need to execute 'instruction-Z', but only half of the
->> instruction is in L1 instruction cache.
->>    CPU#1 fetch 'cache-line-Y' to L1 instruction cache.
->> 4)  Ooops: now we have corrupted 'instruction-Z' in L1 instruction
->> cache of CPU#1:
->>    First 16 bit of this instruction (which belongs to 'cache-line-X') 
->> are old (not patched).
->>    Last 16 bit of this instruction (which belongs to 'cache-line-Y')
->> are new (patched).
->>
->>>> As of today I simply align by 4 byte instruction which can be
->>>> patched with ".balign 4" directive:
->>>> ----------------->8--------------
->>>> static __always_inline bool arch_static_branch_jump(struct
->>>> static_key *key,
->>>>     bool branch)
->>>> {
->>>> asm_volatile_goto(".balign 4\n"
->>>>  "1:\n"
->>>>  "b %l[l_yes]\n" // <- instruction which can be patched
->>>>  ".pushsection __jump_table, \"aw\"\n"
->>>>  ".word 1b, %l[l_yes], %c0\n"
->>>>  ".popsection\n"
->>>>  : : "i" (&((char *)key)[branch]) : : l_yes);
->>>>
->>>> return false;
->>>> l_yes:
->>>> return true;
->>>> }
->>>> ----------------->8--------------
->>>>
->>>> In that case patched instruction is aligned with one 16-bit NOP
->>>> if this is required.
->>>> However 'align by 4' directive is much stricter than it actually
->>>> required.
->>>
->>> I don't quite understand. Can u write a couple of lines of pseudo
->>> assembly to show
->>> what the issue is.
->>
->> All instructions on ARCv2 are aligned by 2 byte (even if the
->> instruction is 4-byte long).
->>
->> Using '.balign' directive we align instruction which can be
->> patched by 4 byte.
->> So compiler will add one 'nop_s' before our instruction if it is not
->> 4 byte aligned.
->>
->> So this code
->> ------------------->8---------------
->> -----
->>  .balign 4
->>  1:
->>  b %l[l_yes]   #<- instruction which can be patched
->> ------------------->8--------------------
->> may turn into this:
->> -----------------
->> -->8--------------------
->> bla-bla-bla
->>  b l_yes       #<- instruction which can be patched
->> bla-bla-bla
->> ------------------->8--------------------
->> or that:
->> ----
->> --------------->8--------------------
->> bla-bla-bla
->>  nop_s         # padding
->>  b l_yes       #<- instruction which can be patched
->> bla-bla-bla
->> ----------------
->> --->8--------------------
->>
->> In most of the cases this extra 'nop_s' is unnecessary as it is fine
->> to have our instruction
->> not 4 byte aligned if it doesn't cross l1 cache line boundary.
->>
->> It is't the huge problem - but we are adding one unnecessary 'nop'
->> while we try to optimize hot code.
->>
->>>
->>>> It's enough
->>>> that our 32-bit instruction don't cross l1 cache line boundary.
->>>> That will save us from adding useless NOP padding in most of the
->>>> cases.
->>>> It can be implemented with ".bundle_align_mode" directive which
->>>> isn't supported by ARC AS unfortunately.
->>>
->>> This seems like a reasonable request (contingent to the difficulty
->>> of
->>> implementation in binutils). but I can't comprehend why you would
->>> need it.
->>
->> If we will have ".bundle_align_mode" directive supported we can add
->> extra 'nop_s' only if it's really required
->> (if our instruction _really_ cross L1 cache line boundary). So we
->> won't add useless NOP to hot code.
->>
->> --
->>  Eugeniy Paltsev
-
+-- 
+Best Regards
+Masahiro Yamada
 
 _______________________________________________
 linux-snps-arc mailing list
