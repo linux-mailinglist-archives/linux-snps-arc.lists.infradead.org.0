@@ -2,46 +2,46 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8D99B468FF
-	for <lists+linux-snps-arc@lfdr.de>; Fri, 14 Jun 2019 22:29:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B49DE46900
+	for <lists+linux-snps-arc@lfdr.de>; Fri, 14 Jun 2019 22:29:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yofiuOq7OlFfoiafijXJqfCVyuXVBNuEHUu8b8Xjn9g=; b=XVuWLJ4JCOa6DN
-	qomvmELFwRF1RtDMAUU7hUTFhxqokStM19ubKcj3/u5JjRo3ox5kvABZeGDEGlQZcB8zzL/sgguWO
-	nkyLjY9AgGbp3s/lOVB5UegcQacN2xK3ew25RG17I0XMmUpQjZqRnubwKxqd+nP2QQMVOcnoPapqk
-	lGlw4weA+cpmzfkA6zHD4x2IU9YbEY8+tsKwqP0J7sti9IblFoJq/ISC0Z2o9+NQgKNbjIBYl5R8g
-	lGhQKfjkG3F5Ajtz+CcHWO6ZJLeejuNwR//rMlcPkDscOSsRHqkRrBmLPo5+NdgIIlDWTwyVU+iX+
-	2ErgXUMZ7zXJFGk39LLA==;
+	List-Owner; bh=UqUnd35VBbeFH7BOOJ28ZScMvG9k4jwsZMPHPSmuDtg=; b=bmMwywppnGYwTp
+	yYkag8KnKAQJhoSdAjz0Z/Wf8ekF5vFBVgJrvnjH3VfiPsgzR0AZYQOqiZUmOhvE+LDyE+CzLEon3
+	t8btrEgaB4q2yiG6ytvkc2wBsJ2CsnMMUQxI1M7iKjlcGEHpKUsgKCbr+QzXbmQYxzR6MGJ0bAgWb
+	y6gXBcR+AApt7Jjuj7SJ5MBKgP/xS1N6dHxK1E4eMGXzGR58Bu53lIrIr4GudrbkbV+h4VBlv2W2k
+	xG9KNhXadzI2y+tnlySt4V8IAt945pnk3sZFugxuB8uPoWi64+5GPh2rnEdtDhrCEkMv+iQIrYMcN
+	868PNFr/jo93IXEZ9jAg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbspb-0006eZ-Da; Fri, 14 Jun 2019 20:29:51 +0000
+	id 1hbspd-0006iO-IT; Fri, 14 Jun 2019 20:29:53 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbspZ-0006Ww-Iq
- for linux-snps-arc@lists.infradead.org; Fri, 14 Jun 2019 20:29:50 +0000
+ id 1hbspZ-0006Zh-V0
+ for linux-snps-arc@lists.infradead.org; Fri, 14 Jun 2019 20:29:51 +0000
 Received: from sasha-vm.mshome.net (unknown [131.107.159.134])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 388A02184D;
+ by mail.kernel.org (Postfix) with ESMTPSA id 956FA2186A;
  Fri, 14 Jun 2019 20:29:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
  s=default; t=1560544189;
- bh=g8sXfcSwx7ehG42UJHTMpklSEP166VCQ0PA4P0aCX1g=;
+ bh=U3zeBSCt9G7KJXaLq9RIRDojSQHdJQ+ZshQMHmPNDw4=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=mTEjaAMKKugoXj85eW4/MWyzBvmS/hdJja39yBaXYUVQmsFPsvVQVdil8DfQS2FxN
- gcmr+eSpuLczlS97c907NmFg03sAfbWUiEVHZxZ65H7Y2gSN/zm41GIm4cwdBltnUZ
- 9WiJgA93y2ko6WcHGV5AjobXt5om19kDxPX4M2zI=
+ b=meVGBuZFP3VZkBHOoNPHK0AtZ6j2Hu6PUHoGdWC310Gj18cv+11pPtYbPFCetC/Es
+ K2JmjlmLsBGwzJmf4CWibdFoIAkiic7CEFHutlA5c3pFg4xXnHgVfysbbeEFdSEYz3
+ V/V9aXbxmfOje9s01mkNxDN5LuVj/wnT18LguM98=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.19 04/39] ARC: [plat-hsdk]: Add missing multicast
- filter bins number to GMAC node
-Date: Fri, 14 Jun 2019 16:29:09 -0400
-Message-Id: <20190614202946.27385-4-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.19 05/39] ARC: [plat-hsdk]: Add missing FIFO size
+ entry in GMAC node
+Date: Fri, 14 Jun 2019 16:29:10 -0400
+Message-Id: <20190614202946.27385-5-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190614202946.27385-1-sashal@kernel.org>
 References: <20190614202946.27385-1-sashal@kernel.org>
@@ -49,8 +49,9 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190614_132949_646067_EC8DFC10 
-X-CRM114-Status: GOOD (  10.24  )
+X-CRM114-CacheID: sfid-20190614_132950_012206_906BF481 
+X-CRM114-Status: UNSURE (   9.84  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -92,36 +93,37 @@ Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.o
 
 From: Jose Abreu <joabreu@synopsys.com>
 
-[ Upstream commit ecc906a11c2a0940e1a380debd8bd5bc09faf454 ]
+[ Upstream commit 4c70850aeb2e40016722cd1abd43c679666d3ca0 ]
 
-GMAC controller on HSDK boards supports 256 Hash Table size so we need to
-add the multicast filter bins property. This allows for the Hash filter
-to work properly using stmmac driver.
+Add the binding for RX/TX fifo size of GMAC node.
 
 Cc: Joao Pinto <jpinto@synopsys.com>
 Cc: Rob Herring <robh+dt@kernel.org>
 Cc: Mark Rutland <mark.rutland@arm.com>
-Cc: Eugeniy Paltsev <Eugeniy.Paltsev@synopsys.com>
+Cc: Vineet Gupta <vgupta@synopsys.com>
+Tested-by: Eugeniy Paltsev <Eugeniy.Paltsev@synopsys.com>
 Acked-by: Alexey Brodkin <abrodkin@synopsys.com>
 Signed-off-by: Jose Abreu <joabreu@synopsys.com>
 Signed-off-by: Vineet Gupta <vgupta@synopsys.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- arch/arc/boot/dts/hsdk.dts | 1 +
- 1 file changed, 1 insertion(+)
+ arch/arc/boot/dts/hsdk.dts | 3 +++
+ 1 file changed, 3 insertions(+)
 
 diff --git a/arch/arc/boot/dts/hsdk.dts b/arch/arc/boot/dts/hsdk.dts
-index ef149f59929a..f67f614ccb0e 100644
+index f67f614ccb0e..d131c54acd3e 100644
 --- a/arch/arc/boot/dts/hsdk.dts
 +++ b/arch/arc/boot/dts/hsdk.dts
-@@ -175,6 +175,7 @@
- 			interrupt-names = "macirq";
- 			phy-mode = "rgmii";
- 			snps,pbl = <32>;
-+			snps,multicast-filter-bins = <256>;
- 			clocks = <&gmacclk>;
- 			clock-names = "stmmaceth";
- 			phy-handle = <&phy0>;
+@@ -184,6 +184,9 @@
+ 			mac-address = [00 00 00 00 00 00]; /* Filled in by U-Boot */
+ 			dma-coherent;
+ 
++			tx-fifo-depth = <4096>;
++			rx-fifo-depth = <4096>;
++
+ 			mdio {
+ 				#address-cells = <1>;
+ 				#size-cells = <0>;
 -- 
 2.20.1
 
