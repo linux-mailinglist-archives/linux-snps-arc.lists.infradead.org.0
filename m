@@ -2,56 +2,52 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 33BE6468E1
-	for <lists+linux-snps-arc@lfdr.de>; Fri, 14 Jun 2019 22:28:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A3ECE468FD
+	for <lists+linux-snps-arc@lfdr.de>; Fri, 14 Jun 2019 22:29:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Rjp2RAOlNyQ6Gyl3pQHuU8mpcIhUGVmHa8DSKKB3mWI=; b=mgE/5mICPF3mEi
-	tZQ+2dpc7/8T1RURut5p8Se76eukt4seLotziKxvAdNNF7RBuLzlUG4VCzWomQgCQwb02EAJ7T2bu
-	hRo6VrJk4ZanKr6xWXvWnWOOpK/21m14mdPfdRCbwo6EBGt6LJ5IdFznXwK8U2U/0q0Fe+omBUKyU
-	RMGTbC34AJ0v4pAYdMczoGKL9T1i4u2bOniRgULtuuHDjb7YRL/OpDnXuXqZgnx/zruZV9lSr3HYi
-	Fs/hfxrrzhWk+Gqpz9QcXc0mANijTObLjB7FVemQdDpoCXuSSOoAAIvaXqlsz41P+2EXqdq1ekRxX
-	LfOpH+XVxgGUoO8ULctA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=JxPisGP1UdoCcrURqmYWPnF9ZoqzS5Tt2BH4UEtWsHA=; b=aZUjwNT0GGT7r2
+	/e0mMwUy0kHXXXBlZFi47VlfWnZdgo85SLo2uuZMtJ9Hwmuu7CKQ3fAawiURV/N9lEYZo9vOed6zh
+	A6Ac9b7omCEexar561n3CPzcgQmoX/nyXFucsgsNKIYhTzxk1pqlU3Xkr4ENp/SVfxkQeQKg4An7l
+	9dDfsAwP304nqRkXIog5IeItzPHJnfBwFFqw8bWmAc4xuMLpWVYuXGtF8YJ/MHg+P1APlHn37ZDED
+	/YxDt5Ny5s71nCx/NduirYOFcXVNLTmsxpfAeY4znmhdhWao9unsGTZt7Vq+j+WKRUQAcB1pqPLn3
+	txEFTBM3CQvZ+zwkOf2w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbsoh-0006EI-1C; Fri, 14 Jun 2019 20:28:55 +0000
+	id 1hbspa-0006c1-8v; Fri, 14 Jun 2019 20:29:50 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbsoe-0006DV-Ji
- for linux-snps-arc@lists.infradead.org; Fri, 14 Jun 2019 20:28:53 +0000
+ id 1hbspX-0006Rk-8F
+ for linux-snps-arc@lists.infradead.org; Fri, 14 Jun 2019 20:29:48 +0000
 Received: from sasha-vm.mshome.net (unknown [131.107.159.134])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 3E36421852;
- Fri, 14 Jun 2019 20:28:52 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id DD57421841;
+ Fri, 14 Jun 2019 20:29:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1560544132;
- bh=9LfXJqPbTe49NZw+18AdoXCwnz+9y6RsODIwSQkuX3M=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=JqyUKjFt2WThI8Eh3Z+dRlApivY5YgP23kFC7YwCyLYEnk3dKiF4GKk0TqppfL4jo
- 7uZci1CtjW285YhCPUB1dge1spavFerkneieAPMy+rWba9l6ezPNfEWgaWrmkwN+Cx
- yzEvrtLrLegUI0uUQHit/E62XToiQLZP6ZPwvJsY=
+ s=default; t=1560544186;
+ bh=l+rTMnFPCsw32TVa9pqRNQKLqnxtdHDYtV8BGIzK+k0=;
+ h=From:To:Cc:Subject:Date:From;
+ b=zcmg5wlr1x+UEvqnqkF3v6CCcddCVKNIxos2rpjovGKQN0YJujAJrfngMpbhSdwuW
+ fBdLc3LPz/vp2hrcM31gLSW7MVhdbvrL8mVIcFkJA6wwfN3ZFEagGWlxNT5QbeIlyr
+ z0xUD5FwV//0JPWObNLFp28qEv4XHJgFW4Sb+ZPU=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.1 12/59] ARC: [plat-hsdk]: Add missing FIFO size
- entry in GMAC node
-Date: Fri, 14 Jun 2019 16:27:56 -0400
-Message-Id: <20190614202843.26941-12-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.19 01/39] ARC: fix build warnings
+Date: Fri, 14 Jun 2019 16:29:06 -0400
+Message-Id: <20190614202946.27385-1-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20190614202843.26941-1-sashal@kernel.org>
-References: <20190614202843.26941-1-sashal@kernel.org>
 MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190614_132852_660333_6C2519F9 
-X-CRM114-Status: UNSURE (   9.84  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190614_132947_329219_5DE3B738 
+X-CRM114-Status: GOOD (  10.99  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,50 +76,106 @@ List-Post: <mailto:linux-snps-arc@lists.infradead.org>
 List-Help: <mailto:linux-snps-arc-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-snps-arc>, 
  <mailto:linux-snps-arc-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Sasha Levin <sashal@kernel.org>,
- devicetree@vger.kernel.org, Joao Pinto <jpinto@synopsys.com>,
- Vineet Gupta <vgupta@synopsys.com>, Alexey Brodkin <abrodkin@synopsys.com>,
- Rob Herring <robh+dt@kernel.org>, Jose Abreu <joabreu@synopsys.com>,
- linux-snps-arc@lists.infradead.org,
- Eugeniy Paltsev <Eugeniy.Paltsev@synopsys.com>
+Cc: Sasha Levin <sashal@kernel.org>, Vineet Gupta <vgupta@synopsys.com>,
+ linux-snps-arc@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-snps-arc" <linux-snps-arc-bounces@lists.infradead.org>
 Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org
 
-From: Jose Abreu <joabreu@synopsys.com>
+From: Vineet Gupta <vgupta@synopsys.com>
 
-[ Upstream commit 4c70850aeb2e40016722cd1abd43c679666d3ca0 ]
+[ Upstream commit 89c92142f75eb80064f5b9f1111484b1b4d81790 ]
 
-Add the binding for RX/TX fifo size of GMAC node.
+| arch/arc/mm/tlb.c:914:2: warning: variable length array 'pd0' is used [-Wvla]
+| arch/arc/include/asm/cmpxchg.h:95:29: warning: value computed is not used [-Wunused-value]
 
-Cc: Joao Pinto <jpinto@synopsys.com>
-Cc: Rob Herring <robh+dt@kernel.org>
-Cc: Mark Rutland <mark.rutland@arm.com>
-Cc: Vineet Gupta <vgupta@synopsys.com>
-Tested-by: Eugeniy Paltsev <Eugeniy.Paltsev@synopsys.com>
-Acked-by: Alexey Brodkin <abrodkin@synopsys.com>
-Signed-off-by: Jose Abreu <joabreu@synopsys.com>
 Signed-off-by: Vineet Gupta <vgupta@synopsys.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- arch/arc/boot/dts/hsdk.dts | 3 +++
- 1 file changed, 3 insertions(+)
+ arch/arc/include/asm/cmpxchg.h | 14 ++++++++++----
+ arch/arc/mm/tlb.c              | 13 ++++++++-----
+ 2 files changed, 18 insertions(+), 9 deletions(-)
 
-diff --git a/arch/arc/boot/dts/hsdk.dts b/arch/arc/boot/dts/hsdk.dts
-index 699f372b2a6f..6219b372e9c1 100644
---- a/arch/arc/boot/dts/hsdk.dts
-+++ b/arch/arc/boot/dts/hsdk.dts
-@@ -196,6 +196,9 @@
- 			mac-address = [00 00 00 00 00 00]; /* Filled in by U-Boot */
- 			dma-coherent;
+diff --git a/arch/arc/include/asm/cmpxchg.h b/arch/arc/include/asm/cmpxchg.h
+index d819de1c5d10..3ea4112c8302 100644
+--- a/arch/arc/include/asm/cmpxchg.h
++++ b/arch/arc/include/asm/cmpxchg.h
+@@ -92,8 +92,11 @@ __cmpxchg(volatile void *ptr, unsigned long expected, unsigned long new)
  
-+			tx-fifo-depth = <4096>;
-+			rx-fifo-depth = <4096>;
+ #endif /* CONFIG_ARC_HAS_LLSC */
+ 
+-#define cmpxchg(ptr, o, n) ((typeof(*(ptr)))__cmpxchg((ptr), \
+-				(unsigned long)(o), (unsigned long)(n)))
++#define cmpxchg(ptr, o, n) ({				\
++	(typeof(*(ptr)))__cmpxchg((ptr),		\
++				  (unsigned long)(o),	\
++				  (unsigned long)(n));	\
++})
+ 
+ /*
+  * atomic_cmpxchg is same as cmpxchg
+@@ -198,8 +201,11 @@ static inline unsigned long __xchg(unsigned long val, volatile void *ptr,
+ 	return __xchg_bad_pointer();
+ }
+ 
+-#define xchg(ptr, with) ((typeof(*(ptr)))__xchg((unsigned long)(with), (ptr), \
+-						 sizeof(*(ptr))))
++#define xchg(ptr, with) ({				\
++	(typeof(*(ptr)))__xchg((unsigned long)(with),	\
++			       (ptr),			\
++			       sizeof(*(ptr)));		\
++})
+ 
+ #endif /* CONFIG_ARC_PLAT_EZNPS */
+ 
+diff --git a/arch/arc/mm/tlb.c b/arch/arc/mm/tlb.c
+index 4097764fea23..fa18c00b0cfd 100644
+--- a/arch/arc/mm/tlb.c
++++ b/arch/arc/mm/tlb.c
+@@ -911,9 +911,11 @@ void do_tlb_overlap_fault(unsigned long cause, unsigned long address,
+ 			  struct pt_regs *regs)
+ {
+ 	struct cpuinfo_arc_mmu *mmu = &cpuinfo_arc700[smp_processor_id()].mmu;
+-	unsigned int pd0[mmu->ways];
+ 	unsigned long flags;
+-	int set;
++	int set, n_ways = mmu->ways;
 +
- 			mdio {
- 				#address-cells = <1>;
- 				#size-cells = <0>;
++	n_ways = min(n_ways, 4);
++	BUG_ON(mmu->ways > 4);
+ 
+ 	local_irq_save(flags);
+ 
+@@ -921,9 +923,10 @@ void do_tlb_overlap_fault(unsigned long cause, unsigned long address,
+ 	for (set = 0; set < mmu->sets; set++) {
+ 
+ 		int is_valid, way;
++		unsigned int pd0[4];
+ 
+ 		/* read out all the ways of current set */
+-		for (way = 0, is_valid = 0; way < mmu->ways; way++) {
++		for (way = 0, is_valid = 0; way < n_ways; way++) {
+ 			write_aux_reg(ARC_REG_TLBINDEX,
+ 					  SET_WAY_TO_IDX(mmu, set, way));
+ 			write_aux_reg(ARC_REG_TLBCOMMAND, TLBRead);
+@@ -937,14 +940,14 @@ void do_tlb_overlap_fault(unsigned long cause, unsigned long address,
+ 			continue;
+ 
+ 		/* Scan the set for duplicate ways: needs a nested loop */
+-		for (way = 0; way < mmu->ways - 1; way++) {
++		for (way = 0; way < n_ways - 1; way++) {
+ 
+ 			int n;
+ 
+ 			if (!pd0[way])
+ 				continue;
+ 
+-			for (n = way + 1; n < mmu->ways; n++) {
++			for (n = way + 1; n < n_ways; n++) {
+ 				if (pd0[way] != pd0[n])
+ 					continue;
+ 
 -- 
 2.20.1
 
