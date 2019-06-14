@@ -2,58 +2,118 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CE7B746481
-	for <lists+linux-snps-arc@lfdr.de>; Fri, 14 Jun 2019 18:41:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 83B6446705
+	for <lists+linux-snps-arc@lfdr.de>; Fri, 14 Jun 2019 20:05:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=kQYEOPxct4Iw9Ly9PGklG8HZ4mMAQOhDewC5p3TcGBA=; b=JOucSeYJRCWNRj
-	59IKVMcGShcTE38mU62fNxhDCdtIBR/CV9tAFKku7xcEJGZhcBFRA6bqzqbSINZIEl1ZutfUY2Sdf
-	qlJPWgDfGJVrKDgD71i+3QKuhTQ3KVDj/vcTFTX3pazAro6D875JfinfAPV9+7StHsELIUbq7sy7Z
-	vLpiW7SboktTGArowAsKS5TqPQSg0X619p8NaXw+O2ORAxvQVd8A9YAOn7pzoQle9v9fel2JSYBv6
-	NPNdCkX6hHDc46mGHirDs8BQmPv4e9DMORtjHFaggpa6cDRaVHHLyEwhUiQmM/0xkoWZcHqTUmAqu
-	yTKtytMnNbdqfN/hk8VA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=KkV6r5K5OI0AGp9EA2CZabi0AG++QXmRJO5z4gJk2FU=; b=XVyFBtdPbrnrtq
+	uRwN4SJcRXXzUAHEKCw+kyaBmiCXTssXWeGSm30Xc7T5Vxyx9TIdZ4FjWzrLKL6PfN3uGVqFwWb/0
+	G2Q7ECTwylAG871kVnunUWSQjc2RsF8nDeVCFv0hwAQiSvXZN2VcTUW+0yTjg4V5HVBudkKeGiOJ2
+	qyHr2rGQ/yQ4uQbEfCTqgGU0N/Mso6MrG+2AFFjifU1lYNrR1xuMdiv6zNlCTCWsNIJNKtAhe0ba5
+	ZD8EANV4OIx0SdApYnGFswiXqAq4rzuQ7bWjjHyqqIHQit/PKAUt0xtq5PnyNl9YfB6AmrM5IDskc
+	LkbZlhOoMVmPwAEbZZQw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbpGD-00068W-LV; Fri, 14 Jun 2019 16:41:05 +0000
+	id 1hbqZk-0006nk-6I; Fri, 14 Jun 2019 18:05:20 +0000
 Received: from dc2-smtprelay2.synopsys.com ([198.182.61.142]
  helo=smtprelay-out1.synopsys.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbpGB-000685-9x
- for linux-snps-arc@lists.infradead.org; Fri, 14 Jun 2019 16:41:05 +0000
-Received: from mailhost.synopsys.com (mdc-mailhost1.synopsys.com
- [10.225.0.209])
+ id 1hbqZa-0006ce-8I; Fri, 14 Jun 2019 18:05:11 +0000
+Received: from mailhost.synopsys.com (dc2-mailhost1.synopsys.com
+ [10.12.135.161])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
  (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id DE0FDC2295;
- Fri, 14 Jun 2019 16:41:00 +0000 (UTC)
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 034BBC2289;
+ Fri, 14 Jun 2019 18:05:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1560530461; bh=iueo8gxwYJtBx4iMnrqFdzGZ5RRP386gk1czBYdaGCY=;
- h=From:To:Cc:Subject:Date:From;
- b=BhflzRvku2CPl1FmpVpMny/wDZcH9j32myZFQ51dCWK/BuShl5MitJKqWusLf1gwF
- lJkmPiQex+YeEMrB1TkwgKxKf7IV1OdTaHDyjS39iSJ1csWnaPun/ZI4TfxyTl0nlg
- 1xaEHFI+L5CxkmlBUrKVfmHou1IvV+f28y7JDiFTUuhbbHiJ3uWBn5jwvbh8j3JUMt
- B1qx4g8GG7fHSYri3OOJtSNOiRrCartTB+O28qhJbLwlCptdOcewZc63T+UCdi6fMg
- P4oUNo+EpZllO9pe1TOI7zMnZED4YhiK88nFGhNEhvqy5QqFjTuO9ElWX4h2SXTOez
- T3fDckgQQBESQ==
-Received: from paltsev-e7480.internal.synopsys.com
- (paltsev-e7480.internal.synopsys.com [10.121.8.58])
- by mailhost.synopsys.com (Postfix) with ESMTP id 54564A0057;
- Fri, 14 Jun 2019 16:40:58 +0000 (UTC)
+ t=1560535508; bh=8l8rPS/BySgxKl7CjMynmtU9SAyJOl5r8Xw0NG8wAC0=;
+ h=From:To:CC:Subject:Date:References:In-Reply-To:From;
+ b=gYkilA5FB8HiSeRy3vKPpk5f4eCqFid+8N3qGOQkb+u9MEkuKLQtD60WF6LncCyVo
+ QeoSjg/yuJsnQJNlqTgMX8qfrXg4rtoYa0SmFgUIuLZy28heStZIY24ATvCE0v5XST
+ o35bQF3DWPTSqqMIg0nsbKSWi+1UEjWOtQHyf34TvDAs89UBINSd9Xttn8tVPVUojs
+ 8pKMnAwGkJnB/nf5HQMrhH4bbWfHoPncCwTd7GQ7gd03p28GmOUZhOvQqNdozrervd
+ m6CdlpOb3owxqS340+5uaCiZ6i4T5ZfD2dA2DJ/lKZ977u9gXauvIVapnAnPrAZjyp
+ 6doF38xDoZ4Mw==
+Received: from us01wehtc1.internal.synopsys.com
+ (us01wehtc1-vip.internal.synopsys.com [10.12.239.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mailhost.synopsys.com (Postfix) with ESMTPS id D4B33A009B;
+ Fri, 14 Jun 2019 18:05:03 +0000 (UTC)
+Received: from US01HYBRID2.internal.synopsys.com (10.15.246.24) by
+ us01wehtc1.internal.synopsys.com (10.12.239.235) with Microsoft SMTP Server
+ (TLS) id 14.3.408.0; Fri, 14 Jun 2019 11:05:03 -0700
+Received: from NAM04-CO1-obe.outbound.protection.outlook.com (10.13.134.195)
+ by mrs.synopsys.com (10.15.246.24) with Microsoft SMTP Server (TLS) id
+ 14.3.408.0; Fri, 14 Jun 2019 11:05:02 -0700
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=synopsys.onmicrosoft.com; s=selector1-synopsys-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=8l8rPS/BySgxKl7CjMynmtU9SAyJOl5r8Xw0NG8wAC0=;
+ b=oaOJffTjW0uTpKf34k7hA4ANFNsEMxaGhtz6N1kUgHH+s238w8ljAedjDNr8knG8MLj2PddmLsOGZXyqmdHBxD0xg28TxIF2IdAYdAMEYFE8Jljiiy/0hfPsaFrTUY6t7svusvAd9f8KO9dTFX9WiuJpZCZk5Gx/rdC0mQMAq8g=
+Received: from SN6PR12MB2670.namprd12.prod.outlook.com (52.135.103.23) by
+ SN6PR12MB2670.namprd12.prod.outlook.com (52.135.103.23) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.1965.17; Fri, 14 Jun 2019 18:05:01 +0000
+Received: from SN6PR12MB2670.namprd12.prod.outlook.com
+ ([fe80::cd10:94a4:d1b1:c3b2]) by SN6PR12MB2670.namprd12.prod.outlook.com
+ ([fe80::cd10:94a4:d1b1:c3b2%5]) with mapi id 15.20.1965.019; Fri, 14 Jun 2019
+ 18:05:01 +0000
 From: Eugeniy Paltsev <Eugeniy.Paltsev@synopsys.com>
-To: linux-snps-arc@lists.infradead.org,
- Vineet Gupta <Vineet.Gupta1@synopsys.com>
-Subject: [PATCH] ARC: ARCv2: jump label: implement jump label patching
-Date: Fri, 14 Jun 2019 19:40:49 +0300
-Message-Id: <20190614164049.31626-1-Eugeniy.Paltsev@synopsys.com>
-X-Mailer: git-send-email 2.21.0
+To: "hch@lst.de" <hch@lst.de>,
+	Vineet Gupta <Vineet.Gupta1@synopsys.com>
+Subject: Re: [PATCH 7/7] arc: use the generic remapping allocator for coherent
+ DMA allocations
+Thread-Topic: [PATCH 7/7] arc: use the generic remapping allocator for
+ coherent DMA allocations
+Thread-Index: AQHVIsAMmlRh09Vs6Ea+qlthrKcWyaabcdSA
+Date: Fri, 14 Jun 2019 18:05:01 +0000
+Message-ID: <78ac563f2815a9a14bfab6076d0ef948497f5b9f.camel@synopsys.com>
+References: <20190614144431.21760-1-hch@lst.de>
+ <20190614144431.21760-8-hch@lst.de>
+In-Reply-To: <20190614144431.21760-8-hch@lst.de>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=paltsev@synopsys.com; 
+x-originating-ip: [84.204.78.101]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: fe65ae5e-8ab4-4807-cac3-08d6f0f2d1c4
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(2017052603328)(7193020);
+ SRVR:SN6PR12MB2670; 
+x-ms-traffictypediagnostic: SN6PR12MB2670:
+x-microsoft-antispam-prvs: <SN6PR12MB2670A4F2AE9D22869844289FDEEE0@SN6PR12MB2670.namprd12.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:3631;
+x-forefront-prvs: 0068C7E410
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10019020)(979002)(346002)(366004)(39860400002)(376002)(396003)(136003)(189003)(199004)(66476007)(99286004)(66946007)(91956017)(73956011)(118296001)(102836004)(76176011)(478600001)(76116006)(6506007)(305945005)(7736002)(2501003)(66446008)(64756008)(66556008)(8676002)(8936002)(81166006)(81156014)(316002)(53936002)(6436002)(86362001)(6512007)(229853002)(6486002)(4326008)(6246003)(68736007)(25786009)(54906003)(110136005)(14454004)(2906002)(66066001)(7416002)(5660300002)(3846002)(6116002)(6636002)(486006)(476003)(26005)(256004)(14444005)(71190400001)(71200400001)(186003)(36756003)(2616005)(11346002)(446003)(41533002)(969003)(989001)(999001)(1009001)(1019001);
+ DIR:OUT; SFP:1102; SCL:1; SRVR:SN6PR12MB2670;
+ H:SN6PR12MB2670.namprd12.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: synopsys.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: YBo9AYdmhEZbwv5F7ged9mWrC7tql7NT/82/lk4XBk4yxnVTMeXKJkmO/NjR85T44P5fCtj9xLXlJq9Ucph+GJH4m3+N//zN8tQtYI06Dq4BBxo7v6XIpR22HYlb/2KyiFzVWZ+2nKz84PkZWPkOlIqHHuRcNZ0zWSY16jw5gdyNkT4h/gn7M3mtCfptPWK9h/g0BXFbxbkqC6xgvi/jttuP7GI6eHhrGNHGiGQIfpMalogyDPNVq8zTgVertmYirFJda3stU1kZIIRNzG6smhyRLoZfRYFcnaSs8tqepqOsbsk8RNRuzdww5tXASliJmsM2Hs3JpzT5a9idHU3GyP2F5IGaF4QyjSsW54WTao4IWUGOvUolro4T4ZUaXgvsiQCZDW8IhXZ8DvCk2pH1fNVZx0/w7eUJjwi/d8tuhX4=
+Content-ID: <FCDD90A34BC48347BC639126DA077974@namprd12.prod.outlook.com>
 MIME-Version: 1.0
+X-MS-Exchange-CrossTenant-Network-Message-Id: fe65ae5e-8ab4-4807-cac3-08d6f0f2d1c4
+X-MS-Exchange-CrossTenant-originalarrivaltime: 14 Jun 2019 18:05:01.0717 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: c33c9f88-1eb7-4099-9700-16013fd9e8aa
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: paltsev@synopsys.com
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: SN6PR12MB2670
+X-OriginatorOrg: synopsys.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190614_094103_361377_90C70E63 
-X-CRM114-Status: GOOD (  21.28  )
+X-CRM114-CacheID: sfid-20190614_110510_361222_E9324F91 
+X-CRM114-Status: GOOD (  23.17  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -79,328 +139,160 @@ List-Post: <mailto:linux-snps-arc@lists.infradead.org>
 List-Help: <mailto:linux-snps-arc-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-snps-arc>, 
  <mailto:linux-snps-arc-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Peter Zijlstra <peterz@infradead.org>, Jason Baron <jbaron@redhat.com>,
- Alexey Brodkin <Alexey.Brodkin@synopsys.com>, linux-kernel@vger.kernel.org,
- Paolo Bonzini <pbonzini@redhat.com>,
- Eugeniy Paltsev <Eugeniy.Paltsev@synopsys.com>
+Cc: "jonas@southpole.se" <jonas@southpole.se>,
+ "linux-xtensa@linux-xtensa.org" <linux-xtensa@linux-xtensa.org>,
+ "vladimir.murzin@arm.com" <vladimir.murzin@arm.com>,
+ "linux-parisc@vger.kernel.org" <linux-parisc@vger.kernel.org>,
+ "deller@gmx.de" <deller@gmx.de>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "stefan.kristiansson@saunalahti.fi" <stefan.kristiansson@saunalahti.fi>,
+ "iommu@lists.linux-foundation.org" <iommu@lists.linux-foundation.org>,
+ "openrisc@lists.librecores.org" <openrisc@lists.librecores.org>,
+ "shorne@gmail.com" <shorne@gmail.com>,
+ "linux-snps-arc@lists.infradead.org" <linux-snps-arc@lists.infradead.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-snps-arc" <linux-snps-arc-bounces@lists.infradead.org>
 Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org
 
-Implement jump label patching for ARC. Jump labels provide
-an interface to generate dynamic branches using
-self-modifying code.
+Hi Christoph,
 
-This allows us to implement conditional branches where
-changing branch direction is expensive but branch selection
-is basically 'free'
+Regular question - do you have any public git repository with all this dma changes?
+I want to test it for ARC.
 
-This implementation uses 32-bit NOP and BRANCH instructions
-which forced to be aligned by 4 to guarantee that they don't
-cross L1 cache line and can be update atomically.
+Pretty sure the
+ [PATCH 2/7] arc: remove the partial DMA_ATTR_NON_CONSISTENT support
+is fine.
 
-Signed-off-by: Eugeniy Paltsev <Eugeniy.Paltsev@synopsys.com>
----
- arch/arc/Kconfig                  |   8 ++
- arch/arc/include/asm/jump_label.h |  68 ++++++++++++
- arch/arc/kernel/Makefile          |   1 +
- arch/arc/kernel/jump_label.c      | 168 ++++++++++++++++++++++++++++++
- 4 files changed, 245 insertions(+)
- create mode 100644 arch/arc/include/asm/jump_label.h
- create mode 100644 arch/arc/kernel/jump_label.c
+Not so sure about
+ [PATCH 7/7] arc: use the generic remapping allocator for coherent DMA allocations
+:)
 
-diff --git a/arch/arc/Kconfig b/arch/arc/Kconfig
-index c781e45d1d99..b1313e016c54 100644
---- a/arch/arc/Kconfig
-+++ b/arch/arc/Kconfig
-@@ -47,6 +47,7 @@ config ARC
- 	select OF_EARLY_FLATTREE
- 	select PCI_SYSCALL if PCI
- 	select PERF_USE_VMALLOC if ARC_CACHE_VIPT_ALIASING
-+	select HAVE_ARCH_JUMP_LABEL if ISA_ARCV2 && !CPU_ENDIAN_BE32
- 
- config ARCH_HAS_CACHE_LINE_SIZE
- 	def_bool y
-@@ -529,6 +530,13 @@ config ARC_DW2_UNWIND
- config ARC_DBG_TLB_PARANOIA
- 	bool "Paranoia Checks in Low Level TLB Handlers"
- 
-+config ARC_DBG_STATIC_KEYS
-+	bool "Paranoid checks in Static Keys code"
-+	depends on JUMP_LABEL
-+	select STATIC_KEYS_SELFTEST
-+	help
-+	  Enable paranoid checks and self-test of both ARC-specific and generic
-+	  part of static-keys-related code.
- endif
- 
- config ARC_BUILTIN_DTB_NAME
-diff --git a/arch/arc/include/asm/jump_label.h b/arch/arc/include/asm/jump_label.h
-new file mode 100644
-index 000000000000..8971d0608f2c
---- /dev/null
-+++ b/arch/arc/include/asm/jump_label.h
-@@ -0,0 +1,68 @@
-+/* SPDX-License-Identifier: GPL-2.0 */
-+#ifndef _ASM_ARC_JUMP_LABEL_H
-+#define _ASM_ARC_JUMP_LABEL_H
-+
-+#ifndef __ASSEMBLY__
-+
-+#include <linux/types.h>
-+
-+#define JUMP_LABEL_NOP_SIZE 4
-+
-+/*
-+ * To make atomic update of patched instruction available we need to guarantee
-+ * that this instruction doesn't cross L1 cache line boundary.
-+ *
-+ * As of today we simply align instruction which can be patched by 4 byte using
-+ * ".balign 4" directive. In that case patched instruction is aligned with one
-+ * 16-bit NOP_S if this is required.
-+ * However 'align by 4' directive is much stricter than it actually required.
-+ * It's enough that our 32-bit instruction don't cross l1 cache line boundary
-+ * which can be achieved by using ".bundle_align_mode" directive. That will save
-+ * us from adding useless NOP_S padding in most of the cases.
-+ *
-+ * TODO: switch to ".bundle_align_mode" directive using whin it will be
-+ * supported by ARC toolchain.
-+ */
-+
-+static __always_inline bool arch_static_branch(struct static_key *key,
-+					       bool branch)
-+{
-+	asm_volatile_goto(".balign 4			\n"
-+		 "1:					\n"
-+		 "nop					\n"
-+		 ".pushsection __jump_table, \"aw\"	\n"
-+		 ".word 1b, %l[l_yes], %c0		\n"
-+		 ".popsection				\n"
-+		 : : "i" (&((char *)key)[branch]) : : l_yes);
-+
-+	return false;
-+l_yes:
-+	return true;
-+}
-+
-+static __always_inline bool arch_static_branch_jump(struct static_key *key,
-+						    bool branch)
-+{
-+	asm_volatile_goto(".balign 4			\n"
-+		 "1:					\n"
-+		 "b %l[l_yes]				\n"
-+		 ".pushsection __jump_table, \"aw\"	\n"
-+		 ".word 1b, %l[l_yes], %c0		\n"
-+		 ".popsection				\n"
-+		 : : "i" (&((char *)key)[branch]) : : l_yes);
-+
-+	return false;
-+l_yes:
-+	return true;
-+}
-+
-+typedef u32 jump_label_t;
-+
-+struct jump_entry {
-+	jump_label_t code;
-+	jump_label_t target;
-+	jump_label_t key;
-+};
-+
-+#endif  /* __ASSEMBLY__ */
-+#endif
-diff --git a/arch/arc/kernel/Makefile b/arch/arc/kernel/Makefile
-index 2dc5f4296d44..307f74156d99 100644
---- a/arch/arc/kernel/Makefile
-+++ b/arch/arc/kernel/Makefile
-@@ -22,6 +22,7 @@ obj-$(CONFIG_ARC_EMUL_UNALIGNED) 	+= unaligned.o
- obj-$(CONFIG_KGDB)			+= kgdb.o
- obj-$(CONFIG_ARC_METAWARE_HLINK)	+= arc_hostlink.o
- obj-$(CONFIG_PERF_EVENTS)		+= perf_event.o
-+obj-$(CONFIG_JUMP_LABEL)		+= jump_label.o
- 
- obj-$(CONFIG_ARC_FPU_SAVE_RESTORE)	+= fpu.o
- CFLAGS_fpu.o   += -mdpfp
-diff --git a/arch/arc/kernel/jump_label.c b/arch/arc/kernel/jump_label.c
-new file mode 100644
-index 000000000000..93e3bc84288f
---- /dev/null
-+++ b/arch/arc/kernel/jump_label.c
-@@ -0,0 +1,168 @@
-+// SPDX-License-Identifier: GPL-2.0
-+
-+#include <linux/kernel.h>
-+#include <linux/jump_label.h>
-+
-+#include "asm/cacheflush.h"
-+
-+#define JUMPLABEL_ERR	"ARC: jump_label: ERROR: "
-+
-+/* Halt system on fatal error to make debug easier */
-+#define arc_jl_fatal(format...)						\
-+({									\
-+	pr_err(JUMPLABEL_ERR format);					\
-+	BUG();								\
-+})
-+
-+static inline u32 arc_gen_nop(void)
-+{
-+	/* 1x 32bit NOP in middle endian */
-+	return 0x7000264a;
-+}
-+
-+static inline bool cross_l1_cache_line(void *addr, int len)
-+{
-+	unsigned long a = (unsigned long)addr;
-+
-+	return (a >> L1_CACHE_SHIFT) != ((a + len - 1) >> L1_CACHE_SHIFT);
-+}
-+
-+/*
-+ * ARCv2 'Branch unconditionally' instruction:
-+ * 00000ssssssssss1SSSSSSSSSSNRtttt
-+ * s S[n:0] lower bits signed immediate (number is bitfield size)
-+ * S S[m:n+1] upper bits signed immediate (number is bitfield size)
-+ * t S[24:21] upper bits signed immediate (branch unconditionally far)
-+ * N N <.d> delay slot mode
-+ * R R Reserved
-+ */
-+static inline u32 arc_gen_branch(jump_label_t pc, jump_label_t target)
-+{
-+	u32 instruction_l, instruction_r;
-+	u32 pcl = pc & GENMASK(31, 2);
-+	u32 u_offset = target - pcl;
-+	u32 s, S, t;
-+
-+	/*
-+	 * Offset in 32-bit branch instruction must to fit into s25.
-+	 * Something is terribly broken if we get such huge offset within one
-+	 * function.
-+	 */
-+	if ((s32)u_offset < -16777216 || (s32)u_offset > 16777214)
-+		arc_jl_fatal("gen branch with offset (%d) not fit in s25\n",
-+			     (s32)u_offset);
-+
-+	/*
-+	 * All instructions are aligned by 2 bytes so we should never get offset
-+	 * here which is not 2 bytes aligned.
-+	 */
-+	if (u_offset & 0x1)
-+		arc_jl_fatal("gen branch with offset (%d) unaligned to 2 bytes\n",
-+			     (s32)u_offset);
-+
-+	s = (u_offset >> 1)  & GENMASK(9, 0);
-+	S = (u_offset >> 11) & GENMASK(9, 0);
-+	t = (u_offset >> 21) & GENMASK(3, 0);
-+
-+	/* 00000ssssssssss1 */
-+	instruction_l = (s << 1) | 0x1;
-+	/* SSSSSSSSSSNRtttt */
-+	instruction_r = (S << 6) | t;
-+
-+	return (instruction_r << 16) | (instruction_l & GENMASK(15, 0));
-+}
-+
-+void arch_jump_label_transform(struct jump_entry *entry,
-+			       enum jump_label_type type)
-+{
-+	jump_label_t *instr_addr = (jump_label_t *)entry->code;
-+	u32 instr;
-+
-+	/*
-+	 * Atomic update of patched instruction is only available if this
-+	 * instruction doesn't cross L1 cache line boundary. You can read about
-+	 * the way we achieve this in arc/include/asm/jump_label.h
-+	 */
-+	if (cross_l1_cache_line(instr_addr, JUMP_LABEL_NOP_SIZE))
-+		arc_jl_fatal("instruction (addr %px) cross L1 cache line",
-+			     instr_addr);
-+
-+	if (type == JUMP_LABEL_JMP)
-+		instr = arc_gen_branch(entry->code, entry->target);
-+	else
-+		instr = arc_gen_nop();
-+
-+	WRITE_ONCE(*instr_addr, instr);
-+	flush_icache_range(entry->code, entry->code + JUMP_LABEL_NOP_SIZE);
-+}
-+
-+void arch_jump_label_transform_static(struct jump_entry *entry,
-+				      enum jump_label_type type)
-+{
-+	/*
-+	 * We use only one NOP type (1x, 4 byte) in arch_static_branch, so
-+	 * there's no need to patch an identical NOP over the top of it here.
-+	 * The generic code calls 'arch_jump_label_transform' if the NOP needs
-+	 * to be replaced by a branch, so 'arch_jump_label_transform_static' is
-+	 * newer called with type other than JUMP_LABEL_NOP.
-+	 */
-+	BUG_ON(type != JUMP_LABEL_NOP);
-+}
-+
-+#ifdef CONFIG_ARC_DBG_STATIC_KEYS
-+#define SELFTEST_MSG	"ARC: instruction generation self-test: "
-+
-+struct arc_gen_branch_testdata {
-+	jump_label_t pc;
-+	jump_label_t target_address;
-+	u32 expected_instr;
-+};
-+
-+static __init int branch_gen_test(struct arc_gen_branch_testdata *test_data)
-+{
-+	u32 instr_got;
-+
-+	instr_got = arc_gen_branch(test_data->pc, test_data->target_address);
-+	if (instr_got != test_data->expected_instr) {
-+		pr_err(SELFTEST_MSG "FAIL:\n arc_gen_branch(0x%08x, 0x%08x) != 0x%08x, got 0x%08x\n",
-+		       test_data->pc, test_data->target_address,
-+		       test_data->expected_instr, instr_got);
-+
-+		return -EFAULT;
-+	}
-+
-+	return 0;
-+}
-+
-+static __init int instr_gen_test(void)
-+{
-+	int i, ret;
-+
-+	struct arc_gen_branch_testdata test_data[] = {
-+		{0x90007548, 0x90007514, 0xffcf07cd}, /* tiny (-52) offs */
-+		{0x9000c9c0, 0x9000c782, 0xffcf05c3}, /* tiny (-574) offs */
-+		{0x9000cc1c, 0x9000c782, 0xffcf0367}, /* tiny (-1178) offs */
-+		{0x9009dce0, 0x9009d106, 0xff8f0427}, /* small (-3034) offs */
-+		{0x9000f5de, 0x90007d30, 0xfc0f0755}, /* big  (-30892) offs */
-+		{0x900a2444, 0x90035f64, 0xc9cf0321}, /* huge (-443616) offs */
-+		{0x90007514, 0x9000752c, 0x00000019}, /* tiny (+24) offs */
-+		{0x9001a578, 0x9001a77a, 0x00000203}, /* tiny (+514) offs */
-+		{0x90031ed8, 0x90032634, 0x0000075d}, /* tiny (+1884) offs */
-+		{0x9008c7f2, 0x9008d3f0, 0x00400401}, /* small (+3072) offs */
-+		{0x9000bb38, 0x9003b340, 0x17c00009}, /* big  (+194568) offs */
-+		{0x90008f44, 0x90578d80, 0xb7c2063d}  /* huge (+5701180) offs */
-+	};
-+
-+	for (i = 0; i < ARRAY_SIZE(test_data); i++) {
-+		ret = branch_gen_test(&test_data[i]);
-+		if (ret)
-+			return ret;
-+	}
-+
-+	pr_info(SELFTEST_MSG "OK\n");
-+
-+	return 0;
-+}
-+early_initcall(instr_gen_test);
-+
-+#endif /* CONFIG_ARC_STATIC_KEYS_DEBUG */
+On Fri, 2019-06-14 at 16:44 +0200, Christoph Hellwig wrote:
+> Replace the code that sets up uncached PTEs with the generic vmap based
+> remapping code.  It also provides an atomic pool for allocations from
+> non-blocking context, which we not properly supported by the existing
+> arc code.
+> 
+> Signed-off-by: Christoph Hellwig <hch@lst.de>
+> ---
+>  arch/arc/Kconfig  |  2 ++
+>  arch/arc/mm/dma.c | 62 ++++++++---------------------------------------
+>  2 files changed, 12 insertions(+), 52 deletions(-)
+> 
+> diff --git a/arch/arc/Kconfig b/arch/arc/Kconfig
+> index 23e063df5d2c..cdad7d30ff1d 100644
+> --- a/arch/arc/Kconfig
+> +++ b/arch/arc/Kconfig
+> @@ -10,6 +10,7 @@ config ARC
+>  	def_bool y
+>  	select ARC_TIMERS
+>  	select ARCH_HAS_DMA_COHERENT_TO_PFN
+> +	select ARCH_HAS_DMA_PREP_COHERENT
+>  	select ARCH_HAS_PTE_SPECIAL
+>  	select ARCH_HAS_SETUP_DMA_OPS
+>  	select ARCH_HAS_SYNC_DMA_FOR_CPU
+> @@ -19,6 +20,7 @@ config ARC
+>  	select BUILDTIME_EXTABLE_SORT
+>  	select CLONE_BACKWARDS
+>  	select COMMON_CLK
+> +	select DMA_DIRECT_REMAP
+>  	select GENERIC_ATOMIC64 if !ISA_ARCV2 || !(ARC_HAS_LL64 && ARC_HAS_LLSC)
+>  	select GENERIC_CLOCKEVENTS
+>  	select GENERIC_FIND_FIRST_BIT
+> diff --git a/arch/arc/mm/dma.c b/arch/arc/mm/dma.c
+> index 9832928f896d..0fa850709fac 100644
+> --- a/arch/arc/mm/dma.c
+> +++ b/arch/arc/mm/dma.c
+> @@ -11,46 +11,15 @@
+>  #include <asm/cacheflush.h>
+>  
+>  /*
+> - * ARCH specific callbacks for generic noncoherent DMA ops (dma/noncoherent.c)
+> + * ARCH specific callbacks for generic noncoherent DMA ops
+>   *  - hardware IOC not available (or "dma-coherent" not set for device in DT)
+>   *  - But still handle both coherent and non-coherent requests from caller
+>   *
+>   * For DMA coherent hardware (IOC) generic code suffices
+>   */
+> -void *arch_dma_alloc(struct device *dev, size_t size, dma_addr_t *dma_handle,
+> -		gfp_t gfp, unsigned long attrs)
+> -{
+> -	unsigned long order = get_order(size);
+> -	struct page *page;
+> -	phys_addr_t paddr;
+> -	void *kvaddr;
+> -
+> -	/*
+> -	 * __GFP_HIGHMEM flag is cleared by upper layer functions
+> -	 * (in include/linux/dma-mapping.h) so we should never get a
+> -	 * __GFP_HIGHMEM here.
+> -	 */
+> -	BUG_ON(gfp & __GFP_HIGHMEM);
+> -
+> -	page = alloc_pages(gfp | __GFP_ZERO, order);
+> -	if (!page)
+> -		return NULL;
+> -
+> -	/* This is linear addr (0x8000_0000 based) */
+> -	paddr = page_to_phys(page);
+> -
+> -	*dma_handle = paddr;
+> -
+> -	/*
+> -	 * A coherent buffer needs MMU mapping to enforce non-cachability.
+> -	 * kvaddr is kernel Virtual address (0x7000_0000 based).
+> -	 */
+> -	kvaddr = ioremap_nocache(paddr, size);
+> -	if (kvaddr == NULL) {
+> -		__free_pages(page, order);
+> -		return NULL;
+> -	}
+>  
+> +void arch_dma_prep_coherent(struct page *page, size_t size)
+> +{
+>  	/*
+>  	 * Evict any existing L1 and/or L2 lines for the backing page
+>  	 * in case it was used earlier as a normal "cached" page.
+> @@ -61,24 +30,7 @@ void *arch_dma_alloc(struct device *dev, size_t size, dma_addr_t *dma_handle,
+>  	 * Currently flush_cache_vmap nukes the L1 cache completely which
+>  	 * will be optimized as a separate commit
+>  	 */
+> -	dma_cache_wback_inv(paddr, size);
+> -	return kvaddr;
+> -}
+> -
+> -void arch_dma_free(struct device *dev, size_t size, void *vaddr,
+> -		dma_addr_t dma_handle, unsigned long attrs)
+> -{
+> -	phys_addr_t paddr = dma_handle;
+> -	struct page *page = virt_to_page(paddr);
+> -
+> -	iounmap((void __force __iomem *)vaddr);
+> -	__free_pages(page, get_order(size));
+> -}
+> -
+> -long arch_dma_coherent_to_pfn(struct device *dev, void *cpu_addr,
+> -		dma_addr_t dma_addr)
+> -{
+> -	return __phys_to_pfn(dma_addr);
+> +	dma_cache_wback_inv(page_to_phys(page), size);
+>  }
+>  
+>  /*
+> @@ -155,3 +107,9 @@ void arch_setup_dma_ops(struct device *dev, u64 dma_base, u64 size,
+>  	dev_info(dev, "use %sncoherent DMA ops\n",
+>  		 dev->dma_coherent ? "" : "non");
+>  }
+> +
+> +static int __init atomic_pool_init(void)
+> +{
+> +	return dma_atomic_pool_init(GFP_KERNEL, pgprot_noncached(PAGE_KERNEL));
+> +}
+> +postcore_initcall(atomic_pool_init);
 -- 
-2.21.0
-
-
+ Eugeniy Paltsev
 _______________________________________________
 linux-snps-arc mailing list
 linux-snps-arc@lists.infradead.org
