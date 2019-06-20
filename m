@@ -2,85 +2,58 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4C1954C43D
-	for <lists+linux-snps-arc@lfdr.de>; Thu, 20 Jun 2019 01:55:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 39B884C7C7
+	for <lists+linux-snps-arc@lfdr.de>; Thu, 20 Jun 2019 09:01:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:Date
-	:Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	List-Owner; bh=7a/05z8x2g3td/7uCyqhIdXJgDUMrWbQJI7owik0nJQ=; b=iyr4az3OZbqW0+
-	vMByWiMWOj8PFS0gTrXrcYX5Wn60GA9Z/Olv1Y+tZAfmN+XudNlqD/Gv0XEAL6jDnyHo5pQsShEgZ
-	EkACuJrDYJkAa17TmHj3MIVMEuT1e0GJZh5fMR569MQJMnAMv74DcFGcXfDn/tf5VcJ3xOozkI9q1
-	TcwdfW9f7tAuSkUak/9+Lu7ZrXt8YReAMoKwshaLshX39784tpPmalZKr48V6uWZdJ0QXJ0RlVg9a
-	IxzqenUWSbVbOdAnWdH2tKWldBK7SRA6kEdv2wT8Ec1CprG4gUzcB6TMyTSyCR0gIiUjertIgvQVE
-	WVq3NdTDb6igPiZjnfQQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Pm/kFXjHV2NXtmQXKR3XrcbVgxlQBP/vGI8EDw4wTtg=; b=IepfxMHxB8dBIE
+	5iDVrC9V00ngteQmD9Qp/oYqRA6LmbKcKVHkGCJI0ZY3QHog430PATGHcef6+L5TYGq9Y9sWUyLDZ
+	VJL48Y025qASOhmwArdKr1/LjUJP9T4Fd9AqpXSS5cZ1jbAeimTcpYGdrKvcPlPIWs4VBx9yzpj6+
+	9cLH/9wMr7bOqj0r449vy6qu7iNWOaLAgM4jXuwBw9dQtlRvApOhWgzaCrrBgauNppPkqmZiGsf4N
+	e91ZpEz7QWYYUnLQjm6OMn71BU3uXhLZKi1kamfiqtNe+mF7WyH5o5dgD6k96Bhedfk6OqqairSvs
+	d4+g9MKYZ8i6Nwki22aA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdkQk-0005MO-P7; Wed, 19 Jun 2019 23:55:54 +0000
-Received: from dc2-smtprelay2.synopsys.com ([198.182.61.142]
- helo=smtprelay-out1.synopsys.com)
+	id 1hdr4d-0005P5-P6; Thu, 20 Jun 2019 07:01:31 +0000
+Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdkQe-0005LI-EY
- for linux-snps-arc@lists.infradead.org; Wed, 19 Jun 2019 23:55:52 +0000
-Received: from mailhost.synopsys.com (badc-mailhost1.synopsys.com
- [10.192.0.17])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
- (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 2EEB3C00A1;
- Wed, 19 Jun 2019 23:55:44 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1560988545; bh=4W80PkBNQNFiNESJ/g56Fr2c3B/k9lx1UKBqqZwspzk=;
- h=From:To:CC:Subject:Date:References:From;
- b=jS2k04uaA+b3hUsLQXtOZ15Qgl4cJSt82JMlSqdYCKesmW2IQW0zPmqH5TSg4Xl4U
- 5uByiCE59zhM4ZMGEBMWXaMCTqrg9uzk6AxwcQJFUXS7hoV5D3DNhF95ixdHmCgJyy
- iVOFwY9jqneN4nA4reuJeRmE8/klODTTofeYURXNWkPybiOZKmJr54tu5tnZmu/Rcr
- fe2eBek0HAVLhernrPWJfOd1TJImNEvC8z1OP8J48k59kvmkW9kPL+AG/zY/dy5SJ7
- GwU+yWL9WudaaAoPG+kzsCRDZOz1CS7e2KznVxLhrPiZNMoJizuQST76YbwCnjI/jk
- S3SfLmlwi5Okw==
-Received: from US01WEHTC3.internal.synopsys.com
- (us01wehtc3.internal.synopsys.com [10.15.84.232])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-SHA384 (256/256 bits))
- (No client certificate requested)
- by mailhost.synopsys.com (Postfix) with ESMTPS id 0D71EA0079;
- Wed, 19 Jun 2019 23:55:42 +0000 (UTC)
-Received: from us01wembx1.internal.synopsys.com ([169.254.1.22]) by
- US01WEHTC3.internal.synopsys.com ([::1]) with mapi id 14.03.0415.000; Wed, 19
- Jun 2019 16:55:42 -0700
-From: Vineet Gupta <Vineet.Gupta1@synopsys.com>
-To: Peter Zijlstra <peterz@infradead.org>
+ id 1hdr4b-0005Or-Sq
+ for linux-snps-arc@bombadil.infradead.org; Thu, 20 Jun 2019 07:01:29 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=merlin.20170209; h=In-Reply-To:Content-Type:MIME-Version:
+ References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=PTOIMEj00vfO8On/6ax+pMtY/ZUuxme2siDQP0KLuaQ=; b=EBW5/LFHzubDzUgD36jUn4ltK
+ qrxrNozYutzNnTPg6QZDL8fZ6B7kRt7eYLWQCkWoZBXXJfVLqQKryunmkWVJXo3RD7JH83G7QE0Zx
+ A3VnuFfAZaRIeyDMDBrrChI2B+wJ4/sY3FH4uMNV/ezC6+LzyLWwTdQKcwLnrIWibcXfPstavnbOR
+ jvnboPFCtC6C94f1MgpEPaFfU/0Qs7umJyhLvke4PRH2Tb2rYd03rflSqlHTQqCTtP3PYxudWevDZ
+ R5GU5lTgKUDim8rG8pGT5lYYnA5ZlZ/h7l8SlvujJi5qT4vQYh/IbWityC8nvddz2wDQ+wi5Fee0C
+ E6jTLrLfA==;
+Received: from j217100.upc-j.chello.nl ([24.132.217.100]
+ helo=hirez.programming.kicks-ass.net)
+ by merlin.infradead.org with esmtpsa (Exim 4.92 #3 (Red Hat Linux))
+ id 1hdr4V-00045u-KN; Thu, 20 Jun 2019 07:01:23 +0000
+Received: by hirez.programming.kicks-ass.net (Postfix, from userid 1000)
+ id A7356200B4CB3; Thu, 20 Jun 2019 09:01:20 +0200 (CEST)
+Date: Thu, 20 Jun 2019 09:01:20 +0200
+From: Peter Zijlstra <peterz@infradead.org>
+To: Vineet Gupta <Vineet.Gupta1@synopsys.com>
 Subject: Re: [PATCH] ARC: ARCv2: jump label: implement jump label patching
-Thread-Topic: [PATCH] ARC: ARCv2: jump label: implement jump label patching
-Thread-Index: AQHVIs/0NQVi79UXq0qOEJsJAVWA8w==
-Date: Wed, 19 Jun 2019 23:55:41 +0000
-Message-ID: <C2D7FE5348E1B147BCA15975FBA2307501A252E40B@us01wembx1.internal.synopsys.com>
+Message-ID: <20190620070120.GU3402@hirez.programming.kicks-ass.net>
 References: <20190614164049.31626-1-Eugeniy.Paltsev@synopsys.com>
  <C2D7FE5348E1B147BCA15975FBA2307501A252CCC3@us01wembx1.internal.synopsys.com>
  <20190619081227.GL3419@hirez.programming.kicks-ass.net>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-originating-ip: [10.13.184.19]
+ <C2D7FE5348E1B147BCA15975FBA2307501A252E40B@us01wembx1.internal.synopsys.com>
 MIME-Version: 1.0
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190619_165548_503071_6FB1E61F 
-X-CRM114-Status: GOOD (  18.75  )
-X-Spam-Score: -0.2 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+Content-Disposition: inline
+In-Reply-To: <C2D7FE5348E1B147BCA15975FBA2307501A252E40B@us01wembx1.internal.synopsys.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-BeenThere: linux-snps-arc@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -104,118 +77,63 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-snps-arc" <linux-snps-arc-bounces@lists.infradead.org>
 Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org
 
-On 6/19/19 1:12 AM, Peter Zijlstra wrote:
-> On Tue, Jun 18, 2019 at 04:16:20PM +0000, Vineet Gupta wrote:
->
->>> +/*
->>> + * To make atomic update of patched instruction available we need to guarantee
->>> + * that this instruction doesn't cross L1 cache line boundary.
->>> + *
-> Oh urgh. Is that the only way ARC can do text patching? 
+On Wed, Jun 19, 2019 at 11:55:41PM +0000, Vineet Gupta wrote:
+> On 6/19/19 1:12 AM, Peter Zijlstra wrote:
 
-Nothing seems out of the ordinary here. Perhaps Eugeniy's comment confused you, so
-let me explain the whole thing - likely obvious to you anyways.
+> > I'm assuming you've looked at what x86 currently does and found
+> > something like that doesn't work for ARC?
+> 
+> Just looked at x86 code and it seems similar
 
-I-cache is non snooping on ARC (like most embedded style arches) so self modifying
-code has to flush corresponding D and I cache lines. Instructions can be 2 byte
-aligned and could be 2, 4, 6, 8 bytes long, so a 4 byte NOP can potentially
-straddle cache line, needing 2 lines to be flushed. The cache maintenance ops work
-on region or line but coherency unit nonetheless operates on line sized units
-meaning 2 line ops may not be atomic on a remote cpu. So in the pathetic corner
-case we can have "other (non patching) CPU execute the code around patched PC with
-partial old/new fragments. So we ensure a patched instruction never crosses a
-cache line - using .balign 4. This causes a slight mis-optimization that all
-patched instruction locations are forced to be 4 bytes aligned while ISA allows
-code to be 2 byte aligned. The cost is an extra NOP_S (2 bytes) - no big deal in
-grand scheme of things in IMO.
+I think you missed a bit.
 
-FWIW I tried to avoid all of this by using the 2 byte NOP_S and B_S variants which
-ensures we can never straddle cache line so the alignment issue goes away. There's
-a nice code size reduction too - see [1] . But I get build link errors in
-networking code around DO_ONCE where the unlikely code is too much and offset
-can't be encoded in signed 10 bits which B_S is allowed.
+> >>> +	WRITE_ONCE(*instr_addr, instr);
+> >>> +	flush_icache_range(entry->code, entry->code + JUMP_LABEL_NOP_SIZE);
+> > So do you have a 2 byte opcode that traps unconditionally? In that case
+> > I'm thinking you could do something like x86 does. And it would avoid
+> > that NOP padding you do to get the alignment.
+> 
+> Just to be clear there is no trapping going on in the canonical sense of it. There
+> are regular instructions for NO-OP and Branch.
+> We do have 2 byte opcodes for both but as described the branch offset is too
+> limited so not usable.
 
-[1] http://lists.infradead.org/pipermail/linux-snps-arc/2019-June/005875.html
-> We've actually
-> considered something like this on x86 at some point, but there we have
-> the 'fun' detail that the i-fetch window does not in fact align with L1
-> size on all uarchs, so that got complicated real fast.
+In particular we do not need the alignment.
 
-As described above we don't have such an issue. I/D flushing works - its just that
-they are not be atomic
+So what the x86 code does is:
 
-> I'm assuming you've looked at what x86 currently does and found
-> something like that doesn't work for ARC?
+ - overwrite the first byte of the instruction with a single byte trap
+   instruction
 
-Just looked at x86 code and it seems similar
+ - machine wide IPI which synchronizes I$
 
->
->>> +/* Halt system on fatal error to make debug easier */
->>> +#define arc_jl_fatal(format...)						\
->>> +({									\
->>> +	pr_err(JUMPLABEL_ERR format);					\
->>> +	BUG();								\
->> Does it make sense to bring down the whole system vs. failing and returning.
->> I see there is no error propagation to core code, but still.
-> It is what x86 does. And I've been fairly adamant about doing so. When
-> the kernel text is compromised, do you really want to continue running
-> it?
+At this point, any CPU that encounters this instruction will trap; and
+the trap handler will emulate the 'new' instruction -- typically a jump.
 
-Agree, but the errors here are not in the middle of code patching itself. They are
-found before committing to patching say because patched code straddles line (which
-BTW can never happen given the .balign, it is perhaps a pedantic safety net), or
-the offset can't be encoded in B. So it is possible to  do a pr_err and just
-return w/o any patching like an API call failed. But given that the error
-propagation to core is not there - the assumption is it either always works or
-panics, there is no "failing" semantics.
+  - overwrite the tail of the instruction (if there is a tail)
 
->
->>> +})
->>> +
->>> +static inline u32 arc_gen_nop(void)
->>> +{
->>> +	/* 1x 32bit NOP in middle endian */
-> I dare not ask...
+  - machine wide IPI which syncrhonizes I$
 
-:-) The public PRM is being worked on for *real* so this will be remedied in a few
-months at best.
+At this point, nobody will execute the tail, because we'll still trap on
+that first single byte instruction, but if they were to read the
+instruction stream, the tail must be there.
 
-Short answer is it specifies how instruction stream is laid out in code memory for
-efficient next PC decoding given that ARC can freely intermix 2, 4, 6, 8 byte
-instruction fragments w/o any restrictions.
+  - overwrite the first byte of the instruction to now have a complete
+    instruction.
 
-Consier SWI insn encoding: per PRM is
+  - machine wide IPI which syncrhonizes I$
 
-31                                     0
---------------------------------------------------------------
-00100    010    01    101111    0    000    000000    111111
---------------------------------------------------------------
+At this point, any CPU will encounter the new instruction as a whole,
+irrespective of alignment.
 
-In regular little endian notation, in memory it would have looked as
 
-31                  0
- 0x22    0x6F    0x00    0x3F 
-  b3     b2      b1      b0
+So the benefit of this scheme is that is works irrespective of the
+instruction fetch window size and don't need the 'funny' alignment
+stuff.
 
-However in middle endian format, the 2 short words are flipped
-
-31                   0
-0x00    0x3F   0x22     0x6F   
-  b1     b0      b3       b2
-
->
->>> +	WRITE_ONCE(*instr_addr, instr);
->>> +	flush_icache_range(entry->code, entry->code + JUMP_LABEL_NOP_SIZE);
-> So do you have a 2 byte opcode that traps unconditionally? In that case
-> I'm thinking you could do something like x86 does. And it would avoid
-> that NOP padding you do to get the alignment.
-
-Just to be clear there is no trapping going on in the canonical sense of it. There
-are regular instructions for NO-OP and Branch.
-We do have 2 byte opcodes for both but as described the branch offset is too
-limited so not usable.
-
--Vineet
+Now, I've no idea if something like this is feasible on ARC; for it to
+work you need that 2 byte trap instruction -- since all instructions are
+2 byte aligned, you can always poke that without issue.
 
 _______________________________________________
 linux-snps-arc mailing list
