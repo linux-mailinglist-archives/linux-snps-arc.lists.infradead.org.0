@@ -2,121 +2,103 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8D0224D955
-	for <lists+linux-snps-arc@lfdr.de>; Thu, 20 Jun 2019 20:35:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4F6594D9B7
+	for <lists+linux-snps-arc@lfdr.de>; Thu, 20 Jun 2019 20:48:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oa39v91EvqvpFH+VLH7Z8vtFWnbCqXg9O8nYQ6G5G4U=; b=cphwgArDsfKErd
-	wVyh08TXDEk0a8ygk6mUycjb8lYmOmqg2PlC8uRfSV0yzWl9yCMMqYA9Ax4UIxvmzrr3JrVvp2yKe
-	C4O8uspLLWI4bQ2SdVB4O6Jb3zScxfy5pTv1j9Y5x/7Hski4rN5n0TbSqpcbIR8SqCwqXci40xtKd
-	BGFRDKK3Fv1P7blOeLxrpgS0KwWnBWx437zdmkSDdTEavChGGK27UQ6XFra85lGUYkc7G2VphOtYX
-	WgxdkyPXETmz+5nbS+sDiK87q6ID9PswbIumtAzWX66dY3rXPpkRCJKnlq7Vf2VPw/4qLRILL+NVn
-	XjhvrIp5vlURkL5f+yHA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=yA2HXusBalzQxlx0UhBJs4IbGBGVC/w/Mr06+m3Nr8M=; b=VKqjeGNbd5ORm/
+	KB3x+MNJJvZGifRv5o1NqRs8REfaZaWbyTJ0cvFZGLgAUr0Qu9J2H0Rb2eMkd/QLQD0aLK1uQMf/U
+	le6YWo16EQj6dorA8T1vQ8AtFGGKJpaD9AO4G6M8ZCP1vg5i6MNTfzmsj0geneEqpg0AyMazIrl8m
+	64XUL0xvO341MRD+ZLP4eORyRagJm9/+n1kIPoDfcCOuJJ7WBaFEML4ZV1WpOZ1+42sOsyV9QntgU
+	QIBnGofBqpiop9OJICJeUtCbaPE9Wn0tifkAO1a9AL1yls/OiZMpVMhFlsnQ39s98xfWSxRfDwKNq
+	uYC5PQiktlx2lXdK5Twg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1he1tl-00086A-CF; Thu, 20 Jun 2019 18:35:01 +0000
+	id 1he26s-0007ZM-4S; Thu, 20 Jun 2019 18:48:34 +0000
 Received: from dc8-smtprelay2.synopsys.com ([198.182.47.102]
  helo=smtprelay-out1.synopsys.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1he1ti-00085d-BY
- for linux-snps-arc@lists.infradead.org; Thu, 20 Jun 2019 18:34:59 +0000
-Received: from mailhost.synopsys.com (dc2-mailhost2.synopsys.com
- [10.12.135.162])
+ id 1he26p-0007Yh-1r
+ for linux-snps-arc@lists.infradead.org; Thu, 20 Jun 2019 18:48:32 +0000
+Received: from mailhost.synopsys.com (dc2-mailhost1.synopsys.com
+ [10.12.135.161])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
  (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 38A15C1D6E;
- Thu, 20 Jun 2019 18:34:58 +0000 (UTC)
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id BA543C01C9;
+ Thu, 20 Jun 2019 18:48:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1561055698; bh=2Q9+5scn6KrKipSrzJyWxZQcbLpLyuZz+5BXxLmWnrc=;
- h=From:To:CC:Subject:Date:References:In-Reply-To:From;
- b=TnOM7dnXc9kAyQ451jyM8+tFQdSMFj7Ugv+2CgXSnF5cZVNG1Ao9p2x2a0l7JqhvJ
- FoVWsxdID2mp54pfy64eDSU2kcGNRGXGrbQe4cxS3sbYyfeuem9fEeyqzPpybRUika
- QaFcriTQl4C73A5Dn/rJKIa8OeH879UpWpbiwKeAoUQFFAyUqsETh3MWADrrZdzobv
- 1z4RTWS+nur9XE5xt/2L4zMlpscxJp8ycAIudtMHNBrfucw8JoDuP05IFvAEuUsn/b
- CiPcOuX8cJO43+sCrZV1GruB+bVBejxVFKLjVRNHmGEk91iazKSvu4tLwFq33RWHRE
- d0KTtsAUlQLTQ==
-Received: from US01WEHTC2.internal.synopsys.com
- (us01wehtc2.internal.synopsys.com [10.12.239.237])
- (using TLSv1.2 with cipher AES128-SHA256 (128/128 bits))
+ t=1561056510; bh=YiLUG6U2F5fJuiZJSr7erxApqQi3Co5bwxuwy/JI5xw=;
+ h=Subject:To:CC:References:From:Date:In-Reply-To:From;
+ b=GnZlWCiYMCIVGXPGynajwI0rcUt46SjJj2j20MHIOB5S4xpgfzRKE1bvXqoWyOXE1
+ 0jox0u+FnnF+qz03kXvewOez08TYh0Qj/Itcm6VTRJry+OXCi02r9E0btbhCpVOLSr
+ jo3fFx2UU0+O9+Vr0RzRvMPsY9mHuwzaNz1HuKqWsGvM2PKIauuhV0pTstVSRW06nn
+ YYSpfiCAB2f7r3j47Qc2ZyqqTwuOwFptiYDfaK3WQPOycm+vuXFiC84YTDE8dDkznk
+ F1D7t8VXIZFjxNPBaBH30Hi1r+PtMyLpvpmmnNM/5yePxowDitFWiq1jGSnreakLGY
+ gdtML2U+ZhbXQ==
+Received: from us01wehtc1.internal.synopsys.com
+ (us01wehtc1-vip.internal.synopsys.com [10.12.239.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-SHA384 (256/256 bits))
  (No client certificate requested)
- by mailhost.synopsys.com (Postfix) with ESMTPS id E8BA4A0095;
- Thu, 20 Jun 2019 18:34:57 +0000 (UTC)
-Received: from US01HYBRID2.internal.synopsys.com (10.15.246.24) by
- US01WEHTC2.internal.synopsys.com (10.12.239.237) with Microsoft SMTP Server
- (TLS) id 14.3.408.0; Thu, 20 Jun 2019 11:34:57 -0700
-Received: from NAM04-CO1-obe.outbound.protection.outlook.com (10.13.134.195)
- by mrs.synopsys.com (10.15.246.24) with Microsoft SMTP Server (TLS) id
- 14.3.408.0; Thu, 20 Jun 2019 11:34:57 -0700
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=synopsys.onmicrosoft.com; s=selector1-synopsys-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=2Q9+5scn6KrKipSrzJyWxZQcbLpLyuZz+5BXxLmWnrc=;
- b=Yd0l9FWkhmWNEtf5M5MN+4OS/Kzei8YNATSG2Nh6EWwVVOli8+s53XLaV3mE/omnYOayEZF44kndRCTyXEA8G5K1m626VG7EvQlI50h1VJw9jsFcpXhVocmBPYXhh27R9OlEtwawnD1PRcv9Bfv9EYoxjf9Rl1xOI1sHsKX0xDc=
-Received: from SN6PR12MB2670.namprd12.prod.outlook.com (52.135.103.23) by
- SN6PR12MB2653.namprd12.prod.outlook.com (52.135.103.18) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.1987.13; Thu, 20 Jun 2019 18:34:55 +0000
-Received: from SN6PR12MB2670.namprd12.prod.outlook.com
- ([fe80::bd34:8d2b:911e:e495]) by SN6PR12MB2670.namprd12.prod.outlook.com
- ([fe80::bd34:8d2b:911e:e495%5]) with mapi id 15.20.1987.014; Thu, 20 Jun 2019
- 18:34:55 +0000
-From: Eugeniy Paltsev <Eugeniy.Paltsev@synopsys.com>
-To: "peterz@infradead.org" <peterz@infradead.org>,
- "Vineet.Gupta1@synopsys.com" <Vineet.Gupta1@synopsys.com>
+ by mailhost.synopsys.com (Postfix) with ESMTPS id 0190BA008B;
+ Thu, 20 Jun 2019 18:48:25 +0000 (UTC)
+Received: from IN01WEHTCB.internal.synopsys.com (10.144.199.106) by
+ us01wehtc1.internal.synopsys.com (10.12.239.231) with Microsoft SMTP Server
+ (TLS) id 14.3.408.0; Thu, 20 Jun 2019 11:48:25 -0700
+Received: from IN01WEHTCA.internal.synopsys.com (10.144.199.103) by
+ IN01WEHTCB.internal.synopsys.com (10.144.199.105) with Microsoft SMTP Server
+ (TLS) id 14.3.408.0; Fri, 21 Jun 2019 00:18:22 +0530
+Received: from [10.10.161.66] (10.10.161.66) by
+ IN01WEHTCA.internal.synopsys.com (10.144.199.243) with Microsoft SMTP Server
+ (TLS) id 14.3.408.0; Fri, 21 Jun 2019 00:18:21 +0530
 Subject: Re: [PATCH] ARC: ARCv2: jump label: implement jump label patching
-Thread-Topic: [PATCH] ARC: ARCv2: jump label: implement jump label patching
-Thread-Index: AQHVItABmoPNpjiRbEyPVk6MS/0psaakJk0AgADBxwA=
-Date: Thu, 20 Jun 2019 18:34:55 +0000
-Message-ID: <a945de7d3b6f2da03c62c9e1043e125b4c4211aa.camel@synopsys.com>
+To: Peter Zijlstra <peterz@infradead.org>
+Newsgroups: gmane.linux.kernel, gmane.linux.kernel.arc,
+ gmane.linux.kernel.cross-arch
 References: <20190614164049.31626-1-Eugeniy.Paltsev@synopsys.com>
  <C2D7FE5348E1B147BCA15975FBA2307501A252CCC3@us01wembx1.internal.synopsys.com>
  <20190619081227.GL3419@hirez.programming.kicks-ass.net>
  <C2D7FE5348E1B147BCA15975FBA2307501A252E40B@us01wembx1.internal.synopsys.com>
  <20190620070120.GU3402@hirez.programming.kicks-ass.net>
-In-Reply-To: <20190620070120.GU3402@hirez.programming.kicks-ass.net>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=paltsev@synopsys.com; 
-x-originating-ip: [84.204.78.101]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: a45e321f-1227-4e14-f857-08d6f5adfdf0
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(2017052603328)(7193020);
- SRVR:SN6PR12MB2653; 
-x-ms-traffictypediagnostic: SN6PR12MB2653:
-x-ms-exchange-purlcount: 1
-x-microsoft-antispam-prvs: <SN6PR12MB2653A0384DC7B95C168B1BF0DEE40@SN6PR12MB2653.namprd12.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:5797;
-x-forefront-prvs: 0074BBE012
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10019020)(366004)(39860400002)(346002)(396003)(376002)(136003)(199004)(189003)(99286004)(6506007)(53546011)(476003)(446003)(6436002)(486006)(11346002)(2616005)(110136005)(6306002)(6512007)(86362001)(3846002)(76176011)(6486002)(229853002)(6636002)(316002)(26005)(6116002)(186003)(2906002)(118296001)(256004)(68736007)(8936002)(25786009)(71200400001)(71190400001)(36756003)(66066001)(6246003)(7736002)(478600001)(305945005)(966005)(81156014)(81166006)(8676002)(102836004)(14454004)(53936002)(2501003)(54906003)(66446008)(66476007)(66556008)(64756008)(4326008)(73956011)(66946007)(76116006)(91956017)(5660300002);
- DIR:OUT; SFP:1102; SCL:1; SRVR:SN6PR12MB2653;
- H:SN6PR12MB2670.namprd12.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: synopsys.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: JicIwXbQJHUCXt/Z/OkMIzUbTLKYgr4Jymur8+PZHelZMS10Ck7j6jDx9jDBpG/izef8U3KEKRBFWvj44PRgWk5jbr5SxX2fE1n3WaotccsVhjfeRA+jw4ArnLHfvjzGR1C7pnFqkY9aqsQA23QGEM/kCLiFJdCpQ05HukzzRyPCyVJ4t3eAKTqCixio7pM6cODEuddK9KbF9NerpwcfrpKp44UX8O1QL5zJ1GsuOLLBOX1+MHuKlaERoEQSLfjC2jcrXRhh7mbziCp9EbAHHJay/h3ehupU0KOYgEFqr5tq8L0H5EYDLrrm1ox3e3uHT5qjc5uNBqhw8Sp95SFCO6JFTtcZPD6ZKNfMZvjA8PWTn6ehZq0+Z+MBFxILFrJBsjA9RGwSYU+EReLuR9dwYGQZDQA64Xj2J5HRg8cLCB4=
-Content-ID: <B1AC54EE21D2C340AE47EB1977599190@namprd12.prod.outlook.com>
+From: Vineet Gupta <Vineet.Gupta1@synopsys.com>
+Openpgp: preference=signencrypt
+Autocrypt: addr=vgupta@synopsys.com; keydata=
+ mQINBFEffBMBEADIXSn0fEQcM8GPYFZyvBrY8456hGplRnLLFimPi/BBGFA24IR+B/Vh/EFk
+ B5LAyKuPEEbR3WSVB1x7TovwEErPWKmhHFbyugdCKDv7qWVj7pOB+vqycTG3i16eixB69row
+ lDkZ2RQyy1i/wOtHt8Kr69V9aMOIVIlBNjx5vNOjxfOLux3C0SRl1veA8sdkoSACY3McOqJ8
+ zR8q1mZDRHCfz+aNxgmVIVFN2JY29zBNOeCzNL1b6ndjU73whH/1hd9YMx2Sp149T8MBpkuQ
+ cFYUPYm8Mn0dQ5PHAide+D3iKCHMupX0ux1Y6g7Ym9jhVtxq3OdUI5I5vsED7NgV9c8++baM
+ 7j7ext5v0l8UeulHfj4LglTaJIvwbUrCGgtyS9haKlUHbmey/af1j0sTrGxZs1ky1cTX7yeF
+ nSYs12GRiVZkh/Pf3nRLkjV+kH++ZtR1GZLqwamiYZhAHjo1Vzyl50JT9EuX07/XTyq/Bx6E
+ dcJWr79ZphJ+mR2HrMdvZo3VSpXEgjROpYlD4GKUApFxW6RrZkvMzuR2bqi48FThXKhFXJBd
+ JiTfiO8tpXaHg/yh/V9vNQqdu7KmZIuZ0EdeZHoXe+8lxoNyQPcPSj7LcmE6gONJR8ZqAzyk
+ F5voeRIy005ZmJJ3VOH3Gw6Gz49LVy7Kz72yo1IPHZJNpSV5xwARAQABtCpWaW5lZXQgR3Vw
+ dGEgKGFsaWFzKSA8dmd1cHRhQHN5bm9wc3lzLmNvbT6JAj4EEwECACgCGwMGCwkIBwMCBhUI
+ AgkKCwQWAgMBAh4BAheABQJbBYpwBQkLx0HcAAoJEGnX8d3iisJeChAQAMR2UVbJyydOv3aV
+ jmqP47gVFq4Qml1weP5z6czl1I8n37bIhdW0/lV2Zll+yU1YGpMgdDTHiDqnGWi4pJeu4+c5
+ xsI/VqkH6WWXpfruhDsbJ3IJQ46//jb79ogjm6VVeGlOOYxx/G/RUUXZ12+CMPQo7Bv+Jb+t
+ NJnYXYMND2Dlr2TiRahFeeQo8uFbeEdJGDsSIbkOV0jzrYUAPeBwdN8N0eOB19KUgPqPAC4W
+ HCg2LJ/o6/BImN7bhEFDFu7gTT0nqFVZNXlOw4UcGGpM3dq/qu8ZgRE0turY9SsjKsJYKvg4
+ djAaOh7H9NJK72JOjUhXY/sMBwW5vnNwFyXCB5t4ZcNxStoxrMtyf35synJVinFy6wCzH3eJ
+ XYNfFsv4gjF3l9VYmGEJeI8JG/ljYQVjsQxcrU1lf8lfARuNkleUL8Y3rtxn6eZVtAlJE8q2
+ hBgu/RUj79BKnWEPFmxfKsaj8of+5wubTkP0I5tXh0akKZlVwQ3lbDdHxznejcVCwyjXBSny
+ d0+qKIXX1eMh0/5sDYM06/B34rQyq9HZVVPRHdvsfwCU0s3G+5Fai02mK68okr8TECOzqZtG
+ cuQmkAeegdY70Bpzfbwxo45WWQq8dSRURA7KDeY5LutMphQPIP2syqgIaiEatHgwetyVCOt6
+ tf3ClCidHNaGky9KcNSQ
+Message-ID: <a0a1aa81-d46e-71db-ff7b-207bc468068d@synopsys.com>
+Date: Thu, 20 Jun 2019 11:48:17 -0700
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
 MIME-Version: 1.0
-X-MS-Exchange-CrossTenant-Network-Message-Id: a45e321f-1227-4e14-f857-08d6f5adfdf0
-X-MS-Exchange-CrossTenant-originalarrivaltime: 20 Jun 2019 18:34:55.7699 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: c33c9f88-1eb7-4099-9700-16013fd9e8aa
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: paltsev@synopsys.com
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: SN6PR12MB2653
-X-OriginatorOrg: synopsys.com
+In-Reply-To: <20190620070120.GU3402@hirez.programming.kicks-ass.net>
+Content-Language: en-US
+X-Originating-IP: [10.10.161.66]
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190620_113458_404620_321EA6B2 
-X-CRM114-Status: GOOD (  28.56  )
+X-CRM114-CacheID: sfid-20190620_114831_112703_23822EE1 
+X-CRM114-Status: GOOD (  20.19  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -143,39 +125,19 @@ List-Help: <mailto:linux-snps-arc-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-snps-arc>, 
  <mailto:linux-snps-arc-request@lists.infradead.org?subject=subscribe>
 Cc: "linux-arch@vger.kernel.org" <linux-arch@vger.kernel.org>,
- "ard.biesheuvel@linaro.org" <ard.biesheuvel@linaro.org>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
  Alexey Brodkin <Alexey.Brodkin@synopsys.com>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "jbaron@akamai.com" <jbaron@akamai.com>,
- "pbonzini@redhat.com" <pbonzini@redhat.com>,
+ Jason Baron <jbaron@akamai.com>, Paolo Bonzini <pbonzini@redhat.com>,
  "linux-snps-arc@lists.infradead.org" <linux-snps-arc@lists.infradead.org>,
- "Eugeniy.Paltsev@synopsys.com" <Eugeniy.Paltsev@synopsys.com>
+ Eugeniy Paltsev <Eugeniy.Paltsev@synopsys.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-snps-arc" <linux-snps-arc-bounces@lists.infradead.org>
 Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org
 
-Hi Peter,
-On Thu, 2019-06-20 at 09:01 +0200, Peter Zijlstra wrote:
-> On Wed, Jun 19, 2019 at 11:55:41PM +0000, Vineet Gupta wrote:
-> > On 6/19/19 1:12 AM, Peter Zijlstra wrote:
-> > > I'm assuming you've looked at what x86 currently does and found
-> > > something like that doesn't work for ARC?
-> > 
-> > Just looked at x86 code and it seems similar
-> 
-> I think you missed a bit.
-> 
-> > > > > +	WRITE_ONCE(*instr_addr, instr);
-> > > > > +	flush_icache_range(entry->code, entry->code + JUMP_LABEL_NOP_SIZE);
-> > > So do you have a 2 byte opcode that traps unconditionally? In that case
-> > > I'm thinking you could do something like x86 does. And it would avoid
-> > > that NOP padding you do to get the alignment.
-> > 
-> > Just to be clear there is no trapping going on in the canonical sense of it. There
-> > are regular instructions for NO-OP and Branch.
-> > We do have 2 byte opcodes for both but as described the branch offset is too
-> > limited so not usable.
+On 6/20/19 12:01 AM, Peter Zijlstra wrote:
+
 > 
 > In particular we do not need the alignment.
 > 
@@ -210,45 +172,24 @@ On Thu, 2019-06-20 at 09:01 +0200, Peter Zijlstra wrote:
 > instruction fetch window size and don't need the 'funny' alignment
 > stuff.
 > 
-
-Thanks for explanation. Now I understand how this x86 magic works.
-
-However it looks like even more complex than ARM implementation.
-As I understand on ARM they do something like that:
----------------------------->8-------------------------
-on_each_cpu {
-	write_instruction
-	flush_data_cache_region
-	invalidate_instruction_cache_region
-}
----------------------------->8-------------------------
-
-https://elixir.bootlin.com/linux/v5.1/source/arch/arm/kernel/patch.c#L121
-
-Yep, there is some overhead - as we don't need to do white and D$ flush on each cpu
-but that makes code simple and avoids additional checks.
-
-And I don't understand in which cases x86 approach with trap is better.
-In this ARM implementation we do one machine wide IPI instead of three in x86 trap approach.
-
-Probably there is some x86 specifics I don't get?
-
-
 > Now, I've no idea if something like this is feasible on ARC; for it to
 > work you need that 2 byte trap instruction -- since all instructions are
 > 2 byte aligned, you can always poke that without issue.
 
-Yep we have 2 byte trap (trap_s instruction).
+We do have a 2 byte TRAP_S u6 which is used for all/any trap'ing: syscalls,
+software breakpoint, kprobes etc. But using it like x86 seems a bit excessive for
+ARC. Given that x86 doesn't implement flush_icache_range() it must have I$
+snooping D$ and also this machine wide IPI sync I$ must be totally under the hood
+all hardware affair - unlike ARC which needs on_each_cpu( I$ line range).
 
-Actually there are even two candidates another candidates which can be used
-instead trap_s to avoid adding additional code to trap handler:
-SWI_S - software interrupt
-and
-UNIMP_S - instruction with funny name 'unimplemented instruction'
+Using TRAP_S would actually requires 2 passes (and 2 rounds of IPI) for code
+patching - the last one to undo the TRAP_S itself.
 
+I do worry about the occasional alignment induced extra NOP_S instruction (2 byte)
+but there doesn't seem to be an easy solution. Heck if we could use the NOP_S /
+B_S in first place. While not a clean solution by any standards, could anything be
+done to reduce the code path of DO_ONCE() so that unlikely code is not too far off.
 
--- 
- Eugeniy Paltsev
 _______________________________________________
 linux-snps-arc mailing list
 linux-snps-arc@lists.infradead.org
