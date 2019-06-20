@@ -2,67 +2,67 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4F6594D9B7
-	for <lists+linux-snps-arc@lfdr.de>; Thu, 20 Jun 2019 20:48:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 26EBA4DB9C
+	for <lists+linux-snps-arc@lfdr.de>; Thu, 20 Jun 2019 22:50:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yA2HXusBalzQxlx0UhBJs4IbGBGVC/w/Mr06+m3Nr8M=; b=VKqjeGNbd5ORm/
-	KB3x+MNJJvZGifRv5o1NqRs8REfaZaWbyTJ0cvFZGLgAUr0Qu9J2H0Rb2eMkd/QLQD0aLK1uQMf/U
-	le6YWo16EQj6dorA8T1vQ8AtFGGKJpaD9AO4G6M8ZCP1vg5i6MNTfzmsj0geneEqpg0AyMazIrl8m
-	64XUL0xvO341MRD+ZLP4eORyRagJm9/+n1kIPoDfcCOuJJ7WBaFEML4ZV1WpOZ1+42sOsyV9QntgU
-	QIBnGofBqpiop9OJICJeUtCbaPE9Wn0tifkAO1a9AL1yls/OiZMpVMhFlsnQ39s98xfWSxRfDwKNq
-	uYC5PQiktlx2lXdK5Twg==;
+	List-Owner; bh=5LS7KjbPx8lGo42wWr23DgVb7HeepzhmlHQE9sKCEbA=; b=XvKDQzt7SP/rkx
+	5N9HqQ62kaRma26uDhIennRQ/Fdv30Ql4uB9gTsty6vuYpG71xblmOGphJ7P36byy4y5Uwclegjiv
+	q+mQ7elRUEmiu9qqWRzFvenS7MJYSK8LZpsKMIUGCo/2NiR+8xyaFsiiQ+Xzpgr6f0dT2RQgCwcRP
+	8Ue3cgacuIoL5jlaK+sqCcIZI9tZLj1C+6JUw6M524Pq7SNn2Uum+RzDEtqRTLMJXv0W3BFYm/AqQ
+	VFkP0c2SQlaq+7vvvMfSPzOEBfGNiJavYvUJlZL0ZOw0/9mm+AXPzZuu5lIj67aQk3sN6/arGP6UA
+	zbv0ztUAYLUCqVgnilFw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1he26s-0007ZM-4S; Thu, 20 Jun 2019 18:48:34 +0000
-Received: from dc8-smtprelay2.synopsys.com ([198.182.47.102]
+	id 1he40Q-0001P4-76; Thu, 20 Jun 2019 20:50:02 +0000
+Received: from dc2-smtprelay2.synopsys.com ([198.182.61.142]
  helo=smtprelay-out1.synopsys.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1he26p-0007Yh-1r
- for linux-snps-arc@lists.infradead.org; Thu, 20 Jun 2019 18:48:32 +0000
-Received: from mailhost.synopsys.com (dc2-mailhost1.synopsys.com
- [10.12.135.161])
+ id 1he40N-0001JC-HW
+ for linux-snps-arc@lists.infradead.org; Thu, 20 Jun 2019 20:50:00 +0000
+Received: from mailhost.synopsys.com (dc8-mailhost1.synopsys.com
+ [10.13.135.209])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
  (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id BA543C01C9;
- Thu, 20 Jun 2019 18:48:27 +0000 (UTC)
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 8CF4CC0D2E;
+ Thu, 20 Jun 2019 20:49:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1561056510; bh=YiLUG6U2F5fJuiZJSr7erxApqQi3Co5bwxuwy/JI5xw=;
+ t=1561063798; bh=7Xu9jiEpOkMmqNXYHnZgozFosbClrmzrakUaaJSHzMk=;
  h=Subject:To:CC:References:From:Date:In-Reply-To:From;
- b=GnZlWCiYMCIVGXPGynajwI0rcUt46SjJj2j20MHIOB5S4xpgfzRKE1bvXqoWyOXE1
- 0jox0u+FnnF+qz03kXvewOez08TYh0Qj/Itcm6VTRJry+OXCi02r9E0btbhCpVOLSr
- jo3fFx2UU0+O9+Vr0RzRvMPsY9mHuwzaNz1HuKqWsGvM2PKIauuhV0pTstVSRW06nn
- YYSpfiCAB2f7r3j47Qc2ZyqqTwuOwFptiYDfaK3WQPOycm+vuXFiC84YTDE8dDkznk
- F1D7t8VXIZFjxNPBaBH30Hi1r+PtMyLpvpmmnNM/5yePxowDitFWiq1jGSnreakLGY
- gdtML2U+ZhbXQ==
-Received: from us01wehtc1.internal.synopsys.com
- (us01wehtc1-vip.internal.synopsys.com [10.12.239.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-SHA384 (256/256 bits))
+ b=TgIpoUSGN8Z29denp348YrUQ7M4JCHy6erxt3AYYah8ed0I92f4wJM01DVHFEixFG
+ jkgQqyp7TLJygOTs/cNpAXhQXuYg/aXfOb567orU1VEY6fBtSFXWP232SYyoe3vs/Z
+ m3Ld/mWukZOkHvCYEj7s1hWCSTglnb0Ay6+ImFJTlUHqjAiNdqveEZWAFyE//MZHZq
+ CDzpWIv6s45yYDzElNLuUuU6+O9Vi7KpvWaGs0f+ATMa8yaevMNcWRYNfRPEeas/+y
+ bpuNY9TTcG9GVzpIimTl21Cgf0RH45MoY748qdUcfdDbJlNnXaWNyxtH9QTjxQ0MT/
+ cVnY0L3whTHXw==
+Received: from US01WEHTC2.internal.synopsys.com
+ (us01wehtc2.internal.synopsys.com [10.12.239.237])
+ (using TLSv1.2 with cipher AES128-SHA256 (128/128 bits))
  (No client certificate requested)
- by mailhost.synopsys.com (Postfix) with ESMTPS id 0190BA008B;
- Thu, 20 Jun 2019 18:48:25 +0000 (UTC)
+ by mailhost.synopsys.com (Postfix) with ESMTPS id 859ABA005D;
+ Thu, 20 Jun 2019 20:49:56 +0000 (UTC)
 Received: from IN01WEHTCB.internal.synopsys.com (10.144.199.106) by
- us01wehtc1.internal.synopsys.com (10.12.239.231) with Microsoft SMTP Server
- (TLS) id 14.3.408.0; Thu, 20 Jun 2019 11:48:25 -0700
+ US01WEHTC2.internal.synopsys.com (10.12.239.237) with Microsoft SMTP Server
+ (TLS) id 14.3.408.0; Thu, 20 Jun 2019 13:49:55 -0700
 Received: from IN01WEHTCA.internal.synopsys.com (10.144.199.103) by
  IN01WEHTCB.internal.synopsys.com (10.144.199.105) with Microsoft SMTP Server
- (TLS) id 14.3.408.0; Fri, 21 Jun 2019 00:18:22 +0530
+ (TLS) id 14.3.408.0; Fri, 21 Jun 2019 02:19:53 +0530
 Received: from [10.10.161.66] (10.10.161.66) by
  IN01WEHTCA.internal.synopsys.com (10.144.199.243) with Microsoft SMTP Server
- (TLS) id 14.3.408.0; Fri, 21 Jun 2019 00:18:21 +0530
+ (TLS) id 14.3.408.0; Fri, 21 Jun 2019 02:20:06 +0530
 Subject: Re: [PATCH] ARC: ARCv2: jump label: implement jump label patching
 To: Peter Zijlstra <peterz@infradead.org>
-Newsgroups: gmane.linux.kernel, gmane.linux.kernel.arc,
- gmane.linux.kernel.cross-arch
+Newsgroups: gmane.linux.kernel.arc, gmane.linux.kernel.cross-arch,
+ gmane.linux.kernel
 References: <20190614164049.31626-1-Eugeniy.Paltsev@synopsys.com>
  <C2D7FE5348E1B147BCA15975FBA2307501A252CCC3@us01wembx1.internal.synopsys.com>
  <20190619081227.GL3419@hirez.programming.kicks-ass.net>
  <C2D7FE5348E1B147BCA15975FBA2307501A252E40B@us01wembx1.internal.synopsys.com>
- <20190620070120.GU3402@hirez.programming.kicks-ass.net>
+ <20190620075224.GT3419@hirez.programming.kicks-ass.net>
 From: Vineet Gupta <Vineet.Gupta1@synopsys.com>
 Openpgp: preference=signencrypt
 Autocrypt: addr=vgupta@synopsys.com; keydata=
@@ -88,17 +88,17 @@ Autocrypt: addr=vgupta@synopsys.com; keydata=
  d0+qKIXX1eMh0/5sDYM06/B34rQyq9HZVVPRHdvsfwCU0s3G+5Fai02mK68okr8TECOzqZtG
  cuQmkAeegdY70Bpzfbwxo45WWQq8dSRURA7KDeY5LutMphQPIP2syqgIaiEatHgwetyVCOt6
  tf3ClCidHNaGky9KcNSQ
-Message-ID: <a0a1aa81-d46e-71db-ff7b-207bc468068d@synopsys.com>
-Date: Thu, 20 Jun 2019 11:48:17 -0700
+Message-ID: <9192bd26-5f34-dcbf-8552-2f474866a31e@synopsys.com>
+Date: Thu, 20 Jun 2019 13:49:48 -0700
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.7.0
 MIME-Version: 1.0
-In-Reply-To: <20190620070120.GU3402@hirez.programming.kicks-ass.net>
+In-Reply-To: <20190620075224.GT3419@hirez.programming.kicks-ass.net>
 Content-Language: en-US
 X-Originating-IP: [10.10.161.66]
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190620_114831_112703_23822EE1 
-X-CRM114-Status: GOOD (  20.19  )
+X-CRM114-CacheID: sfid-20190620_134959_591415_8EC6F09A 
+X-CRM114-Status: GOOD (  15.62  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -136,59 +136,45 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-snps-arc" <linux-snps-arc-bounces@lists.infradead.org>
 Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org
 
-On 6/20/19 12:01 AM, Peter Zijlstra wrote:
+On 6/20/19 12:52 AM, Peter Zijlstra wrote:
+> 
+> With everything little endian, everything seems just fine. If you load
+> the first 2 byte at offset 0, you get the first 2 bytes of the
+> instruction.
+
+It has to do with the instruction encoding scheme and what part of instruction has
+the major opcode/subopcode etc. For a canonical 4 byte instruction they happen to
+be in the upper 16 bits (for some hardware efficiency reasons unknown to me). So
+when a 2 byte insn follows a 4 byte, a 4 byte fetch already tells it what the 2nd
+instruction opcode is and whether it is a 2, 4, 6 or 8 byte insn.
+
 
 > 
-> In particular we do not need the alignment.
+> If OTOH your arch big endian, and you were to load the first two bytes
+> at offset 0, you get the top two.
 > 
-> So what the x86 code does is:
-> 
->  - overwrite the first byte of the instruction with a single byte trap
->    instruction
-> 
->  - machine wide IPI which synchronizes I$
-> 
-> At this point, any CPU that encounters this instruction will trap; and
-> the trap handler will emulate the 'new' instruction -- typically a jump.
-> 
->   - overwrite the tail of the instruction (if there is a tail)
-> 
->   - machine wide IPI which syncrhonizes I$
-> 
-> At this point, nobody will execute the tail, because we'll still trap on
-> that first single byte instruction, but if they were to read the
-> instruction stream, the tail must be there.
-> 
->   - overwrite the first byte of the instruction to now have a complete
->     instruction.
-> 
->   - machine wide IPI which syncrhonizes I$
-> 
-> At this point, any CPU will encounter the new instruction as a whole,
-> irrespective of alignment.
-> 
-> 
-> So the benefit of this scheme is that is works irrespective of the
-> instruction fetch window size and don't need the 'funny' alignment
-> stuff.
-> 
-> Now, I've no idea if something like this is feasible on ARC; for it to
-> work you need that 2 byte trap instruction -- since all instructions are
-> 2 byte aligned, you can always poke that without issue.
+> So this middle endian scheme, only seems to make sense if you're
+> otherwise big endian.
 
-We do have a 2 byte TRAP_S u6 which is used for all/any trap'ing: syscalls,
-software breakpoint, kprobes etc. But using it like x86 seems a bit excessive for
-ARC. Given that x86 doesn't implement flush_icache_range() it must have I$
-snooping D$ and also this machine wide IPI sync I$ must be totally under the hood
-all hardware affair - unlike ARC which needs on_each_cpu( I$ line range).
+Insn encoding is always middl eendina - irrespective of endianness.
 
-Using TRAP_S would actually requires 2 passes (and 2 rounds of IPI) for code
-patching - the last one to undo the TRAP_S itself.
+> But AFAICT ARC is bi-endian and the jump-label
+> patch under condsideration is explicitly !CPU_ENDIAN_BE32 -- which
+> suggests the instruction stream is sensitive to the endian selection.
 
-I do worry about the occasional alignment induced extra NOP_S instruction (2 byte)
-but there doesn't seem to be an easy solution. Heck if we could use the NOP_S /
-B_S in first place. While not a clean solution by any standards, could anything be
-done to reduce the code path of DO_ONCE() so that unlikely code is not too far off.
+Nope they are not directly related. Likely the difference is when we patch the
+instruction to memory it is written as data so might need some endian swap. Not
+really rocket science. Perhaps it saves some testing effort etc.
+Also we don't seem to have any customers interested in BE these days.
+
+> Anyway, I was just 'surprised' at seeing middle endian mentioned,
+> curiosity killed the cat and all that :-)
+
+Curiosity may certainly kill cats, but on lkml curiosity is almost always a good
+thing both for the enquirer and enquiree ;-)
+
+
+
 
 _______________________________________________
 linux-snps-arc mailing list
