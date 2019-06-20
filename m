@@ -2,71 +2,58 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 400494C834
-	for <lists+linux-snps-arc@lfdr.de>; Thu, 20 Jun 2019 09:19:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E418A4C839
+	for <lists+linux-snps-arc@lfdr.de>; Thu, 20 Jun 2019 09:21:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
-	Message-Id:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HS9q2ANImsZskXrIyQTRZMD5SLWB/yPizySdDFfJUdc=; b=hpugFb2W3q5mdl
-	m+QxSi2YL1k47zwHazqlQs2Z6U64QqfrtJjMPbHkQ+c0ts547QTv3vRETdIbnF7Jensu4vu/kqQxK
-	sdE0qT7KEOT60+VtNBLfhDXEGHHnvYvaYkGqM5LPxH5dsugkE+t6HQsQZbve98cwtuIvKBaLs8EBs
-	zgOasUb3BWA4KXkrlGVRkd53r112nysqBBfrnlrVaOlWanRnsVEbAjolT9ziT5QAAtn2nCks7omdo
-	5RgLrjBGdfFih8f5PsbeP8eSwvhCt3UR2lIw6cGmWOfhl8MEVjzFZXBL8H9pCMZ82a+4ggCK3kDCG
-	ACcBaurzVpWPDSRupdow==;
+	List-Owner; bh=IFePrI/73JBA6RY9cD/CRnIu8ERZYfMhMxL2x8FAFzk=; b=TpV5cqrDmmqzb4
+	2LlBlpRqtgyzkX3+lzuCa5AOgnhLYKJu2hBPiIlHUJRkthHfaKbjWw5Xlvr2eE4QSdwwv9CG2H0K6
+	EinQtA8ukbfO1Yn6LdKbk7xEU0X3Q+1+q8Yuv7MjzxTjgMX7cDFSkZGMM84VBJrUTta+TpZg8cQIx
+	50pjzVQM2tCQMize71qwMKa8ZifJtwutY0/bv8jxq6han71ZWCQMlgrFqBJM+lwGe7YE3yfHcRpij
+	GW6Tw1Gzk7D8zcgSV/V9bDYNE/kg1XmRkfH/Nms6wlAWqv1NWOdGZnxAPQU8hWwVlgYpZHQfg9Ff9
+	9g8rWNnkX3xkXy90THuQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdrLv-0004ZP-1U; Thu, 20 Jun 2019 07:19:23 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hdrOI-0005t2-E1; Thu, 20 Jun 2019 07:21:50 +0000
+Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdrLt-0004Z6-8Z
- for linux-snps-arc@lists.infradead.org; Thu, 20 Jun 2019 07:19:22 +0000
-Received: from devnote2 (113x40x119x170.ap113.ftth.ucom.ne.jp [113.40.119.170])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 81DA02084A;
- Thu, 20 Jun 2019 07:19:19 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1561015160;
- bh=ditT581I77m/ZbUu7CLuX7DQIEDwZUnG/8oeauPi0io=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=fyBYqmEqZeklNLUnmdmPM/4625Mcbao07QGNIYQw5knhEZK8wIHjcm8xUL4RmnX0r
- PMnegxpi1BIQAjhCwgTuEYSEaa/KbTsng4M1dGIJ9/yq3pToiPLhZ1loMNuNQ0OZTt
- fyFz0fNafXWDnlMWBNAdXCvQrux1gSBdpWnS1k4c=
-Date: Thu, 20 Jun 2019 16:19:17 +0900
-From: Masami Hiramatsu <mhiramat@kernel.org>
+ id 1hdrOH-0005sc-C7
+ for linux-snps-arc@bombadil.infradead.org; Thu, 20 Jun 2019 07:21:49 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=merlin.20170209; h=In-Reply-To:Content-Type:MIME-Version:
+ References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=flv0ZjAK0TpjANrHI4sAx0FN5zH4ci8KQMG+jBdIYOU=; b=PxDF4z1f0ZvO6hgDdo4Rd03Al
+ tyx+x2reUwA9mioDpNaCR2sX77t0seV4VwXFyUjVHa8eQPaHA75HsaWrXlPCl0MgIoUUvrnIauZob
+ pG9lKFb/acLF37vWz4zmYwzuh2Uyf5RMeKJB+foQ6mG/Wm+ym7cSRNMKnvYQp7PxkraKwm6gGbt+N
+ H3Lre1tfXfl1GJQeMBKdaQ+fUesg4+2eUUmUKUhGQeKE0oC2mgt76DlmCuyTWxvApWK0ASFdee7X4
+ Jo9Ka3CjmW9wzMd2oLh+8LJYTBj1jbeQ3fZkaxbmngMXGv74Nfkei0pxlNoX1S7abhP5Dx9ubhnYC
+ 5m0sCWTIQ==;
+Received: from j217100.upc-j.chello.nl ([24.132.217.100]
+ helo=hirez.programming.kicks-ass.net)
+ by merlin.infradead.org with esmtpsa (Exim 4.92 #3 (Red Hat Linux))
+ id 1hdrOE-0004G4-0J; Thu, 20 Jun 2019 07:21:46 +0000
+Received: by hirez.programming.kicks-ass.net (Postfix, from userid 1000)
+ id BEEED200B4CB3; Thu, 20 Jun 2019 09:21:44 +0200 (CEST)
+Date: Thu, 20 Jun 2019 09:21:44 +0200
+From: Peter Zijlstra <peterz@infradead.org>
 To: Vineet Gupta <Vineet.Gupta1@synopsys.com>
-Subject: Re: [PATCH] mm: Generalize and rename notify_page_fault() as
- kprobe_page_fault()
-Message-Id: <20190620161917.a713ea0ff38fa18a2c6f05c2@kernel.org>
-In-Reply-To: <8b184218-6880-204e-a9dd-e627c5ca92ca@synopsys.com>
-References: <1560420444-25737-1-git-send-email-anshuman.khandual@arm.com>
- <e5f45089-c3aa-4d78-2c8d-ed22f863d9ee@synopsys.com>
- <8b184218-6880-204e-a9dd-e627c5ca92ca@synopsys.com>
-X-Mailer: Sylpheed 3.5.1 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
-Mime-Version: 1.0
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190620_001921_330604_055F3FB2 
-X-CRM114-Status: GOOD (  14.17  )
-X-Spam-Score: -5.2 (-----)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+Subject: Re: [PATCH] ARC: ARCv2: jump label: implement jump label patching
+Message-ID: <20190620072144.GS3419@hirez.programming.kicks-ass.net>
+References: <20190614164049.31626-1-Eugeniy.Paltsev@synopsys.com>
+ <C2D7FE5348E1B147BCA15975FBA2307501A252CCC3@us01wembx1.internal.synopsys.com>
+ <20190619081227.GL3419@hirez.programming.kicks-ass.net>
+ <C2D7FE5348E1B147BCA15975FBA2307501A252E40B@us01wembx1.internal.synopsys.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <C2D7FE5348E1B147BCA15975FBA2307501A252E40B@us01wembx1.internal.synopsys.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-BeenThere: linux-snps-arc@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,78 +65,33 @@ List-Post: <mailto:linux-snps-arc@lists.infradead.org>
 List-Help: <mailto:linux-snps-arc-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-snps-arc>, 
  <mailto:linux-snps-arc-request@lists.infradead.org?subject=subscribe>
-Cc: Fenghua Yu <fenghua.yu@intel.com>,
- Anshuman Khandual <anshuman.khandual@arm.com>, linux-kernel@vger.kernel.org,
- linux-mm@kvack.org, Masami Hiramatsu <mhiramat@kernel.org>,
- arcml <linux-snps-arc@lists.infradead.org>,
+Cc: "linux-arch@vger.kernel.org" <linux-arch@vger.kernel.org>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Alexey Brodkin <Alexey.Brodkin@synopsys.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Jason Baron <jbaron@akamai.com>, Paolo Bonzini <pbonzini@redhat.com>,
+ "linux-snps-arc@lists.infradead.org" <linux-snps-arc@lists.infradead.org>,
  Eugeniy Paltsev <Eugeniy.Paltsev@synopsys.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-snps-arc" <linux-snps-arc-bounces@lists.infradead.org>
 Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org
 
-Hi,
+On Wed, Jun 19, 2019 at 11:55:41PM +0000, Vineet Gupta wrote:
+> So we ensure a patched instruction never crosses a
+> cache line - using .balign 4. This causes a slight mis-optimization that all
+> patched instruction locations are forced to be 4 bytes aligned while ISA allows
+> code to be 2 byte aligned. The cost is an extra NOP_S (2 bytes) - no big deal in
+> grand scheme of things in IMO.
 
-On Tue, 18 Jun 2019 08:56:33 -0700
-Vineet Gupta <Vineet.Gupta1@synopsys.com> wrote:
+Right, so the scheme x86 uses (which I outlined in an earlier email)
+allows you to get rid of those extra NOPs.
 
-> +CC Masami San, Eugeniy
-> 
-> On 6/13/19 10:57 AM, Vineet Gupta wrote:
-> 
-> 
-> > On 6/13/19 3:07 AM, Anshuman Khandual wrote:
-> >> Questions:
-> >>
-> >> AFAICT there is no equivalent of erstwhile notify_page_fault() during page
-> >> fault handling in arc and mips archs which can call this generic function.
-> >> Please let me know if that is not the case.
-> > 
-> > For ARC do_page_fault() is entered for MMU exceptions (TLB Miss, access violations
-> > r/w/x etc). kprobes uses a combination of UNIMP_S and TRAP_S instructions which
-> > don't funnel into do_page_fault().
-> > 
-> > UINMP_S leads to
-> > 
-> > instr_service
-> >    do_insterror_or_kprobe
-> >       notify_die(DIE_IERR)
-> >          kprobe_exceptions_notify
-> >             arc_kprobe_handler
-> > 
-> > 
-> > TRAP_S 2 leads to
-> > 
-> > EV_Trap
-> >    do_non_swi_trap
-> >       trap_is_kprobe
-> >          notify_die(DIE_TRAP)
-> >             kprobe_exceptions_notify
-> >                arc_post_kprobe_handler
-> > 
-> > But indeed we are *not* calling into kprobe_fault_handler() - from eithet of those
-> > paths and not sure if the existing arc*_kprobe_handler() combination does the
-> > equivalent in tandem.
+Given jump labels are typically used on fast paths, and NOPs still take
+up cycles to, at the very least, fetch and decode, some people might care.
 
-Interesting, it seems that the kprobe_fault_handler() has never been called.
-Anyway, it is used for handling a page fault in kprobe's user handler or single
-stepping. And a page fault in user handler will not hard to fix up. Only a hard
-case is a page fault in single stepping. If ARC's kprobes using single-stepping
-on copied buffer, it may crashes kernel, since fixup code can not find correct
-address without kprobe_fault_handler.
-
-Thank you,
-
-> 
-> @Eugeniy can you please investigate this - do we have krpobes bit rot in ARC port.
-> 
-> -Vineet
-> 
-> 
-
-
--- 
-Masami Hiramatsu <mhiramat@kernel.org>
+But if you're OK with having them, then sure, your scheme certainly
+should work.
 
 _______________________________________________
 linux-snps-arc mailing list
