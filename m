@@ -2,50 +2,34 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E418A4C839
-	for <lists+linux-snps-arc@lfdr.de>; Thu, 20 Jun 2019 09:21:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 61BCF4C8AC
+	for <lists+linux-snps-arc@lfdr.de>; Thu, 20 Jun 2019 09:52:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IFePrI/73JBA6RY9cD/CRnIu8ERZYfMhMxL2x8FAFzk=; b=TpV5cqrDmmqzb4
-	2LlBlpRqtgyzkX3+lzuCa5AOgnhLYKJu2hBPiIlHUJRkthHfaKbjWw5Xlvr2eE4QSdwwv9CG2H0K6
-	EinQtA8ukbfO1Yn6LdKbk7xEU0X3Q+1+q8Yuv7MjzxTjgMX7cDFSkZGMM84VBJrUTta+TpZg8cQIx
-	50pjzVQM2tCQMize71qwMKa8ZifJtwutY0/bv8jxq6han71ZWCQMlgrFqBJM+lwGe7YE3yfHcRpij
-	GW6Tw1Gzk7D8zcgSV/V9bDYNE/kg1XmRkfH/Nms6wlAWqv1NWOdGZnxAPQU8hWwVlgYpZHQfg9Ff9
-	9g8rWNnkX3xkXy90THuQ==;
+	List-Owner; bh=toE0u8AM+6dCkRB60PTUddX7Gc7yUSevidKfs882ukQ=; b=Y9kOAKLmFoXo+w
+	N1c315pRxLJ5uwjmFj/fNrgrp6jW+3pdOWrcIwCHp8RCVLErL4qO7LWZI6fu99D2ph6o//cOmeB+y
+	yWRAx0zygAbBPPehwoTkUB9MKGhpKY3qIsE/VTnidDn1xJJ9z55MBXKwm0xHHhPZM6Q2BMxdAgjg/
+	byb2uvO2AGZi9kowftOTH/SVG9KSbOgsdi4MP8cKLPwaG9x0egGaLwRm4xRvJS4zHeXSsXG4nk5OV
+	LWzwZUouOwOEDedtNswQwE9s+ZkGhOvMn+2mUE+DUbElEa/lRW3kOcpvy595BOoHgF67Y6tLHXMIb
+	SBM/kypQCp0dOeLZkVdg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdrOI-0005t2-E1; Thu, 20 Jun 2019 07:21:50 +0000
-Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdrOH-0005sc-C7
- for linux-snps-arc@bombadil.infradead.org; Thu, 20 Jun 2019 07:21:49 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=merlin.20170209; h=In-Reply-To:Content-Type:MIME-Version:
- References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=flv0ZjAK0TpjANrHI4sAx0FN5zH4ci8KQMG+jBdIYOU=; b=PxDF4z1f0ZvO6hgDdo4Rd03Al
- tyx+x2reUwA9mioDpNaCR2sX77t0seV4VwXFyUjVHa8eQPaHA75HsaWrXlPCl0MgIoUUvrnIauZob
- pG9lKFb/acLF37vWz4zmYwzuh2Uyf5RMeKJB+foQ6mG/Wm+ym7cSRNMKnvYQp7PxkraKwm6gGbt+N
- H3Lre1tfXfl1GJQeMBKdaQ+fUesg4+2eUUmUKUhGQeKE0oC2mgt76DlmCuyTWxvApWK0ASFdee7X4
- Jo9Ka3CjmW9wzMd2oLh+8LJYTBj1jbeQ3fZkaxbmngMXGv74Nfkei0pxlNoX1S7abhP5Dx9ubhnYC
- 5m0sCWTIQ==;
+	id 1hdrrx-0008M0-6X; Thu, 20 Jun 2019 07:52:29 +0000
 Received: from j217100.upc-j.chello.nl ([24.132.217.100]
  helo=hirez.programming.kicks-ass.net)
- by merlin.infradead.org with esmtpsa (Exim 4.92 #3 (Red Hat Linux))
- id 1hdrOE-0004G4-0J; Thu, 20 Jun 2019 07:21:46 +0000
+ by bombadil.infradead.org with esmtpsa (Exim 4.92 #3 (Red Hat Linux))
+ id 1hdrru-0008Ll-8o; Thu, 20 Jun 2019 07:52:26 +0000
 Received: by hirez.programming.kicks-ass.net (Postfix, from userid 1000)
- id BEEED200B4CB3; Thu, 20 Jun 2019 09:21:44 +0200 (CEST)
-Date: Thu, 20 Jun 2019 09:21:44 +0200
+ id 73A8120098587; Thu, 20 Jun 2019 09:52:24 +0200 (CEST)
+Date: Thu, 20 Jun 2019 09:52:24 +0200
 From: Peter Zijlstra <peterz@infradead.org>
 To: Vineet Gupta <Vineet.Gupta1@synopsys.com>
 Subject: Re: [PATCH] ARC: ARCv2: jump label: implement jump label patching
-Message-ID: <20190620072144.GS3419@hirez.programming.kicks-ass.net>
+Message-ID: <20190620075224.GT3419@hirez.programming.kicks-ass.net>
 References: <20190614164049.31626-1-Eugeniy.Paltsev@synopsys.com>
  <C2D7FE5348E1B147BCA15975FBA2307501A252CCC3@us01wembx1.internal.synopsys.com>
  <20190619081227.GL3419@hirez.programming.kicks-ass.net>
@@ -78,20 +62,58 @@ Sender: "linux-snps-arc" <linux-snps-arc-bounces@lists.infradead.org>
 Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org
 
 On Wed, Jun 19, 2019 at 11:55:41PM +0000, Vineet Gupta wrote:
-> So we ensure a patched instruction never crosses a
-> cache line - using .balign 4. This causes a slight mis-optimization that all
-> patched instruction locations are forced to be 4 bytes aligned while ISA allows
-> code to be 2 byte aligned. The cost is an extra NOP_S (2 bytes) - no big deal in
-> grand scheme of things in IMO.
+> On 6/19/19 1:12 AM, Peter Zijlstra wrote:
 
-Right, so the scheme x86 uses (which I outlined in an earlier email)
-allows you to get rid of those extra NOPs.
+> >>> +static inline u32 arc_gen_nop(void)
+> >>> +{
+> >>> +	/* 1x 32bit NOP in middle endian */
+> > I dare not ask...
+> 
+> :-) The public PRM is being worked on for *real* so this will be remedied in a few
+> months at best.
+> 
+> Short answer is it specifies how instruction stream is laid out in code memory for
+> efficient next PC decoding given that ARC can freely intermix 2, 4, 6, 8 byte
+> instruction fragments w/o any restrictions.
+> 
+> Consier SWI insn encoding: per PRM is
+> 
+> 31                                     0
+> --------------------------------------------------------------
+> 00100    010    01    101111    0    000    000000    111111
+> --------------------------------------------------------------
+> 
+> In regular little endian notation, in memory it would have looked as
+> 
+> 31                  0
+>  0x22    0x6F    0x00    0x3F 
+>   b3     b2      b1      b0
+> 
+> However in middle endian format, the 2 short words are flipped
+> 
+> 31                   0
+> 0x00    0x3F   0x22     0x6F   
+>   b1     b0      b3       b2
 
-Given jump labels are typically used on fast paths, and NOPs still take
-up cycles to, at the very least, fetch and decode, some people might care.
+I'm probably missing something here. I understand the I-fetch likes 2
+byte chunks, but I'm not sure I understand how you end up with middle
+endian.
 
-But if you're OK with having them, then sure, your scheme certainly
-should work.
+With everything little endian, everything seems just fine. If you load
+the first 2 byte at offset 0, you get the first 2 bytes of the
+instruction.
+
+If OTOH your arch big endian, and you were to load the first two bytes
+at offset 0, you get the top two.
+
+So this middle endian scheme, only seems to make sense if you're
+otherwise big endian. But AFAICT ARC is bi-endian and the jump-label
+patch under condsideration is explicitly !CPU_ENDIAN_BE32 -- which
+suggests the instruction stream is sensitive to the endian selection.
+
+Anyway, I was just 'surprised' at seeing middle endian mentioned,
+curiosity killed the cat and all that :-)
+
 
 _______________________________________________
 linux-snps-arc mailing list
