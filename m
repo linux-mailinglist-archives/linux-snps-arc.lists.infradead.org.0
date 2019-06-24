@@ -2,82 +2,84 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C327751A23
-	for <lists+linux-snps-arc@lfdr.de>; Mon, 24 Jun 2019 19:58:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1E94B51B43
+	for <lists+linux-snps-arc@lfdr.de>; Mon, 24 Jun 2019 21:13:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
 	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mg5eRAWU+UcBj+Z76WC835f66Q219pVgD1C+VFO57Jw=; b=MW4kCdmx2Vxerl
-	vaHyLzwjigVdIRojPzxyV8hN39lxlJGpLfvn2T2AsYPU/MJZb9fIoTGzoNxeDCX0yB4ETf+WDsrev
-	kBxWdJLd+B9HKzqn36jQuiBNrOzoV8mknOSY4cMh6MlA4f2FPcBxxTYjuf/JUx7p5NRN0/QniT1hK
-	i2ZrwgLJQKQqTGPtTjpozKqOwwzbg0BtWvHcrWGx325ekaSzmAC2VgnJAKeaVQSZf/V/585PoKMk6
-	auvc3y6aEF0eaJ4G7Y4kGuSjAxS8RR3f9GNDtCwmjD4kIzquNDErgY10/r2UzxOw6zoLXt3gqgIgD
-	6PGWBpXTun3aH9ImEBbw==;
+	List-Owner; bh=vm4Fyi4pD7/YN7yFfFEMXAnmCiq0EZfurboxTGDgsP0=; b=HQCz+gWfxdrPzD
+	EVDwPzLGJSph6lJZJhMYX6xPiv4M+bnjDt7UrO76giETnc9dG5/y2Z42VX9vDDq20HvaUm/9pUs+D
+	GeBtR7t5k++BEJ+trXFOrUQS9MZvVkgJwv6RGM1HAVKzaPUBONAy6ZWSQRsqt2agpgQ7f6iqGZMRq
+	s/T1pdcqw9Dbj79AvXt0l+btvE7zwNEAfapdwIDWmoRFgyMvr+AR2MjNyier9BnK40eGBeW60dcbq
+	jL/WP69VgEd1kwsG6IS2GFjZ4WirNqv05nHd0RE5/vaW5FkUi5CmDV5VldK8MEsn9WwAgBZB207p3
+	dCX6/FubWakLoe5Ecigw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfTEx-0006cY-45; Mon, 24 Jun 2019 17:58:51 +0000
-Received: from dc8-smtprelay2.synopsys.com ([198.182.47.102]
+	id 1hfUPX-0001kM-QN; Mon, 24 Jun 2019 19:13:51 +0000
+Received: from dc2-smtprelay2.synopsys.com ([198.182.61.142]
  helo=smtprelay-out1.synopsys.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hfTEm-0006TX-KG; Mon, 24 Jun 2019 17:58:42 +0000
+ id 1hfUPU-0001jc-2e
+ for linux-snps-arc@lists.infradead.org; Mon, 24 Jun 2019 19:13:49 +0000
 Received: from mailhost.synopsys.com (dc2-mailhost2.synopsys.com
  [10.12.135.162])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
  (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 514E5C003A;
- Mon, 24 Jun 2019 17:58:36 +0000 (UTC)
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 6837AC016F;
+ Mon, 24 Jun 2019 19:13:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1561399117; bh=IBCBUkoA5vcG/XCiA9ipnWbgZX2OIC1EnYYIsJRQQgM=;
+ t=1561403625; bh=IyQcSOT5phDqPIxpqTAJLZWOKuI5yxfsa6BkTsQXkpE=;
  h=From:To:CC:Subject:Date:References:In-Reply-To:From;
- b=UQPdlxK5TQRK7go1DDhD/LHVaPYEnhdgV800qqv/lfI/o+G2DUSkTtbwKX0KLfLSB
- mqQnle7gXEP1q2LIkdY9ZOc4BvJTUR8bvxxOYpkTf2T9QQXjDl4csT2SxiZSP76Fob
- iM1dXugTF02H6yjUC3XIdoLSQ1YD/Hom8gtsk20gjXAHOyOPQREU5nYNkqEwDvmInh
- +iwGn+a3No6l4gJVY7A7ZvKMQvikbMyD8n8SzL/Ejor2yvXBRvSQ/5vWq1B/zr+EEh
- ZfZ+oniKqbTsEqk4gjpm8UseqlmADObrB+u4YKhvkWyPJD6/lXUdeR+XTZpmISFcN8
- FUkeTkUtig9sg==
-Received: from US01WEHTC2.internal.synopsys.com
- (us01wehtc2.internal.synopsys.com [10.12.239.237])
+ b=Vd/Fux5cMf3TkVNXFGODYhjzaOew3Z7Nm2z+74S8qfpqPLW+e+h14kjL8eYPqmJUL
+ HCqWcsm/GZd/L8giNDm2RmO+l84ZkgxcFI8JmcHWhm7kZZa5NRXbjUnjKZKYA9297I
+ lAGnLxMjFPvUxeVBPEzRa8dRCp+E1YSmT9p6gLBGJ5NzcrAEFjP8Ha0gb3KLgaGQR/
+ Rx8ShrdibRw1qZgP1V+pUl1LMkb9ouYUdEd94MwQiHh1lrzTnBmDK1i8RD8LeYnOmT
+ v9nbp1nyplCDShm0RLXoVWPm/sS070aVOm1WQJV6sR3Dasfpsm8TmVnnN8roNCncqt
+ BawwuYcdoU3XA==
+Received: from US01WXQAHTC1.internal.synopsys.com
+ (us01wxqahtc1.internal.synopsys.com [10.12.238.230])
  (using TLSv1.2 with cipher AES128-SHA256 (128/128 bits))
  (No client certificate requested)
- by mailhost.synopsys.com (Postfix) with ESMTPS id 5C993A0093;
- Mon, 24 Jun 2019 17:58:29 +0000 (UTC)
+ by mailhost.synopsys.com (Postfix) with ESMTPS id D5776A0096;
+ Mon, 24 Jun 2019 19:13:43 +0000 (UTC)
 Received: from US01HYBRID2.internal.synopsys.com (10.15.246.24) by
- US01WEHTC2.internal.synopsys.com (10.12.239.237) with Microsoft SMTP Server
- (TLS) id 14.3.408.0; Mon, 24 Jun 2019 10:58:29 -0700
-Received: from NAM05-DM3-obe.outbound.protection.outlook.com (10.13.134.195)
+ US01WXQAHTC1.internal.synopsys.com (10.12.238.230) with Microsoft SMTP Server
+ (TLS) id 14.3.408.0; Mon, 24 Jun 2019 12:13:20 -0700
+Received: from NAM02-BL2-obe.outbound.protection.outlook.com (10.13.134.195)
  by mrs.synopsys.com (10.15.246.24) with Microsoft SMTP Server (TLS) id
- 14.3.408.0; Mon, 24 Jun 2019 10:58:29 -0700
+ 14.3.408.0; Mon, 24 Jun 2019 12:13:20 -0700
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=synopsys.onmicrosoft.com; s=selector1-synopsys-onmicrosoft-com;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=IBCBUkoA5vcG/XCiA9ipnWbgZX2OIC1EnYYIsJRQQgM=;
- b=eZ1/DzwHnBm/IusH/FwO5m0AD8NAgpfO4sDNmguNwrGLyGmG2rm96LYTpQCmrB+Yg/C7Z1NLibN1LgKX4z6rbAkUDYxg2r1qgP0EV2tJJ+z7d4tHtiiXibNqWuZsvEfbUEd2N6CxWi9EXbVBZUP+1ODz3r6oYGfjjBL1G/79O0U=
+ bh=IyQcSOT5phDqPIxpqTAJLZWOKuI5yxfsa6BkTsQXkpE=;
+ b=MZFKcOED8DPBn+ydGCyMPh0pj/Oa7kOV0EuvmcuxyaBDDOOgewPfnzyWxFRQwU20byUZvL6aviK+ZyW2keGrKjCkGx8Dp4iv/2JUpevaj/zlMI2+y2NcGOSTfp/GVihHFiIBz9t/JhV6qfUgtQBcw/slnkOwkNHkMG23FEBoEe0=
 Received: from SN6PR12MB2670.namprd12.prod.outlook.com (52.135.103.23) by
- SN6PR12MB2750.namprd12.prod.outlook.com (52.135.107.29) with Microsoft SMTP
+ SN6PR12MB2800.namprd12.prod.outlook.com (52.135.107.150) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2008.16; Mon, 24 Jun 2019 17:58:26 +0000
+ 15.20.2008.16; Mon, 24 Jun 2019 19:13:17 +0000
 Received: from SN6PR12MB2670.namprd12.prod.outlook.com
  ([fe80::bd34:8d2b:911e:e495]) by SN6PR12MB2670.namprd12.prod.outlook.com
  ([fe80::bd34:8d2b:911e:e495%5]) with mapi id 15.20.2008.014; Mon, 24 Jun 2019
- 17:58:26 +0000
+ 19:13:17 +0000
 From: Eugeniy Paltsev <Eugeniy.Paltsev@synopsys.com>
-To: "Eugeniy.Paltsev@synopsys.com" <Eugeniy.Paltsev@synopsys.com>,
- "marex@denx.de" <marex@denx.de>,
- "Tudor.Ambarus@microchip.com" <Tudor.Ambarus@microchip.com>,
- "linux-mtd@lists.infradead.org" <linux-mtd@lists.infradead.org>
-Subject: Re: [PATCH] mtd: spi-nor: add support for sst26wf016, sst26wf032
- memory
-Thread-Topic: [PATCH] mtd: spi-nor: add support for sst26wf016, sst26wf032
- memory
-Thread-Index: AQHVHUfTQkQ8QEh2e0ePTmIyAmvCNKanjTUAgAOlAgA=
-Date: Mon, 24 Jun 2019 17:58:25 +0000
-Message-ID: <305636da161f6c204e39936696301c226c1c95f9.camel@synopsys.com>
-References: <20190607154308.20899-1-Eugeniy.Paltsev@synopsys.com>
- <aab6510e-9608-584e-1556-613bb0be482e@microchip.com>
-In-Reply-To: <aab6510e-9608-584e-1556-613bb0be482e@microchip.com>
+To: "hch@lst.de" <hch@lst.de>, "linux-snps-arc@lists.infradead.org"
+ <linux-snps-arc@lists.infradead.org>, "linux-kernel@vger.kernel.org"
+ <linux-kernel@vger.kernel.org>
+Subject: Re: [PATCH 7/7] arc: use the generic remapping allocator for coherent
+ DMA allocations
+Thread-Topic: [PATCH 7/7] arc: use the generic remapping allocator for
+ coherent DMA allocations
+Thread-Index: AQHVIsAMmlRh09Vs6Ea+qlthrKcWyaabcdSAgADzXACADnLDgIAAZD4A
+Date: Mon, 24 Jun 2019 19:13:17 +0000
+Message-ID: <d9ed8f6a82801b94d1d7792eb74effdbce09ce51.camel@synopsys.com>
+References: <20190614144431.21760-1-hch@lst.de>
+ <20190614144431.21760-8-hch@lst.de>
+ <78ac563f2815a9a14bfab6076d0ef948497f5b9f.camel@synopsys.com>
+ <20190615083554.GC23406@lst.de> <20190624131417.GA10593@lst.de>
+In-Reply-To: <20190624131417.GA10593@lst.de>
 Accept-Language: en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
@@ -86,37 +88,37 @@ authentication-results: spf=none (sender IP is )
  smtp.mailfrom=paltsev@synopsys.com; 
 x-originating-ip: [84.204.78.101]
 x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 4467e569-7a96-48d9-a46d-08d6f8cd8e81
+x-ms-office365-filtering-correlation-id: e9bf598d-5d1a-4ac0-430b-08d6f8d8038d
 x-microsoft-antispam: BCL:0; PCL:0;
  RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(2017052603328)(7193020);
- SRVR:SN6PR12MB2750; 
-x-ms-traffictypediagnostic: SN6PR12MB2750:
+ SRVR:SN6PR12MB2800; 
+x-ms-traffictypediagnostic: SN6PR12MB2800:
 x-ms-exchange-purlcount: 1
-x-microsoft-antispam-prvs: <SN6PR12MB2750D644ED0A64D15BA85CBBDEE00@SN6PR12MB2750.namprd12.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:7219;
+x-microsoft-antispam-prvs: <SN6PR12MB2800D1C5DE499564F45D549ADEE00@SN6PR12MB2800.namprd12.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:3631;
 x-forefront-prvs: 007814487B
 x-forefront-antispam-report: SFV:NSPM;
- SFS:(10019020)(396003)(366004)(136003)(376002)(346002)(39850400004)(189003)(199004)(71200400001)(71190400001)(25786009)(486006)(76116006)(91956017)(186003)(2906002)(66446008)(66476007)(66556008)(64756008)(73956011)(11346002)(66946007)(6436002)(6512007)(26005)(14454004)(53936002)(54906003)(7736002)(110136005)(6486002)(6306002)(229853002)(316002)(66066001)(5660300002)(305945005)(14444005)(256004)(4326008)(8936002)(966005)(86362001)(6116002)(3846002)(6246003)(81156014)(81166006)(2501003)(8676002)(102836004)(36756003)(7416002)(118296001)(2616005)(2201001)(68736007)(446003)(99286004)(76176011)(6506007)(53546011)(476003)(478600001);
- DIR:OUT; SFP:1102; SCL:1; SRVR:SN6PR12MB2750;
+ SFS:(10019020)(136003)(376002)(39860400002)(346002)(396003)(366004)(189003)(199004)(6506007)(186003)(6486002)(8676002)(966005)(118296001)(36756003)(26005)(2501003)(71200400001)(71190400001)(25786009)(86362001)(5660300002)(73956011)(66446008)(66556008)(4326008)(478600001)(14454004)(66946007)(76116006)(91956017)(64756008)(66476007)(68736007)(81156014)(81166006)(486006)(476003)(3846002)(102836004)(256004)(6116002)(229853002)(446003)(11346002)(305945005)(2616005)(7736002)(8936002)(2906002)(316002)(54906003)(66066001)(110136005)(99286004)(6246003)(107886003)(76176011)(53936002)(6436002)(6306002)(6512007)(2201001)(41533002);
+ DIR:OUT; SFP:1102; SCL:1; SRVR:SN6PR12MB2800;
  H:SN6PR12MB2670.namprd12.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:3; A:1; 
+ PTR:InfoNoRecords; MX:1; A:1; 
 received-spf: None (protection.outlook.com: synopsys.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: ucXdIsm2xlNHntSkf/7wq9XYvdtSnB4jmTZO/m55JOezUGVNMhAGH2ZKAHhOrJv1UqoBepZfCVydpIVY7z4b0QKdAIaQlkmT+8+WCCVO9YIpKRz9Je3odi1BCzJdVJmt2QJ+rVzhHlWifodhDdTWuaZl3vf8yVHghnmt39T4M6cyrwEkgwwneuaSv3lDfV+liRc3kzKvJaftFL0puSuDP8O8uwt5IGdCub/5WW6NMMonA9v7EkPdT6vc/rOiZ0KF7lMvD8+jKBDOYGADpYh42HU3oXdUt8iMEEve3AZQxpgqDObHG68vPOEUHgvIN2BbG9g9muagO0HC7Cfr0OByPyKat5EiE9QzdwRKLxbbhuCpxqEfGyvhAY+RMqYq+o/57aCNUTQCwVd/BhUqUXwh42xlueVrcp2EwnYGL5fyLIc=
-Content-ID: <A1770C5AE373E74180E078B9DCBA2C07@namprd12.prod.outlook.com>
+x-microsoft-antispam-message-info: iJ00g2zT/4WhtbWYRO981jCmUehKik1S1XFkB9HJQGGcK95tVTzVfBQNZLobYZ8zhzgJjVXLEiaDth6my/r3oYrXJXo/24LiZpw3wfuCFbkKb6gJNWKx8Ttgy6X1XhFqE78PYHqUWojTGu9V0k9i+W4AfI9Rc9FCELfjTnL+jdXD5OVs4EDJ0XiM5IOpcoBIjDBRqJ04OlpLZB8wxT6P2wvMdx8AOlEmbAJrPnl++7HkS3ncI8c0VjL/gWTU3y6jQ22GRNBb3dPvilvFuVr3KZV/Pa+Zd7uRH+Zk5E/vkt7GDzdW+Cdjk4OYPmw2Ld5cumswQla+lF0r2VRx4KrW/B23elVDn4ymvWLeySeq2Mdy9aj+ec9b2BovBpMD+RAgS1huJqyvD69bLWKGzLME7lxsqBZlPYBU6QNYA1OxLps=
+Content-ID: <023BB888034E2E4CB28D67BF3924C4C3@namprd12.prod.outlook.com>
 MIME-Version: 1.0
-X-MS-Exchange-CrossTenant-Network-Message-Id: 4467e569-7a96-48d9-a46d-08d6f8cd8e81
-X-MS-Exchange-CrossTenant-originalarrivaltime: 24 Jun 2019 17:58:26.0729 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: e9bf598d-5d1a-4ac0-430b-08d6f8d8038d
+X-MS-Exchange-CrossTenant-originalarrivaltime: 24 Jun 2019 19:13:17.4978 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: c33c9f88-1eb7-4099-9700-16013fd9e8aa
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
 X-MS-Exchange-CrossTenant-userprincipalname: paltsev@synopsys.com
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: SN6PR12MB2750
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: SN6PR12MB2800
 X-OriginatorOrg: synopsys.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190624_105840_722650_E257C48E 
-X-CRM114-Status: GOOD (  20.36  )
+X-CRM114-CacheID: sfid-20190624_121348_182423_7AEE7E45 
+X-CRM114-Status: GOOD (  16.34  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -142,72 +144,56 @@ List-Post: <mailto:linux-snps-arc@lists.infradead.org>
 List-Help: <mailto:linux-snps-arc-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-snps-arc>, 
  <mailto:linux-snps-arc-request@lists.infradead.org?subject=subscribe>
-Cc: "computersforpeace@gmail.com" <computersforpeace@gmail.com>,
- "richard@nod.at" <richard@nod.at>,
- Alexey Brodkin <Alexey.Brodkin@synopsys.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "marek.vasut@gmail.com" <marek.vasut@gmail.com>,
- "miquel.raynal@bootlin.com" <miquel.raynal@bootlin.com>,
- "linux-snps-arc@lists.infradead.org" <linux-snps-arc@lists.infradead.org>,
- "dwmw2@infradead.org" <dwmw2@infradead.org>
+Cc: "Vineet.Gupta1@synopsys.com" <Vineet.Gupta1@synopsys.com>,
+ Alexey Brodkin <Alexey.Brodkin@synopsys.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-snps-arc" <linux-snps-arc-bounces@lists.infradead.org>
 Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org
 
-Hi Tudor,
+Hi Christoph,
 
-On Sat, 2019-06-22 at 10:18 +0000, Tudor.Ambarus@microchip.com wrote:
-> Hi, Eugeniy,
-> 
-> On 06/07/2019 06:43 PM, Eugeniy Paltsev wrote:
-> > External E-Mail
+Yep I've reviewed and tested it for both cases:
+- coherent/noncoherent dma
+- allocation from atomic_pool/regular allocation
+
+everything works fine for ARC.
+
+So,
+
+Reviewed-by: Evgeniy Paltsev <paltsev@synopsys.com>
+Tested-by: Evgeniy Paltsev <paltsev@synopsys.com>
+
+for both
+[PATCH 2/7] arc: remove the partial DMA_ATTR_NON_CONSISTENT support
+[PATCH 7/7] arc: use the generic remapping allocator for coherent DMA allocations
+
+
+On Mon, 2019-06-24 at 15:14 +0200, hch@lst.de wrote:
+> On Sat, Jun 15, 2019 at 10:35:54AM +0200, hch@lst.de wrote:
+> > On Fri, Jun 14, 2019 at 06:05:01PM +0000, Eugeniy Paltsev wrote:
+> > > Hi Christoph,
+> > > 
+> > > Regular question - do you have any public git repository with all this dma changes?
+> > > I want to test it for ARC.
+> > > 
+> > > Pretty sure the
+> > >  [PATCH 2/7] arc: remove the partial DMA_ATTR_NON_CONSISTENT support
+> > > is fine.
+> > > 
+> > > Not so sure about
+> > >  [PATCH 7/7] arc: use the generic remapping allocator for coherent DMA allocations
+> > > :)
 > > 
+> >    git://git.infradead.org/users/hch/misc.git dma-not-consistent-cleanup
 > > 
-> > This commit adds support for the SST sst26wf016 and sst26wf032
-> > flash memory IC.
-> 
-> Please specify if you tested both flashes, with 1-1-1, 1-1-2 and 1-1-4 reads.
-> Let us know which controller you used. I ask for these to be sure that we don't
-> add flashes that are broken from day one.
-> 
-> > Signed-off-by: Eugeniy Paltsev <Eugeniy.Paltsev@synopsys.com>
-> > ---
-> >  drivers/mtd/spi-nor/spi-nor.c | 2 ++
-> >  1 file changed, 2 insertions(+)
+> > Gitweb:
 > > 
-> > diff --git a/drivers/mtd/spi-nor/spi-nor.c b/drivers/mtd/spi-nor/spi-nor.c
-> > index 73172d7f512b..224275461a2c 100644
-> > --- a/drivers/mtd/spi-nor/spi-nor.c
-> > +++ b/drivers/mtd/spi-nor/spi-nor.c
-> > @@ -1945,6 +1945,8 @@ static const struct flash_info spi_nor_ids[] = {
-> >  	{ "sst25wf040b", INFO(0x621613, 0, 64 * 1024,  8, SECT_4K) },
-> >  	{ "sst25wf040",  INFO(0xbf2504, 0, 64 * 1024,  8, SECT_4K | SST_WRITE) },
-> >  	{ "sst25wf080",  INFO(0xbf2505, 0, 64 * 1024, 16, SECT_4K | SST_WRITE) },
-> > +	{ "sst26wf016",  INFO(0xbf2651, 0, 64 * 1024, 32, SECT_4K | SPI_NOR_DUAL_READ | SPI_NOR_QUAD_READ) },
+> >    
+> > https://urldefense.proofpoint.com/v2/url?u=http-3A__git.infradead.org_users_hch_misc.git_shortlog_refs_heads_dma-2Dnot-2Dconsistent-2Dcleanup&d=DwIBAg&c=DPL6_X_6JkXFx7AXWqB0tg&r=ZlJN1MriPUTkBKCrPSx67GmaplEUGcAEk9yPtCLdUXI&m=ipYAmX3rwLxDIdXUztTMYBZkKFGZBY9vykJVBwq_KXE&s=uRWKQoDT8pPKRPYCB6k4oO3mtRFRNyLolRDeBBIVtNQ&e=
+> >  
 > 
-> I confirm that the above is correct.
-> 
-> > +	{ "sst26wf032",  INFO(0xbf2622, 0, 64 * 1024, 64, SECT_4K | SPI_NOR_DUAL_READ | SPI_NOR_QUAD_READ) },
-> 
-> There are sst26wf032 flashes that don't support SPINOR_OP_READ_1_1_2 (0x3b) and
-> SPINOR_OP_READ_1_1_4 (0x6b), check
-> https://urldefense.proofpoint.com/v2/url?u=https-3A__pdf1.alldatasheet.com_datasheet-2Dpdf_view_392063_SST_SST26WF032.html&d=DwIGaQ&c=DPL6_X_6JkXFx7AXWqB0tg&r=ZlJN1MriPUTkBKCrPSx67GmaplEUGcAEk9yPtCLdUXI&m=YKOAFhTsmcxVNOmy6DO67WYZYdo6xYa7ojebIBU-K-c&s=k2yRqWlXBllfG2R2HvqTwAjGYCmvjGm9tmVYxzDg_wA&e= .
-> You
-> can't add SPI_NOR_DUAL_READ and SPI_NOR_QUAD_READ if 0x3b and 0x6b commands are
-> not supported. Check spi_nor_init_params().
-
-Yep, thanks for pointing.
-We are using 'sst26wf016b' on HSDK devboard. I added 'sst26wf032' to make flash upgrade easier,
-but I don't check carefully enough that it has completely different control logic and not only size.
-I'd better drop 'sst26wf032' in v2 patch respin as untested. 
-
-In this setup we use "snps,dw-apb-ssi" SPI controller and we don't use dual/quad IO. Should I
-drop (SPI_NOR_DUAL_READ | SPI_NOR_QUAD_READ) for "sst26wf016" in v2 respin?
-
-> 
-> Cheers,
-> ta
+> Did you get a chance to look into these patches?
 -- 
  Eugeniy Paltsev
 _______________________________________________
