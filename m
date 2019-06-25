@@ -2,43 +2,44 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CC16C52354
-	for <lists+linux-snps-arc@lfdr.de>; Tue, 25 Jun 2019 08:12:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C2D195235D
+	for <lists+linux-snps-arc@lfdr.de>; Tue, 25 Jun 2019 08:14:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mTK+u+vCFqUOzG1xzKt//BrVTZcrJxHRhac3d6MQK7w=; b=jwQsNl5EipkCpm
-	Ub4EOE2zOLGP8uch5S+1dsEGDxcLEetBTWg3+SZ3FmgPIzl/VK4grCqyeA4o/Pv0TKGcB1ODw5ZRs
-	3iKuckNZfRpH3Y/V9cvVJ4oHR98DYaYOS26U0R1U4tN54d8B4Myi2EyVzW07lGYIIGHiMOopn8JJK
-	2zKdeRsLynOLaGQ7KpFiFxFLKMbdDtl/47YN34F47ykOzIx1QLt6KnNzhiWamr/d+tivskb15P2np
-	3qa1TiVfvlYbHSpNPR9Qe8D3+ShQ4BksuFVj8KlQks6hVaGwAv1T7VHyfzoObgNOa6Ste372tx+oZ
-	d/dv5X4dUAoItR/SofAA==;
+	List-Owner; bh=pmQe4B/l1IUCVE5/qCbM9dOccoTdpy7UgjFlolWWCQM=; b=M2vO4rOqVHf/o+
+	Rso0vKMTrFirKjq+BRoV6eXAaYuqboQWAB7HRVjgK+aoySSfTzPX7t3UVmzg/c0KcZPlSz8vKvEeu
+	eaiE//O4VQuQ/DoVMTjuIfyqVsCve10n0hYhp/FrIoiBCWX/kbfV4pzrECn85PGY/wQ9qWpt3IoLq
+	Pox5ISRnug9V/rlZzsDcte4cUgw0s9L+B7kCYAOBw3VwdlYTWo4qbn6xBaIUH8LbLreXk2uekqjs4
+	Jsc9cQKPM7AT+iu4I21LbU20guaiRmCxg+ydn3h72STeEbn7xfKTg6j1M4+kkwwCfF+5IsGgUVytv
+	ptLbA0t2mgFWwStnuO4A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfegi-0000aq-IT; Tue, 25 Jun 2019 06:12:16 +0000
+	id 1hfeik-0000tH-5S; Tue, 25 Jun 2019 06:14:22 +0000
 Received: from verein.lst.de ([213.95.11.211] helo=newverein.lst.de)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hfeg5-0000Co-D9; Tue, 25 Jun 2019 06:11:39 +0000
+ id 1hfeiS-0000hJ-Ch; Tue, 25 Jun 2019 06:14:05 +0000
 Received: by newverein.lst.de (Postfix, from userid 2407)
- id 413AB68B02; Tue, 25 Jun 2019 08:11:04 +0200 (CEST)
-Date: Tue, 25 Jun 2019 08:11:04 +0200
+ id 4350A68B02; Tue, 25 Jun 2019 08:13:32 +0200 (CEST)
+Date: Tue, 25 Jun 2019 08:13:32 +0200
 From: Christoph Hellwig <hch@lst.de>
-To: Hillf Danton <hdanton@sina.com>
-Subject: Re: [PATCH 5/7] dma-direct: handle DMA_ATTR_NON_CONSISTENT in
- common code
-Message-ID: <20190625061104.GB28986@lst.de>
+To: Vladimir Murzin <vladimir.murzin@arm.com>
+Subject: Re: [PATCH 1/7] arm-nommu: remove the partial
+ DMA_ATTR_NON_CONSISTENT support
+Message-ID: <20190625061332.GC28986@lst.de>
 References: <20190614144431.21760-1-hch@lst.de>
- <20190614144431.21760-6-hch@lst.de>
+ <20190614144431.21760-2-hch@lst.de>
+ <a017e704-c6c4-7718-7f8b-eb8a0eced14d@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190614144431.21760-6-hch@lst.de>
+In-Reply-To: <a017e704-c6c4-7718-7f8b-eb8a0eced14d@arm.com>
 User-Agent: Mutt/1.5.17 (2007-11-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190624_231138_048314_EE47149D 
-X-CRM114-Status: GOOD (  10.51  )
+X-CRM114-CacheID: sfid-20190624_231404_577600_F6B8E3A7 
+X-CRM114-Status: GOOD (  11.89  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -60,9 +61,8 @@ List-Help: <mailto:linux-snps-arc-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-snps-arc>, 
  <mailto:linux-snps-arc-request@lists.infradead.org?subject=subscribe>
 Cc: Jonas Bonn <jonas@southpole.se>, linux-xtensa@linux-xtensa.org,
- Vladimir Murzin <vladimir.murzin@arm.com>, linux-parisc@vger.kernel.org,
- Vineet Gupta <vgupta@synopsys.com>, Helge Deller <deller@gmx.de>,
- linux-kernel@vger.kernel.org,
+ linux-parisc@vger.kernel.org, Vineet Gupta <vgupta@synopsys.com>,
+ Helge Deller <deller@gmx.de>, linux-kernel@vger.kernel.org,
  Stefan Kristiansson <stefan.kristiansson@saunalahti.fi>,
  iommu@lists.linux-foundation.org, openrisc@lists.librecores.org,
  Stafford Horne <shorne@gmail.com>, linux-snps-arc@lists.infradead.org,
@@ -72,27 +72,22 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-snps-arc" <linux-snps-arc-bounces@lists.infradead.org>
 Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org
 
-On Sun, Jun 16, 2019 at 06:08:40PM +0800, Hillf Danton wrote:
-> Literally, any cpu (call it cpuW) other than pcx12 and pcx1 will no longer do
-> dma alloc for any device with this patch applied.
+On Mon, Jun 24, 2019 at 03:23:08PM +0100, Vladimir Murzin wrote:
+> On 6/14/19 3:44 PM, Christoph Hellwig wrote:
+> > The arm-nommu DMA code supports DMA_ATTR_NON_CONSISTENT allocations, but
+> > does not provide a cache_sync operation.  This means any user of it
+> > will never be able to actually transfer cache ownership and thus cause
+> > coherency bugs.
+> 
+> By the way, Documentation/DMA-attributes.txt doesn't specify cache_sync() as
+> requirement for DMA_ATTR_NON_CONSISTENT it only states that it is responsibility
+> of the driver to have all the correct and necessary sync points.
 
-Yes.  And that is not a chance from the previous code, where only
-pcx1 and pcx12 could do coherent allocations,
-
-> On the other hand, 
-> !dev_is_dma_coherent(dev) && !(attrs & DMA_ATTR_NON_CONSISTENT) will ask
-> any cpu to do dma alloc, regardless of pcx1. This patch works imo unless cpuW
-> plays games only with devices that are dma coherent. I doubt it is true.
-
-I can't parse these two sentences.  But to explains the bits mentioned
-here - dev_is_dma_coherent will return if a device is coherently
-attached vs the cpu.  This will never be true for the parisc direct
-mapping.  DMA_ATTR_NON_CONSISTENT asks for a non-coherent mapping that
-needs to be explicitly synced.  This support now is in the dma-direct
-core code, and this is what the parisc specific devices used on the
-non-pcxl systems use, as they do not support dma coherency at all.
-(the story slightly changes when using an iommu, but that is irrelevant
-here)
+True.  dma_cache_sync has always been a rather odd interface, as it
+doesn't specify in what direction we need to sync and doesn't
+participate in our ownership protocol.  So my mid-term plan is to kill
+it off and replace it with the existing dma_sync_* helpers.  This
+series is the first step towards that.
 
 _______________________________________________
 linux-snps-arc mailing list
