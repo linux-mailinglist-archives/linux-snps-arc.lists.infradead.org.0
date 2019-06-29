@@ -2,70 +2,96 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 650F75A9D3
-	for <lists+linux-snps-arc@lfdr.de>; Sat, 29 Jun 2019 11:30:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6120C5ABEC
+	for <lists+linux-snps-arc@lfdr.de>; Sat, 29 Jun 2019 16:50:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:To:Date:Message-Id:
-	References:In-Reply-To:From:Subject:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AfMQnB1aF8FnebZYrh+tJlar3nVLpUkikaps/fRIAz8=; b=QcukmECo3U/zSL
-	EOyq5k+UTrEFfW7n1/VutuAdHN0sKhiArPX3WZqe2p8GRptVMAeJb8dLApy8fzOjykxI00Gh0xB3r
-	AHgys7+NfVeaGN7bCbaybzxxe2yb4mbGJJEL37czM/9EymcOrgHFYCXO/0DEkdklQdhRrE1bRPtpE
-	5a5It/zII6RUG9vXK2J9W2sB6JFxsbCVza8VidvEpvRqr0vL5j1BtQOu2RC/9L51nyhmG3DkAic3O
-	2kH6UU0MLvyXGZgNqb4B+Hxi7oMuG5vWKq4UGhZWb/RkSH4yNv/NfisGJvLwdtXuFRTF3qI7LoRWD
-	8bZm2cqlBAeuWySVu4cA==;
+	List-Owner; bh=j8hW4QHd+KW3M+XwSj7DXTtroNdQZkmgC5MV2v9ZHDE=; b=RrTU4PtNX0b1J2
+	mvffnUyfhksb4BgDZMDdHZWKlULOqMQbcD/v9pYbyiuR17jH5UpvcX5HpXukfuNRt/jklfsoW4TZ1
+	p7NQ5JmHKdGOwlKFefWghLcy5MuRv16vYobjb2iyT92CuvSv9PmTZ+cb7otxLP0Op6KHF/ij3ul5o
+	6BjK/DUZHrDlt1AakFb3YcZ5IgqiPPkjxGONmVO56ZAfqPdJqtcW5IqfcjukpQ6cHSANmy9dyFslv
+	bF1jWVVEvF4QJEQQs1ZV2Okljm1Go7D+nd4FXaOQg69EeRA0jHOP9z6/NQ/clVT3y0NtfVrqSdA6+
+	48+6oEMSmwWaf0WUvRhw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hh9gU-0006nR-I3; Sat, 29 Jun 2019 09:30:14 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hhEgB-00085q-62; Sat, 29 Jun 2019 14:50:15 +0000
+Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hh9gM-0006GE-Fx
- for linux-snps-arc@lists.infradead.org; Sat, 29 Jun 2019 09:30:10 +0000
-Subject: Re: [GIT PULL] ARC fixes for 5.2-rc7
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1561800606;
- bh=r24RVyVNU63oHseAg7oNfQeo4PfQI//arxmz7S3gLaw=;
- h=From:In-Reply-To:References:Date:To:Cc:From;
- b=Rg5PTXMWSVGlrywbFCLaPEogPnOxARjfVvctWWJdnT9gM+BbstEjPW7Q0wLr1aNJz
- /zpMc3lVpMaXW/OC9qbQREJ9qx8ohkKItdzOzcTG9VS6WNcDsSrn1Yfe0n0mtnnl7D
- cVL6EsplOj4DYwMrfOT31d0QWDjTJMuquCaHhiE0=
-From: pr-tracker-bot@kernel.org
-In-Reply-To: <b799ad4e-cafb-bf1f-3d92-34a5035ea7b5@synopsys.com>
-References: <b799ad4e-cafb-bf1f-3d92-34a5035ea7b5@synopsys.com>
-X-PR-Tracked-List-Id: <linux-kernel.vger.kernel.org>
-X-PR-Tracked-Message-Id: <b799ad4e-cafb-bf1f-3d92-34a5035ea7b5@synopsys.com>
-X-PR-Tracked-Remote: git://git.kernel.org/pub/scm/linux/kernel/git/vgupta/arc.git/
- tags/arc-5.2-rc7
-X-PR-Tracked-Commit-Id: ec9b4feb1e41587c15d43d237844193318389dc3
-X-PR-Merge-Tree: torvalds/linux.git
-X-PR-Merge-Refname: refs/heads/master
-X-PR-Merge-Commit-Id: f8b5c72227618780f49e53fb77b0e7ddb2996552
-Message-Id: <156180060623.8003.8022382941002971289.pr-tracker-bot@kernel.org>
-Date: Sat, 29 Jun 2019 09:30:06 +0000
-To: Vineet Gupta <Vineet.Gupta1@synopsys.com>
+ id 1hhEg8-00085E-8y; Sat, 29 Jun 2019 14:50:13 +0000
+Received: by mail-pl1-x641.google.com with SMTP id c14so4880695plo.0;
+ Sat, 29 Jun 2019 07:50:11 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=sender:date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=gpwY9SEzwskjwipmCEjEPDzJ+JkSWKdevJdN5fw1/iM=;
+ b=AlVvTidmIeM8754EXuPmkm83s6qNg5Jm5gjt3YhUtsu7/PgF7C0PqVa6ptBpiy7P+b
+ 7w/vUfWCCFqmbb8iWdujQ5RlItRswygS1/W7QpiSFfq/fT2Nu4dRgemGkLF72hCTAl9s
+ CRIHmYzfZsico8YFuLWYJ5693A7o/b4yO4xb3CGFk8Csreadz74Dd/N3TbnDzTPI329w
+ tmx7Gx26KM0nmNFaM17rZJNe2CjctoMPNGJ1w13qOjvTkEKMGe5RVpeApLtX8/DXjhQN
+ S2voeFsnwfTZ/9nocjMAB1DWN9izRoiZR3qOpRdSjzhL8358DohG1/ewXzBcpnKciwy+
+ LQqA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:sender:date:from:to:cc:subject:message-id
+ :references:mime-version:content-disposition:in-reply-to:user-agent;
+ bh=gpwY9SEzwskjwipmCEjEPDzJ+JkSWKdevJdN5fw1/iM=;
+ b=W9rj+PjBYap3bt3U7FTP4WgEoaSw+3HApCQg1BxregVxHsPlDavIJMCI807R82arZO
+ i56s0HWYPWea7TSq5jO6YC1/MQwQgDqpVpM5byesk9ODVxO5YDRz5Cl9b49kJNrZbhXf
+ B1Ao4Do/xAhMDu5enGT2CeIWlxryyID1FJQ73yngGkAu4VBEa3BHTAD6I92QVSVYdAxz
+ Dztoipl8NXBUYSRdIZlQr0Rs7zrcouVvZMy4cY6cUGPqN6IEzhpNsXRwEhXhJtxCgK3Z
+ rMCRQ1vUMkBnINrkB6Ujxd+Dv6qbYvdKwBj0pTxzIiZG+9hWiHnQwFx7gQyRSsK1mEUY
+ fU2Q==
+X-Gm-Message-State: APjAAAVkSTxgKvxQYqo1KTaMK52uBY61yPLBR2yKltkHmzZvxzZkySk1
+ 5rGsleDl0WerBuSb/4FDxac=
+X-Google-Smtp-Source: APXvYqwzAvuZq8uFS3MlBSIKk71/6JUg9AHYM+1A6MpIzGTxNNk8+GY2Jbg28JKN9AieKqNESQt07g==
+X-Received: by 2002:a17:902:2bcb:: with SMTP id
+ l69mr18151254plb.155.1561819811065; 
+ Sat, 29 Jun 2019 07:50:11 -0700 (PDT)
+Received: from localhost ([2600:1700:e321:62f0:329c:23ff:fee3:9d7c])
+ by smtp.gmail.com with ESMTPSA id r196sm4899405pgr.84.2019.06.29.07.50.09
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Sat, 29 Jun 2019 07:50:10 -0700 (PDT)
+Date: Sat, 29 Jun 2019 07:50:09 -0700
+From: Guenter Roeck <linux@roeck-us.net>
+To: Anshuman Khandual <anshuman.khandual@arm.com>
+Subject: Re: [PATCH] mm: Generalize and rename notify_page_fault() as
+ kprobe_page_fault()
+Message-ID: <20190629145009.GA28613@roeck-us.net>
+References: <1560420444-25737-1-git-send-email-anshuman.khandual@arm.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <1560420444-25737-1-git-send-email-anshuman.khandual@arm.com>
+User-Agent: Mutt/1.5.24 (2015-08-30)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190629_023007_433503_D013F495 
-X-CRM114-Status: UNSURE (   1.10  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190629_075012_343477_10E5AEAF 
+X-CRM114-Status: GOOD (  13.42  )
+X-Spam-Score: 0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (groeck7[at]gmail.com)
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (groeck7[at]gmail.com)
+ 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.1 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-snps-arc@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,29 +103,60 @@ List-Post: <mailto:linux-snps-arc@lists.infradead.org>
 List-Help: <mailto:linux-snps-arc-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-snps-arc>, 
  <mailto:linux-snps-arc-request@lists.infradead.org?subject=subscribe>
-Cc: Alexey Brodkin <Alexey.Brodkin@synopsys.com>,
- Eugeniy Paltsev <Eugeniy.Paltsev@synopsys.com>,
- arcml <linux-snps-arc@lists.infradead.org>,
- Linus Torvalds <torvalds@linux-foundation.org>,
- lkml <linux-kernel@vger.kernel.org>
-MIME-Version: 1.0
+Cc: Mark Rutland <mark.rutland@arm.com>, Michal Hocko <mhocko@suse.com>,
+ linux-ia64@vger.kernel.org, linux-sh@vger.kernel.org,
+ Peter Zijlstra <peterz@infradead.org>, James Hogan <jhogan@kernel.org>,
+ Dave Hansen <dave.hansen@linux.intel.com>, Will Deacon <will.deacon@arm.com>,
+ linux-mips@vger.kernel.org, linux-mm@kvack.org,
+ Paul Mackerras <paulus@samba.org>, sparclinux@vger.kernel.org,
+ Stephen Rothwell <sfr@canb.auug.org.au>,
+ Yoshinori Sato <ysato@users.sourceforge.jp>,
+ Michael Ellerman <mpe@ellerman.id.au>, x86@kernel.org,
+ Russell King <linux@armlinux.org.uk>, Matthew Wilcox <willy@infradead.org>,
+ Ingo Molnar <mingo@redhat.com>, Catalin Marinas <catalin.marinas@arm.com>,
+ linux-snps-arc@lists.infradead.org, Fenghua Yu <fenghua.yu@intel.com>,
+ linux-s390@vger.kernel.org, Andrey Konovalov <andreyknvl@google.com>,
+ Andy Lutomirski <luto@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
+ linux-arm-kernel@lists.infradead.org,
+ Christophe Leroy <christophe.leroy@c-s.fr>, Tony Luck <tony.luck@intel.com>,
+ Heiko Carstens <heiko.carstens@de.ibm.com>, Vineet Gupta <vgupta@synopsys.com>,
+ linux-kernel@vger.kernel.org, Ralf Baechle <ralf@linux-mips.org>,
+ Paul Burton <paul.burton@mips.com>,
+ Martin Schwidefsky <schwidefsky@de.ibm.com>,
+ Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
+ "David S. Miller" <davem@davemloft.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-snps-arc" <linux-snps-arc-bounces@lists.infradead.org>
 Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org
 
-The pull request you sent on Sat, 29 Jun 2019 00:12:09 +0000:
+Hi,
 
-> git://git.kernel.org/pub/scm/linux/kernel/git/vgupta/arc.git/ tags/arc-5.2-rc7
+On Thu, Jun 13, 2019 at 03:37:24PM +0530, Anshuman Khandual wrote:
+> Architectures which support kprobes have very similar boilerplate around
+> calling kprobe_fault_handler(). Use a helper function in kprobes.h to unify
+> them, based on the x86 code.
+> 
+> This changes the behaviour for other architectures when preemption is
+> enabled. Previously, they would have disabled preemption while calling the
+> kprobe handler. However, preemption would be disabled if this fault was
+> due to a kprobe, so we know the fault was not due to a kprobe handler and
+> can simply return failure.
+> 
+> This behaviour was introduced in the commit a980c0ef9f6d ("x86/kprobes:
+> Refactor kprobes_fault() like kprobe_exceptions_notify()")
+> 
 
-has been merged into torvalds/linux.git:
-https://git.kernel.org/torvalds/c/f8b5c72227618780f49e53fb77b0e7ddb2996552
+With this patch applied, parisc:allmodconfig images no longer build.
 
-Thank you!
+In file included from arch/parisc/mm/fixmap.c:8:
+include/linux/kprobes.h: In function 'kprobe_page_fault':
+include/linux/kprobes.h:477:9: error:
+	implicit declaration of function 'kprobe_fault_handler'; did you mean 'kprobe_page_fault'?
 
--- 
-Deet-doot-dot, I am a bot.
-https://korg.wiki.kernel.org/userdoc/prtracker
+Reverting the patch fixes the problem.
+
+Guenter
 
 _______________________________________________
 linux-snps-arc mailing list
