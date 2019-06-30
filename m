@@ -2,98 +2,55 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1A0195AC07
-	for <lists+linux-snps-arc@lfdr.de>; Sat, 29 Jun 2019 17:09:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 26F265AE56
+	for <lists+linux-snps-arc@lfdr.de>; Sun, 30 Jun 2019 06:41:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fLxniSlvX+naWL2KG75weLrWy2Vjraw3YcpFWpMavQg=; b=aqQiXg4Psf9rvK
-	iI5SOXmJSotDRwrgDgfUpiAuV4yl87LaocmS2oOkLVh0lrpEs3vY6b0cIjwN/XApQIu1syDBYvB2f
-	JjhWiR6RTTO32R1K4NVGAxgJmVSkBjqsobxLgXEkvNaT3pvmZelNfv4Q/svC46+wmtgiMuGeYc42m
-	lbuffc4+Z5BTDvD2mlfjQro69GaUeNv6mCr5G3URgYGNsCKtO/rljkXc94Qd6hgBAYsdKlcHiZ6jX
-	7wCmXGDQQqVwvX08H8aqejF3vCn/PZzX+6DORWt4hqXk3WwAWadU7iIzFLbuSFI6oDbrMupnj0x8R
-	+Gg4dxs141uWR9CPGwEA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:References:To:Subject:From:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=REi0g40QqdRp/o56watmhDVag0b5l2p0H5QN1O7Iv78=; b=RwWgPoPxHKkmpN
+	0Cn4lgfRhe252Tt3UdhU+UHmn+yqhrlio3tnb4jiMD0FKyJHC4dDuvwrwpanluuB04cMJV3xARUcP
+	7vQzj+7g3271zjivDehXUrrbw8ZULW9adh9TdWy+kOY59S3rhVIzFwZbIjxJxESTj7no0oCzyMPU+
+	5RCQsGyNxgS262/Ph6Ht7eZBGMGEps5eWZQ2OSVRBrxWUpIVV3hiVi8ZZmzMtJNopfLHKld/ZX1gW
+	MtUBH62nv4rtSKXaMU1EfyMzSxfHJZ83PtquRzCWi+ruWimsvdOM7g5NrYdG3klBVS5d5miKyUzEb
+	QRIFastNdSuKVb56TjuA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hhEye-0005GN-Rs; Sat, 29 Jun 2019 15:09:20 +0000
-Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hhEyb-0005Fb-Uv; Sat, 29 Jun 2019 15:09:19 +0000
-Received: by mail-pf1-x443.google.com with SMTP id c85so4418112pfc.1;
- Sat, 29 Jun 2019 08:09:17 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=sender:date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=4PDRDSdPlik/3Dz2WUeVgJcUfwA9IGRhonB1MM/wefg=;
- b=G57SADTMggL8n0pIpOEwPt5rucFLcFzaP0n3oeowJewkuuCijNkliMNKU+dGOlJ2fq
- EgAKCtiA3mOadRCmiaX8mEmLoId9NM33CuXBJlIVjavZ/WnnrRH6vZHvEDKKT/5R/aNr
- Y5VefnWEapcSksrsGqA6l2yPB2FUYnOh6Vi+ec1DRkT7wk27vt4ez6cL1TsEWp+WmJJD
- 9czSVDIssaRJU7VtpsTT4SisHJVQZCK2gJ5Zlmlmi/1yGLJ9FoIo0IwwGlCR0OXlLBsy
- u8gp3kAJF4pXyVF54QHX3ujHIFjdgstGjSggr8TMM7tCgzpMymyRIkW7A3k/oUiZp/ow
- 4BnQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:sender:date:from:to:cc:subject:message-id
- :references:mime-version:content-disposition:in-reply-to:user-agent;
- bh=4PDRDSdPlik/3Dz2WUeVgJcUfwA9IGRhonB1MM/wefg=;
- b=bLgIfhhcabykJw4TPAv+jIR9z8tz/HWoiXQ3cATX6QtjS7fAl7FjU6ifkEwxiqFw+O
- yVPGN77S89+8hz3BPDEdUVDEXOJMNX2dfIkNmoBWgn6swZ+VrNwJm+ZvvaroNn9LzHa8
- tmCa9cOZbhDUUUMRAVmrgVPvRjC5pdiQLp+D2iX3W4RUyEt8Ci8W6GASIwm6BSkjbtSW
- yuH9vPZ3qi4x0xdp4H2l19Q/mU7anIJhBgFcR6Q27/KuTFL+i4/fH174V8N4YXIvqDmD
- GDDoXBzeZ2JqR8FOpfN87jwERWiALKk+v7TW/4+kMy072pZKb7WO0lXAMm4HtZBUk2f1
- xlDg==
-X-Gm-Message-State: APjAAAXSvp+sIYK9Jd0qaVFfnO846A5aBUOj/UmnX9d9LJRW23sRoHVC
- Cy76UjqLXghnmjsRKBlO8XY=
-X-Google-Smtp-Source: APXvYqyDBBSk+rR6gLpGBEL0OVOHp9fl5zjs/iRj+V1a6MYIR50eUUkJF3Dx9enR+JvisdUNTLheWg==
-X-Received: by 2002:a17:90a:634a:: with SMTP id
- v10mr20203751pjs.16.1561820957173; 
- Sat, 29 Jun 2019 08:09:17 -0700 (PDT)
-Received: from localhost ([2600:1700:e321:62f0:329c:23ff:fee3:9d7c])
- by smtp.gmail.com with ESMTPSA id b3sm10519235pfp.65.2019.06.29.08.09.16
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Sat, 29 Jun 2019 08:09:16 -0700 (PDT)
-Date: Sat, 29 Jun 2019 08:09:15 -0700
-From: Guenter Roeck <linux@roeck-us.net>
-To: Christoph Hellwig <hch@lst.de>
-Subject: Re: [PATCH 6/7] dma-direct: handle DMA_ATTR_NO_KERNEL_MAPPING in
- common code
-Message-ID: <20190629150915.GA817@roeck-us.net>
-References: <20190614144431.21760-1-hch@lst.de>
- <20190614144431.21760-7-hch@lst.de>
+	id 1hhReE-0006N7-7U; Sun, 30 Jun 2019 04:41:06 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hhRdy-0006Bo-E0; Sun, 30 Jun 2019 04:40:51 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5A8E728;
+ Sat, 29 Jun 2019 21:40:47 -0700 (PDT)
+Received: from [192.168.0.129] (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 5ECD73F706;
+ Sat, 29 Jun 2019 21:40:37 -0700 (PDT)
+From: Anshuman Khandual <anshuman.khandual@arm.com>
+Subject: Re: [PATCH] mm: Generalize and rename notify_page_fault() as
+ kprobe_page_fault()
+To: Guenter Roeck <linux@roeck-us.net>
+References: <1560420444-25737-1-git-send-email-anshuman.khandual@arm.com>
+ <20190629145009.GA28613@roeck-us.net>
+Message-ID: <78863cd0-8cb5-c4fd-ed06-b1136bdbb6ef@arm.com>
+Date: Sun, 30 Jun 2019 10:11:03 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
+ Thunderbird/52.9.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190614144431.21760-7-hch@lst.de>
-User-Agent: Mutt/1.5.24 (2015-08-30)
+In-Reply-To: <20190629145009.GA28613@roeck-us.net>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190629_080918_026595_5CADF1F8 
-X-CRM114-Status: UNSURE (   9.94  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.3 (/)
+X-CRM114-CacheID: sfid-20190629_214050_566196_43AFE3C4 
+X-CRM114-Status: GOOD (  16.76  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (groeck7[at]gmail.com)
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (groeck7[at]gmail.com)
- 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-snps-arc@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -105,36 +62,77 @@ List-Post: <mailto:linux-snps-arc@lists.infradead.org>
 List-Help: <mailto:linux-snps-arc-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-snps-arc>, 
  <mailto:linux-snps-arc-request@lists.infradead.org?subject=subscribe>
-Cc: Jonas Bonn <jonas@southpole.se>, linux-xtensa@linux-xtensa.org,
- Vladimir Murzin <vladimir.murzin@arm.com>, linux-parisc@vger.kernel.org,
- Vineet Gupta <vgupta@synopsys.com>, Helge Deller <deller@gmx.de>,
- linux-kernel@vger.kernel.org,
- Stefan Kristiansson <stefan.kristiansson@saunalahti.fi>,
- iommu@lists.linux-foundation.org, openrisc@lists.librecores.org,
- Stafford Horne <shorne@gmail.com>, linux-snps-arc@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, Michal Hocko <mhocko@suse.com>,
+ linux-ia64@vger.kernel.org, linux-sh@vger.kernel.org,
+ Peter Zijlstra <peterz@infradead.org>, James Hogan <jhogan@kernel.org>,
+ Dave Hansen <dave.hansen@linux.intel.com>, Will Deacon <will.deacon@arm.com>,
+ linux-mips@vger.kernel.org, linux-mm@kvack.org,
+ Paul Mackerras <paulus@samba.org>, sparclinux@vger.kernel.org,
+ Stephen Rothwell <sfr@canb.auug.org.au>,
+ Yoshinori Sato <ysato@users.sourceforge.jp>,
+ Michael Ellerman <mpe@ellerman.id.au>, x86@kernel.org,
+ Russell King <linux@armlinux.org.uk>, Matthew Wilcox <willy@infradead.org>,
+ Ingo Molnar <mingo@redhat.com>, Catalin Marinas <catalin.marinas@arm.com>,
+ linux-snps-arc@lists.infradead.org, Fenghua Yu <fenghua.yu@intel.com>,
+ linux-s390@vger.kernel.org, Andrey Konovalov <andreyknvl@google.com>,
+ Andy Lutomirski <luto@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
+ linux-arm-kernel@lists.infradead.org,
+ Christophe Leroy <christophe.leroy@c-s.fr>, Tony Luck <tony.luck@intel.com>,
+ Heiko Carstens <heiko.carstens@de.ibm.com>, Vineet Gupta <vgupta@synopsys.com>,
+ linux-kernel@vger.kernel.org, Ralf Baechle <ralf@linux-mips.org>,
+ Paul Burton <paul.burton@mips.com>,
+ Martin Schwidefsky <schwidefsky@de.ibm.com>,
+ Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
+ "David S. Miller" <davem@davemloft.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-snps-arc" <linux-snps-arc-bounces@lists.infradead.org>
 Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org
 
-On Fri, Jun 14, 2019 at 04:44:30PM +0200, Christoph Hellwig wrote:
-> DMA_ATTR_NO_KERNEL_MAPPING is generally implemented by allocating
-> normal cacheable pages or CMA memory, and then returning the page
-> pointer as the opaque handle.  Lift that code from the xtensa and
-> generic dma remapping implementations into the generic dma-direct
-> code so that we don't even call arch_dma_alloc for these allocations.
+Hello Guenter,
+
+On 06/29/2019 08:20 PM, Guenter Roeck wrote:
+> Hi,
 > 
-> Signed-off-by: Christoph Hellwig <hch@lst.de>
+> On Thu, Jun 13, 2019 at 03:37:24PM +0530, Anshuman Khandual wrote:
+>> Architectures which support kprobes have very similar boilerplate around
+>> calling kprobe_fault_handler(). Use a helper function in kprobes.h to unify
+>> them, based on the x86 code.
+>>
+>> This changes the behaviour for other architectures when preemption is
+>> enabled. Previously, they would have disabled preemption while calling the
+>> kprobe handler. However, preemption would be disabled if this fault was
+>> due to a kprobe, so we know the fault was not due to a kprobe handler and
+>> can simply return failure.
+>>
+>> This behaviour was introduced in the commit a980c0ef9f6d ("x86/kprobes:
+>> Refactor kprobes_fault() like kprobe_exceptions_notify()")
+>>
+> 
+> With this patch applied, parisc:allmodconfig images no longer build.
+> 
+> In file included from arch/parisc/mm/fixmap.c:8:
+> include/linux/kprobes.h: In function 'kprobe_page_fault':
+> include/linux/kprobes.h:477:9: error:
+> 	implicit declaration of function 'kprobe_fault_handler'; did you mean 'kprobe_page_fault'?
 
-This patch results in build failures for mips:nlm_xlp_defconfig and
-mips:cavium_octeon_defconfig.
+Yikes.. Arch parisc does not even define (unlike mips which did but never exported)
+now required function kprobe_fault_handler() when CONFIG_KPROBES is enabled.
 
-kernel/dma/direct.c:144: undefined reference to `arch_dma_prep_coherent'
+I believe rather than defining one stub version only for parsic it would be better
+to have an weak symbol generic stub definition for kprobe_fault_handler() in file
+include/linux/kprobes.h when CONFIG_KPROBES is enabled along side the other stub
+definition when !CONFIG_KPROBES. But arch which wants to use kprobe_page_fault()
+cannot use stub kprobe_fault_handler() definition and will have to provide one.
+I will probably add a comment regarding this.
 
-Reverting the patch fixes the problem.
+> 
+> Reverting the patch fixes the problem.
+> 
+> Guenter
+> 
 
-Guenter
+Thanks for reporting the problem.
 
 _______________________________________________
 linux-snps-arc mailing list
