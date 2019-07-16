@@ -2,62 +2,60 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DDDFA6B0A5
-	for <lists+linux-snps-arc@lfdr.de>; Tue, 16 Jul 2019 22:50:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 367716B199
+	for <lists+linux-snps-arc@lfdr.de>; Wed, 17 Jul 2019 00:10:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=MMuTCFO1ZxJkhlSHd9wueXGarRUqnV00FLU+dbADFZA=; b=QXk
-	5LokLn6wr+4ZdvQ8ZS8TVB2IokFC88Fky35yEIM3wdnudP5DhCGLXXn1q3/hrwJRDFedDUEkD4zXU
-	kEuyhmgKWb0iweTyysHqD4QzcwrgboJnkknYG1i4fpIkDyAB6joj1yK36R9WrqsnZnnkB3zsTjUX0
-	QXndCP9ZkwBae/sk/30JUuGAVfNAYxq5Xg5hoXLowjS0pchHDhOsmtGQ+EGn6HW2LjbJ22nhDTq8e
-	rjXUdpyic3rqRXhs2fEJZL3WvQuzDv1OEB7UM8+eueK9tDH6Ul3NxsaugHzPNuZB/dSINq9v18Fmn
-	1GyTAbFzhS9bx0g+uJ/1j90FCB3B6fw==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:To:Date:Message-Id:
+	References:In-Reply-To:From:Subject:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Ek3EAs+Tz6SG17iHd4UBrnYMZQpPeVVSO72bImRyFV8=; b=G3Xl9gKgdyTyFT
+	N/a+V2fQWojinLVadi4HKzj/H0huP965Fb2cQvSvEQ9jAR+FXi6n5akKyv4AHyzVX7GAsMxYno5OQ
+	Xw7O3ZuCvUaM+hnUuIgcSQosalfDES/3OHlbUfDQp2i5dpCszb0MOrvyLzmZvPI67thl3lIx7MbdJ
+	qm8sk/4rPCzDZ4wppvEhnRK0u2PJH58qwmqURNyFYafH6wv+28uljw0vSBcXYb6YcRGkTNrB6u//V
+	KTOETIKWOB5CUg7PLEdtq0tfC3ym3Nf5USZ8gZ00eLH4zvUx/YxMSHNqJI5baVhbif8gnKurX5mGm
+	Ev53c7yUVjnarxV5iLBg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hnUPN-0005e6-MX; Tue, 16 Jul 2019 20:50:45 +0000
-Received: from smtprelay-out1.synopsys.com ([198.182.61.142])
+	id 1hnVeO-0003Wl-VF; Tue, 16 Jul 2019 22:10:20 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hnUPL-0005dM-JK
- for linux-snps-arc@lists.infradead.org; Tue, 16 Jul 2019 20:50:44 +0000
-Received: from mailhost.synopsys.com (mdc-mailhost1.synopsys.com
- [10.225.0.209])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
- (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id CBB4AC1BCE;
- Tue, 16 Jul 2019 20:50:38 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1563310239; bh=Xd83pvvL6NxmddJj03K0woFOzaR2CHGlGI+s16rvEvE=;
- h=From:To:Cc:Subject:Date:From;
- b=k0PnxTcQErzLC7klEjemFCHSyDoskZUR7M5STFOQ0B/JvpsAw4QrHUX6HqGP8dsQz
- cQhD0cQii+FiO0GM1CCRDuAhHiAiGyy8VrNHf2sBM/kuwb/rXseY1uUzyBvJOxu4Sh
- 23HE5qHx/nGzHzfG9729cTyZUQ5ekwzvTmvH8VUypkKi6UrLLvH8YT0XRotdYSnKnQ
- 08tOmdTN5OGQp/AKojnFs8rEov0/ghikyKKMRuZ0mTku4ZtNS/lwf4V1u6nbn9MVda
- 97XBJsvOGND5/WgPCw2kWK/85vDmAgxh84crHlxzCiHg0RcLZulicny849Y/gnTVbU
- bQfH1nT5QLohA==
-Received: from ru20arcgnu1.internal.synopsys.com
- (ru20arcgnu1.internal.synopsys.com [10.121.9.48])
- by mailhost.synopsys.com (Postfix) with ESMTP id 49766A0057;
- Tue, 16 Jul 2019 20:50:37 +0000 (UTC)
-From: Alexey Brodkin <Alexey.Brodkin@synopsys.com>
-To: linux-snps-arc@lists.infradead.org
-Subject: [PATCH] ARCv2: Don't pretend we may set U & DE bits in STATUS32 with
- kflag
-Date: Tue, 16 Jul 2019 23:50:34 +0300
-Message-Id: <20190716205034.42466-1-abrodkin@synopsys.com>
-X-Mailer: git-send-email 2.16.2
+ id 1hnVeM-0003Vy-7D
+ for linux-snps-arc@lists.infradead.org; Tue, 16 Jul 2019 22:10:19 +0000
+Subject: Re: [GIT PULL] ARC updates for 5.3-rc1
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1563315017;
+ bh=DZLMybQ+iQHK3bFHht3dTVWSxVGo6cHf+BYHkcrum8o=;
+ h=From:In-Reply-To:References:Date:To:Cc:From;
+ b=06iXnLrrz7PqEWH2+7kh33DFAXYaRJUPL0RALGyKOindTMvmNLpsoT9MO2hwKmVwK
+ 8j3FBeEdV7sHnID9D/UZxzxIZrta/fyPq7a0RyjSUMeAoSVPlQqbKtW5DM4A8IC7Ys
+ GUgSB0j2uRhmjFGmzEkb8A0InMrssz8SjHS7XGWM=
+From: pr-tracker-bot@kernel.org
+In-Reply-To: <99fc2ead-d7d8-1c54-b493-02e79e2fc24e@synopsys.com>
+References: <99fc2ead-d7d8-1c54-b493-02e79e2fc24e@synopsys.com>
+X-PR-Tracked-List-Id: <linux-kernel.vger.kernel.org>
+X-PR-Tracked-Message-Id: <99fc2ead-d7d8-1c54-b493-02e79e2fc24e@synopsys.com>
+X-PR-Tracked-Remote: git://git.kernel.org/pub/scm/linux/kernel/git/vgupta/arc.git/
+ tags/arc-5.3-rc1
+X-PR-Tracked-Commit-Id: 24a20b0a443fd485852d51d08e98bbd9d212e0ec
+X-PR-Merge-Tree: torvalds/linux.git
+X-PR-Merge-Refname: refs/heads/master
+X-PR-Merge-Commit-Id: 3eb514866f20c5eb74637279774b6d73b855480a
+Message-Id: <156331501700.32356.12748239579521687506.pr-tracker-bot@kernel.org>
+Date: Tue, 16 Jul 2019 22:10:17 +0000
+To: Vineet Gupta <Vineet.Gupta1@synopsys.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190716_135043_642504_C32EE6F2 
-X-CRM114-Status: UNSURE (   9.80  )
+X-CRM114-CacheID: sfid-20190716_151018_285821_47570A08 
+X-CRM114-Status: UNSURE (   0.78  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -67,6 +65,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-snps-arc@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,38 +77,30 @@ List-Post: <mailto:linux-snps-arc@lists.infradead.org>
 List-Help: <mailto:linux-snps-arc-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-snps-arc>, 
  <mailto:linux-snps-arc-request@lists.infradead.org?subject=subscribe>
-Cc: Alexey Brodkin <Alexey.Brodkin@synopsys.com>, linux-kernel@vger.kernel.org
+Cc: Arnd Bergmann <arnd@arndb.de>,
+ Linus Torvalds <torvalds@linux-foundation.org>,
+ Alexey Brodkin <Alexey.Brodkin@synopsys.com>,
+ lkml <linux-kernel@vger.kernel.org>,
+ arcml <linux-snps-arc@lists.infradead.org>,
+ Eugeniy Paltsev <Eugeniy.Paltsev@synopsys.com>
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-snps-arc" <linux-snps-arc-bounces@lists.infradead.org>
 Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org
 
-As per PRM "kflag" instruction doesn't change state of
-DE-flag ("Delayed branch is pending") and U-flag ("User mode")
-in STATUS32 register so let's not act as if we can affect those bits.
+The pull request you sent on Tue, 16 Jul 2019 20:22:58 +0000:
 
-Signed-off-by: Alexey Brodkin <abrodkin@synopsys.com>
----
- arch/arc/include/asm/entry-arcv2.h | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+> git://git.kernel.org/pub/scm/linux/kernel/git/vgupta/arc.git/ tags/arc-5.3-rc1
 
-diff --git a/arch/arc/include/asm/entry-arcv2.h b/arch/arc/include/asm/entry-arcv2.h
-index 225e7df2d8ed..6558e2edb583 100644
---- a/arch/arc/include/asm/entry-arcv2.h
-+++ b/arch/arc/include/asm/entry-arcv2.h
-@@ -237,7 +237,7 @@
- 
- .macro FAKE_RET_FROM_EXCPN
- 	lr      r9, [status32]
--	bic     r9, r9, (STATUS_U_MASK|STATUS_DE_MASK|STATUS_AE_MASK)
-+	bic     r9, r9, STATUS_AE_MASK
- 	or      r9, r9, STATUS_IE_MASK
- 	kflag   r9
- .endm
+has been merged into torvalds/linux.git:
+https://git.kernel.org/torvalds/c/3eb514866f20c5eb74637279774b6d73b855480a
+
+Thank you!
+
 -- 
-2.16.2
-
+Deet-doot-dot, I am a bot.
+https://korg.wiki.kernel.org/userdoc/prtracker
 
 _______________________________________________
 linux-snps-arc mailing list
