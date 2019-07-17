@@ -2,89 +2,89 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C48EB6C09B
-	for <lists+linux-snps-arc@lfdr.de>; Wed, 17 Jul 2019 19:46:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3B6266C10B
+	for <lists+linux-snps-arc@lfdr.de>; Wed, 17 Jul 2019 20:35:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:Date
 	:Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	List-Owner; bh=vEte2JJKTZKD1LRgERbeJD0rkYhW8UlJg8H+kTy70IY=; b=PWts5GnNQMjb9a
-	EQQmJPFXYonJziVj4Q4nODz6863eFZooYwsuETo9WPuPbJK7klJOfm3aJyHie7aFpm8OcaGiv7ekS
-	exRcWYkbl6uPYNHRJaodXEhoeLHFXMtfmAswm2VT0Z6YWeNUxzyoHDDyVI2GQgW9W9qYxtgknBSJH
-	F+Wp8xyzfCwXJRgXfDaoa1BLpj/dUirckLUzyILLLjaS65ERuQdaqpRNUZi6gudPdjAMG5Vhc2xQQ
-	97G5vXAt+CaHG45Ign409bPbxCnvrfkzefxhM6hc8BdCB1bBun3HUV5woGlH4uV6+khiXV60I/dRM
-	RPh43M96tmW6T918cnoQ==;
+	List-Owner; bh=SWllLMv3qUZ1M53w630u0jaahAebeKhEAuC626QYSP0=; b=nokvbfW4Fh/TEt
+	hMQqldN1fP12/UxspX4zbj9FTmes3EBnsWoL1eDhXWirGD3FHlnYRUoI9qyeVzKiRVk7CQd+8QX0T
+	327jHPbMLk++NNPDgZ5mwMjoTQyE8b1F00/RXHaMZojdT8WTPj5BTX5BwlfyhICDgunyDEO7IOlGm
+	ggmMzfcROgdJGINiMBrSh1YpmZRk6MA2mVsvRwNWn7/Y5ExowHndh5uB7ZHWHOCbs4KaVHs00ulqD
+	o7HKhsXYXGDhFe3dp1bZVcLM1DiLab1FRcPQpwXYywCOuj/CPBFSpm2f+KzzYm2RIommmu5EgOk1a
+	nJOK+NcJcWkuFO7fDxFA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hno0I-0007s4-DK; Wed, 17 Jul 2019 17:46:10 +0000
+	id 1hnom2-0003Ik-6U; Wed, 17 Jul 2019 18:35:30 +0000
 Received: from dc8-smtprelay2.synopsys.com ([198.182.47.102]
  helo=smtprelay-out1.synopsys.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hno0E-0007qi-9C
- for linux-snps-arc@lists.infradead.org; Wed, 17 Jul 2019 17:46:08 +0000
-Received: from mailhost.synopsys.com (dc2-mailhost1.synopsys.com
- [10.12.135.161])
+ id 1hnolx-0003Hj-LP
+ for linux-snps-arc@lists.infradead.org; Wed, 17 Jul 2019 18:35:28 +0000
+Received: from mailhost.synopsys.com (dc2-mailhost2.synopsys.com
+ [10.12.135.162])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
  (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 99531C0C2A;
- Wed, 17 Jul 2019 17:46:04 +0000 (UTC)
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id CAE42C2962;
+ Wed, 17 Jul 2019 18:35:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1563385565; bh=EflrrD8SgF4nT5b+YTInbdVxmM8gut1TYJuxUxonJXo=;
+ t=1563388524; bh=prrW1Ndm7Bdq3WM62kogpc9GH1kqMmi6FD47AxwU2nE=;
  h=From:To:CC:Subject:Date:References:From;
- b=IY/NZlS6VQlzzX7uy4IqaryT+tcsHhKDBIfh3iLglH0OrXiHo2SXjmGu4TwIdj6g3
- O43rH3fQ4ss5pFd787r7UsJHAVnek3k+xr3c1xS4/39s/ewWWT7p/arKBWLj5QzFlc
- t8VTkfiIZudjDi8WNy/gHJo/PoS3kXfQjOIF7GQgFuUZmDDFn50PEDkzXZfMHPor2/
- olxFboTT8FQndq0V2q1eIwpnkctvJ9CqT91Qd1GiVg1HGgmnyyORbaF9nLauA+4+iO
- evXxoxdVTLc6sKBJV4aNPfZwj581+OCLG8YuJ4D93/hmQC6AZ040WAmzgsoPtLgNJT
- jZlhjOCz7Rmlg==
-Received: from us01wehtc1.internal.synopsys.com
- (us01wehtc1-vip.internal.synopsys.com [10.12.239.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-SHA384 (256/256 bits))
+ b=SHZqsjk2x+Bnuymsx/kt+qURLS9X39vmjXdsYu9zXkazQDuep/wU2/t7X5zkn8ghL
+ SzfEMGQVcF5fo/AGm57jNsMdcbSHY3RdzZYONL+wGwaoMPJL1+R3Kg27VhPLLepcBd
+ mVfadtWdXtRs78CFWqFiCw1W3qD/oM6ic4LwSp1kV2oJLfdohT3sTdJbrcxcukqdzB
+ YxXAy/0aa0dwFYb+dktgx+vqJ7vvEGbQHou7fAp6f75pk1I2QOznFcYXvD5bzZZCII
+ hjUYEllMIQu2y2MVRWAQv2u/p2l03OM6cLysBK1YqX3+DKf9ZQ374nx8hE34wjQ1b6
+ Ct7zBIKy/LuEw==
+Received: from US01WEHTC2.internal.synopsys.com
+ (us01wehtc2.internal.synopsys.com [10.12.239.237])
+ (using TLSv1.2 with cipher AES128-SHA256 (128/128 bits))
  (No client certificate requested)
- by mailhost.synopsys.com (Postfix) with ESMTPS id BD976A009C;
- Wed, 17 Jul 2019 17:46:03 +0000 (UTC)
+ by mailhost.synopsys.com (Postfix) with ESMTPS id BB80DA009F;
+ Wed, 17 Jul 2019 18:35:20 +0000 (UTC)
 Received: from US01HYBRID2.internal.synopsys.com (10.15.246.24) by
- us01wehtc1.internal.synopsys.com (10.12.239.235) with Microsoft SMTP Server
- (TLS) id 14.3.408.0; Wed, 17 Jul 2019 10:45:54 -0700
-Received: from NAM05-BY2-obe.outbound.protection.outlook.com (10.13.134.195)
+ US01WEHTC2.internal.synopsys.com (10.12.239.237) with Microsoft SMTP Server
+ (TLS) id 14.3.408.0; Wed, 17 Jul 2019 11:35:07 -0700
+Received: from NAM01-SN1-obe.outbound.protection.outlook.com (10.13.134.195)
  by mrs.synopsys.com (10.15.246.24) with Microsoft SMTP Server (TLS) id
- 14.3.408.0; Wed, 17 Jul 2019 10:45:53 -0700
+ 14.3.408.0; Wed, 17 Jul 2019 11:35:07 -0700
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=DPa1HetfUjUyV9FIBnjG13+4wi6mYVj0eLKbAZfeRPjBKgdqbIUuo8bxS4OPdS7aHj0W8VRT5Fpct87quVfsfVmMx9Lalz2eH2NN1hyRfxorFcodnovNLjvVUdz4FVaB9Kbtr+008cVRZJe7AWiBklLr4pyFNeSsI5EL/uErzG+eIWajCWTHxOQS9lXrNJOH74mdWTOoj4h1HWFCuX46STV7IicvmB5rnlsizXw1lubJ+6QMiLaq77PHtoYQ2s9w4hYPckVR6/zycpygeK82up000rwhqvP7Qy0BDjHWWE+OKXdAru1y/lTBQiCBIs0jhrvzz2WkV4TVOjll13gt/Q==
+ b=bVWw5xiE5yqUH4k/FT1GQIKnAPYBJWTL4e15VcCuLW9RVr4s3pKYHQqYwFhzr4dUgbPEk8W/zHZvi8CVWdmsws08A+fuUoFPBilBd6NlgzzA+uALf6osIgBGw8rGPD0oYuPw5R0H/fM/OhX4Bt1mt3la9y2up3Yd5ik9iB+G21f41UZC9da9Klg5iT9f8gIJKiX3hG4bYVjzrwOCgf8xpICd87+/I4ofCdSql+cmf/A4cfq0yIgsChhfA3QZRQkTp5SFy2Df8cBdGsTl456VQWYdiKz4briZnqB+LSoX09FXdAS5AkYRGsh3ufR2XlvTMJHX8aPv4xSKwCetr5MowA==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=XTzV79R87hkd/yqVEBTt3QrPhlp9U0m5BQT03O6G7z0=;
- b=M8AeQ68HY1vGw66yVKl12BU7mdtyamn4Y8S5adoHxrWd5977zn5Q3z05kxSL4cBV1zIPNtgUmsEt9eUBN1rBHoTRxTna7KfpwZSyJ0C3nmF+RoxgQnVVOr9JjvFhtS/BQgJi4+lrOzGKj4+vDp/WMjnmFB1w1pBSaIXpeUpeWKT/GFnMa3x6ff3c0KCZeN2iJgXO1Uv/FRy4nqWJ0ILTvcdSnllYpEOnCPvBmtxr1okAqy17egDhgy2FHQ3H99brXkEvrfCtLEHTpG/N03S8x3UOh2ZD0m5ZgJTmGS+7n8DEUtuPOlhtHX8m4h/+DwRg31cZuBUKOHxL8ndr1pVSDg==
+ bh=z3mNfbxTclfRCoJ5x4d8zRoFCRBS7pDYJ86mL5d4ivw=;
+ b=BFgXWg0EGGgIAFrWRNblJV2S4tLnAKrjFreRvjcOT8qiwmdOhkwO+a/W0BgctSa3s0LTLdtvaNqpmRqB1TPkYqVOoS8J/QVpKbIaIt9oe5PTrAul56BlRO7gmBNwgckyfcqJAY7jFfDCMGtbUYzb1NRxNGtDswXHUYsjA5F4XCID496lcibyLH/1JzN+Ptzc2dtM+sh6FicpNJ34WmE2r9cgL2jUKV1w+UlHUcGGId6767iMVM7DwZkv2338Id+wWx9lI6b7jFJM4S3yxtHT4uUR1/k4VWJOLHDwBckHbyIfiWH5M20Dysz/xpD2d78aDU5OJvZASLF+PL84qBfyPg==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1;spf=pass
  smtp.mailfrom=synopsys.com;dmarc=pass action=none
  header.from=synopsys.com;dkim=pass header.d=synopsys.com;arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=synopsys.onmicrosoft.com; s=selector1-synopsys-onmicrosoft-com;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=XTzV79R87hkd/yqVEBTt3QrPhlp9U0m5BQT03O6G7z0=;
- b=k1CIgFTljosYIZTZ25uULu5+YNXw8gfAJ9kK1shBeaBnYxoMhIkes/fI3cTbjfwh/2TihVbPZAzIHf4Mp/X9DRoWkum1yFSATsomI66kFbMwVbntg46bxoDs/ZzZYc5Ri6gG2noSH7S6o5/bAFKCY2k0UZaEZh4L28Z6bmkmoNc=
+ bh=z3mNfbxTclfRCoJ5x4d8zRoFCRBS7pDYJ86mL5d4ivw=;
+ b=AOGDzevZBKA/BExTnUBMKelyDAPZq5MHnieakHMMmvXP6lj6ndHI1hsFyOGiqZSoUOq3EJAwumDj+g0ivk0BUky/paetwKA1Z6Xxpfm6hbEpsx3vs3E0cqvNPmTjl31eKJN/GKJ14xWaGw0Navz8fWU73eTGIQlDOSQ39/vB3oA=
 Received: from BN6PR1201MB0035.namprd12.prod.outlook.com (10.174.238.140) by
- BN6PR1201MB2531.namprd12.prod.outlook.com (10.172.111.138) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2073.14; Wed, 17 Jul 2019 17:45:52 +0000
+ BN6PR1201MB0241.namprd12.prod.outlook.com (10.174.116.18) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2073.14; Wed, 17 Jul 2019 18:35:03 +0000
 Received: from BN6PR1201MB0035.namprd12.prod.outlook.com
  ([fe80::24a0:9726:b1f7:fb3c]) by BN6PR1201MB0035.namprd12.prod.outlook.com
  ([fe80::24a0:9726:b1f7:fb3c%11]) with mapi id 15.20.2073.012; Wed, 17 Jul
- 2019 17:45:52 +0000
+ 2019 18:35:03 +0000
 From: Vineet Gupta <Vineet.Gupta1@synopsys.com>
-To: Eugeniy Paltsev <Eugeniy.Paltsev@synopsys.com>,
+To: Alexey Brodkin <Alexey.Brodkin@synopsys.com>,
  "linux-snps-arc@lists.infradead.org" <linux-snps-arc@lists.infradead.org>
-Subject: Re: [PATCH] ARC: ARCv2: jump label: implement jump label patching
-Thread-Topic: [PATCH] ARC: ARCv2: jump label: implement jump label patching
-Thread-Index: AQHVPLGkQUnMGryojE2rPVU+oeatwQ==
-Date: Wed, 17 Jul 2019 17:45:52 +0000
-Message-ID: <BN6PR1201MB0035E304FF25609CBCACBD09B6C90@BN6PR1201MB0035.namprd12.prod.outlook.com>
-References: <20190614164049.31626-1-Eugeniy.Paltsev@synopsys.com>
- <C2D7FE5348E1B147BCA15975FBA2307501A252CCC3@us01wembx1.internal.synopsys.com>
- <57076361ad37f4fe7a5584643ae47adf30a99d35.camel@synopsys.com>
+Subject: Re: [PATCH] ARCv2: Don't pretend we may set U & DE bits in STATUS32
+ with kflag
+Thread-Topic: [PATCH] ARCv2: Don't pretend we may set U & DE bits in STATUS32
+ with kflag
+Thread-Index: AQHVPBg5vQNhnF2iB0aHFOZdtIGHIA==
+Date: Wed, 17 Jul 2019 18:35:02 +0000
+Message-ID: <BN6PR1201MB003505F72EBBE443FADBC23CB6C90@BN6PR1201MB0035.namprd12.prod.outlook.com>
+References: <20190716205034.42466-1-abrodkin@synopsys.com>
 Accept-Language: en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
@@ -93,35 +93,35 @@ authentication-results: spf=none (sender IP is )
  smtp.mailfrom=vgupta@synopsys.com; 
 x-originating-ip: [198.182.56.5]
 x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: ac315126-1681-432d-ed11-08d70ade9d06
+x-ms-office365-filtering-correlation-id: d4c85b62-7026-4f0f-0189-08d70ae57b65
 x-microsoft-antispam: BCL:0; PCL:0;
  RULEID:(2390118)(7020095)(4652040)(8989299)(5600148)(711020)(4605104)(1401327)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(2017052603328)(7193020);
- SRVR:BN6PR1201MB2531; 
-x-ms-traffictypediagnostic: BN6PR1201MB2531:
-x-microsoft-antispam-prvs: <BN6PR1201MB2531D684490F8EF3BFAB7D42B6C90@BN6PR1201MB2531.namprd12.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:8273;
+ SRVR:BN6PR1201MB0241; 
+x-ms-traffictypediagnostic: BN6PR1201MB0241:
+x-microsoft-antispam-prvs: <BN6PR1201MB0241EFC111FFADA987022383B6C90@BN6PR1201MB0241.namprd12.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:10000;
 x-forefront-prvs: 01018CB5B3
 x-forefront-antispam-report: SFV:NSPM;
- SFS:(10019020)(376002)(396003)(366004)(136003)(346002)(39860400002)(189003)(199004)(81166006)(256004)(316002)(5660300002)(52536014)(86362001)(14444005)(6116002)(3846002)(2501003)(8676002)(66476007)(54906003)(81156014)(476003)(486006)(9686003)(446003)(74316002)(64756008)(66556008)(66946007)(76116006)(66446008)(91956017)(2906002)(66066001)(6436002)(99286004)(26005)(186003)(7696005)(53546011)(76176011)(6506007)(229853002)(71190400001)(8936002)(71200400001)(102836004)(6246003)(478600001)(7736002)(68736007)(25786009)(14454004)(110136005)(53936002)(33656002)(305945005)(4326008)(55016002);
- DIR:OUT; SFP:1102; SCL:1; SRVR:BN6PR1201MB2531;
+ SFS:(10019020)(39860400002)(346002)(396003)(136003)(366004)(376002)(54534003)(189003)(199004)(476003)(6246003)(6506007)(53546011)(53936002)(2906002)(81166006)(81156014)(8936002)(7736002)(25786009)(74316002)(305945005)(66946007)(86362001)(256004)(66476007)(66556008)(64756008)(66446008)(76116006)(76176011)(8676002)(99286004)(54906003)(110136005)(14444005)(52536014)(4326008)(5660300002)(7696005)(66066001)(91956017)(33656002)(71200400001)(71190400001)(14454004)(102836004)(6116002)(3846002)(26005)(68736007)(55016002)(9686003)(186003)(478600001)(229853002)(486006)(6436002)(2501003)(446003)(316002);
+ DIR:OUT; SFP:1102; SCL:1; SRVR:BN6PR1201MB0241;
  H:BN6PR1201MB0035.namprd12.prod.outlook.com; FPR:; SPF:None; LANG:en;
  PTR:InfoNoRecords; MX:1; A:1; 
 received-spf: None (protection.outlook.com: synopsys.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: Pjd1Jdag6lHtz/BSi87t9zUmJhZOEMmbGhK3DCkcQdPHsqiU2Qpdo7gWjouzc7DFu885jA487XGj07a5/1zUOfCR0sCjxZai4QfkCsMF6oplp/YqV3YGWiM3kiP7Ymo7D1T7J49wKhTFn62oGvIZjZ3tbZluVj9Te8ILzq2OTxSpde8IFPF+e1Fq9V5Uv4+BXSpHFoLLgnropZijPZk1FwPCddmPa44gjnID1kH1gt/cJgOa3fHHvJ8ISoHI1hOpk7aVk+9ZHTNYnyBSzuylevl+0U/1DUSTGajlQ59P9S2PxBYX1s1pO92cXySzNVsb4r1+eXzPLbDhPdWTYbFIOavZA9othLi7QZJzeDz6UyOLidG5vTK2efSkOosJ843i1oxmmSEbYWN0SS8OTIo9jHC67Nq8KUNgebOovgi4wmc=
+x-microsoft-antispam-message-info: xBhBhKXgPywXpgn5xjNL4MO7W125ZaBwJGmesSYuiW3nd677DD8qR9R7FBLeIMZsae3o5MfClpytHgmfxV4+VnJtTWgmpfRg/XDAbqkcoYJMxrd+2V1Noibhy/1ZpRnAJokadsrAhvYCPHps0Kzph+3kVZNva/WVhUtHU/yWRedPiKj5Xfma0KpEfV1gvbVoIAQvTDdYIvvOgvLc9V5eMWwBI7ZdcqylbLIFMmpWtOKJDnuxr1nWA4g9v7t6hgnSIhBSfWSz4cOUjKlZDlZZpfW6tDVakv4UnfN5zQFHwPQD7XhNTe7ZMrIicLOZspq6oQiJZDZYKOl6d90athfH6CfL+JzN+vMDGJElJNFhwHJz44hq0/t9iYbvwLvL8p7Hjf7ASMCXfSwzjJwJbmUH9rtw2zrPxG9gKZX0ua1y2Sg=
 MIME-Version: 1.0
-X-MS-Exchange-CrossTenant-Network-Message-Id: ac315126-1681-432d-ed11-08d70ade9d06
-X-MS-Exchange-CrossTenant-originalarrivaltime: 17 Jul 2019 17:45:52.8939 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: d4c85b62-7026-4f0f-0189-08d70ae57b65
+X-MS-Exchange-CrossTenant-originalarrivaltime: 17 Jul 2019 18:35:02.9040 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: c33c9f88-1eb7-4099-9700-16013fd9e8aa
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
 X-MS-Exchange-CrossTenant-userprincipalname: vgupta@synopsys.com
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: BN6PR1201MB2531
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: BN6PR1201MB0241
 X-OriginatorOrg: synopsys.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190717_104606_406526_A388A8E1 
-X-CRM114-Status: GOOD (  12.85  )
+X-CRM114-CacheID: sfid-20190717_113525_710815_F664E6B0 
+X-CRM114-Status: GOOD (  11.41  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -147,54 +147,69 @@ List-Post: <mailto:linux-snps-arc@lists.infradead.org>
 List-Help: <mailto:linux-snps-arc-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-snps-arc>, 
  <mailto:linux-snps-arc-request@lists.infradead.org?subject=subscribe>
-Cc: "linux-arch@vger.kernel.org" <linux-arch@vger.kernel.org>,
- "ard.biesheuvel@linaro.org" <ard.biesheuvel@linaro.org>,
- "peterz@infradead.org" <peterz@infradead.org>,
- "jbaron@redhat.com" <jbaron@redhat.com>,
- Alexey Brodkin <Alexey.Brodkin@synopsys.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "pbonzini@redhat.com" <pbonzini@redhat.com>
+Cc: Alexey Brodkin <Alexey.Brodkin@synopsys.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-snps-arc" <linux-snps-arc-bounces@lists.infradead.org>
 Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org
 
-On 7/17/19 8:09 AM, Eugeniy Paltsev wrote:
->>> +/* Halt system on fatal error to make debug easier */
->>> +#define arc_jl_fatal(format...)						\
->>> +({									\
->>> +	pr_err(JUMPLABEL_ERR format);					\
->>> +	BUG();								\
->> Does it make sense to bring down the whole system vs. failing and returning.
->> I see there is no error propagation to core code, but still.
-> I totally agree with Peter, and I prefer to stop the system on this errors. Here is few arguments:
-> All this checks can't be toggle in system operating normally and only may be caused by bad code generation (or some code/data corruption):
-> 1) We got our instruction to patch unaligned by 4 bytes (despite the fact that we used '.balign 4' to align it)
-> 2) We got branch offset unaligned (which means that we calculate it wrong at build time or corrupt it in run time)
-> 3) We got branch offset which not fits into s25. As this is offset inside one function (inside one 'if' statement actually) we newer get such huge
-> offset in real life if code generation is ok.
+On 7/16/19 1:51 PM, Alexey Brodkin wrote:
+> As per PRM "kflag" instruction doesn't change state of
+> DE-flag ("Delayed branch is pending") and U-flag ("User mode")
+> in STATUS32 register so let's not act as if we can affect those bits.
 
-I understand that. But AFAIKR in implementation arc_jl_fatal() gets called before
-we have done the actual code patching and/or flushing the caches to that effect.
-So harm has been done just yet. We just need to make sure that any book-keeping of
-true/false is not yet done or unrolled.
+I understand the motivation and indeed bits not writable by kflag should be
+removed. But what if we do need to clear those bits out from status32 (assuming
+they exist there in first place) and that kflag might not be the right instruction
+to do that.
+So the question to ask is do we need to clear U and DE bits from status32 and
+answer from reading the PRM is no, we don't have to, as those are cleared already
+when an exception is taken.
 
-> If we only warn to log and return we will face with compromised kernel flow later.
-> I.E. it could be 'if' statement in kernel text which is switched to wrong state: the condition is true but we take the false branch.
-> And It will be the issue which is much more difficult to debug.
+The likely reason this code is because back in arc700 days we used to have a
+different version of this macro which atleast in original code relied on using the
+pre-exception status32 (in pt_regs) - and that could easily have U and/or DE set
+based hence needed clearing.
+
+.macro FAKE_RET_FROM_EXCPN  reg
+
+    ld  \reg, [sp, PT_status32]
+    and \reg, \reg, ~(STATUS_U_MASK|STATUS_DE_MASK)
+    or  \reg, \reg, STATUS_L_MASK
+    sr  \reg, [erstatus]
+    mov \reg, 55f
+    sr  \reg, [eret]
+
+    rtie
+55:
+.endm
+
+This is not needed (even in arc700) if we are using the current "in-exception"
+status32 for doing the early return.
+
+Long story short, your patch is correct but we need to explain better why it is.
+I've applied it locally with slight tweak to changelog to that effect.
+
+
+> Signed-off-by: Alexey Brodkin <abrodkin@synopsys.com>
+> ---
+>  arch/arc/include/asm/entry-arcv2.h | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
 >
-> Does it sound reasonably?
-
-I'm still not convinced that by hitting the _fatal() we are in some inconsistent
-state already. But if u feel strongly lets keep it.
-
->
-> If you really don't want to have BUG here, I can make it conditionally enabled
-
-Not a good idea. It is unconditionally present or not. Not something in between.
-
-> in depend on CONFIG_ARC_STATIC_KEYS_DEBUG as I want to have it enabled at least on ARC development platforms.
-
+> diff --git a/arch/arc/include/asm/entry-arcv2.h b/arch/arc/include/asm/entry-arcv2.h
+> index 225e7df2d8ed..6558e2edb583 100644
+> --- a/arch/arc/include/asm/entry-arcv2.h
+> +++ b/arch/arc/include/asm/entry-arcv2.h
+> @@ -237,7 +237,7 @@
+>  
+>  .macro FAKE_RET_FROM_EXCPN
+>  	lr      r9, [status32]
+> -	bic     r9, r9, (STATUS_U_MASK|STATUS_DE_MASK|STATUS_AE_MASK)
+> +	bic     r9, r9, STATUS_AE_MASK
+>  	or      r9, r9, STATUS_IE_MASK
+>  	kflag   r9
+>  .endm
 
 
 _______________________________________________
