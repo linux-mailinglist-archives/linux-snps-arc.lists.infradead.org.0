@@ -2,57 +2,58 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2EA336EA65
-	for <lists+linux-snps-arc@lfdr.de>; Fri, 19 Jul 2019 19:54:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F36C86EACA
+	for <lists+linux-snps-arc@lfdr.de>; Fri, 19 Jul 2019 20:46:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=umv3u8L+d1pe0hfkAPnM2q7dlAUgKPvnVOsS+Ny147Q=; b=MGm/4UR8Y6GtMx
-	u+aqPNIHCv9f0h2dUhZmaH9ZPeK1FX4iUjVZ6otiNYAYQrCroq4/BPYbFwPOXfd7LVl4bosgzQXkq
-	my9Pvo9qgjAsCW+INBD+SNa0HPgT1XCb5su+V6LUNg+i+D6GmIyqvBsrH/TFUxA9MM7lfYxhB78ff
-	a7GAM2uDnZs1fU4WhAO0ihSeFf3fQ/flSlQHHAx9okwf5ReZpqA2vduppAM3GzbHBUI5lW8geZ8dj
-	IEpddFuNwJ+JTlOh88hiG0TADxhjp4UbCNgEDIYJTVJHHhVJwMxcT8B06+8wrOzdH+21vxUUUFPqB
-	7FHfFL6htUAMbKcmQPSg==;
+	List-Owner; bh=nW+mAc6ZSJIe/xCglg+JxSUIrKLht1jwDFMFZ9z5f+w=; b=rg/w6e/7Sm3Gh5
+	yg3Qe3KL4Dtory7ADi1m5Cc0a24foe382mKgqNY7gnNATh7ajCJHdls2BjRGv+slQpsXw40ck0rnI
+	tFJaSUp1OB2j9laOux4ug8egKSurdBpP0F++qHX98emkbRFzvI7nH9edR+XhwOLPanEXMZcwDGVt5
+	85Y6humyH3T8vULOIYzSyhFe8tnw/rvUF6X0YLJcy2LHeZ0c9NetVtBpTt+U8gApVaplWprJSlKN5
+	D9tyguqVgmSO7r7yOteUA+NpeK5Hlhmm6ChwjqPNjKy9AH3rRLP3z0ubHHinLP4INdxGXxuVVBvum
+	MYMpLNLoDjOfpAKUsCUQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hoX5r-0005nk-ME; Fri, 19 Jul 2019 17:54:55 +0000
-Received: from smtprelay-out1.synopsys.com ([198.182.47.102])
+	id 1hoXtS-0005Hg-KM; Fri, 19 Jul 2019 18:46:10 +0000
+Received: from dc8-smtprelay2.synopsys.com ([198.182.47.102]
+ helo=smtprelay-out1.synopsys.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hoX5o-0005mx-3s
- for linux-snps-arc@lists.infradead.org; Fri, 19 Jul 2019 17:54:53 +0000
+ id 1hoXtQ-0005Gq-23
+ for linux-snps-arc@lists.infradead.org; Fri, 19 Jul 2019 18:46:09 +0000
 Received: from mailhost.synopsys.com (mdc-mailhost1.synopsys.com
  [10.225.0.209])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
  (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 85E63C0163;
- Fri, 19 Jul 2019 17:54:47 +0000 (UTC)
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id E7A17C0089;
+ Fri, 19 Jul 2019 18:46:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1563558887; bh=xfMJh6liO4fii+92mxTSjQb5mrKZeVXSQXRG9ALjwLA=;
+ t=1563561964; bh=a1asybTUPoXPdVigAZxuS9IKo7g1CCQ4rNlJLzJjBM0=;
  h=From:To:Cc:Subject:Date:From;
- b=bf3BClETu+mE9kWUsBogQ8PZQ9IeUpOz+lZua8nkCYZfFjkk0UVCkFgbO+IULYpUY
- k9peBj7qztq1ss6uBbphNZ61O8i6IqC2crF+MF4W+ID3VLwxLtimjl2xblmTobLl+l
- 1NLTMZxJ7dcSPCleF1rIFW6CvgGuh0LHX1mMZhmU1VPNRDNo6COSTgW2V5ZXLAi9ye
- 5K2/IjHPUlU9JpurG5onaigUo618EiKTE1pER9MQhnf/C92585w/AgEEtOnfdfEEoK
- gyg/QtSVLwxhWeztMUnaGlMvvzrvbuSt/0y9y/eApNRBulMFM14ITycOUNaBJncgjD
- icDOczE3o1Nqw==
+ b=gwaRnNKGTHW7BxpoWauP/KRzeqsHtp/N+TBTMa5qmEcRwVsSN2b6Wae+dRkRivsPo
+ 4HQJn++dwgwis40Gcf+Es97IXxTQZto/KBX4GWaXafgbKDGmJauUyrWGWSLiSZb4ei
+ ojP1z3xfioHv/W36iueB+kmqOpQK2jDoNhzoRZJSvRWpve1u/51VNfmj8rVEv9eQN+
+ c/iHW1WyOPRy9zZGHiweyML4OtborbDla41hXIEkFHj6hyAkfye405mj8u1lhjcdi6
+ u2N9f8qEuCMaACrTanTTDnWxnFegf+bTc8lDhXsGeaatoJ02rBuvo8wKTDo5Pcoldm
+ QQZ0O3vbDUQDw==
 Received: from paltsev-e7480.internal.synopsys.com (unknown [10.121.8.79])
- by mailhost.synopsys.com (Postfix) with ESMTP id C30E9A0057;
- Fri, 19 Jul 2019 17:54:45 +0000 (UTC)
+ by mailhost.synopsys.com (Postfix) with ESMTP id 333EBA0057;
+ Fri, 19 Jul 2019 18:46:02 +0000 (UTC)
 From: Eugeniy Paltsev <Eugeniy.Paltsev@synopsys.com>
 To: linux-snps-arc@lists.infradead.org,
  Vineet Gupta <Vineet.Gupta1@synopsys.com>
-Subject: [PATCH] ARC: [plat-hsdk]: allow to switch between AXI DMAC port
- configurations
-Date: Fri, 19 Jul 2019 20:54:44 +0300
-Message-Id: <20190719175444.21809-1-Eugeniy.Paltsev@synopsys.com>
+Subject: [PATCH] ARC: fix typo in setup_dma_ops log message
+Date: Fri, 19 Jul 2019 21:46:00 +0300
+Message-Id: <20190719184600.23188-1-Eugeniy.Paltsev@synopsys.com>
 X-Mailer: git-send-email 2.21.0
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190719_105452_176154_43638732 
-X-CRM114-Status: GOOD (  13.18  )
+X-CRM114-CacheID: sfid-20190719_114608_106177_CD8A9932 
+X-CRM114-Status: UNSURE (   8.95  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -85,167 +86,23 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-snps-arc" <linux-snps-arc-bounces@lists.infradead.org>
 Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org
 
-We want to use DW AXI DMAC on HSDK board in our automated verification
-to test cache & dma kernel code changes. This is perfect candidate
-as we don't depend on any external peripherals like MMC card / USB
-storage / etc.
-To increase test coverage we want to test both options:
- * DW AXI DMAC is connected through IOC port & dma direct ops used
- * DW AXI DMAC is connected to DDR port & dma noncoherent ops used
-
-Introduce 'arc_hsdk_axi_dmac_coherent' global variable which can be
-modified by debugger (same way as we patch 'ioc_enable') to switch
-between these options without recompiling the kernel.
-Depend on this value we tweak memory bridge configuration and
-"dma-coherent" DTS property of DW AXI DMAC.
-
 Signed-off-by: Eugeniy Paltsev <Eugeniy.Paltsev@synopsys.com>
 ---
- arch/arc/boot/dts/Makefile    |  3 ++
- arch/arc/plat-hsdk/platform.c | 87 ++++++++++++++++++++++++++++++-----
- 2 files changed, 78 insertions(+), 12 deletions(-)
+ arch/arc/mm/dma.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/arch/arc/boot/dts/Makefile b/arch/arc/boot/dts/Makefile
-index a83c4f5e928b..8483a86c743d 100644
---- a/arch/arc/boot/dts/Makefile
-+++ b/arch/arc/boot/dts/Makefile
-@@ -12,3 +12,6 @@ dtb-y := $(builtindtb-y).dtb
- # for CONFIG_OF_ALL_DTBS test
- dtstree	:= $(srctree)/$(src)
- dtb-	:= $(patsubst $(dtstree)/%.dts,%.dtb, $(wildcard $(dtstree)/*.dts))
-+
-+# board-specific dtc flags
-+DTC_FLAGS_hsdk += --pad 20
-diff --git a/arch/arc/plat-hsdk/platform.c b/arch/arc/plat-hsdk/platform.c
-index 7dd2dd335cf6..ab8f93e7468e 100644
---- a/arch/arc/plat-hsdk/platform.c
-+++ b/arch/arc/plat-hsdk/platform.c
-@@ -6,11 +6,15 @@
-  */
+diff --git a/arch/arc/mm/dma.c b/arch/arc/mm/dma.c
+index 0bf1468c35a3..e9cd0a1733bf 100644
+--- a/arch/arc/mm/dma.c
++++ b/arch/arc/mm/dma.c
+@@ -158,6 +158,6 @@ void arch_setup_dma_ops(struct device *dev, u64 dma_base, u64 size,
+ 	if (is_isa_arcv2() && ioc_enable && coherent)
+ 		dev->dma_coherent = true;
  
- #include <linux/init.h>
-+#include <linux/of_fdt.h>
-+#include <linux/libfdt.h>
- #include <linux/smp.h>
- #include <asm/arcregs.h>
- #include <asm/io.h>
- #include <asm/mach_desc.h>
- 
-+int arc_hsdk_axi_dmac_coherent = 0;
-+
- #define ARC_CCM_UNUSED_ADDR	0x60000000
- 
- static void __init hsdk_init_per_cpu(unsigned int cpu)
-@@ -97,6 +101,42 @@ static void __init hsdk_enable_gpio_intc_wire(void)
- 	iowrite32(GPIO_INT_CONNECTED_MASK, (void __iomem *) GPIO_INTEN);
+-	dev_info(dev, "use %sncoherent DMA ops\n",
++	dev_info(dev, "use %scoherent DMA ops\n",
+ 		 dev->dma_coherent ? "" : "non");
  }
- 
-+static int hsdk_tweak_node_coherency(const char *path, bool coherent)
-+{
-+	void *fdt = initial_boot_params;
-+	const void *prop;
-+	int node, ret;
-+	bool dt_coh_set;
-+
-+	node = fdt_path_offset(fdt, path);
-+	if (node < 0)
-+		goto tweak_fail;
-+
-+	prop = fdt_getprop(fdt, node, "dma-coherent", &ret);
-+	if (!prop && ret != -FDT_ERR_NOTFOUND)
-+		goto tweak_fail;
-+
-+	dt_coh_set = ret != -FDT_ERR_NOTFOUND;
-+	ret = 0;
-+
-+	/* need to remove "dma-coherent" property */
-+	if (dt_coh_set && !coherent)
-+		ret = fdt_delprop(fdt, node, "dma-coherent");
-+
-+	/* need to set "dma-coherent" property */
-+	if (!dt_coh_set && coherent)
-+		ret = fdt_setprop(fdt, node, "dma-coherent", NULL, 0);
-+
-+	if (ret < 0)
-+		goto tweak_fail;
-+
-+	return 0;
-+
-+tweak_fail:
-+	pr_err("failed to tweak %s to %scoherent\n", path, coherent ? "" : "non");
-+	return -EFAULT;
-+}
-+
- enum hsdk_axi_masters {
- 	M_HS_CORE = 0,
- 	M_HS_RTT,
-@@ -162,6 +202,39 @@ enum hsdk_axi_masters {
- #define CREG_PAE		((void __iomem *)(CREG_BASE + 0x180))
- #define CREG_PAE_UPDT		((void __iomem *)(CREG_BASE + 0x194))
- 
-+static void __init hsdk_init_memory_bridge_axi_dmac(void)
-+{
-+	bool coherent = !!arc_hsdk_axi_dmac_coherent;
-+	u32 axi_m_slv1, axi_m_oft1;
-+
-+	/*
-+	 * Don't tweak memory bridge configuration we we failed to tweak DTB
-+	 * as we will end up in a inconsistent state.
-+	 */
-+	if (hsdk_tweak_node_coherency("/soc/dmac@80000", coherent))
-+		return;
-+
-+	if (coherent) {
-+		axi_m_slv1 = 0x77999999;
-+		axi_m_oft1 = 0x76DCBA98;
-+	} else {
-+		axi_m_slv1 = 0x77777777;
-+		axi_m_oft1 = 0x76543210;
-+	}
-+
-+	writel(0x77777777, CREG_AXI_M_SLV0(M_DMAC_0));
-+	writel(0xFEDCBA98, CREG_AXI_M_OFT0(M_DMAC_0));
-+	writel(axi_m_slv1, CREG_AXI_M_SLV1(M_DMAC_0));
-+	writel(axi_m_oft1, CREG_AXI_M_OFT1(M_DMAC_0));
-+	writel(UPDATE_VAL, CREG_AXI_M_UPDT(M_DMAC_0));
-+
-+	writel(0x77777777, CREG_AXI_M_SLV0(M_DMAC_1));
-+	writel(0xFEDCBA98, CREG_AXI_M_OFT0(M_DMAC_1));
-+	writel(axi_m_slv1, CREG_AXI_M_SLV1(M_DMAC_1));
-+	writel(axi_m_oft1, CREG_AXI_M_OFT1(M_DMAC_1));
-+	writel(UPDATE_VAL, CREG_AXI_M_UPDT(M_DMAC_1));
-+}
-+
- static void __init hsdk_init_memory_bridge(void)
- {
- 	u32 reg;
-@@ -227,24 +300,14 @@ static void __init hsdk_init_memory_bridge(void)
- 	writel(0x76543210, CREG_AXI_M_OFT1(M_GPU));
- 	writel(UPDATE_VAL, CREG_AXI_M_UPDT(M_GPU));
- 
--	writel(0x77777777, CREG_AXI_M_SLV0(M_DMAC_0));
--	writel(0x77777777, CREG_AXI_M_SLV1(M_DMAC_0));
--	writel(0xFEDCBA98, CREG_AXI_M_OFT0(M_DMAC_0));
--	writel(0x76543210, CREG_AXI_M_OFT1(M_DMAC_0));
--	writel(UPDATE_VAL, CREG_AXI_M_UPDT(M_DMAC_0));
--
--	writel(0x77777777, CREG_AXI_M_SLV0(M_DMAC_1));
--	writel(0x77777777, CREG_AXI_M_SLV1(M_DMAC_1));
--	writel(0xFEDCBA98, CREG_AXI_M_OFT0(M_DMAC_1));
--	writel(0x76543210, CREG_AXI_M_OFT1(M_DMAC_1));
--	writel(UPDATE_VAL, CREG_AXI_M_UPDT(M_DMAC_1));
--
- 	writel(0x00000000, CREG_AXI_M_SLV0(M_DVFS));
- 	writel(0x60000000, CREG_AXI_M_SLV1(M_DVFS));
- 	writel(0x00000000, CREG_AXI_M_OFT0(M_DVFS));
- 	writel(0x00000000, CREG_AXI_M_OFT1(M_DVFS));
- 	writel(UPDATE_VAL, CREG_AXI_M_UPDT(M_DVFS));
- 
-+	hsdk_init_memory_bridge_axi_dmac();
-+
- 	/*
- 	 * PAE remapping for DMA clients does not work due to an RTL bug, so
- 	 * CREG_PAE register must be programmed to all zeroes, otherwise it
 -- 
 2.21.0
 
