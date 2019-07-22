@@ -2,76 +2,69 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 714496F703
-	for <lists+linux-snps-arc@lfdr.de>; Mon, 22 Jul 2019 03:44:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6A99B6FC37
+	for <lists+linux-snps-arc@lfdr.de>; Mon, 22 Jul 2019 11:31:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KaWNv809pjfsCdAa7l8WSg4mrJRWDFt/cAd15MM2hNI=; b=c7RaXFW39PiZNj
-	R6a9nVCuoUjd+hNl89vhSCPxjzDuIQ0Di8Br3zlw3HIpq6jSI6hNogJUykxztqvxDASWBDR9uj86F
-	Kz/Ba3sLRx+6Fotm5GFJkslvR8K19QDA4Ds0Y/upLJbz6WbBqLD8TH7jMLUGuPIx11mNAnfNU/5US
-	mj5rBWxfEN2OJo03qd8iN6lg0P+ojzmsmuADAe4wNwrd0d5G06npmyrrIHr3EsQm0bQ89adxrYPOO
-	fG/aZMnlj0nY5kC0WVGlrMU9GFVwvt+IEs0vNjFsxQxa5S5I/zH9hvXxndadacLu8tyQb0iQQW6I2
-	j3Surez6CfnQ2XcgF+RA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Y73OfrBIMDuq/MUFDbcm42etL/ebbwa9iptkD/YE3S8=; b=AHD5lvdohU42j2
+	jUeGLO2lD6D9RIhOQGR+BtzoqpQwwcyFHe+kTfOMDpuRvaHPRKJYEmZP8ki5oxFdCfTQTSDwSmNCY
+	sdL2cI8vwZMPi4NlVyF8O+7WkBVIMOEDEofUGEYswHK90RL0BimVwlsvsGOe4SP/4IgREAwtkirte
+	gK3ZjD7LPM0ZgiqFu+NLUB8DcKRmxvObkrUlzcCUpblaI+qYf5mDgJzxYnsHedzTk0Jb4Pxp6AoBo
+	NC9dTVgAV3ylqj9UGNAI6Da9EZRiqq2dm63NXQomqTI5IMAIynt6Nb2+JfaI15a8T6MIbV4j8KN3M
+	C7lHkr6GFvmu4gMEB7LQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hpNNF-0002tE-Nb; Mon, 22 Jul 2019 01:44:21 +0000
-Received: from conssluserg-02.nifty.com ([210.131.2.81])
+	id 1hpUfi-0005k1-0S; Mon, 22 Jul 2019 09:31:54 +0000
+Received: from smtprelay-out1.synopsys.com ([198.182.61.142])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hpNNB-0002jD-Ma
- for linux-snps-arc@lists.infradead.org; Mon, 22 Jul 2019 01:44:19 +0000
-Received: from mail-ua1-f51.google.com (mail-ua1-f51.google.com
- [209.85.222.51]) (authenticated)
- by conssluserg-02.nifty.com with ESMTP id x6M1hsHw001309
- for <linux-snps-arc@lists.infradead.org>; Mon, 22 Jul 2019 10:43:55 +0900
-DKIM-Filter: OpenDKIM Filter v2.10.3 conssluserg-02.nifty.com x6M1hsHw001309
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nifty.com;
- s=dec2015msa; t=1563759835;
- bh=ihFGrpdJRXWV6Ks07QiM5tzjFEOd14pN1GFuo1AwMeA=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=SqmjZTaVLD6rsnDiAQ1IP/oyHiAcIZn8VgU+DgcNdapced6WSvl2SVvE+pOGUvqCr
- LyRi9ATny/DU4pl9LGnWHsj4eNk6yrxUEDDlL5zSl46Nc8o2PBWDID4qG9JewHaXp0
- g+YvmzT/BEjLJTdo34lrhuIPvl3QX2BnmtbrTDhmDYxjoeQ7GKa9AGzDo0dV9TI0dn
- yMxQB9ZS35pOLZJEv1QQ6+2a87dHaDGIv9dh86aL3b3VTMic/zdGg89/Za7E+HZBqd
- XgiRXveu7d7i/pgLT6vVpcziRRMdjJpBzP7a+qyheXCbV/9H8HKspERrEkkHwOWCFJ
- oau4fV+ZLWEbg==
-X-Nifty-SrcIP: [209.85.222.51]
-Received: by mail-ua1-f51.google.com with SMTP id o19so14685113uap.13
- for <linux-snps-arc@lists.infradead.org>; Sun, 21 Jul 2019 18:43:55 -0700 (PDT)
-X-Gm-Message-State: APjAAAWnoghEtQ16wayl4rexsvK5GbZKAZlIejFzA92+vsRhQOGgQfTx
- dp3Ft3xyLfikFt+U1IIl8dAh1SG70sUB4jayz5g=
-X-Google-Smtp-Source: APXvYqw97BlrN/r474Y8Bp8ad6pOTlGoj971hOvseuFvkJ6G0GogbMI+BFKp5sSEqUp98c+iLtkPKDP0uxvi9BtZ4oE=
-X-Received: by 2002:ab0:234e:: with SMTP id h14mr12274522uao.25.1563759834041; 
- Sun, 21 Jul 2019 18:43:54 -0700 (PDT)
+ id 1hpUfe-0005j4-Ri
+ for linux-snps-arc@lists.infradead.org; Mon, 22 Jul 2019 09:31:52 +0000
+Received: from mailhost.synopsys.com (mdc-mailhost2.synopsys.com
+ [10.225.0.210])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
+ (No client certificate requested)
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id E3E31C1215;
+ Mon, 22 Jul 2019 09:31:48 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
+ t=1563787909; bh=6crldOoHtXOlHRVDTRlZeONbt5sG9NEHGdcIS27ReBo=;
+ h=From:To:Cc:Subject:Date:From;
+ b=cbhYIp6jMNP1TrSdJkRC7hkP4aga+CCPg0vA7nIzxIim6Ur+/f54J0sPT1Xj1S7Oi
+ Xr0qF9LF9pf9DzNH2DFUIQ27gH8jnH1Id4acVSAI/TL+AB+4VtiLIUaTfyn0KoVATv
+ K6NR5DPMytA6H/kF1ws0BZlk5vxTl29PlLJcFnHAeEVpwbxqC3DTCeJeesrDVlx456
+ g9tiusMc4HNt1FkP9mDT8weCO7LTUztcJIsBxzmcilecGj5ws54cLwI4s0CfaTV9q9
+ ufb3ZV1/cBe3lPOaE6NnQMWg/KI/46Z8K+YWrjAK+vbsU+wIHsqie7iu3U4cZ7zB5u
+ 9SJT1ay2snP1Q==
+Received: from paltsev-e7480.internal.synopsys.com (unknown [10.121.8.79])
+ by mailhost.synopsys.com (Postfix) with ESMTP id 3ED7BA0057;
+ Mon, 22 Jul 2019 09:31:46 +0000 (UTC)
+From: Eugeniy Paltsev <Eugeniy.Paltsev@synopsys.com>
+To: linux-snps-arc@lists.infradead.org,
+ Vineet Gupta <Vineet.Gupta1@synopsys.com>
+Subject: [PATCH v2] ARC: [plat-hsdk]: allow to switch between AXI DMAC port
+ configurations
+Date: Mon, 22 Jul 2019 12:31:45 +0300
+Message-Id: <20190722093145.4626-1-Eugeniy.Paltsev@synopsys.com>
+X-Mailer: git-send-email 2.21.0
 MIME-Version: 1.0
-References: <20190719192824.24639-1-Eugeniy.Paltsev@synopsys.com>
- <CAK7LNARJjb3fgdo_dxPSv-vs5x573OHKf-UAUJGMc89Jfmk+QA@mail.gmail.com>
- <b2f24f32fead8bc9f282d2beb77d58ed3b98850c.camel@synopsys.com>
-In-Reply-To: <b2f24f32fead8bc9f282d2beb77d58ed3b98850c.camel@synopsys.com>
-From: Masahiro Yamada <yamada.masahiro@socionext.com>
-Date: Mon, 22 Jul 2019 10:43:18 +0900
-X-Gmail-Original-Message-ID: <CAK7LNAT2p8LjMJMAM9WMZymUXPVyDXDtXL094WHFhHamhShzEg@mail.gmail.com>
-Message-ID: <CAK7LNAT2p8LjMJMAM9WMZymUXPVyDXDtXL094WHFhHamhShzEg@mail.gmail.com>
-Subject: Re: [TRIVIAL PATCH] of: per-file dtc preprocessor flags
-To: Eugeniy Paltsev <Eugeniy.Paltsev@synopsys.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190721_184418_192874_DF98A245 
-X-CRM114-Status: GOOD (  16.59  )
-X-Spam-Score: 1.0 (+)
+X-CRM114-CacheID: sfid-20190722_023150_912357_53FA5182 
+X-CRM114-Status: GOOD (  13.50  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [210.131.2.81 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [210.131.2.81 listed in wl.mailspike.net]
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
 X-BeenThere: linux-snps-arc@lists.infradead.org
@@ -85,84 +78,181 @@ List-Post: <mailto:linux-snps-arc@lists.infradead.org>
 List-Help: <mailto:linux-snps-arc-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-snps-arc>, 
  <mailto:linux-snps-arc-request@lists.infradead.org?subject=subscribe>
-Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "michal.lkml@markovi.net" <michal.lkml@markovi.net>,
- "linux-kbuild@vger.kernel.org" <linux-kbuild@vger.kernel.org>,
- "Vineet.Gupta1@synopsys.com" <Vineet.Gupta1@synopsys.com>,
- Alexey Brodkin <Alexey.Brodkin@synopsys.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-snps-arc@lists.infradead.org" <linux-snps-arc@lists.infradead.org>
+Cc: Alexey Brodkin <Alexey.Brodkin@synopsys.com>,
+ Eugeniy Paltsev <Eugeniy.Paltsev@synopsys.com>, linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-snps-arc" <linux-snps-arc-bounces@lists.infradead.org>
 Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org
 
-On Sun, Jul 21, 2019 at 12:38 AM Eugeniy Paltsev
-<Eugeniy.Paltsev@synopsys.com> wrote:
->
-> Hi Masahiro,
->
-> On Sat, 2019-07-20 at 11:40 +0900, Masahiro Yamada wrote:
-> > On Sat, Jul 20, 2019 at 4:28 AM Eugeniy Paltsev
-> > <Eugeniy.Paltsev@synopsys.com> wrote:
-> > > As of today we are able to pass custom flags to dtc compiler but not
-> > > to dtc preprocessor.
-> > > This ability is required for including some board-specific header files.
-> > > It allows us to pass defined constants to dts without their duplication
-> > > in several places.
-> >
-> > How to use this option in a useful way?
-> >
-> > I see a bunch of defined constants under include/dt-bindings/.
-> >
-> > If you are talking about code duplication across architectures,
-> > you can include arm dtsi from arm64 dts, or vice versa.
-> > This was made possible by the symbolic links
-> > in scripts/dtc/include-prefixes/.
-> >
-> > Could you please elaborate your issues if you cannot solve them
-> > by the current strategy?
-> >
->
-> Here is the example:
->
-> We have several FPGA-based boards (haps_hs, haps_hs_idu,...) which are involved
-> in SW and HW automated verification. For some tests we randomize physical memory
-> location so we patch 'CONFIG_LINUX_RAM_BASE' kconfig variable and 'memory' node in
-> device tree. We want to keep number of patches as less as possible (to avoid
-> conflicts on their applying) so we want to avoid duplication and pass
-> 'CONFIG_LINUX_RAM_BASE' directly to dts by including it from
-> 'include/generated/autoconf.h':
->
-> ----------------------------->8------------------------------------
-> memory {
->         device_type = "memory";
-> -               /* CONFIG_LINUX_RAM_BASE needs to match low mem start */
-> -               reg = <0x80000000 0x20000000>;  /* 512 */
-> +               reg = <CONFIG_LINUX_RAM_BASE 0x20000000>;      /* 512 */
+We want to use DW AXI DMAC on HSDK board in our automated verification
+to test cache & dma kernel code changes. This is perfect candidate
+as we don't depend on any external peripherals like MMC card / USB
+storage / etc.
+To increase test coverage we want to test both options:
+ * DW AXI DMAC is connected through IOC port & dma direct ops used
+ * DW AXI DMAC is connected to DDR port & dma noncoherent ops used
 
+Introduce 'arc_hsdk_axi_dmac_coherent' global variable which can be
+modified by debugger (same way as we patch 'ioc_enable') to switch
+between these options without recompiling the kernel.
+Depend on this value we tweak memory bridge configuration and
+"dma-coherent" DTS property of DW AXI DMAC.
 
+Signed-off-by: Eugeniy Paltsev <Eugeniy.Paltsev@synopsys.com>
+---
+Changes v1->v2:
+ * Force putting arc_hsdk_axi_dmac_coherent to data section
+ * Add missed __init to hsdk_tweak_node_coherency
 
-So, we need the kernel configuration to build DT?
+ arch/arc/boot/dts/Makefile    |  3 ++
+ arch/arc/plat-hsdk/platform.c | 87 ++++++++++++++++++++++++++++++-----
+ 2 files changed, 78 insertions(+), 12 deletions(-)
 
-I am scared with this idea.
-
-I believe DT files should be able to be compiled
-irrespective of the .config because they are
-re-used for other projects.
-
-devicetree-rebasing is a subset of the kernel tree
-that collects DT.
-
-If you upstream that patch, this will be broken, at least.
-
-git://git.kernel.org/pub/scm/linux/kernel/git/devicetree/devicetree-rebasing.git
-
-
-
+diff --git a/arch/arc/boot/dts/Makefile b/arch/arc/boot/dts/Makefile
+index a83c4f5e928b..8483a86c743d 100644
+--- a/arch/arc/boot/dts/Makefile
++++ b/arch/arc/boot/dts/Makefile
+@@ -12,3 +12,6 @@ dtb-y := $(builtindtb-y).dtb
+ # for CONFIG_OF_ALL_DTBS test
+ dtstree	:= $(srctree)/$(src)
+ dtb-	:= $(patsubst $(dtstree)/%.dts,%.dtb, $(wildcard $(dtstree)/*.dts))
++
++# board-specific dtc flags
++DTC_FLAGS_hsdk += --pad 20
+diff --git a/arch/arc/plat-hsdk/platform.c b/arch/arc/plat-hsdk/platform.c
+index 7dd2dd335cf6..0b961a2a10b8 100644
+--- a/arch/arc/plat-hsdk/platform.c
++++ b/arch/arc/plat-hsdk/platform.c
+@@ -6,11 +6,15 @@
+  */
+ 
+ #include <linux/init.h>
++#include <linux/of_fdt.h>
++#include <linux/libfdt.h>
+ #include <linux/smp.h>
+ #include <asm/arcregs.h>
+ #include <asm/io.h>
+ #include <asm/mach_desc.h>
+ 
++int arc_hsdk_axi_dmac_coherent __section(.data) = 0;
++
+ #define ARC_CCM_UNUSED_ADDR	0x60000000
+ 
+ static void __init hsdk_init_per_cpu(unsigned int cpu)
+@@ -97,6 +101,42 @@ static void __init hsdk_enable_gpio_intc_wire(void)
+ 	iowrite32(GPIO_INT_CONNECTED_MASK, (void __iomem *) GPIO_INTEN);
+ }
+ 
++static int __init hsdk_tweak_node_coherency(const char *path, bool coherent)
++{
++	void *fdt = initial_boot_params;
++	const void *prop;
++	int node, ret;
++	bool dt_coh_set;
++
++	node = fdt_path_offset(fdt, path);
++	if (node < 0)
++		goto tweak_fail;
++
++	prop = fdt_getprop(fdt, node, "dma-coherent", &ret);
++	if (!prop && ret != -FDT_ERR_NOTFOUND)
++		goto tweak_fail;
++
++	dt_coh_set = ret != -FDT_ERR_NOTFOUND;
++	ret = 0;
++
++	/* need to remove "dma-coherent" property */
++	if (dt_coh_set && !coherent)
++		ret = fdt_delprop(fdt, node, "dma-coherent");
++
++	/* need to set "dma-coherent" property */
++	if (!dt_coh_set && coherent)
++		ret = fdt_setprop(fdt, node, "dma-coherent", NULL, 0);
++
++	if (ret < 0)
++		goto tweak_fail;
++
++	return 0;
++
++tweak_fail:
++	pr_err("failed to tweak %s to %scoherent\n", path, coherent ? "" : "non");
++	return -EFAULT;
++}
++
+ enum hsdk_axi_masters {
+ 	M_HS_CORE = 0,
+ 	M_HS_RTT,
+@@ -162,6 +202,39 @@ enum hsdk_axi_masters {
+ #define CREG_PAE		((void __iomem *)(CREG_BASE + 0x180))
+ #define CREG_PAE_UPDT		((void __iomem *)(CREG_BASE + 0x194))
+ 
++static void __init hsdk_init_memory_bridge_axi_dmac(void)
++{
++	bool coherent = !!arc_hsdk_axi_dmac_coherent;
++	u32 axi_m_slv1, axi_m_oft1;
++
++	/*
++	 * Don't tweak memory bridge configuration if we failed to tweak DTB
++	 * as we will end up in a inconsistent state.
++	 */
++	if (hsdk_tweak_node_coherency("/soc/dmac@80000", coherent))
++		return;
++
++	if (coherent) {
++		axi_m_slv1 = 0x77999999;
++		axi_m_oft1 = 0x76DCBA98;
++	} else {
++		axi_m_slv1 = 0x77777777;
++		axi_m_oft1 = 0x76543210;
++	}
++
++	writel(0x77777777, CREG_AXI_M_SLV0(M_DMAC_0));
++	writel(0xFEDCBA98, CREG_AXI_M_OFT0(M_DMAC_0));
++	writel(axi_m_slv1, CREG_AXI_M_SLV1(M_DMAC_0));
++	writel(axi_m_oft1, CREG_AXI_M_OFT1(M_DMAC_0));
++	writel(UPDATE_VAL, CREG_AXI_M_UPDT(M_DMAC_0));
++
++	writel(0x77777777, CREG_AXI_M_SLV0(M_DMAC_1));
++	writel(0xFEDCBA98, CREG_AXI_M_OFT0(M_DMAC_1));
++	writel(axi_m_slv1, CREG_AXI_M_SLV1(M_DMAC_1));
++	writel(axi_m_oft1, CREG_AXI_M_OFT1(M_DMAC_1));
++	writel(UPDATE_VAL, CREG_AXI_M_UPDT(M_DMAC_1));
++}
++
+ static void __init hsdk_init_memory_bridge(void)
+ {
+ 	u32 reg;
+@@ -227,24 +300,14 @@ static void __init hsdk_init_memory_bridge(void)
+ 	writel(0x76543210, CREG_AXI_M_OFT1(M_GPU));
+ 	writel(UPDATE_VAL, CREG_AXI_M_UPDT(M_GPU));
+ 
+-	writel(0x77777777, CREG_AXI_M_SLV0(M_DMAC_0));
+-	writel(0x77777777, CREG_AXI_M_SLV1(M_DMAC_0));
+-	writel(0xFEDCBA98, CREG_AXI_M_OFT0(M_DMAC_0));
+-	writel(0x76543210, CREG_AXI_M_OFT1(M_DMAC_0));
+-	writel(UPDATE_VAL, CREG_AXI_M_UPDT(M_DMAC_0));
+-
+-	writel(0x77777777, CREG_AXI_M_SLV0(M_DMAC_1));
+-	writel(0x77777777, CREG_AXI_M_SLV1(M_DMAC_1));
+-	writel(0xFEDCBA98, CREG_AXI_M_OFT0(M_DMAC_1));
+-	writel(0x76543210, CREG_AXI_M_OFT1(M_DMAC_1));
+-	writel(UPDATE_VAL, CREG_AXI_M_UPDT(M_DMAC_1));
+-
+ 	writel(0x00000000, CREG_AXI_M_SLV0(M_DVFS));
+ 	writel(0x60000000, CREG_AXI_M_SLV1(M_DVFS));
+ 	writel(0x00000000, CREG_AXI_M_OFT0(M_DVFS));
+ 	writel(0x00000000, CREG_AXI_M_OFT1(M_DVFS));
+ 	writel(UPDATE_VAL, CREG_AXI_M_UPDT(M_DVFS));
+ 
++	hsdk_init_memory_bridge_axi_dmac();
++
+ 	/*
+ 	 * PAE remapping for DMA clients does not work due to an RTL bug, so
+ 	 * CREG_PAE register must be programmed to all zeroes, otherwise it
 -- 
-Best Regards
-Masahiro Yamada
+2.21.0
+
 
 _______________________________________________
 linux-snps-arc mailing list
