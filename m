@@ -2,122 +2,49 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BD22D82B42
-	for <lists+linux-snps-arc@lfdr.de>; Tue,  6 Aug 2019 07:49:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DE0CF87318
+	for <lists+linux-snps-arc@lfdr.de>; Fri,  9 Aug 2019 09:34:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=j0tM2KDVHiuFzorvQyBTBCKqb4KqAPr39Qam6YnbPU0=; b=L/Hj+59a2fNpfd
-	oUkx/FgDMeDqQqcOB7DdYd8kdczmOFKinAmTAFPa7xf3J19ANi1/F1/nPhwFo5PiOLV1h6dojF+sW
-	zfoDxx+S1TFaUb72ELSpTyNLoQqI/hTuaceRi1Hqc2zXR3xoizMW+aVJU6lzjklwd7xDSV+QcR1fp
-	u/PMVTLxDxS2HwfsSj0I9DEFY74CCWo79RQSK5oshNCk4/gXL59uYqW/rwuNMmFYb2YVxwBGX9krw
-	w9qX7e9k8sPmYhZJtNpMR1e69q18Zj4xi+Jd0Rpn+M6WKgkkSqVO56nTQPn8vJUBYZEfJj7o+tUs1
-	C+jsO2wnk4t2CWGY4B6A==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=bT3IIOVl1Va4t5rOd7oacQw5NUrWW1+fo3yBKcRjx/Y=; b=Z0b
+	3yNv6foUpLFaoeOcH2dGqRF/1Sa5X0ppwxJf9LnZrwjT9LJ5BwXqV4Q7vgZRNROELdsWhqSrQl62Y
+	ebCOnZ9zMfVBzOyDQk7YHAOpnoR46MhiyTzsPwqjiHc4tTIe/5kNNIB43UkkGWN9aOjIANScxW54Y
+	qcFLNPsvNlCOycjCf1MU9k/MILbZZlvBWj91JgQtJAu1u7x33qiu7hqWHDgzkfxFz0JRxs4uUxLLE
+	1XT6aC3UysJaITGQE/nQClWHbSjPIiPOnDX89tywpBSIAdIRenTo6G+0an7Z3nPWgmv+P9FfjZjFS
+	rqmLD45MqxUO3F3yY3ZS5AdQ1VjgPOQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1husLr-0006oV-Jc; Tue, 06 Aug 2019 05:49:39 +0000
-Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1husLo-0006ns-NY
- for linux-snps-arc@lists.infradead.org; Tue, 06 Aug 2019 05:49:37 +0000
-Received: by mail-pg1-x542.google.com with SMTP id n190so151985pgn.0
- for <linux-snps-arc@lists.infradead.org>; Mon, 05 Aug 2019 22:49:35 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:openpgp:autocrypt:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=uvYE7nrJnBQlmcbxz3H63UPfE8YRBopt5KIB26DSah4=;
- b=NdeC0FJH9+Hlx0praiF0UKs2uENSLKhRuLYYPX5PWUvTVIB3Kt9PHiuuJbUB9agSfS
- BE1i+l1rxxWnrkOR6KarFJVJnta5e6gU0nStxUDXtmZmbwLgCH6adUL+JQ8alHYc13Dq
- IdDs0knZ5ETE6HwNep8raP4YAakd+Ux7SSpT65lyVmgsBvOKDxF6PLbc2t4qnG7pFx/k
- mvRWC94RieljBIKN8ejTcNfhdoHO1NTsu+lXwK5QtsLD7hvmC1zjd6Wls+NAg/fl/Nhj
- T6z9FvjfZEg2wj4Jg63I0cmGGZlaQNWJ/LJqVcq+wRlHr4rMSfWk805XiXT9E6dP7ZSh
- 4Pcw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
- :message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=uvYE7nrJnBQlmcbxz3H63UPfE8YRBopt5KIB26DSah4=;
- b=tyGNKNkt5bsPPZEbpnXGW69J07DrlvAMyShgbiXGbiGTVvGxFqyUrBUsNoZcWrI78Y
- tubxIH4xoHSEKj47OaXxMLCIgsa+kUjWAMxra25MS7l5o3PSWx2q7z0v+4+3vtphSiUT
- bld0gE5LJH2fXE7/VH0bVU0SBtpUGZ/Rzk1HBnFFhHniggPDsw4ruokGhdtlxux+SIou
- 27dYdSRJ8bPUMclBrh4QyXA8UGiASHCVffNQq0/JpDo7yN9M4xj8eSoBBPV/ZNFCVaFL
- FZQmPLz9cH4lL/Hr/5OJphajAKzqT6vvP/nwSNFYLx6fOXEGfFBiVG7ghmEYyiJUr86j
- PgNQ==
-X-Gm-Message-State: APjAAAUH4bFadIqHs3j/SPhdY4hSy96EFLXjLj9bbKep/2cA5ra1i68r
- v7bFmwpIqGgsOabMi4XlR4gezYF8thZvig==
-X-Google-Smtp-Source: APXvYqwP9PSzizaUfPFnptDdZml03za3TGNcWXCtkReNEzyNCPM6ATqKcupvDjBhdpOmHah/zcefag==
-X-Received: by 2002:a17:90a:384d:: with SMTP id
- l13mr1425752pjf.86.1565070574630; 
- Mon, 05 Aug 2019 22:49:34 -0700 (PDT)
-Received: from [192.168.1.2] ([171.61.30.136])
- by smtp.gmail.com with ESMTPSA id x14sm106764131pfq.158.2019.08.05.22.49.31
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 05 Aug 2019 22:49:33 -0700 (PDT)
-Subject: Re: [PATCH] ARC: unwind: Mark expected switch fall-throughs
-To: "Gustavo A. R. Silva" <gustavo@embeddedor.com>
-References: <20190805193232.GA12826@embeddedor>
-From: Vineet Gupta <vineetg76@gmail.com>
-Openpgp: preference=signencrypt
-Autocrypt: addr=vgupta@synopsys.com; prefer-encrypt=mutual; keydata=
- mQINBFEffBMBEADIXSn0fEQcM8GPYFZyvBrY8456hGplRnLLFimPi/BBGFA24IR+B/Vh/EFk
- B5LAyKuPEEbR3WSVB1x7TovwEErPWKmhHFbyugdCKDv7qWVj7pOB+vqycTG3i16eixB69row
- lDkZ2RQyy1i/wOtHt8Kr69V9aMOIVIlBNjx5vNOjxfOLux3C0SRl1veA8sdkoSACY3McOqJ8
- zR8q1mZDRHCfz+aNxgmVIVFN2JY29zBNOeCzNL1b6ndjU73whH/1hd9YMx2Sp149T8MBpkuQ
- cFYUPYm8Mn0dQ5PHAide+D3iKCHMupX0ux1Y6g7Ym9jhVtxq3OdUI5I5vsED7NgV9c8++baM
- 7j7ext5v0l8UeulHfj4LglTaJIvwbUrCGgtyS9haKlUHbmey/af1j0sTrGxZs1ky1cTX7yeF
- nSYs12GRiVZkh/Pf3nRLkjV+kH++ZtR1GZLqwamiYZhAHjo1Vzyl50JT9EuX07/XTyq/Bx6E
- dcJWr79ZphJ+mR2HrMdvZo3VSpXEgjROpYlD4GKUApFxW6RrZkvMzuR2bqi48FThXKhFXJBd
- JiTfiO8tpXaHg/yh/V9vNQqdu7KmZIuZ0EdeZHoXe+8lxoNyQPcPSj7LcmE6gONJR8ZqAzyk
- F5voeRIy005ZmJJ3VOH3Gw6Gz49LVy7Kz72yo1IPHZJNpSV5xwARAQABtCpWaW5lZXQgR3Vw
- dGEgKGFsaWFzKSA8dmd1cHRhQHN5bm9wc3lzLmNvbT6JAj4EEwECACgCGwMGCwkIBwMCBhUI
- AgkKCwQWAgMBAh4BAheABQJbBYpwBQkLx0HcAAoJEGnX8d3iisJeChAQAMR2UVbJyydOv3aV
- jmqP47gVFq4Qml1weP5z6czl1I8n37bIhdW0/lV2Zll+yU1YGpMgdDTHiDqnGWi4pJeu4+c5
- xsI/VqkH6WWXpfruhDsbJ3IJQ46//jb79ogjm6VVeGlOOYxx/G/RUUXZ12+CMPQo7Bv+Jb+t
- NJnYXYMND2Dlr2TiRahFeeQo8uFbeEdJGDsSIbkOV0jzrYUAPeBwdN8N0eOB19KUgPqPAC4W
- HCg2LJ/o6/BImN7bhEFDFu7gTT0nqFVZNXlOw4UcGGpM3dq/qu8ZgRE0turY9SsjKsJYKvg4
- djAaOh7H9NJK72JOjUhXY/sMBwW5vnNwFyXCB5t4ZcNxStoxrMtyf35synJVinFy6wCzH3eJ
- XYNfFsv4gjF3l9VYmGEJeI8JG/ljYQVjsQxcrU1lf8lfARuNkleUL8Y3rtxn6eZVtAlJE8q2
- hBgu/RUj79BKnWEPFmxfKsaj8of+5wubTkP0I5tXh0akKZlVwQ3lbDdHxznejcVCwyjXBSny
- d0+qKIXX1eMh0/5sDYM06/B34rQyq9HZVVPRHdvsfwCU0s3G+5Fai02mK68okr8TECOzqZtG
- cuQmkAeegdY70Bpzfbwxo45WWQq8dSRURA7KDeY5LutMphQPIP2syqgIaiEatHgwetyVCOt6
- tf3ClCidHNaGky9KcNSQ
-Message-ID: <8516c7c5-bd70-38a9-0583-225689e9e1aa@gmail.com>
-Date: Tue, 6 Aug 2019 11:19:30 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
-MIME-Version: 1.0
-In-Reply-To: <20190805193232.GA12826@embeddedor>
-Content-Language: en-US
+	id 1hvzPx-00064q-7f; Fri, 09 Aug 2019 07:34:29 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hvzPL-0005ZT-6Q; Fri, 09 Aug 2019 07:33:53 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 4D0D0344;
+ Fri,  9 Aug 2019 00:33:48 -0700 (PDT)
+Received: from p8cg001049571a15.arm.com (unknown [10.163.1.243])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 031723F706;
+ Fri,  9 Aug 2019 00:33:31 -0700 (PDT)
+From: Anshuman Khandual <anshuman.khandual@arm.com>
+To: linux-mm@kvack.org
+Subject: [RFC V2 0/1] mm/debug: Add tests for architecture exported page table
+ helpers
+Date: Fri,  9 Aug 2019 13:03:17 +0530
+Message-Id: <1565335998-22553-1-git-send-email-anshuman.khandual@arm.com>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190805_224936_797599_87554732 
-X-CRM114-Status: UNSURE (   9.98  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20190809_003351_332610_E04E89E8 
+X-CRM114-Status: GOOD (  13.72  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (vineetg76[at]gmail.com)
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (vineetg76[at]gmail.com)
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-snps-arc@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -129,26 +56,138 @@ List-Post: <mailto:linux-snps-arc@lists.infradead.org>
 List-Help: <mailto:linux-snps-arc-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-snps-arc>, 
  <mailto:linux-snps-arc-request@lists.infradead.org?subject=subscribe>
-Cc: linux-snps-arc@lists.infradead.org, linux-kernel@vger.kernel.org,
- Kees Cook <keescook@chromium.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, linux-ia64@vger.kernel.org,
+ linux-sh@vger.kernel.org, Peter Zijlstra <peterz@infradead.org>,
+ James Hogan <jhogan@kernel.org>,
+ Tetsuo Handa <penguin-kernel@i-love.sakura.ne.jp>,
+ Heiko Carstens <heiko.carstens@de.ibm.com>, Michal Hocko <mhocko@kernel.org>,
+ Dave Hansen <dave.hansen@intel.com>, Paul Mackerras <paulus@samba.org>,
+ sparclinux@vger.kernel.org, Thomas Gleixner <tglx@linutronix.de>,
+ linux-s390@vger.kernel.org, Michael Ellerman <mpe@ellerman.id.au>,
+ x86@kernel.org, Russell King - ARM Linux <linux@armlinux.org.uk>,
+ Matthew Wilcox <willy@infradead.org>, Steven Price <Steven.Price@arm.com>,
+ Jason Gunthorpe <jgg@ziepe.ca>, linux-arm-kernel@lists.infradead.org,
+ linux-snps-arc@lists.infradead.org, Kees Cook <keescook@chromium.org>,
+ Anshuman Khandual <anshuman.khandual@arm.com>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Mark Brown <broonie@kernel.org>, Dan Williams <dan.j.williams@intel.com>,
+ Vlastimil Babka <vbabka@suse.cz>, Sri Krishna chowdary <schowdary@nvidia.com>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-mips@vger.kernel.org,
+ Ralf Baechle <ralf@linux-mips.org>, linux-kernel@vger.kernel.org,
+ Paul Burton <paul.burton@mips.com>, Mike Rapoport <rppt@linux.vnet.ibm.com>,
+ Vineet Gupta <vgupta@synopsys.com>,
+ Martin Schwidefsky <schwidefsky@de.ibm.com>,
+ Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
+ "David S. Miller" <davem@davemloft.net>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-snps-arc" <linux-snps-arc-bounces@lists.infradead.org>
 Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org
 
-On 8/6/19 1:02 AM, Gustavo A. R. Silva wrote:
-> Mark switch cases where we are expecting to fall through.
-> 
-> This patch fixes the following warnings (Building: haps_hs_defconfig arc):
-> 
-> arch/arc/kernel/unwind.c:827:20: warning: this statement may fall through [-Wimplicit-fallthrough=]
-> arch/arc/kernel/unwind.c:836:20: warning: this statement may fall through [-Wimplicit-fallthrough=]
-> 
-> Signed-off-by: Gustavo A. R. Silva <gustavo@embeddedor.com>
+This series adds a test validation for architecture exported page table
+helpers. Patch in the series adds basic transformation tests at various
+levels of the page table.
 
-Thx for the patch, applied to arc for-curr.
+This test was originally suggested by Catalin during arm64 THP migration
+RFC discussion earlier. Going forward it can include more specific tests
+with respect to various generic MM functions like THP, HugeTLB etc and
+platform specific tests.
 
--Vineet
+https://lore.kernel.org/linux-mm/20190628102003.GA56463@arrakis.emea.arm.com/
+
+Questions:
+
+Should alloc_gigantic_page() be made available as an interface for general
+use in the kernel. The test module here uses very similar implementation from
+HugeTLB to allocate a PUD aligned memory block. Similar for mm_alloc() which
+needs to be exported through a header.
+
+Testing:
+
+Build and boot tested on arm64 and x86 platforms. While arm64 clears all
+these tests, following errors were reported on x86.
+
+1. WARN_ON(pud_bad(pud)) in pud_populate_tests()
+2. WARN_ON(p4d_bad(p4d)) in p4d_populate_tests()
+
+I would really appreciate if folks can help validate this test on other
+platforms and report back problems if any. Suggestions, comments and
+inputs welcome. Thank you.
+
+Changes in V2:
+
+- Moved test module and it's config from lib/ to mm/
+- Renamed config TEST_ARCH_PGTABLE as DEBUG_ARCH_PGTABLE_TEST
+- Renamed file from test_arch_pgtable.c to arch_pgtable_test.c
+- Added relevant MODULE_DESCRIPTION() and MODULE_AUTHOR() details
+- Dropped loadable module config option
+- Basic tests now use memory blocks with required size and alignment
+- PUD aligned memory block gets allocated with alloc_contig_range()
+- If PUD aligned memory could not be allocated it falls back on PMD aligned
+  memory block from page allocator and pud_* tests are skipped
+- Clear and populate tests now operate on real in memory page table entries
+- Dummy mm_struct gets allocated with mm_alloc()
+- Dummy page table entries get allocated with [pud|pmd|pte]_alloc_[map]()
+- Simplified [p4d|pgd]_basic_tests(), now has random values in the entries
+
+RFC V1:
+
+https://lore.kernel.org/linux-mm/1564037723-26676-1-git-send-email-anshuman.khandual@arm.com/
+
+Cc: Andrew Morton <akpm@linux-foundation.org>
+Cc: Vlastimil Babka <vbabka@suse.cz>
+Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+Cc: Thomas Gleixner <tglx@linutronix.de>
+Cc: Mike Rapoport <rppt@linux.vnet.ibm.com>
+Cc: Jason Gunthorpe <jgg@ziepe.ca>
+Cc: Dan Williams <dan.j.williams@intel.com>
+Cc: Peter Zijlstra <peterz@infradead.org>
+Cc: Michal Hocko <mhocko@kernel.org>
+Cc: Mark Rutland <mark.rutland@arm.com>
+Cc: Mark Brown <broonie@kernel.org>
+Cc: Steven Price <Steven.Price@arm.com>
+Cc: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Cc: Masahiro Yamada <yamada.masahiro@socionext.com>
+Cc: Kees Cook <keescook@chromium.org>
+Cc: Tetsuo Handa <penguin-kernel@i-love.sakura.ne.jp>
+Cc: Matthew Wilcox <willy@infradead.org>
+Cc: Sri Krishna chowdary <schowdary@nvidia.com>
+Cc: Dave Hansen <dave.hansen@intel.com>
+Cc: Russell King - ARM Linux <linux@armlinux.org.uk>
+Cc: Michael Ellerman <mpe@ellerman.id.au>
+Cc: Paul Mackerras <paulus@samba.org>
+Cc: Martin Schwidefsky <schwidefsky@de.ibm.com>
+Cc: Heiko Carstens <heiko.carstens@de.ibm.com>
+Cc: "David S. Miller" <davem@davemloft.net>
+Cc: Vineet Gupta <vgupta@synopsys.com>
+Cc: James Hogan <jhogan@kernel.org>
+Cc: Paul Burton <paul.burton@mips.com>
+Cc: Ralf Baechle <ralf@linux-mips.org>
+Cc: linux-snps-arc@lists.infradead.org
+Cc: linux-mips@vger.kernel.org
+Cc: linux-arm-kernel@lists.infradead.org
+Cc: linux-ia64@vger.kernel.org
+Cc: linuxppc-dev@lists.ozlabs.org
+Cc: linux-s390@vger.kernel.org
+Cc: linux-sh@vger.kernel.org
+Cc: sparclinux@vger.kernel.org
+Cc: x86@kernel.org
+Cc: linux-kernel@vger.kernel.org
+
+Anshuman Khandual (1):
+  mm/pgtable/debug: Add test validating architecture page table helpers
+
+ mm/Kconfig.debug       |  14 ++
+ mm/Makefile            |   1 +
+ mm/arch_pgtable_test.c | 400 +++++++++++++++++++++++++++++++++++++++++
+ 3 files changed, 415 insertions(+)
+ create mode 100644 mm/arch_pgtable_test.c
+
+-- 
+2.20.1
+
 
 _______________________________________________
 linux-snps-arc mailing list
