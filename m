@@ -2,87 +2,85 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EF6018A9BF
-	for <lists+linux-snps-arc@lfdr.de>; Mon, 12 Aug 2019 23:51:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3A391909F1
+	for <lists+linux-snps-arc@lfdr.de>; Fri, 16 Aug 2019 23:04:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:References:Mime-Version
-	:Message-Id:In-Reply-To:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BNnXGo/JpmCt5TNe4gdPBb2Kn5zOuLCuHzEQwzVwjS0=; b=X+/inR4LLbZcoo
-	+NC2Zd25+a6Il1bv6gFzSNv8+LjDqeifS2K7dUbclFZgs4/eBshoxc5b2FFMFuzkTIZ8geI/BdMoA
-	UVaQTi53+6V9nGJFqjG3gyR/P1PH8mL3C97zN3PYi+XCjg7PvTRatYHmKjlLU1IbVtG4Guy9I1pMD
-	JXoTOHXcquPpg7blX1YQeth2zcwjcH67q5Y5l3+cDfDAes7Q1PWBDolr020jipJ/C/jJhh3qGYAU2
-	IGo2AxCL4+7Zfc+icRquOLeU/oXa3VKtE4+Biaec8JVvzPvovYVYsAgccg5Na8/iePKZwmPm1ilRa
-	jgQ3hNL0TOBCnUHfv86A==;
+	List-Owner; bh=t4YQKrjMHH+Ng0wpaFexKkFP/QGdvZE6Whk8a+7yaQQ=; b=kznV3kFh4hBJPD
+	MxBznf4pIUKjf7bOIVtPlEX/6ShnPxo32O5Wjw7ZGSSnt7K1jDDwUpdVb0+YSHZoDI/fIpHAQ3+dG
+	9fFOSEN3X3uGc0FaWcAC3FQPtljfpQp3GxZf/X87Kgw92B+1I5iwwW4f213R3cyW4xVHMp9Q/cwi4
+	eznrklR/X/4edquNgsyoxf6Ap0O3G7imQ4hCKstxYRSXKtduTl3MIXpNEYMJmpDaHQXpk93JDEsAf
+	6RaqJ9YX+fnjeWrlUvC7FKY0awr4ZxpDE9agpu+2JxEsoPAxz1zSP4J/Yc/M7tTvvbxDtU5yC0oH9
+	EQ7KzTwfQhI6Y0stKBng==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxIE4-00044u-BS; Mon, 12 Aug 2019 21:51:36 +0000
-Received: from mail-qt1-x849.google.com ([2607:f8b0:4864:20::849])
+	id 1hyjOm-0004LZ-R9; Fri, 16 Aug 2019 21:04:36 +0000
+Received: from mail-oi1-f196.google.com ([209.85.167.196])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hxIE1-00043j-2k
- for linux-snps-arc@lists.infradead.org; Mon, 12 Aug 2019 21:51:34 +0000
-Received: by mail-qt1-x849.google.com with SMTP id g33so5536424qtc.14
- for <linux-snps-arc@lists.infradead.org>; Mon, 12 Aug 2019 14:51:32 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=date:in-reply-to:message-id:mime-version:references:subject:from:to
- :cc; bh=0kDIUkQq74jS4s3L5upJ2sLFeJ4SQuXmh/iJl/tNzO8=;
- b=Vd9nPvrNsnO4tVGqvUzBIbfckrBlSRoUQ71ZP+FzvSNKEEhOuE681rboi5PXi4jYKq
- OY9v/yyXkJSEFM/SFETSH27C/UkgCU3JxUKwGMAyYh9yeqjjz6rNOCU2ceXdMw1LXfKW
- g4w1vs3y/w7FDQN3p1HEMS9FL8JXrsYqipn6zsbCxWPVF3CVt2wNKj/vkLmdJN+lktgz
- Us3tD4wd8wXVBIiHWmvQvmYWMeiU0jbuHcm0RVbTzPkoi7lBNBkyEiPNtaHoNNV0G/tW
- XFNS1krIhOH1G3jmt6d25VJw3BxZh00zqfGqlcb2OKw6p8kV57c1U99uFLWS4v8K9ikH
- DoSw==
+ id 1hyjOk-0004LE-GI
+ for linux-snps-arc@lists.infradead.org; Fri, 16 Aug 2019 21:04:35 +0000
+Received: by mail-oi1-f196.google.com with SMTP id 16so5788190oiq.6
+ for <linux-snps-arc@lists.infradead.org>; Fri, 16 Aug 2019 14:04:33 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:in-reply-to:message-id:mime-version
- :references:subject:from:to:cc;
- bh=0kDIUkQq74jS4s3L5upJ2sLFeJ4SQuXmh/iJl/tNzO8=;
- b=q3oqo9y+/F9DLuTPKlpFX0GDN/SsEfkuQPd3OolKzuhfCjwLbjfWaBZ9dwnDuzvb/w
- 1ziGH7uqCApw2rsPjyRPh9h/heyoV1w6eyDuNPy27waiHbjTRj1AxEiXS9HyQ2X6oeD3
- PDwCQW7FvPNwkZ8NAnT0JFweRXYGFYZVMCjsveTyvtdDYTldrMVHGFKrWYFHgDvnFY0G
- hJHkVJJP0ZioMzICfEvM9T5KZFXIxX4OMcJcaiTpqfvpUnQGFMnM2UZkY459VkLDKQ3b
- ab4y6akHwapm2SZ+4nlUb5+dcwU9P4E7pWMwd9QPuTobx2GXhVs4LwWKvPAm0/OD3MCs
- arCw==
-X-Gm-Message-State: APjAAAXGaYukAQ8vaD9wKfWN52p4mx3tvCaqNQKhZypMwzrCk4MdgVsM
- sCPmq/okLMk4t1Q1pGyL9xycaop3MERqRWMWmGM=
-X-Google-Smtp-Source: APXvYqzL9xoTa/IdedF1+fdf+8hstnyQibM73dfz4z6AyFXi+Fk60+vxTXikoA1YWpjXQrwItkwSdl3qBiQqejvfMUA=
-X-Received: by 2002:a0c:af33:: with SMTP id i48mr31608806qvc.185.1565646691285; 
- Mon, 12 Aug 2019 14:51:31 -0700 (PDT)
-Date: Mon, 12 Aug 2019 14:50:35 -0700
-In-Reply-To: <20190812215052.71840-1-ndesaulniers@google.com>
-Message-Id: <20190812215052.71840-2-ndesaulniers@google.com>
-Mime-Version: 1.0
-References: <20190812215052.71840-1-ndesaulniers@google.com>
-X-Mailer: git-send-email 2.23.0.rc1.153.gdeed80330f-goog
-Subject: [PATCH 02/16] arc: prefer __section from compiler_attributes.h
-From: Nick Desaulniers <ndesaulniers@google.com>
-To: akpm@linux-foundation.org
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=44wxmAp8F9Ny195d/7nJWW3e/BBIdYzcaKrt+F+uXIM=;
+ b=qBDCZCuN0XwrohA3ovbuldQGvnAPsRZvcsTpUXhEXBm6ET4lj6UwN2mXqi8fo+zN+1
+ AVi+dfZAUsU1BrLuExvpnlboImKCO+tgrYtnOHPQs4QSC87frdN5YazyWgk4oHO400y3
+ DgDYjcYVzADPsIP7I+RUMrZj+VmzzuDEEC9CRbaDn2g+uv87PSkttyIqWYmVjziyWQyN
+ tbTJ0tjRE7ZW8MJZ9by92btHhc/bxP87gXBzblIOVYKUVFCiZQtW7F8HP/vIq2lNAH8D
+ mVCRF8BvEXQMNO9v1FQtpbAKJhLlRBs4j+vz2ddm6QKHazuM+TM3vk2R26Spcn/if1YR
+ tk5g==
+X-Gm-Message-State: APjAAAU5p+Dvfgmz7wLTel/X50ayBuXEmM+wgQ5Sbf//Jl8CsRCRPx6i
+ 0HJ0ZBfnuH3RX6mpkSjtqw==
+X-Google-Smtp-Source: APXvYqyXEoglfVtUS7pUYcu1mXmbwfHhxFvihIP68Ikz8fK+6djvGYzwl+pGZ92/fFjSPdwdaIG46Q==
+X-Received: by 2002:aca:cd84:: with SMTP id d126mr5962173oig.42.1565989473235; 
+ Fri, 16 Aug 2019 14:04:33 -0700 (PDT)
+Received: from localhost (ip-173-126-47-137.ftwttx.spcsdns.net.
+ [173.126.47.137])
+ by smtp.gmail.com with ESMTPSA id a4sm2407098otp.72.2019.08.16.14.04.32
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 16 Aug 2019 14:04:32 -0700 (PDT)
+Date: Fri, 16 Aug 2019 16:04:31 -0500
+From: Rob Herring <robh@kernel.org>
+To: Mischa Jonker <Mischa.Jonker@synopsys.com>
+Subject: Re: [PATCH v2 2/3] dt-bindings: IDU-intc: Clean up documentation
+Message-ID: <20190816210431.GA28647@bogus>
+References: <CY4PR1201MB0120EDD4173511912A9FC99EA1C60@CYPR1201MB0120.namprd12.prod.outlook.com>
+ <20190724120436.8537-1-mischa.jonker@synopsys.com>
+ <20190724120436.8537-2-mischa.jonker@synopsys.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190724120436.8537-2-mischa.jonker@synopsys.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190812_145133_119179_C741F167 
-X-CRM114-Status: UNSURE (   7.59  )
+X-CRM114-CacheID: sfid-20190816_140434_546131_56D32E2F 
+X-CRM114-Status: UNSURE (   6.27  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -7.7 (-------)
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-7.7 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:849 listed in]
- [list.dnswl.org]
+ no trust [209.85.167.196 listed in list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (robherring2[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (robherring2[at]gmail.com)
+ -0.3 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.167.196 listed in wl.mailspike.net]
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-snps-arc@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,70 +92,26 @@ List-Post: <mailto:linux-snps-arc@lists.infradead.org>
 List-Help: <mailto:linux-snps-arc-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-snps-arc>, 
  <mailto:linux-snps-arc-request@lists.infradead.org?subject=subscribe>
-Cc: Kate Stewart <kstewart@linuxfoundation.org>,
- Song Liu <songliubraving@fb.com>, bpf@vger.kernel.org,
- Daniel Borkmann <daniel@iogearbox.net>, miguel.ojeda.sandonis@gmail.com,
- Vineet Gupta <vgupta@synopsys.com>, Nick Desaulniers <ndesaulniers@google.com>,
- Alexei Starovoitov <ast@kernel.org>, linux-kernel@vger.kernel.org,
- clang-built-linux@googlegroups.com, netdev@vger.kernel.org,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, jpoimboe@redhat.com,
- sedat.dilek@gmail.com, yhs@fb.com, Thomas Gleixner <tglx@linutronix.de>,
- linux-snps-arc@lists.infradead.org, Enrico Weigelt <info@metux.net>,
- Martin KaFai Lau <kafai@fb.com>, Allison Randal <allison@lohutok.net>
+Cc: kstewart@linuxfoundation.org, devicetree@vger.kernel.org,
+ Vineet.Gupta1@synopsys.com, Alexey.Brodkin@synopsys.com,
+ linux-kernel@vger.kernel.org, robh+dt@kernel.org, tglx@linutronix.de,
+ linux-snps-arc@lists.infradead.org, Mischa Jonker <Mischa.Jonker@synopsys.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-snps-arc" <linux-snps-arc-bounces@lists.infradead.org>
 Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org
 
-Reported-by: Sedat Dilek <sedat.dilek@gmail.com>
-Suggested-by: Josh Poimboeuf <jpoimboe@redhat.com>
-Signed-off-by: Nick Desaulniers <ndesaulniers@google.com>
----
- arch/arc/include/asm/linkage.h   | 8 ++++----
- arch/arc/include/asm/mach_desc.h | 3 +--
- 2 files changed, 5 insertions(+), 6 deletions(-)
+On Wed, 24 Jul 2019 14:04:35 +0200, Mischa Jonker wrote:
+> * Some lines exceeded 80 characters.
+> * Clarified statement about AUX register interface
+> 
+> Signed-off-by: Mischa Jonker <mischa.jonker@synopsys.com>
+> ---
+>  .../bindings/interrupt-controller/snps,archs-idu-intc.txt        | 9 +++++----
+>  1 file changed, 5 insertions(+), 4 deletions(-)
+> 
 
-diff --git a/arch/arc/include/asm/linkage.h b/arch/arc/include/asm/linkage.h
-index a0eeb9f8f0a9..d9ee43c6b7db 100644
---- a/arch/arc/include/asm/linkage.h
-+++ b/arch/arc/include/asm/linkage.h
-@@ -62,15 +62,15 @@
- #else	/* !__ASSEMBLY__ */
- 
- #ifdef CONFIG_ARC_HAS_ICCM
--#define __arcfp_code __attribute__((__section__(".text.arcfp")))
-+#define __arcfp_code __section(.text.arcfp)
- #else
--#define __arcfp_code __attribute__((__section__(".text")))
-+#define __arcfp_code __section(.text)
- #endif
- 
- #ifdef CONFIG_ARC_HAS_DCCM
--#define __arcfp_data __attribute__((__section__(".data.arcfp")))
-+#define __arcfp_data __section(.data.arcfp)
- #else
--#define __arcfp_data __attribute__((__section__(".data")))
-+#define __arcfp_data __section(.data)
- #endif
- 
- #endif /* __ASSEMBLY__ */
-diff --git a/arch/arc/include/asm/mach_desc.h b/arch/arc/include/asm/mach_desc.h
-index 8ac0e2ac3e70..73746ed5b834 100644
---- a/arch/arc/include/asm/mach_desc.h
-+++ b/arch/arc/include/asm/mach_desc.h
-@@ -53,8 +53,7 @@ extern const struct machine_desc __arch_info_begin[], __arch_info_end[];
-  */
- #define MACHINE_START(_type, _name)			\
- static const struct machine_desc __mach_desc_##_type	\
--__used							\
--__attribute__((__section__(".arch.info.init"))) = {	\
-+__used __section(.arch.info.init) = {			\
- 	.name		= _name,
- 
- #define MACHINE_END				\
--- 
-2.23.0.rc1.153.gdeed80330f-goog
-
+Reviewed-by: Rob Herring <robh@kernel.org>
 
 _______________________________________________
 linux-snps-arc mailing list
