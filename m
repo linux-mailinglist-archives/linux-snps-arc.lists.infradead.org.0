@@ -2,94 +2,92 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3A9A2911D8
-	for <lists+linux-snps-arc@lfdr.de>; Sat, 17 Aug 2019 18:01:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0EF72912E3
+	for <lists+linux-snps-arc@lfdr.de>; Sat, 17 Aug 2019 22:58:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=V19qKPe0WO99FbyOEBVdyHzKoqxPvsVF8A37UUWudJw=; b=jTYv9fbaAT2TZ0PV4i3aAJFT4
-	yWPGNiRjN5fuyfkZ/wOMcoHx00HmvqIH1NRkJwN6KOlxln6teUq5ytR9LFbW4005tLqs9O+09Sg/f
-	Z5l6IbQ7Q2CW0Nwby7pvNOXUakRlmkh0DYNSAKY6Y2Ucv6h58e4F3Xezqbv6wUdCvz/kVvHbxeCys
-	JVZlJLO6HMOmbyf8lelmREmzyRhoHQGInXfdTJg8KFGL31yAwHlfL/O5zoX3dATKfZRmNpUwNrMkh
-	5d2Fyun2SThY2iS7ocaCbvRWwVo+iEHfmgtmMHAIATvpb5+wKq/V9bHuvQ9F0d6h8iYWe/owAKEve
-	OaZ6AQl4g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:
+	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=X63tnk5JbII9PjQKLmZTj3JmeqHcQMFeWq6S4jC5mMw=; b=Dp3msAbSVCDAiR
+	9rActwyDxAN1G6lhnPdGzWbCMIvAA7PCaQcJxoGlLDgY9D6lmIYrE24GWa8ODloAoqZasKn//0b+Z
+	9z5NUqAweC8P4cUQN64lbAsRjQgx6YG7MMS/ga6lHMeXAMacF4ThR4rKGlFM6h+41rLBDcJlu7mDO
+	MlKB0kMzy0ODcnRpVZsvMUY+6gawfTWBEXZOpOLsF1G4C9kqgAaJxedboVBN/aUJDkmjW2TEhQXLX
+	DRQ9hmo3DSZeOFWzymhl+gHXQHmB74xDivsIpbkgeGN3IcK7JX63JGV++Tw9UgxjhCrx7clJsqkzK
+	f3byOmizvqUOmz85nbYg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hz18i-0007e4-Rd; Sat, 17 Aug 2019 16:01:12 +0000
-Received: from mail-lf1-x143.google.com ([2a00:1450:4864:20::143])
+	id 1hz5mV-0004cv-C7; Sat, 17 Aug 2019 20:58:35 +0000
+Received: from mail-io1-xd44.google.com ([2607:f8b0:4864:20::d44])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hz18f-0007cU-Tt
- for linux-snps-arc@lists.infradead.org; Sat, 17 Aug 2019 16:01:11 +0000
-Received: by mail-lf1-x143.google.com with SMTP id j17so6105172lfp.3
- for <linux-snps-arc@lists.infradead.org>; Sat, 17 Aug 2019 09:01:07 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=cogentembedded-com.20150623.gappssmtp.com; s=20150623;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=1+7TiPxmJ3iAAUyU8+nGKfNJ+qg4H69wdJGgYgGKXe4=;
- b=renwLVE4t6MRcP5ZcmILI4AbPfXwqYVjMBTfKIElNDtgfcIFYeU8tIrB/gUAytl6lf
- GUpFHkf80zb+V0K3tM4r1Ot/9rCYkg84zdkCVJdaGdaWLOpozsDhzbvufdrpihHrN3tR
- TMxRzxhlJOIgtqRCrMKBJjP0q/GTzQu3Y+xuowVJpW1Icfg6Gn+WBtpfMuxFGsqNj8oB
- RlW1kLKfSyibvLnhWNBdW0PJ1JnQ35HN0rADSVoKpu7sfG7Xl0X/7sr2FWTSDPYnsGg8
- aLYzSLDdBf8VJM9zqhQZCDbdbFM9CTE+LknLwNOfmvJpyWjg0Gz9hP3js+7ih/iHtfFi
- vrkw==
+ id 1hz5mG-0004Sd-Vi
+ for linux-snps-arc@lists.infradead.org; Sat, 17 Aug 2019 20:58:22 +0000
+Received: by mail-io1-xd44.google.com with SMTP id j4so13186201iop.11
+ for <linux-snps-arc@lists.infradead.org>; Sat, 17 Aug 2019 13:58:19 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sifive.com; s=google;
+ h=date:from:to:cc:subject:in-reply-to:message-id:references
+ :user-agent:mime-version;
+ bh=NuXJCtDYAF42ezbdDjEFYfu2iBTjQndKb/Edf61OrOk=;
+ b=PCXESTLeUcBNUWogs1gHv/iSg/bRj7rmybc37GwKrHxDe7CTeYQGPE82FFro2CLT61
+ 8Q4IgUqoS7Jmsm9wuhAF9CCdJ8jA631YD8dGqkPPvzXyvuP2itYPnDRcHbp+2vkqaUSt
+ u4rxsZS9lGz/LPzZ8kGOEVrnbFqSW3syoXedbPJGimP78UP/Tg6J92XflG29pM3lwatF
+ OjAvDNX5+3tv2rh85pO4hmLeTRsEGL0KJ9d8KAbhP2qYNSdGVQpqF+mf38a8oxmStDJ9
+ 9nvCgcj7mRwE6p6VKc6zn+f1lPTm2K1/WP8Olg56A4X8/QbiEq8e7laZGSLETkAb5Egu
+ FN1g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=1+7TiPxmJ3iAAUyU8+nGKfNJ+qg4H69wdJGgYgGKXe4=;
- b=F6IIKMe469t8zokempod3viENCnRW2jSU5uHA5g2EGZEkTka5keTr+GB4Sd+7HcgyA
- TXlVd9zKxgZxlIhEISxvRHY/aS7cBwtZHhjyTThKBwa6pqmi9eJusmXg5vvx2zSYRWze
- Hbj236fOXIYzwZcd/RDRkUuzr3Fm6E0WIzqDqC73dwBy7jSPori3YkSVkfPOvQVCPf1X
- fbfhH7ZtG+8IjoI9yEhZ+DHVEHjJagIqc5v3XygbAGsk3hJXhNKgkUBooAJFDk7/YDLo
- rPD++7pIWBcEYweFc5Gi31WDsvybv3YL0K9V7JNbY6jE/VQopAM2Ixg8oE08Mjdo0TSQ
- emKQ==
-X-Gm-Message-State: APjAAAXu/Wz4oFF9ph+eHapBlFYHRbRosjcREXkPLgG1eyDFh08yoVeh
- kMbBTEe1zVUN13+iuNsVYPd5oA==
-X-Google-Smtp-Source: APXvYqzgHOkrd316w+DBxyDOOMOwfJvlMQJHfKxSm3Tpn7OUxlUzLbfoBMdqodlTlf7xRwkY3y0i2g==
-X-Received: by 2002:ac2:456d:: with SMTP id k13mr7785781lfm.77.1566057666460; 
- Sat, 17 Aug 2019 09:01:06 -0700 (PDT)
-Received: from ?IPv6:2a00:1fa0:4817:8b14:6cce:9848:7977:d7d5?
- ([2a00:1fa0:4817:8b14:6cce:9848:7977:d7d5])
- by smtp.gmail.com with ESMTPSA id b10sm1517289ljk.79.2019.08.17.09.01.04
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Sat, 17 Aug 2019 09:01:05 -0700 (PDT)
-Subject: Re: [PATCH 06/26] ia64: rename ioremap_nocache to ioremap_uc
-To: Christoph Hellwig <hch@lst.de>, Arnd Bergmann <arnd@arndb.de>,
- Guo Ren <guoren@kernel.org>, Michal Simek <monstr@monstr.eu>,
- Greentime Hu <green.hu@gmail.com>, Vincent Chen <deanbo422@gmail.com>,
- Guan Xuetao <gxt@pku.edu.cn>, x86@kernel.org
+ h=x-gm-message-state:date:from:to:cc:subject:in-reply-to:message-id
+ :references:user-agent:mime-version;
+ bh=NuXJCtDYAF42ezbdDjEFYfu2iBTjQndKb/Edf61OrOk=;
+ b=AuhYkt5fX90yoWgumg81vetRZtdSNr62jHP/x9Q38k2qSY3OnT0jG5snweoGDfX+6Z
+ Xtm5jrzqFYELjtFz3l1HJRGpr6zem8ZqCigfdApRzcXOgdpQAyV88jKPjmI9y9qHQ3wu
+ cJQsPGxof4I54C9tGPhp9N9DHxCgslcJ7r9ST1jQqzZwOam+bZHL14IGAnzHiLeAl8iM
+ fkvvoD6mpUgBGiAI5/fjegYWpejMji1Nssmyc6y/wnrRF0eE7Po9BUpV5tqq2Qc8RdzT
+ ci6vhKLDraq7rkE1wmk/2lSDjmpcGF4sEKOkiTBJx2RTkMjIXCYAFRuyUvH+Q5BQbuIF
+ /iRg==
+X-Gm-Message-State: APjAAAXECDQtGE0bKT2ydyNC9LByZ2M2BCF6V4oNk++M1kjBYITwJYda
+ oPshO6c8pV7fK65ln+zYXXkTuQ==
+X-Google-Smtp-Source: APXvYqyKpLbmhNe3o5mV41HWvHYU+SiPLQTRVuTNOtg0cL831wKHUivDHHya6XYWHKa9ZnFnQ2CM9Q==
+X-Received: by 2002:a6b:8f0d:: with SMTP id r13mr15237433iod.121.1566075498344; 
+ Sat, 17 Aug 2019 13:58:18 -0700 (PDT)
+Received: from localhost (c-73-95-159-87.hsd1.co.comcast.net. [73.95.159.87])
+ by smtp.gmail.com with ESMTPSA id
+ 6sm9905577iog.40.2019.08.17.13.58.16
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Sat, 17 Aug 2019 13:58:17 -0700 (PDT)
+Date: Sat, 17 Aug 2019 13:58:16 -0700 (PDT)
+From: Paul Walmsley <paul.walmsley@sifive.com>
+X-X-Sender: paulw@viisi.sifive.com
+To: Christoph Hellwig <hch@lst.de>
+Subject: Re: [PATCH 14/26] asm-generic: don't provide __ioremap
+In-Reply-To: <20190817073253.27819-15-hch@lst.de>
+Message-ID: <alpine.DEB.2.21.9999.1908171357180.4130@viisi.sifive.com>
 References: <20190817073253.27819-1-hch@lst.de>
- <20190817073253.27819-7-hch@lst.de>
-From: Sergei Shtylyov <sergei.shtylyov@cogentembedded.com>
-Message-ID: <b19607c1-07aa-e361-3c26-8bcb063ed8c1@cogentembedded.com>
-Date: Sat, 17 Aug 2019 19:00:48 +0300
-User-Agent: Mozilla/5.0 (Windows NT 6.3; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ <20190817073253.27819-15-hch@lst.de>
+User-Agent: Alpine 2.21.9999 (DEB 301 2018-08-15)
 MIME-Version: 1.0
-In-Reply-To: <20190817073253.27819-7-hch@lst.de>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190817_090110_094943_6BE2827B 
-X-CRM114-Status: UNSURE (   9.69  )
+X-CRM114-CacheID: sfid-20190817_135821_095957_18A07F49 
+X-CRM114-Status: UNSURE (   6.82  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:143 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:d44 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-snps-arc@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,43 +99,36 @@ List-Post: <mailto:linux-snps-arc@lists.infradead.org>
 List-Help: <mailto:linux-snps-arc-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-snps-arc>, 
  <mailto:linux-snps-arc-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, linux-s390@vger.kernel.org,
- linux-ia64@vger.kernel.org, linux-parisc@vger.kernel.org,
- linux-sh@vger.kernel.org, linux-hexagon@vger.kernel.org,
- linux-xtensa@linux-xtensa.org, linux-mips@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-m68k@lists.linux-m68k.org,
- openrisc@lists.librecores.org, linux-mtd@lists.infradead.org,
- linux-alpha@vger.kernel.org, sparclinux@vger.kernel.org,
- nios2-dev@lists.rocketboards.org, linux-riscv@lists.infradead.org,
- linux-snps-arc@lists.infradead.org, linux-arm-kernel@lists.infradead.org
+Cc: linux-ia64@vger.kernel.org, linux-sh@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Guo Ren <guoren@kernel.org>,
+ sparclinux@vger.kernel.org, linux-riscv@lists.infradead.org,
+ Vincent Chen <deanbo422@gmail.com>, linux-arch@vger.kernel.org,
+ linux-s390@vger.kernel.org, linux-hexagon@vger.kernel.org, x86@kernel.org,
+ linux-snps-arc@lists.infradead.org, linux-xtensa@linux-xtensa.org,
+ Arnd Bergmann <arnd@arndb.de>, linux-m68k@lists.linux-m68k.org,
+ openrisc@lists.librecores.org, Greentime Hu <green.hu@gmail.com>,
+ linux-mtd@lists.infradead.org, Guan Xuetao <gxt@pku.edu.cn>,
+ linux-arm-kernel@lists.infradead.org, Michal Simek <monstr@monstr.eu>,
+ linux-parisc@vger.kernel.org, linux-mips@vger.kernel.org,
+ linux-alpha@vger.kernel.org, nios2-dev@lists.rocketboards.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-snps-arc" <linux-snps-arc-bounces@lists.infradead.org>
 Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org
 
-Hello!
+On Sat, 17 Aug 2019, Christoph Hellwig wrote:
 
-On 17.08.2019 10:32, Christoph Hellwig wrote:
-
-> On ia64 ioremap_nocache fails if attributs don't match.  Not other
-
-    Attributes. :-)
-
-> architectures does this, and we plan to get rid of ioremap_nocache.
-> So get rid of the special semantics and define ioremap_nocache in
-> terms of ioremap as no portable driver could rely on the behavior
-> anyway.
-> 
-> However x86 implements ioremap_uc with a in a similar way as the ia64
-
-    "With a" not really needed?
-
-> version of ioremap_nocache, so implement that instead.
+> __ioremap is not a kernel API, but used for helpers with differing
+> semantics in arch code.  We should not provide it in as-generic.
 > 
 > Signed-off-by: Christoph Hellwig <hch@lst.de>
-[...]
 
-MBR, Sergei
+Reviewed-by: Paul Walmsley <paul.walmsley@sifive.com>
+Tested-by: Paul Walmsley <paul.walmsley@sifive.com> # rv32, rv64 boot
+Acked-by: Paul Walmsley <paul.walmsley@sifive.com> # arch/riscv
+
+
+- Paul
 
 _______________________________________________
 linux-snps-arc mailing list
