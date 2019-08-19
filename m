@@ -2,94 +2,69 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D348E91342
-	for <lists+linux-snps-arc@lfdr.de>; Sat, 17 Aug 2019 23:27:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A09EF91DEB
+	for <lists+linux-snps-arc@lfdr.de>; Mon, 19 Aug 2019 09:36:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:
-	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hB8uQPKjnD+CHdxob2FwW1D+yfzdpG7nyAizfx1sn8U=; b=pKPP3EjdCgtpJJ
-	l/oZJ5dNPxgShznP4wZGG7ChFEADwciZeYAHQUWW08jj3KHW5bHBKJ5AbtvuYX3Rw+o9mMgCf02fm
-	CDMTI0WEQrPvYjvlvWNi2Nd8XltUAxgxnlXmERgmp6Q7ya+UfhaEmSSDwqUGRnnHQ/BSLB6IX7j+f
-	cfE7t5PQgGvRwBFcssnVCI71PzoYAnOsrlcjQM+soCzSSTkY7DmsV0LuMk651oXzqtid64YK8kdAl
-	LNp2AUf8sbf0LvXhV9+S1IMRDy5KzXUFY73NSNwef7UO6+2CWYoLM/vGZbV3Ch2IVgBqvUTYeV0Bj
-	RGXoD00N6ccWh+SCzfsA==;
+	List-Owner; bh=jj7righwykgFajWju9flKcy9bztRNmuF7bek4XZeNdQ=; b=MqFuV4U8Y4CXEP
+	TkY00yMksUduk9LkU4P1+ulhZNA3Yzu7MfZqS8pqZe2hwNd6V+JI5S5oakquyEHHD9fiqtjMTOVlG
+	C4bJLTipENDrE0fxHQ6ST56qo+U7oo01eiRHMJUhAgs7KlkdPNQ+3Wn3NDsPsU+nhyNV8VVqB5E9v
+	RoCVbmjP58emC01Uqg6Sn3X+t9IbVmAuuWmyySBZRUrNgpSM+IntqQOPQvuIYRNCuBypK6HbSxEok
+	MLXHPmhUWfkwiFcKulsfIjYku8VYWEZkKWimAnecwCFZMEcBHsZSHRFa8zL2TD4OT2RnJ8Wwx6qPX
+	PpWMjrkZZ4g3xIXJlHNg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hz6EW-0001kr-Tu; Sat, 17 Aug 2019 21:27:33 +0000
-Received: from mail-io1-xd42.google.com ([2607:f8b0:4864:20::d42])
+	id 1hzcDj-0002iF-ME; Mon, 19 Aug 2019 07:36:51 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hz6E4-0001H9-H6
- for linux-snps-arc@lists.infradead.org; Sat, 17 Aug 2019 21:27:06 +0000
-Received: by mail-io1-xd42.google.com with SMTP id i22so13256585ioh.2
- for <linux-snps-arc@lists.infradead.org>; Sat, 17 Aug 2019 14:27:04 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sifive.com; s=google;
- h=date:from:to:cc:subject:in-reply-to:message-id:references
- :user-agent:mime-version;
- bh=RWNnky4tg4pNafhn5H03aH8PwpXjgmBSavfJgIeX0Ak=;
- b=hov3AcxQ6M0mcpBwyir6wMfwuFoM/2pj4MlCmv+T09knj2Mmqt8UJz4bLEelDU0dEY
- q35RSput0GqdXzjDl39iW6e96fi6ZvYG7hVSedcruoQ/r2si3vSEQf+S3NbKo/JWKMFz
- l1Pncvs1WA7x9utXPIZU7hNH8C4hBPXAZA2OymhT4WgZagRVCnEht474gNpFzrJa6Xjg
- FvMhl4KIMbZ3FFtCmeGSVrAzUl96LhDRs8lD2zGj/KFGyr4hodIlFUOwRQsA6Da7S+zZ
- ouRU8O2CZBVhaSm1B4pGrx6QOwfw1b8VOQgHVh5JaC0Jm1cxHTFnZdggwnO1D5Ig+YJ1
- Lkvg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:in-reply-to:message-id
- :references:user-agent:mime-version;
- bh=RWNnky4tg4pNafhn5H03aH8PwpXjgmBSavfJgIeX0Ak=;
- b=snDFV1ckGUTvyoSUXmgk5Sw9NF/h2nhjqQP/0NZ3pSYJGnApGIiQVT+ILyGeZ9VBDB
- jf4ESR54seVOVZRZG5AligbqS116H+UxE4YfEdN/sgCGXXY5f6fVKAa9bkal2HM8dPNW
- 4d7jJmScLqV+B7SWQgUovIbt4W8q9SpWwAdO1k0lbGYryoriyAemfmuSU1KvzvbfwmGB
- DdOXlGcu6cCtb0Vc818GUhVP5nZO25QseOZyKHIFPKWNizJqrEcGvXOoqBSoKDs3rlRR
- C464efuaWRSVg2yn5n9XOXGo1lYYQAq1ma4lZ+oA5rF2LBKbNq/jeNtPGKOTmOptLc4e
- 3UsQ==
-X-Gm-Message-State: APjAAAXbGZoOHo0aTa/bhLQfc1XFix568JGZ1J+PaWCXKQvwKwSQDJaJ
- UR+/KBHeyyxtq8aXHDUFVKFhIA==
-X-Google-Smtp-Source: APXvYqwKE/3SM/rVpl4teujkfN9+UilDZaKhxrZT/14FwdMPovoCNf3aYcPot40i7G8y5JQK54ukCg==
-X-Received: by 2002:a6b:b9c2:: with SMTP id
- j185mr15509819iof.148.1566077223658; 
- Sat, 17 Aug 2019 14:27:03 -0700 (PDT)
-Received: from localhost (c-73-95-159-87.hsd1.co.comcast.net. [73.95.159.87])
- by smtp.gmail.com with ESMTPSA id
- v23sm11488293ioh.58.2019.08.17.14.27.03
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sat, 17 Aug 2019 14:27:03 -0700 (PDT)
-Date: Sat, 17 Aug 2019 14:27:02 -0700 (PDT)
-From: Paul Walmsley <paul.walmsley@sifive.com>
-X-X-Sender: paulw@viisi.sifive.com
+ id 1hzcD3-0002BA-Du; Mon, 19 Aug 2019 07:36:10 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 2608C2086C;
+ Mon, 19 Aug 2019 07:36:05 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1566200169;
+ bh=kEBAsv6X4r+CES0f8/n93x03kus6b78gzWZGhEXZpw4=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=ZN3P1/69MIOg2B81SBINNz+rGfKhZFusbOaGyLqQb9Blsv2mSti1MWTsa90w0MESp
+ jadhaU0lZuPw9eWpwjH+XOFMUB/Sje+alD+6KyK2Fb4eskV8ocTyIHvbtygC57mPxu
+ nNYqk608qsL0SWijHJgztgoabuo0beTwpG+bcwSU=
+Date: Mon, 19 Aug 2019 08:36:02 +0100
+From: Will Deacon <will@kernel.org>
 To: Christoph Hellwig <hch@lst.de>
-Subject: Re: [PATCH 14/26] asm-generic: don't provide __ioremap
-In-Reply-To: <alpine.DEB.2.21.9999.1908171357180.4130@viisi.sifive.com>
-Message-ID: <alpine.DEB.2.21.9999.1908171426390.4130@viisi.sifive.com>
+Subject: Re: [PATCH 19/26] arm64: remove __iounmap
+Message-ID: <20190819073601.4yxjvmyjtpi7tk56@willie-the-truck>
 References: <20190817073253.27819-1-hch@lst.de>
- <20190817073253.27819-15-hch@lst.de>
- <alpine.DEB.2.21.9999.1908171357180.4130@viisi.sifive.com>
-User-Agent: Alpine 2.21.9999 (DEB 301 2018-08-15)
+ <20190817073253.27819-20-hch@lst.de>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190817073253.27819-20-hch@lst.de>
+User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190817_142704_569563_1CB7285D 
-X-CRM114-Status: UNSURE (   5.31  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190819_003609_493543_D4180F04 
+X-CRM114-Status: GOOD (  10.25  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d42 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-snps-arc@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -118,15 +93,20 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-snps-arc" <linux-snps-arc-bounces@lists.infradead.org>
 Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org
 
-On Sat, 17 Aug 2019, Paul Walmsley wrote:
+On Sat, Aug 17, 2019 at 09:32:46AM +0200, Christoph Hellwig wrote:
+> No need to indirect iounmap for arm64.
+> 
+> Signed-off-by: Christoph Hellwig <hch@lst.de>
+> ---
+>  arch/arm64/include/asm/io.h | 3 +--
+>  arch/arm64/mm/ioremap.c     | 4 ++--
+>  2 files changed, 3 insertions(+), 4 deletions(-)
 
-> Acked-by: Paul Walmsley <paul.walmsley@sifive.com> # arch/riscv
+Not sure why we did it like this...
 
-This ack is superfluous since the patch doesn't touch arch/riscv; feel 
-free to drop it
+Acked-by: Will Deacon <will@kernel.org>
 
-
-- Paul
+Will
 
 _______________________________________________
 linux-snps-arc mailing list
