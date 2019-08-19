@@ -2,69 +2,72 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A09EF91DEB
-	for <lists+linux-snps-arc@lfdr.de>; Mon, 19 Aug 2019 09:36:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2433991F5C
+	for <lists+linux-snps-arc@lfdr.de>; Mon, 19 Aug 2019 10:51:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jj7righwykgFajWju9flKcy9bztRNmuF7bek4XZeNdQ=; b=MqFuV4U8Y4CXEP
-	TkY00yMksUduk9LkU4P1+ulhZNA3Yzu7MfZqS8pqZe2hwNd6V+JI5S5oakquyEHHD9fiqtjMTOVlG
-	C4bJLTipENDrE0fxHQ6ST56qo+U7oo01eiRHMJUhAgs7KlkdPNQ+3Wn3NDsPsU+nhyNV8VVqB5E9v
-	RoCVbmjP58emC01Uqg6Sn3X+t9IbVmAuuWmyySBZRUrNgpSM+IntqQOPQvuIYRNCuBypK6HbSxEok
-	MLXHPmhUWfkwiFcKulsfIjYku8VYWEZkKWimAnecwCFZMEcBHsZSHRFa8zL2TD4OT2RnJ8Wwx6qPX
-	PpWMjrkZZ4g3xIXJlHNg==;
+	List-Owner; bh=t/hV//EwIKC/UQdSZOAX/kRawEv7VfZkAFZzXrAAbR8=; b=IIQL6B2w1EOcMl
+	YYxdgGIbZv3wAD+NPnDZC47Muw5O5thu8y2gZ16Nb/TZIq7RLgqY9P9fdZ/xsnjuzGVoHRWcDfufo
+	pwLMycRZZUYNPDHPcERloWTRgiRPF2edmebt6tGwSCPjQvqwfw5tRLNraoXq6aVBXRtQq/1mrHvdK
+	nR9f+/MXHm9IadRBzh0Y0xWmm2DtX58oP3064aAQl6rI4z3x4Osd6HfwlZxGTxdL+HBexlgldDNQ9
+	oVAYLsyGYxR6YVaWOLPKtRrw7Q+httNPLF1YkmVgw7hQPqu8khtHgpvPwcnLobWSAK46xaD2+1PlM
+	fGTcKLAbqwi+ay04VCYA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hzcDj-0002iF-ME; Mon, 19 Aug 2019 07:36:51 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hzdNe-0000Lj-84; Mon, 19 Aug 2019 08:51:10 +0000
+Received: from mail-oi1-f194.google.com ([209.85.167.194])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hzcD3-0002BA-Du; Mon, 19 Aug 2019 07:36:10 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 2608C2086C;
- Mon, 19 Aug 2019 07:36:05 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1566200169;
- bh=kEBAsv6X4r+CES0f8/n93x03kus6b78gzWZGhEXZpw4=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=ZN3P1/69MIOg2B81SBINNz+rGfKhZFusbOaGyLqQb9Blsv2mSti1MWTsa90w0MESp
- jadhaU0lZuPw9eWpwjH+XOFMUB/Sje+alD+6KyK2Fb4eskV8ocTyIHvbtygC57mPxu
- nNYqk608qsL0SWijHJgztgoabuo0beTwpG+bcwSU=
-Date: Mon, 19 Aug 2019 08:36:02 +0100
-From: Will Deacon <will@kernel.org>
-To: Christoph Hellwig <hch@lst.de>
-Subject: Re: [PATCH 19/26] arm64: remove __iounmap
-Message-ID: <20190819073601.4yxjvmyjtpi7tk56@willie-the-truck>
-References: <20190817073253.27819-1-hch@lst.de>
- <20190817073253.27819-20-hch@lst.de>
+ id 1hzdNO-000098-F5; Mon, 19 Aug 2019 08:50:55 +0000
+Received: by mail-oi1-f194.google.com with SMTP id c15so735301oic.3;
+ Mon, 19 Aug 2019 01:50:53 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=XvpHNQzLHQyAljD3a4MUdfT4ynucGZ6tzJYlGCkwzvk=;
+ b=MvgVzfQh96j0E3U0jHDtimDvGDtIdjcJCdCXd6RHpFyTjMveFeeg56TujWQWMdk7A3
+ 6SUlySAHYX5FAeVknB5y808/bKnD9S+SxSMH1mvACwT7/AgEiTVsAkBtDp12YayjXqa9
+ 9HrW0pE5Uwfb3eujsUTijvzrJub1GvgppCocLpGE9mzPPN23JZqU4s+VHVbQ2eaVUTjj
+ z1ruxppCahnI8IhepPjxcqM4oQafJAKlT9j2WQx8PDHS7g2gEmSayl7juONxIc3jHG90
+ 1wZ+GE+luZrltnA2ZpAReaAdjiK+cMZxOERvc5Ay4Evq0mWQ4t2jfVsHh19Q1Qt8kX+F
+ FSAg==
+X-Gm-Message-State: APjAAAWqgsXEUcKxW9amll1FlZWwQPPI228gqworO3GhULfOLTbh4WA7
+ pFEZotOYNslTiKC20sJvnU60h4tadGFtuSBVwOQ=
+X-Google-Smtp-Source: APXvYqwmqcH0DTBSRr1W5PEboqZl9eNrRnGfwBz/22T1r10yVcw0KO4fHH9AZZHFDFACKa88tOO5vT/zZa40mMCQj8M=
+X-Received: by 2002:a54:4618:: with SMTP id p24mr2849469oip.148.1566204653079; 
+ Mon, 19 Aug 2019 01:50:53 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190817073253.27819-20-hch@lst.de>
-User-Agent: NeoMutt/20170113 (1.7.2)
+References: <20190817073253.27819-1-hch@lst.de>
+ <20190817073253.27819-4-hch@lst.de>
+In-Reply-To: <20190817073253.27819-4-hch@lst.de>
+From: Geert Uytterhoeven <geert@linux-m68k.org>
+Date: Mon, 19 Aug 2019 10:50:41 +0200
+Message-ID: <CAMuHMdVT3VSQ1S=YEoTjYzxwpavy+43XUWA-wzCO56FuHK6R-g@mail.gmail.com>
+Subject: Re: [PATCH 03/26] m68k, microblaze: remove ioremap_fullcache
+To: Christoph Hellwig <hch@lst.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190819_003609_493543_D4180F04 
-X-CRM114-Status: GOOD (  10.25  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190819_015054_503715_7AF3F709 
+X-CRM114-Status: UNSURE (   8.17  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.167.194 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (geert.uytterhoeven[at]gmail.com)
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-snps-arc@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,37 +79,47 @@ List-Post: <mailto:linux-snps-arc@lists.infradead.org>
 List-Help: <mailto:linux-snps-arc-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-snps-arc>, 
  <mailto:linux-snps-arc-request@lists.infradead.org?subject=subscribe>
-Cc: linux-ia64@vger.kernel.org, linux-sh@vger.kernel.org,
- linux-kernel@vger.kernel.org, Guo Ren <guoren@kernel.org>,
- sparclinux@vger.kernel.org, linux-riscv@lists.infradead.org,
- Vincent Chen <deanbo422@gmail.com>, linux-arch@vger.kernel.org,
- linux-s390@vger.kernel.org, linux-hexagon@vger.kernel.org, x86@kernel.org,
- linux-snps-arc@lists.infradead.org, linux-xtensa@linux-xtensa.org,
- Arnd Bergmann <arnd@arndb.de>, linux-m68k@lists.linux-m68k.org,
- openrisc@lists.librecores.org, Greentime Hu <green.hu@gmail.com>,
- linux-mtd@lists.infradead.org, Guan Xuetao <gxt@pku.edu.cn>,
- linux-arm-kernel@lists.infradead.org, Michal Simek <monstr@monstr.eu>,
- linux-parisc@vger.kernel.org, linux-mips@vger.kernel.org,
- linux-alpha@vger.kernel.org, nios2-dev@lists.rocketboards.org
+Cc: "linux-ia64@vger.kernel.org" <linux-ia64@vger.kernel.org>,
+ Linux-sh list <linux-sh@vger.kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Guo Ren <guoren@kernel.org>, sparclinux <sparclinux@vger.kernel.org>,
+ linux-riscv@lists.infradead.org, Vincent Chen <deanbo422@gmail.com>,
+ Linux-Arch <linux-arch@vger.kernel.org>,
+ linux-s390 <linux-s390@vger.kernel.org>,
+ "open list:QUALCOMM HEXAGON..." <linux-hexagon@vger.kernel.org>,
+ the arch/x86 maintainers <x86@kernel.org>,
+ arcml <linux-snps-arc@lists.infradead.org>, linux-xtensa@linux-xtensa.org,
+ Arnd Bergmann <arnd@arndb.de>, linux-m68k <linux-m68k@lists.linux-m68k.org>,
+ Openrisc <openrisc@lists.librecores.org>, Greentime Hu <green.hu@gmail.com>,
+ MTD Maling List <linux-mtd@lists.infradead.org>, Guan Xuetao <gxt@pku.edu.cn>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Michal Simek <monstr@monstr.eu>, Parisc List <linux-parisc@vger.kernel.org>,
+ linux-mips@vger.kernel.org, alpha <linux-alpha@vger.kernel.org>,
+ nios2-dev@lists.rocketboards.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-snps-arc" <linux-snps-arc-bounces@lists.infradead.org>
 Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org
 
-On Sat, Aug 17, 2019 at 09:32:46AM +0200, Christoph Hellwig wrote:
-> No need to indirect iounmap for arm64.
-> 
+On Sat, Aug 17, 2019 at 9:41 AM Christoph Hellwig <hch@lst.de> wrote:
+> No callers of this function.
+>
 > Signed-off-by: Christoph Hellwig <hch@lst.de>
-> ---
->  arch/arm64/include/asm/io.h | 3 +--
->  arch/arm64/mm/ioremap.c     | 4 ++--
->  2 files changed, 3 insertions(+), 4 deletions(-)
 
-Not sure why we did it like this...
+>  arch/m68k/include/asm/kmap.h     | 7 -------
 
-Acked-by: Will Deacon <will@kernel.org>
+Acked-by: Geert Uytterhoeven <geert@linux-m68k.org>
 
-Will
+Gr{oetje,eeting}s,
+
+                        Geert
+
+-- 
+Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
+
+In personal conversations with technical people, I call myself a hacker. But
+when I'm talking to journalists I just say "programmer" or something like that.
+                                -- Linus Torvalds
 
 _______________________________________________
 linux-snps-arc mailing list
