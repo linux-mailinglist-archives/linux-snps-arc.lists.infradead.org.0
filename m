@@ -2,40 +2,121 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E8A139D026
-	for <lists+linux-snps-arc@lfdr.de>; Mon, 26 Aug 2019 15:13:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 40B929F105
+	for <lists+linux-snps-arc@lfdr.de>; Tue, 27 Aug 2019 19:00:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VHPuO8Po9aHdeENepWlA87l0NRSOQT25fbKlAaj5Q6U=; b=hpivAcBC/PFqTb
-	Ln6YoB3p0mIY3aPDhw/xihQMaNL+J+fXX3A/zVcdmwyvdrUHOefVFhL98W5NUM2c+NQhr0/nJO3ET
-	EuABwubEPj73yLzJIdMiu3FgstykrICzXQapD3WBsLNEIKhGMDU3OOrFxUOwSuwP8stsIclUA8GZQ
-	T4aHCCo0f4HEiObcLmP9aY02lKy80ug1kwiZBhWgANm59NbbkAyt7WNsQJtFD6XpSS9/Fluply7Ze
-	LKgntFsdLy88s/5LkQwQLUqEtq6yGiLDAw1UdoFgCf6AhQ1sNR4GG/44f5PYzYz2er1LGR5XIZ/bI
-	ZtGndul7/BIqfPiOfV8A==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:To:References:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=2n5hMMSyBKGwtv+vwZ4DmUjUiwHUHOO0oFunlExI7Ck=; b=PD6GDGWZE/cj6E
+	mBEWlGvqvj3MgQWhzTHqgRXtIvS8X+LyfQ2IEdlQFpFBB8siILQnhPbCNdwQUHwhz7EqX8cPrs/9D
+	VQO4GUHXsHgJ8PNjCL+j/B8CLqhVJF9To6wWfU8xXJ/WhfUeTzsVPmsw76D4fTzPFY7Nx4eu7B+br
+	KxvkXsqepX8Sp7BL0BuG/+0jN2acTMP8v8qEWH7RuYP0JXJUWiZ58NFph0/wwJ0aSGwJkFuAf7YCB
+	Y085HXTwpzKlL2cDx3n3Kw8hidhU/G/skvpAJrL9aq9L/7PvZU82flfMRXlMP4i/MSKhXU+WnCouA
+	/uySsBy6bERvkVYQjatg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2Eo8-0002NX-6Y; Mon, 26 Aug 2019 13:13:16 +0000
-Received: from willy by bombadil.infradead.org with local (Exim 4.92 #3 (Red
- Hat Linux)) id 1i2Eo0-0002Mw-Mf; Mon, 26 Aug 2019 13:13:08 +0000
-Date: Mon, 26 Aug 2019 06:13:08 -0700
-From: Matthew Wilcox <willy@infradead.org>
-To: Anshuman Khandual <anshuman.khandual@arm.com>
-Subject: Re: [RFC V2 0/1] mm/debug: Add tests for architecture exported page
- table helpers
-Message-ID: <20190826131308.GA15933@bombadil.infradead.org>
-References: <1565335998-22553-1-git-send-email-anshuman.khandual@arm.com>
- <20190809101632.GM5482@bombadil.infradead.org>
- <a5aab7ff-f7fd-9cc1-6e37-e4185eee65ac@arm.com>
- <20190809135202.GN5482@bombadil.infradead.org>
- <7a88f6bb-e8c7-3ac7-2f92-1de752a01f33@arm.com>
+	id 1i2epR-00017B-VC; Tue, 27 Aug 2019 17:00:21 +0000
+Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1i2epO-000124-H1
+ for linux-snps-arc@lists.infradead.org; Tue, 27 Aug 2019 17:00:20 +0000
+Received: by mail-pg1-x542.google.com with SMTP id l21so13015326pgm.3
+ for <linux-snps-arc@lists.infradead.org>; Tue, 27 Aug 2019 10:00:17 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:references:cc:to:from:openpgp:autocrypt:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=hDd6iw4bLUDQFc0kTFBFimM6kogglYtS9D/zlMO40jQ=;
+ b=fecYKUMcr2lWhczaKZ6WWGGUNipPtgLln9yhVlj8ZZ/D52ZAcIf3EBIyCuRDxGReLa
+ Rr/z0S+YdJntl2XNI4yVvb0AzrwVp1b1OBTycuUpOqRaSufOXCRfnZr+BoaMRDQlAy6u
+ 0kodVct3Z3HfvoujH+qLSpkGRMSDEa4rd+Mu4GzUecBSt97h7pVlx58YHV0QSirmSXIy
+ +M3i4UvZgwxt5sagj2JHIFH40IRtw35bkSJr7QJInRZKCXp1XNo9pR3oPRAJWmMXHyBI
+ 2Auo+li3yEvivUPoKaC26GdgQB0UmInv4xganhdjMlrt6MZ7Y/IYa0OQcEbSmo99hd+W
+ 1WXA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:references:cc:to:from:openpgp:autocrypt
+ :message-id:date:user-agent:mime-version:in-reply-to
+ :content-language:content-transfer-encoding;
+ bh=hDd6iw4bLUDQFc0kTFBFimM6kogglYtS9D/zlMO40jQ=;
+ b=DGMZ7VuiHPq2XE69WrnJiism+wARysfVMDHhol7zzZ3DIi4jyTR+1RDIfWG/OJq/L2
+ UVK+WGqBMfl0nvfx+lkoGcaQy7l4ATMtPr4nuR/AZGXosaC89CZcDADRkX/havAMwu9v
+ 3CIKblwquwuABKQ8/Wg7Q8c3jIngYkuAWTIb1Ui4oVlBd8SZ7yx1mlFSJVpaQHGYbFjA
+ 1BbKTF6N6567daj0fwfH3yk5bSpYN4pTXeRb6BeajHzy5NbHxCfczhBtauyocb/F79yZ
+ SbjcOqD2Ot/+2PzDGOojLIRmxlj40TqpOCJKex+qaOTtK0OBFl7Yx/56ne8JeN/KUaIT
+ 1WdA==
+X-Gm-Message-State: APjAAAUfB4PW8UFC8u6EcWn+Er24Vss+Rc+wCoxfYJKujnGlsZJ6gU6f
+ +WOPCjk4vGQyDd8nhN+vcTU=
+X-Google-Smtp-Source: APXvYqwOvVFXtXcMKjZHGBmNGRuamvgd5totRbEqTgHdmzrlFgmoal0d2leX5iNbhmpltTka/HzI1g==
+X-Received: by 2002:a63:7e1d:: with SMTP id z29mr22269630pgc.346.1566925217121; 
+ Tue, 27 Aug 2019 10:00:17 -0700 (PDT)
+Received: from ?IPv6:2601:641:c100:83a0:7543:d89b:60ad:490f?
+ ([2601:641:c100:83a0:7543:d89b:60ad:490f])
+ by smtp.gmail.com with ESMTPSA id 97sm2894116pjz.12.2019.08.27.10.00.15
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Tue, 27 Aug 2019 10:00:16 -0700 (PDT)
+Subject: Re: [PATCH v2] ARC: ARCv2: jump label: implement jump label patching
+References: <20190718132011.3363-1-Eugeniy.Paltsev@synopsys.com>
+To: Eugeniy Paltsev <Eugeniy.Paltsev@synopsys.com>
+From: Vineet Gupta <vineetg76@gmail.com>
+Openpgp: preference=signencrypt
+Autocrypt: addr=vgupta@synopsys.com; keydata=
+ mQINBFEffBMBEADIXSn0fEQcM8GPYFZyvBrY8456hGplRnLLFimPi/BBGFA24IR+B/Vh/EFk
+ B5LAyKuPEEbR3WSVB1x7TovwEErPWKmhHFbyugdCKDv7qWVj7pOB+vqycTG3i16eixB69row
+ lDkZ2RQyy1i/wOtHt8Kr69V9aMOIVIlBNjx5vNOjxfOLux3C0SRl1veA8sdkoSACY3McOqJ8
+ zR8q1mZDRHCfz+aNxgmVIVFN2JY29zBNOeCzNL1b6ndjU73whH/1hd9YMx2Sp149T8MBpkuQ
+ cFYUPYm8Mn0dQ5PHAide+D3iKCHMupX0ux1Y6g7Ym9jhVtxq3OdUI5I5vsED7NgV9c8++baM
+ 7j7ext5v0l8UeulHfj4LglTaJIvwbUrCGgtyS9haKlUHbmey/af1j0sTrGxZs1ky1cTX7yeF
+ nSYs12GRiVZkh/Pf3nRLkjV+kH++ZtR1GZLqwamiYZhAHjo1Vzyl50JT9EuX07/XTyq/Bx6E
+ dcJWr79ZphJ+mR2HrMdvZo3VSpXEgjROpYlD4GKUApFxW6RrZkvMzuR2bqi48FThXKhFXJBd
+ JiTfiO8tpXaHg/yh/V9vNQqdu7KmZIuZ0EdeZHoXe+8lxoNyQPcPSj7LcmE6gONJR8ZqAzyk
+ F5voeRIy005ZmJJ3VOH3Gw6Gz49LVy7Kz72yo1IPHZJNpSV5xwARAQABtCpWaW5lZXQgR3Vw
+ dGEgKGFsaWFzKSA8dmd1cHRhQHN5bm9wc3lzLmNvbT6JAj4EEwECACgCGwMGCwkIBwMCBhUI
+ AgkKCwQWAgMBAh4BAheABQJbBYpwBQkLx0HcAAoJEGnX8d3iisJeChAQAMR2UVbJyydOv3aV
+ jmqP47gVFq4Qml1weP5z6czl1I8n37bIhdW0/lV2Zll+yU1YGpMgdDTHiDqnGWi4pJeu4+c5
+ xsI/VqkH6WWXpfruhDsbJ3IJQ46//jb79ogjm6VVeGlOOYxx/G/RUUXZ12+CMPQo7Bv+Jb+t
+ NJnYXYMND2Dlr2TiRahFeeQo8uFbeEdJGDsSIbkOV0jzrYUAPeBwdN8N0eOB19KUgPqPAC4W
+ HCg2LJ/o6/BImN7bhEFDFu7gTT0nqFVZNXlOw4UcGGpM3dq/qu8ZgRE0turY9SsjKsJYKvg4
+ djAaOh7H9NJK72JOjUhXY/sMBwW5vnNwFyXCB5t4ZcNxStoxrMtyf35synJVinFy6wCzH3eJ
+ XYNfFsv4gjF3l9VYmGEJeI8JG/ljYQVjsQxcrU1lf8lfARuNkleUL8Y3rtxn6eZVtAlJE8q2
+ hBgu/RUj79BKnWEPFmxfKsaj8of+5wubTkP0I5tXh0akKZlVwQ3lbDdHxznejcVCwyjXBSny
+ d0+qKIXX1eMh0/5sDYM06/B34rQyq9HZVVPRHdvsfwCU0s3G+5Fai02mK68okr8TECOzqZtG
+ cuQmkAeegdY70Bpzfbwxo45WWQq8dSRURA7KDeY5LutMphQPIP2syqgIaiEatHgwetyVCOt6
+ tf3ClCidHNaGky9KcNSQ
+Message-ID: <b7515cf7-c21c-19aa-ced6-96ddfccc580c@gmail.com>
+Date: Tue, 27 Aug 2019 10:00:14 -0700
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <7a88f6bb-e8c7-3ac7-2f92-1de752a01f33@arm.com>
-User-Agent: Mutt/1.11.4 (2019-03-13)
+In-Reply-To: <20190718132011.3363-1-Eugeniy.Paltsev@synopsys.com>
+Content-Language: en-US
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20190827_100018_575450_9328A709 
+X-CRM114-Status: GOOD (  32.45  )
+X-Spam-Score: 0.1 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (0.1 points)
+ pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
+ [list.dnswl.org]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (vineetg76[at]gmail.com)
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (vineetg76[at]gmail.com)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-snps-arc@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -47,68 +128,371 @@ List-Post: <mailto:linux-snps-arc@lists.infradead.org>
 List-Help: <mailto:linux-snps-arc-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-snps-arc>, 
  <mailto:linux-snps-arc-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, linux-ia64@vger.kernel.org,
- linux-sh@vger.kernel.org, Peter Zijlstra <peterz@infradead.org>,
- James Hogan <jhogan@kernel.org>,
- Tetsuo Handa <penguin-kernel@i-love.sakura.ne.jp>,
- Heiko Carstens <heiko.carstens@de.ibm.com>, Michal Hocko <mhocko@kernel.org>,
- linux-mm@kvack.org, Dave Hansen <dave.hansen@intel.com>,
- Paul Mackerras <paulus@samba.org>, sparclinux@vger.kernel.org,
- Thomas Gleixner <tglx@linutronix.de>, linux-s390@vger.kernel.org,
- Michael Ellerman <mpe@ellerman.id.au>, x86@kernel.org,
- Russell King - ARM Linux <linux@armlinux.org.uk>,
- Steven Price <Steven.Price@arm.com>, Jason Gunthorpe <jgg@ziepe.ca>,
- linux-arm-kernel@lists.infradead.org, linux-snps-arc@lists.infradead.org,
- Kees Cook <keescook@chromium.org>,
- Masahiro Yamada <yamada.masahiro@socionext.com>,
- Mark Brown <broonie@kernel.org>, Dan Williams <dan.j.williams@intel.com>,
- Vlastimil Babka <vbabka@suse.cz>, Sri Krishna chowdary <schowdary@nvidia.com>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-mips@vger.kernel.org,
- Ralf Baechle <ralf@linux-mips.org>, linux-kernel@vger.kernel.org,
- Paul Burton <paul.burton@mips.com>, Mike Rapoport <rppt@linux.vnet.ibm.com>,
- Vineet Gupta <vgupta@synopsys.com>,
- Martin Schwidefsky <schwidefsky@de.ibm.com>,
- Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
- "David S. Miller" <davem@davemloft.net>
+Cc: "linux-arch@vger.kernel.org" <linux-arch@vger.kernel.org>,
+ arcml <linux-snps-arc@lists.infradead.org>,
+ Alexey Brodkin <abrodkin@synopsys.COM>, lkml <linux-kernel@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-snps-arc" <linux-snps-arc-bounces@lists.infradead.org>
 Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org
 
-On Mon, Aug 26, 2019 at 08:07:13AM +0530, Anshuman Khandual wrote:
-> On 08/09/2019 07:22 PM, Matthew Wilcox wrote:
-> > On Fri, Aug 09, 2019 at 04:05:07PM +0530, Anshuman Khandual wrote:
-> >> On 08/09/2019 03:46 PM, Matthew Wilcox wrote:
-> >>> On Fri, Aug 09, 2019 at 01:03:17PM +0530, Anshuman Khandual wrote:
-> >>>> Should alloc_gigantic_page() be made available as an interface for general
-> >>>> use in the kernel. The test module here uses very similar implementation from
-> >>>> HugeTLB to allocate a PUD aligned memory block. Similar for mm_alloc() which
-> >>>> needs to be exported through a header.
-> >>>
-> >>> Why are you allocating memory at all instead of just using some
-> >>> known-to-exist PFNs like I suggested?
-> >>
-> >> We needed PFN to be PUD aligned for pfn_pud() and PMD aligned for mk_pmd().
-> >> Now walking the kernel page table for a known symbol like kernel_init()
-> > 
-> > I didn't say to walk the kernel page table.  I said to call virt_to_pfn()
-> > for a known symbol like kernel_init().
-> > 
-> >> as you had suggested earlier we might encounter page table page entries at PMD
-> >> and PUD which might not be PMD or PUD aligned respectively. It seemed to me
-> >> that alignment requirement is applicable only for mk_pmd() and pfn_pud()
-> >> which create large mappings at those levels but that requirement does not
-> >> exist for page table pages pointing to next level. Is not that correct ? Or
-> >> I am missing something here ?
-> > 
-> > Just clear the bottom bits off the PFN until you get a PMD or PUD aligned
-> > PFN.  It's really not hard.
+On 7/18/19 6:20 AM, Eugeniy Paltsev wrote:
+> Implement jump label patching for ARC. Jump labels provide
+> an interface to generate dynamic branches using
+> self-modifying code.
 > 
-> As Mark pointed out earlier that might end up being just a synthetic PFN
-> which might not even exist on a given system.
+> This allows us to implement conditional branches where
+> changing branch direction is expensive but branch selection
+> is basically 'free'
+> 
+> This implementation uses 32-bit NOP and BRANCH instructions
+> which forced to be aligned by 4 to guarantee that they don't
+> cross L1 I$ cache fetch block and can be update atomically.
 
-And why would that matter?
+I've discussed this with hardware folks, and it seems fetch block size is
+irrelevant. We need to make sure this doesn't straddle cache line.
+
+Please respin !
+
+Thx,
+-Vineet
+
+> 
+> Signed-off-by: Eugeniy Paltsev <Eugeniy.Paltsev@synopsys.com>
+> ---
+> Changes v1->v2:
+>  * Patched instruction should not cross L1 I$ fetch block boundary and
+>    not only L1 I$ line. Fix comments and asserts in code.
+>  * Other small comments fix and code cleanup.
+> 
+>  arch/arc/Kconfig                  |   8 ++
+>  arch/arc/include/asm/cache.h      |  11 ++
+>  arch/arc/include/asm/jump_label.h |  71 +++++++++++++
+>  arch/arc/kernel/Makefile          |   1 +
+>  arch/arc/kernel/jump_label.c      | 167 ++++++++++++++++++++++++++++++
+>  5 files changed, 258 insertions(+)
+>  create mode 100644 arch/arc/include/asm/jump_label.h
+>  create mode 100644 arch/arc/kernel/jump_label.c
+> 
+> diff --git a/arch/arc/Kconfig b/arch/arc/Kconfig
+> index 1c8137e7247b..f9657c86c3e1 100644
+> --- a/arch/arc/Kconfig
+> +++ b/arch/arc/Kconfig
+> @@ -44,6 +44,7 @@ config ARC
+>  	select OF_EARLY_FLATTREE
+>  	select PCI_SYSCALL if PCI
+>  	select PERF_USE_VMALLOC if ARC_CACHE_VIPT_ALIASING
+> +	select HAVE_ARCH_JUMP_LABEL if ISA_ARCV2 && !CPU_ENDIAN_BE32
+>  
+>  config ARCH_HAS_CACHE_LINE_SIZE
+>  	def_bool y
+> @@ -523,6 +524,13 @@ config ARC_DW2_UNWIND
+>  config ARC_DBG_TLB_PARANOIA
+>  	bool "Paranoia Checks in Low Level TLB Handlers"
+>  
+> +config ARC_DBG_JUMP_LABEL
+> +	bool "Paranoid checks in Static Keys (jump labels) code"
+> +	depends on JUMP_LABEL
+> +	select STATIC_KEYS_SELFTEST
+> +	help
+> +	  Enable paranoid checks and self-test of both ARC-specific and generic
+> +	  part of static keys (jump labels) related code.
+>  endif
+>  
+>  config ARC_BUILTIN_DTB_NAME
+> diff --git a/arch/arc/include/asm/cache.h b/arch/arc/include/asm/cache.h
+> index 918804c7c1a4..46d4f673609a 100644
+> --- a/arch/arc/include/asm/cache.h
+> +++ b/arch/arc/include/asm/cache.h
+> @@ -16,6 +16,11 @@
+>  #define L1_CACHE_BYTES		(1 << L1_CACHE_SHIFT)
+>  #define CACHE_LINE_MASK		(~(L1_CACHE_BYTES - 1))
+>  
+> +#ifdef CONFIG_ISA_ARCV2
+> +/* instruction_fetch_block_width is same for all ARCv2 */
+> +#define I_CACHE_FETCH_BLOCK_WIDTH	16
+> +#endif
+> +
+>  /*
+>   * ARC700 doesn't cache any access in top 1G (0xc000_0000 to 0xFFFF_FFFF)
+>   * Ideal for wiring memory mapped peripherals as we don't need to do
+> @@ -25,6 +30,12 @@
+>  
+>  #ifndef __ASSEMBLY__
+>  
+> +#include <linux/build_bug.h>
+> +
+> +#ifdef CONFIG_ISA_ARCV2
+> +static_assert(I_CACHE_FETCH_BLOCK_WIDTH <= L1_CACHE_BYTES);
+> +#endif
+> +
+>  /* Uncached access macros */
+>  #define arc_read_uncached_32(ptr)	\
+>  ({					\
+> diff --git a/arch/arc/include/asm/jump_label.h b/arch/arc/include/asm/jump_label.h
+> new file mode 100644
+> index 000000000000..0de7833b2071
+> --- /dev/null
+> +++ b/arch/arc/include/asm/jump_label.h
+> @@ -0,0 +1,71 @@
+> +/* SPDX-License-Identifier: GPL-2.0 */
+> +#ifndef _ASM_ARC_JUMP_LABEL_H
+> +#define _ASM_ARC_JUMP_LABEL_H
+> +
+> +#ifndef __ASSEMBLY__
+> +
+> +#include <linux/types.h>
+> +
+> +#define JUMP_LABEL_NOP_SIZE 4
+> +
+> +/*
+> + * NOTE about '.balign 4':
+> + *
+> + * To make atomic update of patched instruction available we need to guarantee
+> + * that this instruction doesn't cross L1 I$ fetch block boundary (it's
+> + * smaller than L1 I$ line size).
+> + *
+> + * As of today we simply align instruction which can be patched by 4 byte using
+> + * ".balign 4" directive. In that case patched instruction is aligned with one
+> + * 16-bit NOP_S if this is required.
+> + * However 'align by 4' directive is much stricter than it actually required.
+> + * It's enough that our 32-bit instruction don't cross L1 I$ fetch block
+> + * boundary which can be achieved by using ".bundle_align_mode" directive.
+> + * That will save us from adding useless NOP_S padding in most of the cases.
+> + *
+> + * TODO: switch to ".bundle_align_mode" directive using whin it will be
+> + * supported by ARC toolchain.
+> + */
+> +
+> +static __always_inline bool arch_static_branch(struct static_key *key,
+> +					       bool branch)
+> +{
+> +	asm_volatile_goto(".balign 4			\n"
+> +		 "1:					\n"
+> +		 "nop					\n"
+> +		 ".pushsection __jump_table, \"aw\"	\n"
+> +		 ".word 1b, %l[l_yes], %c0		\n"
+> +		 ".popsection				\n"
+> +		 : : "i" (&((char *)key)[branch]) : : l_yes);
+> +
+> +	return false;
+> +l_yes:
+> +	return true;
+> +}
+> +
+> +static __always_inline bool arch_static_branch_jump(struct static_key *key,
+> +						    bool branch)
+> +{
+> +	asm_volatile_goto(".balign 4			\n"
+> +		 "1:					\n"
+> +		 "b %l[l_yes]				\n"
+> +		 ".pushsection __jump_table, \"aw\"	\n"
+> +		 ".word 1b, %l[l_yes], %c0		\n"
+> +		 ".popsection				\n"
+> +		 : : "i" (&((char *)key)[branch]) : : l_yes);
+> +
+> +	return false;
+> +l_yes:
+> +	return true;
+> +}
+> +
+> +typedef u32 jump_label_t;
+> +
+> +struct jump_entry {
+> +	jump_label_t code;
+> +	jump_label_t target;
+> +	jump_label_t key;
+> +};
+> +
+> +#endif  /* __ASSEMBLY__ */
+> +#endif
+> diff --git a/arch/arc/kernel/Makefile b/arch/arc/kernel/Makefile
+> index de6251132310..e784f5396dda 100644
+> --- a/arch/arc/kernel/Makefile
+> +++ b/arch/arc/kernel/Makefile
+> @@ -20,6 +20,7 @@ obj-$(CONFIG_ARC_EMUL_UNALIGNED) 	+= unaligned.o
+>  obj-$(CONFIG_KGDB)			+= kgdb.o
+>  obj-$(CONFIG_ARC_METAWARE_HLINK)	+= arc_hostlink.o
+>  obj-$(CONFIG_PERF_EVENTS)		+= perf_event.o
+> +obj-$(CONFIG_JUMP_LABEL)		+= jump_label.o
+>  
+>  obj-$(CONFIG_ARC_FPU_SAVE_RESTORE)	+= fpu.o
+>  CFLAGS_fpu.o   += -mdpfp
+> diff --git a/arch/arc/kernel/jump_label.c b/arch/arc/kernel/jump_label.c
+> new file mode 100644
+> index 000000000000..9755895c312f
+> --- /dev/null
+> +++ b/arch/arc/kernel/jump_label.c
+> @@ -0,0 +1,167 @@
+> +// SPDX-License-Identifier: GPL-2.0
+> +
+> +#include <linux/kernel.h>
+> +#include <linux/jump_label.h>
+> +
+> +#include "asm/cacheflush.h"
+> +
+> +#define JUMPLABEL_ERR	"ARC: jump_label: ERROR: "
+> +
+> +/* Halt system on fatal error to make debug easier */
+> +#define arc_jl_fatal(format...)						\
+> +({									\
+> +	pr_err(JUMPLABEL_ERR format);					\
+> +	BUG();								\
+> +})
+> +
+> +static inline u32 arc_gen_nop(void)
+> +{
+> +	/* 1x 32bit NOP in middle endian */
+> +	return 0x7000264a;
+> +}
+> +
+> +static inline bool cross_l1_ifetch_block(void *addr, int len)
+> +{
+> +	unsigned long a = (unsigned long)addr;
+> +	unsigned long ifetch_blk_shift = __fls(I_CACHE_FETCH_BLOCK_WIDTH);
+> +
+> +	return (a >> ifetch_blk_shift) != ((a + len - 1) >> ifetch_blk_shift);
+> +}
+> +
+> +/*
+> + * ARCv2 'Branch unconditionally' instruction:
+> + * 00000ssssssssss1SSSSSSSSSSNRtttt
+> + * s S[n:0] lower bits signed immediate (number is bitfield size)
+> + * S S[m:n+1] upper bits signed immediate (number is bitfield size)
+> + * t S[24:21] upper bits signed immediate (branch unconditionally far)
+> + * N N <.d> delay slot mode
+> + * R R Reserved
+> + */
+> +static inline u32 arc_gen_branch(jump_label_t pc, jump_label_t target)
+> +{
+> +	u32 instruction_l, instruction_r;
+> +	u32 pcl = pc & GENMASK(31, 2);
+> +	u32 u_offset = target - pcl;
+> +	u32 s, S, t;
+> +
+> +	/*
+> +	 * Offset in 32-bit branch instruction must to fit into s25.
+> +	 * Something is terribly broken if we get such huge offset within one
+> +	 * function.
+> +	 */
+> +	if ((s32)u_offset < -16777216 || (s32)u_offset > 16777214)
+> +		arc_jl_fatal("gen branch with offset (%d) not fit in s25",
+> +			     (s32)u_offset);
+> +
+> +	/*
+> +	 * All instructions are aligned by 2 bytes so we should never get offset
+> +	 * here which is not 2 bytes aligned.
+> +	 */
+> +	if (u_offset & 0x1)
+> +		arc_jl_fatal("gen branch with offset (%d) unaligned to 2 bytes",
+> +			     (s32)u_offset);
+> +
+> +	s = (u_offset >> 1)  & GENMASK(9, 0);
+> +	S = (u_offset >> 11) & GENMASK(9, 0);
+> +	t = (u_offset >> 21) & GENMASK(3, 0);
+> +
+> +	/* 00000ssssssssss1 */
+> +	instruction_l = (s << 1) | 0x1;
+> +	/* SSSSSSSSSSNRtttt */
+> +	instruction_r = (S << 6) | t;
+> +
+> +	return (instruction_r << 16) | (instruction_l & GENMASK(15, 0));
+> +}
+> +
+> +void arch_jump_label_transform(struct jump_entry *entry,
+> +			       enum jump_label_type type)
+> +{
+> +	jump_label_t *instr_addr = (jump_label_t *)entry->code;
+> +	u32 instr;
+> +
+> +	/*
+> +	 * Atomic update of patched instruction is only available if this
+> +	 * instruction doesn't cross L1 I$ fetch block boundary (it's smaller
+> +	 * than L1 I$ line size). You can read about the way we achieve this in
+> +	 * arc/include/asm/jump_label.h
+> +	 */
+> +	if (cross_l1_ifetch_block(instr_addr, JUMP_LABEL_NOP_SIZE))
+> +		arc_jl_fatal("instruction (addr %px) cross L1 cache fetch block",
+> +			     instr_addr);
+> +
+> +	if (type == JUMP_LABEL_JMP)
+> +		instr = arc_gen_branch(entry->code, entry->target);
+> +	else
+> +		instr = arc_gen_nop();
+> +
+> +	WRITE_ONCE(*instr_addr, instr);
+> +	flush_icache_range(entry->code, entry->code + JUMP_LABEL_NOP_SIZE);
+> +}
+> +
+> +void arch_jump_label_transform_static(struct jump_entry *entry,
+> +				      enum jump_label_type type)
+> +{
+> +	/*
+> +	 * We use only one NOP type (1x, 4 byte) in arch_static_branch, so
+> +	 * there's no need to patch an identical NOP over the top of it here.
+> +	 * The generic code calls 'arch_jump_label_transform' if the NOP needs
+> +	 * to be replaced by a branch, so 'arch_jump_label_transform_static' is
+> +	 * never called with type other than JUMP_LABEL_NOP.
+> +	 */
+> +	BUG_ON(type != JUMP_LABEL_NOP);
+> +}
+> +
+> +#ifdef CONFIG_ARC_DBG_JUMP_LABEL
+> +#define SELFTEST_MSG	"ARC: instruction generation self-test: "
+> +
+> +struct arc_gen_branch_testdata {
+> +	jump_label_t pc;
+> +	jump_label_t target_address;
+> +	u32 expected_instr;
+> +};
+> +
+> +static __init int branch_gen_test(struct arc_gen_branch_testdata *test_data)
+> +{
+> +	u32 instr_got;
+> +
+> +	instr_got = arc_gen_branch(test_data->pc, test_data->target_address);
+> +	if (instr_got == test_data->expected_instr)
+> +		return 0;
+> +
+> +	pr_err(SELFTEST_MSG "FAIL:\n arc_gen_branch(0x%08x, 0x%08x) != 0x%08x, got 0x%08x\n",
+> +	       test_data->pc, test_data->target_address,
+> +	       test_data->expected_instr, instr_got);
+> +
+> +	return -EFAULT;
+> +}
+> +
+> +static __init int instr_gen_test(void)
+> +{
+> +	int i;
+> +
+> +	struct arc_gen_branch_testdata test_data[] = {
+> +		{0x90007548, 0x90007514, 0xffcf07cd}, /* tiny (-52) offs */
+> +		{0x9000c9c0, 0x9000c782, 0xffcf05c3}, /* tiny (-574) offs */
+> +		{0x9000cc1c, 0x9000c782, 0xffcf0367}, /* tiny (-1178) offs */
+> +		{0x9009dce0, 0x9009d106, 0xff8f0427}, /* small (-3034) offs */
+> +		{0x9000f5de, 0x90007d30, 0xfc0f0755}, /* big  (-30892) offs */
+> +		{0x900a2444, 0x90035f64, 0xc9cf0321}, /* huge (-443616) offs */
+> +		{0x90007514, 0x9000752c, 0x00000019}, /* tiny (+24) offs */
+> +		{0x9001a578, 0x9001a77a, 0x00000203}, /* tiny (+514) offs */
+> +		{0x90031ed8, 0x90032634, 0x0000075d}, /* tiny (+1884) offs */
+> +		{0x9008c7f2, 0x9008d3f0, 0x00400401}, /* small (+3072) offs */
+> +		{0x9000bb38, 0x9003b340, 0x17c00009}, /* big  (+194568) offs */
+> +		{0x90008f44, 0x90578d80, 0xb7c2063d}  /* huge (+5701180) offs */
+> +	};
+> +
+> +	for (i = 0; i < ARRAY_SIZE(test_data); i++)
+> +		if (branch_gen_test(&test_data[i]))
+> +			return -EFAULT;
+> +
+> +	pr_info(SELFTEST_MSG "OK\n");
+> +
+> +	return 0;
+> +}
+> +early_initcall(instr_gen_test);
+> +
+> +#endif /* CONFIG_ARC_DBG_JUMP_LABEL */
+> 
+
 
 _______________________________________________
 linux-snps-arc mailing list
