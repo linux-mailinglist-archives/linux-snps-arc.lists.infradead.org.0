@@ -2,43 +2,43 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 798BAA3B53
-	for <lists+linux-snps-arc@lfdr.de>; Fri, 30 Aug 2019 18:05:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5C3F3A3B5E
+	for <lists+linux-snps-arc@lfdr.de>; Fri, 30 Aug 2019 18:06:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=e0tIWSC15EFJO7iZq/tBZZMiSOHt+5jWCeoA0bwgZU4=; b=Gt+t0pY9nyucd9
-	i4Bq4h7w4i2/QvrWUbBkxuxfm3sD/j5uTxm7PpbxjmXRCcoo6/n+djxRFuXSBydE+D48+2XUtlNtG
-	iaO/67ZXnPtPHu9pCZ9B6XXWq9uSAc9fzyOAQTppPwH2kUYV4mtReDQCDcBqpZyC2abctlPtNnIR0
-	ATDQv2lpgF4I4tL0bku2WDreQEEFDOzXAywGpFN3m1jdUb/NrEhhjBBFZtO9RG7Bo819qy3XoHCo0
-	4se/x4mNgiOzWDfPRl/nXJQEdIH49i45a4E9itNlcIVZHyJ5nrBk0bI8TdjNZ3MDYuFKjOzW7vXhC
-	q7HMUxQK1B+6PtHDYyRw==;
+	List-Owner; bh=Ff+GbOEG2w4xGg+G5ZHHcQ+MXeFk35BOZToao23dSY0=; b=sen1RxPzILA/kJ
+	nEeu3rVh1e0W+W9JWgBihVWF4a58t73tJDgaujqHF6kshvdNhFzAqsDsBe2yhWdpXjdXQa1pzlESx
+	TMst4vZV2D8oj+NkQ1R9iu8/0YPF+hU9ojVkBP1WZ0WSMVcnPHNeAGSPp/0NAjkIwmlrQoew5BhBd
+	KumKCh65T7rVbSZwsYwxScm1xB7XISx4ipJMXFKYrgZx18Ip7JToQ5ROY4eiTKsPi2UtxURoIOViP
+	XlIDjtB+PErAgUfvc6JzWRcTX1n7JFcGOddwqUXw/vsmC0nWR4R8QeBC34K/fmK5Sy0u00aEEXkFp
+	LQZZuI2zxvrt6wDNjSVQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3jP6-0004X2-Nz; Fri, 30 Aug 2019 16:05:36 +0000
+	id 1i3jPo-00058W-Si; Fri, 30 Aug 2019 16:06:20 +0000
 Received: from verein.lst.de ([213.95.11.211])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i3jOT-0002pd-Dv; Fri, 30 Aug 2019 16:04:58 +0000
+ id 1i3jOp-0004FU-Fw; Fri, 30 Aug 2019 16:05:21 +0000
 Received: by verein.lst.de (Postfix, from userid 2407)
- id 95CE5227A8A; Fri, 30 Aug 2019 18:04:54 +0200 (CEST)
-Date: Fri, 30 Aug 2019 18:04:54 +0200
+ id 7296E227A8A; Fri, 30 Aug 2019 18:05:16 +0200 (CEST)
+Date: Fri, 30 Aug 2019 18:05:15 +0200
 From: Christoph Hellwig <hch@lst.de>
-To: Ingo Molnar <mingo@kernel.org>
-Subject: Re: [PATCH 12/26] x86: clean up ioremap
-Message-ID: <20190830160454.GB26887@lst.de>
+To: Will Deacon <will@kernel.org>
+Subject: Re: [PATCH 19/26] arm64: remove __iounmap
+Message-ID: <20190830160515.GC26887@lst.de>
 References: <20190817073253.27819-1-hch@lst.de>
- <20190817073253.27819-13-hch@lst.de> <20190817103402.GA7602@gmail.com>
+ <20190817073253.27819-20-hch@lst.de>
+ <20190819073601.4yxjvmyjtpi7tk56@willie-the-truck>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190817103402.GA7602@gmail.com>
+In-Reply-To: <20190819073601.4yxjvmyjtpi7tk56@willie-the-truck>
 User-Agent: Mutt/1.5.17 (2007-11-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190830_090457_621961_E38E6947 
-X-CRM114-Status: UNSURE (   9.31  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190830_090520_035369_72710AD2 
+X-CRM114-Status: GOOD (  10.46  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -77,25 +77,21 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-snps-arc" <linux-snps-arc-bounces@lists.infradead.org>
 Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org
 
-On Sat, Aug 17, 2019 at 12:34:02PM +0200, Ingo Molnar wrote:
-> 
-> * Christoph Hellwig <hch@lst.de> wrote:
-> 
-> > Use ioremap as the main implemented function, and defined
-> > ioremap_nocache to it as a deprecated alias.
+On Mon, Aug 19, 2019 at 08:36:02AM +0100, Will Deacon wrote:
+> On Sat, Aug 17, 2019 at 09:32:46AM +0200, Christoph Hellwig wrote:
+> > No need to indirect iounmap for arm64.
 > > 
 > > Signed-off-by: Christoph Hellwig <hch@lst.de>
 > > ---
-> >  arch/x86/include/asm/io.h | 8 ++------
-> >  arch/x86/mm/ioremap.c     | 8 ++++----
-> >  arch/x86/mm/pageattr.c    | 4 ++--
-> >  3 files changed, 8 insertions(+), 12 deletions(-)
+> >  arch/arm64/include/asm/io.h | 3 +--
+> >  arch/arm64/mm/ioremap.c     | 4 ++--
+> >  2 files changed, 3 insertions(+), 4 deletions(-)
 > 
-> Acked-by: Ingo Molnar <mingo@kernel.org>
+> Not sure why we did it like this...
+> 
+> Acked-by: Will Deacon <will@kernel.org>
 
-Can you pick it up through tip for 5.4?  That way we can get most
-bits in through their maintainer trees, and then I'll resubmit the
-rest for the next merge window.
+Can you just pick this one up through the arm64 tree for 5.4?
 
 _______________________________________________
 linux-snps-arc mailing list
