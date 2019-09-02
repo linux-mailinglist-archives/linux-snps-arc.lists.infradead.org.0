@@ -2,179 +2,94 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 283DBA58FF
-	for <lists+linux-snps-arc@lfdr.de>; Mon,  2 Sep 2019 16:17:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 21973A5D3A
+	for <lists+linux-snps-arc@lfdr.de>; Mon,  2 Sep 2019 22:53:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:Reply-To
-	:List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Subject:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=PIFqlBUUnnqQ/F5lNrOzp1HDEf5s9h43WNOv9AqMG84=; b=UUhLuyhq9LN6+5bnuEqZPzJdA
-	H5z2F+15Tm9SM5bSQRTExLt5FIKV5Cb6V2YuJ8OoKTKISM8XF1wrQDvBLSZM1zrhdvjeQ0HOJwcK7
-	Jmpe8c+DUk5LWJy6IYOh9yERhX9ET6pyBqoBMaK0Pq+SHSOhcrvkqvwbWKbnwuomhe2b3xMQEEQjb
-	WxMveg5jnmSVCtqC/VXKlgekixY8LcyRDwq71zfHqocMYry0sQNJ/eUOLCelTflP/4F8EtrkW+hRJ
-	75q0JOGIqWDDVE3G74A2DFOFvn+LWjYCP9JLCZfD+ivKpvm3WGeJRo6kmxq2do2E/AAmfoZ+x1B5K
-	VUNMWQATw==;
+	 bh=SBjho3CO0WmgtDCzqhD++ul030AG847CKuj70ErvQzQ=; b=UWb6K3TT925xzWQ3f3GpD/+w4
+	u9OosdtA9788RVVcDoSPJ9zI8a77M5590c1GHlzbf5Q0y0AjAnmG/fBTDCOZE3gJ+OitVOx8x/qou
+	64bU5FmMaIRSMeAleMOMrhpEKRteY4G8Yyssj+nVnh6rvrqCpLX4yhUeIuCCqezKFViOacnDweOHF
+	/sdF0wBq1yVTnb0eZbrN0GNeErpRtq1YEiP43zYDWpzUxgGPg/s9w+SV8j2A/cRNjG05yh53Vpyz+
+	wa/QNtqkieQzPHSVT+BAvLAZv7KORK2/8iLgcCXc7vW9R4AzhLF6YgyWPtU5Cb32j8BoQpkx+hZYD
+	/LpwA0WOg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i4n90-000536-NL; Mon, 02 Sep 2019 14:17:22 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1i4tJt-0005eY-Iq; Mon, 02 Sep 2019 20:53:01 +0000
+Received: from mail-yw1-xc36.google.com ([2607:f8b0:4864:20::c36])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i4n8o-0004sV-RJ
- for linux-snps-arc@lists.infradead.org; Mon, 02 Sep 2019 14:17:12 +0000
-Received: by mail-wr1-x443.google.com with SMTP id t16so14209938wra.6
- for <linux-snps-arc@lists.infradead.org>; Mon, 02 Sep 2019 07:17:09 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=monstr-eu.20150623.gappssmtp.com; s=20150623;
- h=reply-to:subject:to:cc:references:from:openpgp:autocrypt:message-id
- :date:user-agent:mime-version:in-reply-to;
- bh=wHLGtYkZTmnf/Q+NJRht7CodjM3w+dg+9ES/vSM0RcI=;
- b=afYPXPQLzvFAj1lVnwBQn3TA5rDlPS9rxLsQKmLyUEVYYqLvv2di5vklel8nyDuIlj
- IagBthy5dYLukTgWxTT/3ztKBRs9PTOZ66iuza579Dfj5UnylogGKx0AMzEUMimvbUWZ
- v0Jple7LvgR/plVjamH/3QMW3Vb3p+g8yC6PXiSurp6qQqqA/N9J6twCJEbcgPkvIwyL
- WsQO4HxJE3vbkuodjs3S68y25OtneQYX4b8YKVWUaflWKRlIMn5V5CKAAS7VvPy3RMkl
- oDTh3MMO0lQA3AxaolW6Uh96p9mpUIjQPq9teH1xMncYapsZ1Q7Az7UhWut9STf4/cGK
- RxUA==
+ id 1i4tJp-0005eC-T2
+ for linux-snps-arc@lists.infradead.org; Mon, 02 Sep 2019 20:52:59 +0000
+Received: by mail-yw1-xc36.google.com with SMTP id 129so4456668ywb.8
+ for <linux-snps-arc@lists.infradead.org>; Mon, 02 Sep 2019 13:52:57 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=konsulko.com; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=oKb14IGpFAaXis/QK87qCmiMdD9IRp03vAQV3gaW5aw=;
+ b=mDPXsuzvu6WYYeYk0hWframxU2NRcO1NVHBfxcbblw6xmrk4nwCgRJwkgE4QefwXJ+
+ F9Ycx3YLPCsqkfFUcPxHK1q+EuBphGl9rE8+iMHwxOfJBGoofJw3B2sULG1KgUk2rYRi
+ NjhNcGNWCnjPHVc3iWLexv/5NBcIMFb1FPllo=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:reply-to:subject:to:cc:references:from:openpgp
- :autocrypt:message-id:date:user-agent:mime-version:in-reply-to;
- bh=wHLGtYkZTmnf/Q+NJRht7CodjM3w+dg+9ES/vSM0RcI=;
- b=NbpOZfOBkXiVqsobAao8ozL8xsnDMqMN4U6ysTIRMz0zETANbhYgNcXe9Qyq2EWE0Q
- DBskVV22NS7WcA5aeC0kooDcKzOpbIc5cl1uBG/Qk0M/9lb7ATyCPV9lSt3zy/6LBXKK
- 803i9kZ9UIxxD5NPfmV+JZQtbv8kEKAXflpDXh2r4LjYXULEDOCrVQfEywY3Wv3izX2N
- /058V8b6awWKKzZ51Vn2klOHVo3Vv9nS/UDciKOYOZPk670ycvX3LrgHHOPOeexMTpZN
- W11TEp6JmT9hdvcUqZ5o75+Q2GxhqFNDek6KWmB9hy6+NXL6VBvRpENXfoK8Id6RbM54
- ftZw==
-X-Gm-Message-State: APjAAAVchg4DQTQwCaAV6cFYm3VpiOobfH7vnhEKkiUJKifDRPsXQTvF
- SVw9PwgEqL6FCqk57a2Zmk+J6w==
-X-Google-Smtp-Source: APXvYqyShqgEJwFOtJFr9Fq0w6BS1apJDW9A6yIMdA+d8V9PFj9RZCN2SBDb4+Bki1KAn/644PK6KQ==
-X-Received: by 2002:adf:dd04:: with SMTP id a4mr5388204wrm.340.1567433828197; 
- Mon, 02 Sep 2019 07:17:08 -0700 (PDT)
-Received: from [74.125.133.108] ([149.199.62.131])
- by smtp.gmail.com with ESMTPSA id r17sm13933233wrt.68.2019.09.02.07.16.58
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=oKb14IGpFAaXis/QK87qCmiMdD9IRp03vAQV3gaW5aw=;
+ b=gQtuWF8IrEKJX60CKTX+xEpBZfMX0L/u65nFnf1YEA5A3/2llgVouDnWTwfC74sKYY
+ r/BfTSp2dpDGECEqXRAnXpTkQg0GoqzRLGW9ugyRXaY36In8taD8kW7+Kxek7CZ3lNp9
+ onV/da0NVgwPPEC9SODIHrM6ZnsRK/76YZ5s8cBYvwDmOAq+B83I9Vaws1qzrvjwml1p
+ LKlA2cav1bbIwMZBoGDPWkdkhcIB3MHgg/z9GRjh0OOM4ulvta8jp5Bdm377vypXhph4
+ TkOKVCZxArPOYM4ixFsHJy1Mfp7Y5fjU1RF8i5BMsMnXp8KfjL/HznMMJQ+XRQJozr5l
+ lSNw==
+X-Gm-Message-State: APjAAAW4aTOe0FMt5x33yXKpqfRw1GAOMbDJG1mbIZ/h/s/yJEhseg8O
+ Do15hTOOqL00+npzTSVZI9se1w==
+X-Google-Smtp-Source: APXvYqyTORyjPdeK3AmeYO0txZAbq07NHiqm4q0pPWphwczVyeMlIFbjZMrH+gAQAf0FZfyhG/5WuQ==
+X-Received: by 2002:a81:700c:: with SMTP id l12mr21929615ywc.87.1567457576179; 
+ Mon, 02 Sep 2019 13:52:56 -0700 (PDT)
+Received: from bill-the-cat
+ (cpe-2606-A000-1401-87B6-10E4-7D38-9BA0-AD27.dyn6.twc.com.
+ [2606:a000:1401:87b6:10e4:7d38:9ba0:ad27])
+ by smtp.gmail.com with ESMTPSA id j5sm3117891ywd.50.2019.09.02.13.52.54
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 02 Sep 2019 07:17:07 -0700 (PDT)
-Subject: Re: [PATCH 03/26] m68k, microblaze: remove ioremap_fullcache
-To: Christoph Hellwig <hch@lst.de>, Arnd Bergmann <arnd@arndb.de>,
- Guo Ren <guoren@kernel.org>, Greentime Hu <green.hu@gmail.com>,
- Vincent Chen <deanbo422@gmail.com>, Guan Xuetao <gxt@pku.edu.cn>,
- x86@kernel.org
-References: <20190817073253.27819-1-hch@lst.de>
- <20190817073253.27819-4-hch@lst.de>
-From: Michal Simek <monstr@monstr.eu>
-Openpgp: preference=signencrypt
-Autocrypt: addr=monstr@monstr.eu; prefer-encrypt=mutual; keydata=
- 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
-Message-ID: <9a11ddb0-0799-c64a-f5aa-0504c564998f@monstr.eu>
-Date: Mon, 2 Sep 2019 16:16:52 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ Mon, 02 Sep 2019 13:52:54 -0700 (PDT)
+Date: Mon, 2 Sep 2019 16:52:52 -0400
+From: Tom Rini <trini@konsulko.com>
+To: Alexey Brodkin <Alexey.Brodkin@synopsys.com>
+Subject: Re: [PATCH] mmc: dw_mmc: fix timeout calculate method
+Message-ID: <20190902205252.GB26850@bill-the-cat>
+References: <20190814083819.5784-1-kever.yang@rock-chips.com>
+ <AM0PR04MB44819DF46C4A0C68844F13C688A00@AM0PR04MB4481.eurprd04.prod.outlook.com>
+ <AM0PR04MB44819FF9900E879AA261324B88A00@AM0PR04MB4481.eurprd04.prod.outlook.com>
+ <3a4fc838-0cc9-64c8-3993-628cce6484c5@rock-chips.com>
+ <CY4PR1201MB01207C7EEBA298FDD2B57711A1A20@CY4PR1201MB0120.namprd12.prod.outlook.com>
+ <c322fb38-bbc4-545e-c418-0f3eed2bf1e3@rock-chips.com>
+ <CY4PR1201MB01204C5C461D25197D3B11D5A1BD0@CY4PR1201MB0120.namprd12.prod.outlook.com>
+ <bbfdedf8-318a-271d-fc64-472a0017583a@rock-chips.com>
+ <CY4PR1201MB01202FCF2BF2C1F75F5DE354A1BE0@CY4PR1201MB0120.namprd12.prod.outlook.com>
 MIME-Version: 1.0
-In-Reply-To: <20190817073253.27819-4-hch@lst.de>
+In-Reply-To: <CY4PR1201MB01202FCF2BF2C1F75F5DE354A1BE0@CY4PR1201MB0120.namprd12.prod.outlook.com>
+User-Agent: Mutt/1.5.24 (2015-08-30)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190902_071711_030279_E3AD4C1D 
-X-CRM114-Status: GOOD (  15.30  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190902_135257_949536_B19F5674 
+X-CRM114-Status: GOOD (  19.03  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:c36 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-snps-arc@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -187,134 +102,97 @@ List-Post: <mailto:linux-snps-arc@lists.infradead.org>
 List-Help: <mailto:linux-snps-arc-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-snps-arc>, 
  <mailto:linux-snps-arc-request@lists.infradead.org?subject=subscribe>
-Reply-To: monstr@monstr.eu
-Cc: linux-arch@vger.kernel.org, linux-s390@vger.kernel.org,
- linux-ia64@vger.kernel.org, linux-parisc@vger.kernel.org,
- linux-sh@vger.kernel.org, linux-hexagon@vger.kernel.org,
- linux-xtensa@linux-xtensa.org, linux-mips@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-m68k@lists.linux-m68k.org,
- openrisc@lists.librecores.org, linux-mtd@lists.infradead.org,
- linux-alpha@vger.kernel.org, sparclinux@vger.kernel.org,
- nios2-dev@lists.rocketboards.org, linux-riscv@lists.infradead.org,
- linux-snps-arc@lists.infradead.org, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============7953113860357833076=="
+Cc: Peng Fan <peng.fan@nxp.com>, Simon Glass <sjg@chromium.org>,
+ Kever Yang <kever.yang@rock-chips.com>,
+ "uboot-snps-arc@synopsys.com" <uboot-snps-arc@synopsys.com>,
+ "u-boot@lists.denx.de" <u-boot@lists.denx.de>,
+ "linux-snps-arc@lists.infradead.org" <linux-snps-arc@lists.infradead.org>,
+ "Eugeniy.Paltsev@synopsys.com" <Eugeniy.Paltsev@synopsys.com>
+Content-Type: multipart/mixed; boundary="===============0059476397496893580=="
 Sender: "linux-snps-arc" <linux-snps-arc-bounces@lists.infradead.org>
 Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org
 
-This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---===============7953113860357833076==
+
+--===============0059476397496893580==
 Content-Type: multipart/signed; micalg=pgp-sha1;
- protocol="application/pgp-signature";
- boundary="sxrD5DzuLHXmSTexCf4xoEovzaJstmsXm"
+	protocol="application/pgp-signature"; boundary="wkJh4kEcDYTskwDc"
+Content-Disposition: inline
 
-This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---sxrD5DzuLHXmSTexCf4xoEovzaJstmsXm
-Content-Type: multipart/mixed; boundary="Gv98DqTDPDXpgdAS8uye8pnF1A8XQfxBm";
- protected-headers="v1"
-From: Michal Simek <monstr@monstr.eu>
-Reply-To: monstr@monstr.eu
-To: Christoph Hellwig <hch@lst.de>, Arnd Bergmann <arnd@arndb.de>,
- Guo Ren <guoren@kernel.org>, Greentime Hu <green.hu@gmail.com>,
- Vincent Chen <deanbo422@gmail.com>, Guan Xuetao <gxt@pku.edu.cn>,
- x86@kernel.org
-Cc: linux-alpha@vger.kernel.org, linux-snps-arc@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org, linux-hexagon@vger.kernel.org,
- linux-ia64@vger.kernel.org, linux-m68k@lists.linux-m68k.org,
- linux-mips@vger.kernel.org, nios2-dev@lists.rocketboards.org,
- openrisc@lists.librecores.org, linux-parisc@vger.kernel.org,
- linux-riscv@lists.infradead.org, linux-s390@vger.kernel.org,
- linux-sh@vger.kernel.org, sparclinux@vger.kernel.org,
- linux-xtensa@linux-xtensa.org, linux-mtd@lists.infradead.org,
- linux-arch@vger.kernel.org, linux-kernel@vger.kernel.org
-Message-ID: <9a11ddb0-0799-c64a-f5aa-0504c564998f@monstr.eu>
-Subject: Re: [PATCH 03/26] m68k, microblaze: remove ioremap_fullcache
-References: <20190817073253.27819-1-hch@lst.de>
- <20190817073253.27819-4-hch@lst.de>
-In-Reply-To: <20190817073253.27819-4-hch@lst.de>
 
---Gv98DqTDPDXpgdAS8uye8pnF1A8XQfxBm
+--wkJh4kEcDYTskwDc
 Content-Type: text/plain; charset=utf-8
-Content-Language: en-US
+Content-Disposition: inline
 Content-Transfer-Encoding: quoted-printable
 
-On 17. 08. 19 9:32, Christoph Hellwig wrote:
-> No callers of this function.
+On Mon, Sep 02, 2019 at 12:24:42PM +0000, Alexey Brodkin wrote:
+> Hi Kever,
 >=20
-> Signed-off-by: Christoph Hellwig <hch@lst.de>
-> ---
->  arch/m68k/include/asm/kmap.h     | 7 -------
->  arch/microblaze/include/asm/io.h | 1 -
->  2 files changed, 8 deletions(-)
+> > -----Original Message-----
+> > From: Kever Yang <kever.yang@rock-chips.com>
+> > Sent: Monday, September 2, 2019 11:05 AM
+> > To: Alexey Brodkin <abrodkin@synopsys.com>
+> > Cc: trini@konsulko.com; Eugeniy.Paltsev@synopsys.com; Simon Glass <sjg@=
+chromium.org>; Peng Fan
+> > <peng.fan@nxp.com>; u-boot@lists.denx.de
+> > Subject: Re: [PATCH] mmc: dw_mmc: fix timeout calculate method
+> >
+> > Hi Alexey,
+> >
+> > On 2019/8/30 =E4=B8=8B=E5=8D=889:28, Alexey Brodkin wrote:
+> > > Hi Kever,
+> > >
+> > > [snip]
+> > >
+> > >> I think this tree does not including this patch, Peng drop it becaus=
+e of
+> > >> this issue,
+> > >> so you need to apply this patch in your branch to reproduce the prob=
+lem.
+> > >> I have send out V2 patch for this fix with only using 32bit variable
+> > > Could you please refer me to the problematic patch so I may try it?
+> >
+> > This is the patch with problem, and here is the link on patchwork:
+> > https://patchwork.ozlabs.org/patch/1146845/
 >=20
-> diff --git a/arch/m68k/include/asm/kmap.h b/arch/m68k/include/asm/kmap.=
-h
-> index aac7f045f7f0..03d904fe6087 100644
-> --- a/arch/m68k/include/asm/kmap.h
-> +++ b/arch/m68k/include/asm/kmap.h
-> @@ -43,13 +43,6 @@ static inline void __iomem *ioremap_wt(unsigned long=
- physaddr,
->  	return __ioremap(physaddr, size, IOMAP_WRITETHROUGH);
->  }
-> =20
-> -#define ioremap_fullcache ioremap_fullcache
-> -static inline void __iomem *ioremap_fullcache(unsigned long physaddr,
-> -					      unsigned long size)
-> -{
-> -	return __ioremap(physaddr, size, IOMAP_FULL_CACHING);
-> -}
-> -
->  #define memset_io memset_io
->  static inline void memset_io(volatile void __iomem *addr, unsigned cha=
-r val,
->  			     int count)
-> diff --git a/arch/microblaze/include/asm/io.h b/arch/microblaze/include=
-/asm/io.h
-> index c7968139486f..86c95b2a1ce1 100644
-> --- a/arch/microblaze/include/asm/io.h
-> +++ b/arch/microblaze/include/asm/io.h
-> @@ -40,7 +40,6 @@ extern void iounmap(volatile void __iomem *addr);
-> =20
->  extern void __iomem *ioremap(phys_addr_t address, unsigned long size);=
-
->  #define ioremap_nocache(addr, size)		ioremap((addr), (size))
-> -#define ioremap_fullcache(addr, size)		ioremap((addr), (size))
->  #define ioremap_wc(addr, size)			ioremap((addr), (size))
->  #define ioremap_wt(addr, size)			ioremap((addr), (size))
-> =20
+> Please find my fixes here:
+> https://patchwork.ozlabs.org/patch/1156541/
+> https://patchwork.ozlabs.org/patch/1156617/
 >=20
+> Tom do we want https://patchwork.ozlabs.org/patch/1146845/ and fixes for =
+it
+> (see 2 items above) to become a part of upcoming v2019.10 release or
+> it will be slated for the next one?
 
-Acked-by: Michal Simek <monstr@monstr.eu> (for Microblaze)
-
-Thanks,
-Michal
+I think we should aim to get all the fixes in for this release.
 
 --=20
-Michal Simek, Ing. (M.Eng), OpenPGP -> KeyID: FE3D1F91
-w: www.monstr.eu p: +42-0-721842854
-Maintainer of Linux kernel - Xilinx Microblaze
-Maintainer of Linux kernel - Xilinx Zynq ARM and ZynqMP ARM64 SoCs
-U-Boot custodian - Xilinx Microblaze/Zynq/ZynqMP/Versal SoCs
+Tom
 
-
-
---Gv98DqTDPDXpgdAS8uye8pnF1A8XQfxBm--
-
---sxrD5DzuLHXmSTexCf4xoEovzaJstmsXm
+--wkJh4kEcDYTskwDc
 Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: OpenPGP digital signature
-Content-Disposition: attachment; filename="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1
 
-iF0EARECAB0WIQQbPNTMvXmYlBPRwx7KSWXLKUoMIQUCXW0kVQAKCRDKSWXLKUoM
-IUCIAJ0dq35U3Gq44M2ocYgcj4SW3Em/1wCfajAs22UIYAGzwTZZyZTvB5OFi1I=
-=essT
+iQIcBAEBAgAGBQJdbYEkAAoJEIf59jXTHXZSNBwP/33YNAoV414KjLHkjeim+i79
+pOaqxTOYBBXF0g0FBoxjbwboVcI/Lp0p9ieIV4pyKf+3BUKZJ2Ftq5uGefXOvk+v
+k+002POO501mL3BCOHBsetAw4MGn2KDKJjuU/t8I2IUEry15OW8dZQJh6Eaudi4L
+NuDCBRqEORLzcctxX+s+0wnlSlwGOk6cocP2823R+0P/3LphmbF3KR10/8vNRocB
+oulgvjqN0Q/67fxCbKoVKC7sPg1rgZfNBkJ2HNoU7Y8njlw7zqrBlQKMWDvs2la3
+qfvv/0DAo2iFwgezTNEZvscBYYugVQFQ2qSkdFjmDkJARcPdH2VqUl1aJmgu3HF0
+inuB5aiUTSbMwkeltOAfLCYSR+wNC+yiWiqQHH3DqscmWkWbY60tNPPjaZfDldyZ
+KPR5Ww+Un5Ta0qUR0/q6ApmSSwPBq8Nhgp5lGsuXcj5ev1McEBGPMmZnbI1LzA/5
+MbOP/PNvxdqcHb7x1/HHIiLof3d0aAPNVJ9bdWPgItSSzuj8Uzmcs5Eb+mP+EGPG
+s5hAspsp3BRsPy/k2KDVUjESHv2dZp5efhEPHz9xLG1JdTWU22fmZWm554OK++bN
+VJfzkLb+VVuJTc05cyrVrUNAagrhE7DmdvJ2IqfvkdUv8Vjbfyx+Nh2sg0g1HUK+
+7udnzEknZhH1CLUyoeZk
+=ZtFV
 -----END PGP SIGNATURE-----
 
---sxrD5DzuLHXmSTexCf4xoEovzaJstmsXm--
+--wkJh4kEcDYTskwDc--
 
 
---===============7953113860357833076==
+--===============0059476397496893580==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -325,5 +203,5 @@ linux-snps-arc mailing list
 linux-snps-arc@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-snps-arc
 
---===============7953113860357833076==--
+--===============0059476397496893580==--
 
