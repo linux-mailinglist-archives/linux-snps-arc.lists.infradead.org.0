@@ -2,97 +2,93 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DDD6CA86AC
-	for <lists+linux-snps-arc@lfdr.de>; Wed,  4 Sep 2019 18:42:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F1BF2A92E6
+	for <lists+linux-snps-arc@lfdr.de>; Wed,  4 Sep 2019 22:16:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:
-	In-Reply-To:Date:References:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Message-Id:MIME-Version:References:
+	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ewnkx/hxUkJVPcryAzJYrKGw/CDHFt/mojGMD4iIrlI=; b=iFD1oTEqZadJjY
-	mPFIGyOaQbE7mQVlOOZIWZnmcUf1Z/Rhn3CgBH9/gs2AdS4U8ZyCWIMEUxh+nOATjbI9yAgZOA6Yg
-	joZ780dcj49p0oFyhxGRPfHlBYcCqmg9D0edq6gFUHlZlcTDZYpYbFdTSK0pbJpmOBgt1XubHpmda
-	gfQz1KUYw10z6cODwpwcG6T2feiL5NSVIEyYIYNI3tOf49AY0XMDPDYjPIihJuc5Hm1Mvevv8B6Y+
-	dBLFEW5W1xDlnTMc0BX6NQiqLHxkuV/ZyLUyc17GqImrVQTcckue5+N0E5SqyGzmcmEPbzY7WSpR9
-	U8B+CVeU8tcDxp60Wm+Q==;
+	List-Owner; bh=eFJYUafe40fPEVfel+4AqoqMe/xLcVAPAia5VrOLZik=; b=VQIABFDUZbh3OC
+	1NjyHveVS7d0xnhn2rBf+nU8Erk20xo7bbVL7L5sxM+XqN3sCN8cZj68MMTeIWWYeuSIRebvOwk/H
+	5mo0ph4bLETO549qxH+3KRhNXMo29edn1G2/UM/bRWD7Jvh7c2zwxPXdmjSGKvGyGaJ6e2O1gHzKK
+	wpHc2Y9ZrSAHtIzxGI0ukPHxnjEVXfqd2MpQt9pXPzeiwTzMelPQI3tYxlGdSgZKpTpBO+FGHQWXB
+	x5Nzyd7sA3QAPNz5pYCFGnifBQWtskZe+74p5bhmFq138D62LcXZGU9h7P73C2JCkDwFyQqlbb3hE
+	ez3zKMsYXTuQubkpU5JA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5YMb-0006G7-IV; Wed, 04 Sep 2019 16:42:33 +0000
-Received: from out03.mta.xmission.com ([166.70.13.233])
+	id 1i5bhm-0007WB-OR; Wed, 04 Sep 2019 20:16:38 +0000
+Received: from mx0a-001b2d01.pphosted.com ([148.163.156.1])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i5YMY-0006Ei-8F
- for linux-snps-arc@lists.infradead.org; Wed, 04 Sep 2019 16:42:31 +0000
-Received: from in02.mta.xmission.com ([166.70.13.52])
- by out03.mta.xmission.com with esmtps
- (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.87)
- (envelope-from <ebiederm@xmission.com>)
- id 1i5YMG-0003Uf-5q; Wed, 04 Sep 2019 10:42:12 -0600
-Received: from ip68-227-160-95.om.om.cox.net ([68.227.160.95]
- helo=x220.xmission.com) by in02.mta.xmission.com with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.87)
- (envelope-from <ebiederm@xmission.com>)
- id 1i5YMF-0000Z5-KX; Wed, 04 Sep 2019 10:42:12 -0600
-From: ebiederm@xmission.com (Eric W. Biederman)
-To: Sasha Levin <sashal@kernel.org>
-References: <20190903162519.7136-1-sashal@kernel.org>
- <20190903162519.7136-111-sashal@kernel.org>
- <87ef0xqq9f.fsf@x220.int.ebiederm.org>
- <20190903194526.GH5281@sasha-vm>
-Date: Wed, 04 Sep 2019 11:41:55 -0500
-In-Reply-To: <20190903194526.GH5281@sasha-vm> (Sasha Levin's message of "Tue, 
- 3 Sep 2019 15:45:26 -0400")
-Message-ID: <87y2z4nhd8.fsf@x220.int.ebiederm.org>
-User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/26.1 (gnu/linux)
+ id 1i5bhk-0007Ur-1N
+ for linux-snps-arc@lists.infradead.org; Wed, 04 Sep 2019 20:16:37 +0000
+Received: from pps.filterd (m0098399.ppops.net [127.0.0.1])
+ by mx0a-001b2d01.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
+ x84KBsnQ005741
+ for <linux-snps-arc@lists.infradead.org>; Wed, 4 Sep 2019 16:16:34 -0400
+Received: from e06smtp05.uk.ibm.com (e06smtp05.uk.ibm.com [195.75.94.101])
+ by mx0a-001b2d01.pphosted.com with ESMTP id 2uthesdtm4-1
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=NOT)
+ for <linux-snps-arc@lists.infradead.org>; Wed, 04 Sep 2019 16:16:33 -0400
+Received: from localhost
+ by e06smtp05.uk.ibm.com with IBM ESMTP SMTP Gateway: Authorized Use Only!
+ Violators will be prosecuted
+ for <linux-snps-arc@lists.infradead.org> from <gerald.schaefer@de.ibm.com>;
+ Wed, 4 Sep 2019 21:16:30 +0100
+Received: from b06cxnps4076.portsmouth.uk.ibm.com (9.149.109.198)
+ by e06smtp05.uk.ibm.com (192.168.101.135) with IBM ESMTP SMTP Gateway:
+ Authorized Use Only! Violators will be prosecuted; 
+ (version=TLSv1/SSLv3 cipher=AES256-GCM-SHA384 bits=256/256)
+ Wed, 4 Sep 2019 21:16:21 +0100
+Received: from d06av26.portsmouth.uk.ibm.com (d06av26.portsmouth.uk.ibm.com
+ [9.149.105.62])
+ by b06cxnps4076.portsmouth.uk.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP id
+ x84KGKlh51314888
+ (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Wed, 4 Sep 2019 20:16:20 GMT
+Received: from d06av26.portsmouth.uk.ibm.com (unknown [127.0.0.1])
+ by IMSVA (Postfix) with ESMTP id 7DEAAAE045;
+ Wed,  4 Sep 2019 20:16:20 +0000 (GMT)
+Received: from d06av26.portsmouth.uk.ibm.com (unknown [127.0.0.1])
+ by IMSVA (Postfix) with ESMTP id 50121AE04D;
+ Wed,  4 Sep 2019 20:16:19 +0000 (GMT)
+Received: from thinkpad (unknown [9.152.96.45])
+ by d06av26.portsmouth.uk.ibm.com (Postfix) with ESMTP;
+ Wed,  4 Sep 2019 20:16:19 +0000 (GMT)
+Date: Wed, 4 Sep 2019 22:16:18 +0200
+From: Gerald Schaefer <gerald.schaefer@de.ibm.com>
+To: Anshuman Khandual <anshuman.khandual@arm.com>
+Subject: Re: [PATCH 1/1] mm/pgtable/debug: Add test validating architecture
+ page table helpers
+In-Reply-To: <1567497706-8649-2-git-send-email-anshuman.khandual@arm.com>
+References: <1567497706-8649-1-git-send-email-anshuman.khandual@arm.com>
+ <1567497706-8649-2-git-send-email-anshuman.khandual@arm.com>
+X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-redhat-linux-gnu)
 MIME-Version: 1.0
-X-XM-SPF: eid=1i5YMF-0000Z5-KX; ; ; mid=<87y2z4nhd8.fsf@x220.int.ebiederm.org>;
- ; ; hst=in02.mta.xmission.com; ; ; ip=68.227.160.95; ; ;
- frm=ebiederm@xmission.com; ; ; spf=neutral
-X-XM-AID: U2FsdGVkX19zYZU/xsW7us0tfO+uH4u3qzYGa3Y2+bo=
-X-SA-Exim-Connect-IP: 68.227.160.95
-X-SA-Exim-Mail-From: ebiederm@xmission.com
-X-Spam-Checker-Version: SpamAssassin 3.4.2 (2018-09-13) on sa03.xmission.com
-X-Spam-Level: 
-X-Spam-Status: No, score=-0.3 required=8.0 tests=ALL_TRUSTED,BAYES_40,
- DCC_CHECK_NEGATIVE,T_TM2_M_HEADER_IN_MSG,T_TooManySym_01,
- T_TooManySym_02,XMSubLong autolearn=disabled version=3.4.2
-X-Spam-Report: * -1.0 ALL_TRUSTED Passed through trusted hosts only via SMTP
- * -0.0 BAYES_40 BODY: Bayes spam probability is 20 to 40%
- *      [score: 0.3492] *  0.7 XMSubLong Long Subject
- *  0.0 T_TM2_M_HEADER_IN_MSG BODY: No description available.
- * -0.0 DCC_CHECK_NEGATIVE Not listed in DCC
- *      [sa03 1397; Body=1 Fuz1=1 Fuz2=1]
- *  0.0 T_TooManySym_02 5+ unique symbols in subject
- *  0.0 T_TooManySym_01 4+ unique symbols in subject
-X-Spam-DCC: XMission; sa03 1397; Body=1 Fuz1=1 Fuz2=1 
-X-Spam-Combo: ;Sasha Levin <sashal@kernel.org>
-X-Spam-Relay-Country: 
-X-Spam-Timing: total 192 ms - load_scoreonly_sql: 0.03 (0.0%),
- signal_user_changed: 6 (3.1%), b_tie_ro: 5 (2.6%), parse: 0.94 (0.5%),
- extract_message_metadata: 11 (5.6%), get_uri_detail_list: 1.19 (0.6%),
- tests_pri_-1000: 10 (5.4%), tests_pri_-950: 1.00 (0.5%),
- tests_pri_-900: 0.85 (0.4%), tests_pri_-90: 20 (10.2%), check_bayes:
- 18 (9.5%), b_tokenize: 3.8 (2.0%), b_tok_get_all: 6 (3.1%),
- b_comp_prob: 1.51 (0.8%), b_tok_touch_all: 2.5 (1.3%), b_finish: 0.64
- (0.3%), tests_pri_0: 132 (69.1%), check_dkim_signature: 0.53 (0.3%),
- check_dkim_adsp: 2.3 (1.2%), poll_dns_idle: 0.97 (0.5%), tests_pri_10:
- 1.70 (0.9%), tests_pri_500: 6 (2.9%), rewrite_mail: 0.00 (0.0%)
-Subject: Re: [PATCH AUTOSEL 4.19 111/167] signal/arc: Use force_sig_fault
- where appropriate
-X-Spam-Flag: No
-X-SA-Exim-Version: 4.2.1 (built Thu, 05 May 2016 13:38:54 -0600)
-X-SA-Exim-Scanned: Yes (on in02.mta.xmission.com)
+X-TM-AS-GCONF: 00
+x-cbid: 19090420-0020-0000-0000-00000367C323
+X-IBM-AV-DETECTION: SAVI=unused REMOTE=unused XFE=unused
+x-cbparentid: 19090420-0021-0000-0000-000021BD3453
+Message-Id: <20190904221618.1b624a98@thinkpad>
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
+ definitions=2019-09-04_05:, , signatures=0
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ priorityscore=1501
+ malwarescore=0 suspectscore=2 phishscore=0 bulkscore=0 spamscore=0
+ clxscore=1011 lowpriorityscore=0 mlxscore=0 impostorscore=0
+ mlxlogscore=999 adultscore=0 classifier=spam adjust=0 reason=mlx
+ scancount=1 engine=8.0.1-1906280000 definitions=main-1909040202
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190904_094230_325064_CB985C4D 
-X-CRM114-Status: UNSURE (   7.88  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190904_131636_091298_B7136F3E 
+X-CRM114-Status: GOOD (  30.66  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [166.70.13.233 listed in list.dnswl.org]
+ low trust [148.163.156.1 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-snps-arc@lists.infradead.org
@@ -106,41 +102,127 @@ List-Post: <mailto:linux-snps-arc@lists.infradead.org>
 List-Help: <mailto:linux-snps-arc-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-snps-arc>, 
  <mailto:linux-snps-arc-request@lists.infradead.org?subject=subscribe>
-Cc: Vineet Gupta <vgupta@synopsys.com>, linux-snps-arc@lists.infradead.org,
- linux-kernel@vger.kernel.org, stable@vger.kernel.org
+Cc: Mark Rutland <mark.rutland@arm.com>, linux-ia64@vger.kernel.org,
+ linux-sh@vger.kernel.org, Peter Zijlstra <peterz@infradead.org>,
+ James Hogan <jhogan@kernel.org>,
+ Tetsuo Handa <penguin-kernel@i-love.sakura.ne.jp>,
+ Heiko Carstens <heiko.carstens@de.ibm.com>, Michal Hocko <mhocko@kernel.org>,
+ linux-mm@kvack.org, Dave Hansen <dave.hansen@intel.com>,
+ Paul Mackerras <paulus@samba.org>, sparclinux@vger.kernel.org,
+ Thomas Gleixner <tglx@linutronix.de>, linux-s390@vger.kernel.org,
+ Michael Ellerman <mpe@ellerman.id.au>, x86@kernel.org,
+ Russell King - ARM Linux <linux@armlinux.org.uk>,
+ Matthew Wilcox <willy@infradead.org>, Steven Price <Steven.Price@arm.com>,
+ Jason Gunthorpe <jgg@ziepe.ca>, linux-arm-kernel@lists.infradead.org,
+ linux-snps-arc@lists.infradead.org, Kees Cook <keescook@chromium.org>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Mark Brown <broonie@kernel.org>, Dan Williams <dan.j.williams@intel.com>,
+ Vlastimil Babka <vbabka@suse.cz>, Sri Krishna chowdary <schowdary@nvidia.com>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-mips@vger.kernel.org,
+ Ralf Baechle <ralf@linux-mips.org>, linux-kernel@vger.kernel.org,
+ Paul Burton <paul.burton@mips.com>, Mike Rapoport <rppt@linux.vnet.ibm.com>,
+ Vineet Gupta <vgupta@synopsys.com>,
+ Martin Schwidefsky <schwidefsky@de.ibm.com>,
+ Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
+ "David S. Miller" <davem@davemloft.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-snps-arc" <linux-snps-arc-bounces@lists.infradead.org>
 Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org
 
-Sasha Levin <sashal@kernel.org> writes:
+On Tue,  3 Sep 2019 13:31:46 +0530
+Anshuman Khandual <anshuman.khandual@arm.com> wrote:
 
-> On Tue, Sep 03, 2019 at 11:49:16AM -0500, Eric W. Biederman wrote:
->>Sasha Levin <sashal@kernel.org> writes:
->>
->>> From: "Eric W. Biederman" <ebiederm@xmission.com>
->>>
->>> [ Upstream commit 15773ae938d8d93d982461990bebad6e1d7a1830 ]
->>
->>To the best of my knowledge this is just a clean up, no changes in
->>behavior are present.
->>
->>The only reason I can see to backport this is so that later fixes could
->>be applied cleanly.
->>
->>So while I have no objections to this patch being backported I don't see
->>why you would want to either.
->
-> This patch along with the next one came in as a dependency for
-> a8c715b4dd73c ("ARC: mm: SIGSEGV userspace trying to access kernel
-> virtual memory").
+> This adds a test module which will validate architecture page table helpers
+> and accessors regarding compliance with generic MM semantics expectations.
+> This will help various architectures in validating changes to the existing
+> page table helpers or addition of new ones.
+> 
+> Test page table and memory pages creating it's entries at various level are
+> all allocated from system memory with required alignments. If memory pages
+> with required size and alignment could not be allocated, then all depending
+> individual tests are skipped.
 
-Thanks for providing the rest of the context.
+This looks very useful, thanks. Of course, s390 is quite special and does
+not work nicely with this patch (yet), mostly because of our dynamic page
+table levels/folding. Still need to figure out what can be fixed in the arch
+code and what would need to be changed in the test module. See below for some
+generic comments/questions.
 
-That looks like a perfect reason for backporting this patch.
+At least one real bug in the s390 code was already revealed by this, which
+is very nice. In pmd/pud_bad(), we also check large pmds/puds for sanity,
+instead of reporting them as bad, which is apparently not how it is expected.
 
-Eric
+[...]
+> +/*
+> + * Basic operations
+> + *
+> + * mkold(entry)			= An old and not a young entry
+> + * mkyoung(entry)		= A young and not an old entry
+> + * mkdirty(entry)		= A dirty and not a clean entry
+> + * mkclean(entry)		= A clean and not a dirty entry
+> + * mkwrite(entry)		= A write and not a write protected entry
+> + * wrprotect(entry)		= A write protected and not a write entry
+> + * pxx_bad(entry)		= A mapped and non-table entry
+> + * pxx_same(entry1, entry2)	= Both entries hold the exact same value
+> + */
+> +#define VADDR_TEST	(PGDIR_SIZE + PUD_SIZE + PMD_SIZE + PAGE_SIZE)
 
+Why is P4D_SIZE missing in the VADDR_TEST calculation?
+
+[...]
+> +
+> +#if !defined(__PAGETABLE_PMD_FOLDED) && !defined(__ARCH_HAS_4LEVEL_HACK)
+> +static void pud_clear_tests(pud_t *pudp)
+> +{
+> +	memset(pudp, RANDOM_NZVALUE, sizeof(pud_t));
+> +	pud_clear(pudp);
+> +	WARN_ON(!pud_none(READ_ONCE(*pudp)));
+> +}
+
+For pgd/p4d/pud_clear(), we only clear if the page table level is present
+and not folded. The memset() here overwrites the table type bits, so
+pud_clear() will not clear anything on s390 and the pud_none() check will
+fail.
+Would it be possible to OR a (larger) random value into the table, so that
+the lower 12 bits would be preserved?
+
+> +
+> +static void pud_populate_tests(struct mm_struct *mm, pud_t *pudp, pmd_t *pmdp)
+> +{
+> +	/*
+> +	 * This entry points to next level page table page.
+> +	 * Hence this must not qualify as pud_bad().
+> +	 */
+> +	pmd_clear(pmdp);
+> +	pud_clear(pudp);
+> +	pud_populate(mm, pudp, pmdp);
+> +	WARN_ON(pud_bad(READ_ONCE(*pudp)));
+> +}
+
+This will populate the pud with a pmd pointer that does not point to the
+beginning of the pmd table, but to the second entry (because of how
+VADDR_TEST is constructed). This will result in failing pud_bad() check
+on s390. Not sure why/how it works on other archs, but would it be possible
+to align pmdp down to the beginning of the pmd table (and similar for the
+other pxd_populate_tests)?
+
+[...]
+> +
+> +	p4d_free(mm, saved_p4dp);
+> +	pud_free(mm, saved_pudp);
+> +	pmd_free(mm, saved_pmdp);
+> +	pte_free(mm, (pgtable_t) virt_to_page(saved_ptep));
+
+pgtable_t is arch-specific, and on s390 it is not a struct page pointer,
+but a pte pointer. So this will go wrong, also on all other archs (if any)
+where pgtable_t is not struct page.
+Would it be possible to use pte_free_kernel() instead, and just pass
+saved_ptep directly?
+
+Regards,
+Gerald
 
 
 _______________________________________________
