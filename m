@@ -2,54 +2,95 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2016FA9E17
-	for <lists+linux-snps-arc@lfdr.de>; Thu,  5 Sep 2019 11:18:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C175EAA9B3
+	for <lists+linux-snps-arc@lfdr.de>; Thu,  5 Sep 2019 19:06:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:References:To:Subject:From:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Fh8I5983eb+1LN3LJCZy1BZk6PQEYpao9GFli0cajc8=; b=fVd5gOCYZ80kst
-	DUSqyeRHwPMDo3Iw7dIuc0OpqBgW+Q6V88g4KTSORMfgxiKOQUqeJ8XWkdEOK76eB1wAQICJNzGdN
-	k9nPUE4DvIt4Y1pC+3ieTo0s6WinD/SQ6ac/EWQswQmlMTq+ZU4zjZWx8n+082ABOJojmM3J73q/4
-	xapCT0vL7nOy280urGFMn4+Z/4EOZA3SRnJmPuBcgBZ+WTxxTnGmw0D687O0QMzOwQMWgy/kIAy+W
-	hLfjcrikPnrP4q5/Mlv0FGbvCucex4K5f8t/rQym3DFYaAq64ta6t8XQ2sVEGmEICaTqd/qaj1NJE
-	Hxm4JdH+4C6SvkruEzlg==;
+	List-Archive:List-Unsubscribe:List-Id:Message-Id:MIME-Version:References:
+	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=B/UxzgkrCDezRB3aFRNFnIdeIIMuSavedEdQpABYnv4=; b=ThEbbkU5FzIF6U
+	2sKe8/oxgK7Q6SBHOQ7lRj7/Jmflrz4c0EKPyfga0giOU8DfXkizapxqimmlE9cixZrUFSFSRLyF4
+	UfdQsqpns6MS2YPQBp0XEgHXayMFj4dAOoRueZgqWEs81d/6tk5dn8Oh4y9L78CWSoN+O6/EcLZtf
+	Z2upPVRh3b4g55dCGghAaQK+oEkImM4B/4dygyEWfbxtfJQsMxWThtNk6U3kcN8uf7JBv2bmqx7gn
+	apMC5HYh7f9Dv9YhEzCn3wbiflTngC75Yes2+YTHtJ6JA/nOhssKfj3ICsg8er4mArjlpXwmj3q9s
+	Q5PBlSTIG42ynzfGca+Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5nuY-0002TS-4f; Thu, 05 Sep 2019 09:18:38 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i5nuG-0002Gn-Nd; Thu, 05 Sep 2019 09:18:22 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 32DB51576;
- Thu,  5 Sep 2019 02:18:20 -0700 (PDT)
-Received: from [10.162.41.136] (p8cg001049571a15.blr.arm.com [10.162.41.136])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- 00B6A3F67D; Thu,  5 Sep 2019 02:18:07 -0700 (PDT)
-From: Anshuman Khandual <anshuman.khandual@arm.com>
+	id 1i5vDe-0006gS-Fv; Thu, 05 Sep 2019 17:06:50 +0000
+Received: from mx0a-001b2d01.pphosted.com ([148.163.156.1])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1i5vDb-0006fs-3P
+ for linux-snps-arc@lists.infradead.org; Thu, 05 Sep 2019 17:06:48 +0000
+Received: from pps.filterd (m0098404.ppops.net [127.0.0.1])
+ by mx0a-001b2d01.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
+ x85H6g6e062391
+ for <linux-snps-arc@lists.infradead.org>; Thu, 5 Sep 2019 13:06:46 -0400
+Received: from e06smtp03.uk.ibm.com (e06smtp03.uk.ibm.com [195.75.94.99])
+ by mx0a-001b2d01.pphosted.com with ESMTP id 2uu63t0ux5-1
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=NOT)
+ for <linux-snps-arc@lists.infradead.org>; Thu, 05 Sep 2019 13:06:46 -0400
+Received: from localhost
+ by e06smtp03.uk.ibm.com with IBM ESMTP SMTP Gateway: Authorized Use Only!
+ Violators will be prosecuted
+ for <linux-snps-arc@lists.infradead.org> from <gerald.schaefer@de.ibm.com>;
+ Thu, 5 Sep 2019 18:06:42 +0100
+Received: from b06avi18626390.portsmouth.uk.ibm.com (9.149.26.192)
+ by e06smtp03.uk.ibm.com (192.168.101.133) with IBM ESMTP SMTP Gateway:
+ Authorized Use Only! Violators will be prosecuted; 
+ (version=TLSv1/SSLv3 cipher=AES256-GCM-SHA384 bits=256/256)
+ Thu, 5 Sep 2019 18:06:33 +0100
+Received: from d06av22.portsmouth.uk.ibm.com (d06av22.portsmouth.uk.ibm.com
+ [9.149.105.58])
+ by b06avi18626390.portsmouth.uk.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP
+ id x85H68Tu33030630
+ (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Thu, 5 Sep 2019 17:06:08 GMT
+Received: from d06av22.portsmouth.uk.ibm.com (unknown [127.0.0.1])
+ by IMSVA (Postfix) with ESMTP id 104054C050;
+ Thu,  5 Sep 2019 17:06:32 +0000 (GMT)
+Received: from d06av22.portsmouth.uk.ibm.com (unknown [127.0.0.1])
+ by IMSVA (Postfix) with ESMTP id 0017A4C044;
+ Thu,  5 Sep 2019 17:06:30 +0000 (GMT)
+Received: from thinkpad (unknown [9.152.96.45])
+ by d06av22.portsmouth.uk.ibm.com (Postfix) with ESMTP;
+ Thu,  5 Sep 2019 17:06:30 +0000 (GMT)
+Date: Thu, 5 Sep 2019 19:06:29 +0200
+From: Gerald Schaefer <gerald.schaefer@de.ibm.com>
+To: Anshuman Khandual <anshuman.khandual@arm.com>
 Subject: Re: [PATCH 1/1] mm/pgtable/debug: Add test validating architecture
  page table helpers
-To: Gerald Schaefer <gerald.schaefer@de.ibm.com>
+In-Reply-To: <20e3044d-2af5-b27b-7653-cec53bdec941@arm.com>
 References: <1567497706-8649-1-git-send-email-anshuman.khandual@arm.com>
  <1567497706-8649-2-git-send-email-anshuman.khandual@arm.com>
  <20190904221618.1b624a98@thinkpad>
-Message-ID: <20e3044d-2af5-b27b-7653-cec53bdec941@arm.com>
-Date: Thu, 5 Sep 2019 14:48:14 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
- Thunderbird/52.9.1
+ <20e3044d-2af5-b27b-7653-cec53bdec941@arm.com>
+X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-redhat-linux-gnu)
 MIME-Version: 1.0
-In-Reply-To: <20190904221618.1b624a98@thinkpad>
-Content-Language: en-US
+X-TM-AS-GCONF: 00
+x-cbid: 19090517-0012-0000-0000-000003471F7D
+X-IBM-AV-DETECTION: SAVI=unused REMOTE=unused XFE=unused
+x-cbparentid: 19090517-0013-0000-0000-000021817691
+Message-Id: <20190905190629.523bdb87@thinkpad>
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
+ definitions=2019-09-05_05:, , signatures=0
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ priorityscore=1501
+ malwarescore=0 suspectscore=0 phishscore=0 bulkscore=0 spamscore=0
+ clxscore=1015 lowpriorityscore=0 mlxscore=0 impostorscore=0
+ mlxlogscore=999 adultscore=0 classifier=spam adjust=0 reason=mlx
+ scancount=1 engine=8.0.1-1906280000 definitions=main-1909050164
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190905_021820_857849_C504DA2C 
-X-CRM114-Status: GOOD (  28.12  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190905_100647_144730_20CF3BAC 
+X-CRM114-Status: GOOD (  28.20  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [148.163.156.1 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-snps-arc@lists.infradead.org
@@ -92,127 +133,58 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-snps-arc" <linux-snps-arc-bounces@lists.infradead.org>
 Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org
 
+On Thu, 5 Sep 2019 14:48:14 +0530
+Anshuman Khandual <anshuman.khandual@arm.com> wrote:
 
-On 09/05/2019 01:46 AM, Gerald Schaefer wrote:
-> On Tue,  3 Sep 2019 13:31:46 +0530
-> Anshuman Khandual <anshuman.khandual@arm.com> wrote:
+> > [...]  
+> >> +
+> >> +#if !defined(__PAGETABLE_PMD_FOLDED) && !defined(__ARCH_HAS_4LEVEL_HACK)
+> >> +static void pud_clear_tests(pud_t *pudp)
+> >> +{
+> >> +	memset(pudp, RANDOM_NZVALUE, sizeof(pud_t));
+> >> +	pud_clear(pudp);
+> >> +	WARN_ON(!pud_none(READ_ONCE(*pudp)));
+> >> +}  
+> > 
+> > For pgd/p4d/pud_clear(), we only clear if the page table level is present
+> > and not folded. The memset() here overwrites the table type bits, so
+> > pud_clear() will not clear anything on s390 and the pud_none() check will
+> > fail.
+> > Would it be possible to OR a (larger) random value into the table, so that
+> > the lower 12 bits would be preserved?  
 > 
->> This adds a test module which will validate architecture page table helpers
->> and accessors regarding compliance with generic MM semantics expectations.
->> This will help various architectures in validating changes to the existing
->> page table helpers or addition of new ones.
->>
->> Test page table and memory pages creating it's entries at various level are
->> all allocated from system memory with required alignments. If memory pages
->> with required size and alignment could not be allocated, then all depending
->> individual tests are skipped.
-> 
-> This looks very useful, thanks. Of course, s390 is quite special and does
-> not work nicely with this patch (yet), mostly because of our dynamic page
-> table levels/folding. Still need to figure out what can be fixed in the arch
+> So the suggestion is instead of doing memset() on entry with RANDOM_NZVALUE,
+> it should OR a large random value preserving lower 12 bits. Hmm, this should
+> still do the trick for other platforms, they just need non zero value. So on
+> s390, the lower 12 bits on the page table entry already has valid value while
+> entering this function which would make sure that pud_clear() really does
+> clear the entry ?
 
-Hmm.
+Yes, in theory the table entry on s390 would have the type set in the last
+4 bits, so preserving those would be enough. If it does not conflict with
+others, I would still suggest preserving all 12 bits since those would contain
+arch-specific flags in general, just to be sure. For s390, the pte/pmd tests
+would also work with the memset, but for consistency I think the same logic
+should be used in all pxd_clear_tests.
 
-> code and what would need to be changed in the test module. See below for some
-> generic comments/questions.
+However, there is another issue on s390 which will make this only work
+for pud_clear_tests(), and not for the p4d/pgd_tests. The problem is that
+mm_alloc() will only give you a 3-level page table initially on s390.
+This means that pudp == p4dp == pgdp, and so the p4d/pgd_tests will
+both see the pud level (of course this also affects other tests).
 
-Sure.
+Not sure yet how to fix this, i.e. how to initialize/update the page table
+to 5 levels. We can handle 5 level page tables, and it would be good if
+all levels could be tested, but using mm_alloc() to establish the page
+tables might not work on s390. One option could be to provide an arch-hook
+or weak function to allocate/initialize the mm.
 
-> 
-> At least one real bug in the s390 code was already revealed by this, which
-> is very nice. In pmd/pud_bad(), we also check large pmds/puds for sanity,
-> instead of reporting them as bad, which is apparently not how it is expected.
+IIUC, the (dummy) mm is really only needed to provide an mm->pgd as starting
+point, right?
 
-Hmm, so it has already started being useful :)
+Regards,
+Gerald
 
-> 
-> [...]
->> +/*
->> + * Basic operations
->> + *
->> + * mkold(entry)			= An old and not a young entry
->> + * mkyoung(entry)		= A young and not an old entry
->> + * mkdirty(entry)		= A dirty and not a clean entry
->> + * mkclean(entry)		= A clean and not a dirty entry
->> + * mkwrite(entry)		= A write and not a write protected entry
->> + * wrprotect(entry)		= A write protected and not a write entry
->> + * pxx_bad(entry)		= A mapped and non-table entry
->> + * pxx_same(entry1, entry2)	= Both entries hold the exact same value
->> + */
->> +#define VADDR_TEST	(PGDIR_SIZE + PUD_SIZE + PMD_SIZE + PAGE_SIZE)
-> 
-> Why is P4D_SIZE missing in the VADDR_TEST calculation?
-
-This was a random possible virtual address to generate a representative
-page table structure for the test. As there is a default (PGDIR_SIZE) for
-P4D_SIZE on platforms which really do not have P4D level, it should be okay
-to add P4D_SIZE in the above calculation.
-
-> 
-> [...]
->> +
->> +#if !defined(__PAGETABLE_PMD_FOLDED) && !defined(__ARCH_HAS_4LEVEL_HACK)
->> +static void pud_clear_tests(pud_t *pudp)
->> +{
->> +	memset(pudp, RANDOM_NZVALUE, sizeof(pud_t));
->> +	pud_clear(pudp);
->> +	WARN_ON(!pud_none(READ_ONCE(*pudp)));
->> +}
-> 
-> For pgd/p4d/pud_clear(), we only clear if the page table level is present
-> and not folded. The memset() here overwrites the table type bits, so
-> pud_clear() will not clear anything on s390 and the pud_none() check will
-> fail.
-> Would it be possible to OR a (larger) random value into the table, so that
-> the lower 12 bits would be preserved?
-
-So the suggestion is instead of doing memset() on entry with RANDOM_NZVALUE,
-it should OR a large random value preserving lower 12 bits. Hmm, this should
-still do the trick for other platforms, they just need non zero value. So on
-s390, the lower 12 bits on the page table entry already has valid value while
-entering this function which would make sure that pud_clear() really does
-clear the entry ?
-
-> 
->> +
->> +static void pud_populate_tests(struct mm_struct *mm, pud_t *pudp, pmd_t *pmdp)
->> +{
->> +	/*
->> +	 * This entry points to next level page table page.
->> +	 * Hence this must not qualify as pud_bad().
->> +	 */
->> +	pmd_clear(pmdp);
->> +	pud_clear(pudp);
->> +	pud_populate(mm, pudp, pmdp);
->> +	WARN_ON(pud_bad(READ_ONCE(*pudp)));
->> +}
-> 
-> This will populate the pud with a pmd pointer that does not point to the
-> beginning of the pmd table, but to the second entry (because of how
-> VADDR_TEST is constructed). This will result in failing pud_bad() check
-> on s390. Not sure why/how it works on other archs, but would it be possible
-> to align pmdp down to the beginning of the pmd table (and similar for the
-> other pxd_populate_tests)?
-
-Right, that was a problem. Will fix it by using the saved entries used for
-freeing the page table pages at the end, which always point to the beginning
-of a page table page.
-
-> 
-> [...]
->> +
->> +	p4d_free(mm, saved_p4dp);
->> +	pud_free(mm, saved_pudp);
->> +	pmd_free(mm, saved_pmdp);
->> +	pte_free(mm, (pgtable_t) virt_to_page(saved_ptep));
-> 
-> pgtable_t is arch-specific, and on s390 it is not a struct page pointer,
-> but a pte pointer. So this will go wrong, also on all other archs (if any)
-> where pgtable_t is not struct page.
-> Would it be possible to use pte_free_kernel() instead, and just pass
-> saved_ptep directly?
-
-It makes sense, will change.
 
 _______________________________________________
 linux-snps-arc mailing list
