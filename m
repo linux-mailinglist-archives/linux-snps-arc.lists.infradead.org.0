@@ -2,58 +2,100 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A7F66AB307
-	for <lists+linux-snps-arc@lfdr.de>; Fri,  6 Sep 2019 09:05:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 002C4AC01D
+	for <lists+linux-snps-arc@lfdr.de>; Fri,  6 Sep 2019 21:04:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:References:To:Subject:From:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zrp//2ueSYFDC39zOXYJJgw70ORw1RD4SRqcraAEjVQ=; b=R/Dk4DDV2kGMBe
-	jlstCIermVhQokU0vJhSa3eVNen29+5UGO9pDKW+BV5FNxxCx9XDHdaG33E59HEbzHW10PZRg+FDx
-	E+Hd5IgxK2g0H30ug+d31Hm4OfOI3MBSXC2wBndEkVAi0yGJTeASeiChq8tCIWGYEdRMlDIQsDOEU
-	SMWqqrN1kMQYJ2kmTER2r7lSEBTHA0BgDLh0HNV7jzA+8PR+CCxNMPgPK5VHhKihBf6Gsr5LCSE06
-	mC3Wzs3YscnB/n05bZ/iw8v5NBxRvlV4VwKQnAHVVfzE+TYKdzfCbgPyZbilVPOUs68pczJd2mR4l
-	Cy/sCm838fKJcHJvNodA==;
+	List-Archive:List-Unsubscribe:List-Id:Message-Id:MIME-Version:References:
+	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=iCKq2Yn/ZM9N2avG26xb+zldyHgypp4iVus7e7lJlcI=; b=qwGWEZL4qyJXwG
+	4U5jRRAYRV0GY8jHMj7z9V+ph0KfknsWxAQ9qkmLOBt4YK3pt4cN6N0F18EMUBsElnD/sieyRZlQh
+	QbOLCfAVf6Br54xcbrHI+/jjJLDPulei83JlFhNrp0zMAfL9FOvkt7ZKKS+vf4f9SjxvPwZ7c3wzo
+	nAEiX2tMntR55gSgRx1PxcnHwzMcgzBh8wwHbovVAUMsR/ZOheKmEaBS+MCJ/hxy5YbLZRK5k304g
+	7ImKJd5q4S1N3DWVHJ66hr2Ee74Uc19H1khqCMJ79rfMkeKpnIi9+QuUWKk1gu7wpYK5QXeb2Vd36
+	cMxD0pWlNhR7kZ2W3qQA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i68Iw-0001xR-2m; Fri, 06 Sep 2019 07:05:10 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i68HB-0000mA-CH; Fri, 06 Sep 2019 07:03:23 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 05E0E28;
- Fri,  6 Sep 2019 00:03:19 -0700 (PDT)
-Received: from [10.162.42.101] (p8cg001049571a15.blr.arm.com [10.162.42.101])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- B8A783F67D; Fri,  6 Sep 2019 00:05:32 -0700 (PDT)
-From: Anshuman Khandual <anshuman.khandual@arm.com>
+	id 1i6JWl-0006C2-BM; Fri, 06 Sep 2019 19:04:11 +0000
+Received: from mx0b-001b2d01.pphosted.com ([148.163.158.5]
+ helo=mx0a-001b2d01.pphosted.com)
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1i6JWf-00062l-1N
+ for linux-snps-arc@lists.infradead.org; Fri, 06 Sep 2019 19:04:06 +0000
+Received: from pps.filterd (m0098413.ppops.net [127.0.0.1])
+ by mx0b-001b2d01.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
+ x86J1nrJ014327
+ for <linux-snps-arc@lists.infradead.org>; Fri, 6 Sep 2019 15:04:02 -0400
+Received: from e06smtp05.uk.ibm.com (e06smtp05.uk.ibm.com [195.75.94.101])
+ by mx0b-001b2d01.pphosted.com with ESMTP id 2uuvx1gwnh-1
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=NOT)
+ for <linux-snps-arc@lists.infradead.org>; Fri, 06 Sep 2019 15:04:01 -0400
+Received: from localhost
+ by e06smtp05.uk.ibm.com with IBM ESMTP SMTP Gateway: Authorized Use Only!
+ Violators will be prosecuted
+ for <linux-snps-arc@lists.infradead.org> from <gerald.schaefer@de.ibm.com>;
+ Fri, 6 Sep 2019 20:03:59 +0100
+Received: from b06cxnps4076.portsmouth.uk.ibm.com (9.149.109.198)
+ by e06smtp05.uk.ibm.com (192.168.101.135) with IBM ESMTP SMTP Gateway:
+ Authorized Use Only! Violators will be prosecuted; 
+ (version=TLSv1/SSLv3 cipher=AES256-GCM-SHA384 bits=256/256)
+ Fri, 6 Sep 2019 20:03:50 +0100
+Received: from d06av24.portsmouth.uk.ibm.com (d06av24.portsmouth.uk.ibm.com
+ [9.149.105.60])
+ by b06cxnps4076.portsmouth.uk.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP id
+ x86J3nGp51839194
+ (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Fri, 6 Sep 2019 19:03:49 GMT
+Received: from d06av24.portsmouth.uk.ibm.com (unknown [127.0.0.1])
+ by IMSVA (Postfix) with ESMTP id 20BAC42042;
+ Fri,  6 Sep 2019 19:03:49 +0000 (GMT)
+Received: from d06av24.portsmouth.uk.ibm.com (unknown [127.0.0.1])
+ by IMSVA (Postfix) with ESMTP id 047F842049;
+ Fri,  6 Sep 2019 19:03:48 +0000 (GMT)
+Received: from thinkpad (unknown [9.152.96.94])
+ by d06av24.portsmouth.uk.ibm.com (Postfix) with ESMTP;
+ Fri,  6 Sep 2019 19:03:47 +0000 (GMT)
+Date: Fri, 6 Sep 2019 21:03:46 +0200
+From: Gerald Schaefer <gerald.schaefer@de.ibm.com>
+To: Anshuman Khandual <anshuman.khandual@arm.com>
 Subject: Re: [PATCH 1/1] mm/pgtable/debug: Add test validating architecture
  page table helpers
-To: "Kirill A. Shutemov" <kirill@shutemov.name>
+In-Reply-To: <3c609e33-afbb-ffaf-481a-6d225a06d1d0@arm.com>
 References: <1567497706-8649-1-git-send-email-anshuman.khandual@arm.com>
  <1567497706-8649-2-git-send-email-anshuman.khandual@arm.com>
- <20190904141950.ykoe3h7b4hcvnysu@box>
- <6d4b989d-8eaa-d26e-6068-4b0e4d7a52f9@arm.com>
- <20190905085910.i6dppgnqi4ple22w@box.shutemov.name>
-Message-ID: <9c226f84-fe8f-8438-b378-b6659cccfcd1@arm.com>
-Date: Fri, 6 Sep 2019 12:33:14 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
- Thunderbird/52.9.1
+ <20190904221618.1b624a98@thinkpad>
+ <20e3044d-2af5-b27b-7653-cec53bdec941@arm.com>
+ <20190905190629.523bdb87@thinkpad>
+ <3c609e33-afbb-ffaf-481a-6d225a06d1d0@arm.com>
+X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-redhat-linux-gnu)
 MIME-Version: 1.0
-In-Reply-To: <20190905085910.i6dppgnqi4ple22w@box.shutemov.name>
-Content-Language: en-US
+X-TM-AS-GCONF: 00
+x-cbid: 19090619-0020-0000-0000-000003689871
+X-IBM-AV-DETECTION: SAVI=unused REMOTE=unused XFE=unused
+x-cbparentid: 19090619-0021-0000-0000-000021BE1320
+Message-Id: <20190906210346.5ecbff01@thinkpad>
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
+ definitions=2019-09-06_07:, , signatures=0
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ priorityscore=1501
+ malwarescore=0 suspectscore=0 phishscore=0 bulkscore=0 spamscore=0
+ clxscore=1015 lowpriorityscore=0 mlxscore=0 impostorscore=0
+ mlxlogscore=999 adultscore=0 classifier=spam adjust=0 reason=mlx
+ scancount=1 engine=8.0.1-1906280000 definitions=main-1909060198
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190906_000321_929597_4282C263 
-X-CRM114-Status: GOOD (  21.46  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190906_120405_237803_EDBD333E 
+X-CRM114-Status: GOOD (  44.06  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [148.163.158.5 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-snps-arc@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,112 +131,122 @@ Cc: Mark Rutland <mark.rutland@arm.com>, linux-ia64@vger.kernel.org,
  Martin Schwidefsky <schwidefsky@de.ibm.com>,
  Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
  "David S. Miller" <davem@davemloft.net>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-snps-arc" <linux-snps-arc-bounces@lists.infradead.org>
 Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org
 
-CgpPbiAwOS8wNS8yMDE5IDAyOjI5IFBNLCBLaXJpbGwgQS4gU2h1dGVtb3Ygd3JvdGU6Cj4gT24g
-VGh1LCBTZXAgMDUsIDIwMTkgYXQgMDE6NDg6MjdQTSArMDUzMCwgQW5zaHVtYW4gS2hhbmR1YWwg
-d3JvdGU6Cj4+Pj4gKyNkZWZpbmUgVkFERFJfVEVTVAkoUEdESVJfU0laRSArIFBVRF9TSVpFICsg
-UE1EX1NJWkUgKyBQQUdFX1NJWkUpCj4+Pgo+Pj4gV2hhdCBpcyBzcGVjaWFsIGFib3V0IHRoaXMg
-YWRkcmVzcz8gSG93IGRvIHlvdSBrbm93IGlmIGl0IGlzIG5vdCBvY2N1cGllZAo+Pj4geWV0Pwo+
-Pgo+PiBXZSBhcmUgY3JlYXRpbmcgdGhlIHBhZ2UgdGFibGUgZnJvbSBzY3JhdGNoIGFmdGVyIGFs
-bG9jYXRpbmcgYW4gbW1fc3RydWN0Cj4+IGZvciBhIGdpdmVuIHJhbmRvbSB2aXJ0dWFsIGFkZHJl
-c3MgJ1ZBRERSX1RFU1QnLiBIZW5jZSBub3RoaW5nIGlzIG9jY3VwaWVkCj4+IGp1c3QgeWV0LiBU
-aGVyZSBpcyBub3RoaW5nIHNwZWNpYWwgYWJvdXQgdGhpcyBhZGRyZXNzLCBqdXN0IHRoYXQgaXQg
-dHJpZXMKPj4gdG8gZW5zdXJlIHRoZSBwYWdlIHRhYmxlIGVudHJpZXMgYXJlIGJlaW5nIGNyZWF0
-ZWQgd2l0aCBzb21lIG9mZnNldCBmcm9tCj4+IGJlZ2lubmluZyBvZiByZXNwZWN0aXZlIHBhZ2Ug
-dGFibGUgcGFnZSBhdCBhbGwgbGV2ZWxzID8gVGhlIGlkZWEgaXMgdG8KPj4gaGF2ZSBhIG1vcmUg
-cmVwcmVzZW50YXRpdmUgZm9ybSBvZiBwYWdlIHRhYmxlIHN0cnVjdHVyZSBmb3IgdGVzdC4KPiAK
-PiBXaHkgUDREX1NJWkUgaXMgbWlzc2luZz8KClRoYXQgd2FzIGFuIG9taXNzaW9uIGV2ZW4gdGhv
-dWdoIEkgd2FzIHdvbmRlcmluZyB3aGV0aGVyIGl0IHdpbGwgYmUKYXBwbGljYWJsZSBvciBldmVu
-IG1ha2Ugc2Vuc2Ugb24gcGxhdGZvcm1zIHdoaWNoIGRvbnQgaGF2ZSByZWFsIFA0RC4KCj4gCj4g
-QXJlIHlvdSBzdXJlIGl0IHdpbGwgbm90IGxhbmQgaW50byBrZXJuZWwgYWRkcmVzcyBzcGFjZSBv
-biBhbnkgYXJjaD8KCkNhbiBpdCBldmVuIGNyb3NzIHVzZXIgdmlydHVhbCBhZGRyZXNzIHJhbmdl
-IHdpdGgganVzdCBhIHNpbmdsZSBzcGFuCmF0IGVhY2ggcGFnZSB0YWJsZSBsZXZlbCA/IFRCSCBJ
-IGRpZCBub3QgdGhpbmsgYWJvdXQgdGhhdCBwb3NzaWJpbGl0eS4KCj4gCj4gSSB0aGluayBtb3Jl
-IHJvYnVzdCB3YXkgdG8gZGVhbCB3aXRoIHRoaXMgd291bGQgYmUgdXNpbmcKPiBnZXRfdW5tYXBw
-ZWRfYXJlYSgpIGluc3RlYWQgb2YgZml4ZWQgYWRkcmVzcy4KCk1ha2VzIHNlbnNlIGFuZCBwcm9i
-YWJseSBpdHMgYmV0dGVyIHRvIGdldCBhIHZpcnR1YWwgYWRkcmVzcyB3aGljaAppcyBrbm93biB0
-byBoYXZlIGJlZW4gY2hlY2tlZCBhZ2FpbnN0IGFsbCBib3VuZGFyeSBjb25kaXRpb25zLiBXaWxs
-CmV4cGxvcmUgYXJvdW5kIGdldF91bm1hcHBlZF9hcmVhKCkgaW4gdGhpcyByZWdhcmQuCgo+IAo+
-PiBUaGlzIG1ha2VzIHNlbnNlIGZvciBydW50aW1lIGNhc2VzIGJ1dCB0aGVyZSBpcyBhIHByb2Js
-ZW0gaGVyZS4KPj4KPj4gT24gYXJtNjQsIHBnZF9wb3B1bGF0ZSgpIHdoaWNoIHRha2VzIChwdWRf
-dCAqKSBhcyBsYXN0IGFyZ3VtZW50IGluc3RlYWQgb2YKPj4gKHA0ZF90ICopIHdpbGwgZmFpbCB0
-byBidWlsZCB3aGVuIG5vdCB3cmFwcGVkIGluICFfX1BBR0VUQUJMRV9QNERfRk9MREVECj4+IG9u
-IGNlcnRhaW4gY29uZmlndXJhdGlvbnMuCj4+Cj4+IC4vYXJjaC9hcm02NC9pbmNsdWRlL2FzbS9w
-Z2FsbG9jLmg6ODE6NzU6IG5vdGU6Cj4+IGV4cGVjdGVkIOKAmHB1ZF90ICrigJkge2FrYSDigJhz
-dHJ1Y3QgPGFub255bW91cz4gKuKAmX0KPj4gYnV0IGFyZ3VtZW50IGlzIG9mIHR5cGUg4oCYcGdk
-X3QgKuKAmSB7YWthIOKAmHN0cnVjdCA8YW5vbnltb3VzPiAq4oCZfQo+PiBzdGF0aWMgaW5saW5l
-IHZvaWQgcGdkX3BvcHVsYXRlKHN0cnVjdCBtbV9zdHJ1Y3QgKm1tLCBwZ2RfdCAqcGdkcCwgcHVk
-X3QgKnB1ZHApCj4+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICB+fn5+fn5+Xn5+fgo+PiBXb25kZXJpbmcgaWYgdGhpcyBp
-cyBzb21ldGhpbmcgdG8gYmUgZml4ZWQgb24gYXJtNjQgb3IgaXRzIG1vcmUgZ2VuZXJhbAo+PiBw
-cm9ibGVtLiBXaWxsIGxvb2sgaW50byB0aGlzIGZ1cnRoZXIuCj4gCj4gSSB0aGluayB5b3UgbmVl
-ZCB3cmFwIHRoaXMgaW50byAjaWZuZGVmIF9fQVJDSF9IQVNfNUxFVkVMX0hBQ0suCgpPa2F5LgoK
-PiAKPj4+PiArCXBtZF9wb3B1bGF0ZV90ZXN0cyhtbSwgcG1kcCwgKHBndGFibGVfdCkgcGFnZSk7
-Cj4+Pgo+Pj4gVGhpcyBpcyBub3QgY29ycmVjdCBmb3IgYXJjaGl0ZWN0dXJlcyB0aGF0IGRlZmlu
-ZXMgcGd0YWJsZV90IGFzIHB0ZV90Cj4+PiBwb2ludGVyLCBub3Qgc3RydWN0IHBhZ2UgcG9pbnRl
-ci4KPj4KPj4gUmlnaHQsIGEgZ3JlcCBvbiB0aGUgc291cmNlIGNvbmZpcm1zIHRoYXQuCj4+Cj4+
-IFRoZXNlIHBsYXRmb3JtcyBkZWZpbmUgcGd0YWJsZV90IGFzIHN0cnVjdCBwYWdlICoKPj4KPj4g
-YXJjaC9hbHBoYS9pbmNsdWRlL2FzbS9wYWdlLmg6dHlwZWRlZiBzdHJ1Y3QgcGFnZSAqcGd0YWJs
-ZV90Owo+PiBhcmNoL2FybS9pbmNsdWRlL2FzbS9wYWdlLmg6dHlwZWRlZiBzdHJ1Y3QgcGFnZSAq
-cGd0YWJsZV90Owo+PiBhcmNoL2FybTY0L2luY2x1ZGUvYXNtL3BhZ2UuaDp0eXBlZGVmIHN0cnVj
-dCBwYWdlICpwZ3RhYmxlX3Q7Cj4+IGFyY2gvY3NreS9pbmNsdWRlL2FzbS9wYWdlLmg6dHlwZWRl
-ZiBzdHJ1Y3QgcGFnZSAqcGd0YWJsZV90Owo+PiBhcmNoL2hleGFnb24vaW5jbHVkZS9hc20vcGFn
-ZS5oOnR5cGVkZWYgc3RydWN0IHBhZ2UgKnBndGFibGVfdDsKPj4gYXJjaC9pYTY0L2luY2x1ZGUv
-YXNtL3BhZ2UuaDogIHR5cGVkZWYgc3RydWN0IHBhZ2UgKnBndGFibGVfdDsKPj4gYXJjaC9pYTY0
-L2luY2x1ZGUvYXNtL3BhZ2UuaDogICAgdHlwZWRlZiBzdHJ1Y3QgcGFnZSAqcGd0YWJsZV90Owo+
-PiBhcmNoL202OGsvaW5jbHVkZS9hc20vcGFnZS5oOnR5cGVkZWYgc3RydWN0IHBhZ2UgKnBndGFi
-bGVfdDsKPj4gYXJjaC9taWNyb2JsYXplL2luY2x1ZGUvYXNtL3BhZ2UuaDp0eXBlZGVmIHN0cnVj
-dCBwYWdlICpwZ3RhYmxlX3Q7Cj4+IGFyY2gvbWlwcy9pbmNsdWRlL2FzbS9wYWdlLmg6dHlwZWRl
-ZiBzdHJ1Y3QgcGFnZSAqcGd0YWJsZV90Owo+PiBhcmNoL25kczMyL2luY2x1ZGUvYXNtL3BhZ2Uu
-aDp0eXBlZGVmIHN0cnVjdCBwYWdlICpwZ3RhYmxlX3Q7Cj4+IGFyY2gvbmlvczIvaW5jbHVkZS9h
-c20vcGFnZS5oOnR5cGVkZWYgc3RydWN0IHBhZ2UgKnBndGFibGVfdDsKPj4gYXJjaC9vcGVucmlz
-Yy9pbmNsdWRlL2FzbS9wYWdlLmg6dHlwZWRlZiBzdHJ1Y3QgcGFnZSAqcGd0YWJsZV90Owo+PiBh
-cmNoL3BhcmlzYy9pbmNsdWRlL2FzbS9wYWdlLmg6dHlwZWRlZiBzdHJ1Y3QgcGFnZSAqcGd0YWJs
-ZV90Owo+PiBhcmNoL3Jpc2N2L2luY2x1ZGUvYXNtL3BhZ2UuaDp0eXBlZGVmIHN0cnVjdCBwYWdl
-ICpwZ3RhYmxlX3Q7Cj4+IGFyY2gvc2gvaW5jbHVkZS9hc20vcGFnZS5oOnR5cGVkZWYgc3RydWN0
-IHBhZ2UgKnBndGFibGVfdDsKPj4gYXJjaC9zcGFyYy9pbmNsdWRlL2FzbS9wYWdlXzMyLmg6dHlw
-ZWRlZiBzdHJ1Y3QgcGFnZSAqcGd0YWJsZV90Owo+PiBhcmNoL3VtL2luY2x1ZGUvYXNtL3BhZ2Uu
-aDp0eXBlZGVmIHN0cnVjdCBwYWdlICpwZ3RhYmxlX3Q7Cj4+IGFyY2gvdW5pY29yZTMyL2luY2x1
-ZGUvYXNtL3BhZ2UuaDp0eXBlZGVmIHN0cnVjdCBwYWdlICpwZ3RhYmxlX3Q7Cj4+IGFyY2gveDg2
-L2luY2x1ZGUvYXNtL3BndGFibGVfdHlwZXMuaDp0eXBlZGVmIHN0cnVjdCBwYWdlICpwZ3RhYmxl
-X3Q7Cj4+IGFyY2gveHRlbnNhL2luY2x1ZGUvYXNtL3BhZ2UuaDp0eXBlZGVmIHN0cnVjdCBwYWdl
-ICpwZ3RhYmxlX3Q7Cj4+Cj4+IFRoZXNlIHBsYXRmb3JtcyBkZWZpbmUgcGd0YWJsZV90IGFzIHB0
-ZV90ICoKPj4KPj4gYXJjaC9hcmMvaW5jbHVkZS9hc20vcGFnZS5oOnR5cGVkZWYgcHRlX3QgKiBw
-Z3RhYmxlX3Q7Cj4+IGFyY2gvcG93ZXJwYy9pbmNsdWRlL2FzbS9tbXUuaDp0eXBlZGVmIHB0ZV90
-ICpwZ3RhYmxlX3Q7Cj4+IGFyY2gvczM5MC9pbmNsdWRlL2FzbS9wYWdlLmg6dHlwZWRlZiBwdGVf
-dCAqcGd0YWJsZV90Owo+PiBhcmNoL3NwYXJjL2luY2x1ZGUvYXNtL3BhZ2VfNjQuaDp0eXBlZGVm
-IHB0ZV90ICpwZ3RhYmxlX3Q7Cj4+Cj4+IFNob3VsZCB3ZSBuZWVkIGhhdmUgdHdvIHBtZF9wb3B1
-bGF0ZV90ZXN0cygpIGRlZmluaXRpb25zIHdpdGgKPj4gZGlmZmVyZW50IGFyZ3VtZW50cyAoc3Ry
-dWN0IHBhZ2UgcG9pbnRlciBvciBwdGVfdCBwb2ludGVyKSBhbmQgdGhlbgo+PiBjYWxsIGVpdGhl
-ciBvbmUgYWZ0ZXIgZGV0ZWN0aW5nIHRoZSBnaXZlbiBwbGF0Zm9ybSA/Cj4gCj4gVXNlIHB0ZV9h
-bGxvY19vbmUoKSBpbnN0ZWFkIG9mIGFsbG9jX21hcHBlZF9wYWdlKCkgdG8gYWxsb2NhdGUgdGhl
-IHBhZ2UKPiB0YWJsZS4KClJpZ2h0LCB0aGUgUFRFIHBhZ2UgdGFibGUgcGFnZSBzaG91bGQgY29t
-ZSBmcm9tIHB0ZV9hbGxvY19vbmUoKSBpbnN0ZWFkCmRpcmVjdGx5IGZyb20gYSBzdHJ1Y3QgcGFn
-ZS4gVGhlIGZ1bmN0aW9ucyBwdGVfYWxsb2Nfb25lKCkgYW5kIHB0ZV9mcmVlKCkKb3BlcmF0ZSBv
-biAoc3RydWN0IHBhZ2Ugb3IgcHRlX3QpIHBvaW50ZXJzIGRlcGVuZGluZyBhcHBsaWNhYmxlIHBn
-dGFibGVfdApkZWZpbml0aW9uIChpbiBjYXNlcyB3aGVyZSBwbGF0Zm9ybSBkZWZpbmVzIG90aGVy
-d2lzZSkuIFdpbGwgZml4IGl0LgoKPiAKPj4+PiArCXB1ZF9wb3B1bGF0ZV90ZXN0cyhtbSwgcHVk
-cCwgcG1kcCk7Cj4+Pj4gKwlwNGRfcG9wdWxhdGVfdGVzdHMobW0sIHA0ZHAsIHB1ZHApOwo+Pj4+
-ICsJcGdkX3BvcHVsYXRlX3Rlc3RzKG1tLCBwZ2RwLCBwNGRwKTsKPj4+Cj4+PiBUaGlzIGlzIHdy
-b25nLiBBbGwgcD9kcCBwb2ludHMgdG8gdGhlIHNlY29uZCBlbnRyeSBpbiBwYWdlIHRhYmxlIGVu
-dHJ5Lgo+Pj4gVGhpcyBpcyBub3QgdmFsaWQgcG9pbnRlciBmb3IgcGFnZSB0YWJsZSBhbmQgdHJp
-Z2dlcnMgcD9kX2JhZCgpIG9uIHg4Ni4KPj4KPj4gWWVhaCB0aGVzZSBhcmUgc2Vjb25kIGVudHJp
-ZXMgYmVjYXVzZSBvZiB0aGUgd2F5IHdlIGNyZWF0ZSB0aGUgcGFnZSB0YWJsZS4KPj4gQnV0IEkg
-Z3Vlc3MgaXRzIGFwcGxpY2FibGUgb25seSB0byB0aGUgc2Vjb25kIGFyZ3VtZW50IGluIGFsbCB0
-aGVzZSBhYm92ZQo+PiBjYXNlcyBiZWNhdXNlIHRoZSBmaXJzdCBhcmd1bWVudCBjYW4gYmUgYW55
-IHZhbGlkIGVudHJ5IG9uIHByZXZpb3VzIHBhZ2UKPj4gdGFibGUgbGV2ZWwuCj4gCj4gWWVzOgo+
-IAo+IEBAIC0zOTcsOSArMzk2LDkgQEAgc3RhdGljIGludCBfX2luaXQgYXJjaF9wZ3RhYmxlX3Rl
-c3RzX2luaXQodm9pZCkKPiAgCXBnZF9jbGVhcl90ZXN0cyhwZ2RwKTsKPiAgCj4gIAlwbWRfcG9w
-dWxhdGVfdGVzdHMobW0sIHBtZHAsIChwZ3RhYmxlX3QpIHBhZ2UpOwo+IC0JcHVkX3BvcHVsYXRl
-X3Rlc3RzKG1tLCBwdWRwLCBwbWRwKTsKPiAtCXA0ZF9wb3B1bGF0ZV90ZXN0cyhtbSwgcDRkcCwg
-cHVkcCk7Cj4gLQlwZ2RfcG9wdWxhdGVfdGVzdHMobW0sIHBnZHAsIHA0ZHApOwo+ICsJcHVkX3Bv
-cHVsYXRlX3Rlc3RzKG1tLCBwdWRwLCBzYXZlZF9wbWRwKTsKPiArCXA0ZF9wb3B1bGF0ZV90ZXN0
-cyhtbSwgcDRkcCwgc2F2ZWRfcHVkcCk7Cj4gKwlwZ2RfcG9wdWxhdGVfdGVzdHMobW0sIHBnZHAs
-IHNhdmVkX3A0ZHApOwoKU3VyZS4KCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fCmxpbnV4LXNucHMtYXJjIG1haWxpbmcgbGlzdApsaW51eC1zbnBzLWFyY0Bs
-aXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlz
-dGluZm8vbGludXgtc25wcy1hcmMK
+On Fri, 6 Sep 2019 11:58:59 +0530
+Anshuman Khandual <anshuman.khandual@arm.com> wrote:
+
+> On 09/05/2019 10:36 PM, Gerald Schaefer wrote:
+> > On Thu, 5 Sep 2019 14:48:14 +0530
+> > Anshuman Khandual <anshuman.khandual@arm.com> wrote:
+> >   
+> >>> [...]    
+> >>>> +
+> >>>> +#if !defined(__PAGETABLE_PMD_FOLDED) && !defined(__ARCH_HAS_4LEVEL_HACK)
+> >>>> +static void pud_clear_tests(pud_t *pudp)
+> >>>> +{
+> >>>> +	memset(pudp, RANDOM_NZVALUE, sizeof(pud_t));
+> >>>> +	pud_clear(pudp);
+> >>>> +	WARN_ON(!pud_none(READ_ONCE(*pudp)));
+> >>>> +}    
+> >>>
+> >>> For pgd/p4d/pud_clear(), we only clear if the page table level is present
+> >>> and not folded. The memset() here overwrites the table type bits, so
+> >>> pud_clear() will not clear anything on s390 and the pud_none() check will
+> >>> fail.
+> >>> Would it be possible to OR a (larger) random value into the table, so that
+> >>> the lower 12 bits would be preserved?    
+> >>
+> >> So the suggestion is instead of doing memset() on entry with RANDOM_NZVALUE,
+> >> it should OR a large random value preserving lower 12 bits. Hmm, this should
+> >> still do the trick for other platforms, they just need non zero value. So on
+> >> s390, the lower 12 bits on the page table entry already has valid value while
+> >> entering this function which would make sure that pud_clear() really does
+> >> clear the entry ?  
+> > 
+> > Yes, in theory the table entry on s390 would have the type set in the last
+> > 4 bits, so preserving those would be enough. If it does not conflict with
+> > others, I would still suggest preserving all 12 bits since those would contain
+> > arch-specific flags in general, just to be sure. For s390, the pte/pmd tests
+> > would also work with the memset, but for consistency I think the same logic
+> > should be used in all pxd_clear_tests.  
+> 
+> Makes sense but..
+> 
+> There is a small challenge with this. Modifying individual bits on a given
+> page table entry from generic code like this test case is bit tricky. That
+> is because there are not enough helpers to create entries with an absolute
+> value. This would have been easier if all the platforms provided functions
+> like __pxx() which is not the case now. Otherwise something like this should
+> have worked.
+> 
+> 
+> pud_t pud = READ_ONCE(*pudp);
+> pud = __pud(pud_val(pud) | RANDOM_VALUE (keeping lower 12 bits 0))
+> WRITE_ONCE(*pudp, pud);
+> 
+> But __pud() will fail to build in many platforms.
+
+Hmm, I simply used this on my system to make pud_clear_tests() work, not
+sure if it works on all archs:
+
+pud_val(*pudp) |= RANDOM_NZVALUE;
+
+> 
+> The other alternative will be to make sure memset() happens on all other
+> bits except the lower 12 bits which will depend on endianness. If s390
+> has a fixed endianness, we can still use either of them which will hold
+> good for others as well.
+> 
+> memset(pudp, RANDOM_NZVALUE, sizeof(pud_t) - 3);
+> 
+> OR
+> 
+> memset(pudp + 3, RANDOM_NZVALUE, sizeof(pud_t) - 3);
+> 
+> > 
+> > However, there is another issue on s390 which will make this only work
+> > for pud_clear_tests(), and not for the p4d/pgd_tests. The problem is that
+> > mm_alloc() will only give you a 3-level page table initially on s390.
+> > This means that pudp == p4dp == pgdp, and so the p4d/pgd_tests will
+> > both see the pud level (of course this also affects other tests).  
+> 
+> Got it.
+> 
+> > 
+> > Not sure yet how to fix this, i.e. how to initialize/update the page table
+> > to 5 levels. We can handle 5 level page tables, and it would be good if
+> > all levels could be tested, but using mm_alloc() to establish the page
+> > tables might not work on s390. One option could be to provide an arch-hook
+> > or weak function to allocate/initialize the mm.  
+> 
+> Sure, got it. Though I plan to do add some arch specific tests or init sequence
+> like the above later on but for now the idea is to get the smallest possible set
+> of test cases which builds and runs on all platforms without requiring any arch
+> specific hooks or special casing (#ifdef) to be agreed upon broadly and accepted.
+> 
+> Do you think this is absolutely necessary on s390 for the very first set of test
+> cases or we can add this later on as an improvement ?
+
+It can be added later, no problem. I did not expect this to work flawlessly
+on s390 right from the start anyway, with all our peculiarities, so don't
+let this hinder you. I might come up with an add-on patch later.
+
+Actually, using get_unmapped_area() as suggested by Kirill could also
+solve this issue. We do create a new mm with 3-level page tables on s390,
+and the dynamic upgrade to 4 or 5 levels is then triggered exactly by
+arch_get_unmapped_area(), depending on the addr. But I currently don't
+see how / where arch_get_unmapped_area() is set up for such a dummy mm
+created by mm_alloc().
+
+Regards,
+Gerald
+
+
+_______________________________________________
+linux-snps-arc mailing list
+linux-snps-arc@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-snps-arc
