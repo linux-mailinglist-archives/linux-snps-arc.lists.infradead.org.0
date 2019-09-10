@@ -2,63 +2,108 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 009DAAE34D
-	for <lists+linux-snps-arc@lfdr.de>; Tue, 10 Sep 2019 07:43:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B300FAEBEB
+	for <lists+linux-snps-arc@lfdr.de>; Tue, 10 Sep 2019 15:48:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ArwOCvhZeJz+nC+oaxxvwi9tm4NwUyDySC7LUNPp7ZQ=; b=uCIwXJ9ra7ca3M
-	7Am4eGlCdSycODoh7EytInIk6GNSzzZAu4r60GMR6qj3xmaXVfWK2xJt2eIwFlnV4kWvBqZwB1yPS
-	lxgd/ctep6ICQIaeHmQtp+kz5lyRtHxMY/9NoqPizNx6bzcDSYvR9CcZ/2KOQqcOeJXmzmualsLiH
-	5FCgZuh34LoXoVx0NWqX9ZAtqL0IqU0ecvTg6n4XD7tFENJY4Ffwqo1VEVGjTIzzwe1pO1xC4QX8C
-	JcxkXMvRc9r2j28xRvdguJdEXRgd8yeqZ+ZEMSe0XsAPzkNKKS8QR6iVsI6RYNipAj0LzHmOEV1an
-	CuqJb9FEgbxECnRInIIA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=67Q6qqAG7WBMyZDvZobUsIMcqQcxLEmZENfpgg8d/1c=; b=Rj6Uk0hXi8nzRd
+	UJrWGD5SrpKklxZNjsLB86hMOvweu2R38UH3yUnAB+gXBQqKtHlwxLey9tyW7iB/LhffOn/DxB709
+	RWmpL0tyze8L9exLbhwBSB18LNGauy47d7rJkBoGY5vEtSztTT9qYkTTrFe4YSEqf8GlHN71Js06/
+	E8H5HGzWsSS591JBsLmU50le7aTnuSKAX0xod21gx8WLg5ZOSwzWHLX1PjMJb3MsRixe3KaIE6Wxc
+	V0Yif/aeOeVR14c1iWapVE0ET1TqlAg+mFeB+E1xnnXm+hQ9Xz6cRt2bfE5dhuzcYKW9xxqAotso/
+	U3+ldmXJ/ReUe4ECSb3Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i7YwG-0005Pn-R1; Tue, 10 Sep 2019 05:43:41 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i7Yvt-0005DS-3U; Tue, 10 Sep 2019 05:43:19 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A514B28;
- Mon,  9 Sep 2019 22:43:10 -0700 (PDT)
-Received: from [10.162.40.137] (p8cg001049571a15.blr.arm.com [10.162.40.137])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- 53DA43F67D; Mon,  9 Sep 2019 22:45:25 -0700 (PDT)
-Subject: Re: [PATCH 1/1] mm/pgtable/debug: Add test validating architecture
- page table helpers
-To: Christophe Leroy <christophe.leroy@c-s.fr>,
- "Kirill A. Shutemov" <kirill@shutemov.name>
-References: <1567497706-8649-1-git-send-email-anshuman.khandual@arm.com>
- <1567497706-8649-2-git-send-email-anshuman.khandual@arm.com>
- <20190904221618.1b624a98@thinkpad>
- <20e3044d-2af5-b27b-7653-cec53bdec941@arm.com>
- <20190905190629.523bdb87@thinkpad>
- <3c609e33-afbb-ffaf-481a-6d225a06d1d0@arm.com>
- <20190906210346.5ecbff01@thinkpad>
- <3d5de35f-8192-1c75-50a9-03e66e3b8e5c@arm.com>
- <20190909151344.ghfypjbgxyosjdk3@box>
- <5883d41a-8299-1584-aa3d-fac89b3d9b5b@arm.com>
- <94029d96-47c4-3020-57a8-4e03de1b4fc8@c-s.fr>
-From: Anshuman Khandual <anshuman.khandual@arm.com>
-Message-ID: <b0e2c87c-1130-4219-246b-e050a9da2a39@arm.com>
-Date: Tue, 10 Sep 2019 11:13:07 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
- Thunderbird/52.9.1
+	id 1i7gVD-0006Gs-8G; Tue, 10 Sep 2019 13:48:15 +0000
+Received: from esa6.microchip.iphmx.com ([216.71.154.253])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1i7gUz-000690-P8; Tue, 10 Sep 2019 13:48:04 +0000
+Received-SPF: Pass (esa6.microchip.iphmx.com: domain of
+ Claudiu.Beznea@microchip.com designates 198.175.253.82 as
+ permitted sender) identity=mailfrom;
+ client-ip=198.175.253.82; receiver=esa6.microchip.iphmx.com;
+ envelope-from="Claudiu.Beznea@microchip.com";
+ x-sender="Claudiu.Beznea@microchip.com";
+ x-conformance=spf_only; x-record-type="v=spf1";
+ x-record-text="v=spf1 mx a:ushub1.microchip.com
+ a:smtpout.microchip.com a:mx1.microchip.iphmx.com
+ a:mx2.microchip.iphmx.com include:servers.mcsv.net
+ include:mktomail.com include:spf.protection.outlook.com ~all"
+Received-SPF: None (esa6.microchip.iphmx.com: no sender
+ authenticity information available from domain of
+ postmaster@email.microchip.com) identity=helo;
+ client-ip=198.175.253.82; receiver=esa6.microchip.iphmx.com;
+ envelope-from="Claudiu.Beznea@microchip.com";
+ x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
+Authentication-Results: esa6.microchip.iphmx.com;
+ dkim=none (message not signed) header.i=none;
+ spf=Pass smtp.mailfrom=Claudiu.Beznea@microchip.com;
+ spf=None smtp.helo=postmaster@email.microchip.com;
+ dmarc=pass (p=none dis=none) d=microchip.com
+IronPort-SDR: WYS5UQP5HXf7OLJq54zsEnQ1oNnAeHdIAxZAYemrOsYCgwy2OLXHpkudvePjABycZHpsCUnCPx
+ hu9HPi6WthTulW4WGOPo5tGVzYQV3GKoGEXIiCsaZiM623CAJpJrIP9wk6CCE5s+Qy009xJJ21
+ mDzhyiR/G+V8C523m1u+uwrtT56/z5DgndQ/KpSmIP2hql0xZkyl+7eGa4R/dYfa0NcdrC9l1G
+ CRYzjZ+PHY057XrnVVfhadcc3MU+IwyUoLsOtLWnnN4YuCAKQpcGcdzshzOYbjVhc6fHmuJgWM
+ suU=
+X-IronPort-AV: E=Sophos;i="5.64,489,1559545200"; d="scan'208";a="45604858"
+Received: from smtpout.microchip.com (HELO email.microchip.com)
+ ([198.175.253.82])
+ by esa6.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 10 Sep 2019 06:47:52 -0700
+Received: from chn-vm-ex03.mchp-main.com (10.10.85.151) by
+ chn-vm-ex02.mchp-main.com (10.10.85.144) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.1713.5; Tue, 10 Sep 2019 06:47:52 -0700
+Received: from m18063-ThinkPad-T460p.mchp-main.com (10.10.85.251) by
+ chn-vm-ex03.mchp-main.com (10.10.85.151) with Microsoft SMTP Server id
+ 15.1.1713.5 via Frontend Transport; Tue, 10 Sep 2019 06:47:29 -0700
+From: Claudiu Beznea <claudiu.beznea@microchip.com>
+To: <daniel.lezcano@linaro.org>, <robh+dt@kernel.org>, <mark.rutland@arm.com>, 
+ <linux@armlinux.org.uk>, <nsekhar@ti.com>, <bgolaszewski@baylibre.com>,
+ <monstr@monstr.eu>, <john@phrozen.org>, <ralf@linux-mips.org>,
+ <paul.burton@mips.com>, <jhogan@kernel.org>, <lftan@altera.com>,
+ <tglx@linutronix.de>, <vgupta@synopsys.com>, <marc.zyngier@arm.com>,
+ <patrice.chotard@st.com>, <mcoquelin.stm32@gmail.com>,
+ <alexandre.torgue@st.com>, <eric@anholt.net>, <wahrenst@gmx.net>,
+ <f.fainelli@gmail.com>, <rjui@broadcom.com>, <sbranden@broadcom.com>,
+ <bcm-kernel-feedback-list@broadcom.com>, <linus.walleij@linaro.org>,
+ <shc_work@mail.ru>, <kgene@kernel.org>, <krzk@kernel.org>,
+ <ysato@users.sourceforge.jp>, <liviu.dudau@arm.com>, <sudeep.holla@arm.com>,
+ <lorenzo.pieralisi@arm.com>, <shawnguo@kernel.org>, <s.hauer@pengutronix.de>, 
+ <kernel@pengutronix.de>, <festevam@gmail.com>, <linux-imx@nxp.com>,
+ <baohua@kernel.org>, <nicolas.ferre@microchip.com>,
+ <alexandre.belloni@bootlin.com>, <ludovic.desroches@microchip.com>,
+ <baruch@tkos.co.il>, <u.kleine-koenig@pengutronix.de>, <guoren@kernel.org>,
+ <kaloz@openwrt.org>, <khalasa@piap.pl>, <ssantosh@kernel.org>,
+ <vz@mleia.com>, <slemieux.tyco@gmail.com>, <khilman@baylibre.com>,
+ <avifishman70@gmail.com>, <tmaimon77@gmail.com>, <tali.perry1@gmail.com>,
+ <venture@google.com>, <yuenn@google.com>, <benjaminfair@google.com>,
+ <afaerber@suse.de>, <manivannan.sadhasivam@linaro.org>,
+ <narmstrong@baylibre.com>, <agross@kernel.org>, <palmer@sifive.com>,
+ <aou@eecs.berkeley.edu>, <heiko@sntech.de>, <orsonzhai@gmail.com>,
+ <baolin.wang@linaro.org>, <zhang.lyra@gmail.com>,
+ <maxime.ripard@bootlin.com>, <wens@csie.org>, <thierry.reding@gmail.com>,
+ <jonathanh@nvidia.com>, <linux@prisktech.co.nz>, <john.stultz@linaro.org>,
+ <sboyd@kernel.org>, <matthias.bgg@gmail.com>
+Subject: [PATCH 0/7] add support for clocksource/clockevent DT selection
+Date: Tue, 10 Sep 2019 16:47:09 +0300
+Message-ID: <1568123236-767-1-git-send-email-claudiu.beznea@microchip.com>
+X-Mailer: git-send-email 2.7.4
 MIME-Version: 1.0
-In-Reply-To: <94029d96-47c4-3020-57a8-4e03de1b4fc8@c-s.fr>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190909_224317_241830_9C5327B2 
-X-CRM114-Status: GOOD (  22.08  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190910_064801_852727_37FCFE12 
+X-CRM114-Status: GOOD (  15.68  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [216.71.154.253 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-snps-arc@lists.infradead.org
@@ -72,228 +117,219 @@ List-Post: <mailto:linux-snps-arc@lists.infradead.org>
 List-Help: <mailto:linux-snps-arc-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-snps-arc>, 
  <mailto:linux-snps-arc-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, linux-ia64@vger.kernel.org,
- linux-sh@vger.kernel.org, Tetsuo Handa <penguin-kernel@i-love.sakura.ne.jp>,
- James Hogan <jhogan@kernel.org>, Heiko Carstens <heiko.carstens@de.ibm.com>,
- Michal Hocko <mhocko@kernel.org>, linux-mm@kvack.org,
- Paul Mackerras <paulus@samba.org>, sparclinux@vger.kernel.org,
- Dan Williams <dan.j.williams@intel.com>, linux-s390@vger.kernel.org,
- x86@kernel.org, Russell King - ARM Linux <linux@armlinux.org.uk>,
- Matthew Wilcox <willy@infradead.org>, Steven Price <Steven.Price@arm.com>,
- Jason Gunthorpe <jgg@ziepe.ca>, Gerald Schaefer <gerald.schaefer@de.ibm.com>,
- linux-snps-arc@lists.infradead.org, Kees Cook <keescook@chromium.org>,
- Mark Brown <broonie@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
- Vlastimil Babka <vbabka@suse.cz>, linux-arm-kernel@lists.infradead.org,
- Sri Krishna chowdary <schowdary@nvidia.com>,
- Masahiro Yamada <yamada.masahiro@socionext.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Dave Hansen <dave.hansen@intel.com>, linux-mips@vger.kernel.org,
- Ralf Baechle <ralf@linux-mips.org>, linux-kernel@vger.kernel.org,
- Peter Zijlstra <peterz@infradead.org>, Mike Rapoport <rppt@linux.vnet.ibm.com>,
- Paul Burton <paul.burton@mips.com>, Vineet Gupta <vgupta@synopsys.com>,
- Martin Schwidefsky <schwidefsky@de.ibm.com>,
- Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
- "David S. Miller" <davem@davemloft.net>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: uclinux-h8-devel@lists.sourceforge.jp, devicetree@vger.kernel.org,
+ linux-samsung-soc@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ linux-arm-msm@vger.kernel.org, openbmc@lists.ozlabs.org, linux-oxnas@groups.io,
+ linux-kernel@vger.kernel.org, linux-mips@vger.kernel.org,
+ linux-unisoc@lists.infradead.org, linux-mediatek@lists.infradead.org,
+ linux-rpi-kernel@lists.infradead.org, linux-amlogic@lists.infradead.org,
+ linux-tegra@vger.kernel.org, nios2-dev@lists.rocketboards.org,
+ linux-riscv@lists.infradead.org, linux-snps-arc@lists.infradead.org, Claudiu
+ Beznea <claudiu.beznea@microchip.com>, linux-stm32@st-md-mailman.stormreply.com,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-snps-arc" <linux-snps-arc-bounces@lists.infradead.org>
 Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org
 
-CgpPbiAwOS8xMC8yMDE5IDEwOjE1IEFNLCBDaHJpc3RvcGhlIExlcm95IHdyb3RlOgo+IAo+IAo+
-IE9uIDA5LzEwLzIwMTkgMDM6NTYgQU0sIEFuc2h1bWFuIEtoYW5kdWFsIHdyb3RlOgo+Pgo+Pgo+
-PiBPbiAwOS8wOS8yMDE5IDA4OjQzIFBNLCBLaXJpbGwgQS4gU2h1dGVtb3Ygd3JvdGU6Cj4+PiBP
-biBNb24sIFNlcCAwOSwgMjAxOSBhdCAxMTo1Njo1MEFNICswNTMwLCBBbnNodW1hbiBLaGFuZHVh
-bCB3cm90ZToKPj4+Pgo+Pj4+Cj4+Pj4gT24gMDkvMDcvMjAxOSAxMjozMyBBTSwgR2VyYWxkIFNj
-aGFlZmVyIHdyb3RlOgo+Pj4+PiBPbiBGcmksIDYgU2VwIDIwMTkgMTE6NTg6NTkgKzA1MzAKPj4+
-Pj4gQW5zaHVtYW4gS2hhbmR1YWwgPGFuc2h1bWFuLmtoYW5kdWFsQGFybS5jb20+IHdyb3RlOgo+
-Pj4+Pgo+Pj4+Pj4gT24gMDkvMDUvMjAxOSAxMDozNiBQTSwgR2VyYWxkIFNjaGFlZmVyIHdyb3Rl
-Ogo+Pj4+Pj4+IE9uIFRodSwgNSBTZXAgMjAxOSAxNDo0ODoxNCArMDUzMAo+Pj4+Pj4+IEFuc2h1
-bWFuIEtoYW5kdWFsIDxhbnNodW1hbi5raGFuZHVhbEBhcm0uY29tPiB3cm90ZToKPj4+Pj4+PiDC
-oMKgCj4+Pj4+Pj4+PiBbLi4uXQo+Pj4+Pj4+Pj4+ICsKPj4+Pj4+Pj4+PiArI2lmICFkZWZpbmVk
-KF9fUEFHRVRBQkxFX1BNRF9GT0xERUQpICYmICFkZWZpbmVkKF9fQVJDSF9IQVNfNExFVkVMX0hB
-Q0spCj4+Pj4+Pj4+Pj4gK3N0YXRpYyB2b2lkIHB1ZF9jbGVhcl90ZXN0cyhwdWRfdCAqcHVkcCkK
-Pj4+Pj4+Pj4+PiArewo+Pj4+Pj4+Pj4+ICvCoMKgwqAgbWVtc2V0KHB1ZHAsIFJBTkRPTV9OWlZB
-TFVFLCBzaXplb2YocHVkX3QpKTsKPj4+Pj4+Pj4+PiArwqDCoMKgIHB1ZF9jbGVhcihwdWRwKTsK
-Pj4+Pj4+Pj4+PiArwqDCoMKgIFdBUk5fT04oIXB1ZF9ub25lKFJFQURfT05DRSgqcHVkcCkpKTsK
-Pj4+Pj4+Pj4+PiArfQo+Pj4+Pj4+Pj4KPj4+Pj4+Pj4+IEZvciBwZ2QvcDRkL3B1ZF9jbGVhcigp
-LCB3ZSBvbmx5IGNsZWFyIGlmIHRoZSBwYWdlIHRhYmxlIGxldmVsIGlzIHByZXNlbnQKPj4+Pj4+
-Pj4+IGFuZCBub3QgZm9sZGVkLiBUaGUgbWVtc2V0KCkgaGVyZSBvdmVyd3JpdGVzIHRoZSB0YWJs
-ZSB0eXBlIGJpdHMsIHNvCj4+Pj4+Pj4+PiBwdWRfY2xlYXIoKSB3aWxsIG5vdCBjbGVhciBhbnl0
-aGluZyBvbiBzMzkwIGFuZCB0aGUgcHVkX25vbmUoKSBjaGVjayB3aWxsCj4+Pj4+Pj4+PiBmYWls
-Lgo+Pj4+Pj4+Pj4gV291bGQgaXQgYmUgcG9zc2libGUgdG8gT1IgYSAobGFyZ2VyKSByYW5kb20g
-dmFsdWUgaW50byB0aGUgdGFibGUsIHNvIHRoYXQKPj4+Pj4+Pj4+IHRoZSBsb3dlciAxMiBiaXRz
-IHdvdWxkIGJlIHByZXNlcnZlZD8KPj4+Pj4+Pj4KPj4+Pj4+Pj4gU28gdGhlIHN1Z2dlc3Rpb24g
-aXMgaW5zdGVhZCBvZiBkb2luZyBtZW1zZXQoKSBvbiBlbnRyeSB3aXRoIFJBTkRPTV9OWlZBTFVF
-LAo+Pj4+Pj4+PiBpdCBzaG91bGQgT1IgYSBsYXJnZSByYW5kb20gdmFsdWUgcHJlc2VydmluZyBs
-b3dlciAxMiBiaXRzLiBIbW0sIHRoaXMgc2hvdWxkCj4+Pj4+Pj4+IHN0aWxsIGRvIHRoZSB0cmlj
-ayBmb3Igb3RoZXIgcGxhdGZvcm1zLCB0aGV5IGp1c3QgbmVlZCBub24gemVybyB2YWx1ZS4gU28g
-b24KPj4+Pj4+Pj4gczM5MCwgdGhlIGxvd2VyIDEyIGJpdHMgb24gdGhlIHBhZ2UgdGFibGUgZW50
-cnkgYWxyZWFkeSBoYXMgdmFsaWQgdmFsdWUgd2hpbGUKPj4+Pj4+Pj4gZW50ZXJpbmcgdGhpcyBm
-dW5jdGlvbiB3aGljaCB3b3VsZCBtYWtlIHN1cmUgdGhhdCBwdWRfY2xlYXIoKSByZWFsbHkgZG9l
-cwo+Pj4+Pj4+PiBjbGVhciB0aGUgZW50cnkgPwo+Pj4+Pj4+Cj4+Pj4+Pj4gWWVzLCBpbiB0aGVv
-cnkgdGhlIHRhYmxlIGVudHJ5IG9uIHMzOTAgd291bGQgaGF2ZSB0aGUgdHlwZSBzZXQgaW4gdGhl
-IGxhc3QKPj4+Pj4+PiA0IGJpdHMsIHNvIHByZXNlcnZpbmcgdGhvc2Ugd291bGQgYmUgZW5vdWdo
-LiBJZiBpdCBkb2VzIG5vdCBjb25mbGljdCB3aXRoCj4+Pj4+Pj4gb3RoZXJzLCBJIHdvdWxkIHN0
-aWxsIHN1Z2dlc3QgcHJlc2VydmluZyBhbGwgMTIgYml0cyBzaW5jZSB0aG9zZSB3b3VsZCBjb250
-YWluCj4+Pj4+Pj4gYXJjaC1zcGVjaWZpYyBmbGFncyBpbiBnZW5lcmFsLCBqdXN0IHRvIGJlIHN1
-cmUuIEZvciBzMzkwLCB0aGUgcHRlL3BtZCB0ZXN0cwo+Pj4+Pj4+IHdvdWxkIGFsc28gd29yayB3
-aXRoIHRoZSBtZW1zZXQsIGJ1dCBmb3IgY29uc2lzdGVuY3kgSSB0aGluayB0aGUgc2FtZSBsb2dp
-Ywo+Pj4+Pj4+IHNob3VsZCBiZSB1c2VkIGluIGFsbCBweGRfY2xlYXJfdGVzdHMuCj4+Pj4+Pgo+
-Pj4+Pj4gTWFrZXMgc2Vuc2UgYnV0Li4KPj4+Pj4+Cj4+Pj4+PiBUaGVyZSBpcyBhIHNtYWxsIGNo
-YWxsZW5nZSB3aXRoIHRoaXMuIE1vZGlmeWluZyBpbmRpdmlkdWFsIGJpdHMgb24gYSBnaXZlbgo+
-Pj4+Pj4gcGFnZSB0YWJsZSBlbnRyeSBmcm9tIGdlbmVyaWMgY29kZSBsaWtlIHRoaXMgdGVzdCBj
-YXNlIGlzIGJpdCB0cmlja3kuIFRoYXQKPj4+Pj4+IGlzIGJlY2F1c2UgdGhlcmUgYXJlIG5vdCBl
-bm91Z2ggaGVscGVycyB0byBjcmVhdGUgZW50cmllcyB3aXRoIGFuIGFic29sdXRlCj4+Pj4+PiB2
-YWx1ZS4gVGhpcyB3b3VsZCBoYXZlIGJlZW4gZWFzaWVyIGlmIGFsbCB0aGUgcGxhdGZvcm1zIHBy
-b3ZpZGVkIGZ1bmN0aW9ucwo+Pj4+Pj4gbGlrZSBfX3B4eCgpIHdoaWNoIGlzIG5vdCB0aGUgY2Fz
-ZSBub3cuIE90aGVyd2lzZSBzb21ldGhpbmcgbGlrZSB0aGlzIHNob3VsZAo+Pj4+Pj4gaGF2ZSB3
-b3JrZWQuCj4+Pj4+Pgo+Pj4+Pj4KPj4+Pj4+IHB1ZF90IHB1ZCA9IFJFQURfT05DRSgqcHVkcCk7
-Cj4+Pj4+PiBwdWQgPSBfX3B1ZChwdWRfdmFsKHB1ZCkgfCBSQU5ET01fVkFMVUUgKGtlZXBpbmcg
-bG93ZXIgMTIgYml0cyAwKSkKPj4+Pj4+IFdSSVRFX09OQ0UoKnB1ZHAsIHB1ZCk7Cj4+Pj4+Pgo+
-Pj4+Pj4gQnV0IF9fcHVkKCkgd2lsbCBmYWlsIHRvIGJ1aWxkIGluIG1hbnkgcGxhdGZvcm1zLgo+
-Pj4+Pgo+Pj4+PiBIbW0sIEkgc2ltcGx5IHVzZWQgdGhpcyBvbiBteSBzeXN0ZW0gdG8gbWFrZSBw
-dWRfY2xlYXJfdGVzdHMoKSB3b3JrLCBub3QKPj4+Pj4gc3VyZSBpZiBpdCB3b3JrcyBvbiBhbGwg
-YXJjaHM6Cj4+Pj4+Cj4+Pj4+IHB1ZF92YWwoKnB1ZHApIHw9IFJBTkRPTV9OWlZBTFVFOwo+Pj4+
-Cj4+Pj4gV2hpY2ggY29tcGlsZXMgb24gYXJtNjQgYnV0IHRoZW4gZmFpbHMgb24geDg2IGJlY2F1
-c2Ugb2YgdGhlIHdheSBwbWRfdmFsKCkKPj4+PiBoYXMgYmVlbiBkZWZpbmVkIHRoZXJlLgo+Pj4K
-Pj4+IFVzZSBpbnN0ZWFkCj4+Pgo+Pj4gwqDCoMKgwqAqcHVkcCA9IF9fcHVkKHB1ZF92YWwoKnB1
-ZHApIHwgUkFORE9NX05aVkFMVUUpOwo+Pgo+PiBBZ3JlZWQuCj4+Cj4+IEFzIEkgaGFkIG1lbnRp
-b25lZCBiZWZvcmUgdGhpcyB3b3VsZCBoYXZlIGJlZW4gcmVhbGx5IHRoZSBjbGVhbmVzdCBhcHBy
-b2FjaC4KPj4KPj4+Cj4+PiBJdCAqc2hvdWxkKiBiZSBtb3JlIHBvcnRhYmxlLgo+Pgo+PiBOb3Qg
-cmVhbGx5LCBiZWNhdXNlIG5vdCBhbGwgdGhlIHBsYXRmb3JtcyBoYXZlIF9fcHh4KCkgZGVmaW5p
-dGlvbnMgcmlnaHQgbm93Lgo+PiBHb2luZyB3aXRoIHRoZXNlIHdpbGwgY2xlYXJseSBjYXVzZSBi
-dWlsZCBmYWlsdXJlcyBvbiBhZmZlY3RlZCBwbGF0Zm9ybXMuIExldHMKPj4gZXhhbWluZSBfX3B1
-ZCgpIGZvciBpbnN0YW5jZS4gSXQgaXMgZGVmaW5lZCBvbmx5IG9uIHRoZXNlIHBsYXRmb3Jtcy4K
-Pj4KPj4gYXJjaC9hcm02NC9pbmNsdWRlL2FzbS9wZ3RhYmxlLXR5cGVzLmg6wqDCoMKgwqDCoMKg
-wqAgI2RlZmluZSBfX3B1ZCh4KSAoKHB1ZF90KSB7ICh4KSB9ICkKPj4gYXJjaC9taXBzL2luY2x1
-ZGUvYXNtL3BndGFibGUtNjQuaDrCoMKgwqDCoMKgwqDCoCAjZGVmaW5lIF9fcHVkKHgpICgocHVk
-X3QpIHsgKHgpIH0pCj4+IGFyY2gvcG93ZXJwYy9pbmNsdWRlL2FzbS9wZ3RhYmxlLWJlLXR5cGVz
-Lmg6wqDCoMKgICNkZWZpbmUgX19wdWQoeCkgKChwdWRfdCkgeyBjcHVfdG9fYmU2NCh4KSB9KQo+
-PiBhcmNoL3Bvd2VycGMvaW5jbHVkZS9hc20vcGd0YWJsZS10eXBlcy5oOsKgwqDCoCAjZGVmaW5l
-IF9fcHVkKHgpICgocHVkX3QpIHsgKHgpIH0pCj4+IGFyY2gvczM5MC9pbmNsdWRlL2FzbS9wYWdl
-Lmg6wqDCoMKgwqDCoMKgwqDCoMKgwqDCoCAjZGVmaW5lIF9fcHVkKHgpICgocHVkX3QpIHsgKHgp
-IH0gKQo+PiBhcmNoL3NwYXJjL2luY2x1ZGUvYXNtL3BhZ2VfNjQuaDrCoMKgwqDCoMKgwqDCoCAj
-ZGVmaW5lIF9fcHVkKHgpICgocHVkX3QpIHsgKHgpIH0gKQo+PiBhcmNoL3NwYXJjL2luY2x1ZGUv
-YXNtL3BhZ2VfNjQuaDrCoMKgwqDCoMKgwqDCoCAjZGVmaW5lIF9fcHVkKHgpICh4KQo+PiBhcmNo
-L3g4Ni9pbmNsdWRlL2FzbS9wZ3RhYmxlLmg6wqDCoMKgwqDCoMKgwqDCoMKgwqDCoCAjZGVmaW5l
-IF9fcHVkKHgpIG5hdGl2ZV9tYWtlX3B1ZCh4KQo+IAo+IFlvdSBtaXNzZWQ6Cj4gYXJjaC94ODYv
-aW5jbHVkZS9hc20vcGFyYXZpcnQuaDpzdGF0aWMgaW5saW5lIHB1ZF90IF9fcHVkKHB1ZHZhbF90
-IHZhbCkKPiBpbmNsdWRlL2FzbS1nZW5lcmljL3BndGFibGUtbm9wNGQtaGFjay5oOiNkZWZpbmUg
-X19wdWQoeCkgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCAoKHB1ZF90KSB7IF9fcGdkKHgp
-IH0pCj4gaW5jbHVkZS9hc20tZ2VuZXJpYy9wZ3RhYmxlLW5vcHVkLmg6I2RlZmluZSBfX3B1ZCh4
-KSDCoMKgwqDCoMKgwqAgKChwdWRfdCkgeyBfX3A0ZCh4KSB9KQo+IAo+Pgo+PiBTaW1pbGFybHkg
-Zm9yIF9fcG1kKCkKPj4KPj4gYXJjaC9hbHBoYS9pbmNsdWRlL2FzbS9wYWdlLmg6wqDCoMKgwqDC
-oMKgwqDCoMKgwqDCoCAjZGVmaW5lIF9fcG1kKHgpwqAgKChwbWRfdCkgeyAoeCkgfSApCj4+IGFy
-Y2gvYXJtL2luY2x1ZGUvYXNtL3BhZ2Utbm9tbXUuaDrCoMKgwqDCoMKgwqDCoCAjZGVmaW5lIF9f
-cG1kKHgpwqAgKHgpCj4+IGFyY2gvYXJtL2luY2x1ZGUvYXNtL3BndGFibGUtMmxldmVsLXR5cGVz
-Lmg6wqDCoMKgICNkZWZpbmUgX19wbWQoeCnCoCAoKHBtZF90KSB7ICh4KSB9ICkKPj4gYXJjaC9h
-cm0vaW5jbHVkZS9hc20vcGd0YWJsZS0ybGV2ZWwtdHlwZXMuaDrCoMKgwqAgI2RlZmluZSBfX3Bt
-ZCh4KcKgICh4KQo+PiBhcmNoL2FybS9pbmNsdWRlL2FzbS9wZ3RhYmxlLTNsZXZlbC10eXBlcy5o
-OsKgwqDCoCAjZGVmaW5lIF9fcG1kKHgpwqAgKChwbWRfdCkgeyAoeCkgfSApCj4+IGFyY2gvYXJt
-L2luY2x1ZGUvYXNtL3BndGFibGUtM2xldmVsLXR5cGVzLmg6wqDCoMKgICNkZWZpbmUgX19wbWQo
-eCnCoCAoeCkKPj4gYXJjaC9hcm02NC9pbmNsdWRlL2FzbS9wZ3RhYmxlLXR5cGVzLmg6wqDCoMKg
-wqDCoMKgwqAgI2RlZmluZSBfX3BtZCh4KcKgICgocG1kX3QpIHsgKHgpIH0gKQo+PiBhcmNoL202
-OGsvaW5jbHVkZS9hc20vcGFnZS5oOsKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgI2RlZmluZSBfX3Bt
-ZCh4KcKgICgocG1kX3QpIHsgeyAoeCkgfSwgfSkKPj4gYXJjaC9taXBzL2luY2x1ZGUvYXNtL3Bn
-dGFibGUtNjQuaDrCoMKgwqDCoMKgwqDCoCAjZGVmaW5lIF9fcG1kKHgpwqAgKChwbWRfdCkgeyAo
-eCkgfSApCj4+IGFyY2gvbmRzMzIvaW5jbHVkZS9hc20vcGFnZS5oOsKgwqDCoMKgwqDCoMKgwqDC
-oMKgwqAgI2RlZmluZSBfX3BtZCh4KcKgICh4KQo+PiBhcmNoL3BhcmlzYy9pbmNsdWRlL2FzbS9w
-YWdlLmg6wqDCoMKgwqDCoMKgwqDCoMKgwqDCoCAjZGVmaW5lIF9fcG1kKHgpwqAgKChwbWRfdCkg
-eyAoeCkgfSApCj4+IGFyY2gvcGFyaXNjL2luY2x1ZGUvYXNtL3BhZ2UuaDrCoMKgwqDCoMKgwqDC
-oMKgwqDCoMKgICNkZWZpbmUgX19wbWQoeCnCoCAoeCkKPj4gYXJjaC9wb3dlcnBjL2luY2x1ZGUv
-YXNtL3BndGFibGUtYmUtdHlwZXMuaDrCoMKgwqAgI2RlZmluZSBfX3BtZCh4KcKgICgocG1kX3Qp
-IHsgY3B1X3RvX2JlNjQoeCkgfSkKPj4gYXJjaC9wb3dlcnBjL2luY2x1ZGUvYXNtL3BndGFibGUt
-dHlwZXMuaDrCoMKgwqAgI2RlZmluZSBfX3BtZCh4KcKgICgocG1kX3QpIHsgKHgpIH0pCj4+IGFy
-Y2gvcmlzY3YvaW5jbHVkZS9hc20vcGd0YWJsZS02NC5oOsKgwqDCoMKgwqDCoMKgICNkZWZpbmUg
-X19wbWQoeCnCoCAoKHBtZF90KSB7ICh4KSB9KQo+PiBhcmNoL3MzOTAvaW5jbHVkZS9hc20vcGFn
-ZS5oOsKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgI2RlZmluZSBfX3BtZCh4KcKgICgocG1kX3QpIHsg
-KHgpIH0gKQo+PiBhcmNoL3NoL2luY2x1ZGUvYXNtL3BndGFibGUtM2xldmVsLmg6wqDCoMKgwqDC
-oMKgwqAgI2RlZmluZSBfX3BtZCh4KcKgICgocG1kX3QpIHsgKHgpIH0gKQo+PiBhcmNoL3NwYXJj
-L2luY2x1ZGUvYXNtL3BhZ2VfMzIuaDrCoMKgwqDCoMKgwqDCoCAjZGVmaW5lIF9fcG1kKHgpwqAg
-KChwbWRfdCkgeyB7ICh4KSB9LCB9KQo+PiBhcmNoL3NwYXJjL2luY2x1ZGUvYXNtL3BhZ2VfMzIu
-aDrCoMKgwqDCoMKgwqDCoCAjZGVmaW5lIF9fcG1kKHgpwqAgKChwbWRfdCkgeyB7ICh4KSB9LCB9
-KQo+PiBhcmNoL3NwYXJjL2luY2x1ZGUvYXNtL3BhZ2VfNjQuaDrCoMKgwqDCoMKgwqDCoCAjZGVm
-aW5lIF9fcG1kKHgpwqAgKChwbWRfdCkgeyAoeCkgfSApCj4+IGFyY2gvc3BhcmMvaW5jbHVkZS9h
-c20vcGFnZV82NC5oOsKgwqDCoMKgwqDCoMKgICNkZWZpbmUgX19wbWQoeCnCoCAoeCkKPj4gYXJj
-aC91bS9pbmNsdWRlL2FzbS9wYWdlLmg6wqDCoMKgwqDCoMKgwqDCoMKgwqDCoCAjZGVmaW5lIF9f
-cG1kKHgpwqAgKChwbWRfdCkgeyAoeCkgfSApCj4+IGFyY2gvdW0vaW5jbHVkZS9hc20vcGFnZS5o
-OsKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgI2RlZmluZSBfX3BtZCh4KcKgICgocG1kX3QpIHsgKHgp
-IH0gKQo+PiBhcmNoL3g4Ni9pbmNsdWRlL2FzbS9wZ3RhYmxlLmg6wqDCoMKgwqDCoMKgwqDCoMKg
-wqDCoCAjZGVmaW5lIF9fcG1kKHgpwqAgbmF0aXZlX21ha2VfcG1kKHgpCj4gCj4gWW91IG1pc3Nl
-ZDoKPiBhcmNoL3g4Ni9pbmNsdWRlL2FzbS9wYXJhdmlydC5oOnN0YXRpYyBpbmxpbmUgcG1kX3Qg
-X19wbWQocG1kdmFsX3QgdmFsKQo+IGluY2x1ZGUvYXNtLWdlbmVyaWMvcGFnZS5oOiNkZWZpbmUg
-X19wbWQoeCnCoMKgwqDCoCAoKHBtZF90KSB7ICh4KSB9ICkKPiBpbmNsdWRlL2FzbS1nZW5lcmlj
-L3BndGFibGUtbm9wbWQuaDojZGVmaW5lIF9fcG1kKHgpIMKgwqDCoMKgwqDCoCAoKHBtZF90KSB7
-IF9fcHVkKHgpIH0gKQo+IAo+IAo+Pgo+PiBTaW1pbGFybHkgZm9yIF9fcGdkKCkKPj4KPj4gYXJj
-aC9hbHBoYS9pbmNsdWRlL2FzbS9wYWdlLmg6wqDCoMKgwqDCoMKgwqDCoMKgwqDCoCAjZGVmaW5l
-IF9fcGdkKHgpwqAgKChwZ2RfdCkgeyAoeCkgfSApCj4+IGFyY2gvYWxwaGEvaW5jbHVkZS9hc20v
-cGFnZS5oOsKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgI2RlZmluZSBfX3BnZCh4KcKgICh4KQo+PiBh
-cmNoL2FyYy9pbmNsdWRlL2FzbS9wYWdlLmg6wqDCoMKgwqDCoMKgwqDCoMKgwqDCoCAjZGVmaW5l
-IF9fcGdkKHgpwqAgKChwZ2RfdCkgeyAoeCkgfSkKPj4gYXJjaC9hcmMvaW5jbHVkZS9hc20vcGFn
-ZS5oOsKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgI2RlZmluZSBfX3BnZCh4KcKgICh4KQo+PiBhcmNo
-L2FybS9pbmNsdWRlL2FzbS9wZ3RhYmxlLTNsZXZlbC10eXBlcy5oOsKgwqDCoCAjZGVmaW5lIF9f
-cGdkKHgpwqAgKChwZ2RfdCkgeyAoeCkgfSApCj4+IGFyY2gvYXJtL2luY2x1ZGUvYXNtL3BndGFi
-bGUtM2xldmVsLXR5cGVzLmg6wqDCoMKgICNkZWZpbmUgX19wZ2QoeCnCoCAoeCkKPj4gYXJjaC9h
-cm02NC9pbmNsdWRlL2FzbS9wZ3RhYmxlLXR5cGVzLmg6wqDCoMKgwqDCoMKgwqAgI2RlZmluZSBf
-X3BnZCh4KcKgICgocGdkX3QpIHsgKHgpIH0gKQo+PiBhcmNoL2Nza3kvaW5jbHVkZS9hc20vcGFn
-ZS5oOsKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgI2RlZmluZSBfX3BnZCh4KcKgICgocGdkX3QpIHsg
-KHgpIH0pCj4+IGFyY2gvaGV4YWdvbi9pbmNsdWRlL2FzbS9wYWdlLmg6wqDCoMKgwqDCoMKgwqAg
-I2RlZmluZSBfX3BnZCh4KcKgICgocGdkX3QpIHsgKHgpIH0pCj4+IGFyY2gvbTY4ay9pbmNsdWRl
-L2FzbS9wYWdlLmg6wqDCoMKgwqDCoMKgwqDCoMKgwqDCoCAjZGVmaW5lIF9fcGdkKHgpwqAgKChw
-Z2RfdCkgeyAoeCkgfSApCj4+IGFyY2gvbWlwcy9pbmNsdWRlL2FzbS9wYWdlLmg6wqDCoMKgwqDC
-oMKgwqDCoMKgwqDCoCAjZGVmaW5lIF9fcGdkKHgpwqAgKChwZ2RfdCkgeyAoeCkgfSApCj4+IGFy
-Y2gvbmRzMzIvaW5jbHVkZS9hc20vcGFnZS5oOsKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgI2RlZmlu
-ZSBfX3BnZCh4KcKgICh4KQo+PiBhcmNoL25pb3MyL2luY2x1ZGUvYXNtL3BhZ2UuaDrCoMKgwqDC
-oMKgwqDCoMKgwqDCoMKgICNkZWZpbmUgX19wZ2QoeCnCoCAoKHBnZF90KSB7ICh4KSB9KQo+PiBh
-cmNoL29wZW5yaXNjL2luY2x1ZGUvYXNtL3BhZ2UuaDrCoMKgwqDCoMKgwqDCoCAjZGVmaW5lIF9f
-cGdkKHgpwqAgKChwZ2RfdCkgeyAoeCkgfSkKPj4gYXJjaC9wYXJpc2MvaW5jbHVkZS9hc20vcGFn
-ZS5oOsKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgI2RlZmluZSBfX3BnZCh4KcKgICgocGdkX3QpIHsg
-KHgpIH0gKQo+PiBhcmNoL3BhcmlzYy9pbmNsdWRlL2FzbS9wYWdlLmg6wqDCoMKgwqDCoMKgwqDC
-oMKgwqDCoCAjZGVmaW5lIF9fcGdkKHgpwqAgKHgpCj4+IGFyY2gvcG93ZXJwYy9pbmNsdWRlL2Fz
-bS9wZ3RhYmxlLWJlLXR5cGVzLmg6wqDCoMKgICNkZWZpbmUgX19wZ2QoeCnCoCAoKHBnZF90KSB7
-IGNwdV90b19iZTY0KHgpIH0pCj4+IGFyY2gvcG93ZXJwYy9pbmNsdWRlL2FzbS9wZ3RhYmxlLXR5
-cGVzLmg6wqDCoMKgICNkZWZpbmUgX19wZ2QoeCnCoCAoKHBnZF90KSB7ICh4KSB9KQo+PiBhcmNo
-L3Jpc2N2L2luY2x1ZGUvYXNtL3BhZ2UuaDrCoMKgwqDCoMKgwqDCoMKgwqDCoMKgICNkZWZpbmUg
-X19wZ2QoeCnCoCAoKHBnZF90KSB7ICh4KSB9KQo+PiBhcmNoL3MzOTAvaW5jbHVkZS9hc20vcGFn
-ZS5oOsKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgI2RlZmluZSBfX3BnZCh4KcKgICgocGdkX3QpIHsg
-KHgpIH0gKQo+PiBhcmNoL3NoL2luY2x1ZGUvYXNtL3BhZ2UuaDrCoMKgwqDCoMKgwqDCoMKgwqDC
-oMKgICNkZWZpbmUgX19wZ2QoeCnCoCAoKHBnZF90KSB7ICh4KSB9ICkKPj4gYXJjaC9zcGFyYy9p
-bmNsdWRlL2FzbS9wYWdlXzMyLmg6wqDCoMKgwqDCoMKgwqAgI2RlZmluZSBfX3BnZCh4KcKgICgo
-cGdkX3QpIHsgKHgpIH0gKQo+PiBhcmNoL3NwYXJjL2luY2x1ZGUvYXNtL3BhZ2VfMzIuaDrCoMKg
-wqDCoMKgwqDCoCAjZGVmaW5lIF9fcGdkKHgpwqAgKHgpCj4+IGFyY2gvc3BhcmMvaW5jbHVkZS9h
-c20vcGFnZV82NC5oOsKgwqDCoMKgwqDCoMKgICNkZWZpbmUgX19wZ2QoeCnCoCAoKHBnZF90KSB7
-ICh4KSB9ICkKPj4gYXJjaC9zcGFyYy9pbmNsdWRlL2FzbS9wYWdlXzY0Lmg6wqDCoMKgwqDCoMKg
-wqAgI2RlZmluZSBfX3BnZCh4KcKgICh4KQo+PiBhcmNoL3VtL2luY2x1ZGUvYXNtL3BhZ2UuaDrC
-oMKgwqDCoMKgwqDCoMKgwqDCoMKgICNkZWZpbmUgX19wZ2QoeCnCoCAoKHBnZF90KSB7ICh4KSB9
-ICkKPj4gYXJjaC91bmljb3JlMzIvaW5jbHVkZS9hc20vcGFnZS5oOsKgwqDCoMKgwqDCoMKgICNk
-ZWZpbmUgX19wZ2QoeCnCoCAoKHBnZF90KSB7ICh4KSB9KQo+PiBhcmNoL3VuaWNvcmUzMi9pbmNs
-dWRlL2FzbS9wYWdlLmg6wqDCoMKgwqDCoMKgwqAgI2RlZmluZSBfX3BnZCh4KcKgICh4KQo+PiBh
-cmNoL3g4Ni9pbmNsdWRlL2FzbS9wZ3RhYmxlLmg6wqDCoMKgwqDCoMKgwqDCoMKgwqDCoCAjZGVm
-aW5lIF9fcGdkKHgpwqAgbmF0aXZlX21ha2VfcGdkKHgpCj4+IGFyY2gveHRlbnNhL2luY2x1ZGUv
-YXNtL3BhZ2UuaDrCoMKgwqDCoMKgwqDCoMKgwqDCoMKgICNkZWZpbmUgX19wZ2QoeCnCoCAoKHBn
-ZF90KSB7ICh4KSB9ICkKPiAKPiBZb3UgbWlzc2VkOgo+IGFyY2gveDg2L2luY2x1ZGUvYXNtL3Bh
-cmF2aXJ0Lmg6c3RhdGljIGlubGluZSBwZ2RfdCBfX3BnZChwZ2R2YWxfdCB2YWwpCj4gaW5jbHVk
-ZS9hc20tZ2VuZXJpYy9wYWdlLmg6I2RlZmluZSBfX3BnZCh4KcKgwqDCoMKgICgocGdkX3QpIHsg
-KHgpIH0gKQo+IAo+IAo+Pgo+PiBTaW1pbGFybHkgZm9yIF9fcDRkKCkKPj4KPj4gYXJjaC9zMzkw
-L2luY2x1ZGUvYXNtL3BhZ2UuaDrCoMKgwqDCoMKgwqDCoMKgwqDCoMKgICNkZWZpbmUgX19wNGQo
-eCnCoCAoKHA0ZF90KSB7ICh4KSB9ICkKPj4gYXJjaC94ODYvaW5jbHVkZS9hc20vcGd0YWJsZS5o
-OsKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgI2RlZmluZSBfX3A0ZCh4KcKgIG5hdGl2ZV9tYWtlX3A0
-ZCh4KQo+IAo+IFlvdSBtaXNzZWQ6Cj4gYXJjaC94ODYvaW5jbHVkZS9hc20vcGFyYXZpcnQuaDpz
-dGF0aWMgaW5saW5lIHA0ZF90IF9fcDRkKHA0ZHZhbF90IHZhbCkKPiBpbmNsdWRlL2FzbS1nZW5l
-cmljLzVsZXZlbC1maXh1cC5oOiNkZWZpbmUgX19wNGQoeCkgX19wZ2QoeCkKPiBpbmNsdWRlL2Fz
-bS1nZW5lcmljL3BndGFibGUtbm9wNGQuaDojZGVmaW5lIF9fcDRkKHgpIMKgwqDCoMKgwqDCoCAo
-KHA0ZF90KSB7IF9fcGdkKHgpIH0pCj4gCj4gCj4+Cj4+IFRoZSBzZWFyY2ggcGF0dGVybiBoZXJl
-IGhhcyBiZWVuICIjZGVmaW5lIF9fcHh4KCIuIFVubGVzcyBJIGFtIG1pc3Npbmcgc29tZXRoaW5n
-LAo+PiBJIGRvbnQgc2VlIGhvdyB3ZSBjYW4gdXNlIHRoZXNlIHdpdGhvdXQgcmlza2luZyBidWls
-ZCBmYWlsdXJlcy4KPj4KPiAKPiBJIGd1ZXNzIHlvdSBtaXNzZWQgdGhhdCBhcmNoZXMgbm90IGRl
-ZmluaW5nIHRoZW0gZmFsbCBiYWNrIG9uIHRoZSBkZWZpbml0aW9ucyBpbiBpbmNsdWRlL2FzbS1n
-ZW5lcmljCgpZb3UgYXJlIHJpZ2h0LiBJIHdhcyBjb25mdXNlZCB3aGV0aGVyIHRoZXNlIGdlbmVy
-aWMgZGVmaW5pdGlvbnMgd2VyZSByZWFsbHkKYXBwbGljYWJsZSBmb3IgYWxsIHRob3NlIHBsYXRm
-b3JtcyBhcyBmYWxsYmFjayAod2l0aCBzbyBtYW55IHBhZ2UgdGFibGUKbGV2ZWwgZm9sZGluZyBj
-b21iaW5hdGlvbnMgYXZhaWxhYmxlKSB3aGVuIHRoZXkgZG9udCBkZWZpbmUuIFN1cmUgd2lsbCB0
-YWtlCnRoaXMgYXBwcm9hY2ggYW5kIHRyeSB0byBidWlsZCB0aGVtIG9uIG11bHRpcGxlIHBsYXRm
-b3Jtcy4KCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxp
-bnV4LXNucHMtYXJjIG1haWxpbmcgbGlzdApsaW51eC1zbnBzLWFyY0BsaXN0cy5pbmZyYWRlYWQu
-b3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtc25w
-cy1hcmMK
+Hi,
+
+This series adds support to permit the selection of clocksource/clockevent
+via DT.
+
+In [1] I proposed a solution other than the one in this series, with parsing DT
+bindings and at probe time and passing it to timer specific probe function.
+Looking forward though the clocksource/clockevent drivers implementation and
+taking into account the response at [2] I sticked the implementation to
+timer-of specific library.
+
+The implementation in this series is using timer-of specific library to parse
+the DT bindings related to timers functions: clocksource or clockevent.
+
+With this implementation a timer's driver registers for probing an array of
+objects of type struct timer_of. In flags member of struct timer_of object it
+has to be passed the following new flags (related to how the driver will behave)
+as follows:
+- TIMER_OF_TYPE_CS: timer could work only as clocksource at a time
+- TIMER_OF_TYPE_CE: timer could work only as clockevent at a time
+- TIMER_OF_TYPE_CE_AND_CE: timer could work at a time as both, clocksource and
+clockevent.
+
+The timer registration macro (for probing) now gets a new argument which should
+be an array of struct timer_of objects:
+
+TIMER_OF_DECLARE(name, compat, handler, to)
+CLOCKSOURCE_OF_DECLARE(name, compat, handler, to)
+
+In case driver could work to feed only the clocksource subsystem or only the
+clockevent subsystem the struct timer_of array passed to TIMER_OF_DECLARE()/
+CLOCKSOURCE_OF_DECLARE() should contain 2 entries: one to be filled if probed
+timer works as clocksource device, one to be filled if probed timer works as
+clockevent device.
+
+For such a case, the minimal format of struct timer_of array is as follows:
+struct timer_of to[] = {
+	{ .flags = TIMER_OF_TYPE_CS }
+	{ .flags = TIMER_OF_TYPE_CE }
+	{ /* sentinel. */
+};
+
+If timer could work as both, clocksource and clockevent at the same time,
+the struct timer_of array should look as follows:
+struct timer_of to[] = {
+	{ .flags = TIMER_OF_TYPE_CE_AND_CS }
+	{ /* sentinel. */
+};
+
+And in device tree there should be added chosen bindings as follows:
+
+chosen {
+	linux,clocksource {
+		timer = <&timer1>
+	};
+	
+	linux,clockevent {
+		timer = <&timer2>;
+	}
+};
+
+timer1: t1@123 {
+	compatible = "timerx-compatible";
+	/* the rest of DT bindings here */
+};
+
+timer2: t1@234 {
+	compatible = "timerx-compatible";
+	/* the rest of DT bindings here */
+};
+
+At probing time (timer_probe()), timer_of_init() will check the DT bindings
+and try to match with one of the entries in struct timer_of array passed at
+probe. The used entry will be considered used if the timers' device_node 
+pointer is set. If no matching b/w DT and what has been passed for probe
+via struct timer_of array then probe should fail.
+
+The patches in this series are organized as follows:
+1/7 - avoid calling timer_of_init() for every CPU since it should not be needed
+2/7 - changes timer registration macro by adding a new argument (pointer to
+      struct timer_of)
+3/7 - use BIT() macro
+4/7 - add clocksource/clockevent selection documentation [3]
+5/7 - implement support described above
+6/7 - remove an unnecessary line
+7/7 - implement this support for integrator-ap timer
+
+I implemented this support for timer published at [4].
+
+Thank you,
+Claudiu Beznea
+
+[1] https://lore.kernel.org/lkml/34574b0f-7d09-eb92-ea62-4199c293b0e7@microchip.com/
+[2] https://lore.kernel.org/lkml/1ebaa306-8a7f-fd58-56e0-a61b767357f7@linaro.org/
+[3] https://lore.kernel.org/lkml/20171213185313.20017-1-alexandre.belloni@free-electrons.com/
+[4] https://lore.kernel.org/lkml/1552580772-8499-1-git-send-email-claudiu.beznea@microchip.com/
+
+Alexandre Belloni (2):
+  dt-bindings: chosen: Add clocksource and clockevent selection
+  clocksource/drivers/integrator-ap: parse the chosen node
+
+Claudiu Beznea (5):
+  clocksource/drivers/c-sky: request timer_of_init only for probing CPU
+  clocksource: change timer registration macros
+  clocksource/timer_of: use BIT() macro
+  clocksource/drivers/timer-of: add support support for timer's
+    functionalities
+  drivers/clocksource/timer-of: keep declaration on one line
+
+ Documentation/devicetree/bindings/chosen.txt |  20 +++++
+ arch/arm/kernel/smp_twd.c                    |  10 ++-
+ arch/arm/mach-davinci/time.c                 |   2 +-
+ arch/microblaze/kernel/timer.c               |   2 +-
+ arch/mips/ralink/cevt-rt3352.c               |   2 +-
+ arch/nios2/kernel/time.c                     |   2 +-
+ drivers/clocksource/Kconfig                  |   1 +
+ drivers/clocksource/arc_timer.c              |   6 +-
+ drivers/clocksource/arm_arch_timer.c         |   6 +-
+ drivers/clocksource/arm_global_timer.c       |   2 +-
+ drivers/clocksource/armv7m_systick.c         |   2 +-
+ drivers/clocksource/asm9260_timer.c          |   2 +-
+ drivers/clocksource/bcm2835_timer.c          |   2 +-
+ drivers/clocksource/bcm_kona_timer.c         |   4 +-
+ drivers/clocksource/clksrc-dbx500-prcmu.c    |   2 +-
+ drivers/clocksource/clksrc_st_lpc.c          |   2 +-
+ drivers/clocksource/clps711x-timer.c         |   2 +-
+ drivers/clocksource/dw_apb_timer_of.c        |   9 ++-
+ drivers/clocksource/exynos_mct.c             |   4 +-
+ drivers/clocksource/h8300_timer16.c          |   2 +-
+ drivers/clocksource/h8300_timer8.c           |   2 +-
+ drivers/clocksource/h8300_tpu.c              |   2 +-
+ drivers/clocksource/jcore-pit.c              |   2 +-
+ drivers/clocksource/mips-gic-timer.c         |   2 +-
+ drivers/clocksource/mps2-timer.c             |   2 +-
+ drivers/clocksource/mxs_timer.c              |   2 +-
+ drivers/clocksource/nomadik-mtu.c            |   2 +-
+ drivers/clocksource/renesas-ostm.c           |   2 +-
+ drivers/clocksource/samsung_pwm_timer.c      |  12 ++-
+ drivers/clocksource/timer-armada-370-xp.c    |   6 +-
+ drivers/clocksource/timer-atcpit100.c        |  74 +++++++++---------
+ drivers/clocksource/timer-atlas7.c           |   3 +-
+ drivers/clocksource/timer-atmel-pit.c        |   2 +-
+ drivers/clocksource/timer-atmel-st.c         |   2 +-
+ drivers/clocksource/timer-atmel-tcb.c        |   2 +-
+ drivers/clocksource/timer-cadence-ttc.c      |   2 +-
+ drivers/clocksource/timer-davinci.c          |   3 +-
+ drivers/clocksource/timer-digicolor.c        |   2 +-
+ drivers/clocksource/timer-efm32.c            |   4 +-
+ drivers/clocksource/timer-fsl-ftm.c          |   2 +-
+ drivers/clocksource/timer-fttmr010.c         |  10 +--
+ drivers/clocksource/timer-gx6605s.c          |  58 +++++++-------
+ drivers/clocksource/timer-imx-gpt.c          |  24 +++---
+ drivers/clocksource/timer-imx-sysctr.c       |  61 +++++++--------
+ drivers/clocksource/timer-imx-tpm.c          |  69 ++++++++---------
+ drivers/clocksource/timer-integrator-ap.c    |  21 +++++-
+ drivers/clocksource/timer-ixp4xx.c           |   2 +-
+ drivers/clocksource/timer-keystone.c         |   2 +-
+ drivers/clocksource/timer-lpc32xx.c          |   2 +-
+ drivers/clocksource/timer-mediatek.c         | 108 +++++++++++++++------------
+ drivers/clocksource/timer-meson6.c           |   2 +-
+ drivers/clocksource/timer-milbeaut.c         |  59 ++++++++-------
+ drivers/clocksource/timer-mp-csky.c          |  52 ++++++-------
+ drivers/clocksource/timer-npcm7xx.c          |  87 +++++++++++----------
+ drivers/clocksource/timer-nps.c              |   6 +-
+ drivers/clocksource/timer-of.c               |  91 +++++++++++++++++++++-
+ drivers/clocksource/timer-of.h               |  36 +++++++--
+ drivers/clocksource/timer-orion.c            |   2 +-
+ drivers/clocksource/timer-owl.c              |   6 +-
+ drivers/clocksource/timer-oxnas-rps.c        |   4 +-
+ drivers/clocksource/timer-pistachio.c        |   2 +-
+ drivers/clocksource/timer-prima2.c           |   2 +-
+ drivers/clocksource/timer-probe.c            |  17 ++++-
+ drivers/clocksource/timer-pxa.c              |   2 +-
+ drivers/clocksource/timer-qcom.c             |   4 +-
+ drivers/clocksource/timer-rda.c              |  66 ++++++++--------
+ drivers/clocksource/timer-riscv.c            |   2 +-
+ drivers/clocksource/timer-rockchip.c         |   4 +-
+ drivers/clocksource/timer-sp804.c            |   4 +-
+ drivers/clocksource/timer-sprd.c             |  75 +++++++++----------
+ drivers/clocksource/timer-stm32.c            |  39 +++++-----
+ drivers/clocksource/timer-sun4i.c            |  78 +++++++++----------
+ drivers/clocksource/timer-sun5i.c            |   4 +-
+ drivers/clocksource/timer-tango-xtal.c       |   2 +-
+ drivers/clocksource/timer-tegra.c            |  31 ++++----
+ drivers/clocksource/timer-ti-32k.c           |   2 +-
+ drivers/clocksource/timer-u300.c             |   2 +-
+ drivers/clocksource/timer-versatile.c        |   4 +-
+ drivers/clocksource/timer-vf-pit.c           |   2 +-
+ drivers/clocksource/timer-vt8500.c           |   2 +-
+ drivers/clocksource/timer-zevio.c            |   2 +-
+ include/linux/clocksource.h                  |  30 +++++++-
+ 82 files changed, 748 insertions(+), 544 deletions(-)
+
+-- 
+2.7.4
+
+
+_______________________________________________
+linux-snps-arc mailing list
+linux-snps-arc@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-snps-arc
