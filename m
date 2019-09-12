@@ -2,91 +2,56 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2D1CDB0D6E
-	for <lists+linux-snps-arc@lfdr.de>; Thu, 12 Sep 2019 13:00:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E584BB0E9C
+	for <lists+linux-snps-arc@lfdr.de>; Thu, 12 Sep 2019 14:09:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kKV3YfXYyeGSsU6IoabFlvoI8l/Zz3WDKv4Aab+75OU=; b=AZFUd2X03axeFg
-	fvdbzA+t4RSda4EsLANxibmiPdc9oyUHI82NGg8964mQuVA56UB18AfetgKwDR5s5HlCmZ9N7Njuu
-	U9ZWPWuDnC1+omHX7bj26NZEJRETXv8kVPLiejIbdvz76SYGLc9S9/E/5BGSGE3uMvHxPVugr/3Na
-	wJNwOlNDMqtxWwru0OD89kqxvmYAkN8Dc9KBDDjIpYRFZR/ohmxouHxgVhUB/Ve15enb8bGzaUm1I
-	zIWkY8IoWsAEdVU3h8FaaLbnMhLPVMF/CwlVmU9qEPE9dup5wLZ1ZdD27WXEUDeZfQFWP7xRw3Nlw
-	u6vAPSB1DeHUWwj0UTDg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Hnf4uMvTaXtVC2F/I5e6r6XyUGnjihlaCVZ81YFp/Ac=; b=s2kx/KkMrSgeAA
+	MOqN3starunq/vwjYUfR0FvWH45q3dtlwbN1u4z32x2jSuoeuXfcgLB68Zbw6YQgK5smUVfXkPkRe
+	L4dAE7MvtkS9j+QYzYiiHu6ZiTJIFFjyGknEJvbjKJFvRq2F3VWP1Mm/K24jm6ijWaf6bIN4Hc414
+	hp+XPyjnErF1pf9Da3hf1UtkqDr75UCTWwPdcY2gDcqXbUkc1MBHFCQ/9yV5pXqvHSTUl90HQ/g8Z
+	umCk07L2PHSvzlQPXu2chSEQS69J/ebMcliaY1Q1nURNi4eKPRe43yiF4eqmPALvnT70wFakVOjd5
+	8b0vahTvdgznrzGCQW2Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i8Mq1-0000bs-VJ; Thu, 12 Sep 2019 11:00:34 +0000
-Received: from mail-ed1-x541.google.com ([2a00:1450:4864:20::541])
- by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i8Mpl-0000F2-7F
- for linux-snps-arc@lists.infradead.org; Thu, 12 Sep 2019 11:00:18 +0000
-Received: by mail-ed1-x541.google.com with SMTP id i8so23490166edn.13
- for <linux-snps-arc@lists.infradead.org>; Thu, 12 Sep 2019 04:00:16 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=shutemov-name.20150623.gappssmtp.com; s=20150623;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=i4n3cs5YIwHpBBnCvQbY3FnLMZHpwOIQycs63oVDiSc=;
- b=XU1ehr7BQ2UPg1KBuVQ5nl6L4OIYSyENUTpJxtu0PcESlZD1JDIDF/kfEGLVTwGTPP
- MxBuxnwufiCItM0eu2f6PGyyjzV27Q2cNWmrCI/fGkWv00JgM+mdZSN1lgpv2XIZF9yD
- Ti1WM/t84cLxXEP8DSXzi5NQKs0TYyJ79hQa7AZv9JgQdH0hTuNKnH8BEAiZ+ewccLLa
- vvU+d/v7/7I+eQ9LvIytn9jJr+WOd1sRRaRjF83QEr00IfWCJU2SCQ/EcoyWOdAh3E8X
- tFKZsg92QCTLtpzpNowjR1vbUr8LIL24WrcjhMNVcplThOrveFyd6bS7Oehx93UQGF8r
- wpAw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=i4n3cs5YIwHpBBnCvQbY3FnLMZHpwOIQycs63oVDiSc=;
- b=F7fbDxx7GHpOYRkWmUWI8HPCdXK8PiNXt5nhhYADCrtEcihq9VKw/ec55GcONkiBR4
- rHTlZOUDxUxf4DTrxE8IB27jlr3B769eIXtDeaHieeAx+Kfsv+V5fstWzJrA5YUXhmnq
- mamjWQdGvc4bY3fQp73RRigRZZtoSjHTMlsy8DGEvb0Dkc8H5Xo13YbyxmiRpsrcDUWe
- Ym9+rWzxap8Q49jgTOCdVmdxLKCxpFo2TTaO7DytIPwA9P9waagOrXNET5glSWzT9ltS
- b7AaM4wGf385v8S7ldlBixa9PpPMqrp9LnvpfBvixWmbsOADXyieZ++L9SZ86qrRSlKz
- t/fQ==
-X-Gm-Message-State: APjAAAUDmRq7klThqyuwbO6ya/eWpysxakZ9kDLqOfo19JIwKoArBPY4
- IoEZ9KIVZg8AUpovJK3lYhLuUg==
-X-Google-Smtp-Source: APXvYqzn86bOsg/hOamx0ZM4X4jdcRXf0RIV/TYjmuJGR8c1qTMEHrx7GcnktNsAZCbZ5Sfr2/boLg==
-X-Received: by 2002:a50:d084:: with SMTP id v4mr42151595edd.48.1568286015703; 
- Thu, 12 Sep 2019 04:00:15 -0700 (PDT)
-Received: from box.localdomain ([86.57.175.117])
- by smtp.gmail.com with ESMTPSA id 60sm4730030edg.10.2019.09.12.04.00.14
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 12 Sep 2019 04:00:14 -0700 (PDT)
-Received: by box.localdomain (Postfix, from userid 1000)
- id 379ED100B4A; Thu, 12 Sep 2019 14:00:16 +0300 (+03)
-Date: Thu, 12 Sep 2019 14:00:16 +0300
-From: "Kirill A. Shutemov" <kirill@shutemov.name>
-To: Anshuman Khandual <anshuman.khandual@arm.com>
-Subject: Re: [PATCH V2 2/2] mm/pgtable/debug: Add test validating
- architecture page table helpers
-Message-ID: <20190912110016.srrydg2krplscbgq@box>
+	id 1i8Nuq-0000oi-Nr; Thu, 12 Sep 2019 12:09:36 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1i8Nua-0000cP-AH; Thu, 12 Sep 2019 12:09:21 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 9F07428;
+ Thu, 12 Sep 2019 05:09:18 -0700 (PDT)
+Received: from [192.168.0.129] (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id BC7263F71F;
+ Thu, 12 Sep 2019 05:09:07 -0700 (PDT)
+Subject: Re: [PATCH V2 2/2] mm/pgtable/debug: Add test validating architecture
+ page table helpers
+To: "Kirill A. Shutemov" <kirill@shutemov.name>
 References: <1568268173-31302-1-git-send-email-anshuman.khandual@arm.com>
  <1568268173-31302-3-git-send-email-anshuman.khandual@arm.com>
+ <20190912110016.srrydg2krplscbgq@box>
+From: Anshuman Khandual <anshuman.khandual@arm.com>
+Message-ID: <0116e7b7-cee5-c821-cc54-f4e397c774b2@arm.com>
+Date: Thu, 12 Sep 2019 17:39:13 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
+ Thunderbird/52.9.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1568268173-31302-3-git-send-email-anshuman.khandual@arm.com>
-User-Agent: NeoMutt/20180716
+In-Reply-To: <20190912110016.srrydg2krplscbgq@box>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190912_040017_408986_07F5D584 
-X-CRM114-Status: UNSURE (   9.98  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190912_050920_401204_D566ED20 
+X-CRM114-Status: GOOD (  13.86  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:541 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-snps-arc@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -129,18 +94,26 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-snps-arc" <linux-snps-arc-bounces@lists.infradead.org>
 Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org
 
-On Thu, Sep 12, 2019 at 11:32:53AM +0530, Anshuman Khandual wrote:
-> +MODULE_LICENSE("GPL v2");
-> +MODULE_AUTHOR("Anshuman Khandual <anshuman.khandual@arm.com>");
-> +MODULE_DESCRIPTION("Test architecture page table helpers");
 
-It's not module. Why?
 
-BTW, I think we should make all code here __init (or it's variants) so it
-can be discarded on boot. It has not use after that.
+On 09/12/2019 04:30 PM, Kirill A. Shutemov wrote:
+> On Thu, Sep 12, 2019 at 11:32:53AM +0530, Anshuman Khandual wrote:
+>> +MODULE_LICENSE("GPL v2");
+>> +MODULE_AUTHOR("Anshuman Khandual <anshuman.khandual@arm.com>");
+>> +MODULE_DESCRIPTION("Test architecture page table helpers");
+> 
+> It's not module. Why?
 
--- 
- Kirill A. Shutemov
+Not any more. Nothing in particular. Just that module_init() code gets
+executed after page allocator init which is needed here. But I guess
+probably not a great way to get this test started.
+
+> 
+> BTW, I think we should make all code here __init (or it's variants) so it
+> can be discarded on boot. It has not use after that.
+
+Sounds good, will change. Will mark all these functions as __init and
+will trigger the test with late_initcall().
 
 _______________________________________________
 linux-snps-arc mailing list
