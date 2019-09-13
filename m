@@ -2,57 +2,94 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C5C5DB19C4
-	for <lists+linux-snps-arc@lfdr.de>; Fri, 13 Sep 2019 10:43:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5D9DCB1A3B
+	for <lists+linux-snps-arc@lfdr.de>; Fri, 13 Sep 2019 10:55:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZmgKoZluBgdYvSD4WnuAUjWw/5fSmTz77Ufm4m/thVc=; b=HdwPG9PKOhRl5l
-	y9/AlIkyI653ThPL2yhR95FAzhyHpraY2SrIodyjlwGuwk+ytzLm5O0HjYg72/L4a3+icUCnx+EOW
-	QxYgonxoNaN8K55HGFvqgZaKJlVmgmSzrAS5v9uZ/bpzDFmVtE00PHKFXkvtiIucJQFQdWntfZdAd
-	ry/pGfdEz9MU+ouzYIcIggncGVA32v6z18ecLTrxTu2GcJC4wwI6mvYzf7NfnRhVkXWTjL/77MFUd
-	NfBaMxNX0fXyPiyIoTeURUvLI7iYlZutf87eb7ZytFjziEAIdEnQ54DUBhJR9HRtb5++NRuuFBbPF
-	DvEWJsMGnGb/fVjv+1fA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=7eD9u7A/qA6DuWqub6j3GZsUIgEi8naCijnSt4jnCPA=; b=CGjOIZK/d8fj4P
+	0f9v3UHJjNFSAZSZR/eq1iPHxRluIudQtzckwGFM47aD175rCPvtDmOgKy9G3QxDcsxtlxCaPsLeO
+	z4cPh7hAy5Niankg8ivi+fnZJFDJ8K6F9HKPSgXOGAlVZej5i0xljzzerGjSpmCWOv/QGnuDUbnqI
+	6JSXvDIVpuAWWacc0X0qAeXSIbTMLd6fMWfRbrWMVgVre5FGYYq+Ch6H7KG1GSIPDuvUs3LpuxrTq
+	TOsc9bxN40eZZNbjs6IRKpsStJRVk75h3gxti+Z3r3bx3Aa/CWv2b4DKBAIYNtNSaC81wEUnoRemg
+	8HXzn+v+jiz9HHX+at0w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i8hAi-0000gL-Lj; Fri, 13 Sep 2019 08:43:17 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i8hAG-0000XN-O7; Fri, 13 Sep 2019 08:42:50 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D181628;
- Fri, 13 Sep 2019 01:42:44 -0700 (PDT)
-Received: from [10.162.41.125] (p8cg001049571a15.blr.arm.com [10.162.41.125])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- A21F43F59C; Fri, 13 Sep 2019 01:42:34 -0700 (PDT)
+	id 1i8hM4-0001vV-9Z; Fri, 13 Sep 2019 08:55:00 +0000
+Received: from mail-ed1-x542.google.com ([2a00:1450:4864:20::542])
+ by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1i8hIm-0008D3-8q
+ for linux-snps-arc@lists.infradead.org; Fri, 13 Sep 2019 08:51:38 +0000
+Received: by mail-ed1-x542.google.com with SMTP id i8so26305175edn.13
+ for <linux-snps-arc@lists.infradead.org>; Fri, 13 Sep 2019 01:51:35 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=shutemov-name.20150623.gappssmtp.com; s=20150623;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:content-transfer-encoding:in-reply-to
+ :user-agent; bh=ljRy//1oqpxbNqcuLvCNHWlNadtkzDq51hCzmFakYzM=;
+ b=M6Wl/quwPsEOiMFNCv3xSOrdnDulq5fkBOVf8YSY3tiw77PxkkHJwmP5iEk0kohLlY
+ pg4uPVtKpUEevoagc8enKn4uPrSlBiZORCgQoAOniX52xYmOZkzG1/HzuVuRwG1eo1oP
+ UUMYm6uVKM/ZyICPXIY6dw0BD4t6sF6ZjlwPzQZa+ZeBzMMqOs4xYJXwzCpcBNDo8jhx
+ jXjUL9kfKg583djOtcu64hthdRWYl9M2FSJHI0vB9ZCDV10OZHe+j1P2FdlMaHZTn/Du
+ o7aK3kotbpwDLHIjGD7A7LXZ8OC4HcGT0NeYVB7fDkav49RWCtmQCPySSqquXilUNVHm
+ pP3w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:content-transfer-encoding
+ :in-reply-to:user-agent;
+ bh=ljRy//1oqpxbNqcuLvCNHWlNadtkzDq51hCzmFakYzM=;
+ b=bNRCOPexoITfv8i3UJowc5Eq4FBVBWobJW3/J9n7FaKCbAjGsyw7PhY1vcSsl+DqBz
+ GuV8gq3bNH7L3JIXiWZ4aKe3fN3ZF1caLJpZ9sxTgcu8WIAmvzC/+bUCYYloMCp2zwSw
+ yp4BWH2psf4Rr5IjT+LaiS++6dYEuzYU4Byr67HXkpn2gJ60+tlt0xZflv1QMUMyaZfR
+ ADSvbGywhG4RVhtGl4xdzTglagouitxoU4qFaSelrPo6P3JokzFM5H59gdsj0DrLuaCO
+ bTKNuzBC5ESdgYbRRH03LdUlF7KgEiYl6j4qpwY++WBymG6XiWA8XHQrhfA6ZkpUHIo5
+ 15jA==
+X-Gm-Message-State: APjAAAXCA3SubL9CCVlBrxRl3r/FN8FxdFfpp9ivxtYKnI+ZNBMbAS31
+ 8Az6q5nIQXAa6+OFLfeq+GolIw==
+X-Google-Smtp-Source: APXvYqxZm96QADm/8SST6BnmvoIUqtDzA7VCb5AHjQ8XsG2pGy1aWbbiVHhIwmyiU7DjVjOntMuCeQ==
+X-Received: by 2002:a50:ee92:: with SMTP id f18mr24791178edr.253.1568364694523; 
+ Fri, 13 Sep 2019 01:51:34 -0700 (PDT)
+Received: from box.localdomain ([86.57.175.117])
+ by smtp.gmail.com with ESMTPSA id j30sm5287480edb.8.2019.09.13.01.51.33
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Fri, 13 Sep 2019 01:51:33 -0700 (PDT)
+Received: by box.localdomain (Postfix, from userid 1000)
+ id A972310160B; Fri, 13 Sep 2019 11:51:35 +0300 (+03)
+Date: Fri, 13 Sep 2019 11:51:35 +0300
+From: "Kirill A. Shutemov" <kirill@shutemov.name>
+To: Anshuman Khandual <anshuman.khandual@arm.com>
 Subject: Re: [PATCH] mm/pgtable/debug: Fix test validating architecture page
  table helpers
-To: Christophe Leroy <christophe.leroy@c-s.fr>, linux-mm@kvack.org
+Message-ID: <20190913085135.rfr3zrabghi2qo2t@box>
 References: <1892b37d1fd9a4ed39e76c4b999b6556077201c0.1568355752.git.christophe.leroy@c-s.fr>
  <527dd29d-45fa-4d83-1899-6cbf268dd749@arm.com>
  <e2b42446-7f91-83f1-ac12-08dff75c4d35@c-s.fr>
  <cb226b56-ff20-3136-7ffb-890657e56870@c-s.fr>
-From: Anshuman Khandual <anshuman.khandual@arm.com>
-Message-ID: <bdf7f152-d093-1691-4e96-77da7eb9e20a@arm.com>
-Date: Fri, 13 Sep 2019 14:12:45 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
- Thunderbird/52.9.1
+ <bdf7f152-d093-1691-4e96-77da7eb9e20a@arm.com>
 MIME-Version: 1.0
-In-Reply-To: <cb226b56-ff20-3136-7ffb-890657e56870@c-s.fr>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <bdf7f152-d093-1691-4e96-77da7eb9e20a@arm.com>
+User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190913_014249_054121_28D514A5 
-X-CRM114-Status: GOOD (  18.33  )
+X-CRM114-CacheID: sfid-20190913_015136_426108_532328DB 
+X-CRM114-Status: GOOD (  21.27  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:542 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-snps-arc@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,7 +104,7 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-snps-arc>,
 Cc: Mark Rutland <mark.rutland@arm.com>, linux-ia64@vger.kernel.org,
  linux-sh@vger.kernel.org, Peter Zijlstra <peterz@infradead.org>,
  James Hogan <jhogan@kernel.org>, Heiko Carstens <heiko.carstens@de.ibm.com>,
- Michal Hocko <mhocko@kernel.org>, Dave Hansen <dave.hansen@intel.com>,
+ Michal Hocko <mhocko@kernel.org>, linux-mm@kvack.org,
  Paul Mackerras <paulus@samba.org>, sparclinux@vger.kernel.org,
  Thomas Gleixner <tglx@linutronix.de>, linux-s390@vger.kernel.org,
  Jason Gunthorpe <jgg@ziepe.ca>, x86@kernel.org,
@@ -75,12 +112,13 @@ Cc: Mark Rutland <mark.rutland@arm.com>, linux-ia64@vger.kernel.org,
  Matthew Wilcox <willy@infradead.org>, Steven Price <Steven.Price@arm.com>,
  Tetsuo Handa <penguin-kernel@i-love.sakura.ne.jp>,
  Gerald Schaefer <gerald.schaefer@de.ibm.com>,
- linux-snps-arc@lists.infradead.org, Kees Cook <keescook@chromium.org>,
- Mark Brown <broonie@kernel.org>, "Kirill A . Shutemov" <kirill@shutemov.name>,
- Dan Williams <dan.j.williams@intel.com>, Vlastimil Babka <vbabka@suse.cz>,
- linux-arm-kernel@lists.infradead.org,
- Sri Krishna chowdary <schowdary@nvidia.com>,
+ linux-snps-arc@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ Kees Cook <keescook@chromium.org>,
  Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Mark Brown <broonie@kernel.org>, Dan Williams <dan.j.williams@intel.com>,
+ Vlastimil Babka <vbabka@suse.cz>, Christophe Leroy <christophe.leroy@c-s.fr>,
+ Sri Krishna chowdary <schowdary@nvidia.com>,
+ Dave Hansen <dave.hansen@intel.com>,
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
  Ard Biesheuvel <ard.biesheuvel@linaro.org>, linux-mips@vger.kernel.org,
  Ralf Baechle <ralf@linux-mips.org>, linux-kernel@vger.kernel.org,
@@ -89,64 +127,130 @@ Cc: Mark Rutland <mark.rutland@arm.com>, linux-ia64@vger.kernel.org,
  Martin Schwidefsky <schwidefsky@de.ibm.com>,
  Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
  "David S. Miller" <davem@davemloft.net>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-snps-arc" <linux-snps-arc-bounces@lists.infradead.org>
 Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org
 
-CgpPbiAwOS8xMy8yMDE5IDEyOjQxIFBNLCBDaHJpc3RvcGhlIExlcm95IHdyb3RlOgo+IAo+IAo+
-IExlIDEzLzA5LzIwMTkgw6AgMDk6MDMsIENocmlzdG9waGUgTGVyb3kgYSDDqWNyaXTCoDoKPj4K
-Pj4KPj4gTGUgMTMvMDkvMjAxOSDDoCAwODo1OCwgQW5zaHVtYW4gS2hhbmR1YWwgYSDDqWNyaXTC
-oDoKPj4+IE9uIDA5LzEzLzIwMTkgMTE6NTMgQU0sIENocmlzdG9waGUgTGVyb3kgd3JvdGU6Cj4+
-Pj4gRml4IGJ1aWxkIGZhaWx1cmUgb24gcG93ZXJwYy4KPj4+Pgo+Pj4+IEZpeCBwcmVlbXB0aW9u
-IGltYmFsYW5jZS4KPj4+Pgo+Pj4+IFNpZ25lZC1vZmYtYnk6IENocmlzdG9waGUgTGVyb3kgPGNo
-cmlzdG9waGUubGVyb3lAYy1zLmZyPgo+Pj4+IC0tLQo+Pj4+IMKgIG1tL2FyY2hfcGd0YWJsZV90
-ZXN0LmMgfCAzICsrKwo+Pj4+IMKgIDEgZmlsZSBjaGFuZ2VkLCAzIGluc2VydGlvbnMoKykKPj4+
-Pgo+Pj4+IGRpZmYgLS1naXQgYS9tbS9hcmNoX3BndGFibGVfdGVzdC5jIGIvbW0vYXJjaF9wZ3Rh
-YmxlX3Rlc3QuYwo+Pj4+IGluZGV4IDhiNGE5Mjc1NmFkOC4uZjJiM2M5ZWMzNWZhIDEwMDY0NAo+
-Pj4+IC0tLSBhL21tL2FyY2hfcGd0YWJsZV90ZXN0LmMKPj4+PiArKysgYi9tbS9hcmNoX3BndGFi
-bGVfdGVzdC5jCj4+Pj4gQEAgLTI0LDYgKzI0LDcgQEAKPj4+PiDCoCAjaW5jbHVkZSA8bGludXgv
-c3dhcC5oPgo+Pj4+IMKgICNpbmNsdWRlIDxsaW51eC9zd2Fwb3BzLmg+Cj4+Pj4gwqAgI2luY2x1
-ZGUgPGxpbnV4L3NjaGVkL21tLmg+Cj4+Pj4gKyNpbmNsdWRlIDxsaW51eC9oaWdobWVtLmg+Cj4+
-Pgo+Pj4gVGhpcyBpcyBva2F5Lgo+Pj4KPj4+PiDCoCAjaW5jbHVkZSA8YXNtL3BnYWxsb2MuaD4K
-Pj4+PiDCoCAjaW5jbHVkZSA8YXNtL3BndGFibGUuaD4KPj4+PiBAQCAtNDAwLDYgKzQwMSw4IEBA
-IHN0YXRpYyBpbnQgX19pbml0IGFyY2hfcGd0YWJsZV90ZXN0c19pbml0KHZvaWQpCj4+Pj4gwqDC
-oMKgwqDCoCBwNGRfY2xlYXJfdGVzdHMocDRkcCk7Cj4+Pj4gwqDCoMKgwqDCoCBwZ2RfY2xlYXJf
-dGVzdHMobW0sIHBnZHApOwo+Pj4+ICvCoMKgwqAgcHRlX3VubWFwKHB0ZXApOwo+Pj4+ICsKPj4+
-Cj4+PiBOb3cgdGhlIHByZWVtcHRpb24gaW1iYWxhbmNlIHZpYSBwdGVfYWxsb2NfbWFwKCkgcGF0
-aCBpLmUKPj4+Cj4+PiBwdGVfYWxsb2NfbWFwKCkgLT4gcHRlX29mZnNldF9tYXAoKSAtPiBrbWFw
-X2F0b21pYygpCj4+Pgo+Pj4gSXMgbm90IHRoaXMgdmVyeSBtdWNoIHBvd2VycGMgMzIgc3BlY2lm
-aWMgb3IgdGhpcyB3aWxsIGJlIGFwcGxpY2FibGUKPj4+IGZvciBhbGwgcGxhdGZvcm0gd2hpY2gg
-dXNlcyBrbWFwX1hYWCgpIHRvIG1hcCBoaWdoIG1lbW9yeSA/Cj4+Pgo+Pgo+PiBTZWUgaHR0cHM6
-Ly9lbGl4aXIuYm9vdGxpbi5jb20vbGludXgvdjUuMy1yYzgvc291cmNlL2luY2x1ZGUvbGludXgv
-aGlnaG1lbS5oI0w5MQo+Pgo+PiBJIHRoaW5rIGl0IGFwcGxpZXMgYXQgbGVhc3QgdG8gYWxsIGFy
-Y2hlcyB1c2luZyB0aGUgZ2VuZXJpYyBpbXBsZW1lbnRhdGlvbi4KPj4KPj4gQXBwbGllcyBhbHNv
-IHRvIGFybToKPj4gaHR0cHM6Ly9lbGl4aXIuYm9vdGxpbi5jb20vbGludXgvdjUuMy1yYzgvc291
-cmNlL2FyY2gvYXJtL21tL2hpZ2htZW0uYyNMNTIKPj4KPj4gQXBwbGllcyBhbHNvIHRvIG1pcHM6
-Cj4+IGh0dHBzOi8vZWxpeGlyLmJvb3RsaW4uY29tL2xpbnV4L3Y1LjMtcmM4L3NvdXJjZS9hcmNo
-L21pcHMvbW0vaGlnaG1lbS5jI0w0Nwo+Pgo+PiBTYW1lIG9uIHNwYXJjOgo+PiBodHRwczovL2Vs
-aXhpci5ib290bGluLmNvbS9saW51eC92NS4zLXJjOC9zb3VyY2UvYXJjaC9zcGFyYy9tbS9oaWdo
-bWVtLmMjTDUyCj4+Cj4+IFNhbWUgb24geDg2Ogo+PiBodHRwczovL2VsaXhpci5ib290bGluLmNv
-bS9saW51eC92NS4zLXJjOC9zb3VyY2UvYXJjaC94ODYvbW0vaGlnaG1lbV8zMi5jI0wzNAo+Pgo+
-PiBJIGhhdmUgbm90IGNoZWNrZWQgb3RoZXJzLCBidXQgSSBndWVzcyBpdCBpcyBsaWtlIHRoYXQg
-Zm9yIGFsbC4KPj4KPiAKPiAKPiBTZWVtcyBsaWtlIEkgYW5zd2VyZWQgdG9vIHF1aWNrbHkuIEFs
-bCBrbWFwX2F0b21pYygpIGRvIHByZWVtcHRfZGlzYWJsZSgpLCBidXQgbm90IGFsbCBwdGVfYWxs
-b2NfbWFwKCkgY2FsbCBrbWFwX2F0b21pYygpLgo+IAo+IEhvd2V2ZXIsIGZvciBpbnN0YW5jZSBB
-Uk0gZG9lczoKPiAKPiBodHRwczovL2VsaXhpci5ib290bGluLmNvbS9saW51eC92NS4zLXJjOC9z
-b3VyY2UvYXJjaC9hcm0vaW5jbHVkZS9hc20vcGd0YWJsZS5oI0wyMDAKPiAKPiBBbmQgWDg2IGFz
-IHdlbGw6Cj4gCj4gaHR0cHM6Ly9lbGl4aXIuYm9vdGxpbi5jb20vbGludXgvdjUuMy1yYzgvc291
-cmNlL2FyY2gveDg2L2luY2x1ZGUvYXNtL3BndGFibGVfMzIuaCNMNTEKPiAKPiBNaWNyb2JsYXpl
-IGFsc286Cj4gCj4gaHR0cHM6Ly9lbGl4aXIuYm9vdGxpbi5jb20vbGludXgvdjUuMy1yYzgvc291
-cmNlL2FyY2gvbWljcm9ibGF6ZS9pbmNsdWRlL2FzbS9wZ3RhYmxlLmgjTDQ5NQoKQWxsIHRoZSBh
-Ym92ZSBwbGF0Zm9ybXMgY2hlY2tzIG91dCB0byBiZSB1c2luZyBrW3VuXW1hcF9hdG9taWMoKS4g
-SSBhbSB3b25kZXJpbmcgd2hldGhlcgphbnkgb2YgdGhlIGludGVybWVkaWF0ZSBsZXZlbHMgd2ls
-bCBoYXZlIHNpbWlsYXIgcHJvYmxlbXMgb24gYW55IHRoZXNlIDMyIGJpdCBwbGF0Zm9ybXMKb3Ig
-YW55IG90aGVyIHBsYXRmb3JtcyB3aGljaCBtaWdodCBiZSB1c2luZyBnZW5lcmljIGtbdW5dbWFw
-X2F0b21pYygpLiBUaGVyZSBjYW4gYmUgbWFueQpwZXJtdXRhdGlvbnMgaGVyZS4KCglwNGRwID0g
-cDRkX2FsbG9jKG1tLCBwZ2RwLCB2YWRkcik7CglwdWRwID0gcHVkX2FsbG9jKG1tLCBwNGRwLCB2
-YWRkcik7CglwbWRwID0gcG1kX2FsbG9jKG1tLCBwdWRwLCB2YWRkcik7CgpPdGhlcndpc2UgcHRl
-X2FsbG9jX21hcCgpL3B0ZV91bm1hcCgpIGxvb2tzIGdvb2QgZW5vdWdoIHdoaWNoIHdpbGwgYXRs
-ZWFzdCB0YWtlIGNhcmUgb2YKYSBrbm93biBmYWlsdXJlLgoKX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtc25wcy1hcmMgbWFpbGluZyBsaXN0Cmxp
-bnV4LXNucHMtYXJjQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5v
-cmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1zbnBzLWFyYwo=
+On Fri, Sep 13, 2019 at 02:12:45PM +0530, Anshuman Khandual wrote:
+> =
+
+> =
+
+> On 09/13/2019 12:41 PM, Christophe Leroy wrote:
+> > =
+
+> > =
+
+> > Le 13/09/2019 =E0 09:03, Christophe Leroy a =E9crit=A0:
+> >>
+> >>
+> >> Le 13/09/2019 =E0 08:58, Anshuman Khandual a =E9crit=A0:
+> >>> On 09/13/2019 11:53 AM, Christophe Leroy wrote:
+> >>>> Fix build failure on powerpc.
+> >>>>
+> >>>> Fix preemption imbalance.
+> >>>>
+> >>>> Signed-off-by: Christophe Leroy <christophe.leroy@c-s.fr>
+> >>>> ---
+> >>>> =A0 mm/arch_pgtable_test.c | 3 +++
+> >>>> =A0 1 file changed, 3 insertions(+)
+> >>>>
+> >>>> diff --git a/mm/arch_pgtable_test.c b/mm/arch_pgtable_test.c
+> >>>> index 8b4a92756ad8..f2b3c9ec35fa 100644
+> >>>> --- a/mm/arch_pgtable_test.c
+> >>>> +++ b/mm/arch_pgtable_test.c
+> >>>> @@ -24,6 +24,7 @@
+> >>>> =A0 #include <linux/swap.h>
+> >>>> =A0 #include <linux/swapops.h>
+> >>>> =A0 #include <linux/sched/mm.h>
+> >>>> +#include <linux/highmem.h>
+> >>>
+> >>> This is okay.
+> >>>
+> >>>> =A0 #include <asm/pgalloc.h>
+> >>>> =A0 #include <asm/pgtable.h>
+> >>>> @@ -400,6 +401,8 @@ static int __init arch_pgtable_tests_init(void)
+> >>>> =A0=A0=A0=A0=A0 p4d_clear_tests(p4dp);
+> >>>> =A0=A0=A0=A0=A0 pgd_clear_tests(mm, pgdp);
+> >>>> +=A0=A0=A0 pte_unmap(ptep);
+> >>>> +
+> >>>
+> >>> Now the preemption imbalance via pte_alloc_map() path i.e
+> >>>
+> >>> pte_alloc_map() -> pte_offset_map() -> kmap_atomic()
+> >>>
+> >>> Is not this very much powerpc 32 specific or this will be applicable
+> >>> for all platform which uses kmap_XXX() to map high memory ?
+> >>>
+> >>
+> >> See https://elixir.bootlin.com/linux/v5.3-rc8/source/include/linux/hig=
+hmem.h#L91
+> >>
+> >> I think it applies at least to all arches using the generic implementa=
+tion.
+> >>
+> >> Applies also to arm:
+> >> https://elixir.bootlin.com/linux/v5.3-rc8/source/arch/arm/mm/highmem.c=
+#L52
+> >>
+> >> Applies also to mips:
+> >> https://elixir.bootlin.com/linux/v5.3-rc8/source/arch/mips/mm/highmem.=
+c#L47
+> >>
+> >> Same on sparc:
+> >> https://elixir.bootlin.com/linux/v5.3-rc8/source/arch/sparc/mm/highmem=
+.c#L52
+> >>
+> >> Same on x86:
+> >> https://elixir.bootlin.com/linux/v5.3-rc8/source/arch/x86/mm/highmem_3=
+2.c#L34
+> >>
+> >> I have not checked others, but I guess it is like that for all.
+> >>
+> > =
+
+> > =
+
+> > Seems like I answered too quickly. All kmap_atomic() do preempt_disable=
+(), but not all pte_alloc_map() call kmap_atomic().
+> > =
+
+> > However, for instance ARM does:
+> > =
+
+> > https://elixir.bootlin.com/linux/v5.3-rc8/source/arch/arm/include/asm/p=
+gtable.h#L200
+> > =
+
+> > And X86 as well:
+> > =
+
+> > https://elixir.bootlin.com/linux/v5.3-rc8/source/arch/x86/include/asm/p=
+gtable_32.h#L51
+> > =
+
+> > Microblaze also:
+> > =
+
+> > https://elixir.bootlin.com/linux/v5.3-rc8/source/arch/microblaze/includ=
+e/asm/pgtable.h#L495
+> =
+
+> All the above platforms checks out to be using k[un]map_atomic(). I am wo=
+ndering whether
+> any of the intermediate levels will have similar problems on any these 32=
+ bit platforms
+> or any other platforms which might be using generic k[un]map_atomic().
+
+No. Kernel only allocates pte page table from highmem. All other page
+tables are always visible in kernel address space.
+
+-- =
+
+ Kirill A. Shutemov
+
+_______________________________________________
+linux-snps-arc mailing list
+linux-snps-arc@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-snps-arc
