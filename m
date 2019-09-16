@@ -2,90 +2,71 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B1AD4B1B4D
-	for <lists+linux-snps-arc@lfdr.de>; Fri, 13 Sep 2019 12:01:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4F4C6B42A3
+	for <lists+linux-snps-arc@lfdr.de>; Mon, 16 Sep 2019 23:06:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=B9BS6eTmfIjsdSqmEJUfo+uW5ZrxHV9J7HQm+hMvOgQ=; b=iIhRI+pTSOEJNOEb5u32b3KHj
-	ghldWN1eg/k0VnXl9bPhlmsDMF7A7kiu3nG+8GJspm12wHjrkpBgGlwWxpRXS8bnB4OuqvgCSqR4K
-	ip0obti8p1Bo9KOa0KUBg2HOUlgKdHwR2vGad6Q8WEgpAllE/M+rU2WBB9r7dYw+XEhacbSNss1dj
-	uy2/PhpFS4uZejVSIsTWq1stIeDJ6o1NheaZXTx+tX2DQcd/cWf5XuX4Iw3OmeLvwO7f797xMfVTf
-	uIe66t8sni+Jmd7ZzFyHUxC1EJjUuvJupvBfFTXiF6rQlex5hSumBJsWRxNoeYnWhP1o9izS6dGKg
-	X6w7i5W1w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=nK6r1/YgL3GsrUFfanAbHsHo3w9LpaSr9Bm6514F0Sk=; b=KT9TekEau/CHNu
+	gtcacmvWF8QNZC8rSV2hwy/L1d4FHJ/5l15UIIlLXV6Y3UbtCBI8n10usjP0rB/TKlOe7N6zyD1Jj
+	rj4/bvsbg+W89FSvcfDskFJiL7yKKKUWqIeZpfjVHq15Z0o7hSXIqqmlozjm7VIX5pu1nAHi6OMMl
+	LvkjCfXAfAD8OiPCncs5WqPcqGf7q+KIk/PYVP8qwfqiEHUzUbTVcSZfVbbX6Wj+DwdqWfPd9OyMD
+	9QKcZiuHFpsuJnEz0dgciTc6ykL0qpyBDl9vW6MxpTq/fEHA+5HkpqYzHT0XoqUHVLOEDMqcwGf3M
+	M0QKCBjgO6DW9bVGcuPw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i8iOZ-0005sO-GS; Fri, 13 Sep 2019 10:01:39 +0000
-Received: from pegase1.c-s.fr ([93.17.236.30])
+	id 1i9yCi-0004G2-QS; Mon, 16 Sep 2019 21:06:36 +0000
+Received: from smtprelay-out1.synopsys.com ([198.182.61.142])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i8iO5-0005i7-Rd; Fri, 13 Sep 2019 10:01:11 +0000
-Received: from localhost (mailhub1-int [192.168.12.234])
- by localhost (Postfix) with ESMTP id 46VB3f0pVyz9tyjW;
- Fri, 13 Sep 2019 12:01:02 +0200 (CEST)
-Authentication-Results: localhost; dkim=pass
- reason="1024-bit key; insecure key"
- header.d=c-s.fr header.i=@c-s.fr header.b=Sqj8nI8N; dkim-adsp=pass;
- dkim-atps=neutral
-X-Virus-Scanned: Debian amavisd-new at c-s.fr
-Received: from pegase1.c-s.fr ([192.168.12.234])
- by localhost (pegase1.c-s.fr [192.168.12.234]) (amavisd-new, port 10024)
- with ESMTP id wR-kri8FtY2Q; Fri, 13 Sep 2019 12:01:02 +0200 (CEST)
-Received: from messagerie.si.c-s.fr (messagerie.si.c-s.fr [192.168.25.192])
- by pegase1.c-s.fr (Postfix) with ESMTP id 46VB3d6fTQz9tyjG;
- Fri, 13 Sep 2019 12:01:01 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=c-s.fr; s=mail;
- t=1568368861; bh=2ALza02n3A6CEg96aj5aMUr3JRGvxRxQLYEMFbFE/UU=;
- h=Subject:To:Cc:References:From:Date:In-Reply-To:From;
- b=Sqj8nI8NzbdvtlrbtrCYNcrM/TyIHT3s84kxgzLuc1bHrWIX3+Flnk1NoUeSpiScl
- UtPpympvmV9LviqGRUz/Z7JinvogKFhxB4Hnk01VKvvK3cYgxdyYZdocRhBX7zGS2q
- RYCcqoehg9GVxm+zOPGaVX3kpe6owDPMAy/ACXJk=
-Received: from localhost (localhost [127.0.0.1])
- by messagerie.si.c-s.fr (Postfix) with ESMTP id F0DC88B982;
- Fri, 13 Sep 2019 12:01:02 +0200 (CEST)
-X-Virus-Scanned: amavisd-new at c-s.fr
-Received: from messagerie.si.c-s.fr ([127.0.0.1])
- by localhost (messagerie.si.c-s.fr [127.0.0.1]) (amavisd-new, port 10023)
- with ESMTP id fVVtef9u6zrS; Fri, 13 Sep 2019 12:01:02 +0200 (CEST)
-Received: from [172.25.230.101] (po15451.idsi0.si.c-s.fr [172.25.230.101])
- by messagerie.si.c-s.fr (Postfix) with ESMTP id 95ADA8B958;
- Fri, 13 Sep 2019 12:01:02 +0200 (CEST)
-Subject: Re: [PATCH V2 2/2] mm/pgtable/debug: Add test validating architecture
- page table helpers
-To: Anshuman Khandual <anshuman.khandual@arm.com>, linux-mm@kvack.org
-References: <1568268173-31302-1-git-send-email-anshuman.khandual@arm.com>
- <1568268173-31302-3-git-send-email-anshuman.khandual@arm.com>
- <ab0ca38b-1e4f-b636-f8b4-007a15903984@c-s.fr>
- <502c497a-9bf1-7d2e-95f2-cfebcd9cf1d9@arm.com>
-From: Christophe Leroy <christophe.leroy@c-s.fr>
-Message-ID: <95ed9d92-dd43-4c45-2e52-738aed7f2fb5@c-s.fr>
-Date: Fri, 13 Sep 2019 12:01:00 +0200
-User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ id 1i9yCg-0004Fh-6O
+ for linux-snps-arc@lists.infradead.org; Mon, 16 Sep 2019 21:06:35 +0000
+Received: from mailhost.synopsys.com (dc8-mailhost1.synopsys.com
+ [10.13.135.209])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
+ (No client certificate requested)
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id D1462C0399
+ for <linux-snps-arc@lists.infradead.org>; Mon, 16 Sep 2019 21:06:28 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
+ t=1568667988; bh=+AJ9YjPEpNJxNnLB5WX5Hr+S3T8RPsvKwC4EIUy299g=;
+ h=From:To:Cc:Subject:Date:From;
+ b=SXCakkfU5bdFca8Co9JVkDXs6M3JRZtVufY9F+f2Ydze+2dnuTVCbYyCBDaMrfrWt
+ BbBZQmc6ZWyK19PZxgNjBjmY3j/IjqOGaVGFNL37aqzFMKY7nhoRqARcxPh1sQKkMf
+ wN2HKkwun+PBHQZIzrqEu6CYO+udPTtYq7KNpXw70i8BKa8ZruYASMt4oE6I10PWtt
+ wC4JMf5LTdYrarnM3f09HvuuHbyHvyGQnxO/P2DKz4Ac/tF1tOglVL3uzRQz14qQH1
+ 11B3a4mi/OmxVmIwNgye4kti6F5lyfZTFbgVCf+DG4rWPpGV5mabVcsa9bqnsFX/Pj
+ M08F1xRaSOy0w==
+Received: from vineetg-Latitude-E7450.internal.synopsys.com
+ (vineetg-latitude-e7450.internal.synopsys.com [10.10.161.61])
+ by mailhost.synopsys.com (Postfix) with ESMTP id 4F09BA006B;
+ Mon, 16 Sep 2019 21:06:27 +0000 (UTC)
+From: Vineet Gupta <Vineet.Gupta1@synopsys.com>
+To: Vineet.Gupta1@synopsys.com
+Subject: [PATCH 0/6] ignore @ 2.06
+Date: Mon, 16 Sep 2019 14:06:25 -0700
+Message-Id: <20190916210625.9780-1-vgupta@synopsys.com>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-In-Reply-To: <502c497a-9bf1-7d2e-95f2-cfebcd9cf1d9@arm.com>
-Content-Language: fr
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190913_030110_200667_4C21D912 
-X-CRM114-Status: GOOD (  12.02  )
+X-CRM114-CacheID: sfid-20190916_140634_241989_4D342738 
+X-CRM114-Status: UNSURE (   6.18  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [93.17.236.30 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-snps-arc@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,58 +78,43 @@ List-Post: <mailto:linux-snps-arc@lists.infradead.org>
 List-Help: <mailto:linux-snps-arc-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-snps-arc>, 
  <mailto:linux-snps-arc-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, linux-ia64@vger.kernel.org,
- linux-sh@vger.kernel.org, Peter Zijlstra <peterz@infradead.org>,
- James Hogan <jhogan@kernel.org>, Heiko Carstens <heiko.carstens@de.ibm.com>,
- Michal Hocko <mhocko@kernel.org>, Dave Hansen <dave.hansen@intel.com>,
- Paul Mackerras <paulus@samba.org>, sparclinux@vger.kernel.org,
- Thomas Gleixner <tglx@linutronix.de>, linux-s390@vger.kernel.org,
- Jason Gunthorpe <jgg@ziepe.ca>, Michael Ellerman <mpe@ellerman.id.au>,
- x86@kernel.org, Russell King - ARM Linux <linux@armlinux.org.uk>,
- Matthew Wilcox <willy@infradead.org>, Steven Price <Steven.Price@arm.com>,
- Tetsuo Handa <penguin-kernel@i-love.sakura.ne.jp>,
- Gerald Schaefer <gerald.schaefer@de.ibm.com>,
- linux-snps-arc@lists.infradead.org, Kees Cook <keescook@chromium.org>,
- Masahiro Yamada <yamada.masahiro@socionext.com>,
- Mark Brown <broonie@kernel.org>, "Kirill A . Shutemov" <kirill@shutemov.name>,
- Dan Williams <dan.j.williams@intel.com>, Vlastimil Babka <vbabka@suse.cz>,
- linux-arm-kernel@lists.infradead.org,
- Sri Krishna chowdary <schowdary@nvidia.com>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-mips@vger.kernel.org,
- Ralf Baechle <ralf@linux-mips.org>, linux-kernel@vger.kernel.org,
- Paul Burton <paul.burton@mips.com>, Mike Rapoport <rppt@linux.vnet.ibm.com>,
- Vineet Gupta <vgupta@synopsys.com>,
- Martin Schwidefsky <schwidefsky@de.ibm.com>,
- Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
- "David S. Miller" <davem@davemloft.net>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: linux-snps-arc@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-snps-arc" <linux-snps-arc-bounces@lists.infradead.org>
 Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org
 
-CgpMZSAxMy8wOS8yMDE5IMOgIDExOjAyLCBBbnNodW1hbiBLaGFuZHVhbCBhIMOpY3JpdMKgOgo+
-IAo+Pj4gKyNpZiAhZGVmaW5lZChfX1BBR0VUQUJMRV9QTURfRk9MREVEKSAmJiAhZGVmaW5lZChf
-X0FSQ0hfSEFTXzRMRVZFTF9IQUNLKQo+Pgo+PiAjaWZkZWZzIGhhdmUgdG8gYmUgYXZvaWRlZCBh
-cyBtdWNoIGFzIHBvc3NpYmxlLCBzZWUgYmVsb3cKPiAKPiBZZWFoIGJ1dCBpdCBoYXMgYmVlbiBi
-aXQgZGlmZmljdWx0IHRvIGF2b2lkIGFsbCB0aGVzZSAkaWZkZWYgYmVjYXVzZSBvZiB0aGUKPiBh
-dmFpbGFiaWxpdHkgKG9yIGxhY2sgb2YgaXQpIGZvciBhbGwgdGhlc2UgcGd0YWJsZSBoZWxwZXJz
-IGluIHZhcmlvdXMgY29uZmlnCj4gY29tYmluYXRpb25zIG9uIGFsbCBwbGF0Zm9ybXMuCgpBcyBm
-YXIgYXMgSSBjYW4gc2VlIHRoZXNlIHBndGFibGUgaGVscGVycyBzaG91bGQgZXhpc3QgZXZlcnl3
-aGVyZSBhdCAKbGVhc3QgdmlhIGFzbS1nZW5lcmljLyBmaWxlcy4KCkNhbiB5b3Ugc3BvdCBhIHBh
-cnRpY3VsYXIgY29uZmlnIHdoaWNoIGZhaWxzID8KCj4gCj4+CgpbLi4uXQoKPj4+ICsjaWYgIWRl
-ZmluZWQoX19QQUdFVEFCTEVfUFVEX0ZPTERFRCkgJiYgIWRlZmluZWQoX19BUkNIX0hBU181TEVW
-RUxfSEFDSykKPj4KPj4gVGhlIHNhbWUgY2FuIGJlIGRvbmUgaGVyZS4KPiAKPiBJSVJDIG5vdCBv
-bmx5IHRoZSBwYWdlIHRhYmxlIGhlbHBlcnMgYnV0IHRoZXJlIGFyZSBkYXRhIHR5cGVzIChweHhf
-dCkgd2hpY2gKPiB3ZXJlIG5vdCBwcmVzZW50IG9uIHZhcmlvdXMgY29uZmlncyBhbmQgdGhlc2Ug
-d3JhcHBlcnMgaGVscCBwcmV2ZW50IGJ1aWxkCj4gZmFpbHVyZXMuIEFueSB3YXlzIHdpbGwgdHJ5
-IGFuZCBzZWUgaWYgdGhpcyBjYW4gYmUgaW1wcm92ZWQgZnVydGhlci4gQnV0Cj4gbWVhbndoaWxl
-IGlmIHlvdSBoYXZlIHNvbWUgc3VnZ2VzdGlvbnMsIHBsZWFzZSBkbyBsZXQgbWUga25vdy4KCnBn
-dF90IGFuZCBwbWRfdCBhcmUgZXZlcnl3aGVyZSBJIGd1ZXNzLgp0aGVuIHB1ZF90IGFuZCBwNGRf
-dCBoYXZlIGZhbGxiYWNrcyBpbiBhc20tZ2VuZXJpYyBmaWxlcy4KClNvIGl0IHNob3VsZG4ndCBi
-ZSBhbiBpc3N1ZS4gTWF5YmUgaWYgYSBjb3VwbGUgb2YgYXJjaGVzIG1pc3MgdGhlbSwgdGhlIApi
-ZXN0IHdvdWxkIGJlIHRvIGZpeCB0aGUgYXJjaGVzLCBzaW5jZSB0aGF0J3MgdGhlIHB1cnBvc2Ug
-b2YgeW91ciAKdGVzdHN1aXRlIGlzbid0IGl0ID8KCgpDaHJpc3RvcGhlCgpfX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1zbnBzLWFyYyBtYWlsaW5n
-IGxpc3QKbGludXgtc25wcy1hcmNAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5m
-cmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXNucHMtYXJjCg==
+Hi,
+
+This is set of patches almost lost in one of my older branches. I decided to
+clean them and post given the work on newer MMU.
+
+Thx,
+-Vineet
+
+Vineet Gupta (6):
+  ARCv2: mm: TLB Miss optim: SMP builds can cache pgd pointer in mmu
+    scratch reg
+  ARCv2: mm: TLB Miss optim: Use double world load/stores LDD/STD
+  ARC: mm: TLB Miss optim: avoid re-reading ECR
+  ARC: mm: tlb flush optim: Make TLBWriteNI fallback to TLBWrite if not
+    available
+  ARC: mm: tlb flush optim: elide repeated uTLB invalidate in loop
+  ARC: mm: tlb flush optim: elide redundant uTLB invalidates for MMUv3
+
+ arch/arc/include/asm/entry-compact.h |  4 +-
+ arch/arc/include/asm/mmu.h           |  6 +++
+ arch/arc/include/asm/mmu_context.h   |  2 +-
+ arch/arc/include/asm/pgtable.h       |  2 +-
+ arch/arc/mm/tlb.c                    | 81 +++++++++++-----------------
+ arch/arc/mm/tlbex.S                  | 18 ++++---
+ 6 files changed, 51 insertions(+), 62 deletions(-)
+
+-- 
+2.20.1
+
+
+_______________________________________________
+linux-snps-arc mailing list
+linux-snps-arc@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-snps-arc
