@@ -2,7 +2,7 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E8874B4321
+	by mail.lfdr.de (Postfix) with ESMTPS id 6A70CB431F
 	for <lists+linux-snps-arc@lfdr.de>; Mon, 16 Sep 2019 23:32:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
@@ -10,52 +10,53 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3E3WFlMX8EX/QObMHxOU/ImFVYfNDY5LSnQFJxHGgaU=; b=teathCdNZWs+Fr
-	50Uzl0jjms7fPiv+4SdmZWOzCaM35Sx98o3CaXBclIE02ToxsdShsC59ZOl/qBIkUWBWFWJb/3+DZ
-	CSP45r+jxOTmigPtRwpEKxsHdxiBcw6STCj3dEKEfAd9o7+NSyby2RbV1wsmAjZROojIUAdELOQNp
-	alOX0UHiXGygzVzi+Zd/DeLLLX3coJqlQmTCFZ4gM8cHPZmIDLqkR1D5BaAanyoe8V3OklHjMTA8K
-	hO8sPijb/FIMCFC+EdoUoJ60eADXtpURVes7QoAoTucFaPDNJ1IMrqc1LQ3Lcg6n2sbqmcukS+hX5
-	uqPKHJ11WSZ+wG4hCaUA==;
+	List-Owner; bh=6f/FsnXf5jOO0TDeXHNihTuWf3LGrsm8v/HST6MGDfo=; b=ivCLrbUPjHNIGf
+	jA9+VYKZ+N25o5sd4O+5/28VKhdCxgAPHd5D5/XaMCAtvbK0pec/736v4bBgy+s6XzSzl+eMJvjaD
+	jOtbxhQ+T9SQfD2eWeNGpmskvh+LOonQl8MdPAi3h7mY5XfP9MUukhr462NUPRqUshtCDsz8jrBxL
+	BOSwDlPVUzjY6PLhhvHARzzyWgD99gXDUrAmLyuMW6IrQ373zaUZ1Q1V+f5JrMXY7Fek7Q5f2peKO
+	WtElzq2G+KByoMWKB1IQzNRSMRLDuK+8GjB52m1N3mcwP1h3osS0dvVwMx/0YEBSzb6pvb+xSBs+G
+	PW2g5lO6k5WI1TAIf6jw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i9ybW-0003mf-M8; Mon, 16 Sep 2019 21:32:14 +0000
+	id 1i9ybW-0003m0-3V; Mon, 16 Sep 2019 21:32:14 +0000
 Received: from dc2-smtprelay2.synopsys.com ([198.182.61.142]
  helo=smtprelay-out1.synopsys.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i9ybR-0003jP-LH
+ id 1i9ybR-0003je-NF
  for linux-snps-arc@lists.infradead.org; Mon, 16 Sep 2019 21:32:12 +0000
 Received: from mailhost.synopsys.com (dc2-mailhost2.synopsys.com
  [10.12.135.162])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
  (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 834C1C0486
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 93274C0489
  for <linux-snps-arc@lists.infradead.org>; Mon, 16 Sep 2019 21:32:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1568669529; bh=De2DAR3RAwVm9yekmMuslfJbupAQs9qZ1puObqzmTdI=;
+ t=1568669529; bh=wNxsR4nIFgXPEUfMGdgL986mXnOyIY1a/m2wHiedRLQ=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=XT9UyO08cs4OZlu0eHkbB9Y8ymRTMfuEskyopFjXlWRWZSz59jo9BcTyCg4FHqBj2
- bbk+tytVDCBn3McU+LpPw9Z2FFZB/ojZYcNziG9Q6FGQVYWbDWiV8a2EMHorLxUM8z
- msZKG/eDWHDDaXwR4iZrIOqbXp/zS8iJduCd1u/W/AEYByk6E2ZMStZ7LTDy6qhqHN
- nPh6YEAalWszm1ymZ4ftt/k0pGnXUt2UHqRvKbWEYESgnFOL4/M1kptw0yWjKdMIKT
- kFcbsiEfsVvpF9+9JuLN2AgkhwfbQg0mhqZ6/s3AMmAQTjXDs2bqyqpgdwATJDQD7D
- yDSKqjumnE9pA==
+ b=VXoZ1nTdb5cnR2XVXVnRDtjEPwI7xGmSPJyUAuNMhCSV2Grn96xsQxcfGG3rL5C8O
+ 2TN0Rr9Y8SRnOZzw62ruvsSJtbmyCA3PRu6TjK92F7UVz1Wi5we5IcBWe/zgGSlwBn
+ WjQIJInVAj8RqCFUqegud0Q6k4eIBl/wyg0kc0Xoi6JQa9IF8rf7aoCpnOQ8+8IxV1
+ fgs/tkbcsv2kKgGs0GLuU/+eCoBw32G/4C3LWevjfsUNTz50fqi5s9KKuA9ue64ztM
+ 2OMtvFAKgSR8E9QL53frn2fw2sIuGvUs99ebH/fNHxFM1/m4yQWJBLu8m13fHWW49g
+ 0tFxlkmhxbLwA==
 Received: from vineetg-Latitude-E7450.internal.synopsys.com
  (vineetg-latitude-e7450.internal.synopsys.com [10.10.161.61])
- by mailhost.synopsys.com (Postfix) with ESMTP id 683C7A023D;
+ by mailhost.synopsys.com (Postfix) with ESMTP id 77966A0247;
  Mon, 16 Sep 2019 21:32:09 +0000 (UTC)
 From: Vineet Gupta <Vineet.Gupta1@synopsys.com>
 To: linux-snps-arc@lists.infradead.org
-Subject: [PATCH 5/6] ARC: mm: tlb flush optim: elide repeated uTLB invalidate
- in loop
-Date: Mon, 16 Sep 2019 14:32:06 -0700
-Message-Id: <20190916213207.12792-6-vgupta@synopsys.com>
+Subject: [PATCH 6/6] ARC: mm: tlb flush optim: elide redundant uTLB
+ invalidates for MMUv3
+Date: Mon, 16 Sep 2019 14:32:07 -0700
+Message-Id: <20190916213207.12792-7-vgupta@synopsys.com>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190916213207.12792-1-vgupta@synopsys.com>
 References: <20190916213207.12792-1-vgupta@synopsys.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190916_143209_702882_FE82BC2D 
-X-CRM114-Status: GOOD (  14.96  )
+X-CRM114-CacheID: sfid-20190916_143209_761694_3C9AF3CD 
+X-CRM114-Status: UNSURE (   8.53  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -88,137 +89,49 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-snps-arc" <linux-snps-arc-bounces@lists.infradead.org>
 Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org
 
-The unconditional full TLB flush (on say ASID rollover) iterates over each
-entry and uses TLBWrite to zero it out. TLBWrite by design also invalidates
-the uTLBs thus we end up invalidating it as many times as numbe rof
-entries (512 or 1k)
+For MMUv3 (and prior) the flush_tlb_{range,mm,page} API use the MMU
+TLBWrite cmd which already nukes the entire uTLB, so NO need for
+additional IVUTLB cmd from utlb_invalidate() - hence this patch
 
-Optimize this by using a weaker TLBWriteNI cmd in loop, which doesn't
-tinker with uTLBs and an explicit one time IVUTLB, outside the loop to
-invalidate them all once.
-
-And given the optimiztion, the IVUTLB is now needed on MMUv4 too where
-the uTLBs and JTLBs are otherwise coherent given the TLBInsertEntry /
-TLBDeleteEntry commands
+local_flush_tlb_all() is special since it uses a weaker TLBWriteNI
+cmd (prec commit) to shoot down JTLB, hence we retain the explicit
+uTLB flush
 
 Signed-off-by: Vineet Gupta <vgupta@synopsys.com>
 ---
- arch/arc/mm/tlb.c | 74 +++++++++++++++++++----------------------------
- 1 file changed, 29 insertions(+), 45 deletions(-)
+ arch/arc/mm/tlb.c | 5 -----
+ 1 file changed, 5 deletions(-)
 
 diff --git a/arch/arc/mm/tlb.c b/arch/arc/mm/tlb.c
-index 417f05ac4397..210d807983dd 100644
+index 210d807983dd..c340acd989a0 100644
 --- a/arch/arc/mm/tlb.c
 +++ b/arch/arc/mm/tlb.c
-@@ -118,6 +118,33 @@ static inline void __tlb_entry_erase(void)
- 	write_aux_reg(ARC_REG_TLBCOMMAND, TLBWrite);
- }
- 
-+static void utlb_invalidate(void)
-+{
-+#if (CONFIG_ARC_MMU_VER >= 2)
-+
-+#if (CONFIG_ARC_MMU_VER == 2)
-+	/* MMU v2 introduced the uTLB Flush command.
-+	 * There was however an obscure hardware bug, where uTLB flush would
-+	 * fail when a prior probe for J-TLB (both totally unrelated) would
-+	 * return lkup err - because the entry didn't exist in MMU.
-+	 * The Workround was to set Index reg with some valid value, prior to
-+	 * flush. This was fixed in MMU v3
-+	 */
-+	unsigned int idx;
-+
-+	/* make sure INDEX Reg is valid */
-+	idx = read_aux_reg(ARC_REG_TLBINDEX);
-+
-+	/* If not write some dummy val */
-+	if (unlikely(idx & TLB_LKUP_ERR))
-+		write_aux_reg(ARC_REG_TLBINDEX, 0xa);
-+#endif
-+
-+	write_aux_reg(ARC_REG_TLBCOMMAND, TLBIVUTLB);
-+#endif
-+
-+}
-+
- #if (CONFIG_ARC_MMU_VER < 4)
- 
- static inline unsigned int tlb_entry_lkup(unsigned long vaddr_n_asid)
-@@ -149,44 +176,6 @@ static void tlb_entry_erase(unsigned int vaddr_n_asid)
- 	}
- }
- 
--/****************************************************************************
-- * ARC700 MMU caches recently used J-TLB entries (RAM) as uTLBs (FLOPs)
-- *
-- * New IVUTLB cmd in MMU v2 explictly invalidates the uTLB
-- *
-- * utlb_invalidate ( )
-- *  -For v2 MMU calls Flush uTLB Cmd
-- *  -For v1 MMU does nothing (except for Metal Fix v1 MMU)
-- *      This is because in v1 TLBWrite itself invalidate uTLBs
-- ***************************************************************************/
--
--static void utlb_invalidate(void)
--{
--#if (CONFIG_ARC_MMU_VER >= 2)
--
--#if (CONFIG_ARC_MMU_VER == 2)
--	/* MMU v2 introduced the uTLB Flush command.
--	 * There was however an obscure hardware bug, where uTLB flush would
--	 * fail when a prior probe for J-TLB (both totally unrelated) would
--	 * return lkup err - because the entry didn't exist in MMU.
--	 * The Workround was to set Index reg with some valid value, prior to
--	 * flush. This was fixed in MMU v3 hence not needed any more
--	 */
--	unsigned int idx;
--
--	/* make sure INDEX Reg is valid */
--	idx = read_aux_reg(ARC_REG_TLBINDEX);
--
--	/* If not write some dummy val */
--	if (unlikely(idx & TLB_LKUP_ERR))
--		write_aux_reg(ARC_REG_TLBINDEX, 0xa);
--#endif
--
--	write_aux_reg(ARC_REG_TLBCOMMAND, TLBIVUTLB);
--#endif
--
--}
--
- static void tlb_entry_insert(unsigned int pd0, pte_t pd1)
- {
- 	unsigned int idx;
-@@ -219,11 +208,6 @@ static void tlb_entry_insert(unsigned int pd0, pte_t pd1)
- 
- #else	/* CONFIG_ARC_MMU_VER >= 4) */
- 
--static void utlb_invalidate(void)
--{
--	/* No need since uTLB is always in sync with JTLB */
--}
--
- static void tlb_entry_erase(unsigned int vaddr_n_asid)
- {
- 	write_aux_reg(ARC_REG_TLBPD0, vaddr_n_asid | _PAGE_PRESENT);
-@@ -267,7 +251,7 @@ noinline void local_flush_tlb_all(void)
- 	for (entry = 0; entry < num_tlb; entry++) {
- 		/* write this entry to the TLB */
- 		write_aux_reg(ARC_REG_TLBINDEX, entry);
--		write_aux_reg(ARC_REG_TLBCOMMAND, TLBWrite);
-+		write_aux_reg(ARC_REG_TLBCOMMAND, TLBWriteNI);
- 	}
- 
- 	if (IS_ENABLED(CONFIG_TRANSPARENT_HUGEPAGE)) {
-@@ -278,7 +262,7 @@ noinline void local_flush_tlb_all(void)
- 
- 		for (entry = stlb_idx; entry < stlb_idx + 16; entry++) {
- 			write_aux_reg(ARC_REG_TLBINDEX, entry);
--			write_aux_reg(ARC_REG_TLBCOMMAND, TLBWrite);
-+			write_aux_reg(ARC_REG_TLBCOMMAND, TLBWriteNI);
+@@ -339,8 +339,6 @@ void local_flush_tlb_range(struct vm_area_struct *vma, unsigned long start,
  		}
  	}
  
+-	utlb_invalidate();
+-
+ 	local_irq_restore(flags);
+ }
+ 
+@@ -369,8 +367,6 @@ void local_flush_tlb_kernel_range(unsigned long start, unsigned long end)
+ 		start += PAGE_SIZE;
+ 	}
+ 
+-	utlb_invalidate();
+-
+ 	local_irq_restore(flags);
+ }
+ 
+@@ -391,7 +387,6 @@ void local_flush_tlb_page(struct vm_area_struct *vma, unsigned long page)
+ 
+ 	if (asid_mm(vma->vm_mm, cpu) != MM_CTXT_NO_ASID) {
+ 		tlb_entry_erase((page & PAGE_MASK) | hw_pid(vma->vm_mm, cpu));
+-		utlb_invalidate();
+ 	}
+ 
+ 	local_irq_restore(flags);
 -- 
 2.20.1
 
