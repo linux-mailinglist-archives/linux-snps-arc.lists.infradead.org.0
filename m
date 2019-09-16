@@ -2,55 +2,56 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 628B1B42DF
-	for <lists+linux-snps-arc@lfdr.de>; Mon, 16 Sep 2019 23:18:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9B91AB4306
+	for <lists+linux-snps-arc@lfdr.de>; Mon, 16 Sep 2019 23:27:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=F/6+wTWBRe1Ii1xgLSPe2HES+y/8DKMNyZDyCnChEIs=; b=leyphl4uayHRkb
-	2Rkv7CnBAdQfGWYRaAm0G5p9PysTtAGNe5NO+vgB3Sv2I86ERmEnMOFFQapGoPI9KwfYewrkJW3UJ
-	VdXeK0AiXaQhZKssXTIqwMtrw3FBsFWzqxvJ9KHVzDCYsFilJdz3h57kAPQc3WA9Am4HYR1NNeU1/
-	E8K7bYTM9wRVW931ikF75WruNf1VsAd7RTNUNI6k93+p61tJiqf8t3kHzJQgqeL4Kxl5OP3cYaMuz
-	cbvtnESHrY82S56y+SDwYKNzXQ/SRNTnLO4ObYGD5/I91wuvMg1+JVEanT8aK3crvQi+pDow75F3G
-	epSJcgiPgBVBMvsV/h1A==;
+	List-Owner; bh=F/6+wTWBRe1Ii1xgLSPe2HES+y/8DKMNyZDyCnChEIs=; b=NFjwsWFyD9CAff
+	vCbPKCCSZIbqILkJKm6g5lCv1q8MBPcF8jReXPLbVzTZ57dAY31SfMTCC7BuVcNKSpqvItTCUcT1V
+	UZTQ4X0RCnAL+AjjaAXze9EpyHqPdyFoKcu9Wz0rzLWmYSr782KG77m6DvGMRw0j0XPoji4Zw/8AU
+	rACaHGMtlNBjItHe8jKfuPTOrMRSkJieJ0sdgXQxhPnH0kQRWlh/EeORz+pzPQjz5Sz4z+bJLxp0l
+	/tN1E6b9LAs+FUBpQBJ+znpYIrLSzqZ0Rhjh2y+qJtJoHvYdFzm8efgheIzBu/aQcQmzqeVk7hpjF
+	ke3O8uFIeUtFq7nUOm7w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i9yOY-0007Kj-53; Mon, 16 Sep 2019 21:18:50 +0000
-Received: from smtprelay-out1.synopsys.com ([198.182.61.142])
+	id 1i9yWr-0002HD-CF; Mon, 16 Sep 2019 21:27:25 +0000
+Received: from dc2-smtprelay2.synopsys.com ([198.182.61.142]
+ helo=smtprelay-out1.synopsys.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i9yOV-0007KI-Fw
- for linux-snps-arc@lists.infradead.org; Mon, 16 Sep 2019 21:18:48 +0000
-Received: from mailhost.synopsys.com (dc8-mailhost1.synopsys.com
- [10.13.135.209])
+ id 1i9yWo-0002Gm-3X
+ for linux-snps-arc@lists.infradead.org; Mon, 16 Sep 2019 21:27:23 +0000
+Received: from mailhost.synopsys.com (dc2-mailhost2.synopsys.com
+ [10.12.135.162])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
  (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 4147DC010C
- for <linux-snps-arc@lists.infradead.org>; Mon, 16 Sep 2019 21:18:47 +0000 (UTC)
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 1E462C0399
+ for <linux-snps-arc@lists.infradead.org>; Mon, 16 Sep 2019 21:27:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1568668727; bh=saWQmtyTR5y9txAq1nXPzyHnB0VdJFX84HFiVttcGZc=;
+ t=1568669241; bh=saWQmtyTR5y9txAq1nXPzyHnB0VdJFX84HFiVttcGZc=;
  h=From:To:Cc:Subject:Date:From;
- b=A8NYbNXkBPNWsXNLZJs2p++FGW1z7/dkoI/fW9YSWtaR2BG5AGvocihMndkTL0c0u
- j9Xcr0sLWDK5L9Wnkae7RqFyPzFt4Nl5Y/cyxFp2UbDRUPLn8oH8tyQ2usOso1PFNS
- RPJrjsNLJYMmaNqFklgiRbpfinVJfKsYDdPRAEPMu9g4+444rKfrTMiFFAH1RvysH1
- 1RRP+Lnw6Pdkcrhr7F8MekiVbDOGPYmlYvGBW36OC1AiIBNQFIrY1715svmBE8hFn4
- To9WEa2T/z2BY7d6EB++kKcIDGtbdt1r/T2o1Ah7gqfOHYRRk1NJcwdkvmuJkm0Php
- ynLgaslhZPYBg==
+ b=jp6RbiBXvV0eSm3XwWQU2/XjAssEKxUmVTco4P8MXsdPtx3iRhc+yYK/eVW5VV8l+
+ bxksVhq68WCnNZKHgrGHHg4OarJ0wRhHM32X1KNjUGaHVYYKa9nB7SCcZSJjBJkh8m
+ +JUWecbiXPuTlLepiRvVPEIPd7KRR5JTdJ9GJECv8fr5muw/to4pezVu++t920V2sA
+ EW0HYz1Oe8nkiArwBNnWEcLMwWgOYb/UQrXoQGNtLPokoVqITd80IGT6+KEUK/OBZT
+ rJX+gudQc/hgtYd+nzHdtbmxXEInWQXvzkHMKsQNOydULdi09XbP9//uw4Bs82tvlF
+ liwPyl3iOoMbw==
 Received: from vineetg-Latitude-E7450.internal.synopsys.com
  (vineetg-latitude-e7450.internal.synopsys.com [10.10.161.61])
- by mailhost.synopsys.com (Postfix) with ESMTP id 27D59A006B;
- Mon, 16 Sep 2019 21:18:47 +0000 (UTC)
+ by mailhost.synopsys.com (Postfix) with ESMTP id D4975A0095;
+ Mon, 16 Sep 2019 21:27:20 +0000 (UTC)
 From: Vineet Gupta <Vineet.Gupta1@synopsys.com>
 To: Vineet.Gupta1@synopsys.com
-Subject: [PATCH 0/6] ignore @ 2.18
-Date: Mon, 16 Sep 2019 14:18:46 -0700
-Message-Id: <20190916211846.10252-1-vgupta@synopsys.com>
+Subject: [PATCH 0/6] ignore @ 2.26
+Date: Mon, 16 Sep 2019 14:27:19 -0700
+Message-Id: <20190916212719.11916-1-vgupta@synopsys.com>
 X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190916_141847_537440_35A8846B 
+X-CRM114-CacheID: sfid-20190916_142722_158875_EE74EEE1 
 X-CRM114-Status: UNSURE (   3.96  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
