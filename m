@@ -2,53 +2,53 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BA477B8326
-	for <lists+linux-snps-arc@lfdr.de>; Thu, 19 Sep 2019 23:11:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 199FBB8327
+	for <lists+linux-snps-arc@lfdr.de>; Thu, 19 Sep 2019 23:11:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:In-Reply-To:
 	Date:From:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
-	List-Owner; bh=vlwMzY3bZsAOOiviZWinHZCs9kRHxq87z9ROW+byhwA=; b=L83rK2/hO2ekcf
-	DnsPNqel6sDPNuFBCsC7SbfBGwA+P4ibjx2jpLeqK98Kp+gnwepAwUL048/+6Zjqc2q9KjzSsjoOG
-	KELg9fRDhil1y1NlhsykMR0FpLf4giAAhoi1qvZmq66XeiuL/L9CAMIEYj3pjjTkmhEOAwAYA9S8Y
-	U1mAU/ntlhCwFIFx+t+JivGsQ59a+IIHpU+wJKpnX8CJ8QKHDwV+IqyESA/xKSluryCy1raTh/epg
-	+JBuPjSGCkvQgkweeB4V8idF1O4GfzMVUpq1ukfoe93uMCqi961W+dubrbE5hvqqRYEbodiVgpck7
-	ZF0MaE4+cCpo9UvCE+MQ==;
+	List-Owner; bh=U4cf37FOzZj72kL89GK5+7BylcvvVgpVHvb6+rae8Zc=; b=Fp+GSzzmNhcg8r
+	LlDGK77OoiAjI1cPVbnhQj1SCxoDX2tbE90gjDxL5dSANLstaheHn87WJBVAVaOACG2f6qVz3CKVB
+	9IIEN4NmzNWvY9/tdYvqckqgoZY2bSHN5WiasYniqUOYsnyS+El6cgGTy1/GZzHwPK5X/m2QRlujz
+	wuoUopRZZElQHqF26PURuWlVq4FuuvUktrihJtmHaXudnF2mYU9Z4bz4ArH00tBOJW6Oe3KmhsOmS
+	FTKSHdzGdcysZHoqERSOdhIfEz9P6GLfnYUSe5WeJwp4tkkZlRHKKc7y8lpAT20s63cExAF+EutML
+	eljKXI3Ech3H3PJqNUbg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iB3i5-0002xf-Gm; Thu, 19 Sep 2019 21:11:29 +0000
+	id 1iB3i6-0002xz-O6; Thu, 19 Sep 2019 21:11:30 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iB3i2-0002x1-1Y
- for linux-snps-arc@lists.infradead.org; Thu, 19 Sep 2019 21:11:27 +0000
+ id 1iB3i3-0002xJ-GB
+ for linux-snps-arc@lists.infradead.org; Thu, 19 Sep 2019 21:11:29 +0000
 Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
  [83.86.89.107])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 0DC8D217D6;
- Thu, 19 Sep 2019 21:11:23 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id AFBC721907;
+ Thu, 19 Sep 2019 21:11:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1568927484;
- bh=LWPrnWpH7lERO6LIp/tr2Yki8zEokeYYSpnoxwXHI2k=;
+ s=default; t=1568927487;
+ bh=UiTvu1equd6b8MM2LjPvVrIV5EUlxuvBz3GzNz4XgSU=;
  h=Subject:To:Cc:From:Date:In-Reply-To:From;
- b=XdyYFnAxWbbGNTO6qSD6jypbOAtzPRkzhojtl63iLvF0BCd5b6JtSXiBMq0m72Ii9
- bwBOlWmnsJwRvqDqJx+CV7N2jTM6O3ukq/pqCw1AsD4fxw6jiVcoBet368NNMDyArT
- lZb8z7mCXgoENMFGZqpZHwAlX8KgtvHoNhy3f+CY=
+ b=axwKyRGgsRCQhfH37uqPG8p/oZdBBBAv5+/A75/GSyLd1mU0LaB3FK/KNoaI8k0Mu
+ yWO6H6hTshKIVZ+lNZ7qP4+/l5L+2ISrPYGVDGtE2/dWBf45CzmTuAriPkmdxM9n/G
+ dsAE8qbCZvHHQMEZLo1OyiF0DO9OWtGHR+L5KER4=
 Subject: Patch "ARC: export "abort" for modules" has been added to the
- 4.4-stable tree
+ 4.9-stable tree
 To: Vineet.Gupta1@synopsys.com, gregkh@linuxfoundation.org,
  linux-snps-arc@lists.infradead.org, lkp@intel.com, vgupta@synopsys.com
 From: <gregkh@linuxfoundation.org>
-Date: Thu, 19 Sep 2019 23:11:14 +0200
+Date: Thu, 19 Sep 2019 23:11:15 +0200
 In-Reply-To: <20190919205847.4806-1-vgupta@synopsys.com>
-Message-ID: <15689274741934@kroah.com>
+Message-ID: <156892747510640@kroah.com>
 MIME-Version: 1.0
 X-stable: commit
 X-Patchwork-Hint: ignore 
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190919_141126_110485_460EE338 
+X-CRM114-CacheID: sfid-20190919_141127_558285_98577572 
 X-CRM114-Status: UNSURE (   9.34  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.0 (-----)
@@ -86,12 +86,12 @@ This is a note to let you know that I've just added the patch titled
 
     ARC: export "abort" for modules
 
-to the 4.4-stable tree which can be found at:
+to the 4.9-stable tree which can be found at:
     http://www.kernel.org/git/?p=linux/kernel/git/stable/stable-queue.git;a=summary
 
 The filename of the patch is:
      arc-export-abort-for-modules.patch
-and it can be found in the queue-4.4 subdirectory.
+and it can be found in the queue-4.9 subdirectory.
 
 If you, or anyone else, feels it should not be added to the stable tree,
 please let <stable@vger.kernel.org> know about it.
@@ -135,7 +135,7 @@ Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 
 Patches currently in stable-queue which might be from Vineet.Gupta1@synopsys.com are
 
-queue-4.4/arc-export-abort-for-modules.patch
+queue-4.9/arc-export-abort-for-modules.patch
 
 _______________________________________________
 linux-snps-arc mailing list
