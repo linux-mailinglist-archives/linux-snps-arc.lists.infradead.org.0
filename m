@@ -2,90 +2,94 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4CFCFC2355
-	for <lists+linux-snps-arc@lfdr.de>; Mon, 30 Sep 2019 16:32:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4DCEFC44D0
+	for <lists+linux-snps-arc@lfdr.de>; Wed,  2 Oct 2019 02:14:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QWiVAEJ9lZ2U1jAp7/nldPEVxoZlKbR9trR45QD8mzY=; b=ePBRqpIideRMxT
-	FA1OxJ16gNSGtUcgh6ru+uPrk1mvlp9w3nzVjG5Gd9/0D6YCAx/asJUHh7e7q9pB2FX+K8/tK8emQ
-	QbjA3QVD0HJ8jTwzNWnGio0qJ/zWK/6l3NChBDS/h32RXDHmehp9phYDt9yBlEygw55PP+nVfRLSv
-	gP6XR1S8Oso+HbntEn4DZgz1z0GUvKVuSORtKcW6fi9O2fnCojq350hrN/S/iamnYygzBikkyqJiH
-	dei5XRrYaQpUFK4dJGx25d05HvFu7ScFbl3Di6wauu/JmYLWfWkbZ44ccijV+KdXGwa/+25roK5Bi
-	5nrffGIeV1Y/uo/oyH/A==;
+	List-Owner; bh=VlnSBDMd8WtF3b0zpILBBk1xZJoouGj9ZB7hcMW4gcE=; b=XFRiLZPdOjrwtx
+	BnOKoDUneWEjoUfdw72yf94QMDDWlOJ7R7+St2rTaq2U5Dm7m+j95vbewCuvsDi2UYbGWzYcc4Ts1
+	nA3pNLI05WFSQvBE5zUrnPZ4KFACOsbIYykX5RACVGv8e+QxKQ3pUqjY0SrI38eMNSTUm+rdnwBOv
+	L9wm2GPtARwNB4sBmKV+gZKbHZBtJQ9FxZ7we+5DWbU/NRrJxYecTSdslRMakNDzCxh8PMywvvAvY
+	Kzd5avZ0QkG+ybbqMuXZtQqlXpVIaoRuWULi764MjS8p0cxg5SOiiGaeigyEUhJElXHfudMF1lGO6
+	EygkjvhVB6BMwbkQIm5g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iEwjM-0005nY-2Z; Mon, 30 Sep 2019 14:32:52 +0000
-Received: from mail-oi1-f196.google.com ([209.85.167.196])
+	id 1iFSHl-0000O6-W7; Wed, 02 Oct 2019 00:14:29 +0000
+Received: from mail-io1-xd41.google.com ([2607:f8b0:4864:20::d41])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iEwjI-0005mh-Ts; Mon, 30 Sep 2019 14:32:50 +0000
-Received: by mail-oi1-f196.google.com with SMTP id k9so11282585oib.7;
- Mon, 30 Sep 2019 07:32:48 -0700 (PDT)
+ id 1iFSHi-0000NW-MG; Wed, 02 Oct 2019 00:14:28 +0000
+Received: by mail-io1-xd41.google.com with SMTP id a1so52819435ioc.6;
+ Tue, 01 Oct 2019 17:14:25 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=Qp6mpPjoJw8IpL230TwztYNGcdXtc2wRumjJPrYIsQE=;
+ b=nJtPZChLaez2QyIvdw5xpQM+gY+4nNfutZP/DX1GosRihN1p8Y/jzvzU5+zZVVXLDq
+ DNW5rNxAEWMfY4DML2WBa4k8L6N9BKjZt+S1WhSwJylMRWekm8bQGBEDcBvcSstJLeH7
+ osBNQPoC6vhf9EY6DvGZUS8bjPCLVbggq0vpLSG6o0qgZ68mHanhcK7N3A/k0zMXrBbT
+ Myz3NcGtILKbjxYen8N4nInaRBIm801lXbpfCzyfiuoGv9mi3cSKUjp9iAirGweypF7I
+ T5mChO7ltGRoxOnD6pn9vRPircx8cSspNsbQ9S+cDzRYkEkb4WMfK2l7wEZANDZnvpgU
+ 4hTA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=kUMYVmu3XMOxDG5rrYQfwaFPZ00CpUb0hbyz3+BbaG0=;
- b=Lf9o40fcYlA/8zr/t3sBOA30YEwf8ywN2f2CJsVJ0pAXKFPACLBWP04hbS3LC5ZDeL
- N4aljkk2ejuLuxkT1FXdg5JkY6sSs01ZhHPirWqyCvt9VoCjRA0k9Bwr30PvHdICfjGH
- INsw4/6t+PQgrP74R7tlYa2o7Tvyr8QaNQS4wclBTVs6rlVy6Tz4/jjVby3/tFch7PF2
- lMJ3C26QQ5+IGC/VfCe1K+uKCSF18v6SG2TahQBh8pOwaHaVVhSJrc8Z41xQxSzEXK4h
- vRmcEaprwOZxF/HPTyfrpbZJjlmtet1kCzp2rli3MxeJ93ETH/lWNeJehX8FYjq9Iy8F
- Nq0Q==
-X-Gm-Message-State: APjAAAWLz4JoYdP1Q7nv6jmv95hZXKPEhFGbFqcKS9oihJZqaitdj+IV
- tW0wiLbCQBnHlSOKiX4QAA==
-X-Google-Smtp-Source: APXvYqyWWGHweAxd+epg50sMtp2YxM9KH4bIudckXn/jzkB0T25eaocN5L6p2a1h/laqh+KPJMVjkw==
-X-Received: by 2002:aca:c792:: with SMTP id
- x140mr18609373oif.132.1569853967784; 
- Mon, 30 Sep 2019 07:32:47 -0700 (PDT)
-Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
- [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id t82sm4319977oie.12.2019.09.30.07.32.46
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 30 Sep 2019 07:32:47 -0700 (PDT)
-Date: Mon, 30 Sep 2019 09:32:46 -0500
-From: Rob Herring <robh@kernel.org>
-To: Claudiu.Beznea@microchip.com
-Subject: Re: [PATCH 4/7] dt-bindings: chosen: Add clocksource and clockevent
- selection
-Message-ID: <20190930143246.GA19967@bogus>
-References: <1568123236-767-1-git-send-email-claudiu.beznea@microchip.com>
- <1568123236-767-5-git-send-email-claudiu.beznea@microchip.com>
- <20190910143231.GB14966@e107533-lin.cambridge.arm.com>
- <ab43b209-78fa-0cab-b8ea-acd4c550e689@microchip.com>
- <20190910150826.GA18308@e107533-lin.cambridge.arm.com>
- <20190910151055.GX21254@piout.net>
- <CACRpkda4mmpbPWa2nD93CvD6HWzcTUDzyyLdQxC2gNB7XiJF3w@mail.gmail.com>
- <a2aca46a-8eb9-d8a8-de42-9850a8a8f44c@microchip.com>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=Qp6mpPjoJw8IpL230TwztYNGcdXtc2wRumjJPrYIsQE=;
+ b=N/8NvYihN9YkLWkhDdQHcflv8R7i4tcURMK4mvUhEiQMH+sNZp7j0MbZXvpS44ZWIC
+ XGaOmfxTa4NKoNdjsy5fGQ838yMas8RwbBYOLbtI8SH6bEFiLHGU0403L5wmGNSoPtKW
+ IbO5NKer/Cuu88dFx0lDv/JDQy/f+XVdm4CtgYHgzyMF++o86fJ/rTYwEhnC26Ho3ro0
+ +HdjnUFgmzHU86celtAH2n8yamhtnFvfvb88VStlci3tA3NnBY8KZqyQ8HfuoEs+wQGh
+ JgUsijeCAmpaq/cqBmRbHew3XwYgikF119lduVP762OznciAMhEjqVH/ypEUJHTLTMoS
+ hF9g==
+X-Gm-Message-State: APjAAAVtWBxktRryfAyu2gCbcTUeS0tHmNbehbD13Tr+xYaIzRFRv+RF
+ ORoc1fIA/iebMeduHoTq5BYyIly1AFWGhUvlVkU=
+X-Google-Smtp-Source: APXvYqw1icrX5CgHqYJTBX6lKVXwK6z5wdputtkAh6YFSqMaOhm8xmij6KJaNr2N6b3kx+nme5PxuCv6WXWh+UvZaMU=
+X-Received: by 2002:a92:3314:: with SMTP id a20mr890351ilf.276.1569975265009; 
+ Tue, 01 Oct 2019 17:14:25 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <a2aca46a-8eb9-d8a8-de42-9850a8a8f44c@microchip.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+References: <1548057848-15136-1-git-send-email-rppt@linux.ibm.com>
+ <CAHCN7x+Jv7yGPoB0Gm=TJ30ObLJduw2XomHkd++KqFEURYQcGg@mail.gmail.com>
+ <CAOMZO5A_U4aYC4XZXK1r9JaLg-eRdXy8m6z4GatQp62rK4HZ6A@mail.gmail.com>
+ <CAHCN7xJdzEppn8-74SvzACsA25bUHGdV7v=CfS08xzSi59Z2uw@mail.gmail.com>
+ <CAOMZO5D2uzR6Sz1QnX3G-Ce_juxU-0PO_vBZX+nR1mpQB8s8-w@mail.gmail.com>
+ <CAHCN7xJ32BYZu-DVTVLSzv222U50JDb8F0A_tLDERbb8kPdRxg@mail.gmail.com>
+ <20190926160433.GD32311@linux.ibm.com>
+ <CAHCN7xL1sFXDhKUpj04d3eDZNgLA1yGAOqwEeCxedy1Qm-JOfQ@mail.gmail.com>
+ <20190928073331.GA5269@linux.ibm.com>
+ <CAHCN7xJEvS2Si=M+BYtz+kY0M4NxmqDjiX9Nwq6_3GGBh3yg=w@mail.gmail.com>
+In-Reply-To: <CAHCN7xJEvS2Si=M+BYtz+kY0M4NxmqDjiX9Nwq6_3GGBh3yg=w@mail.gmail.com>
+From: Adam Ford <aford173@gmail.com>
+Date: Tue, 1 Oct 2019 19:14:13 -0500
+Message-ID: <CAHCN7xKLhWw4P9-sZKXQcfSfh2r3J_+rLxuxACW0UVgimCzyVw@mail.gmail.com>
+Subject: Re: [PATCH v2 00/21] Refine memblock API
+To: Mike Rapoport <rppt@linux.ibm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190930_073248_964476_4CD284B7 
-X-CRM114-Status: GOOD (  15.87  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20191001_171426_757051_96A6C711 
+X-CRM114-Status: GOOD (  29.06  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.196 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:d41 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (robherring2[at]gmail.com)
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (robherring2[at]gmail.com)
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.196 listed in wl.mailspike.net]
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ provider (aford173[at]gmail.com)
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (aford173[at]gmail.com)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-snps-arc@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,102 +101,132 @@ List-Post: <mailto:linux-snps-arc@lists.infradead.org>
 List-Help: <mailto:linux-snps-arc-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-snps-arc>, 
  <mailto:linux-snps-arc-request@lists.infradead.org?subject=subscribe>
-Cc: tmaimon77@gmail.com, linus.walleij@linaro.org, nsekhar@ti.com,
- guoren@kernel.org, linux-stm32@st-md-mailman.stormreply.com, heiko@sntech.de,
- linux-samsung-soc@vger.kernel.org, linux-rockchip@lists.infradead.org,
- khilman@baylibre.com, Ludovic.Desroches@microchip.com, linux-imx@nxp.com,
- u.kleine-koenig@pengutronix.de, uclinux-h8-devel@lists.sourceforge.jp,
- marc.zyngier@arm.com, s.hauer@pengutronix.de, linux-unisoc@lists.infradead.org,
- khalasa@piap.pl, tglx@linutronix.de, sbranden@broadcom.com,
- linux-kernel@vger.kernel.org, ralf@linux-mips.org, paul.burton@mips.com,
- kernel@pengutronix.de, mark.rutland@arm.com, alexandre.belloni@bootlin.com,
- jhogan@kernel.org, palmer@sifive.com, eric@anholt.net,
- thierry.reding@gmail.com, manivannan.sadhasivam@linaro.org,
- ysato@users.sourceforge.jp, zhang.lyra@gmail.com, daniel.lezcano@linaro.org,
- jonathanh@nvidia.com, bgolaszewski@baylibre.com, kgene@kernel.org,
- alexandre.torgue@st.com, linux-arm-msm@vger.kernel.org, sudeep.holla@arm.com,
- lorenzo.pieralisi@arm.com, john.stultz@linaro.org,
- linux-rpi-kernel@lists.infradead.org, linux-amlogic@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org, baohua@kernel.org, kaloz@openwrt.org,
- sboyd@kernel.org, patrice.chotard@st.com, wahrenst@gmx.net,
- mcoquelin.stm32@gmail.com, narmstrong@baylibre.com,
- linux-tegra@vger.kernel.org, festevam@gmail.com, f.fainelli@gmail.com,
- benjaminfair@google.com, shc_work@mail.ru, krzk@kernel.org, yuenn@google.com,
- wens@csie.org, bcm-kernel-feedback-list@broadcom.com, orsonzhai@gmail.com,
- linux-snps-arc@lists.infradead.org, rjui@broadcom.com, vz@mleia.com,
- john@phrozen.org, tali.perry1@gmail.com, avifishman70@gmail.com,
- venture@google.com, lftan@altera.com, linux-oxnas@groups.io,
- shawnguo@kernel.org, afaerber@suse.de, baruch@tkos.co.il,
- maxime.ripard@bootlin.com, liviu.dudau@arm.com, linux-mips@vger.kernel.org,
- linux-riscv@lists.infradead.org, openbmc@lists.ozlabs.org,
- linux@armlinux.org.uk, agross@kernel.org, slemieux.tyco@gmail.com,
- devicetree@vger.kernel.org, aou@eecs.berkeley.edu,
- linux-mediatek@lists.infradead.org, ssantosh@kernel.org,
- matthias.bgg@gmail.com, monstr@monstr.eu, baolin.wang@linaro.org,
- vgupta@synopsys.com, Nicolas.Ferre@microchip.com, linux@prisktech.co.nz,
- nios2-dev@lists.rocketboards.org
+Cc: Rich Felker <dalias@libc.org>, linux-ia64@vger.kernel.org,
+ linux-sh@vger.kernel.org, Catalin Marinas <catalin.marinas@arm.com>,
+ Heiko Carstens <heiko.carstens@de.ibm.com>, linux-mips@vger.kernel.org,
+ Max Filippov <jcmvbkbc@gmail.com>, devicetree <devicetree@vger.kernel.org>,
+ Guo Ren <guoren@kernel.org>, sparclinux@vger.kernel.org,
+ Fabio Estevam <festevam@gmail.com>, Christoph Hellwig <hch@lst.de>,
+ linux-s390@vger.kernel.org, linux-c6x-dev@linux-c6x.org,
+ Yoshinori Sato <ysato@users.sourceforge.jp>,
+ Richard Weinberger <richard@nod.at>, x86@kernel.org,
+ Russell King <linux@armlinux.org.uk>, kasan-dev <kasan-dev@googlegroups.com>,
+ Geert Uytterhoeven <geert@linux-m68k.org>, Mark Salter <msalter@redhat.com>,
+ Dennis Zhou <dennis@kernel.org>, Matt Turner <mattst88@gmail.com>,
+ linux-snps-arc@lists.infradead.org, Chris Healy <cphealy@gmail.com>,
+ uclinux-h8-devel@lists.sourceforge.jp, Petr Mladek <pmladek@suse.com>,
+ linux-xtensa@linux-xtensa.org, linux-alpha@vger.kernel.org,
+ linux-um@lists.infradead.org,
+ The etnaviv authors <etnaviv@lists.freedesktop.org>,
+ linux-m68k@lists.linux-m68k.org, Rob Herring <robh+dt@kernel.org>,
+ Greentime Hu <green.hu@gmail.com>, xen-devel@lists.xenproject.org,
+ Stafford Horne <shorne@gmail.com>, Guan Xuetao <gxt@pku.edu.cn>,
+ arm-soc <linux-arm-kernel@lists.infradead.org>,
+ Michal Simek <monstr@monstr.eu>, Tony Luck <tony.luck@intel.com>,
+ Linux Memory Management List <linux-mm@kvack.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ USB list <linux-usb@vger.kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Paul Burton <paul.burton@mips.com>, Vineet Gupta <vgupta@synopsys.com>,
+ Michael Ellerman <mpe@ellerman.id.au>,
+ Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
+ "David S. Miller" <davem@davemloft.net>, openrisc@lists.librecores.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-snps-arc" <linux-snps-arc-bounces@lists.infradead.org>
 Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org
 
-On Wed, Sep 11, 2019 at 07:18:07AM +0000, Claudiu.Beznea@microchip.com wrote:
-> 
-> 
-> On 11.09.2019 03:03, Linus Walleij wrote:
-> > External E-Mail
-> > 
-> > 
-> > On Tue, Sep 10, 2019 at 4:11 PM Alexandre Belloni
-> > <alexandre.belloni@bootlin.com> wrote:
-> >> On 10/09/2019 16:08:26+0100, Sudeep Holla wrote:
-> >>> On Tue, Sep 10, 2019 at 02:51:50PM +0000, Claudiu.Beznea@microchip.com wrote:
-> > 
-> >>> In that case, why can't we identify capability that with the compatibles
-> >>> for this timer IP ?
-> >>>
-> >>> IOW, I don't like the proposal as it's hardware limitation.
-> >>
-> >> To be clear, bot timers are exactly the same but can't be clocksource
-> >> and clockevent at the same time. Why would we have different compatibles
-> >> for the exact same IP?
-> > 
-> > In that case why not just pick the first one you find as clocksource
-> > and the second one as clock event? As they all come to the
-> > same timer of init function two simple local state variables can
-> > solve that:
-> > 
-> > static bool registered_clocksource;
-> > static bool registered_clockevent;
-> > 
-> > probe(timer) {
-> >    if (!registered_clocksource) {
-> >        register_clocksource(timer);
-> >        registrered_clocksource = true;
-> >        return;
-> >    }
-> >    if (!registered_clockevent) {
-> >        register_clockevent(timer);
-> >        registered_clockevent = true;
-> >        return;
-> >    }
-> >    pr_info("surplus timer %p\n", timer);
-> > }
-> > 
-> 
-> That was also my proposal for the driver I'm sending this series for (see
-> [1]) but it has been proposed to implement a mechanism similar to this one
-> in this series (see [2] and [3]).
+On Sun, Sep 29, 2019 at 8:33 AM Adam Ford <aford173@gmail.com> wrote:
+>
+> I am attaching two logs.  I now the mailing lists will be unhappy, but
+>  don't want to try and spam a bunch of log through the mailing liast.
+> The two logs show the differences between the working and non-working
+> imx6q 3D accelerator when trying to run a simple glmark2-es2-drm demo.
+>
+> The only change between them is the 2 line code change you suggested.
+>
+> In both cases, I have cma=128M set in my bootargs.  Historically this
+> has been sufficient, but cma=256M has not made a difference.
+>
 
-This comes up over and over, and the answer is still no. Either each 
-block is identical and doesn't matter which one is used for what or 
-there is some h/w difference that you should describe. 
+Mike any suggestions on how to move forward?
+I was hoping to get the fixes tested and pushed before 5.4 is released
+if at all possible
 
-If you want something that would even be considered to put into DT, 
-then define something BSD or other OS's could use too. (That's not a 
-suggestion to respin this with generalized names.)
-
-Rob
+> adam
+>
+> On Sat, Sep 28, 2019 at 2:33 AM Mike Rapoport <rppt@linux.ibm.com> wrote:
+> >
+> > On Thu, Sep 26, 2019 at 02:35:53PM -0500, Adam Ford wrote:
+> > > On Thu, Sep 26, 2019 at 11:04 AM Mike Rapoport <rppt@linux.ibm.com> wrote:
+> > > >
+> > > > Hi,
+> > > >
+> > > > On Thu, Sep 26, 2019 at 08:09:52AM -0500, Adam Ford wrote:
+> > > > > On Wed, Sep 25, 2019 at 10:17 AM Fabio Estevam <festevam@gmail.com> wrote:
+> > > > > >
+> > > > > > On Wed, Sep 25, 2019 at 9:17 AM Adam Ford <aford173@gmail.com> wrote:
+> > > > > >
+> > > > > > > I tried cma=256M and noticed the cma dump at the beginning didn't
+> > > > > > > change.  Do we need to setup a reserved-memory node like
+> > > > > > > imx6ul-ccimx6ulsom.dtsi did?
+> > > > > >
+> > > > > > I don't think so.
+> > > > > >
+> > > > > > Were you able to identify what was the exact commit that caused such regression?
+> > > > >
+> > > > > I was able to narrow it down the 92d12f9544b7 ("memblock: refactor
+> > > > > internal allocation functions") that caused the regression with
+> > > > > Etnaviv.
+> > > >
+> > > >
+> > > > Can you please test with this change:
+> > > >
+> > >
+> > > That appears to have fixed my issue.  I am not sure what the impact
+> > > is, but is this a safe option?
+> >
+> > It's not really a fix, I just wanted to see how exactly 92d12f9544b7 ("memblock:
+> > refactor internal allocation functions") broke your setup.
+> >
+> > Can you share the dts you are using and the full kernel log?
+> >
+> > > adam
+> > >
+> > > > diff --git a/mm/memblock.c b/mm/memblock.c
+> > > > index 7d4f61a..1f5a0eb 100644
+> > > > --- a/mm/memblock.c
+> > > > +++ b/mm/memblock.c
+> > > > @@ -1356,9 +1356,6 @@ static phys_addr_t __init memblock_alloc_range_nid(phys_addr_t size,
+> > > >                 align = SMP_CACHE_BYTES;
+> > > >         }
+> > > >
+> > > > -       if (end > memblock.current_limit)
+> > > > -               end = memblock.current_limit;
+> > > > -
+> > > >  again:
+> > > >         found = memblock_find_in_range_node(size, align, start, end, nid,
+> > > >                                             flags);
+> > > >
+> > > > > I also noticed that if I create a reserved memory node as was done one
+> > > > > imx6ul-ccimx6ulsom.dtsi the 3D seems to work again, but without it, I
+> > > > > was getting errors regardless of the 'cma=256M' or not.
+> > > > > I don't have a problem using the reserved memory, but I guess I am not
+> > > > > sure what the amount should be.  I know for the video decoding 1080p,
+> > > > > I have historically used cma=128M, but with the 3D also needing some
+> > > > > memory allocation, is that enough or should I use 256M?
+> > > > >
+> > > > > adam
+> > > >
+> > > > --
+> > > > Sincerely yours,
+> > > > Mike.
+> > > >
+> >
+> > --
+> > Sincerely yours,
+> > Mike.
+> >
 
 _______________________________________________
 linux-snps-arc mailing list
