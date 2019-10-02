@@ -2,94 +2,160 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 24FA5C870A
-	for <lists+linux-snps-arc@lfdr.de>; Wed,  2 Oct 2019 13:14:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 88835C89BC
+	for <lists+linux-snps-arc@lfdr.de>; Wed,  2 Oct 2019 15:33:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SAq5CCd+beBtaTKoj5t02SMAzIqPo7DYmBeGGJBWppQ=; b=hzmHIBuB8rYDqN
-	+VXG+3FiVuhpam6KPDd9PFQcQExDauwTRlqLuPzoFN+Xk5kbdb9x5Dtj5hp+L/0jFfSjVFY7C7swJ
-	SBcF0BqHyxUzWcb5EJf/2YOXDC7KkVFgayq9YyQPZ3OgknKOSVNnSmFWT/BWvT95Jda4c4BU190x3
-	zTNj6zM2Nb2HRR4LVY5OjudvD9ag8BpikcS0XTxbhWWAsK9CZzVFy0womVE9oVZnH5+6gIR+hYH1Z
-	rksp0cxs/5rRYcQHqGm3GYqNDkQV4rym3IFy/LLuO+CEwq/fazY/zENdy0Er2jLB2LutsueWBa0Fw
-	2nuyFm1cz35U62tgfGjw==;
+	List-Owner; bh=DhPLSfbA7Vljb6naqV9DtM5HCO2hZlwKWlVA+GFieuc=; b=Q1AHbdQqIsWQTv
+	EihBTO3eDey9zsMvCL37yhlJoT/kOJkupS3+/XbvobNbZ1omgztLah63LmJB3sY63nOzjvQzsYNvy
+	cRwUZMZEk83/iuyotHebEyl1J2rDDMttaUx2JIr3qZf3f+n7imY/LXC4kb01M+AUp/XBW25p8OEaw
+	BHIgIGNJUYIqFABaZoNwq9LtcFyzapR+kKNAyvJWpviLWyWUg48lpsNmbXC8e7DVelZQSfVtmJ9In
+	iQhlpC5D3xvRwbFYDMDzJp384EqBZetPayVK9RcyZ+d4k/SoUFibkNSga1NqyTmRLT7VFepZDU8yu
+	Hq+MxMO0HsiqIc+Ft5Zw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFcaR-0000OY-Od; Wed, 02 Oct 2019 11:14:27 +0000
-Received: from mail-io1-xd44.google.com ([2607:f8b0:4864:20::d44])
+	id 1iFel2-00011h-86; Wed, 02 Oct 2019 13:33:32 +0000
+Received: from esa4.microchip.iphmx.com ([68.232.154.123])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFcaO-0000Ny-Iz; Wed, 02 Oct 2019 11:14:26 +0000
-Received: by mail-io1-xd44.google.com with SMTP id c6so55773328ioo.13;
- Wed, 02 Oct 2019 04:14:23 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=ZB4/wBe40ScWLOPnOnO2A5CCUN+N+AU8kGY9PrjNkCo=;
- b=vHy1Q0oWcWtdLVhbCIPh+2w9YyGU1ImOhLI5IYNI26dpCY56cp4nN11g6QdPghxgrv
- 20fT4a0g6KLE9VPM1GGk5WEkaW3W8ibLplns+b38ULo0BgoOcLLXCa7vMq/06HlDu8EM
- gYtJnvLmiztT9H85Z2TULtV8b8ID9SIHxTpPosRs4q7FgHjyH3IZpBXpQDID+/dgBUC+
- En2Hlb2QAEqtnUaaBxS39e5+tgbBqdCQ3zi0GiT0+9AVVWt7MrDThyBGFLlAOVN5ZDXh
- tLAOiZcErI98+RWq/9yucOO1d/qVlE8fzwQR20ke0rf9w1JhzdrTYUO+QEJ+9ZevRBiw
- SNvA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=ZB4/wBe40ScWLOPnOnO2A5CCUN+N+AU8kGY9PrjNkCo=;
- b=rt2uiV2BbYKh6Pn66iwoVUOTL8MV1CuBJqdyUrUWilRSlwB2rXqAvW4yLLCUZRXFnm
- jijEQKsKbLfYu/Gfo3yyL90jUWaLq8yklmDcm7esGQMwr7z5h7Ca6mPnL+522ZEBcZBF
- hI0OWqU/QuwYJO/lP1jsOqGuxx/4SpTNMbDf1wnoeFeZ13FfNJWQcYgJMTeIdhr2UB7N
- uF4Z2n8HRs9E25C2NXOhG4krRZZifXrbyczLNo0bwHEbhfFS58BYiXsLLNTaOz1WVpBN
- BCrnFpxRt24w1vV3oWgSBSqfxxKxMOfep4kGJupPFsVD/CfKQfKDyFjAOEjVEnGJJw5/
- Lqog==
-X-Gm-Message-State: APjAAAXJ1vNThCczDe+UOsGYONxjSS5eWVKj0bQHX3d/mNyWejDzIyGY
- 4o9pc8TzTnZcvIUYdItjfiZqlbGmeWN4Un6Od2o=
-X-Google-Smtp-Source: APXvYqxt3TCdlj0r7UU5RMh1pKp58F/EEIucnVtIKTi1s6mnbV7Wt5Su0S7y51mDcoVCyuPplnln+o3jSRMB6j2CKEI=
-X-Received: by 2002:a6b:d601:: with SMTP id w1mr2668972ioa.158.1570014862922; 
- Wed, 02 Oct 2019 04:14:22 -0700 (PDT)
+ id 1iFekw-0000zx-3X; Wed, 02 Oct 2019 13:33:30 +0000
+Received-SPF: Pass (esa4.microchip.iphmx.com: domain of
+ Claudiu.Beznea@microchip.com designates 198.175.253.82 as
+ permitted sender) identity=mailfrom;
+ client-ip=198.175.253.82; receiver=esa4.microchip.iphmx.com;
+ envelope-from="Claudiu.Beznea@microchip.com";
+ x-sender="Claudiu.Beznea@microchip.com";
+ x-conformance=spf_only; x-record-type="v=spf1";
+ x-record-text="v=spf1 mx a:ushub1.microchip.com
+ a:smtpout.microchip.com a:mx1.microchip.iphmx.com
+ a:mx2.microchip.iphmx.com include:servers.mcsv.net
+ include:mktomail.com include:spf.protection.outlook.com ~all"
+Received-SPF: None (esa4.microchip.iphmx.com: no sender
+ authenticity information available from domain of
+ postmaster@email.microchip.com) identity=helo;
+ client-ip=198.175.253.82; receiver=esa4.microchip.iphmx.com;
+ envelope-from="Claudiu.Beznea@microchip.com";
+ x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
+Authentication-Results: esa4.microchip.iphmx.com;
+ spf=Pass smtp.mailfrom=Claudiu.Beznea@microchip.com;
+ spf=None smtp.helo=postmaster@email.microchip.com;
+ dkim=pass (signature verified) header.i=@microchiptechnology.onmicrosoft.com;
+ dmarc=pass (p=none dis=none) d=microchip.com
+IronPort-SDR: LntMiOES/WAkcJeSiLcxr3vuSUKVI1BsEXihMWkjfyHryPgDz/T1/FSw3Y9YiH8EzdMaJQejhE
+ 85F4huDjITvY2+EWK/VtXNHNM/fDpnqBDwFd9eUm/bCLxQwl7c4UYty2GAxACAv0V/VpBI4Rd4
+ P9DX08NShfAwDTqWuUeY1GWN3tdrHW1jWoRNCzTezC+cz1x1eg9GCdVJtDdRFLDOu9CXfoLXT3
+ Bpy7caSLa7dcrg72WxVU96XpmSAnnxAyo/3vkD19Ya4B0AQuuJ/b3PoPBJ0NAHwnrelU1XfGFq
+ urM=
+X-IronPort-AV: E=Sophos;i="5.64,574,1559545200"; d="scan'208";a="50128628"
+Received: from smtpout.microchip.com (HELO email.microchip.com)
+ ([198.175.253.82])
+ by esa4.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 02 Oct 2019 06:33:11 -0700
+Received: from chn-vm-ex01.mchp-main.com (10.10.85.143) by
+ chn-vm-ex02.mchp-main.com (10.10.85.144) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.1713.5; Wed, 2 Oct 2019 06:32:47 -0700
+Received: from NAM02-BL2-obe.outbound.protection.outlook.com (10.10.215.89) by
+ email.microchip.com (10.10.87.71) with Microsoft SMTP Server
+ (version=TLS1_2, 
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id 15.1.1713.5 via Frontend
+ Transport; Wed, 2 Oct 2019 06:32:45 -0700
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=IPgeFWkvRGJ5QWvSM9FugyWLx73+9L6Viwx3fZqt0/Pfr5mPy3HSPze4gGASZ+0+QygZBG9Plr4oNMGbFpqfZMzXQxrf61u9TdkZqRFn6ag2YB83Qn9qlmyhCKY/Ad02ytxQEd0Pj+PcT3oSHuQI05W4pG8/M9kh2rdiPhQUeoOJvuYS1IcIL/F8yFsscs/h1Y4qA5WgJf/CJdnYRr6NKZYig0aZ2ZYGxzP6qr6thTLvFW5wHPEojH58cVL19VoghscAYesXANdq6bGMZztr9y9dEEt3qQ7sUSpQ5SM4vgGgJ3noyi89Fv1oP14AJJm2OYs/8eVVhtfdI0U4UYaPag==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=a1h85+A/c7G+3aM8NDuUMkKUI0SGdCgarlxD+Bi8H6A=;
+ b=W5VmdlMBqg+67W8SVnYaKwj+pwCfKVXUFELBQGq5f125Qv/9rd5v4fTK6grcTjrRSaLYkL9mZBdy0RMu5rsqIXrAwckRW26FA+eNq+nY9/kHb0kROaRUAx7ulZs3ldKsV8BxqJg8F1ZPz2LMbww3us93KswN6pnFukwflg1JBSlZulFBk+PFtNDtN3NUtwscP9xKe70BWQ3r7Ww8fC2GjbVcGYIHJmOIfQmZGfNTcx7f0/sGuvJ4UaPcwQkVSDOU1fkAy1XDzULTjH8R/CwmXnfDZKEuhuZwa5JRfCbE1VH+RIrpOHjD8I6qs8wxXCmH4Sue2UXoRzM+RdpZCKgkRg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=microchip.com; dmarc=pass action=none
+ header.from=microchip.com; dkim=pass header.d=microchip.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=microchiptechnology.onmicrosoft.com;
+ s=selector2-microchiptechnology-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=a1h85+A/c7G+3aM8NDuUMkKUI0SGdCgarlxD+Bi8H6A=;
+ b=tiGEr4UL4oketTH3KnwMGXBJNey9VFiDGFt95+bdlkl24DL8ZoLG3lsgAyJPNQUs+E850ajge3hfWBKhE8lstehZIGzAVL5oXSELXEt+WLxsVVzLrukL+Otg0jBwd5uP6ni+1W01v/sQDognfKIrSb5MNK/3zUvFpHKSpCz3rec=
+Received: from DM6PR11MB3225.namprd11.prod.outlook.com (20.176.120.85) by
+ DM6PR11MB3226.namprd11.prod.outlook.com (20.176.120.86) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2305.22; Wed, 2 Oct 2019 13:32:44 +0000
+Received: from DM6PR11MB3225.namprd11.prod.outlook.com
+ ([fe80::3874:9f3c:5325:d22]) by DM6PR11MB3225.namprd11.prod.outlook.com
+ ([fe80::3874:9f3c:5325:d22%6]) with mapi id 15.20.2305.023; Wed, 2 Oct 2019
+ 13:32:44 +0000
+From: <Claudiu.Beznea@microchip.com>
+To: <robh@kernel.org>
+Subject: Re: [PATCH 4/7] dt-bindings: chosen: Add clocksource and clockevent
+ selection
+Thread-Topic: [PATCH 4/7] dt-bindings: chosen: Add clocksource and clockevent
+ selection
+Thread-Index: AQHVZ96b4IKYTCqlaU2ZD1E6YcOJIQ==
+Date: Wed, 2 Oct 2019 13:32:44 +0000
+Message-ID: <e78e7520-213c-8075-d71e-b8db2ebdceb7@microchip.com>
+References: <1568123236-767-1-git-send-email-claudiu.beznea@microchip.com>
+ <1568123236-767-5-git-send-email-claudiu.beznea@microchip.com>
+ <20190910143231.GB14966@e107533-lin.cambridge.arm.com>
+ <ab43b209-78fa-0cab-b8ea-acd4c550e689@microchip.com>
+ <20190910150826.GA18308@e107533-lin.cambridge.arm.com>
+ <20190910151055.GX21254@piout.net>
+ <CACRpkda4mmpbPWa2nD93CvD6HWzcTUDzyyLdQxC2gNB7XiJF3w@mail.gmail.com>
+ <a2aca46a-8eb9-d8a8-de42-9850a8a8f44c@microchip.com>
+ <20190930143246.GA19967@bogus>
+In-Reply-To: <20190930143246.GA19967@bogus>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-clientproxiedby: VI1PR0102CA0049.eurprd01.prod.exchangelabs.com
+ (2603:10a6:803::26) To DM6PR11MB3225.namprd11.prod.outlook.com
+ (2603:10b6:5:59::21)
+x-ms-exchange-messagesentrepresentingtype: 1
+x-tagtoolbar-keys: D20191002163208083
+x-originating-ip: [94.177.32.156]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: c5b47fd1-47de-4b13-94c1-08d7473d01c5
+x-ms-traffictypediagnostic: DM6PR11MB3226:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <DM6PR11MB3226E6E33A86436D99026FFF879C0@DM6PR11MB3226.namprd11.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:10000;
+x-forefront-prvs: 0178184651
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(366004)(396003)(136003)(346002)(376002)(39860400002)(189003)(199004)(25786009)(4326008)(64756008)(66476007)(66556008)(14444005)(316002)(2906002)(5660300002)(446003)(11346002)(52116002)(256004)(478600001)(76176011)(71190400001)(66946007)(66446008)(31686004)(6512007)(6246003)(54906003)(3846002)(7736002)(6116002)(229853002)(99286004)(6506007)(66066001)(386003)(102836004)(71200400001)(305945005)(14454004)(53546011)(36756003)(6916009)(6436002)(81156014)(26005)(486006)(81166006)(86362001)(7416002)(8936002)(186003)(476003)(7366002)(8676002)(7336002)(31696002)(2616005)(561944003)(7406005)(6486002);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:DM6PR11MB3226;
+ H:DM6PR11MB3225.namprd11.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: microchip.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: AX/3+MrXQLrMZGdCMzz7qloA/HtezVya7Wd2Gdthc3hEhxRGyNjXPPBVOp241zUmLJoG/QGOEBSUMgbCSruaKpBOQiJBmK9ADFIpe7S8Rx3Krd8kETPJpIRin0dIY9z2QIuXWx0V4O5nIOYpaS4VWpA0PDM6SBk7DjFKQKlsgl/bW+bs1/GYIF3GSIMY/ducMo7hiBtGeIAFJYAYrrg7OxP/K6duLiQ4O+yN60smktdAbi8RYf4DzYvUHJcG8/XgiFm/EAif5yyx9fvC/ZNmRhIhCf5CEwNN9g6Qcha9ZqBLbh9PMa0GWPV6aJbTLGbwK+/0QnZiuIyHo5FFJfsxAfu+Y/TOhfQiuqyV3t93Dw4965Na9lHL12yRgtIeQOOKgH4iE2dGSY1CYx/zIxNKpfdQaJ3jMqelVmFbokv3/Ts=
+Content-ID: <2405F53375D403478DD0705798481038@namprd11.prod.outlook.com>
 MIME-Version: 1.0
-References: <CAHCN7x+Jv7yGPoB0Gm=TJ30ObLJduw2XomHkd++KqFEURYQcGg@mail.gmail.com>
- <CAOMZO5A_U4aYC4XZXK1r9JaLg-eRdXy8m6z4GatQp62rK4HZ6A@mail.gmail.com>
- <CAHCN7xJdzEppn8-74SvzACsA25bUHGdV7v=CfS08xzSi59Z2uw@mail.gmail.com>
- <CAOMZO5D2uzR6Sz1QnX3G-Ce_juxU-0PO_vBZX+nR1mpQB8s8-w@mail.gmail.com>
- <CAHCN7xJ32BYZu-DVTVLSzv222U50JDb8F0A_tLDERbb8kPdRxg@mail.gmail.com>
- <20190926160433.GD32311@linux.ibm.com>
- <CAHCN7xL1sFXDhKUpj04d3eDZNgLA1yGAOqwEeCxedy1Qm-JOfQ@mail.gmail.com>
- <20190928073331.GA5269@linux.ibm.com>
- <CAHCN7xJEvS2Si=M+BYtz+kY0M4NxmqDjiX9Nwq6_3GGBh3yg=w@mail.gmail.com>
- <CAHCN7xKLhWw4P9-sZKXQcfSfh2r3J_+rLxuxACW0UVgimCzyVw@mail.gmail.com>
- <20191002073605.GA30433@linux.ibm.com>
-In-Reply-To: <20191002073605.GA30433@linux.ibm.com>
-From: Adam Ford <aford173@gmail.com>
-Date: Wed, 2 Oct 2019 06:14:11 -0500
-Message-ID: <CAHCN7xL1MkJh44N3W_1+08DHmX__SqnfH6dqUzYzr2Wpg0kQyQ@mail.gmail.com>
-Subject: Re: [PATCH v2 00/21] Refine memblock API
-To: Mike Rapoport <rppt@linux.ibm.com>
+X-MS-Exchange-CrossTenant-Network-Message-Id: c5b47fd1-47de-4b13-94c1-08d7473d01c5
+X-MS-Exchange-CrossTenant-originalarrivaltime: 02 Oct 2019 13:32:44.6166 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 3f4057f3-b418-4d4e-ba84-d55b4e897d88
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: 3QxSm5NnT2VN7Bk+EYcb3Vi8JjlvfCncfSxAs7KXlM2QPr2KkwhqjrCGVuRB/+06LMTmBgixsKl/QF0xDu22D718HNPitHpWDT0SOXlnEgs=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM6PR11MB3226
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191002_041424_651110_2CEB721A 
-X-CRM114-Status: GOOD (  39.55  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20191002_063326_248058_62BB0768 
+X-CRM114-Status: GOOD (  13.60  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d44 listed in]
- [list.dnswl.org]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (aford173[at]gmail.com)
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [68.232.154.123 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (aford173[at]gmail.com)
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-snps-arc@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -102,313 +168,112 @@ List-Post: <mailto:linux-snps-arc@lists.infradead.org>
 List-Help: <mailto:linux-snps-arc-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-snps-arc>, 
  <mailto:linux-snps-arc-request@lists.infradead.org?subject=subscribe>
-Cc: Rich Felker <dalias@libc.org>, linux-ia64@vger.kernel.org,
- linux-sh@vger.kernel.org, Catalin Marinas <catalin.marinas@arm.com>,
- Heiko Carstens <heiko.carstens@de.ibm.com>, linux-mips@vger.kernel.org,
- Max Filippov <jcmvbkbc@gmail.com>, devicetree <devicetree@vger.kernel.org>,
- Guo Ren <guoren@kernel.org>, sparclinux@vger.kernel.org,
- Fabio Estevam <festevam@gmail.com>, Christoph Hellwig <hch@lst.de>,
- linux-s390@vger.kernel.org, linux-c6x-dev@linux-c6x.org,
- Yoshinori Sato <ysato@users.sourceforge.jp>,
- Richard Weinberger <richard@nod.at>, x86@kernel.org,
- Russell King <linux@armlinux.org.uk>, kasan-dev <kasan-dev@googlegroups.com>,
- Geert Uytterhoeven <geert@linux-m68k.org>, Mark Salter <msalter@redhat.com>,
- Dennis Zhou <dennis@kernel.org>, Matt Turner <mattst88@gmail.com>,
- linux-snps-arc@lists.infradead.org, Chris Healy <cphealy@gmail.com>,
- uclinux-h8-devel@lists.sourceforge.jp, Petr Mladek <pmladek@suse.com>,
- linux-xtensa@linux-xtensa.org, linux-alpha@vger.kernel.org,
- linux-um@lists.infradead.org,
- The etnaviv authors <etnaviv@lists.freedesktop.org>,
- linux-m68k@lists.linux-m68k.org, Rob Herring <robh+dt@kernel.org>,
- Greentime Hu <green.hu@gmail.com>, xen-devel@lists.xenproject.org,
- Stafford Horne <shorne@gmail.com>, Guan Xuetao <gxt@pku.edu.cn>,
- arm-soc <linux-arm-kernel@lists.infradead.org>,
- Michal Simek <monstr@monstr.eu>, Tony Luck <tony.luck@intel.com>,
- Linux Memory Management List <linux-mm@kvack.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- USB list <linux-usb@vger.kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Paul Burton <paul.burton@mips.com>, Vineet Gupta <vgupta@synopsys.com>,
- Michael Ellerman <mpe@ellerman.id.au>,
- Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
- "David S. Miller" <davem@davemloft.net>, openrisc@lists.librecores.org
+Cc: tmaimon77@gmail.com, linus.walleij@linaro.org, nsekhar@ti.com,
+ guoren@kernel.org, linux-stm32@st-md-mailman.stormreply.com, heiko@sntech.de,
+ linux-samsung-soc@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ khilman@baylibre.com, Ludovic.Desroches@microchip.com, linux-imx@nxp.com,
+ u.kleine-koenig@pengutronix.de, uclinux-h8-devel@lists.sourceforge.jp,
+ marc.zyngier@arm.com, s.hauer@pengutronix.de, linux-unisoc@lists.infradead.org,
+ khalasa@piap.pl, tglx@linutronix.de, sbranden@broadcom.com,
+ linux-kernel@vger.kernel.org, ralf@linux-mips.org, paul.burton@mips.com,
+ kernel@pengutronix.de, mark.rutland@arm.com, alexandre.belloni@bootlin.com,
+ jhogan@kernel.org, palmer@sifive.com, eric@anholt.net,
+ thierry.reding@gmail.com, manivannan.sadhasivam@linaro.org,
+ ysato@users.sourceforge.jp, zhang.lyra@gmail.com, daniel.lezcano@linaro.org,
+ jonathanh@nvidia.com, bgolaszewski@baylibre.com, kgene@kernel.org,
+ alexandre.torgue@st.com, linux-arm-msm@vger.kernel.org, sudeep.holla@arm.com,
+ lorenzo.pieralisi@arm.com, john.stultz@linaro.org,
+ linux-rpi-kernel@lists.infradead.org, linux-amlogic@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org, baohua@kernel.org, kaloz@openwrt.org,
+ sboyd@kernel.org, patrice.chotard@st.com, wahrenst@gmx.net,
+ mcoquelin.stm32@gmail.com, narmstrong@baylibre.com,
+ linux-tegra@vger.kernel.org, festevam@gmail.com, f.fainelli@gmail.com,
+ benjaminfair@google.com, shc_work@mail.ru, krzk@kernel.org, yuenn@google.com,
+ wens@csie.org, bcm-kernel-feedback-list@broadcom.com, orsonzhai@gmail.com,
+ linux-snps-arc@lists.infradead.org, rjui@broadcom.com, vz@mleia.com,
+ john@phrozen.org, tali.perry1@gmail.com, avifishman70@gmail.com,
+ venture@google.com, lftan@altera.com, linux-oxnas@groups.io,
+ shawnguo@kernel.org, afaerber@suse.de, baruch@tkos.co.il,
+ maxime.ripard@bootlin.com, liviu.dudau@arm.com, linux-mips@vger.kernel.org,
+ linux-riscv@lists.infradead.org, openbmc@lists.ozlabs.org,
+ linux@armlinux.org.uk, agross@kernel.org, slemieux.tyco@gmail.com,
+ devicetree@vger.kernel.org, aou@eecs.berkeley.edu,
+ linux-mediatek@lists.infradead.org, ssantosh@kernel.org,
+ matthias.bgg@gmail.com, monstr@monstr.eu, baolin.wang@linaro.org,
+ vgupta@synopsys.com, Nicolas.Ferre@microchip.com, linux@prisktech.co.nz,
+ nios2-dev@lists.rocketboards.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-snps-arc" <linux-snps-arc-bounces@lists.infradead.org>
 Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org
 
-On Wed, Oct 2, 2019 at 2:36 AM Mike Rapoport <rppt@linux.ibm.com> wrote:
->
-> Hi Adam,
->
-> On Tue, Oct 01, 2019 at 07:14:13PM -0500, Adam Ford wrote:
-> > On Sun, Sep 29, 2019 at 8:33 AM Adam Ford <aford173@gmail.com> wrote:
-> > >
-> > > I am attaching two logs.  I now the mailing lists will be unhappy, but
-> > >  don't want to try and spam a bunch of log through the mailing liast.
-> > > The two logs show the differences between the working and non-working
-> > > imx6q 3D accelerator when trying to run a simple glmark2-es2-drm demo.
-> > >
-> > > The only change between them is the 2 line code change you suggested.
-> > >
-> > > In both cases, I have cma=128M set in my bootargs.  Historically this
-> > > has been sufficient, but cma=256M has not made a difference.
-> > >
-> >
-> > Mike any suggestions on how to move forward?
-> > I was hoping to get the fixes tested and pushed before 5.4 is released
-> > if at all possible
->
-> I have a fix (below) that kinda restores the original behaviour, but I
-> still would like to double check to make sure it's not a band aid and I
-> haven't missed the actual root cause.
->
-> Can you please send me your device tree definition and the output of
->
-> cat /sys/kernel/debug/memblock/memory
->
-> and
->
-> cat /sys/kernel/debug/memblock/reserved
->
-> Thanks!
->
-
-Before the patch:
-
-# cat /sys/kernel/debug/memblock/memory
-   0: 0x10000000..0x8fffffff
-# cat /sys/kernel/debug/memblock/reserved
-   0: 0x10004000..0x10007fff
-   1: 0x10100000..0x11ab141f
-   2: 0x1fff1000..0x1fffcfff
-   3: 0x2ee40000..0x2ef53fff
-   4: 0x2ef56940..0x2ef56c43
-   5: 0x2ef56c48..0x2fffefff
-   6: 0x2ffff0c0..0x2ffff4d8
-   7: 0x2ffff500..0x2ffff55f
-   8: 0x2ffff580..0x2ffff703
-   9: 0x2ffff740..0x2ffff918
-  10: 0x2ffff940..0x2ffff9cf
-  11: 0x2ffffa00..0x2ffffa0f
-  12: 0x2ffffa40..0x2ffffa43
-  13: 0x2ffffa80..0x2ffffad5
-  14: 0x2ffffb00..0x2ffffb55
-  15: 0x2ffffb80..0x2ffffbd5
-  16: 0x2ffffc00..0x2ffffc4e
-  17: 0x2ffffc50..0x2ffffc6a
-  18: 0x2ffffc6c..0x2ffffce6
-  19: 0x2ffffce8..0x2ffffd02
-  20: 0x2ffffd04..0x2ffffd1e
-  21: 0x2ffffd20..0x2ffffd3a
-  22: 0x2ffffd3c..0x2ffffd56
-  23: 0x2ffffd58..0x2ffffe30
-  24: 0x2ffffe34..0x2ffffe4c
-  25: 0x2ffffe50..0x2ffffe68
-  26: 0x2ffffe6c..0x2ffffe84
-  27: 0x2ffffe88..0x2ffffea0
-  28: 0x2ffffea4..0x2ffffebc
-  29: 0x2ffffec0..0x2ffffedf
-  30: 0x2ffffee4..0x2ffffefc
-  31: 0x2fffff00..0x2fffff13
-  32: 0x2fffff28..0x2fffff4b
-  33: 0x2fffff50..0x2fffff84
-  34: 0x2fffff88..0x3fffffff
 
 
-After the patch:
-# cat /sys/kernel/debug/memblock/memory
-   0: 0x10000000..0x8fffffff
-# cat /sys/kernel/debug/memblock/reserved
-   0: 0x10004000..0x10007fff
-   1: 0x10100000..0x11ab141f
-   2: 0x1fff1000..0x1fffcfff
-   3: 0x3eec0000..0x3efd3fff
-   4: 0x3efd6940..0x3efd6c43
-   5: 0x3efd6c48..0x3fffbfff
-   6: 0x3fffc0c0..0x3fffc4d8
-   7: 0x3fffc500..0x3fffc55f
-   8: 0x3fffc580..0x3fffc703
-   9: 0x3fffc740..0x3fffc918
-  10: 0x3fffc940..0x3fffc9cf
-  11: 0x3fffca00..0x3fffca0f
-  12: 0x3fffca40..0x3fffca43
-  13: 0x3fffca80..0x3fffca83
-  14: 0x3fffcac0..0x3fffcb15
-  15: 0x3fffcb40..0x3fffcb95
-  16: 0x3fffcbc0..0x3fffcc15
-  17: 0x3fffcc28..0x3fffcc72
-  18: 0x3fffcc74..0x3fffcc8e
-  19: 0x3fffcc90..0x3fffcd0a
-  20: 0x3fffcd0c..0x3fffcd26
-  21: 0x3fffcd28..0x3fffcd42
-  22: 0x3fffcd44..0x3fffcd5e
-  23: 0x3fffcd60..0x3fffcd7a
-  24: 0x3fffcd7c..0x3fffce54
-  25: 0x3fffce58..0x3fffce70
-  26: 0x3fffce74..0x3fffce8c
-  27: 0x3fffce90..0x3fffcea8
-  28: 0x3fffceac..0x3fffcec4
-  29: 0x3fffcec8..0x3fffcee0
-  30: 0x3fffcee4..0x3fffcefc
-  31: 0x3fffcf00..0x3fffcf1f
-  32: 0x3fffcf28..0x3fffcf53
-  33: 0x3fffcf68..0x3fffcf8b
-  34: 0x3fffcf90..0x3fffcfac
-  35: 0x3fffcfb0..0x3fffffff
-  36: 0x80000000..0x8fffffff
+On 30.09.2019 17:32, Rob Herring wrote:
+> On Wed, Sep 11, 2019 at 07:18:07AM +0000, Claudiu.Beznea@microchip.com wrote:
+>>
+>>
+>> On 11.09.2019 03:03, Linus Walleij wrote:
+>>> External E-Mail
+>>>
+>>>
+>>> On Tue, Sep 10, 2019 at 4:11 PM Alexandre Belloni
+>>> <alexandre.belloni@bootlin.com> wrote:
+>>>> On 10/09/2019 16:08:26+0100, Sudeep Holla wrote:
+>>>>> On Tue, Sep 10, 2019 at 02:51:50PM +0000, Claudiu.Beznea@microchip.com wrote:
+>>>
+>>>>> In that case, why can't we identify capability that with the compatibles
+>>>>> for this timer IP ?
+>>>>>
+>>>>> IOW, I don't like the proposal as it's hardware limitation.
+>>>>
+>>>> To be clear, bot timers are exactly the same but can't be clocksource
+>>>> and clockevent at the same time. Why would we have different compatibles
+>>>> for the exact same IP?
+>>>
+>>> In that case why not just pick the first one you find as clocksource
+>>> and the second one as clock event? As they all come to the
+>>> same timer of init function two simple local state variables can
+>>> solve that:
+>>>
+>>> static bool registered_clocksource;
+>>> static bool registered_clockevent;
+>>>
+>>> probe(timer) {
+>>>    if (!registered_clocksource) {
+>>>        register_clocksource(timer);
+>>>        registrered_clocksource = true;
+>>>        return;
+>>>    }
+>>>    if (!registered_clockevent) {
+>>>        register_clockevent(timer);
+>>>        registered_clockevent = true;
+>>>        return;
+>>>    }
+>>>    pr_info("surplus timer %p\n", timer);
+>>> }
+>>>
+>>
+>> That was also my proposal for the driver I'm sending this series for (see
+>> [1]) but it has been proposed to implement a mechanism similar to this one
+>> in this series (see [2] and [3]).
+> 
+> This comes up over and over, and the answer is still no. Either each 
+> block is identical and doesn't matter which one is used for what or 
+> there is some h/w difference that you should describe. 
 
-> From 06529f861772b7dea2912fc2245debe4690139b8 Mon Sep 17 00:00:00 2001
-> From: Mike Rapoport <rppt@linux.ibm.com>
-> Date: Wed, 2 Oct 2019 10:14:17 +0300
-> Subject: [PATCH] mm: memblock: do not enforce current limit for memblock_phys*
->  family
->
-> Until commit 92d12f9544b7 ("memblock: refactor internal allocation
-> functions") the maximal address for memblock allocations was forced to
-> memblock.current_limit only for the allocation functions returning virtual
-> address. The changes introduced by that commit moved the limit enforcement
-> into the allocation core and as a result the allocation functions returning
-> physical address also started to limit allocations to
-> memblock.current_limit.
->
-> This caused breakage of etnaviv GPU driver:
->
-> [    3.682347] etnaviv etnaviv: bound 130000.gpu (ops gpu_ops)
-> [    3.688669] etnaviv etnaviv: bound 134000.gpu (ops gpu_ops)
-> [    3.695099] etnaviv etnaviv: bound 2204000.gpu (ops gpu_ops)
-> [    3.700800] etnaviv-gpu 130000.gpu: model: GC2000, revision: 5108
-> [    3.723013] etnaviv-gpu 130000.gpu: command buffer outside valid
-> memory window
-> [    3.731308] etnaviv-gpu 134000.gpu: model: GC320, revision: 5007
-> [    3.752437] etnaviv-gpu 134000.gpu: command buffer outside valid
-> memory window
-> [    3.760583] etnaviv-gpu 2204000.gpu: model: GC355, revision: 1215
-> [    3.766766] etnaviv-gpu 2204000.gpu: Ignoring GPU with VG and FE2.0
->
-> Restore the behaviour of memblock_phys* family so that these functions will
-> not enforce memblock.current_limit.
->
+There are no hardware differences in my case. The block just cannot work at
+the same time  as clocksource and clockevent. And on SAM9X60's we want to
+use it as clockevent for high resolution timers support.
 
-This fixed the issue.  Thank you
-
-Tested-by: Adam Ford <aford173@gmail.com> #imx6q-logicpd
-
-> Fixes: 92d12f9544b7 ("memblock: refactor internal allocation functions")
-> Reported-by: Adam Ford <aford173@gmail.com>
-> Signed-off-by: Mike Rapoport <rppt@linux.ibm.com>
-> ---
->  mm/memblock.c | 6 +++---
->  1 file changed, 3 insertions(+), 3 deletions(-)
->
-> diff --git a/mm/memblock.c b/mm/memblock.c
-> index 7d4f61a..c4b16ca 100644
-> --- a/mm/memblock.c
-> +++ b/mm/memblock.c
-> @@ -1356,9 +1356,6 @@ static phys_addr_t __init memblock_alloc_range_nid(phys_addr_t size,
->                 align = SMP_CACHE_BYTES;
->         }
->
-> -       if (end > memblock.current_limit)
-> -               end = memblock.current_limit;
-> -
->  again:
->         found = memblock_find_in_range_node(size, align, start, end, nid,
->                                             flags);
-> @@ -1469,6 +1466,9 @@ static void * __init memblock_alloc_internal(
->         if (WARN_ON_ONCE(slab_is_available()))
->                 return kzalloc_node(size, GFP_NOWAIT, nid);
->
-> +       if (max_addr > memblock.current_limit)
-> +               max_addr = memblock.current_limit;
-> +
->         alloc = memblock_alloc_range_nid(size, align, min_addr, max_addr, nid);
->
->         /* retry allocation without lower limit */
-> --
-> 2.7.4
->
->
-> > > adam
-> > >
-> > > On Sat, Sep 28, 2019 at 2:33 AM Mike Rapoport <rppt@linux.ibm.com> wrote:
-> > > >
-> > > > On Thu, Sep 26, 2019 at 02:35:53PM -0500, Adam Ford wrote:
-> > > > > On Thu, Sep 26, 2019 at 11:04 AM Mike Rapoport <rppt@linux.ibm.com> wrote:
-> > > > > >
-> > > > > > Hi,
-> > > > > >
-> > > > > > On Thu, Sep 26, 2019 at 08:09:52AM -0500, Adam Ford wrote:
-> > > > > > > On Wed, Sep 25, 2019 at 10:17 AM Fabio Estevam <festevam@gmail.com> wrote:
-> > > > > > > >
-> > > > > > > > On Wed, Sep 25, 2019 at 9:17 AM Adam Ford <aford173@gmail.com> wrote:
-> > > > > > > >
-> > > > > > > > > I tried cma=256M and noticed the cma dump at the beginning didn't
-> > > > > > > > > change.  Do we need to setup a reserved-memory node like
-> > > > > > > > > imx6ul-ccimx6ulsom.dtsi did?
-> > > > > > > >
-> > > > > > > > I don't think so.
-> > > > > > > >
-> > > > > > > > Were you able to identify what was the exact commit that caused such regression?
-> > > > > > >
-> > > > > > > I was able to narrow it down the 92d12f9544b7 ("memblock: refactor
-> > > > > > > internal allocation functions") that caused the regression with
-> > > > > > > Etnaviv.
-> > > > > >
-> > > > > >
-> > > > > > Can you please test with this change:
-> > > > > >
-> > > > >
-> > > > > That appears to have fixed my issue.  I am not sure what the impact
-> > > > > is, but is this a safe option?
-> > > >
-> > > > It's not really a fix, I just wanted to see how exactly 92d12f9544b7 ("memblock:
-> > > > refactor internal allocation functions") broke your setup.
-> > > >
-> > > > Can you share the dts you are using and the full kernel log?
-> > > >
-> > > > > adam
-> > > > >
-> > > > > > diff --git a/mm/memblock.c b/mm/memblock.c
-> > > > > > index 7d4f61a..1f5a0eb 100644
-> > > > > > --- a/mm/memblock.c
-> > > > > > +++ b/mm/memblock.c
-> > > > > > @@ -1356,9 +1356,6 @@ static phys_addr_t __init memblock_alloc_range_nid(phys_addr_t size,
-> > > > > >                 align = SMP_CACHE_BYTES;
-> > > > > >         }
-> > > > > >
-> > > > > > -       if (end > memblock.current_limit)
-> > > > > > -               end = memblock.current_limit;
-> > > > > > -
-> > > > > >  again:
-> > > > > >         found = memblock_find_in_range_node(size, align, start, end, nid,
-> > > > > >                                             flags);
-> > > > > >
-> > > > > > > I also noticed that if I create a reserved memory node as was done one
-> > > > > > > imx6ul-ccimx6ulsom.dtsi the 3D seems to work again, but without it, I
-> > > > > > > was getting errors regardless of the 'cma=256M' or not.
-> > > > > > > I don't have a problem using the reserved memory, but I guess I am not
-> > > > > > > sure what the amount should be.  I know for the video decoding 1080p,
-> > > > > > > I have historically used cma=128M, but with the 3D also needing some
-> > > > > > > memory allocation, is that enough or should I use 256M?
-> > > > > > >
-> > > > > > > adam
-> > > > > >
-> > > > > > --
-> > > > > > Sincerely yours,
-> > > > > > Mike.
-> > > > > >
-> > > >
-> > > > --
-> > > > Sincerely yours,
-> > > > Mike.
-> > > >
->
-> --
-> Sincerely yours,
-> Mike.
->
-
+> 
+> If you want something that would even be considered to put into DT, 
+> then define something BSD or other OS's could use too. (That's not a 
+> suggestion to respin this with generalized names.)
+> 
+> Rob
+> 
+> 
 _______________________________________________
 linux-snps-arc mailing list
 linux-snps-arc@lists.infradead.org
