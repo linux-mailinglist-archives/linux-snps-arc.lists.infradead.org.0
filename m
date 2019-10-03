@@ -2,30 +2,30 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 24788C89CC
-	for <lists+linux-snps-arc@lfdr.de>; Wed,  2 Oct 2019 15:35:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7C9B5C9C83
+	for <lists+linux-snps-arc@lfdr.de>; Thu,  3 Oct 2019 12:43:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
 	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SyihMt/oGgEP2biM6qpDOR58al7lVXRJZi8JNLAJn9g=; b=icJedjreNfShs9
-	JvjhNdYg/5sg+emsEbvbLpRGJkmqypkjoDZzvjHvQzgU0NIZKXTHYnJLn2uokEOWrye3bbdFD8BYT
-	dIPEYtuCoXqwD+qBXfgezgz52uczd/mwww3V0pQaJlykthNeivwGjsguWt8M1NrftOrditzD8+Xua
-	Dba7HZ27NQ8TzApzVlsSJ+hoLeplRiANKAQ5JA7AZR46ZleJojgfXx97kIAJ9cFoGmYlWNJgFLN2t
-	Yqwa9A0zJCw8rqmBiMf0rdChpaTK8Lvt4YsIwyxsk02jPno8MvqXxcMbM3WpNlbCLgWZbMy27Gxiz
-	K99Hxv6kl1DhYDndUgow==;
+	List-Owner; bh=qyaJhV+KRklkfRDqgHs4LNDfBPEmoRTW0iKT5pAllss=; b=bAw0izMbJI5Lfw
+	rVtD9tu+GtTXNF9SGk521UDudYYoqlIV7+tEr0RUyJ7mgT2DuV3r7Se9Rf/MBBKYxW/evEAczOnnR
+	TO0t7iDSxIPLJxvhLkIwgP8kdPmHcJ9vzG7nZlTMHDccD1ovdgGNaIiwCth00oQ41r+0f+UEGVhGb
+	nE2Myj9sQFlzI6Km3960DrD6mQ9NwzKNPxdyxLJMV4Vjxp9G3LwTF5HfpEr9pXnpHkH/IBDvMaAxU
+	KWPCwPee35ABmpSfPX8cVWU7KIMz6VTszcoQ/l0zZbYk/eR2gyg/35vZWa1F7B7vteOviPJ6WcQvz
+	mAhcJm6C0Nc7UGGsF1Vw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFenN-0002jv-LR; Wed, 02 Oct 2019 13:35:57 +0000
-Received: from esa4.microchip.iphmx.com ([68.232.154.123])
+	id 1iFyaG-0005C3-2o; Thu, 03 Oct 2019 10:43:44 +0000
+Received: from esa6.microchip.iphmx.com ([216.71.154.253])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFenK-0002iD-1G; Wed, 02 Oct 2019 13:35:55 +0000
-Received-SPF: Pass (esa4.microchip.iphmx.com: domain of
+ id 1iFyaC-0005A0-F4; Thu, 03 Oct 2019 10:43:42 +0000
+Received-SPF: Pass (esa6.microchip.iphmx.com: domain of
  Claudiu.Beznea@microchip.com designates 198.175.253.82 as
  permitted sender) identity=mailfrom;
- client-ip=198.175.253.82; receiver=esa4.microchip.iphmx.com;
+ client-ip=198.175.253.82; receiver=esa6.microchip.iphmx.com;
  envelope-from="Claudiu.Beznea@microchip.com";
  x-sender="Claudiu.Beznea@microchip.com";
  x-conformance=spf_only; x-record-type="v=spf1";
@@ -33,42 +33,42 @@ Received-SPF: Pass (esa4.microchip.iphmx.com: domain of
  a:smtpout.microchip.com a:mx1.microchip.iphmx.com
  a:mx2.microchip.iphmx.com include:servers.mcsv.net
  include:mktomail.com include:spf.protection.outlook.com ~all"
-Received-SPF: None (esa4.microchip.iphmx.com: no sender
+Received-SPF: None (esa6.microchip.iphmx.com: no sender
  authenticity information available from domain of
  postmaster@email.microchip.com) identity=helo;
- client-ip=198.175.253.82; receiver=esa4.microchip.iphmx.com;
+ client-ip=198.175.253.82; receiver=esa6.microchip.iphmx.com;
  envelope-from="Claudiu.Beznea@microchip.com";
  x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
-Authentication-Results: esa4.microchip.iphmx.com;
+Authentication-Results: esa6.microchip.iphmx.com;
  spf=Pass smtp.mailfrom=Claudiu.Beznea@microchip.com;
  spf=None smtp.helo=postmaster@email.microchip.com;
  dkim=pass (signature verified) header.i=@microchiptechnology.onmicrosoft.com;
  dmarc=pass (p=none dis=none) d=microchip.com
-IronPort-SDR: 4wJW8Z6pIw5pIUF5ER/InVYiXNlL/seNb69CH0Th+zlLPa0ShU8pnnPDakymNpoBG9viha+SFc
- cG5iDUGBMmGcPcm1bgipavHUex2T/z/vFq406jYcJWF0acTV7J2Y0bjvcHRSGhQTMh+EQD0rUV
- zh140DlLht4jdmYHm/hOX2Vi3jVcWleoDlq7R+9vXBvfDQs/x1lMOIWIaC/hskF2WPSRNFp4U5
- eGA5/2RFBuY8TKKrVE+dHpdkZkcA4Vj/lZHKj0rpPs/7lAR09+ZfHo9vWnrXMs2eu+SWG6PRyp
- QM8=
-X-IronPort-AV: E=Sophos;i="5.64,574,1559545200"; d="scan'208";a="50129074"
+IronPort-SDR: Kh5AeDeYqy3qrgTU4+YVPpMhCxxzB7hpqC16ge+KzRXkC0j0Bj0ul837NXkdfC9hUDJ+UtcRl8
+ u2vAeewPQELKMvISXpy4NhV2u7Xs7hN1SoV+PTkr37nCXJXftE4BPNsB0L6c+Orb7h0QucDCU0
+ JyWt1moq/7d0mX5owx65ZKAt5x9AdpaHEzgutpiQCcGZ0O2kgx4WcbVUhQXwIhGNBdn8YBONy3
+ /+12fXqBd/METlGevr8NNE977B7mvwDVsfEBtH93LKfQ0zluSwMB0yFpNPRLp/zRdpPXd7gzdR
+ CFk=
+X-IronPort-AV: E=Sophos;i="5.67,251,1566889200"; d="scan'208";a="48625222"
 Received: from smtpout.microchip.com (HELO email.microchip.com)
  ([198.175.253.82])
- by esa4.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 02 Oct 2019 06:35:51 -0700
-Received: from chn-vm-ex03.mchp-main.com (10.10.85.151) by
+ by esa6.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 03 Oct 2019 03:43:35 -0700
+Received: from chn-vm-ex04.mchp-main.com (10.10.85.152) by
  chn-vm-ex02.mchp-main.com (10.10.85.144) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1713.5; Wed, 2 Oct 2019 06:35:51 -0700
-Received: from NAM02-BL2-obe.outbound.protection.outlook.com (10.10.215.89) by
- email.microchip.com (10.10.87.152) with Microsoft SMTP Server
+ 15.1.1713.5; Thu, 3 Oct 2019 03:43:17 -0700
+Received: from NAM02-CY1-obe.outbound.protection.outlook.com (10.10.215.89) by
+ email.microchip.com (10.10.87.151) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id 15.1.1713.5
- via Frontend Transport; Wed, 2 Oct 2019 06:35:50 -0700
+ via Frontend Transport; Thu, 3 Oct 2019 03:43:17 -0700
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=k5iFVnEgr0wI+S84W5RERWGPGWDRI0Ah/ZzcjHWfhsJked8FWEbgPULZTQOqcWeGp027VpuiNK7/mKslxJL0dvnifZIK0q0Z/KjU29BlICGACRb9v091Yy1hGp/aGkXByfOEKcUKuGivnMo1m4zYgbFfUnAnDH83Q/ZFBEcRlMDeDHsRgbq0kdvdm5cafhZuxicL2B1o8RZR604BIa1sHQzO71XwUf5EnGTs4GUlU3/uqWr8I4ylCsRJTYL8z8EzGrWnzibl4q++6cSsEcgBxVnpIaE+s+gj0cNKnD5nAE9pT/7VoEffC3HI4gd00WSAA49zyvLy4hl3kDhGie+Xiw==
+ b=NmBcVLKEhij8qewyyT7i4CpKzD9t0NZqIkyY9+eOFAOrZhGpQdacVveONQFcG171NiLlVnKm1yn/5+pYyXUHcfHXlHiiRkSXPtUi4VErkQ0tJDomfxu+q1iGmtV7XVjn8lYAAhsSR+Vx+DyNLk/UUOd2HpDctIgdSB/v81zPbZ3HFb9sRI4vG1H9dnZpTNm+snKSkou5sfFjmJJ54qg+bDmBs7VFh1D7VmZ5OdO2jhASG71wbeIPkoiCpQXDP1VNQocH8+fjgDBrM99xT5W9yA0exuyS+lLiCrSu4v0H79S8o+kxr5aLd9IuDR9EbYKlv6iWFvRDpwtFikVhTka/dg==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=5FMHeUvg4V35rtNI89bSKaamLcyISpEcbJjLY1o2vEg=;
- b=EkmV5w/xNuPDIeFZdlGtaSDORY4O28KnMkGABYDsx7oPTkEpG0IMTDzy8odKxR/iOzZd23AS/gQaGrRpUX9mCxDvA2utU/3hqrx2//Vt7/k/cqpP7sEz25//IAvaK6OdyIvNs9hwwxJIzAfB7O69xOzTVAwpCsKUuHHe1KklTIN5qWvFddWgROuYNqMsK571zDlwTLKh0o3duJskAsQJ8y/NOqBZu5Pq+/rM7voCHS5ZhUVmLJQPDycRZ3F87fSFgrIN0C+aDdoEA+DJ0dlXSFRartRXHyCBJSY/0/ETXFm5z/OR3VY652seHV+S9qFlMFChiv8sQ/ufuRAUxYiM/g==
+ bh=4z6O/TIUCmreGOqJOF86HxnnUsT7MBXi3SZECPGHZWY=;
+ b=ipEsxUSmODC7eAYRu8BHncOy46qmydHd2ekcvaia5/ff2ievfAKKuDn3+FTABuch0QB5CkeH9eontv16kfrLH7XCITNaUfJFE+Zb151+W1pr+/KfhSWcZsCVYS7xtrFr3566KftZNmVJlXpWLEMRoVyuN1oNfgyS9mr67+H3L4DZKNZ17RKb9lhugoXH07hBU9P6wamrOhL3CQWhZnmWJrro8HEjZfLkzUjQENbyCNmFHck9bsOE1pcCveRD9kdqqTIgnPLSVFdUYPCmf83QXEPugTUFy2sb6vct4kCYeN7jUH3+pFSUv3ty8sCXJwHIj9oAszaOzvmIcNAHXMYSsA==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=microchip.com; dmarc=pass action=none
  header.from=microchip.com; dkim=pass header.d=microchip.com; arc=none
@@ -76,16 +76,16 @@ DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=microchiptechnology.onmicrosoft.com;
  s=selector2-microchiptechnology-onmicrosoft-com;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=5FMHeUvg4V35rtNI89bSKaamLcyISpEcbJjLY1o2vEg=;
- b=eE3Mcf1zkc5R4SVTUCCioGIwELmrDm60GckGF+3JFM1u2GcuRlaVeM+YZxR0F91zF+H4XFj/uAgWI+sjejgtBFX4K1IynM52ZV+2Trry6l+OhWXoA04A21ZtzmbjX+xIY8QKc4Jp1Wp4BtmtHVGpVsT+FFanxSalxsyqzLP93EE=
+ bh=4z6O/TIUCmreGOqJOF86HxnnUsT7MBXi3SZECPGHZWY=;
+ b=vb8BKKiiVyYfgsS4n8v6vqtYiJ+6Oa1ExfDLHe3pDxZxpwct6FkuKFhgqilSaiPxqAhQZ8Fo4At0x52LPpW9tEVk77CvPh5yc29/NYI8LLCFeBNQGcTRPrcP4GFM2iQGXO286nGyl+0hgmpiL77yjs/j/fHY/wiCEON97aYpRu0=
 Received: from DM6PR11MB3225.namprd11.prod.outlook.com (20.176.120.85) by
- DM6PR11MB3867.namprd11.prod.outlook.com (10.255.61.12) with Microsoft SMTP
+ DM6PR11MB3321.namprd11.prod.outlook.com (20.176.122.26) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2305.22; Wed, 2 Oct 2019 13:35:47 +0000
+ 15.20.2305.17; Thu, 3 Oct 2019 10:43:14 +0000
 Received: from DM6PR11MB3225.namprd11.prod.outlook.com
  ([fe80::3874:9f3c:5325:d22]) by DM6PR11MB3225.namprd11.prod.outlook.com
- ([fe80::3874:9f3c:5325:d22%6]) with mapi id 15.20.2305.023; Wed, 2 Oct 2019
- 13:35:47 +0000
+ ([fe80::3874:9f3c:5325:d22%6]) with mapi id 15.20.2305.023; Thu, 3 Oct 2019
+ 10:43:14 +0000
 From: <Claudiu.Beznea@microchip.com>
 To: <daniel.lezcano@linaro.org>, <robh+dt@kernel.org>, <mark.rutland@arm.com>, 
  <linux@armlinux.org.uk>, <nsekhar@ti.com>, <bgolaszewski@baylibre.com>,
@@ -116,64 +116,66 @@ To: <daniel.lezcano@linaro.org>, <robh+dt@kernel.org>, <mark.rutland@arm.com>,
  <sboyd@kernel.org>, <matthias.bgg@gmail.com>
 Subject: Re: [PATCH 0/7] add support for clocksource/clockevent DT selection
 Thread-Topic: [PATCH 0/7] add support for clocksource/clockevent DT selection
-Thread-Index: AQHVc8VbrLXkUp4vH02J/Sk0g3X+4Kc9pRwAgAm/1IA=
-Date: Wed, 2 Oct 2019 13:35:47 +0000
-Message-ID: <620a19d5-73b8-709d-9eec-49274ac23e51@microchip.com>
+Thread-Index: AQHVc8VbrLXkUp4vH02J/Sk0g3X+4Kc9pRwAgAm/1ICAAWIegA==
+Date: Thu, 3 Oct 2019 10:43:14 +0000
+Message-ID: <187d7020-fbe9-7984-2358-8a70faef019f@microchip.com>
 References: <1568123236-767-1-git-send-email-claudiu.beznea@microchip.com>
  <c3a68a08-d134-cd28-c8af-f757628e07f1@linaro.org>
  <72edc5fd-df05-cba5-5aa7-39da1709415b@microchip.com>
-In-Reply-To: <72edc5fd-df05-cba5-5aa7-39da1709415b@microchip.com>
+ <620a19d5-73b8-709d-9eec-49274ac23e51@microchip.com>
+In-Reply-To: <620a19d5-73b8-709d-9eec-49274ac23e51@microchip.com>
 Accept-Language: en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
 X-MS-TNEF-Correlator: 
-x-clientproxiedby: VI1PR04CA0095.eurprd04.prod.outlook.com
- (2603:10a6:803:64::30) To DM6PR11MB3225.namprd11.prod.outlook.com
+x-clientproxiedby: VI1PR07CA0173.eurprd07.prod.outlook.com
+ (2603:10a6:802:3e::21) To DM6PR11MB3225.namprd11.prod.outlook.com
  (2603:10b6:5:59::21)
 x-ms-exchange-messagesentrepresentingtype: 1
-x-tagtoolbar-keys: D20191002163523538
+x-tagtoolbar-keys: D20191003134249853
 x-originating-ip: [94.177.32.156]
 x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: cc8c7090-0dc1-40c4-0494-08d7473d6ec1
-x-ms-traffictypediagnostic: DM6PR11MB3867:
+x-ms-office365-filtering-correlation-id: a69bb484-2581-4090-3e6f-08d747ee7e34
+x-ms-traffictypediagnostic: DM6PR11MB3321:
+x-ms-exchange-purlcount: 1
 x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <DM6PR11MB386774FD333FC5FA3D48D789879C0@DM6PR11MB3867.namprd11.prod.outlook.com>
+x-microsoft-antispam-prvs: <DM6PR11MB33210DD9F544189800B49B2D879F0@DM6PR11MB3321.namprd11.prod.outlook.com>
 x-ms-oob-tlc-oobclassifiers: OLM:10000;
-x-forefront-prvs: 0178184651
+x-forefront-prvs: 01792087B6
 x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(366004)(136003)(346002)(39860400002)(396003)(376002)(189003)(199004)(51914003)(7416002)(6116002)(6486002)(7736002)(2501003)(110136005)(31696002)(3846002)(66066001)(86362001)(52116002)(305945005)(99286004)(2906002)(4326008)(71190400001)(5660300002)(316002)(71200400001)(6246003)(6436002)(31686004)(4744005)(8676002)(186003)(2171002)(6512007)(102836004)(256004)(1191002)(7366002)(66476007)(7406005)(7336002)(64756008)(66556008)(66946007)(14454004)(486006)(36756003)(478600001)(26005)(561944003)(476003)(2201001)(6506007)(8936002)(386003)(2616005)(53546011)(229853002)(81156014)(81166006)(11346002)(14444005)(76176011)(54906003)(25786009)(446003)(66446008)(921003)(1121003);
- DIR:OUT; SFP:1101; SCL:1; SRVR:DM6PR11MB3867;
+ SFS:(10009020)(346002)(396003)(366004)(39860400002)(376002)(136003)(51914003)(189003)(199004)(6436002)(6116002)(76176011)(25786009)(2501003)(5660300002)(316002)(53546011)(3846002)(386003)(6506007)(110136005)(8936002)(476003)(486006)(71200400001)(81166006)(966005)(81156014)(102836004)(2171002)(71190400001)(99286004)(1191002)(52116002)(2616005)(6246003)(7336002)(14444005)(186003)(2906002)(7366002)(256004)(6306002)(6512007)(561944003)(229853002)(2201001)(26005)(14454004)(7416002)(31696002)(86362001)(6486002)(4326008)(54906003)(7736002)(64756008)(66446008)(66476007)(66556008)(66946007)(305945005)(8676002)(478600001)(446003)(36756003)(66066001)(11346002)(7406005)(31686004)(921003)(1121003);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:DM6PR11MB3321;
  H:DM6PR11MB3225.namprd11.prod.outlook.com; FPR:; SPF:None; LANG:en;
  PTR:InfoNoRecords; MX:1; A:1; 
 received-spf: None (protection.outlook.com: microchip.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
 x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: jnq35Go1SdxUfLeV5q7JGdvdeI1+IDZRRiDqjq3AXlZiDtlTJzLbLr8etS7DJIJyFwgevBab4PbGIOR+8SDpnSmpLJm9Wl2VdYmucf8/AXrM5wlVSCC1twYujkjq7VGbNmmd3aUX2spK3yU9KMnBKc2SPJHTcVPJmK+hN1kAJQACrDOEOkiO4JSF8EuTlhSn30RJNteOKfgMQwGtIRlVwWA4B2jAhMQjajd45SChJbDEjEEBQDZa2Gss8t0AxaG6rLHVwb0PwqJaqdPl+f4O2JamhktKsqCdoHshwlOeUOtk6p2BwMYgx4iqTAkfCpzZz1sDlHzJYpBKiHPaVgfxHtMaRX8HWWlntMRcKaZ8pIp/pGa5RUwEcAED0UXDmPrQwMWL2pq6TeHaB3dA2KgHYPzInO0pAiiWXroGUKWt8QA=
-Content-ID: <DE320C98F40CBC4891F6ABBA6ED802E1@namprd11.prod.outlook.com>
+x-microsoft-antispam-message-info: 5PBf28dhTyEM+9xzweuKzLQ5Hf71K1eZ/d6kOgcgTpKsRjJCItVUlQZAeGuknztE3Q/o6x8QM65SOoyfcCo8Z2+Beih+T5rCxCW2HvbE7GOQac8vkdo2sRP5SnHjNFCE3RNBLdIOsAl+hl/uaQVOSpCxsA8d0TSoWnoeqJQ8la5s8Xs5NdRtMztgqsVs+xl8l+R7Nd9/5n39dKx1FOMScLpbkQaBdomNYHIPxsvmO8cUEr/MRSYT8P5CyK6kX1TJOpdw1aacriChcEaFgodmtYjZU9PsaD52Pj3neWGWBfuPne4hASiO+Aw5OeWtoJ1KaaB3DrO3hPscVSs+mV7DWPkS8rrSmdRVlE2O0yRDGTejpczZOi/L6URBqmvHMEWDZuue5C7tmYXewfnUJX+WFRtcafraXBkrRM5wmqXQL/8XAlMCaYuv4/p8Bdpa0HMahD3ms2znwq1mwEIlvVOCVw==
+Content-ID: <51816439DDB2EA498830860703402E31@namprd11.prod.outlook.com>
 MIME-Version: 1.0
-X-MS-Exchange-CrossTenant-Network-Message-Id: cc8c7090-0dc1-40c4-0494-08d7473d6ec1
-X-MS-Exchange-CrossTenant-originalarrivaltime: 02 Oct 2019 13:35:47.4953 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: a69bb484-2581-4090-3e6f-08d747ee7e34
+X-MS-Exchange-CrossTenant-originalarrivaltime: 03 Oct 2019 10:43:14.7902 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: 3f4057f3-b418-4d4e-ba84-d55b4e897d88
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: uM7thGsCAHUYVrFTXDZRkjiPPWhO9D+fJViyd9P5Mert1IPyRm9jhVvgj7sQYDZQ7+QS6o72Qapr5vZMCv+mYyI4pE4gaUo6Brx1EpXdqw0=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM6PR11MB3867
+X-MS-Exchange-CrossTenant-userprincipalname: 0CMnEwf05eZLlk9enoiVzUG4uHDU/anYqc9xKhCaWxWNmd36ZMXcfz6M1182SPjNMZEmzvgm531qYuHGQL4T1UyEkDN54kgtrooQKtkZGhA=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM6PR11MB3321
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191002_063554_153555_59D01AF7 
-X-CRM114-Status: GOOD (  11.85  )
+X-CRM114-CacheID: sfid-20191003_034340_621709_02F98A79 
+X-CRM114-Status: GOOD (  11.35  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [68.232.154.123 listed in list.dnswl.org]
+ medium trust [216.71.154.253 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-snps-arc@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -199,46 +201,54 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-snps-arc" <linux-snps-arc-bounces@lists.infradead.org>
 Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org
 
-Hi Daniel,
 
-Taking into account that Rob doesn't agree with the solution proposed in
-this series do you think there is a chance to merge this driver as is?
 
-If you have other suggestion I am open to try it.
-
-Thank you,
-Claudiu Beznea
-
-On 26.09.2019 11:42, Claudiu Beznea wrote:
-> 
-> 
-> On 25.09.2019 20:19, Daniel Lezcano wrote:
->> External E-Mail
->>
->>
->> Hi Claudiu,
->>
->> On 10/09/2019 15:47, Claudiu Beznea wrote:
->>> Hi,
->>>
->>> This series adds support to permit the selection of clocksource/clockevent
->>> via DT.
->>
->> Thanks for the proposal and taking care of making some progress on this.
->>
->> I just wanted to let you know I've been traveling but the series is in
->> my pipe and I did not forget it. I'll comment it next week.
-> 
+On 02.10.2019 16:35, Claudiu Beznea wrote:
 > Hi Daniel,
 > 
-> No problem. Thank you for letting me know.
+> Taking into account that Rob doesn't agree with the solution proposed in
+> this series do you think there is a chance to merge this driver as is?
+
+Sorry, I was talking here about the driver at [1].
+
+[1] https://lore.kernel.org/lkml/1552580772-8499-1-git-send-email-claudiu.beznea@microchip.com/
+
 > 
-> Claudiu
+> If you have other suggestion I am open to try it.
 > 
+> Thank you,
+> Claudiu Beznea
+> 
+> On 26.09.2019 11:42, Claudiu Beznea wrote:
 >>
->>  -- Daniel
 >>
+>> On 25.09.2019 20:19, Daniel Lezcano wrote:
+>>> External E-Mail
+>>>
+>>>
+>>> Hi Claudiu,
+>>>
+>>> On 10/09/2019 15:47, Claudiu Beznea wrote:
+>>>> Hi,
+>>>>
+>>>> This series adds support to permit the selection of clocksource/clockevent
+>>>> via DT.
+>>>
+>>> Thanks for the proposal and taking care of making some progress on this.
+>>>
+>>> I just wanted to let you know I've been traveling but the series is in
+>>> my pipe and I did not forget it. I'll comment it next week.
 >>
+>> Hi Daniel,
+>>
+>> No problem. Thank you for letting me know.
+>>
+>> Claudiu
+>>
+>>>
+>>>  -- Daniel
+>>>
+>>>
 _______________________________________________
 linux-snps-arc mailing list
 linux-snps-arc@lists.infradead.org
