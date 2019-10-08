@@ -2,50 +2,93 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8CC55CE7D3
-	for <lists+linux-snps-arc@lfdr.de>; Mon,  7 Oct 2019 17:39:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A0576CF1DD
+	for <lists+linux-snps-arc@lfdr.de>; Tue,  8 Oct 2019 06:42:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QlkRH2wmbzYn5SRtZIdJcWT87utMkDbxNBaTGwVTVEo=; b=P4RwubZQmO3Ra/
-	7X4zv+5/kKJc3L5wly9/U+sgcKn3EdUdaYgLLKsYhKqaEYLQYZIi4uGz1SH2FdgWHcfbbVlwi5e3F
-	QmfppgVNAP8xJoLPINnZ3rgextIDfd4VaH2I7GcIKaKbn1+PRcb3eZgB5vokE29CSOsZe25fZ3twO
-	8hkjce0ibjJdiOyogWS50Boi2owN0P0MNdE1bqQEDQds1Z7VhllLSj/1FSvstKO3YKB18VHPYBoQk
-	0AJydpXVMgaqGzCEwzHXvG2m+of/TU7m5TZGROVltZCpw549G8WFmUoAKiwpeNxq4SKu4WSncxc2M
-	Iy3WciBZkVitea4KPkiA==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:To:From:Subject:
+	MIME-Version:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=p0b2ER1RV0bHGQ8b3DazXwAIvLaqGvYzCpAZw3x6T4w=; b=BcA
+	cIVtNXGurbQz5ttDJ4db5bA9teHjxjJj5Ft2CiIeRiuhZYWr5HyKfiinlTEDwJRMfSrCwI4Z551mQ
+	IRNGDZ3sRVvcOeR92k68BDY95aTD7g1ubzbQxBTb1vlaNj5flHuygBLCctik3DuUY7sxkKFTukMMZ
+	WwHODY4ZK1P7sEHSoJ4UEgd1BOY2aiuv+NbY3yhxzZGjzmeR8I28StVHFoZjNXOHTSREtg9FJ76hF
+	2lxjIwYudpzBjxAA224WgDWXaKulaZLEIX2DzRRWE38JxGX6b/Jy9jmi1za+Apc55oteGXokndJl8
+	84SEm9n/yHg/PD6tYdQ7fznDYMwnMuw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHV6c-0003uc-0r; Mon, 07 Oct 2019 15:39:26 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHV60-00037K-3P; Mon, 07 Oct 2019 15:38:49 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 3DF3515AB;
- Mon,  7 Oct 2019 08:38:47 -0700 (PDT)
-Received: from e112269-lin.arm.com (unknown [10.1.197.21])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 71D2F3F6C4;
- Mon,  7 Oct 2019 08:38:44 -0700 (PDT)
-From: Steven Price <steven.price@arm.com>
-To: linux-mm@kvack.org
-Subject: [PATCH v11 02/22] arc: mm: Add p?d_leaf() definitions
-Date: Mon,  7 Oct 2019 16:38:02 +0100
-Message-Id: <20191007153822.16518-3-steven.price@arm.com>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20191007153822.16518-1-steven.price@arm.com>
-References: <20191007153822.16518-1-steven.price@arm.com>
+	id 1iHhKI-00086n-5r; Tue, 08 Oct 2019 04:42:22 +0000
+Received: from mx0a-001b2d01.pphosted.com ([148.163.156.1])
+ by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iHhJa-0007OX-0c
+ for linux-snps-arc@lists.infradead.org; Tue, 08 Oct 2019 04:41:39 +0000
+Received: from pps.filterd (m0187473.ppops.net [127.0.0.1])
+ by mx0a-001b2d01.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
+ x984aq3n132304
+ for <linux-snps-arc@lists.infradead.org>; Tue, 8 Oct 2019 00:41:34 -0400
+Received: from e06smtp07.uk.ibm.com (e06smtp07.uk.ibm.com [195.75.94.103])
+ by mx0a-001b2d01.pphosted.com with ESMTP id 2vepu0g75u-1
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=NOT)
+ for <linux-snps-arc@lists.infradead.org>; Tue, 08 Oct 2019 00:41:33 -0400
+Received: from localhost
+ by e06smtp07.uk.ibm.com with IBM ESMTP SMTP Gateway: Authorized Use Only!
+ Violators will be prosecuted
+ for <linux-snps-arc@lists.infradead.org> from <noreply@ellerman.id.au>;
+ Tue, 8 Oct 2019 05:41:31 +0100
+Received: from b06cxnps4074.portsmouth.uk.ibm.com (9.149.109.196)
+ by e06smtp07.uk.ibm.com (192.168.101.137) with IBM ESMTP SMTP Gateway:
+ Authorized Use Only! Violators will be prosecuted; 
+ (version=TLSv1/SSLv3 cipher=AES256-GCM-SHA384 bits=256/256)
+ Tue, 8 Oct 2019 05:41:29 +0100
+Received: from d06av21.portsmouth.uk.ibm.com (d06av21.portsmouth.uk.ibm.com
+ [9.149.105.232])
+ by b06cxnps4074.portsmouth.uk.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP id
+ x984fSIQ52297874
+ (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Tue, 8 Oct 2019 04:41:28 GMT
+Received: from d06av21.portsmouth.uk.ibm.com (unknown [127.0.0.1])
+ by IMSVA (Postfix) with ESMTP id AA9DB52054;
+ Tue,  8 Oct 2019 04:41:28 +0000 (GMT)
+Received: from ozlabs.au.ibm.com (unknown [9.192.253.14])
+ by d06av21.portsmouth.uk.ibm.com (Postfix) with ESMTP id 5A7B95204E;
+ Tue,  8 Oct 2019 04:41:28 +0000 (GMT)
+Received: from bran.ozlabs.ibm.com (haven.au.ibm.com [9.192.254.114])
+ by ozlabs.au.ibm.com (Postfix) with ESMTP id 4117CA026A;
+ Tue,  8 Oct 2019 15:41:26 +1100 (AEDT)
+Received: from 78c6c811cd18 (ka2.ozlabs.ibm.com [10.61.145.21])
+ by bran.ozlabs.ibm.com (Postfix) with ESMTP id 821DFE00E5;
+ Tue,  8 Oct 2019 15:41:26 +1100 (AEDT)
 MIME-Version: 1.0
+Subject: kisskb: FAILED linux-next/axs101_defconfig/arcompact Tue Oct 08, 15:40
+From: noreply@ellerman.id.au
+To: Vineet.Gupta1@synopsys.com, Alexey.Brodkin@synopsys.com,
+ linux-snps-arc@lists.infradead.org
+Date: Tue, 08 Oct 2019 04:41:26 -0000
+X-TM-AS-GCONF: 00
+x-cbid: 19100804-0028-0000-0000-000003A70673
+X-IBM-AV-DETECTION: SAVI=unused REMOTE=unused XFE=unused
+x-cbparentid: 19100804-0029-0000-0000-0000246918DF
+Message-Id: <20191008044126.1.22741@78c6c811cd18>
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
+ definitions=2019-10-08_01:, , signatures=0
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ priorityscore=1501
+ malwarescore=0 suspectscore=2 phishscore=0 bulkscore=0 spamscore=0
+ clxscore=1034 lowpriorityscore=0 mlxscore=0 impostorscore=0
+ mlxlogscore=623 adultscore=0 classifier=spam adjust=0 reason=mlx
+ scancount=1 engine=8.0.1-1908290000 definitions=main-1910080046
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191007_083848_198249_F0E247BA 
-X-CRM114-Status: GOOD (  11.09  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191007_214138_074335_FE8DFADC 
+X-CRM114-Status: GOOD (  11.78  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [148.163.156.1 listed in list.dnswl.org]
+ 0.7 SPF_NEUTRAL            SPF: sender does not match SPF record (neutral)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-snps-arc@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -58,52 +101,46 @@ List-Post: <mailto:linux-snps-arc@lists.infradead.org>
 List-Help: <mailto:linux-snps-arc-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-snps-arc>, 
  <mailto:linux-snps-arc-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <Mark.Rutland@arm.com>, Peter Zijlstra <peterz@infradead.org>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Dave Hansen <dave.hansen@linux.intel.com>, "H. Peter Anvin" <hpa@zytor.com>,
- Will Deacon <will@kernel.org>, "Liang, Kan" <kan.liang@linux.intel.com>,
- x86@kernel.org, Steven Price <steven.price@arm.com>,
- Ingo Molnar <mingo@redhat.com>, linux-snps-arc@lists.infradead.org,
- Arnd Bergmann <arnd@arndb.de>,
- =?UTF-8?q?J=C3=A9r=C3=B4me=20Glisse?= <jglisse@redhat.com>,
- Borislav Petkov <bp@alien8.de>, Andy Lutomirski <luto@kernel.org>,
- Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>, Vineet Gupta <vgupta@synopsys.com>,
- linux-kernel@vger.kernel.org, James Morse <james.morse@arm.com>,
- Andrew Morton <akpm@linux-foundation.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-snps-arc" <linux-snps-arc-bounces@lists.infradead.org>
 Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org
 
-walk_page_range() is going to be allowed to walk page tables other than
-those of user space. For this it needs to know when it has reached a
-'leaf' entry in the page tables. This information will be provided by the
-p?d_leaf() functions/macros.
+FAILED linux-next/axs101_defconfig/arcompact Tue Oct 08, 15:40
 
-For arc, we only have two levels, so only pmd_leaf() is needed.
+http://kisskb.ellerman.id.au/kisskb/buildresult/13985222/
 
-CC: Vineet Gupta <vgupta@synopsys.com>
-CC: linux-snps-arc@lists.infradead.org
-Signed-off-by: Steven Price <steven.price@arm.com>
----
- arch/arc/include/asm/pgtable.h | 1 +
- 1 file changed, 1 insertion(+)
+Commit:   Add linux-next specific files for 20191008
+          442630f691a1537b7e0cc35e3d580222077549cb
+Compiler: arc-buildroot-linux-uclibc-gcc (Buildroot 2015.08.1) 4.8.4 / GNU ld (GNU Binutils) 2.23.2
 
-diff --git a/arch/arc/include/asm/pgtable.h b/arch/arc/include/asm/pgtable.h
-index 7addd0301c51..5ec798e50836 100644
---- a/arch/arc/include/asm/pgtable.h
-+++ b/arch/arc/include/asm/pgtable.h
-@@ -274,6 +274,7 @@ static inline void pmd_set(pmd_t *pmdp, pte_t *ptep)
- #define pmd_none(x)			(!pmd_val(x))
- #define	pmd_bad(x)			((pmd_val(x) & ~PAGE_MASK))
- #define pmd_present(x)			(pmd_val(x))
-+#define pmd_leaf(x)			(pmd_val(pmd) & _PAGE_HW_SZ)
- #define pmd_clear(xp)			do { pmd_val(*(xp)) = 0; } while (0)
- 
- #define pte_page(pte)		pfn_to_page(pte_pfn(pte))
--- 
-2.20.1
+Possible errors
+---------------
+
+include/linux/bits.h:24:21: error: first argument to '__builtin_choose_expr' not a constant
+include/linux/build_bug.h:16:51: error: bit-field '<anonymous>' width not an integer constant
+make[4]: *** [scripts/Makefile.build:266: drivers/base/regmap/regmap.o] Error 1
+make[3]: *** [scripts/Makefile.build:509: drivers/base/regmap] Error 2
+make[2]: *** [scripts/Makefile.build:509: drivers/base] Error 2
+include/linux/bits.h:24:21: error: first argument to '__builtin_choose_expr' not a constant
+include/linux/build_bug.h:16:51: error: bit-field '<anonymous>' width not an integer constant
+include/linux/bits.h:24:21: error: first argument to '__builtin_choose_expr' not a constant
+include/linux/build_bug.h:16:51: error: bit-field '<anonymous>' width not an integer constant
+make[3]: *** [scripts/Makefile.build:266: drivers/clk/clk-multiplier.o] Error 1
+make[2]: *** [scripts/Makefile.build:509: drivers/clk] Error 2
+make[1]: *** [Makefile:1649: drivers] Error 2
+include/linux/bits.h:24:21: error: first argument to '__builtin_choose_expr' not a constant
+include/linux/build_bug.h:16:51: error: bit-field '<anonymous>' width not an integer constant
+make[3]: *** [scripts/Makefile.build:265: kernel/time/sched_clock.o] Error 1
+make[2]: *** [scripts/Makefile.build:509: kernel/time] Error 2
+make[1]: *** [Makefile:1649: kernel] Error 2
+make: *** [Makefile:179: sub-make] Error 2
+
+Possible warnings (2)
+----------------------
+
+<stdin>:1511:2: warning: #warning syscall clone3 not implemented [-Wcpp]
+net/ipv4/tcp_input.c:4384:49: warning: array subscript is above array bounds [-Warray-bounds]
 
 
 _______________________________________________
