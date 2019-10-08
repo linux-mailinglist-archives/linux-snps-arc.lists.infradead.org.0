@@ -2,57 +2,69 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1F5F9CF4B7
-	for <lists+linux-snps-arc@lfdr.de>; Tue,  8 Oct 2019 10:13:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2CE7DCFDFE
+	for <lists+linux-snps-arc@lfdr.de>; Tue,  8 Oct 2019 17:45:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5CKGB0kNr/kZQw+4ISuE6St+32yjRfuXzRgc5DK4Wjg=; b=IkA4XePp9TSvzP
-	FeEf9Yl8QHY2p1Rrkam5LzPZ8XBJDO8pzYJo47Rn8+Ldb6CIF6+GHrOkCFTUZheHYI/CwSye2wcZc
-	+fqrjKJUflf9Notcg7HLWqcVpiv7xn9FFxIYJPvY7PHUuoWjytKmJhNXLinI4keDPSV9/8BbFrmRq
-	W6vRVksU3T0SHU+c2D7rCAfv4IUh83kiRcbFcv4vC6QrgWS0t9yxP36yfhWn6P6oejVNqC/P8RmGW
-	W2Ll7dFDg/JAsJHE/GGt9hnb8LKp6Bh+aDt2kQzDiumhgsU/btOn6X1H5hl5kp2f1fH1j437W5YYF
-	fafymoYpqx/KtSWdVM7w==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=Tcm07v++THXM0Lkyqjmu93+XUI+0L820yzXaUEYFP7o=; b=Maq
+	ZyYLbd/AF8KPSCPCRlAPB2cGOdXWGxGujThIosh/XWixxo1nq4Q77aJBcSXYilow8ZzD/YFhJIQQ1
+	kry1Ufm0R/flXH+2AiaRLY1zjuZJVMgloj0GZth+ZstukhyoJ9uKVfCkjtZygTvX+gEux86p1q4I0
+	a+WFRWxfM+VvFeXdy1gJnLPxrEatowrFSU9uu45F5mlBX0sJ142hQwZVAEn0V947uRIzBB4xrZF2u
+	lr15e31h9Tudn18jOx1eTLwyvSw+1MFaMGnN+IZqgef6/NdM0xIY5KasgmIPJXxMyzqT93s73JlTl
+	6jFtHQEDMMatQxMr8YdBJxSgwFsBrjA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHkcS-0005L1-Lg; Tue, 08 Oct 2019 08:13:20 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHkcK-0005Cu-5j; Tue, 08 Oct 2019 08:13:13 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8C2581570;
- Tue,  8 Oct 2019 01:13:11 -0700 (PDT)
-Received: from [10.162.40.139] (p8cg001049571a15.blr.arm.com [10.162.40.139])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- 28D403F6C4; Tue,  8 Oct 2019 01:12:58 -0700 (PDT)
-Subject: Re: [PATCH V4 2/2] mm/pgtable/debug: Add test validating architecture
- page table helpers
-To: "Kirill A. Shutemov" <kirill@shutemov.name>, Ingo Molnar <mingo@kernel.org>
-References: <1570427124-21887-1-git-send-email-anshuman.khandual@arm.com>
- <1570427124-21887-3-git-send-email-anshuman.khandual@arm.com>
- <20191007130617.GB56546@gmail.com> <20191007132607.4q537nauwfn5thol@box>
- <20191007135158.GA36360@gmail.com> <20191007140058.um5g44rvxyzyiref@box>
-From: Anshuman Khandual <anshuman.khandual@arm.com>
-Message-ID: <881796fc-c35e-3790-a1ee-7031c6cdb38d@arm.com>
-Date: Tue, 8 Oct 2019 13:43:22 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
- Thunderbird/52.9.1
-MIME-Version: 1.0
-In-Reply-To: <20191007140058.um5g44rvxyzyiref@box>
-Content-Language: en-US
+	id 1iHrfm-0003kK-HI; Tue, 08 Oct 2019 15:45:14 +0000
+Received: from smtprelay-out1.synopsys.com ([198.182.47.102])
+ by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iHrbl-0007Wr-U4
+ for linux-snps-arc@lists.infradead.org; Tue, 08 Oct 2019 15:41:10 +0000
+Received: from mailhost.synopsys.com (mdc-mailhost1.synopsys.com
+ [10.225.0.209])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
+ (No client certificate requested)
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id D629BC047C;
+ Tue,  8 Oct 2019 15:40:58 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
+ t=1570549264; bh=8ORcgaO4plc79eTAc90wLcFN6hoqN0TPEOWeaA57+jU=;
+ h=From:To:Cc:Subject:Date:From;
+ b=bJxNhtkfZag79Pllm1++Lb756IHTOJXOJR5VFV5FUTGfF+Ue8QUeiHKnmayqdmzkU
+ nGZ/e9SE5f11I8asmg31uxKO26QHRDnovowwyxbAGLT22BMRQk2+1cZRVL6bP+tadN
+ Hy5k26peNyoY55KD6K5asCpXOYqAdLLYKXU5lUwIds4WwkvT8o5OINO7OCSg5v3+fC
+ ufPYllNPUsXt505Ups2Z5njguRe7ptg8GbeOh6a9Cy9wahs3p+uwlbJxkMIqbK4Ts4
+ xxLgHcZu3b1C2HshRAUzT0AkzL8Mk0RoBeNanAWORJlzJ2lsyYuIS32nTqkajUnt+d
+ /fcrhv53npj+Q==
+Received: from abrodkin-e7480.internal.synopsys.com
+ (abrodkin-e7480.internal.synopsys.com [10.121.8.24])
+ by mailhost.synopsys.com (Postfix) with ESMTP id 98706A005B;
+ Tue,  8 Oct 2019 15:40:56 +0000 (UTC)
+From: Alexey Brodkin <Alexey.Brodkin@synopsys.com>
+To: u-boot@lists.denx.de
+Subject: [PATCH] arc: emsdp/iotdk: Switch to DM_MMC
+Date: Tue,  8 Oct 2019 18:40:54 +0300
+Message-Id: <20191008154054.19892-1-abrodkin@synopsys.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191008_011312_300546_21D9B19E 
-X-CRM114-Status: GOOD (  19.61  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191008_084106_041077_CD3BF3F5 
+X-CRM114-Status: GOOD (  10.20  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-snps-arc@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,102 +76,205 @@ List-Post: <mailto:linux-snps-arc@lists.infradead.org>
 List-Help: <mailto:linux-snps-arc-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-snps-arc>, 
  <mailto:linux-snps-arc-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, linux-ia64@vger.kernel.org,
- linux-sh@vger.kernel.org, Peter Zijlstra <peterz@infradead.org>,
- James Hogan <jhogan@kernel.org>,
- Tetsuo Handa <penguin-kernel@i-love.sakura.ne.jp>,
- Heiko Carstens <heiko.carstens@de.ibm.com>, Michal Hocko <mhocko@kernel.org>,
- linux-mm@kvack.org, Dave Hansen <dave.hansen@intel.com>,
- Paul Mackerras <paulus@samba.org>, sparclinux@vger.kernel.org,
- Thomas Gleixner <tglx@linutronix.de>, linux-s390@vger.kernel.org,
- Michael Ellerman <mpe@ellerman.id.au>, x86@kernel.org,
- Russell King - ARM Linux <linux@armlinux.org.uk>,
- Matthew Wilcox <willy@infradead.org>, Steven Price <Steven.Price@arm.com>,
- Jason Gunthorpe <jgg@ziepe.ca>, Gerald Schaefer <gerald.schaefer@de.ibm.com>,
- linux-snps-arc@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- Kees Cook <keescook@chromium.org>,
- Masahiro Yamada <yamada.masahiro@socionext.com>,
- Mark Brown <broonie@kernel.org>, Dan Williams <dan.j.williams@intel.com>,
- Vlastimil Babka <vbabka@suse.cz>, Christophe Leroy <christophe.leroy@c-s.fr>,
- Sri Krishna chowdary <schowdary@nvidia.com>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-mips@vger.kernel.org,
- Ralf Baechle <ralf@linux-mips.org>, linux-kernel@vger.kernel.org,
- Paul Burton <paul.burton@mips.com>, Mike Rapoport <rppt@linux.vnet.ibm.com>,
- Vineet Gupta <vgupta@synopsys.com>,
- Martin Schwidefsky <schwidefsky@de.ibm.com>,
- Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
- "David S. Miller" <davem@davemloft.net>
+Cc: linux-snps-arc@lists.infradead.org,
+ Alexey Brodkin <Alexey.Brodkin@synopsys.com>, uboot-snps-arc@synopsys.com
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-snps-arc" <linux-snps-arc-bounces@lists.infradead.org>
 Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org
 
+Somehow EMSDP & IoT DK boards were skipped on ARC boads conversion
+to DM MMC. So doing it now.
+
+Signed-off-by: Alexey Brodkin <abrodkin@synopsys.com>
+---
+ arch/arc/dts/emsdp.dts                 | 23 ++++++++++++++++++
+ arch/arc/dts/iot_devkit.dts            | 22 ++++++++++++++++++
+ board/synopsys/emsdp/emsdp.c           | 29 -----------------------
+ board/synopsys/iot_devkit/iot_devkit.c | 32 --------------------------
+ configs/emsdp_defconfig                |  2 ++
+ configs/iot_devkit_defconfig           |  2 ++
+ 6 files changed, 49 insertions(+), 61 deletions(-)
+
+diff --git a/arch/arc/dts/emsdp.dts b/arch/arc/dts/emsdp.dts
+index d307b95d8e..77362354d5 100644
+--- a/arch/arc/dts/emsdp.dts
++++ b/arch/arc/dts/emsdp.dts
+@@ -32,4 +32,27 @@
+ 		reg-shift = <2>;
+ 		reg-io-width = <4>;
+ 	};
++
++	mmcclk_biu: mmcclk-biu {
++		compatible = "fixed-clock";
++		clock-frequency = <100000000>;
++		#clock-cells = <0>;
++	};
++
++	mmcclk_ciu: mmcclk-ciu {
++		compatible = "fixed-clock";
++		clock-frequency = <100000000>;
++		#clock-cells = <0>;
++	};
++
++	mmc: mmc0@f0010000 {
++		compatible = "snps,dw-mshc";
++		reg = <0xf0010000 0x400>;
++		bus-width = <4>;
++		fifo-depth = <256>;
++		clocks = <&mmcclk_biu>, <&mmcclk_ciu>;
++		clock-names = "biu", "ciu";
++		max-frequency = <25000000>;
++	};
++
+ };
+diff --git a/arch/arc/dts/iot_devkit.dts b/arch/arc/dts/iot_devkit.dts
+index ebf5a950f0..e2cb602cae 100644
+--- a/arch/arc/dts/iot_devkit.dts
++++ b/arch/arc/dts/iot_devkit.dts
+@@ -42,4 +42,26 @@
+ 		compatible = "nop-phy";
+ 		#phy-cells = <0>;
+ 	};
++
++	mmcclk_biu: mmcclk-biu {
++		compatible = "fixed-clock";
++		clock-frequency = <50000000>;
++		#clock-cells = <0>;
++	};
++
++	mmcclk_ciu: mmcclk-ciu {
++		compatible = "fixed-clock";
++		clock-frequency = <50000000>;
++		#clock-cells = <0>;
++	};
++
++	mmc: mmc0@f000b000 {
++		compatible = "snps,dw-mshc";
++		reg = <0xf000b000 0x400>;
++		bus-width = <4>;
++		fifo-depth = <256>;
++		clocks = <&mmcclk_biu>, <&mmcclk_ciu>;
++		clock-names = "biu", "ciu";
++		max-frequency = <25000000>;
++	};
+ };
+diff --git a/board/synopsys/emsdp/emsdp.c b/board/synopsys/emsdp/emsdp.c
+index 7a3fd5b7f2..5ba9f862e1 100644
+--- a/board/synopsys/emsdp/emsdp.c
++++ b/board/synopsys/emsdp/emsdp.c
+@@ -85,35 +85,6 @@ int board_early_init_r(void)
+ 	return 0;
+ }
+ 
+-int board_mmc_init(bd_t *bis)
+-{
+-	struct dwmci_host *host = NULL;
+-
+-	host = malloc(sizeof(struct dwmci_host));
+-	if (!host) {
+-		printf("dwmci_host malloc fail!\n");
+-		return 1;
+-	}
+-
+-	memset(host, 0, sizeof(struct dwmci_host));
+-	host->name = "Synopsys Mobile storage";
+-	host->ioaddr = SDIO_BASE;
+-	host->buswidth = 4;
+-	host->dev_index = 0;
+-	host->bus_hz = 50000000;
+-
+-	add_dwmci(host, host->bus_hz / 2, 400000);
+-
+-	return 0;
+-}
+-
+-int board_mmc_getcd(struct mmc *mmc)
+-{
+-	struct dwmci_host *host = mmc->priv;
+-
+-	return !(dwmci_readl(host, DWMCI_CDETECT) & 1);
+-}
+-
+ #define CREG_BASE		0xF0001000
+ #define CREG_BOOT		(void *)(CREG_BASE + 0x0FF0)
+ #define CREG_IP_SW_RESET	(void *)(CREG_BASE + 0x0FF0)
+diff --git a/board/synopsys/iot_devkit/iot_devkit.c b/board/synopsys/iot_devkit/iot_devkit.c
+index 8424e09bd3..9dbdc128f8 100644
+--- a/board/synopsys/iot_devkit/iot_devkit.c
++++ b/board/synopsys/iot_devkit/iot_devkit.c
+@@ -145,38 +145,6 @@ int mach_cpu_init(void)
+ 	return set_cpu_freq(gd->cpu_clk);
+ }
+ 
+-#define ARC_PERIPHERAL_BASE	0xF0000000
+-#define SDIO_BASE		(ARC_PERIPHERAL_BASE + 0xB000)
+-
+-int board_mmc_init(bd_t *bis)
+-{
+-	struct dwmci_host *host = NULL;
+-
+-	host = malloc(sizeof(struct dwmci_host));
+-	if (!host) {
+-		printf("dwmci_host malloc fail!\n");
+-		return -ENOMEM;
+-	}
+-
+-	memset(host, 0, sizeof(struct dwmci_host));
+-	host->name = "Synopsys Mobile storage";
+-	host->ioaddr = (void *)SDIO_BASE;
+-	host->buswidth = 4;
+-	host->dev_index = 0;
+-	host->bus_hz = 50000000;
+-
+-	add_dwmci(host, host->bus_hz / 2, 400000);
+-
+-	return 0;
+-}
+-
+-int board_mmc_getcd(struct mmc *mmc)
+-{
+-	struct dwmci_host *host = mmc->priv;
+-
+-	return !(dwmci_readl(host, DWMCI_CDETECT) & 1);
+-}
+-
+ #define IOTDK_RESET_SEQ		0x55AA6699
+ 
+ void reset_cpu(ulong addr)
+diff --git a/configs/emsdp_defconfig b/configs/emsdp_defconfig
+index 5e55e3e2b2..42415ea713 100644
+--- a/configs/emsdp_defconfig
++++ b/configs/emsdp_defconfig
+@@ -24,7 +24,9 @@ CONFIG_ENV_FAT_DEVICE_AND_PART="0:1"
+ # CONFIG_NET is not set
+ CONFIG_DM=y
+ CONFIG_MMC=y
++CONFIG_DM_MMC=y
+ CONFIG_MMC_DW=y
++CONFIG_MMC_DW_SNPS=y
+ CONFIG_DM_SERIAL=y
+ CONFIG_SYS_NS16550=y
+ CONFIG_FS_FAT_MAX_CLUSTSIZE=4096
+diff --git a/configs/iot_devkit_defconfig b/configs/iot_devkit_defconfig
+index 24bbe3fc5d..42278d4fb1 100644
+--- a/configs/iot_devkit_defconfig
++++ b/configs/iot_devkit_defconfig
+@@ -29,7 +29,9 @@ CONFIG_ENV_FAT_DEVICE_AND_PART="0:1"
+ # CONFIG_NET is not set
+ CONFIG_DM=y
+ CONFIG_MMC=y
++CONFIG_DM_MMC=y
+ CONFIG_MMC_DW=y
++CONFIG_MMC_DW_SNPS=y
+ CONFIG_DM_SERIAL=y
+ CONFIG_SYS_NS16550=y
+ CONFIG_USB=y
+-- 
+2.17.1
 
 
-On 10/07/2019 07:30 PM, Kirill A. Shutemov wrote:
-> On Mon, Oct 07, 2019 at 03:51:58PM +0200, Ingo Molnar wrote:
->>
->> * Kirill A. Shutemov <kirill@shutemov.name> wrote:
->>
->>> On Mon, Oct 07, 2019 at 03:06:17PM +0200, Ingo Molnar wrote:
->>>>
->>>> * Anshuman Khandual <anshuman.khandual@arm.com> wrote:
->>>>
->>>>> This adds a test module which will validate architecture page table helpers
->>>>> and accessors regarding compliance with generic MM semantics expectations.
->>>>> This will help various architectures in validating changes to the existing
->>>>> page table helpers or addition of new ones.
->>>>>
->>>>> Test page table and memory pages creating it's entries at various level are
->>>>> all allocated from system memory with required alignments. If memory pages
->>>>> with required size and alignment could not be allocated, then all depending
->>>>> individual tests are skipped.
->>>>
->>>>> diff --git a/arch/x86/include/asm/pgtable_64_types.h b/arch/x86/include/asm/pgtable_64_types.h
->>>>> index 52e5f5f2240d..b882792a3999 100644
->>>>> --- a/arch/x86/include/asm/pgtable_64_types.h
->>>>> +++ b/arch/x86/include/asm/pgtable_64_types.h
->>>>> @@ -40,6 +40,8 @@ static inline bool pgtable_l5_enabled(void)
->>>>>  #define pgtable_l5_enabled() 0
->>>>>  #endif /* CONFIG_X86_5LEVEL */
->>>>>  
->>>>> +#define mm_p4d_folded(mm) (!pgtable_l5_enabled())
->>>>> +
->>>>>  extern unsigned int pgdir_shift;
->>>>>  extern unsigned int ptrs_per_p4d;
->>>>
->>>> Any deep reason this has to be a macro instead of proper C?
->>>
->>> It's a way to override the generic mm_p4d_folded(). It can be rewritten
->>> as inline function + define. Something like:
->>>
->>> #define mm_p4d_folded mm_p4d_folded
->>> static inline bool mm_p4d_folded(struct mm_struct *mm)
->>> {
->>> 	return !pgtable_l5_enabled();
->>> }
->>>
->>> But I don't see much reason to be more verbose here than needed.
->>
->> C type checking? Documentation? Yeah, I know it's just a one-liner, but 
->> the principle of the death by a thousand cuts applies here.
-> 
-> Okay, if you think it worth it. Anshuman, could you fix it up for the next
-> submission?
-
-Sure, will do.
-
-> 
-> 
->> BTW., any reason this must be in the low level pgtable_64_types.h type 
->> header, instead of one of the API level header files?
-> 
-> I defined it next pgtable_l5_enabled(). What is more appropriate place to
-> you? pgtable_64.h? Yeah, it makes sense.
-
-
-Needs to be moved to arch/x86/include/asm/pgtable_64.h as well ?
 
 _______________________________________________
 linux-snps-arc mailing list
