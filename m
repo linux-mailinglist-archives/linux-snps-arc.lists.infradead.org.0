@@ -2,7 +2,7 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2CE7DCFDFE
+	by mail.lfdr.de (Postfix) with ESMTPS id 896C6CFDFF
 	for <lists+linux-snps-arc@lfdr.de>; Tue,  8 Oct 2019 17:45:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
@@ -10,47 +10,49 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
 	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=Tcm07v++THXM0Lkyqjmu93+XUI+0L820yzXaUEYFP7o=; b=Maq
-	ZyYLbd/AF8KPSCPCRlAPB2cGOdXWGxGujThIosh/XWixxo1nq4Q77aJBcSXYilow8ZzD/YFhJIQQ1
-	kry1Ufm0R/flXH+2AiaRLY1zjuZJVMgloj0GZth+ZstukhyoJ9uKVfCkjtZygTvX+gEux86p1q4I0
-	a+WFRWxfM+VvFeXdy1gJnLPxrEatowrFSU9uu45F5mlBX0sJ142hQwZVAEn0V947uRIzBB4xrZF2u
-	lr15e31h9Tudn18jOx1eTLwyvSw+1MFaMGnN+IZqgef6/NdM0xIY5KasgmIPJXxMyzqT93s73JlTl
-	6jFtHQEDMMatQxMr8YdBJxSgwFsBrjA==;
+	References:List-Owner; bh=7z5XRuppEspxIntll8PLEYVLx/6Wfs4JaQm+tJcezrs=; b=n91
+	ZdvXRodg6XCBRkB0e8EteuuHitp6C/mmL+CE8/peHaMIjzKb6+vlnrSDMWTtXpLdt1VjQTP4/3iQA
+	hpLs25CGLDEJvgW+RSW3VIgWMHrpdlPS7HJGpSGuDPIzCSIBFAszsjuGeO/v6BGxZc+Rf+ngeXMe2
+	DLFFgdKbyl3M8laFR2+ZlER8wJ5Caq9tbKTMFDNeJKjB1df0osduOC6+agbnNVOrI97qRqCby4JvO
+	wlM8jNQ0QbhQETYuLjuNCd4tQOmTbm/DVg14S33nU4gORQxgQdixM0/duKryGkD1dCY6Y1Wvy9W+I
+	HBnK0Jao68usDsXrUQxxpFFQjwOBRog==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHrfm-0003kK-HI; Tue, 08 Oct 2019 15:45:14 +0000
-Received: from smtprelay-out1.synopsys.com ([198.182.47.102])
+	id 1iHrfn-0003wr-7e; Tue, 08 Oct 2019 15:45:15 +0000
+Received: from us03-smtprelay2.synopsys.com ([149.117.87.133]
+ helo=smtprelay-out1.synopsys.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHrbl-0007Wr-U4
- for linux-snps-arc@lists.infradead.org; Tue, 08 Oct 2019 15:41:10 +0000
+ id 1iHrc9-0007wR-KJ
+ for linux-snps-arc@lists.infradead.org; Tue, 08 Oct 2019 15:41:31 +0000
 Received: from mailhost.synopsys.com (mdc-mailhost1.synopsys.com
  [10.225.0.209])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
  (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id D629BC047C;
- Tue,  8 Oct 2019 15:40:58 +0000 (UTC)
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 0CB6BC0505;
+ Tue,  8 Oct 2019 15:41:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1570549264; bh=8ORcgaO4plc79eTAc90wLcFN6hoqN0TPEOWeaA57+jU=;
+ t=1570549288; bh=6iiENU870Ja1DZyM+6NuBqIx3vNZU/R3+7Bt0Xqs+Zk=;
  h=From:To:Cc:Subject:Date:From;
- b=bJxNhtkfZag79Pllm1++Lb756IHTOJXOJR5VFV5FUTGfF+Ue8QUeiHKnmayqdmzkU
- nGZ/e9SE5f11I8asmg31uxKO26QHRDnovowwyxbAGLT22BMRQk2+1cZRVL6bP+tadN
- Hy5k26peNyoY55KD6K5asCpXOYqAdLLYKXU5lUwIds4WwkvT8o5OINO7OCSg5v3+fC
- ufPYllNPUsXt505Ups2Z5njguRe7ptg8GbeOh6a9Cy9wahs3p+uwlbJxkMIqbK4Ts4
- xxLgHcZu3b1C2HshRAUzT0AkzL8Mk0RoBeNanAWORJlzJ2lsyYuIS32nTqkajUnt+d
- /fcrhv53npj+Q==
+ b=N8MEFSWXEokOvBAaG+Scge3Zkg96Y4rSW5dOyU3hPTEGxXthEySvQ36Zhao0pL22B
+ ebm4fxwD8Kfxwd7dq/+wUSKFA/OH2U6aNE+n15OomYQcSEb9cke/qzL4v6WVO+5qjE
+ +3TtjCXsRVMcMHIAWfFP4Vqs9idKjVYAupQei9FdeN/JVsokciDiXdNclB+MMAhSTa
+ bcW1dD3boitRvkzC6MlEq1Bc3xHhxnwCgMY9f9GfrPnqI7WibkrG+No5dr9jcASgnq
+ VwdJ1/cUAOhIIH1IX+hs3SLHjQe1FEwnQcjo9XFeTG0Rzh5KDgTdc31CzIt/Mxkfyt
+ zMkHI/igz9fqw==
 Received: from abrodkin-e7480.internal.synopsys.com
  (abrodkin-e7480.internal.synopsys.com [10.121.8.24])
- by mailhost.synopsys.com (Postfix) with ESMTP id 98706A005B;
- Tue,  8 Oct 2019 15:40:56 +0000 (UTC)
+ by mailhost.synopsys.com (Postfix) with ESMTP id A1A8CA005B;
+ Tue,  8 Oct 2019 15:41:24 +0000 (UTC)
 From: Alexey Brodkin <Alexey.Brodkin@synopsys.com>
 To: u-boot@lists.denx.de
-Subject: [PATCH] arc: emsdp/iotdk: Switch to DM_MMC
-Date: Tue,  8 Oct 2019 18:40:54 +0300
-Message-Id: <20191008154054.19892-1-abrodkin@synopsys.com>
+Subject: [PATCH] arc: emsdp: Increase max FAT cluster size
+Date: Tue,  8 Oct 2019 18:41:22 +0300
+Message-Id: <20191008154122.19972-1-abrodkin@synopsys.com>
 X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191008_084106_041077_CD3BF3F5 
-X-CRM114-Status: GOOD (  10.20  )
+X-CRM114-CacheID: sfid-20191008_084129_718721_8A6EEA8F 
+X-CRM114-Status: UNSURE (   8.72  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -84,193 +86,28 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-snps-arc" <linux-snps-arc-bounces@lists.infradead.org>
 Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org
 
-Somehow EMSDP & IoT DK boards were skipped on ARC boads conversion
-to DM MMC. So doing it now.
+Some especially large SD-cards come from stock formatted with
+larger FAT cluster size so to accommodate those we just increase
+what we expect to have here in U-Boot given we have a plenty of
+space on EM SDP (16 MiB).
 
 Signed-off-by: Alexey Brodkin <abrodkin@synopsys.com>
 ---
- arch/arc/dts/emsdp.dts                 | 23 ++++++++++++++++++
- arch/arc/dts/iot_devkit.dts            | 22 ++++++++++++++++++
- board/synopsys/emsdp/emsdp.c           | 29 -----------------------
- board/synopsys/iot_devkit/iot_devkit.c | 32 --------------------------
- configs/emsdp_defconfig                |  2 ++
- configs/iot_devkit_defconfig           |  2 ++
- 6 files changed, 49 insertions(+), 61 deletions(-)
+ configs/emsdp_defconfig | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/arch/arc/dts/emsdp.dts b/arch/arc/dts/emsdp.dts
-index d307b95d8e..77362354d5 100644
---- a/arch/arc/dts/emsdp.dts
-+++ b/arch/arc/dts/emsdp.dts
-@@ -32,4 +32,27 @@
- 		reg-shift = <2>;
- 		reg-io-width = <4>;
- 	};
-+
-+	mmcclk_biu: mmcclk-biu {
-+		compatible = "fixed-clock";
-+		clock-frequency = <100000000>;
-+		#clock-cells = <0>;
-+	};
-+
-+	mmcclk_ciu: mmcclk-ciu {
-+		compatible = "fixed-clock";
-+		clock-frequency = <100000000>;
-+		#clock-cells = <0>;
-+	};
-+
-+	mmc: mmc0@f0010000 {
-+		compatible = "snps,dw-mshc";
-+		reg = <0xf0010000 0x400>;
-+		bus-width = <4>;
-+		fifo-depth = <256>;
-+		clocks = <&mmcclk_biu>, <&mmcclk_ciu>;
-+		clock-names = "biu", "ciu";
-+		max-frequency = <25000000>;
-+	};
-+
- };
-diff --git a/arch/arc/dts/iot_devkit.dts b/arch/arc/dts/iot_devkit.dts
-index ebf5a950f0..e2cb602cae 100644
---- a/arch/arc/dts/iot_devkit.dts
-+++ b/arch/arc/dts/iot_devkit.dts
-@@ -42,4 +42,26 @@
- 		compatible = "nop-phy";
- 		#phy-cells = <0>;
- 	};
-+
-+	mmcclk_biu: mmcclk-biu {
-+		compatible = "fixed-clock";
-+		clock-frequency = <50000000>;
-+		#clock-cells = <0>;
-+	};
-+
-+	mmcclk_ciu: mmcclk-ciu {
-+		compatible = "fixed-clock";
-+		clock-frequency = <50000000>;
-+		#clock-cells = <0>;
-+	};
-+
-+	mmc: mmc0@f000b000 {
-+		compatible = "snps,dw-mshc";
-+		reg = <0xf000b000 0x400>;
-+		bus-width = <4>;
-+		fifo-depth = <256>;
-+		clocks = <&mmcclk_biu>, <&mmcclk_ciu>;
-+		clock-names = "biu", "ciu";
-+		max-frequency = <25000000>;
-+	};
- };
-diff --git a/board/synopsys/emsdp/emsdp.c b/board/synopsys/emsdp/emsdp.c
-index 7a3fd5b7f2..5ba9f862e1 100644
---- a/board/synopsys/emsdp/emsdp.c
-+++ b/board/synopsys/emsdp/emsdp.c
-@@ -85,35 +85,6 @@ int board_early_init_r(void)
- 	return 0;
- }
- 
--int board_mmc_init(bd_t *bis)
--{
--	struct dwmci_host *host = NULL;
--
--	host = malloc(sizeof(struct dwmci_host));
--	if (!host) {
--		printf("dwmci_host malloc fail!\n");
--		return 1;
--	}
--
--	memset(host, 0, sizeof(struct dwmci_host));
--	host->name = "Synopsys Mobile storage";
--	host->ioaddr = SDIO_BASE;
--	host->buswidth = 4;
--	host->dev_index = 0;
--	host->bus_hz = 50000000;
--
--	add_dwmci(host, host->bus_hz / 2, 400000);
--
--	return 0;
--}
--
--int board_mmc_getcd(struct mmc *mmc)
--{
--	struct dwmci_host *host = mmc->priv;
--
--	return !(dwmci_readl(host, DWMCI_CDETECT) & 1);
--}
--
- #define CREG_BASE		0xF0001000
- #define CREG_BOOT		(void *)(CREG_BASE + 0x0FF0)
- #define CREG_IP_SW_RESET	(void *)(CREG_BASE + 0x0FF0)
-diff --git a/board/synopsys/iot_devkit/iot_devkit.c b/board/synopsys/iot_devkit/iot_devkit.c
-index 8424e09bd3..9dbdc128f8 100644
---- a/board/synopsys/iot_devkit/iot_devkit.c
-+++ b/board/synopsys/iot_devkit/iot_devkit.c
-@@ -145,38 +145,6 @@ int mach_cpu_init(void)
- 	return set_cpu_freq(gd->cpu_clk);
- }
- 
--#define ARC_PERIPHERAL_BASE	0xF0000000
--#define SDIO_BASE		(ARC_PERIPHERAL_BASE + 0xB000)
--
--int board_mmc_init(bd_t *bis)
--{
--	struct dwmci_host *host = NULL;
--
--	host = malloc(sizeof(struct dwmci_host));
--	if (!host) {
--		printf("dwmci_host malloc fail!\n");
--		return -ENOMEM;
--	}
--
--	memset(host, 0, sizeof(struct dwmci_host));
--	host->name = "Synopsys Mobile storage";
--	host->ioaddr = (void *)SDIO_BASE;
--	host->buswidth = 4;
--	host->dev_index = 0;
--	host->bus_hz = 50000000;
--
--	add_dwmci(host, host->bus_hz / 2, 400000);
--
--	return 0;
--}
--
--int board_mmc_getcd(struct mmc *mmc)
--{
--	struct dwmci_host *host = mmc->priv;
--
--	return !(dwmci_readl(host, DWMCI_CDETECT) & 1);
--}
--
- #define IOTDK_RESET_SEQ		0x55AA6699
- 
- void reset_cpu(ulong addr)
 diff --git a/configs/emsdp_defconfig b/configs/emsdp_defconfig
-index 5e55e3e2b2..42415ea713 100644
+index 42415ea713..09fe388e58 100644
 --- a/configs/emsdp_defconfig
 +++ b/configs/emsdp_defconfig
-@@ -24,7 +24,9 @@ CONFIG_ENV_FAT_DEVICE_AND_PART="0:1"
- # CONFIG_NET is not set
- CONFIG_DM=y
- CONFIG_MMC=y
-+CONFIG_DM_MMC=y
- CONFIG_MMC_DW=y
-+CONFIG_MMC_DW_SNPS=y
+@@ -29,6 +29,6 @@ CONFIG_MMC_DW=y
+ CONFIG_MMC_DW_SNPS=y
  CONFIG_DM_SERIAL=y
  CONFIG_SYS_NS16550=y
- CONFIG_FS_FAT_MAX_CLUSTSIZE=4096
-diff --git a/configs/iot_devkit_defconfig b/configs/iot_devkit_defconfig
-index 24bbe3fc5d..42278d4fb1 100644
---- a/configs/iot_devkit_defconfig
-+++ b/configs/iot_devkit_defconfig
-@@ -29,7 +29,9 @@ CONFIG_ENV_FAT_DEVICE_AND_PART="0:1"
- # CONFIG_NET is not set
- CONFIG_DM=y
- CONFIG_MMC=y
-+CONFIG_DM_MMC=y
- CONFIG_MMC_DW=y
-+CONFIG_MMC_DW_SNPS=y
- CONFIG_DM_SERIAL=y
- CONFIG_SYS_NS16550=y
- CONFIG_USB=y
+-CONFIG_FS_FAT_MAX_CLUSTSIZE=4096
++CONFIG_FS_FAT_MAX_CLUSTSIZE=32768
+ CONFIG_USE_PRIVATE_LIBGCC=y
+ CONFIG_PANIC_HANG=y
 -- 
 2.17.1
 
