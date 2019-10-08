@@ -2,94 +2,56 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A0576CF1DD
-	for <lists+linux-snps-arc@lfdr.de>; Tue,  8 Oct 2019 06:42:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 440CFCF49E
+	for <lists+linux-snps-arc@lfdr.de>; Tue,  8 Oct 2019 10:07:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:To:From:Subject:
-	MIME-Version:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=p0b2ER1RV0bHGQ8b3DazXwAIvLaqGvYzCpAZw3x6T4w=; b=BcA
-	cIVtNXGurbQz5ttDJ4db5bA9teHjxjJj5Ft2CiIeRiuhZYWr5HyKfiinlTEDwJRMfSrCwI4Z551mQ
-	IRNGDZ3sRVvcOeR92k68BDY95aTD7g1ubzbQxBTb1vlaNj5flHuygBLCctik3DuUY7sxkKFTukMMZ
-	WwHODY4ZK1P7sEHSoJ4UEgd1BOY2aiuv+NbY3yhxzZGjzmeR8I28StVHFoZjNXOHTSREtg9FJ76hF
-	2lxjIwYudpzBjxAA224WgDWXaKulaZLEIX2DzRRWE38JxGX6b/Jy9jmi1za+Apc55oteGXokndJl8
-	84SEm9n/yHg/PD6tYdQ7fznDYMwnMuw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=WNnbfIM2BROaSNJFHqWEONm40wDt9HmKl3pS0Sb4jRs=; b=mZgE8iiMexsnfO
+	jiwO1LHFFhp4swZsSC7XLCDXb1vsh30is1Y+NXSpfV19ZKYpndXbA7XeNMfwT8j3VylfSPILZZafn
+	qvZbSrycHPV8MyfwFaBE20RDM0iUi/FjG+s0Uc04+9pAvW0EpmNR1RKmElxWCG0poZWub2TnW0GED
+	LKX11cPhBtqHuqkHdmYrnk6eGfN5rZc4IeoZGYHx0IwW13KJ5vNyE54pYD+/54x/D/CidcRI1YMeB
+	q9/UidmOzQFNLNq7uZhmTwu/rcA/CwuztCVdI9j9ul+eYzs16NebaLa8GoXUCWmRo89r+tK90IYMT
+	rHqsbOCQisqdTBL+2XqA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHhKI-00086n-5r; Tue, 08 Oct 2019 04:42:22 +0000
-Received: from mx0a-001b2d01.pphosted.com ([148.163.156.1])
- by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHhJa-0007OX-0c
- for linux-snps-arc@lists.infradead.org; Tue, 08 Oct 2019 04:41:39 +0000
-Received: from pps.filterd (m0187473.ppops.net [127.0.0.1])
- by mx0a-001b2d01.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
- x984aq3n132304
- for <linux-snps-arc@lists.infradead.org>; Tue, 8 Oct 2019 00:41:34 -0400
-Received: from e06smtp07.uk.ibm.com (e06smtp07.uk.ibm.com [195.75.94.103])
- by mx0a-001b2d01.pphosted.com with ESMTP id 2vepu0g75u-1
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=NOT)
- for <linux-snps-arc@lists.infradead.org>; Tue, 08 Oct 2019 00:41:33 -0400
-Received: from localhost
- by e06smtp07.uk.ibm.com with IBM ESMTP SMTP Gateway: Authorized Use Only!
- Violators will be prosecuted
- for <linux-snps-arc@lists.infradead.org> from <noreply@ellerman.id.au>;
- Tue, 8 Oct 2019 05:41:31 +0100
-Received: from b06cxnps4074.portsmouth.uk.ibm.com (9.149.109.196)
- by e06smtp07.uk.ibm.com (192.168.101.137) with IBM ESMTP SMTP Gateway:
- Authorized Use Only! Violators will be prosecuted; 
- (version=TLSv1/SSLv3 cipher=AES256-GCM-SHA384 bits=256/256)
- Tue, 8 Oct 2019 05:41:29 +0100
-Received: from d06av21.portsmouth.uk.ibm.com (d06av21.portsmouth.uk.ibm.com
- [9.149.105.232])
- by b06cxnps4074.portsmouth.uk.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP id
- x984fSIQ52297874
- (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Tue, 8 Oct 2019 04:41:28 GMT
-Received: from d06av21.portsmouth.uk.ibm.com (unknown [127.0.0.1])
- by IMSVA (Postfix) with ESMTP id AA9DB52054;
- Tue,  8 Oct 2019 04:41:28 +0000 (GMT)
-Received: from ozlabs.au.ibm.com (unknown [9.192.253.14])
- by d06av21.portsmouth.uk.ibm.com (Postfix) with ESMTP id 5A7B95204E;
- Tue,  8 Oct 2019 04:41:28 +0000 (GMT)
-Received: from bran.ozlabs.ibm.com (haven.au.ibm.com [9.192.254.114])
- by ozlabs.au.ibm.com (Postfix) with ESMTP id 4117CA026A;
- Tue,  8 Oct 2019 15:41:26 +1100 (AEDT)
-Received: from 78c6c811cd18 (ka2.ozlabs.ibm.com [10.61.145.21])
- by bran.ozlabs.ibm.com (Postfix) with ESMTP id 821DFE00E5;
- Tue,  8 Oct 2019 15:41:26 +1100 (AEDT)
+	id 1iHkX1-0002n9-ER; Tue, 08 Oct 2019 08:07:43 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iHkWo-0002bm-9F; Tue, 08 Oct 2019 08:07:32 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id EFB621570;
+ Tue,  8 Oct 2019 01:07:25 -0700 (PDT)
+Received: from [10.162.40.139] (p8cg001049571a15.blr.arm.com [10.162.40.139])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ B53E83F6C4; Tue,  8 Oct 2019 01:07:12 -0700 (PDT)
+Subject: Re: [PATCH V4 2/2] mm/pgtable/debug: Add test validating architecture
+ page table helpers
+To: Ingo Molnar <mingo@kernel.org>
+References: <1570427124-21887-1-git-send-email-anshuman.khandual@arm.com>
+ <1570427124-21887-3-git-send-email-anshuman.khandual@arm.com>
+ <20191007130617.GB56546@gmail.com>
+From: Anshuman Khandual <anshuman.khandual@arm.com>
+Message-ID: <916f2dd7-6b05-065b-da75-3dbcad1f804d@arm.com>
+Date: Tue, 8 Oct 2019 13:37:36 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
+ Thunderbird/52.9.1
 MIME-Version: 1.0
-Subject: kisskb: FAILED linux-next/axs101_defconfig/arcompact Tue Oct 08, 15:40
-From: noreply@ellerman.id.au
-To: Vineet.Gupta1@synopsys.com, Alexey.Brodkin@synopsys.com,
- linux-snps-arc@lists.infradead.org
-Date: Tue, 08 Oct 2019 04:41:26 -0000
-X-TM-AS-GCONF: 00
-x-cbid: 19100804-0028-0000-0000-000003A70673
-X-IBM-AV-DETECTION: SAVI=unused REMOTE=unused XFE=unused
-x-cbparentid: 19100804-0029-0000-0000-0000246918DF
-Message-Id: <20191008044126.1.22741@78c6c811cd18>
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
- definitions=2019-10-08_01:, , signatures=0
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- priorityscore=1501
- malwarescore=0 suspectscore=2 phishscore=0 bulkscore=0 spamscore=0
- clxscore=1034 lowpriorityscore=0 mlxscore=0 impostorscore=0
- mlxlogscore=623 adultscore=0 classifier=spam adjust=0 reason=mlx
- scancount=1 engine=8.0.1-1908290000 definitions=main-1910080046
+In-Reply-To: <20191007130617.GB56546@gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191007_214138_074335_FE8DFADC 
-X-CRM114-Status: GOOD (  11.78  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20191008_010730_411823_27EBB1A3 
+X-CRM114-Status: GOOD (  29.01  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [148.163.156.1 listed in list.dnswl.org]
- 0.7 SPF_NEUTRAL            SPF: sender does not match SPF record (neutral)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-snps-arc@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,47 +63,178 @@ List-Post: <mailto:linux-snps-arc@lists.infradead.org>
 List-Help: <mailto:linux-snps-arc-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-snps-arc>, 
  <mailto:linux-snps-arc-request@lists.infradead.org?subject=subscribe>
+Cc: Mark Rutland <mark.rutland@arm.com>, linux-ia64@vger.kernel.org,
+ linux-sh@vger.kernel.org, Peter Zijlstra <peterz@infradead.org>,
+ James Hogan <jhogan@kernel.org>,
+ Tetsuo Handa <penguin-kernel@i-love.sakura.ne.jp>,
+ Heiko Carstens <heiko.carstens@de.ibm.com>, Michal Hocko <mhocko@kernel.org>,
+ linux-mm@kvack.org, Dave Hansen <dave.hansen@intel.com>,
+ Paul Mackerras <paulus@samba.org>, sparclinux@vger.kernel.org,
+ Thomas Gleixner <tglx@linutronix.de>, linux-s390@vger.kernel.org,
+ Michael Ellerman <mpe@ellerman.id.au>, x86@kernel.org,
+ Russell King - ARM Linux <linux@armlinux.org.uk>,
+ Matthew Wilcox <willy@infradead.org>, Steven Price <Steven.Price@arm.com>,
+ Jason Gunthorpe <jgg@ziepe.ca>, Gerald Schaefer <gerald.schaefer@de.ibm.com>,
+ linux-snps-arc@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ Kees Cook <keescook@chromium.org>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Mark Brown <broonie@kernel.org>, "Kirill A . Shutemov" <kirill@shutemov.name>,
+ Dan Williams <dan.j.williams@intel.com>, Vlastimil Babka <vbabka@suse.cz>,
+ Christophe Leroy <christophe.leroy@c-s.fr>,
+ Sri Krishna chowdary <schowdary@nvidia.com>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-mips@vger.kernel.org,
+ Ralf Baechle <ralf@linux-mips.org>, linux-kernel@vger.kernel.org,
+ Paul Burton <paul.burton@mips.com>, Mike Rapoport <rppt@linux.vnet.ibm.com>,
+ Vineet Gupta <vgupta@synopsys.com>,
+ Martin Schwidefsky <schwidefsky@de.ibm.com>,
+ Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
+ "David S. Miller" <davem@davemloft.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-snps-arc" <linux-snps-arc-bounces@lists.infradead.org>
 Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org
 
-FAILED linux-next/axs101_defconfig/arcompact Tue Oct 08, 15:40
 
-http://kisskb.ellerman.id.au/kisskb/buildresult/13985222/
+On 10/07/2019 06:36 PM, Ingo Molnar wrote:
+> 
+> * Anshuman Khandual <anshuman.khandual@arm.com> wrote:
+> 
+>> This adds a test module which will validate architecture page table helpers
+>> and accessors regarding compliance with generic MM semantics expectations.
+>> This will help various architectures in validating changes to the existing
+>> page table helpers or addition of new ones.
+>>
+>> Test page table and memory pages creating it's entries at various level are
+>> all allocated from system memory with required alignments. If memory pages
+>> with required size and alignment could not be allocated, then all depending
+>> individual tests are skipped.
+> 
+>> diff --git a/arch/x86/include/asm/pgtable_64_types.h b/arch/x86/include/asm/pgtable_64_types.h
+>> index 52e5f5f2240d..b882792a3999 100644
+>> --- a/arch/x86/include/asm/pgtable_64_types.h
+>> +++ b/arch/x86/include/asm/pgtable_64_types.h
+>> @@ -40,6 +40,8 @@ static inline bool pgtable_l5_enabled(void)
+>>  #define pgtable_l5_enabled() 0
+>>  #endif /* CONFIG_X86_5LEVEL */
+>>  
+>> +#define mm_p4d_folded(mm) (!pgtable_l5_enabled())
+>> +
+>>  extern unsigned int pgdir_shift;
+>>  extern unsigned int ptrs_per_p4d;
+> 
+> Any deep reason this has to be a macro instead of proper C?
+> 
+>> diff --git a/mm/Kconfig.debug b/mm/Kconfig.debug
+>> index 327b3ebf23bf..683131b1ee7d 100644
+>> --- a/mm/Kconfig.debug
+>> +++ b/mm/Kconfig.debug
+>> @@ -117,3 +117,18 @@ config DEBUG_RODATA_TEST
+>>      depends on STRICT_KERNEL_RWX
+>>      ---help---
+>>        This option enables a testcase for the setting rodata read-only.
+>> +
+>> +config DEBUG_ARCH_PGTABLE_TEST
+>> +	bool "Test arch page table helpers for semantics compliance"
+>> +	depends on MMU
+>> +	depends on DEBUG_KERNEL
+>> +	depends on !(ARM || IA64)
+> 
+> Please add a proper enabling switch for architectures to opt in.
 
-Commit:   Add linux-next specific files for 20191008
-          442630f691a1537b7e0cc35e3d580222077549cb
-Compiler: arc-buildroot-linux-uclibc-gcc (Buildroot 2015.08.1) 4.8.4 / GNU ld (GNU Binutils) 2.23.2
+Sure, will do.
 
-Possible errors
----------------
+> 
+> Please also add it to Documentation/features/list-arch.sh so that it's 
+> listed as a 'TODO' entry on architectures where the tests are not enabled 
+> yet.
 
-include/linux/bits.h:24:21: error: first argument to '__builtin_choose_expr' not a constant
-include/linux/build_bug.h:16:51: error: bit-field '<anonymous>' width not an integer constant
-make[4]: *** [scripts/Makefile.build:266: drivers/base/regmap/regmap.o] Error 1
-make[3]: *** [scripts/Makefile.build:509: drivers/base/regmap] Error 2
-make[2]: *** [scripts/Makefile.build:509: drivers/base] Error 2
-include/linux/bits.h:24:21: error: first argument to '__builtin_choose_expr' not a constant
-include/linux/build_bug.h:16:51: error: bit-field '<anonymous>' width not an integer constant
-include/linux/bits.h:24:21: error: first argument to '__builtin_choose_expr' not a constant
-include/linux/build_bug.h:16:51: error: bit-field '<anonymous>' width not an integer constant
-make[3]: *** [scripts/Makefile.build:266: drivers/clk/clk-multiplier.o] Error 1
-make[2]: *** [scripts/Makefile.build:509: drivers/clk] Error 2
-make[1]: *** [Makefile:1649: drivers] Error 2
-include/linux/bits.h:24:21: error: first argument to '__builtin_choose_expr' not a constant
-include/linux/build_bug.h:16:51: error: bit-field '<anonymous>' width not an integer constant
-make[3]: *** [scripts/Makefile.build:265: kernel/time/sched_clock.o] Error 1
-make[2]: *** [scripts/Makefile.build:509: kernel/time] Error 2
-make[1]: *** [Makefile:1649: kernel] Error 2
-make: *** [Makefile:179: sub-make] Error 2
+Will do.
 
-Possible warnings (2)
-----------------------
+> 
+>> +	help
+>> +	  This options provides a kernel module which can be used to test
+>> +	  architecture page table helper functions on various platform in
+>> +	  verifying if they comply with expected generic MM semantics. This
+>> +	  will help architectures code in making sure that any changes or
+>> +	  new additions of these helpers will still conform to generic MM
+>> +	  expected semantics.
+> 
+> Typos and grammar fixed:
+> 
+> 	help
+> 	  This option provides a kernel module which can be used to test
+> 	  architecture page table helper functions on various platforms in
+> 	  verifying if they comply with expected generic MM semantics. This
+> 	  will help architecture code in making sure that any changes or
+> 	  new additions of these helpers still conform to expected 
+> 	  semantics of the generic MM.
 
-<stdin>:1511:2: warning: #warning syscall clone3 not implemented [-Wcpp]
-net/ipv4/tcp_input.c:4384:49: warning: array subscript is above array bounds [-Warray-bounds]
+Sure, will update except the 'kernel module' part. Thank you.
 
+> 
+> Also, more fundamentally: isn't a kernel module too late for such a debug
+
+Its not a kernel module any more, my bad that the description has still these
+words left on from previous versions, will fix it. The test now gets invoked
+through a late_initcall().
+
+> check, should something break due to a core MM change? Have these debug 
+> checks caught any bugs or inconsistencies before?
+
+Gerald Schaefer had reported earlier about a bug found on s390 with this test.
+
+https://lkml.org/lkml/2019/9/4/1718
+
+> 
+> Why not call this as some earlier MM debug check, after enabling paging 
+> but before executing user-space binaries or relying on complex MM ops 
+> within the kernel, called at a stage when those primitives are all 
+> expected to work fine?
+
+At minimum we need buddy allocator to be initialized for the allocations to
+work. Just after pgtable_init() or kmem_cache_init() in mm_init() will be a
+good place ?
+
+> 
+> It seems to me that arch_pgtable_tests_init) won't even context-switch 
+> normally, right?
+
+Not sure whether I got this. Why would you expect it to context switch ?
+
+> 
+> Finally, instead of inventing yet another randomly named .config debug 
+> switch, please fit it into the regular MM debug options which go along 
+> the CONFIG_DEBUG_VM* naming scheme.
+> 
+> Might even make sense to enable these new debug checks by default if 
+> CONFIG_DEBUG_VM=y, that way we'll get a *lot* more debug coverage than 
+> some random module somewhere that few people will know about, let alone 
+> run.
+
+All the configs with respect to memory debugging is generated from
+lib/Kconfig.debug after fetching all that is in "mm/Kconfig.debug".
+There are only three configs which depend on CONFIG_DEBUG_VM like
+a package.
+
+1. CONFIG_DEBUG_VM_VMACACHE
+2. CONFIG_DEBUG_VM_RB
+3. CONFIG_DEBUG_VM_PGFLAGS
+4. CONFIG_DEBUG_VM_PGTABLE [proposed for this]
+
+Before that, just trying to understand whether the reason of making this
+arch page table test as part of DEBUG_VM_* package than a just a stand
+alone config as many others, is that it is directly related to virtual
+memory enablement in kernel. Or is there something else I am missing.
+
+But this looks better and will make this depend on a selectable arch
+config like ARCH_HAS_DEBUG_VM_PGTABLE or something.
+
+> 
+> Thanks,
+> 
+> 	Ingo
+> 
 
 _______________________________________________
 linux-snps-arc mailing list
