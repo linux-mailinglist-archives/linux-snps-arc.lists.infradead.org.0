@@ -2,59 +2,59 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 53A94D17B0
-	for <lists+linux-snps-arc@lfdr.de>; Wed,  9 Oct 2019 20:43:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 907B0D17E7
+	for <lists+linux-snps-arc@lfdr.de>; Wed,  9 Oct 2019 20:57:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BXNRgCmk9a+wgVqFfiFZbTpA/X0poM1kEUEgaHHBKxg=; b=YQFCaluqf0Yaoa
-	l9fjPL0zk/yX+bJBFMBHp+PLaZe9bmKJ0b8RYZs3Mik0wSWSUua+KjpPWW+xcVUE6TRTjyetLe2nE
-	i+4tpOpka/zCbuIBuH1XLjT0tvKu+xzMrkSUjiSIBpdVsROlHV6TLGlHnzedqQm3yF2EugjETba72
-	HgQFnf9JZBwgi2W4kot8g32HuJ9eqlxJuqr+Z1JkUSsK8a5j/jx0Sitanzd3E2iJKj/KO6qe8Vx4I
-	Lc/KY0Cpj8oNl+SUmAE/Y4kCI/ackUQ6ljQhU7KkIQjbK6sv5bFT1kD1VgrPED64ek3k70LecYSnS
-	uR+zlww6StGY+yH4EeYg==;
+	List-Owner; bh=igKkqjuf6uexZwnGqM76voFaPIq/1tLRhjSu7m6mlHs=; b=Pk7e8KTjEWgWKJ
+	8TFhhik8OTVEiuuz1pufnmIYeEzEt5RWAMc0pFpYmtYJpzGt6ygF7hgyN8GFGmKMjJ92JnoW5DjyV
+	3szz5ZvED5GRK5WN+v4LXmHzIhAdZ0u61mxvIVFLZJNpr7eYLc/SUpluagmRpThjNPxx3kubkve7c
+	5ivhc8SgDmwtQGcjStN3n1Fe42UMs0PyJuG/yCYYY+tAFlwoppIAr1kbhfGEdBhwmZJm6Dn7GoFDp
+	EVlx8mcp/jhk4VJGwC3cOfvtUR8UbX1PawWSzbOgoQ/4IRc0tuOrAKgRvSA5i1t/WD0t5Oha/T0pF
+	WDH1IcI0LUgxG8dtGJdQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iIGwI-0001z0-3N; Wed, 09 Oct 2019 18:43:58 +0000
-Received: from dc2-smtprelay2.synopsys.com ([198.182.61.142]
+	id 1iIH9c-0006Vj-CB; Wed, 09 Oct 2019 18:57:44 +0000
+Received: from us03-smtprelay2.synopsys.com ([149.117.87.133]
  helo=smtprelay-out1.synopsys.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iIGwF-0001xs-I9
- for linux-snps-arc@lists.infradead.org; Wed, 09 Oct 2019 18:43:56 +0000
+ id 1iIH9Z-0006VK-5b
+ for linux-snps-arc@lists.infradead.org; Wed, 09 Oct 2019 18:57:42 +0000
 Received: from mailhost.synopsys.com (dc8-mailhost1.synopsys.com
  [10.13.135.209])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
  (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id A8F42C0161;
- Wed,  9 Oct 2019 18:43:53 +0000 (UTC)
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 1B40BC04D5;
+ Wed,  9 Oct 2019 18:57:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1570646633; bh=z/IWOeKhq4peAhuuLCtaYHRBzB8hgA55HCXWFihVAJU=;
+ t=1570647460; bh=MgRIVfEAJ94OkyjrBQhZFPU5pG5MPCWR3XI6euyMrTY=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=S+c3tq+5m56Mv/qT4UTC2Ab9/9O4fRh9+OIZx/tFgTUVDPb4WnJWXrsfDr01itju7
- +m7+BbfTjV1ovUbeg0yEtktwkujtLbUB3DL+JR9KQPYfZ/csuoulLUqJuGhT1JvlQO
- lUiIPS0/o5L+rim9+MfoOQCEa3lupHVO3LbWkgwLgAC9pVQxpfTcTQUVW8+Tash/jx
- 3/MDMAZkbqHhMOXTN2dZYnOpfu3Hr6X236pQ30oDvW10PnTfs5bcflja1NtWQbvT1L
- yr2Td7dfjdbKUc8732j6Hc/aG6QHCH2D+Lq9YtISpetf/tRK7QmaStRWkPNOMUMjYC
- 78Xmzw/ugkKtA==
+ b=P+q9EXk90lZx9V+thbZSLXi49Y0ooOEh5vUOV8p3jhCTwLzIHl/RZ7ohsPJYil6S5
+ MX+hMG6F8kJl+0eeDQWxtLCi/cwYPeHsOOdRGya1RISfM9OIOB2RQrkk1GecY+QMjj
+ a/2Pn0fH8yKHPvi1RFOqc+3/3N4OND0/sYKMktnctjKSxiyuv6ceGCKkkh4dSwi6z/
+ PayIEkKnBy3eEQxM10ruy0N3aFHd8dQOnMMvL5skgVWo+Wkdb7TJKBlw7Idw7ra3Qn
+ nAiX1/VYXOy14er8uHy08AgCTMs9si1hkMijKYZ1o7w0ezfl4kf6mwUKW4hgYHc6SR
+ jZs8RKEqLqEog==
 Received: from vineetg-Latitude-E7450.internal.synopsys.com
  (vineetg-latitude-e7450.internal.synopsys.com [10.10.161.61])
- by mailhost.synopsys.com (Postfix) with ESMTP id 94C19A006B;
- Wed,  9 Oct 2019 18:43:52 +0000 (UTC)
+ by mailhost.synopsys.com (Postfix) with ESMTP id 93B7EA006B;
+ Wed,  9 Oct 2019 18:57:33 +0000 (UTC)
 From: Vineet Gupta <Vineet.Gupta1@synopsys.com>
 To: linux-snps-arc@lists.infradead.org
-Subject: [PATCH v2] ARC: mm: remove __ARCH_USE_5LEVEL_HACK
-Date: Wed,  9 Oct 2019 11:43:50 -0700
-Message-Id: <20191009184350.18323-1-vgupta@synopsys.com>
+Subject: [PATCH v3] ARC: mm: remove __ARCH_USE_5LEVEL_HACK
+Date: Wed,  9 Oct 2019 11:57:31 -0700
+Message-Id: <20191009185731.25814-1-vgupta@synopsys.com>
 X-Mailer: git-send-email 2.20.1
-In-Reply-To: <adaa82a2-b143-d49f-f38c-24ef52a200b8@gmail.com>
-References: <adaa82a2-b143-d49f-f38c-24ef52a200b8@gmail.com>
+In-Reply-To: <20191009184350.18323-1-vgupta@synopsys.com>
+References: <20191009184350.18323-1-vgupta@synopsys.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191009_114355_609335_49F5424B 
-X-CRM114-Status: GOOD (  11.23  )
+X-CRM114-CacheID: sfid-20191009_115741_277127_B3A32F05 
+X-CRM114-Status: GOOD (  11.22  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -106,8 +106,11 @@ macros which needs to be addressed seperately.
 Cc: Kirill A. Shutemov <kirill.shutemov@linux.intel.com>
 Signed-off-by: Vineet Gupta <vgupta@synopsys.com>
 ---
-v2 <- v1:
-  - fix highmem code
+v3 <- v2
+  - fix highmem build error
+
+v2 <- v1
+ - fix highmem code
 ---
  arch/arc/include/asm/pgtable.h |  1 -
  arch/arc/mm/fault.c            | 10 ++++++++--
@@ -155,7 +158,7 @@ index 3861543b66a0..fb86bc3e9b35 100644
  		goto bad_area;
  
 diff --git a/arch/arc/mm/highmem.c b/arch/arc/mm/highmem.c
-index a4856bfaedf3..69397c884a7b 100644
+index a4856bfaedf3..fc8849e4f72e 100644
 --- a/arch/arc/mm/highmem.c
 +++ b/arch/arc/mm/highmem.c
 @@ -111,12 +111,14 @@ EXPORT_SYMBOL(__kunmap_atomic);
@@ -169,7 +172,7 @@ index a4856bfaedf3..69397c884a7b 100644
  
  	pgd_k = pgd_offset_k(kvaddr);
 -	pud_k = pud_offset(pgd_k, kvaddr);
-+	p4d_k = p4d_offset(pgd_k, address);
++	p4d_k = p4d_offset(pgd_k, kvaddr);
 +	pud_k = pud_offset(p4d_k, kvaddr);
  	pmd_k = pmd_offset(pud_k, kvaddr);
  
