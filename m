@@ -2,143 +2,50 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B4620D31C5
-	for <lists+linux-snps-arc@lfdr.de>; Thu, 10 Oct 2019 22:06:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D4675D3953
+	for <lists+linux-snps-arc@lfdr.de>; Fri, 11 Oct 2019 08:25:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=k8QrUzdQVevgoNihBjnpbfeAC9ozTk9OB6GXtEAijOY=; b=bnNhEibqhXiF8/
-	WmUngCt/pBcoO/bVrARkJsUijEXUFWlINjW9cYzUIY/8G8/aT+4sH7GP2x6KqeK0dDEfGS7hLJ1mR
-	HzGMHjwgm2prI5OVdjPoGxsqR9l09+qLQ0YtVZONf4IiX+p3I/pC755lUL3BtFCRnGiAkmvCVqmt7
-	QM9Mfupb1i+L+srGNvSqHcO/6FMUSrpUvaaZ+vDrPXmswc8z7mfJrr9VywjAm53t0AUlReEItzbhB
-	dAL6oIPdRnXoEbWGjccFkdVXOSDtyxWRP8R4OTCSYdTxDGoTaemdDOLm8AMiEUJnD9wDKe8sj5ANC
-	zIMvM6iNsjkWJC8NGFAg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=ky1rJfZwsviXlSu923BE14zdq1goszkhiU314hnw2UY=; b=oTO
+	r9gtxvK8lka8gqKE01ST3N3wnXz2+W27LOrWjUX7cxfUnR5jAf7SmC7DSCI1Dwo0hTuRNLLKf49/d
+	33jlyd1XzzGOOMmMN8w4kSf+ALHUkxX+RtRj8V6iEbosdnC80Z6mhMfzjHFovfkP9bQsVRgBAv5tm
+	pHSRuMDX+fT6NbeggLqnpj0N8KUnwnbzlf67CBXVBu9KmdKfEyX29KTiWbZ9z51YcQYhzGnJuuwqV
+	MB8jG++AaNVOuLsh3UtGzJpwJ8+BmfmauAJrGbw8bIIa1jfzp59sPpB4p/LzwDRoWiqb4Ae85TxYQ
+	YGaLZB8DYaLUY+VIy6838KIUD+r+ESw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iIehH-0008Jc-GL; Thu, 10 Oct 2019 20:06:03 +0000
-Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iIehE-0008JB-T4
- for linux-snps-arc@lists.infradead.org; Thu, 10 Oct 2019 20:06:02 +0000
-Received: by mail-pg1-x544.google.com with SMTP id p30so4355196pgl.2
- for <linux-snps-arc@lists.infradead.org>; Thu, 10 Oct 2019 13:05:59 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:openpgp:autocrypt:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=br9hyO7JC3RSUTqbjhJbUfqMlwXApKkFxnX4w1MXGCQ=;
- b=K9a96MVjtsfhN/5/PSh9815fkbwuUhBF24bQLz9szxD5g2p0w0NZhm4HWjamqOYwjG
- S9G4M5z//7QfhaRRsGVziP09/yTLaJUvOCFQWmsL/ysexyuFlAmtBWUixfs881Qxt0Q1
- Bbt298OQ6nXnT46qo4Fg80lz/PO8ifbkdzit6mDcUieNTREzg5tsMzXU+hXZIMWaXQSa
- Wb7chnXQ0jJxReJ+tIkeqGMJZnZuL/6YIc8+pAx5r9hNBZuagzZ0RmP+wNCjonLBAeBX
- HdVghMcgctQST0rW3EPM+h/bSC4XN50OTEiKH56QdJMjf9aRxORy4DYFpuyxptAXAncv
- 90Bw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
- :message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=br9hyO7JC3RSUTqbjhJbUfqMlwXApKkFxnX4w1MXGCQ=;
- b=rnK20MTvunI5NleojJME+Z71DLjCiIERjxk5atXbnNsG/a/z3MPbIuxH4d5c3eX4fb
- YdlOh9nwjwVBLJKxk7NL5eMXhzlBR1Fon65hsCAKAQGWAeB5YaQR5b30x+FEabnv/J9u
- k1D7F0rfyDdRSuA8lNknc6+X4sGRMhX05wQczxckmJhr2JsIPs8TB+sjY4K+lIgjoJC5
- lnaWrpr6D7pmJjFmimX57GQ6MBvvyWv9DD+0pgECtj8HIvW63OukgOWTiCdu1bYLOAKv
- HPbnm48QSSPaBa2iU5fUP84AuO5LfIqC4UD8Qbn47EKlnGTHSCBP8j18WilBLF+O5yid
- 9E7w==
-X-Gm-Message-State: APjAAAW01wt5+gy57maP5Y2ixtknhP582BygFLE1I50hbaZtfLgDywb+
- 7PuoyID5BecUdv62cONHbqI=
-X-Google-Smtp-Source: APXvYqyVU1Vm9EDwG+OZHYYBBR6Tbgz+4AtT9Ka2aCz7uhvoY1VbvLnRYoYtNmBwnQX5YGVYv59rYA==
-X-Received: by 2002:a63:4e10:: with SMTP id c16mr12745671pgb.136.1570737959330; 
- Thu, 10 Oct 2019 13:05:59 -0700 (PDT)
-Received: from ?IPv6:2601:641:c100:83a0:7d35:e452:d420:a5d1?
- ([2601:641:c100:83a0:7d35:e452:d420:a5d1])
- by smtp.gmail.com with ESMTPSA id i74sm7230784pfe.28.2019.10.10.13.05.57
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 10 Oct 2019 13:05:57 -0700 (PDT)
-Subject: Re: [PATCH 0/3] eldie generated code for folded p4d/pud
-To: "Kirill A. Shutemov" <kirill.shutemov@linux.intel.com>,
- Vineet Gupta <Vineet.Gupta1@synopsys.com>
-References: <20191009222658.961-1-vgupta@synopsys.com>
- <20191010085609.xgwkrbzea253wmfg@black.fi.intel.com>
-From: Vineet Gupta <vineetg76@gmail.com>
-Openpgp: preference=signencrypt
-Autocrypt: addr=vineetg76@gmail.com; prefer-encrypt=mutual; keydata=
- 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
- deE0Dvw98SWmZSNtdOPnJZ0D
-Message-ID: <8ba067a6-8b6a-2414-0f04-b251cd6bb47c@gmail.com>
-Date: Thu, 10 Oct 2019 13:05:56 -0700
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
-MIME-Version: 1.0
-In-Reply-To: <20191010085609.xgwkrbzea253wmfg@black.fi.intel.com>
-Content-Language: en-US
+	id 1iIoN0-0001uk-Hx; Fri, 11 Oct 2019 06:25:46 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iIoMs-0001nT-35; Fri, 11 Oct 2019 06:25:40 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B316828;
+ Thu, 10 Oct 2019 23:25:34 -0700 (PDT)
+Received: from p8cg001049571a15.blr.arm.com (p8cg001049571a15.blr.arm.com
+ [10.162.41.129])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 008D73F703;
+ Thu, 10 Oct 2019 23:28:04 -0700 (PDT)
+From: Anshuman Khandual <anshuman.khandual@arm.com>
+To: linux-mm@kvack.org
+Subject: [PATCH V5 0/2] mm/debug: Add tests validating architecture page table
+ helpers
+Date: Fri, 11 Oct 2019 11:55:40 +0530
+Message-Id: <1570775142-31425-1-git-send-email-anshuman.khandual@arm.com>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191010_130600_941182_9FFA9E37 
-X-CRM114-Status: GOOD (  12.96  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20191010_232538_224390_C748F1F5 
+X-CRM114-Status: GOOD (  18.17  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (vineetg76[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (vineetg76[at]gmail.com)
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-snps-arc@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -150,68 +57,189 @@ List-Post: <mailto:linux-snps-arc@lists.infradead.org>
 List-Help: <mailto:linux-snps-arc-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-snps-arc>, 
  <mailto:linux-snps-arc-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, Arnd Bergmann <arnd@arndb.de>,
- Peter Zijlstra <peterz@infradead.org>,
- "Aneesh Kumar K . V" <aneesh.kumar@linux.ibm.com>,
- linux-kernel@vger.kernel.org, Nick Piggin <npiggin@gmail.com>,
- linux-mm@kvack.org, Andrew Morton <akpm@linux-foundation.org>,
- linux-snps-arc@lists.infradead.org, Will Deacon <will@kernel.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, linux-ia64@vger.kernel.org,
+ linux-sh@vger.kernel.org, Peter Zijlstra <peterz@infradead.org>,
+ James Hogan <jhogan@kernel.org>,
+ Tetsuo Handa <penguin-kernel@i-love.sakura.ne.jp>,
+ Heiko Carstens <heiko.carstens@de.ibm.com>, Michal Hocko <mhocko@kernel.org>,
+ Dave Hansen <dave.hansen@intel.com>, Paul Mackerras <paulus@samba.org>,
+ sparclinux@vger.kernel.org, Thomas Gleixner <tglx@linutronix.de>,
+ linux-s390@vger.kernel.org, Michael Ellerman <mpe@ellerman.id.au>,
+ x86@kernel.org, Russell King - ARM Linux <linux@armlinux.org.uk>,
+ Matthew Wilcox <willy@infradead.org>, Steven Price <Steven.Price@arm.com>,
+ Jason Gunthorpe <jgg@ziepe.ca>, Gerald Schaefer <gerald.schaefer@de.ibm.com>,
+ linux-snps-arc@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ Kees Cook <keescook@chromium.org>,
+ Anshuman Khandual <anshuman.khandual@arm.com>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Mark Brown <broonie@kernel.org>, "Kirill A . Shutemov" <kirill@shutemov.name>,
+ Dan Williams <dan.j.williams@intel.com>, Vlastimil Babka <vbabka@suse.cz>,
+ Christophe Leroy <christophe.leroy@c-s.fr>,
+ Sri Krishna chowdary <schowdary@nvidia.com>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-mips@vger.kernel.org,
+ Ralf Baechle <ralf@linux-mips.org>, linux-kernel@vger.kernel.org,
+ Paul Burton <paul.burton@mips.com>, Mike Rapoport <rppt@linux.vnet.ibm.com>,
+ Vineet Gupta <vgupta@synopsys.com>,
+ Martin Schwidefsky <schwidefsky@de.ibm.com>,
+ Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
+ "David S. Miller" <davem@davemloft.net>,
+ Mike Kravetz <mike.kravetz@oracle.com>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-snps-arc" <linux-snps-arc-bounces@lists.infradead.org>
 Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org
 
+This series adds a test validation for architecture exported page table
+helpers. Patch in the series adds basic transformation tests at various
+levels of the page table. Before that it exports gigantic page allocation
+function from HugeTLB.
 
-Hi Kirill,
+This test was originally suggested by Catalin during arm64 THP migration
+RFC discussion earlier. Going forward it can include more specific tests
+with respect to various generic MM functions like THP, HugeTLB etc and
+platform specific tests.
 
-On 10/10/19 1:56 AM, Kirill A. Shutemov wrote:
-> On Wed, Oct 09, 2019 at 10:26:55PM +0000, Vineet Gupta wrote:
->>
->> This series elides extraneous generate code for folded p4d/pud.
->> This came up when trying to remove __ARCH_USE_5LEVEL_HACK from ARC port.
->> The code saving are not a while lot, but still worthwhile IMHO.
-> 
-> Agreed.
+https://lore.kernel.org/linux-mm/20190628102003.GA56463@arrakis.emea.arm.com/
 
-Thx.
+Changes in V5:
 
-So given we are folding pmd too, it seemed we could do the following as well.
+- Redefined and moved X86 mm_p4d_folded() into a different header per Kirill/Ingo
+- Updated the config option comment per Ingo and dropped 'kernel module' reference
+- Updated the commit message and dropped 'kernel module' reference
+- Changed DEBUG_ARCH_PGTABLE_TEST into DEBUG_VM_PGTABLE per Ingo
+- Moved config option from mm/Kconfig.debug into lib/Kconfig.debug
+- Renamed core test function arch_pgtable_tests() as debug_vm_pgtable()
+- Renamed mm/arch_pgtable_test.c as mm/debug_vm_pgtable.c
+- debug_vm_pgtable() gets called from kernel_init_freeable() after init_mm_internals()
+- Added an entry in Documentation/features/debug/ per Ingo
+- Enabled the test on arm64 and x86 platforms for now
 
-+#ifndef __PAGETABLE_PMD_FOLDED
- void pmd_clear_bad(pmd_t *);
-+#else
-+#define pmd_clear_bad(pmd)        do { } while (0)
-+#endif
+Changes in V4: (https://patchwork.kernel.org/project/linux-mm/list/?series=183465)
 
-+#ifndef __PAGETABLE_PMD_FOLDED
- void pmd_clear_bad(pmd_t *pmd)
- {
-        pmd_ERROR(*pmd);
-        pmd_clear(pmd);
- }
-+#endif
+- Disable DEBUG_ARCH_PGTABLE_TEST for ARM and IA64 platforms
 
-I stared at generated code and it seems a bit wrong.
-free_pgd_range() -> pgd_none_or_clear_bad() is no longer checking for unmapped pgd
-entries as pgd_none/pgd_bad are all stubs returning 0.
+Changes in V3: (https://lore.kernel.org/patchwork/project/lkml/list/?series=411216)
 
-This whole pmd folding is a bit confusing considering I only revisit it every few
-years :-) Abstraction wise, __PAGETABLE_PMD_FOLDED only has pgd, pte but even in
-this regime bunch of pmd macros are still valid
+- Changed test trigger from module format into late_initcall()
+- Marked all functions with __init to be freed after completion
+- Changed all __PGTABLE_PXX_FOLDED checks as mm_pxx_folded()
+- Folded in PPC32 fixes from Christophe
 
-    pmd_set(pmdp, ptep) {
-        *pmdp.pud.p4d.pgd = (unsigned long)ptep
-    }
+Changes in V2:
 
-Is there a better way to make a mental model of this code folding.
+https://lore.kernel.org/linux-mm/1568268173-31302-1-git-send-email-anshuman.khandual@arm.com/T/#t
 
-In an ideal world pmd folded would have meant pmd_* routines just vanish - poof.
-So in that sense I like your implementation under #[45]LEVEL_HACK where the level
-simply vanishes by code like #define p4d_t pgd_t. Perhaps there is lot of historic
-baggage, proliferated into arch code so hard to untangle.
+- Fixed small typo error in MODULE_DESCRIPTION()
+- Fixed m64k build problems for lvalue concerns in pmd_xxx_tests()
+- Fixed dynamic page table level folding problems on x86 as per Kirril
+- Fixed second pointers during pxx_populate_tests() per Kirill and Gerald
+- Allocate and free pte table with pte_alloc_one/pte_free per Kirill
+- Modified pxx_clear_tests() to accommodate s390 lower 12 bits situation
+- Changed RANDOM_NZVALUE value from 0xbe to 0xff
+- Changed allocation, usage, free sequence for saved_ptep
+- Renamed VMA_FLAGS as VMFLAGS
+- Implemented a new method for random vaddr generation
+- Implemented some other cleanups
+- Dropped extern reference to mm_alloc()
+- Created and exported new alloc_gigantic_page_order()
+- Dropped the custom allocator and used new alloc_gigantic_page_order()
 
-Thx,
--Vineet
+Changes in V1:
+
+https://lore.kernel.org/linux-mm/1567497706-8649-1-git-send-email-anshuman.khandual@arm.com/
+
+- Added fallback mechanism for PMD aligned memory allocation failure
+
+Changes in RFC V2:
+
+https://lore.kernel.org/linux-mm/1565335998-22553-1-git-send-email-anshuman.khandual@arm.com/T/#u
+
+- Moved test module and it's config from lib/ to mm/
+- Renamed config TEST_ARCH_PGTABLE as DEBUG_ARCH_PGTABLE_TEST
+- Renamed file from test_arch_pgtable.c to arch_pgtable_test.c
+- Added relevant MODULE_DESCRIPTION() and MODULE_AUTHOR() details
+- Dropped loadable module config option
+- Basic tests now use memory blocks with required size and alignment
+- PUD aligned memory block gets allocated with alloc_contig_range()
+- If PUD aligned memory could not be allocated it falls back on PMD aligned
+  memory block from page allocator and pud_* tests are skipped
+- Clear and populate tests now operate on real in memory page table entries
+- Dummy mm_struct gets allocated with mm_alloc()
+- Dummy page table entries get allocated with [pud|pmd|pte]_alloc_[map]()
+- Simplified [p4d|pgd]_basic_tests(), now has random values in the entries
+
+Original RFC V1:
+
+https://lore.kernel.org/linux-mm/1564037723-26676-1-git-send-email-anshuman.khandual@arm.com/
+
+Cc: Andrew Morton <akpm@linux-foundation.org>
+Cc: Vlastimil Babka <vbabka@suse.cz>
+Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+Cc: Thomas Gleixner <tglx@linutronix.de>
+Cc: Mike Rapoport <rppt@linux.vnet.ibm.com>
+Cc: Jason Gunthorpe <jgg@ziepe.ca>
+Cc: Dan Williams <dan.j.williams@intel.com>
+Cc: Peter Zijlstra <peterz@infradead.org>
+Cc: Michal Hocko <mhocko@kernel.org>
+Cc: Mark Rutland <mark.rutland@arm.com>
+Cc: Mark Brown <broonie@kernel.org>
+Cc: Steven Price <Steven.Price@arm.com>
+Cc: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Cc: Masahiro Yamada <yamada.masahiro@socionext.com>
+Cc: Kees Cook <keescook@chromium.org>
+Cc: Tetsuo Handa <penguin-kernel@i-love.sakura.ne.jp>
+Cc: Matthew Wilcox <willy@infradead.org>
+Cc: Sri Krishna chowdary <schowdary@nvidia.com>
+Cc: Dave Hansen <dave.hansen@intel.com>
+Cc: Russell King - ARM Linux <linux@armlinux.org.uk>
+Cc: Michael Ellerman <mpe@ellerman.id.au>
+Cc: Paul Mackerras <paulus@samba.org>
+Cc: Martin Schwidefsky <schwidefsky@de.ibm.com>
+Cc: Heiko Carstens <heiko.carstens@de.ibm.com>
+Cc: "David S. Miller" <davem@davemloft.net>
+Cc: Vineet Gupta <vgupta@synopsys.com>
+Cc: James Hogan <jhogan@kernel.org>
+Cc: Paul Burton <paul.burton@mips.com>
+Cc: Ralf Baechle <ralf@linux-mips.org>
+Cc: Kirill A. Shutemov <kirill@shutemov.name>
+Cc: Gerald Schaefer <gerald.schaefer@de.ibm.com>
+Cc: Christophe Leroy <christophe.leroy@c-s.fr>
+Cc: Mike Kravetz <mike.kravetz@oracle.com>
+Cc: linux-snps-arc@lists.infradead.org
+Cc: linux-mips@vger.kernel.org
+Cc: linux-arm-kernel@lists.infradead.org
+Cc: linux-ia64@vger.kernel.org
+Cc: linuxppc-dev@lists.ozlabs.org
+Cc: linux-s390@vger.kernel.org
+Cc: linux-sh@vger.kernel.org
+Cc: sparclinux@vger.kernel.org
+Cc: x86@kernel.org
+Cc: linux-kernel@vger.kernel.org
+
+Anshuman Khandual (2):
+  mm/hugetlb: Make alloc_gigantic_page() available for general use
+  mm/debug: Add tests validating architecture page table helpers
+
+ .../debug/debug-vm-pgtable/arch-support.txt        |  34 ++
+ arch/arm64/Kconfig                                 |   1 +
+ arch/x86/Kconfig                                   |   1 +
+ arch/x86/include/asm/pgtable_64.h                  |   6 +
+ include/asm-generic/pgtable.h                      |   6 +
+ include/linux/hugetlb.h                            |   9 +
+ init/main.c                                        |   1 +
+ lib/Kconfig.debug                                  |  21 +
+ mm/Makefile                                        |   1 +
+ mm/debug_vm_pgtable.c                              | 438 +++++++++++++++++++++
+ mm/hugetlb.c                                       |  24 +-
+ 11 files changed, 540 insertions(+), 2 deletions(-)
+ create mode 100644 Documentation/features/debug/debug-vm-pgtable/arch-support.txt
+ create mode 100644 mm/debug_vm_pgtable.c
+
+-- 
+2.7.4
+
 
 _______________________________________________
 linux-snps-arc mailing list
