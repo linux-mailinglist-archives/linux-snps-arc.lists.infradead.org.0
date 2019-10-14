@@ -2,142 +2,94 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 72348D6901
-	for <lists+linux-snps-arc@lfdr.de>; Mon, 14 Oct 2019 20:02:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4944ED695D
+	for <lists+linux-snps-arc@lfdr.de>; Mon, 14 Oct 2019 20:25:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xRVpLFh6sgTsDzjZqvPVlPZtk9SqSFisEYMejpF307w=; b=hRhOMp2NfsWPhT
-	B7J6nRIKD9nTm0KHD0sReOZGf+YEu6gx6V57nTwKRsY0qs+1E1j/wLNti9M5Ora3oXPNU3EMLnhBd
-	qUHe0eG7N7qI6cMKrP9kcQ3qqoLR6LZvyq0Lbamkzg7X4fBlDq+QiGL6LeHfJoD1CZtZZVTZ2h1ax
-	Ovt8kkgr5+LI8Hy2kkEWjLAZsLrDgRePBFBWmiOk4YEqI4PUW7EhRbNve2DrX0MHOz0fiv8h7e/9V
-	FZ3Uy7qhlWa3z+gCbgr0gMwdaatEhnukIK08RZ23SDiBZc5I6ubZS23XTTT1yJJPEKO1jE26Ph+Q2
-	4fcg7EJHxu6M/uPqyxZg==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=NFvQZAbaWrnLiQN1kTkPxAP9++1NOOwZt8ypFfxa4tM=; b=bhJoTboB6R25VM
+	hjqNJWgg+/20QUSYjeYUV1cup1ubo4qPA2Wtfc6lvZXiGdyo7/78ShpmYw/TGuH7/GjVlEQHiJ63l
+	IlH8t2D+e9Y98Uygqe5wyI3nWiUR1hbunNhbxyaZ2CDrfRBUiW46iGTe9zHgbRCZAML+NoJAjsUm3
+	RD0flasb/9mvXsg1A6/38Yeelg1c9qOmhMK6WTIk+cH1UbgMWL4TP46F/G8udF4aa7zav0eg8xktF
+	lVBCGBOzyGnnUxtKn+VtPsNxMUAj7sJnQps/AVgpL9TdcTid7wUWMUaw69ig7lFX1y+bicIZHNrKj
+	LChMwlPs9f9OGBawnrNQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iK4gH-0003LH-32; Mon, 14 Oct 2019 18:02:53 +0000
-Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
+	id 1iK52B-0004F7-2x; Mon, 14 Oct 2019 18:25:31 +0000
+Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iK4g7-00039h-TF
- for linux-snps-arc@lists.infradead.org; Mon, 14 Oct 2019 18:02:45 +0000
-Received: by mail-pg1-x541.google.com with SMTP id i76so10544805pgc.0
- for <linux-snps-arc@lists.infradead.org>; Mon, 14 Oct 2019 11:02:43 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:openpgp:autocrypt:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=Hc7ghuc+3ekx1ATFhRMzexaqjgYhAAp5Cpu89h0fpKE=;
- b=GhPw/VHL6m/jwIGK7ECBr1SuEjCCiwTfDiUGzPwL6KwtCeGFk14d+hAt8TC5AFNUFe
- PCmpbcDXxYsoch1LjouiPlPM7urzYM13qifMO/RUt4j5rbu6Cr9p/oNGF8JztItTyOJo
- 0PbiLPh9yOPY+7zXgOTxVz/HNM7Z7unX8spgTdZmBojCYYefdMPzwZ9gJ1NF/8raHnf6
- 3gnhzZ0OFP+zQZcyZf+fJ9jNzNqGTtU43HMZoFPhEDpc4vH/w8XRPjkgchTOqFDv9r2P
- tL9PZh9uQxW3TbMqnZRZLo5qBHv0ymiM5GBLLK44gkLspzCgDbSQyLoiZukaNqQ/FGbS
- sTwA==
+ id 1iK528-0004Ee-Kz
+ for linux-snps-arc@lists.infradead.org; Mon, 14 Oct 2019 18:25:30 +0000
+Received: by mail-lj1-x243.google.com with SMTP id m13so17548414ljj.11
+ for <linux-snps-arc@lists.infradead.org>; Mon, 14 Oct 2019 11:25:28 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=linux-foundation.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=KDuevqM/GLUJPGbOy3AGpp+bGYIu9uznq9tCzNOdVnk=;
+ b=eFnO/9lpSVSXWLQ3fx0+ELMmNrsLtf3Hba4c2Es0a+hMIgo8BkTvA2g+XLL6ae5cuf
+ eHpY4iHiQNdWJG0yCJ28JJvdlgzq74lQSbjKt6r0QLWzMfhv7g4BRu4JRX+xaJEXEY1R
+ 7khFc16C1Y9LdR7AcqZ12vycw+JbW4J+ln5j8=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
- :message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=Hc7ghuc+3ekx1ATFhRMzexaqjgYhAAp5Cpu89h0fpKE=;
- b=U7xiQUBn8MnQSr3FSJfG30isq7QptNdY7Z5RQLRozPoNSr9ZXnzBx0/jg/jSGhi7XP
- weQIjU66Wm01Qy+KFtqiDOf6NtPhBhvNh5qIAPvM8bKmj5pPeAfPODNURlpgDr9JENU4
- CZPBw8cxqmpzRUgcLFjz1x7ksE5NOkbjEMnh775lYGaxo7/GSvnUoBChhjziaja+O+df
- 94Udqrm8U4SqbssMcKz6W3izg43zqMLz6PNJnzsZaMnCwAcyKe6/B2/2fY/18i21brrx
- F9H1bflDGi4IK+wybMvRTJxWOQCTr8+ibKSGSzsRXhKGGfuzMZay5EMn7YuS2J4e2ffr
- f9BA==
-X-Gm-Message-State: APjAAAVAb9EGMD4D7UehhUIuMv8LH3TLKJ4zoOdsh/Fk2Ya6i6AASLtU
- cxbbXRDUGqznuFt+1ePR3MI=
-X-Google-Smtp-Source: APXvYqz6IKOKeTeSRnlWwPg/qD63GVF1rmIrNTp6bWFKehR/c5xHzlcpfI3RYVeX53j1di5dz6RzVQ==
-X-Received: by 2002:a63:ba05:: with SMTP id k5mr14433657pgf.195.1571076162378; 
- Mon, 14 Oct 2019 11:02:42 -0700 (PDT)
-Received: from [192.168.110.119] ([198.182.47.47])
- by smtp.gmail.com with ESMTPSA id t125sm22717154pfc.80.2019.10.14.11.02.39
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 14 Oct 2019 11:02:40 -0700 (PDT)
-Subject: Re: [RFC] asm-generic/tlb: stub out pmd_free_tlb() if
- __PAGETABLE_PMD_FOLDED
-To: Linus Torvalds <torvalds@linux-foundation.org>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=KDuevqM/GLUJPGbOy3AGpp+bGYIu9uznq9tCzNOdVnk=;
+ b=rdK6rFL0pb4kMgvTXqIE6SS8hcq/Ehpm/XpAP9yK3vkDpcIYnOItWNiHma9irp8q6J
+ am3cBTGkCin0aHtn7zVUfBmCjRY2Bhn69qeAf40YBHDHBCxhmOz3nzmGtEePWh1KOlX5
+ d/oh0d+fQwsZw1yFUAmongoq66rO2HKJ5lpDPi/VHtXxa56qheVBcs9UFWix+EY39HC4
+ Z+CcHGw6yt6xdaH0m6yoy1JyQ0VaWJVjUe5miY5qGCa8GfEiKuwfYRUnVFvhKcqHWsTu
+ WAn+KOg/2rxZnnU0nvASbIeRyOPOOYWjTpWLaDttaNIW36X4F5ehMG1g/jM1Je4GgkmA
+ WolA==
+X-Gm-Message-State: APjAAAWwC22xmqdCLfWLNf0ll3gCfOnKfQI41oEyheO7l+knWT58I2lb
+ 8FJPMMQ9KnPTAgg9ERLN3ULapCNUrmQ=
+X-Google-Smtp-Source: APXvYqzxk347kYE10qHQ/2vf98+VdjOtQcyDdHEDsQq9n1NCci/QI8damgJrxeBdazmfyQ/TExd5vA==
+X-Received: by 2002:a2e:a0ca:: with SMTP id f10mr9638557ljm.84.1571077526522; 
+ Mon, 14 Oct 2019 11:25:26 -0700 (PDT)
+Received: from mail-lf1-f49.google.com (mail-lf1-f49.google.com.
+ [209.85.167.49])
+ by smtp.gmail.com with ESMTPSA id t22sm4402652lfg.91.2019.10.14.11.25.24
+ for <linux-snps-arc@lists.infradead.org>
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Mon, 14 Oct 2019 11:25:25 -0700 (PDT)
+Received: by mail-lf1-f49.google.com with SMTP id c195so12475736lfg.9
+ for <linux-snps-arc@lists.infradead.org>; Mon, 14 Oct 2019 11:25:24 -0700 (PDT)
+X-Received: by 2002:a19:f709:: with SMTP id z9mr18323634lfe.170.1571077524617; 
+ Mon, 14 Oct 2019 11:25:24 -0700 (PDT)
+MIME-Version: 1.0
 References: <20191011121951.nxna6hruuskvdxod@box>
  <20191011223818.7238-1-vgupta@synopsys.com>
  <CAHk-=whLs=TrRzmB9KRLxcPERq0QXPUUkbD8vzKzaDszBcUspg@mail.gmail.com>
-From: Vineet Gupta <vineetg76@gmail.com>
-Openpgp: preference=signencrypt
-Autocrypt: addr=vineetg76@gmail.com; prefer-encrypt=mutual; keydata=
- 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
- deE0Dvw98SWmZSNtdOPnJZ0D
-Message-ID: <c0979d98-7236-b7c8-bd40-173ee2e87385@gmail.com>
-Date: Mon, 14 Oct 2019 11:02:38 -0700
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
-MIME-Version: 1.0
-In-Reply-To: <CAHk-=whLs=TrRzmB9KRLxcPERq0QXPUUkbD8vzKzaDszBcUspg@mail.gmail.com>
-Content-Language: en-US
+ <c0979d98-7236-b7c8-bd40-173ee2e87385@gmail.com>
+In-Reply-To: <c0979d98-7236-b7c8-bd40-173ee2e87385@gmail.com>
+From: Linus Torvalds <torvalds@linux-foundation.org>
+Date: Mon, 14 Oct 2019 11:25:08 -0700
+X-Gmail-Original-Message-ID: <CAHk-=wi3WXpKJkcpgHkUMgLiX9UdXnXhSFzBd8vTWkKgFpz0+Q@mail.gmail.com>
+Message-ID: <CAHk-=wi3WXpKJkcpgHkUMgLiX9UdXnXhSFzBd8vTWkKgFpz0+Q@mail.gmail.com>
+Subject: Re: [RFC] asm-generic/tlb: stub out pmd_free_tlb() if
+ __PAGETABLE_PMD_FOLDED
+To: Vineet Gupta <vineetg76@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191014_110243_988012_13AA803E 
-X-CRM114-Status: GOOD (  16.10  )
+X-CRM114-CacheID: sfid-20191014_112528_711078_6EC83806 
+X-CRM114-Status: GOOD (  17.35  )
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:243 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (vineetg76[at]gmail.com)
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (vineetg76[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-snps-arc@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -163,45 +115,98 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-snps-arc" <linux-snps-arc-bounces@lists.infradead.org>
 Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org
 
-On 10/14/19 10:41 AM, Linus Torvalds wrote:
-> On Fri, Oct 11, 2019 at 3:38 PM Vineet Gupta <Vineet.Gupta1@synopsys.com> wrote:
->>
->> This is inine with similar patches for nopud [1] and nop4d [2] cases.
-> 
-> I don't think your patch is wrong, but wouldn't it be easier and
-> cleaner to just do this instead
-> 
->     --- a/include/asm-generic/pgtable-nopmd.h
->     +++ b/include/asm-generic/pgtable-nopmd.h
->     @@ -60,7 +60,7 @@ static inline pmd_t * pmd_offset(pud_t * pud,
-> unsigned long address)
->      static inline void pmd_free(struct mm_struct *mm, pmd_t *pmd)
->      {
->      }
->     -#define __pmd_free_tlb(tlb, x, a)          do { } while (0)
->     +#define pmd_free_tlb(tlb, x, a)            do { } while (0)
-> 
->      #undef  pmd_addr_end
->      #define pmd_addr_end(addr, end)                    (end)
+On Mon, Oct 14, 2019 at 11:02 AM Vineet Gupta <vineetg76@gmail.com> wrote:
+>
+> I suppose we could but
+>
+> (a) It would be asymmetric with the __p{u,4}d_free_tlb() changes in [1] and [2].
 
-I suppose we could but
+Your patch is already assymmetric wrt those anyway - you had to add that
 
-(a) It would be asymmetric with the __p{u,4}d_free_tlb() changes in [1] and [2].
-Do you  prefer [1] and [2] be repun along the same lines as you propose above ?
+  +#else
+  +#define pmd_free_tlb(tlb, pmdp, address)        do { } while (0)
+  +#endif
 
-(b) IMHO p?d_free_tlb() under corresponding #ifndef *P?D_FOLDED is much clearer to
-read as being stubbed out. But this is minor point.
+that the other cases don't currently have, so then you point to
+another patch that makes the code uglier instead.
 
-Also would you care to shed light on my other question about not being able to
-fold away pmd_clear_bad() despite PMD_FOLDED given the pmd macros actually
-checking for pgd. Of all the people you are likely to have most insight on how the
-pmd folding actually evolved and works :-)
+> Do you  prefer [1] and [2] be repun along the same lines as you propose above ?
 
-Thx,
--Vineet
+In general, I absolutely detest how we have random
 
-[1] http://lists.infradead.org/pipermail/linux-snps-arc/2019-October/006266.html
-[2] http://lists.infradead.org/pipermail/linux-snps-arc/2019-October/006265.html
+   #ifndef ARCH_HAS_ONE_DEFINE
+   #define another_define_entirely()
+   ...
+
+which makes no sense and is ugly, and also wreaks havoc on simple
+things like "git grep another_define_entirely"
+
+I've long tried to convince people to just do
+
+  #ifndef special_define
+  #define special_define(xyz) ..
+  #endif
+
+instead, which doesn't mix up two completely unrelated names, and when
+you grep for that function name, you _see_ all the context.
+
+> Also would you care to shed light on my other question about not being able to
+> fold away pmd_clear_bad() despite PMD_FOLDED given the pmd macros actually
+> checking for pgd. Of all the people you are likely to have most insight on how the
+> pmd folding actually evolved and works :-)
+
+I think some of it is just ugly and historical, and confused.
+
+In general, it should always be the "higher" level that folds away. So
+I think the best example of this is
+
+  include/asm-generic/pgtable-nop4d.h
+
+where basically all the "pgd" functions become no-ops, and can never
+not exist or be bad, because they are always just containers for the
+lower level and don't have any data in them themselves:
+
+  static inline int pgd_none(pgd_t pgd)           { return 0; }
+  static inline int pgd_bad(pgd_t pgd)            { return 0; }
+  static inline int pgd_present(pgd_t pgd)        { return 1; }
+  static inline void pgd_clear(pgd_t *pgd)        { }
+
+and walking from pgd to p4d is that nice folded op:
+
+  static inline p4d_t *p4d_offset(pgd_t *pgd, unsigned long address)
+  { return (p4d_t *)pgd; }
+
+and this is how it should always work.See "nopud" and "nopmd"(which
+are 3rd/2nd level respectively) doing the same thing exactly.
+
+And yes, pmd_clear_bad() should just go away. We have
+
+  static inline int pmd_none_or_clear_bad(pmd_t *pmd)
+  {
+        if (pmd_none(*pmd))
+                return 1;
+        if (unlikely(pmd_bad(*pmd))) {
+                pmd_clear_bad(pmd);
+                return 1;
+        }
+        return 0;
+  }
+
+and if the pmd doesn't exist, then both pmd_none() and pmd_bad()
+should just be zero (see above), and the pmd_none_or_clear_bad()
+should just become "return 0";
+
+Exactly what part isn't working for you?
+
+I suspect part of the problem is exactly that we than have that stupid
+confusion with some code checking "#ifdef __PAGETABLE_PMD_FOLDED" and
+then making their own random decisions based on things like that
+instead.
+
+When you do that, the code ends up relying on other magic than just
+the natural folding.
+
+            Linus
 
 _______________________________________________
 linux-snps-arc mailing list
