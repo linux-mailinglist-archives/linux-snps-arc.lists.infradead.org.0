@@ -2,48 +2,49 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 29C9CD75E7
-	for <lists+linux-snps-arc@lfdr.de>; Tue, 15 Oct 2019 14:10:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 77B96D7612
+	for <lists+linux-snps-arc@lfdr.de>; Tue, 15 Oct 2019 14:12:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OkYTG5bNlnswz8vT/2xWLEvObMvenhf0qqvY9upKYQM=; b=GxIikEgiYrblSX
-	oPZ6sG9GLbr6NZSL2fEkzhL6WvZK5vYHGvDBDdVvQD0vvlnWWsutk3EOXNbWmMIYmx/FDb2j8hu9W
-	JmbtkGyBpRlGjEC5/bGZLsesA1Cl2ZRMEAKtlWy8hsg7bFEje127zqLtnj/oELg35dn8QYAlKIf44
-	NCsXQm6ewp1qcNgp1C/7Nq6Hfi945//QnqDvm/qKdmsRjmReCz72kJUwuaR1x4RQl1TXIxcsNJsLD
-	GG4RgpxdXvmX5Pnzyi5zWyl9bDunUWbXjofscwENmNL/HllJCvK/LZwR0Wc6SkgCQ1YktmES0YA7Z
-	W5QdvgcwtJXrVAXHgZNg==;
+	List-Owner; bh=jvEDOvaXhjaZjpol7ojHFw0lu4sfByjzssRG1cnsgkc=; b=XYZGbzzmfNVJo6
+	rRMr2XcnaWn2duBFKqJ3LqhGLT5Po7azFAdEUsdHJm9+oNSRKcLE2eJwHvhT+0366PSHj/tFLTS4j
+	HZsRzOSkHM9OY1Szc6pB5VDtXqOgfLjo4NvfDwv+gmI3NzIJlC0YllMSjPglxTeuwIsii0r+102K7
+	TJOohlLSeBVEkav0OrZGdtpvGPMbFj4Q04q7rcb5HNsYYk6hkXgLVgPFSppLEmDBQhKoANERu7VZ/
+	KylG4DCLrDd2RW7WL4hQCw7tmYJ83HiIeFQ6fTNg2HQ80JMOP6joZ6zanfFwJ1NdRuEVTrCIu2Lag
+	gYwyk4NgJzFiiY2QVd5w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKLeZ-0003XA-G5; Tue, 15 Oct 2019 12:10:15 +0000
+	id 1iKLgF-0004Gg-Kt; Tue, 15 Oct 2019 12:11:59 +0000
 Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKLeM-0002C5-JQ; Tue, 15 Oct 2019 12:10:04 +0000
+ id 1iKLg3-00045o-Sw; Tue, 15 Oct 2019 12:11:49 +0000
 X-Virus-Scanned: by amavisd-new at test-mx.suse.de
 Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx1.suse.de (Postfix) with ESMTP id 574D7B316;
- Tue, 15 Oct 2019 12:09:59 +0000 (UTC)
-Date: Tue, 15 Oct 2019 14:09:56 +0200
+ by mx1.suse.de (Postfix) with ESMTP id 6BE98B2CF;
+ Tue, 15 Oct 2019 12:11:46 +0000 (UTC)
+Date: Tue, 15 Oct 2019 14:11:45 +0200
 From: Michal Hocko <mhocko@kernel.org>
 To: David Hildenbrand <david@redhat.com>
 Subject: Re: [PATCH V6 1/2] mm/page_alloc: Make alloc_gigantic_page()
  available for general use
-Message-ID: <20191015120956.GF317@dhcp22.suse.cz>
+Message-ID: <20191015121145.GG317@dhcp22.suse.cz>
 References: <1571131302-32290-1-git-send-email-anshuman.khandual@arm.com>
  <1571131302-32290-2-git-send-email-anshuman.khandual@arm.com>
  <9da1f196-51bd-06ac-c5dc-b55776fce2be@redhat.com>
  <20191015114723.GD317@dhcp22.suse.cz>
  <513bc2f7-8110-58f7-36c1-a04b59f11f7e@redhat.com>
+ <20191015120956.GF317@dhcp22.suse.cz>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <513bc2f7-8110-58f7-36c1-a04b59f11f7e@redhat.com>
+In-Reply-To: <20191015120956.GF317@dhcp22.suse.cz>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191015_051002_796302_1826494B 
-X-CRM114-Status: GOOD (  14.86  )
+X-CRM114-CacheID: sfid-20191015_051148_222834_4334E48D 
+X-CRM114-Status: GOOD (  16.39  )
 X-Spam-Score: -1.3 (-)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-1.3 points)
@@ -99,34 +100,38 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-snps-arc" <linux-snps-arc-bounces@lists.infradead.org>
 Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org
 
-On Tue 15-10-19 13:50:02, David Hildenbrand wrote:
-> On 15.10.19 13:47, Michal Hocko wrote:
-> > On Tue 15-10-19 13:42:03, David Hildenbrand wrote:
-> > [...]
-> > > > -static bool pfn_range_valid_gigantic(struct zone *z,
-> > > > -			unsigned long start_pfn, unsigned long nr_pages)
-> > > > -{
-> > > > -	unsigned long i, end_pfn = start_pfn + nr_pages;
-> > > > -	struct page *page;
-> > > > -
-> > > > -	for (i = start_pfn; i < end_pfn; i++) {
-> > > > -		if (!pfn_valid(i))
-> > > > -			return false;
-> > > > -
-> > > > -		page = pfn_to_page(i);
+On Tue 15-10-19 14:09:56, Michal Hocko wrote:
+> On Tue 15-10-19 13:50:02, David Hildenbrand wrote:
+> > On 15.10.19 13:47, Michal Hocko wrote:
+> > > On Tue 15-10-19 13:42:03, David Hildenbrand wrote:
+> > > [...]
+> > > > > -static bool pfn_range_valid_gigantic(struct zone *z,
+> > > > > -			unsigned long start_pfn, unsigned long nr_pages)
+> > > > > -{
+> > > > > -	unsigned long i, end_pfn = start_pfn + nr_pages;
+> > > > > -	struct page *page;
+> > > > > -
+> > > > > -	for (i = start_pfn; i < end_pfn; i++) {
+> > > > > -		if (!pfn_valid(i))
+> > > > > -			return false;
+> > > > > -
+> > > > > -		page = pfn_to_page(i);
+> > > > 
+> > > > Am I missing something or should here really be a pfn_to_online_page() here
+> > > > instead of a pfn_valid() ?
 > > > 
-> > > Am I missing something or should here really be a pfn_to_online_page() here
-> > > instead of a pfn_valid() ?
+> > > http://lkml.kernel.org/r/20180423000943.GO17484@dhcp22.suse.cz
+> > > 
 > > 
-> > http://lkml.kernel.org/r/20180423000943.GO17484@dhcp22.suse.cz
-> > 
+> > So we managed to add PageReserved(page) but not pfn_to_online_page(). But it
+> > is the right thing to do? (or am I missing something?)
 > 
-> So we managed to add PageReserved(page) but not pfn_to_online_page(). But it
-> is the right thing to do? (or am I missing something?)
+> Yeah, pfn_to_online_page is better. But please note that this is an
+> optimistic check. The real check has to be done when isolating the
+> pageblock because things might change in the meantime.
 
-Yeah, pfn_to_online_page is better. But please note that this is an
-optimistic check. The real check has to be done when isolating the
-pageblock because things might change in the meantime.
+Except I have missed that we do get zone from the page and other
+undefined state. Scratch my above comment.
 -- 
 Michal Hocko
 SUSE Labs
