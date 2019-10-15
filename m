@@ -2,58 +2,56 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 77B96D7612
-	for <lists+linux-snps-arc@lfdr.de>; Tue, 15 Oct 2019 14:12:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 08DBBD767B
+	for <lists+linux-snps-arc@lfdr.de>; Tue, 15 Oct 2019 14:27:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jvEDOvaXhjaZjpol7ojHFw0lu4sfByjzssRG1cnsgkc=; b=XYZGbzzmfNVJo6
-	rRMr2XcnaWn2duBFKqJ3LqhGLT5Po7azFAdEUsdHJm9+oNSRKcLE2eJwHvhT+0366PSHj/tFLTS4j
-	HZsRzOSkHM9OY1Szc6pB5VDtXqOgfLjo4NvfDwv+gmI3NzIJlC0YllMSjPglxTeuwIsii0r+102K7
-	TJOohlLSeBVEkav0OrZGdtpvGPMbFj4Q04q7rcb5HNsYYk6hkXgLVgPFSppLEmDBQhKoANERu7VZ/
-	KylG4DCLrDd2RW7WL4hQCw7tmYJ83HiIeFQ6fTNg2HQ80JMOP6joZ6zanfFwJ1NdRuEVTrCIu2Lag
-	gYwyk4NgJzFiiY2QVd5w==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=n0D752Lvle/3py12vkZ6sDoWb14ECczP4osQTmWl30o=; b=E8kD9xbCk3EUZU
+	5o9gYb+04G+Nw4g2nty3nFkAFvIxg18xGO4fWiLvji2ve2sWbUbC2W5Q6iqJy8SbNNa+QZ6Ij8WNp
+	cj0EriJLoHUJuoyZF5mJHEAouIg1sV4SQXP3Jye4Nrn4fYnC/p/NlZEBByk5FVoQSlRqjldA1PGoo
+	2cZpv0knDD0S4nQvKx07OLxT/PTcIN4o2QFFsvxfLA5sDX7WtJTLCe7gOXNZC1OZlcH0qdiyXGk2e
+	vdzQsLoMGgQdgvt55jdm6MbEBFHLLuHGUJfKUMKlCY0Vx3cWseIf8sbs5yazvTzSHOOEanDVme62b
+	j0b2pNpkeExk6NDdIhmQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKLgF-0004Gg-Kt; Tue, 15 Oct 2019 12:11:59 +0000
-Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKLg3-00045o-Sw; Tue, 15 Oct 2019 12:11:49 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx1.suse.de (Postfix) with ESMTP id 6BE98B2CF;
- Tue, 15 Oct 2019 12:11:46 +0000 (UTC)
-Date: Tue, 15 Oct 2019 14:11:45 +0200
-From: Michal Hocko <mhocko@kernel.org>
-To: David Hildenbrand <david@redhat.com>
-Subject: Re: [PATCH V6 1/2] mm/page_alloc: Make alloc_gigantic_page()
- available for general use
-Message-ID: <20191015121145.GG317@dhcp22.suse.cz>
+	id 1iKLur-0001o4-N9; Tue, 15 Oct 2019 12:27:05 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iKLui-0001fB-R4; Tue, 15 Oct 2019 12:26:58 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0AB1D337;
+ Tue, 15 Oct 2019 05:26:55 -0700 (PDT)
+Received: from [10.162.42.142] (p8cg001049571a15.blr.arm.com [10.162.42.142])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ 182753F68E; Tue, 15 Oct 2019 05:26:41 -0700 (PDT)
+Subject: Re: [PATCH V6 2/2] mm/debug: Add tests validating architecture page
+ table helpers
+To: Michal Hocko <mhocko@kernel.org>
 References: <1571131302-32290-1-git-send-email-anshuman.khandual@arm.com>
- <1571131302-32290-2-git-send-email-anshuman.khandual@arm.com>
- <9da1f196-51bd-06ac-c5dc-b55776fce2be@redhat.com>
- <20191015114723.GD317@dhcp22.suse.cz>
- <513bc2f7-8110-58f7-36c1-a04b59f11f7e@redhat.com>
- <20191015120956.GF317@dhcp22.suse.cz>
+ <1571131302-32290-3-git-send-email-anshuman.khandual@arm.com>
+ <20191015114611.GC317@dhcp22.suse.cz>
+From: Anshuman Khandual <anshuman.khandual@arm.com>
+Message-ID: <cb441eab-6cde-5537-6f94-f183f119c92e@arm.com>
+Date: Tue, 15 Oct 2019 17:57:08 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
+ Thunderbird/52.9.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191015120956.GF317@dhcp22.suse.cz>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20191015114611.GC317@dhcp22.suse.cz>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191015_051148_222834_4334E48D 
-X-CRM114-Status: GOOD (  16.39  )
-X-Spam-Score: -1.3 (-)
+X-CRM114-CacheID: sfid-20191015_052656_965952_86C70CBF 
+X-CRM114-Status: GOOD (  13.93  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-1.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-snps-arc@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -70,71 +68,60 @@ Cc: Mark Rutland <mark.rutland@arm.com>, linux-ia64@vger.kernel.org,
  James Hogan <jhogan@kernel.org>,
  Tetsuo Handa <penguin-kernel@i-love.sakura.ne.jp>,
  Heiko Carstens <heiko.carstens@de.ibm.com>, linux-kernel@vger.kernel.org,
- linux-mm@kvack.org, Paul Mackerras <paulus@samba.org>,
- sparclinux@vger.kernel.org, Thomas Gleixner <tglx@linutronix.de>,
- Andrea Arcangeli <aarcange@redhat.com>, linux-s390@vger.kernel.org,
+ linux-mm@kvack.org, Dave Hansen <dave.hansen@intel.com>,
+ Paul Mackerras <paulus@samba.org>, sparclinux@vger.kernel.org,
+ Thomas Gleixner <tglx@linutronix.de>, linux-s390@vger.kernel.org,
  Michael Ellerman <mpe@ellerman.id.au>, x86@kernel.org,
  Russell King - ARM Linux <linux@armlinux.org.uk>,
  Matthew Wilcox <willy@infradead.org>, Steven Price <Steven.Price@arm.com>,
  Jason Gunthorpe <jgg@ziepe.ca>, Gerald Schaefer <gerald.schaefer@de.ibm.com>,
- David Rientjes <rientjes@google.com>, linux-snps-arc@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org, Kees Cook <keescook@chromium.org>,
- Anshuman Khandual <anshuman.khandual@arm.com>,
- Masahiro Yamada <yamada.masahiro@socionext.com>, linuxppc-dev@lists.ozlabs.org,
+ linux-snps-arc@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ Kees Cook <keescook@chromium.org>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
  Mark Brown <broonie@kernel.org>, "Kirill A . Shutemov" <kirill@shutemov.name>,
  Dan Williams <dan.j.williams@intel.com>, Vlastimil Babka <vbabka@suse.cz>,
- Oscar Salvador <osalvador@suse.de>, Christophe Leroy <christophe.leroy@c-s.fr>,
+ Christophe Leroy <christophe.leroy@c-s.fr>,
  Sri Krishna chowdary <schowdary@nvidia.com>,
  Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Dave Hansen <dave.hansen@intel.com>, linux-mips@vger.kernel.org,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-mips@vger.kernel.org,
  Ralf Baechle <ralf@linux-mips.org>, Paul Burton <paul.burton@mips.com>,
  Mike Rapoport <rppt@linux.vnet.ibm.com>, Vineet Gupta <vgupta@synopsys.com>,
  Martin Schwidefsky <schwidefsky@de.ibm.com>,
- Andrew Morton <akpm@linux-foundation.org>,
- Mel Gorman <mgorman@techsingularity.net>,
- "David S. Miller" <davem@davemloft.net>,
- Mike Kravetz <mike.kravetz@oracle.com>
+ Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
+ "David S. Miller" <davem@davemloft.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-snps-arc" <linux-snps-arc-bounces@lists.infradead.org>
 Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org
 
-On Tue 15-10-19 14:09:56, Michal Hocko wrote:
-> On Tue 15-10-19 13:50:02, David Hildenbrand wrote:
-> > On 15.10.19 13:47, Michal Hocko wrote:
-> > > On Tue 15-10-19 13:42:03, David Hildenbrand wrote:
-> > > [...]
-> > > > > -static bool pfn_range_valid_gigantic(struct zone *z,
-> > > > > -			unsigned long start_pfn, unsigned long nr_pages)
-> > > > > -{
-> > > > > -	unsigned long i, end_pfn = start_pfn + nr_pages;
-> > > > > -	struct page *page;
-> > > > > -
-> > > > > -	for (i = start_pfn; i < end_pfn; i++) {
-> > > > > -		if (!pfn_valid(i))
-> > > > > -			return false;
-> > > > > -
-> > > > > -		page = pfn_to_page(i);
-> > > > 
-> > > > Am I missing something or should here really be a pfn_to_online_page() here
-> > > > instead of a pfn_valid() ?
-> > > 
-> > > http://lkml.kernel.org/r/20180423000943.GO17484@dhcp22.suse.cz
-> > > 
-> > 
-> > So we managed to add PageReserved(page) but not pfn_to_online_page(). But it
-> > is the right thing to do? (or am I missing something?)
-> 
-> Yeah, pfn_to_online_page is better. But please note that this is an
-> optimistic check. The real check has to be done when isolating the
-> pageblock because things might change in the meantime.
 
-Except I have missed that we do get zone from the page and other
-undefined state. Scratch my above comment.
--- 
-Michal Hocko
-SUSE Labs
+
+On 10/15/2019 05:16 PM, Michal Hocko wrote:
+> On Tue 15-10-19 14:51:42, Anshuman Khandual wrote:
+>> This adds tests which will validate architecture page table helpers and
+>> other accessors in their compliance with expected generic MM semantics.
+>> This will help various architectures in validating changes to existing
+>> page table helpers or addition of new ones.
+>>
+>> Test page table and memory pages creating it's entries at various level are
+>> all allocated from system memory with required size and alignments. But if
+>> memory pages with required size and alignment could not be allocated, then
+>> all depending individual tests are just skipped afterwards. This test gets
+>> called right after init_mm_internals() required for alloc_contig_range() to
+>> work correctly.
+>>
+>> This gets build and run when CONFIG_DEBUG_VM_PGTABLE is selected along with
+>> CONFIG_VM_DEBUG. Architectures willing to subscribe this test also need to
+>> select CONFIG_ARCH_HAS_DEBUG_VM_PGTABLE which for now is limited to x86 and
+>> arm64. Going forward, other architectures too can enable this after fixing
+>> build or runtime problems (if any) with their page table helpers.
+> 
+> A highlevel description of tests and what they are testing for would be
+> really appreciated. Who wants to run these tests and why/when? What kind
+> of bugs would get detected? In short why do we really need/want this
+> code in the tree?
+
+Sure, will do.
 
 _______________________________________________
 linux-snps-arc mailing list
