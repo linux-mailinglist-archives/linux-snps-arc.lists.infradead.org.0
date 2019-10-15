@@ -2,67 +2,57 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 39D65D75B0
-	for <lists+linux-snps-arc@lfdr.de>; Tue, 15 Oct 2019 14:01:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 29C9CD75E7
+	for <lists+linux-snps-arc@lfdr.de>; Tue, 15 Oct 2019 14:10:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:References:
-	To:From:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=sErfQNYSMGEliuei4DYORaaFYJMJk9goL/29OczsyH0=; b=jqHemG7gBfCgyTguU1yJLDoOV
-	9WL2mXNzA1pNaTrCX8e4Fn359r4zs3NczPWU0CYiwu3Gs5kEWvwnF9kOyO9vEIwK4e1BXDza8svD5
-	d7p14LcMOC+ulL5/nZojXj8gED4W+0qorDyDhjAG9xSCqGSok5akBRAlnmgOMxB0kv2Se2LBgSuBt
-	5ssj+ZjhtJ41iKOoVFPyyV/MZt5zAK+Y/QwwcOGqbLMjXhUydNejnLbiTRIuGikQoSvMDJrIQGDTB
-	KWd+068LsmFCPFuYlcWhlTTV2jUJrdiHqyJ0iyCG5styHL06gkfP4kQhwpwQCYP12G2H8GM23WYfh
-	tB/PbndmA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=OkYTG5bNlnswz8vT/2xWLEvObMvenhf0qqvY9upKYQM=; b=GxIikEgiYrblSX
+	oPZ6sG9GLbr6NZSL2fEkzhL6WvZK5vYHGvDBDdVvQD0vvlnWWsutk3EOXNbWmMIYmx/FDb2j8hu9W
+	JmbtkGyBpRlGjEC5/bGZLsesA1Cl2ZRMEAKtlWy8hsg7bFEje127zqLtnj/oELg35dn8QYAlKIf44
+	NCsXQm6ewp1qcNgp1C/7Nq6Hfi945//QnqDvm/qKdmsRjmReCz72kJUwuaR1x4RQl1TXIxcsNJsLD
+	GG4RgpxdXvmX5Pnzyi5zWyl9bDunUWbXjofscwENmNL/HllJCvK/LZwR0Wc6SkgCQ1YktmES0YA7Z
+	W5QdvgcwtJXrVAXHgZNg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKLWN-0008Pc-L9; Tue, 15 Oct 2019 12:01:47 +0000
-Received: from mx1.redhat.com ([209.132.183.28])
+	id 1iKLeZ-0003XA-G5; Tue, 15 Oct 2019 12:10:15 +0000
+Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKLWE-0008Hq-7h; Tue, 15 Oct 2019 12:01:39 +0000
-Received: from smtp.corp.redhat.com (int-mx06.intmail.prod.int.phx2.redhat.com
- [10.5.11.16])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mx1.redhat.com (Postfix) with ESMTPS id D3B8F1056F8C;
- Tue, 15 Oct 2019 12:01:36 +0000 (UTC)
-Received: from [10.36.116.26] (ovpn-116-26.ams2.redhat.com [10.36.116.26])
- by smtp.corp.redhat.com (Postfix) with ESMTP id 6B2745C548;
- Tue, 15 Oct 2019 12:01:28 +0000 (UTC)
+ id 1iKLeM-0002C5-JQ; Tue, 15 Oct 2019 12:10:04 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx1.suse.de (Postfix) with ESMTP id 574D7B316;
+ Tue, 15 Oct 2019 12:09:59 +0000 (UTC)
+Date: Tue, 15 Oct 2019 14:09:56 +0200
+From: Michal Hocko <mhocko@kernel.org>
+To: David Hildenbrand <david@redhat.com>
 Subject: Re: [PATCH V6 1/2] mm/page_alloc: Make alloc_gigantic_page()
  available for general use
-From: David Hildenbrand <david@redhat.com>
-To: Michal Hocko <mhocko@kernel.org>
+Message-ID: <20191015120956.GF317@dhcp22.suse.cz>
 References: <1571131302-32290-1-git-send-email-anshuman.khandual@arm.com>
  <1571131302-32290-2-git-send-email-anshuman.khandual@arm.com>
  <9da1f196-51bd-06ac-c5dc-b55776fce2be@redhat.com>
  <20191015114723.GD317@dhcp22.suse.cz>
  <513bc2f7-8110-58f7-36c1-a04b59f11f7e@redhat.com>
-Organization: Red Hat GmbH
-Message-ID: <3eaa50db-0b66-9d9d-3293-77216f3df91e@redhat.com>
-Date: Tue, 15 Oct 2019 14:01:27 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.1.0
 MIME-Version: 1.0
+Content-Disposition: inline
 In-Reply-To: <513bc2f7-8110-58f7-36c1-a04b59f11f7e@redhat.com>
-Content-Language: en-US
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.16
-X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.6.2
- (mx1.redhat.com [10.5.110.64]); Tue, 15 Oct 2019 12:01:37 +0000 (UTC)
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191015_050138_317969_75697554 
-X-CRM114-Status: GOOD (  18.79  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20191015_051002_796302_1826494B 
+X-CRM114-Status: GOOD (  14.86  )
+X-Spam-Score: -1.3 (-)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-1.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [209.132.183.28 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.15 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
 X-BeenThere: linux-snps-arc@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -104,44 +94,42 @@ Cc: Mark Rutland <mark.rutland@arm.com>, linux-ia64@vger.kernel.org,
  Mel Gorman <mgorman@techsingularity.net>,
  "David S. Miller" <davem@davemloft.net>,
  Mike Kravetz <mike.kravetz@oracle.com>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-snps-arc" <linux-snps-arc-bounces@lists.infradead.org>
 Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org
 
-On 15.10.19 13:50, David Hildenbrand wrote:
+On Tue 15-10-19 13:50:02, David Hildenbrand wrote:
 > On 15.10.19 13:47, Michal Hocko wrote:
->> On Tue 15-10-19 13:42:03, David Hildenbrand wrote:
->> [...]
->>>> -static bool pfn_range_valid_gigantic(struct zone *z,
->>>> -			unsigned long start_pfn, unsigned long nr_pages)
->>>> -{
->>>> -	unsigned long i, end_pfn = start_pfn + nr_pages;
->>>> -	struct page *page;
->>>> -
->>>> -	for (i = start_pfn; i < end_pfn; i++) {
->>>> -		if (!pfn_valid(i))
->>>> -			return false;
->>>> -
->>>> -		page = pfn_to_page(i);
->>>
->>> Am I missing something or should here really be a pfn_to_online_page() here
->>> instead of a pfn_valid() ?
->>
->> http://lkml.kernel.org/r/20180423000943.GO17484@dhcp22.suse.cz
->>
+> > On Tue 15-10-19 13:42:03, David Hildenbrand wrote:
+> > [...]
+> > > > -static bool pfn_range_valid_gigantic(struct zone *z,
+> > > > -			unsigned long start_pfn, unsigned long nr_pages)
+> > > > -{
+> > > > -	unsigned long i, end_pfn = start_pfn + nr_pages;
+> > > > -	struct page *page;
+> > > > -
+> > > > -	for (i = start_pfn; i < end_pfn; i++) {
+> > > > -		if (!pfn_valid(i))
+> > > > -			return false;
+> > > > -
+> > > > -		page = pfn_to_page(i);
+> > > 
+> > > Am I missing something or should here really be a pfn_to_online_page() here
+> > > instead of a pfn_valid() ?
+> > 
+> > http://lkml.kernel.org/r/20180423000943.GO17484@dhcp22.suse.cz
+> > 
 > 
-> So we managed to add PageReserved(page) but not pfn_to_online_page().
-> But it is the right thing to do? (or am I missing something?)
-> 
+> So we managed to add PageReserved(page) but not pfn_to_online_page(). But it
+> is the right thing to do? (or am I missing something?)
 
-Will send a patch.
-
+Yeah, pfn_to_online_page is better. But please note that this is an
+optimistic check. The real check has to be done when isolating the
+pageblock because things might change in the meantime.
 -- 
-
-Thanks,
-
-David / dhildenb
+Michal Hocko
+SUSE Labs
 
 _______________________________________________
 linux-snps-arc mailing list
