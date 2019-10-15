@@ -2,78 +2,95 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9A024D7FD3
-	for <lists+linux-snps-arc@lfdr.de>; Tue, 15 Oct 2019 21:19:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B3CC1D825F
+	for <lists+linux-snps-arc@lfdr.de>; Tue, 15 Oct 2019 23:46:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/N87tqY/SoA6S41Cnk6fnLn9Or5htoDsh/kbwSIY14U=; b=r3MuW4pMnctcdw
-	Jw0b6DLAnd5HvAOLAn4v7MZo+YAM9CkpjTtxrUqhQhLWMaGA758HzK69WWUAH1xwbsrVtzetwTx/A
-	mAJVOw6k/xuqXok2bsVJmGsZ9tXEAgY7d/L9pazP6Y+ZEh/AEh0+EK9vFDs0VWRmGOJoq+5KnrkGq
-	NIfRBfLgUrQLdatg92yEgj1Rba0Bb3hMwQbFl0q+63kC2AAXzAwJcyBmCSV6U/IRaj6mHTe+itGme
-	r3K0eWq3kAOzPIFCyMVM3fT1eMh6Qvvaqwsjv4JNK8374/11vA2JVAlPgQriAMFRTMNxRupkQVd8B
-	PfVFC4MfKiMWwIa6uQzA==;
+	List-Owner; bh=UQeqQncVcZpLlsl5s3z8XMHdcX9min6NogDuRhoevTA=; b=KrfPuFtBQ/OCWF
+	82nO/BsofdI0ofH7ATSEHRiiUJ+oiLk+YO3BpnIUJRHm+6AKdV/5iqLh0bGgdk8crFf7oDcDubIjk
+	oGmC0PIot+QaUzQ34v+wXfHxKFaS/gV6Jrz0ebkgZLoIj6Ezy6O5PNUxGUre5BSqm6Qjo2woPX2ib
+	BuXAosIz9dYreGs3hHcJQ4xzBs1e2AdlxkL3B7EVL5mgHmeA5r0hRPeInkFzz3LIj6p5Zz2ISSyqk
+	RmzuVvYG6mMXmJI0GkPxXRlSHRD7tTmkI8yQHFjrIZahOynDPgnHBlzaQ2IClbPj61e/I0KjVn/x6
+	FnUEbzJ6xZBS/J7WOOuw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKSM4-00025R-7P; Tue, 15 Oct 2019 19:19:36 +0000
-Received: from smtprelay-out1.synopsys.com ([198.182.47.102])
+	id 1iKUea-0005ny-G5; Tue, 15 Oct 2019 21:46:52 +0000
+Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKSM0-00023G-V1
- for linux-snps-arc@lists.infradead.org; Tue, 15 Oct 2019 19:19:34 +0000
-Received: from mailhost.synopsys.com (dc8-mailhost1.synopsys.com
- [10.13.135.209])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
- (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id ED46AC0C42;
- Tue, 15 Oct 2019 19:19:29 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1571167170; bh=HXvS8rDRQphESG7ffnx96mHp9U7LHEpSGqJLrluE2qs=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=ZCwJap5yYG7J/fX2/MtXF9Lr8CqjfSDU0gQFHRsYSxx2FEWJi/iuZokzl3Uf30gzg
- SuPpnut/Hlh2Ch2hC3n+P5PJm3A2/zjEQfiX8bTSa8wmOU9PBcPMevWWfwpqKoFzf2
- T8/tJZ0J6978lmKMd9VzQQ6JM3DJeuVkbene5eXKbP4VlpiDzaU50l01SsCeFcLvdK
- uH+nugVtEdJl9nJZd+ADQ1w4DXyIPY516+Nre5nCJS9f77LFY8tTeMC+JX7spZC6+a
- zzgv3/AFp9jYvvdqu55ATtDwmqvP/Ejt2i1bblheBZ9CHGqeYLnBJmR432v9efuxx6
- s9uOiNKbDoBXQ==
-Received: from vineetg-Latitude-E7450.internal.synopsys.com
- (vineetg-latitude-e7450.internal.synopsys.com [10.10.161.61])
- by mailhost.synopsys.com (Postfix) with ESMTP id 6329BA007E;
- Tue, 15 Oct 2019 19:19:29 +0000 (UTC)
-From: Vineet Gupta <Vineet.Gupta1@synopsys.com>
-To: Arnd Bergmann <arnd@arndb.de>, Will Deacon <will@kernel.org>,
- "Aneesh Kumar K . V" <aneesh.kumar@linux.ibm.com>,
- Andrew Morton <akpm@linux-foundation.org>, Nick Piggin <npiggin@gmail.com>,
- Peter Zijlstra <peterz@infradead.org>,
- "Kirill A . Shutemov" <kirill.shutemov@linux.intel.com>,
- Linus Torvalds <torvalds@linux-foundation.org>
-Subject: [PATCH v2 5/5] asm-generic/mm: stub out p{4,
- d}d_clear_bad() if __PAGETABLE_P{4, u}D_FOLDED
-Date: Tue, 15 Oct 2019 12:19:26 -0700
-Message-Id: <20191015191926.9281-6-vgupta@synopsys.com>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20191015191926.9281-1-vgupta@synopsys.com>
-References: <20191015191926.9281-1-vgupta@synopsys.com>
+ id 1iKUeX-0005n2-JW
+ for linux-snps-arc@lists.infradead.org; Tue, 15 Oct 2019 21:46:50 +0000
+Received: by mail-lj1-x241.google.com with SMTP id j19so21844979lja.1
+ for <linux-snps-arc@lists.infradead.org>; Tue, 15 Oct 2019 14:46:47 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=linux-foundation.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=ob5N5ZzOYqwWJlWtRK/QQr9teH3dlSPsAVI1F8bPf38=;
+ b=Ls2Ydx/1fiuQCKLYCr6mZfYT53ylM0bwO8QLfmOr29RVIEWsNQvXoEyD7/28atloUG
+ w+SNF88R+eUaHbdCKU6U17DXhOsSyLQK+W93/BhVqc1MTwofrvdbxA3OX0BP8484yWP6
+ rquduhuB1DQ9TVPZMjcMgJRO4GQPDwTo2bq84=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=ob5N5ZzOYqwWJlWtRK/QQr9teH3dlSPsAVI1F8bPf38=;
+ b=cXCRQC1hMa0gls3opMRTuGIA99H9ReCstlm4x0nfbA5C3X8cc+kv/axKfyH9Wm3l2a
+ LxCFxDAHOoePF1aoU0j2DJiFlW0fQiO0f6HCm2t4Y30emRGQOVzBqbg+srresH4TT9Xv
+ qGI+OIIiDNLuGo4OZlo2FY/Sol3EXh4xhhxDN74CN8GMlrpkDEcRyHL6GbNVV7031p2T
+ gKIFVrMtIAIEzy1uorrdJBzyWyqsKIfr+5Gv8ifuzMIggfHHGV+ZnExErWxXqs+t8COi
+ cHcqUvDByuE6/jMRglkgf0JAC2tym578jLseU0yfV03GPnFR8igX9N6AyCZ+EmJdMbwe
+ 6kpQ==
+X-Gm-Message-State: APjAAAUljcgsAUWCIO7cx4uB7cc5YjLoDl1lIiiuToUU8n2oqHfYMgMo
+ wnQbXTORunjEBq1EatrsoQsyl61UTU4=
+X-Google-Smtp-Source: APXvYqzQZng32p3i7g76R0XFqHlhP2CPlUjUh6BUkiRbiOdOCEcczTSaCUvmzD+pPWLX84BOlVLUhQ==
+X-Received: by 2002:a2e:750c:: with SMTP id q12mr23355512ljc.138.1571176005535; 
+ Tue, 15 Oct 2019 14:46:45 -0700 (PDT)
+Received: from mail-lf1-f46.google.com (mail-lf1-f46.google.com.
+ [209.85.167.46])
+ by smtp.gmail.com with ESMTPSA id k23sm5361089ljc.13.2019.10.15.14.46.43
+ for <linux-snps-arc@lists.infradead.org>
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Tue, 15 Oct 2019 14:46:43 -0700 (PDT)
+Received: by mail-lf1-f46.google.com with SMTP id t8so15624346lfc.13
+ for <linux-snps-arc@lists.infradead.org>; Tue, 15 Oct 2019 14:46:43 -0700 (PDT)
+X-Received: by 2002:a05:6512:219:: with SMTP id
+ a25mr22630003lfo.61.1571176002727; 
+ Tue, 15 Oct 2019 14:46:42 -0700 (PDT)
 MIME-Version: 1.0
+References: <20191015191926.9281-1-vgupta@synopsys.com>
+ <20191015191926.9281-3-vgupta@synopsys.com>
+In-Reply-To: <20191015191926.9281-3-vgupta@synopsys.com>
+From: Linus Torvalds <torvalds@linux-foundation.org>
+Date: Tue, 15 Oct 2019 14:46:27 -0700
+X-Gmail-Original-Message-ID: <CAHk-=whtRuGdsm0BR50vpwJBRJgP3u6Suz0LNa6WzR9RMtJjbw@mail.gmail.com>
+Message-ID: <CAHk-=whtRuGdsm0BR50vpwJBRJgP3u6Suz0LNa6WzR9RMtJjbw@mail.gmail.com>
+Subject: Re: [PATCH v2 2/5] asm-generic/tlb: stub out pud_free_tlb() if nopud
+ ...
+To: Vineet Gupta <Vineet.Gupta1@synopsys.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191015_121933_008862_5BBFF5EF 
-X-CRM114-Status: GOOD (  10.37  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191015_144649_659763_71A09981 
+X-CRM114-Status: UNSURE (   7.92  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:241 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-snps-arc@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -85,87 +102,28 @@ List-Post: <mailto:linux-snps-arc@lists.infradead.org>
 List-Help: <mailto:linux-snps-arc-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-snps-arc>, 
  <mailto:linux-snps-arc-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, linux-mm@kvack.org,
- Vineet Gupta <Vineet.Gupta1@synopsys.com>, linux-snps-arc@lists.infradead.org,
- linux-kernel@vger.kernel.org
+Cc: linux-arch <linux-arch@vger.kernel.org>, Arnd Bergmann <arnd@arndb.de>,
+ Peter Zijlstra <peterz@infradead.org>,
+ "Aneesh Kumar K . V" <aneesh.kumar@linux.ibm.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Nick Piggin <npiggin@gmail.com>, Linux-MM <linux-mm@kvack.org>,
+ Andrew Morton <akpm@linux-foundation.org>, linux-snps-arc@lists.infradead.org,
+ Will Deacon <will@kernel.org>,
+ "Kirill A . Shutemov" <kirill.shutemov@linux.intel.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-snps-arc" <linux-snps-arc-bounces@lists.infradead.org>
 Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org
 
-This removes the code for 2 level paging as seen on ARC
+On Tue, Oct 15, 2019 at 12:19 PM Vineet Gupta
+<Vineet.Gupta1@synopsys.com> wrote:
+>
+> This came up when removing __ARCH_HAS_5LEVEL_HACK for ARC as code bloat
+> from this routine which is not required in a 2-level paging setup
 
-| bloat-o-meter2 vmlinux-D-elide-p4d_free_tlb vmlinux-E-elide-p?d_clear_bad
-| add/remove: 0/2 grow/shrink: 0/0 up/down: 0/-40 (-40)
-| function                                     old     new   delta
-| pud_clear_bad                                 20       -     -20
-| p4d_clear_bad                                 20       -     -20
-| Total: Before=4136930, After=4136890, chg -1.000000%
+Ack, looks good.
 
-Signed-off-by: Vineet Gupta <vgupta@synopsys.com>
----
- include/asm-generic/pgtable.h | 11 +++++++++++
- mm/pgtable-generic.c          |  8 ++++++++
- 2 files changed, 19 insertions(+)
-
-diff --git a/include/asm-generic/pgtable.h b/include/asm-generic/pgtable.h
-index 818691846c90..9cdcbc7c0b7b 100644
---- a/include/asm-generic/pgtable.h
-+++ b/include/asm-generic/pgtable.h
-@@ -558,8 +558,19 @@ static inline pgprot_t pgprot_modify(pgprot_t oldprot, pgprot_t newprot)
-  * Do the tests inline, but report and clear the bad entry in mm/memory.c.
-  */
- void pgd_clear_bad(pgd_t *);
-+
-+#ifndef __PAGETABLE_P4D_FOLDED
- void p4d_clear_bad(p4d_t *);
-+#else
-+#define p4d_clear_bad(p4d)        do { } while (0)
-+#endif
-+
-+#ifndef __PAGETABLE_PUD_FOLDED
- void pud_clear_bad(pud_t *);
-+#else
-+#define pud_clear_bad(p4d)        do { } while (0)
-+#endif
-+
- void pmd_clear_bad(pmd_t *);
- 
- static inline int pgd_none_or_clear_bad(pgd_t *pgd)
-diff --git a/mm/pgtable-generic.c b/mm/pgtable-generic.c
-index 532c29276fce..a5edddc3846a 100644
---- a/mm/pgtable-generic.c
-+++ b/mm/pgtable-generic.c
-@@ -24,18 +24,26 @@ void pgd_clear_bad(pgd_t *pgd)
- 	pgd_clear(pgd);
- }
- 
-+#ifndef __PAGETABLE_P4D_FOLDED
- void p4d_clear_bad(p4d_t *p4d)
- {
- 	p4d_ERROR(*p4d);
- 	p4d_clear(p4d);
- }
-+#endif
- 
-+#ifndef __PAGETABLE_PUD_FOLDED
- void pud_clear_bad(pud_t *pud)
- {
- 	pud_ERROR(*pud);
- 	pud_clear(pud);
- }
-+#endif
- 
-+/*
-+ * Note that below can't be stubed out for nopmd case:
-+ * pmd folding is special and typically pmd_* macros refet to upper level
-+ */
- void pmd_clear_bad(pmd_t *pmd)
- {
- 	pmd_ERROR(*pmd);
--- 
-2.20.1
-
+           Linus
 
 _______________________________________________
 linux-snps-arc mailing list
