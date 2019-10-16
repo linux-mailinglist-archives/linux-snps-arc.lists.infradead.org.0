@@ -2,58 +2,59 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 25292D9721
-	for <lists+linux-snps-arc@lfdr.de>; Wed, 16 Oct 2019 18:24:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BB796D971F
+	for <lists+linux-snps-arc@lfdr.de>; Wed, 16 Oct 2019 18:24:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=2txIrih9iROec95JONkjWFB+FcrRkf7epX6XfUmYnrk=; b=lZ+WEu/FyJbVuC
-	qRXmeQkbvJqqwPYZQoFi29HKily6tq4qd/lfN7tcNZAJ5RutsxQ2o1crYSTNz0UhwxVqJpl7xepuS
-	PCfXEA5SqpgmbX5vNsx5TQpMQTAZAZhUEBkB/zRqKDpA/yXqii8ASK008oyX3brV2UeoGK3WknhgO
-	X+asVrPELX7+SdyqIZYA/OxFo+Z7MItE3tq6WD3aqIgm7mFnNAGQifLUfR7NTQRM6/nMHei0fxmSB
-	2ogmlOWerruGzjhk6Iz+mv/nL9ENR62YXYm0uCrXANbD+0ZErSZLW0qJfFfi9ben0S5UR/Z+DQjWT
-	yOH3P7rbouc9fnx+qlBw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=3DfmFOUGM8xcZMa8ZChZ13IryaZZ7r3gbMO/xVoVu5A=; b=Zb/sWVLkSS3rWP
+	TaqFqdWIGMlVURRvLyYqKRFrz/mMR/+pXUXrJOY8AZFc8gN2TV6I1eMLjWiQ1dTmR5g44+3HrM8cQ
+	NO/XCf31lUBGZ6SLSRlEn/wJL0Cbf6ByfGP2Na740NJCi/JShH6sgMTuy9qrDfdIoqyz16EnCt9+b
+	HZw75Ickb03S6T/U7Mr0WSyDuCUZOU7NbwUIxd1+7bIaD5fpHnuBcQlKU38OJxltyq32mgA0MENbU
+	kQxLJ4Jv2mnu1no3k/29iTxrc9i+gL4eZhmBwynIImVVXw7oLLzy1Q09vvUayRZpbhQRay67Xhsdn
+	AsTgXuuFmUBVUtQNUz0A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKm5s-0007H8-UL; Wed, 16 Oct 2019 16:24:12 +0000
+	id 1iKm5s-0007GS-Fl; Wed, 16 Oct 2019 16:24:12 +0000
 Received: from us03-smtprelay2.synopsys.com ([149.117.87.133]
  helo=smtprelay-out1.synopsys.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKm5p-0007Eb-2O
- for linux-snps-arc@lists.infradead.org; Wed, 16 Oct 2019 16:24:11 +0000
+ id 1iKm5n-0007DP-ID
+ for linux-snps-arc@lists.infradead.org; Wed, 16 Oct 2019 16:24:10 +0000
 Received: from mailhost.synopsys.com (dc8-mailhost1.synopsys.com
  [10.13.135.209])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
  (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 10620C300B;
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id F0BB6C2FFF;
  Wed, 16 Oct 2019 16:24:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1571243048; bh=Q1OWeW46pCK8necNfIb4Cw9P88sWMr95qAMSB5WZ0fs=;
- h=From:To:Cc:Subject:Date:From;
- b=GNRSeiD+nBpYkpwkOSZNxrMIFHMdMmXpHqEClsL06AtAgJBXyUf1Ptp+hlS3r6d2C
- EjhH8bk+lU8LFmOdlWjPimuje4r52uMAvtVkbh7hGCOjjncVug2omGKze/+GDrLjls
- L6/p8sClaz4jRT/iAgpgnHn3U4/w6fqrItaNxY5s94IiEiVDlw0GXUqnWQUeVD4q5T
- M6WKB341jFkyttCEuM5FiSDo4PnvioBPHREC8d6iYf1UKnNiHZDfZbQZMVedoCaCE3
- e6JeBvLZKh54BoFoJ1uEeJ+aD4ssxqTpdUsnmmmzKxb8cB/7m2LqvnGcuwnl6r/0RH
- mABQaLiIsWxNg==
+ t=1571243046; bh=UXULR1r/3kxBPP9KtRfgHaDn7Fn06VTK/VtH3ylzUjM=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=EIT3ymoMWVR4KhvFSgq+nGmBvxD2ZVa2NLkvX3cF/zkj+e9kji/YD3WEZLawNuKyY
+ 0VmsXCG4BfAjRESSunMDPOwxo2t2Y/5nejkmcptlQzmgx3AotkTgl7NlMCS5MrSMVe
+ Lz9RhZ4D0Tk89HaED4R8wQ5TEtf+SJ161Jk9ySs91GP+yqCBj1ftQK+QBJ913fXX/k
+ zwLLYAAnG7jH+Nen1GiTr8MX86UP94A7WDh6rULvwmNe+Ah/0g8L+SFdDk6+TQIg9P
+ Cfmz7DxKvuneDblV9O7JpIoE6guZ9xHv3Dljf4gND94gTm75AvN9UDC6g7nF/ERGKi
+ 0ILTv79lp6D5A==
 Received: from vineetg-Latitude-E7450.internal.synopsys.com
  (vineetg-latitude-e7450.internal.synopsys.com [10.10.161.61])
- by mailhost.synopsys.com (Postfix) with ESMTP id 14661A006D;
- Wed, 16 Oct 2019 16:24:02 +0000 (UTC)
+ by mailhost.synopsys.com (Postfix) with ESMTP id 5CDF9A0078;
+ Wed, 16 Oct 2019 16:24:04 +0000 (UTC)
 From: Vineet Gupta <Vineet.Gupta1@synopsys.com>
 To: linux-mm@kvack.org
-Subject: [PATCH v3 0/5] elide extraneous generated code for folded p4d/pud/pmd
-Date: Wed, 16 Oct 2019 09:23:55 -0700
-Message-Id: <20191016162400.14796-1-vgupta@synopsys.com>
+Subject: [PATCH v3 1/5] ARC: mm: remove __ARCH_USE_5LEVEL_HACK
+Date: Wed, 16 Oct 2019 09:23:56 -0700
+Message-Id: <20191016162400.14796-2-vgupta@synopsys.com>
 X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20191016162400.14796-1-vgupta@synopsys.com>
+References: <20191016162400.14796-1-vgupta@synopsys.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191016_092409_199547_93A3012D 
-X-CRM114-Status: UNSURE (   9.32  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191016_092407_683390_12508270 
+X-CRM114-Status: GOOD (  10.92  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -93,73 +94,88 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-snps-arc" <linux-snps-arc-bounces@lists.infradead.org>
 Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org
 
-Hi,
+With paging code made 5-level compliant, this is no longer needed.
+ARC has software page walker with 2 lookup levels (pgd -> pte)
 
-This series came out of seemingly benign excursion into understanding/removing
-__ARCH_USE_5LEVEL_HACK from ARC port showing some extraneous code being
-generated despite folded p4d/pud/pmd
+This was expected to be non functional change but ended with slight
+code bloat due to needless inclusions of p*d_free_tlb() macros which
+will be addressed in further patches.
 
 | bloat-o-meter2 vmlinux-[AB]*
-| add/remove: 0/0 grow/shrink: 3/0 up/down: 130/0 (130)
+| add/remove: 0/0 grow/shrink: 2/0 up/down: 128/0 (128)
 | function                                     old     new   delta
-| free_pgd_range                               548     660    +112
+| free_pgd_range                               546     656    +110
 | p4d_clear_bad                                  2      20     +18
+| Total: Before=4137148, After=4137276, chg 0.000000%
 
-The patches here address that
-
-| bloat-o-meter2 vmlinux-[BF]*
-| add/remove: 0/2 grow/shrink: 0/1 up/down: 0/-386 (-386)
-| function                                     old     new   delta
-| pud_clear_bad                                 20       -     -20
-| p4d_clear_bad                                 20       -     -20
-| free_pgd_range                               660     314    -346
-
-The code savings are not a whole lot, but still worthwhile IMHO.
-
-Please review, test and apply. It seems to survive my usual battery of
-multibench, hakcbench etc.
-
-Thx,
--Vineet
-
+Acked-by: Kirill A. Shutemov <kirill.shutemov@linux.intel.com>
+Signed-off-by: Vineet Gupta <vgupta@synopsys.com>
 ---
-Changes since v2 [3]
- - No code changes: Fixed the silly typos and collected ACKs
+ arch/arc/include/asm/pgtable.h |  1 -
+ arch/arc/mm/fault.c            | 10 ++++++++--
+ arch/arc/mm/highmem.c          |  4 +++-
+ 3 files changed, 11 insertions(+), 4 deletions(-)
 
-Changes since v1 [1]
- - Per Linus Sugestion remvoed the extra ifdey'ery (hence not
-   accumulating Kirill's ACks)
- - Added the RFC patch for pmd_free_tlb() after discussions [2]
- - Also throwing in the ARC patch which started this all (so we get the
-   full context of patchset) - I'm ok if this goes via mm tree, should
-   be non contentious and can drop this too if Andrew thinks otherwise
-
-[1] http://lists.infradead.org/pipermail/linux-snps-arc/2019-October/006263.html
-[2] http://lists.infradead.org/pipermail/linux-snps-arc/2019-October/006277.html
-[3] http://lists.infradead.org/pipermail/linux-snps-arc/2019-October/006307.html
----
-
-Vineet Gupta (5):
-  ARC: mm: remove __ARCH_USE_5LEVEL_HACK
-  asm-generic/tlb: stub out pud_free_tlb() if nopud ...
-  asm-generic/tlb: stub out p4d_free_tlb() if nop4d ...
-  asm-generic/tlb: stub out pmd_free_tlb() if nopmd
-  asm-generic/mm: stub out p{4,u}d_clear_bad() if
-    __PAGETABLE_P{4,u}D_FOLDED
-
- arch/arc/include/asm/pgtable.h      |  1 -
- arch/arc/mm/fault.c                 | 10 ++++++++--
- arch/arc/mm/highmem.c               |  4 +++-
- include/asm-generic/4level-fixup.h  |  1 -
- include/asm-generic/5level-fixup.h  |  1 -
- include/asm-generic/pgtable-nop4d.h |  2 +-
- include/asm-generic/pgtable-nopmd.h |  2 +-
- include/asm-generic/pgtable-nopud.h |  2 +-
- include/asm-generic/pgtable.h       | 11 +++++++++++
- include/asm-generic/tlb.h           |  4 ----
- mm/pgtable-generic.c                |  9 +++++++++
- 11 files changed, 34 insertions(+), 13 deletions(-)
-
+diff --git a/arch/arc/include/asm/pgtable.h b/arch/arc/include/asm/pgtable.h
+index 7addd0301c51..b917b596f7fb 100644
+--- a/arch/arc/include/asm/pgtable.h
++++ b/arch/arc/include/asm/pgtable.h
+@@ -33,7 +33,6 @@
+ #define _ASM_ARC_PGTABLE_H
+ 
+ #include <linux/bits.h>
+-#define __ARCH_USE_5LEVEL_HACK
+ #include <asm-generic/pgtable-nopmd.h>
+ #include <asm/page.h>
+ #include <asm/mmu.h>	/* to propagate CONFIG_ARC_MMU_VER <n> */
+diff --git a/arch/arc/mm/fault.c b/arch/arc/mm/fault.c
+index 3861543b66a0..fb86bc3e9b35 100644
+--- a/arch/arc/mm/fault.c
++++ b/arch/arc/mm/fault.c
+@@ -30,6 +30,7 @@ noinline static int handle_kernel_vaddr_fault(unsigned long address)
+ 	 * with the 'reference' page table.
+ 	 */
+ 	pgd_t *pgd, *pgd_k;
++	p4d_t *p4d, *p4d_k;
+ 	pud_t *pud, *pud_k;
+ 	pmd_t *pmd, *pmd_k;
+ 
+@@ -39,8 +40,13 @@ noinline static int handle_kernel_vaddr_fault(unsigned long address)
+ 	if (!pgd_present(*pgd_k))
+ 		goto bad_area;
+ 
+-	pud = pud_offset(pgd, address);
+-	pud_k = pud_offset(pgd_k, address);
++	p4d = p4d_offset(pgd, address);
++	p4d_k = p4d_offset(pgd_k, address);
++	if (!p4d_present(*p4d_k))
++		goto bad_area;
++
++	pud = pud_offset(p4d, address);
++	pud_k = pud_offset(p4d_k, address);
+ 	if (!pud_present(*pud_k))
+ 		goto bad_area;
+ 
+diff --git a/arch/arc/mm/highmem.c b/arch/arc/mm/highmem.c
+index a4856bfaedf3..fc8849e4f72e 100644
+--- a/arch/arc/mm/highmem.c
++++ b/arch/arc/mm/highmem.c
+@@ -111,12 +111,14 @@ EXPORT_SYMBOL(__kunmap_atomic);
+ static noinline pte_t * __init alloc_kmap_pgtable(unsigned long kvaddr)
+ {
+ 	pgd_t *pgd_k;
++	p4d_t *p4d_k;
+ 	pud_t *pud_k;
+ 	pmd_t *pmd_k;
+ 	pte_t *pte_k;
+ 
+ 	pgd_k = pgd_offset_k(kvaddr);
+-	pud_k = pud_offset(pgd_k, kvaddr);
++	p4d_k = p4d_offset(pgd_k, kvaddr);
++	pud_k = pud_offset(p4d_k, kvaddr);
+ 	pmd_k = pmd_offset(pud_k, kvaddr);
+ 
+ 	pte_k = (pte_t *)memblock_alloc_low(PAGE_SIZE, PAGE_SIZE);
 -- 
 2.20.1
 
