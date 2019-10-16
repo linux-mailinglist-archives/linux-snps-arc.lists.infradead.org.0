@@ -2,142 +2,55 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2E21FD833E
-	for <lists+linux-snps-arc@lfdr.de>; Wed, 16 Oct 2019 00:06:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5CD31D8AB9
+	for <lists+linux-snps-arc@lfdr.de>; Wed, 16 Oct 2019 10:20:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Qk1U1tt8B2i9ef+iwJKOSIClcTfqc+/BUdztHYgml20=; b=fhVjSezci/bDYe
-	3Ure//KULp3CIGznjc1r0yCcrpX8RaR6AZ2NJKIplYcZhNRff/vdb5i/NElKheTgpNd9v8WF95erG
-	bk+DkL826pBdVQfWNv5X0ajeLuxOYMzD6/QpxkCXeHqTwfQmCAtdQNyKakkNhKfmeNYGozIWZM/4s
-	Se5D5X2iY1KBjqB73nmGgc3oH5ZLpeyT17sfv2FS4T5IxrqEgN8F8C2/DdR3kjZ0ypD53exWTGJrL
-	rdMdA0Wgm+iont2YMM/rn1dgfiaME12yxJuYcZCP6Za7gbAdf/Tye5Txe2VSk5BXuwgeyb1i0aWyX
-	6xKe/7UPG2g/gkYjwKdg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=A4NGHbocvPmpnY89ECqf2o2EtAVzornpT/1Uokd/Auw=; b=gkmkRtv8VkXQ5z
+	xLF7saBm+DQnpYJpkz6FsR7RqFel8lesY2sLFhK7NzoocHQgY0qasZcHd6PaGzkWrZRd+t9BUkGyU
+	C9jy20riFqi1hzg0k6FCu8zwPHv2d6lvPOhKghkmCIa3vQzDmBKtzzhSAPuTkkVNeCAKFeXOHa12g
+	3gL5jVZ5ncV02dKJvWM9MKQcm5fG84jIYHgqNG90aBkWJFe37vSdkx8+AXlEp3Nr1i77SUz0DPSB1
+	Bqty2/9hBfaQyb33w7/hij+Rn7PhLVV7KpWhmFiDIBvY5IWhTaG2mHZw0rOLNWJ67Ov8OVydyaSA0
+	gEz+RhS0fjSHcovvL2ug==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKUxt-0004M5-Vd; Tue, 15 Oct 2019 22:06:49 +0000
-Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
+	id 1iKeXs-0006z9-Ua; Wed, 16 Oct 2019 08:20:36 +0000
+Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKUxr-0004LR-83
- for linux-snps-arc@lists.infradead.org; Tue, 15 Oct 2019 22:06:48 +0000
-Received: by mail-pg1-x544.google.com with SMTP id e10so8981376pgd.11
- for <linux-snps-arc@lists.infradead.org>; Tue, 15 Oct 2019 15:06:46 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:openpgp:autocrypt:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=dYO7GjWloOND6hSPOAQvEuLC+MRq67dhIYtSI7PDZqA=;
- b=I5mFqjgmw/+rduOfSa7mdjY2+pVAum2a1hPeqtC+2baLDKGIK0Y9kG+jislEeUPrN0
- 6DV9KDhYW84DcD4ZOgqof0Ysz/9vf2FbIiivaqgAiZKAxe4MoAamj0nEb47//Jfba8aq
- Lv550R4tE71yNe5+A0HCes9R/NvNAVKkr0bv6F18kU8HdY/9zGDiBSVqe+pQREv5OeAR
- Hx6KWY8JqRZYxAStOvrG9CLt1mzoDHyE7/LFTW786gem9sk42Q+p9sHczjGy/HxahiX7
- E3rpGfWcGXunrav4zcN4dI9ocfCE9TdunrQ2eKXi2VIbtDOfiP4G92GMIPPcraaI04S8
- sXoA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
- :message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=dYO7GjWloOND6hSPOAQvEuLC+MRq67dhIYtSI7PDZqA=;
- b=NiclB5ioZ8g6FxsgR9OvD0DKrKGvATn4qo45LOjME5GE8/0zeZmsLUZs1L7NyO3nQx
- 0VHzW/Vr71scJjWXpMkTTNhg1qXyp1FuPTCQVIC/wUt8Vji42KOyuzV46M6VZz/3XKc/
- 9hvRjieGQnGUpriuRGH8nODBRBA0q3MEUQ91qycpiBhFrMIwpUJxnTsrH3gy2kAzr6zO
- khjXUoBdaOnkn6Wg08Tr6hJ31i1Bs2/pxUEW37nkJMMe934lO2c6HMxYhhKm2bGc+NLC
- Iug8P9zSm92Ss+ZAGAd2yzPpOHJUdBIQRZyW5nlbZsfTizMP1PYsasuDYH5VeyG3wINd
- yGwA==
-X-Gm-Message-State: APjAAAU+4y5pKDAf+9R3WLO/PdLjG4rs1mtorEbkFh325lgXkGBBExUZ
- AYouVbWAVwGNF9zMBd4yAVE=
-X-Google-Smtp-Source: APXvYqxrxRkxDS61JrACgr6FX1z8oQ+rjZqY8ssnNx1gZukRLOwK/xG0kqhV2cKTvjvrk7K9ZLC6NQ==
-X-Received: by 2002:a17:90a:6302:: with SMTP id e2mr878823pjj.20.1571177206148; 
- Tue, 15 Oct 2019 15:06:46 -0700 (PDT)
-Received: from [192.168.110.119] ([198.182.47.47])
- by smtp.gmail.com with ESMTPSA id o60sm292236pje.21.2019.10.15.15.06.42
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 15 Oct 2019 15:06:44 -0700 (PDT)
-Subject: Re: [PATCH v2 1/5] ARC: mm: remove __ARCH_USE_5LEVEL_HACK
-To: Linus Torvalds <torvalds@linux-foundation.org>
-References: <20191015191926.9281-1-vgupta@synopsys.com>
- <20191015191926.9281-2-vgupta@synopsys.com>
- <CAHk-=wi3QC7tj3rmTPg5RmK_ugVKYs-jKqX=TaASWfd73Owaig@mail.gmail.com>
-From: Vineet Gupta <vineetg76@gmail.com>
-Openpgp: preference=signencrypt
-Autocrypt: addr=vineetg76@gmail.com; prefer-encrypt=mutual; keydata=
- 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
- deE0Dvw98SWmZSNtdOPnJZ0D
-Message-ID: <a1aee16f-cde7-0bed-e1ab-f94b6268e4ff@gmail.com>
-Date: Tue, 15 Oct 2019 15:06:41 -0700
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ id 1iKeXj-0006qg-0j; Wed, 16 Oct 2019 08:20:28 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx1.suse.de (Postfix) with ESMTP id 8F4AEBA75;
+ Wed, 16 Oct 2019 08:20:24 +0000 (UTC)
+Date: Wed, 16 Oct 2019 10:20:22 +0200
+From: Michal Hocko <mhocko@kernel.org>
+To: Anshuman Khandual <anshuman.khandual@arm.com>
+Subject: Re: [PATCH V6 0/2] mm/debug: Add tests validating architecture page
+ table helpers
+Message-ID: <20191016082022.GN317@dhcp22.suse.cz>
+References: <1571131302-32290-1-git-send-email-anshuman.khandual@arm.com>
+ <1571150502.5937.39.camel@lca.pw>
+ <c052784a-a5d7-878e-cd97-01daa90c0ed8@arm.com>
 MIME-Version: 1.0
-In-Reply-To: <CAHk-=wi3QC7tj3rmTPg5RmK_ugVKYs-jKqX=TaASWfd73Owaig@mail.gmail.com>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <c052784a-a5d7-878e-cd97-01daa90c0ed8@arm.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191015_150647_314932_9D53336C 
-X-CRM114-Status: GOOD (  13.35  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20191016_012027_352608_22C3B495 
+X-CRM114-Status: GOOD (  13.54  )
+X-Spam-Score: -1.3 (-)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-1.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.15 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (vineetg76[at]gmail.com)
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (vineetg76[at]gmail.com)
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
 X-BeenThere: linux-snps-arc@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -149,58 +62,99 @@ List-Post: <mailto:linux-snps-arc@lists.infradead.org>
 List-Help: <mailto:linux-snps-arc-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-snps-arc>, 
  <mailto:linux-snps-arc-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch <linux-arch@vger.kernel.org>, Arnd Bergmann <arnd@arndb.de>,
- Peter Zijlstra <peterz@infradead.org>,
- "Aneesh Kumar K . V" <aneesh.kumar@linux.ibm.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Nick Piggin <npiggin@gmail.com>, Linux-MM <linux-mm@kvack.org>,
- Andrew Morton <akpm@linux-foundation.org>, linux-snps-arc@lists.infradead.org,
- Will Deacon <will@kernel.org>,
- "Kirill A . Shutemov" <kirill.shutemov@linux.intel.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>, linux-ia64@vger.kernel.org,
+ linux-sh@vger.kernel.org, Peter Zijlstra <peterz@infradead.org>,
+ James Hogan <jhogan@kernel.org>,
+ Tetsuo Handa <penguin-kernel@i-love.sakura.ne.jp>,
+ Heiko Carstens <heiko.carstens@de.ibm.com>, linux-kernel@vger.kernel.org,
+ linux-mm@kvack.org, Dave Hansen <dave.hansen@intel.com>,
+ Paul Mackerras <paulus@samba.org>, sparclinux@vger.kernel.org,
+ Thomas Gleixner <tglx@linutronix.de>, linux-s390@vger.kernel.org,
+ Michael Ellerman <mpe@ellerman.id.au>, x86@kernel.org,
+ Russell King - ARM Linux <linux@armlinux.org.uk>,
+ Matthew Wilcox <willy@infradead.org>, Steven Price <Steven.Price@arm.com>,
+ Jason Gunthorpe <jgg@ziepe.ca>, Gerald Schaefer <gerald.schaefer@de.ibm.com>,
+ linux-snps-arc@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ Kees Cook <keescook@chromium.org>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Mark Brown <broonie@kernel.org>, Qian Cai <cai@lca.pw>,
+ "Kirill A . Shutemov" <kirill@shutemov.name>,
+ Dan Williams <dan.j.williams@intel.com>, Vlastimil Babka <vbabka@suse.cz>,
+ Christophe Leroy <christophe.leroy@c-s.fr>,
+ Sri Krishna chowdary <schowdary@nvidia.com>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-mips@vger.kernel.org,
+ Ralf Baechle <ralf@linux-mips.org>, Paul Burton <paul.burton@mips.com>,
+ Mike Rapoport <rppt@linux.vnet.ibm.com>, Vineet Gupta <vgupta@synopsys.com>,
+ Martin Schwidefsky <schwidefsky@de.ibm.com>,
+ Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
+ "David S. Miller" <davem@davemloft.net>,
+ Mike Kravetz <mike.kravetz@oracle.com>
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-snps-arc" <linux-snps-arc-bounces@lists.infradead.org>
 Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org
 
-On 10/15/19 2:48 PM, Linus Torvalds wrote:
-> On Tue, Oct 15, 2019 at 12:19 PM Vineet Gupta
-> <Vineet.Gupta1@synopsys.com> wrote:
->> This is a non-functional change anyways since ARC has software page walker
->> with 2 lookup levels (pgd -> pte)
->
-> Could we encourage other architectures to do the same, and get rid of
-> all uses of __ARCH_USE_5LEVEL_HACK?
+On Tue 15-10-19 20:51:11, Anshuman Khandual wrote:
+> =
 
-IMHO this should have been done at the onset. The actual changes don't seem that
-difficult, just need to add the missing p4d calls although I can sympathize with
-hassles of coordinating/building/testing/yadi yada cross arch.
+> =
 
-OTOH, the [45]LEVEL_HACK seem like a nice way to "fold" the levels: the
-skipped/folded level vanishes completely. Among others it does things like
+> On 10/15/2019 08:11 PM, Qian Cai wrote:
+> > The x86 will crash with linux-next during boot due to this series (v5) =
+with the
+> > config below plus CONFIG_DEBUG_VM_PGTABLE=3Dy. I am not sure if v6 woul=
+d address
+> > it.
+> > =
 
-     #define p4d_t	pgd_t	
+> > https://raw.githubusercontent.com/cailca/linux-mm/master/x86.config
+> > =
 
-On ARC 2-level code:
+> > [=A0=A0=A033.862600][=A0=A0=A0=A0T1] page:ffffea0009000000 is uninitial=
+ized and poisoned
+> > [=A0=A0=A033.862608][=A0=A0=A0=A0T1] raw: ffffffffffffffff ffffffffffff=
+ffff ffffffffffffffff
+> > ffffff871140][=A0=A0=A0=A0T1]=A0=A0? _raw_spin_unlock_irq+0x27/0x40
+> > [=A0=A0=A033.871140][=A0=A0=A0=A0T1]=A0=A0? rest_init+0x307/0x307
+> > [=A0=A0=A033.871140][=A0=A0=A0=A0T1]=A0=A0kernel_init+0x11/0x139
+> > [=A0=A0=A033.871140][=A0=A0=A0=A0T1]=A0=A0? rest_init+0x307/0x307
+> > [=A0=A0=A033.871140][=A0=A0=A0=A0T1]=A0=A0ret_from_fork+0x27/0x50
+> > [=A0=A0=A033.871140][=A0=A0=A0=A0T1] Modules linked in:
+> > [=A0=A0=A033.871140][=A0=A0=A0=A0T1] ---[ end trace e99d392b0f7befbd ]-=
+--
+> > [=A0=A0=A033.871140][=A0=A0=A0=A0T1] RIP: 0010:alloc_gigantic_page_orde=
+r+0x3fe/0x490
+> =
 
-   free_pte_range
-	pmd_pgtable(*pmd);
+> Hmm, with defconfig (DEBUG_VM=3Dy and DEBUG_VM_PGTABLE=3Dy) it does not c=
+rash but
+> with the config above, it does. Just wondering if it is possible that the=
+se
+> pages might not been initialized yet because DEFERRED_STRUCT_PAGE_INIT=3D=
+y ?
 
-	    ((((((*pmd).pud).pgd))) & PAGE_MASK));	     <-- 5LEVEL_HACK
-			vs.
-	    ((((((((*pmd).pud).p4d).pgd)))) & PAGE_MASK ));  <-- w/o 5LEVEL_HACK
-	
-	pmd_clear(pmd);
+Quite likely. You need to wait for page_alloc_init_late to finish.
+> =
 
-	    *(pmd)).pud).pgd)))) = 0
-			vs.
-	    *(pmd)).pud).p4d).pgd)))) = 0
+> [   13.898549][    T1] page:ffffea0005000000 is uninitialized and poisoned
+> [   13.898549][    T1] raw: ffffffffffffffff ffffffffffffffff fffffffffff=
+fffff ffffffffffffffff
+> [   13.898549][    T1] raw: ffffffffffffffff ffffffffffffffff fffffffffff=
+fffff ffffffffffffffff
+> [   13.898549][    T1] page dumped because: VM_BUG_ON_PAGE(PagePoisoned(p=
+))
+> [   13.898549][    T1] ------------[ cut here ]------------
+> [   13.898549][    T1] kernel BUG at ./include/linux/mm.h:1107!
+> [   13.898549][    T1] invalid opcode: 0000 [#1] SMP DEBUG_PAGEALLOC KASA=
+N PTI
+> [   13.898549][    T1] CPU: 0 PID: 1 Comm: swapper/0 Not tainted 5.4.0-rc=
+3-next-20191015+ #
 
+-- =
 
-So we may not be able to fix all he historical misgivigs, but this might alleviate
-the pain a bit. I'll try to dabble a bit.
-
-Thx for taking a look and te ACKs.
--Vineet
+Michal Hocko
+SUSE Labs
 
 _______________________________________________
 linux-snps-arc mailing list
