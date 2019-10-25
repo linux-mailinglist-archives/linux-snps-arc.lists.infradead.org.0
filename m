@@ -2,56 +2,91 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 62496E422C
-	for <lists+linux-snps-arc@lfdr.de>; Fri, 25 Oct 2019 05:46:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EA307E4320
+	for <lists+linux-snps-arc@lfdr.de>; Fri, 25 Oct 2019 07:53:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QPB1jJqILCiebgX8aS4pB78Z64RdaSIzEhiWCwhe3sc=; b=IHKpz1l6i6VuRQ
-	xC5Ew6pUZnaAdd2flkV9OxCePOhRfVtpstlQy4yFLmxed/szKvnPyPZYrApUoNHVDYWP/qVGS/vmi
-	Ic1HHQE67X11TM8/DJRnxp+a/IPVCFnX5A6KQTu+XL7WzkBsqD+BvpaY0Mmg8FuaK3fI59nazUk6P
-	yiJPps7JcEt/CzVvxAS9vgf8TXCufS+b+YuiApBNZxPJkTwyogSCSP6qkFWIvNLGC0m+TQf4M87UF
-	Wa5nocnFqcWQfGe+BUp0oziI9xNfqsg2rSLwA2a6+2IaiyhgjCWV6uXwX5kEL2iPhaRUIAt5vWT+P
-	96As5c6aCThZXOBgZxRw==;
+	List-Archive:List-Unsubscribe:List-Id:To:In-Reply-To:References:Message-Id:
+	Date:Subject:Mime-Version:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=eWQ7ff3hQRagdsnaFPgufjtMHBIKZ/VRU6qWvd1P+as=; b=UGlbcUl7IpPcWJ
+	ydFqiXxzy174qaSVlaUbDvzAb3RaAooR3KrQe7R5pdGwXBryPKLsj8pwxBIL3ejtklTQ/a8UL6+7u
+	qNppYrjeG/5lfHeeLOEKDjXVKCZQcaERg/W138rHHKIlO5Q8Rx+oMRUYDQBJX0DwPdEbaRBI5y2hp
+	CYc3vJ5H1fg/q1gnv6SE7BoqL5SYb3qOGyF/Io/DFBIqwfUJXqMhvhGPbQ2nfPwV90yS2J0qk+Dzq
+	37JQZW7LehEx05ShP/GLJlVuiD5h6VeHPAS7qjaPCI/rYKnFUixo5ZIo5PuqtlktFLKLeW1TqWjIw
+	gv9ZQjQMAmkQqteBo67Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iNqYD-0003p0-J1; Fri, 25 Oct 2019 03:46:09 +0000
-Received: from [217.140.110.172] (helo=foss.arm.com)
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iNqY2-0003fs-Lp; Fri, 25 Oct 2019 03:45:59 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B5D211FB;
- Thu, 24 Oct 2019 20:45:47 -0700 (PDT)
-Received: from [10.162.41.137] (p8cg001049571a15.blr.arm.com [10.162.41.137])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- A4C213F718; Thu, 24 Oct 2019 20:45:36 -0700 (PDT)
+	id 1iNsXH-0006Lv-BU; Fri, 25 Oct 2019 05:53:19 +0000
+Received: from mail-qk1-x741.google.com ([2607:f8b0:4864:20::741])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iNsX4-0006A7-7t
+ for linux-snps-arc@lists.infradead.org; Fri, 25 Oct 2019 05:53:07 +0000
+Received: by mail-qk1-x741.google.com with SMTP id u184so712138qkd.4
+ for <linux-snps-arc@lists.infradead.org>; Thu, 24 Oct 2019 22:53:04 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=lca.pw; s=google;
+ h=content-transfer-encoding:from:mime-version:subject:date:message-id
+ :references:cc:in-reply-to:to;
+ bh=1iOcwXtGM80ggiAcn0tWj6rY4y3FXj3/K8+9W6cybNQ=;
+ b=Zqxn3o9ynPwH66+Qcr9vdGz6gSYyudkpi+Z2Oz0jbhfPz7rA3PabNWQQCma5I+yARn
+ eBlST1wXQLW765R9cjQEb7jShJbR5OSNoXMUXkknkPBFMVf5yWXTtaUsuk9Rd2PxzAmh
+ q2AJBIMYQ1hbRT2IEgL/DenzigssaRzaLPngNDd0uNGZNn5VPmHDNtWOe5i7LU6gxGms
+ DG+cRAyxM2Yo5dTFUbyEjy/oXZ60fHMnjOKMvqPhtEVeXP3HjJ0d5mzbSpqHawcBlByH
+ TzKbaZfTQCyPdzEsLR/gqo/nNF6hyedXePJbHFV1sF38FX0OXhfyWuYjlDSDd9K5Iode
+ sxFQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:content-transfer-encoding:from:mime-version
+ :subject:date:message-id:references:cc:in-reply-to:to;
+ bh=1iOcwXtGM80ggiAcn0tWj6rY4y3FXj3/K8+9W6cybNQ=;
+ b=T4k1v+ryG9ZLFPHv6Hip0TnZnwe0La2umKnDdDm5sCxTJxRXLM4hSMJdp1tuRL13nf
+ XoEd1Q0qb4xzZQUStx9aIbEDeuCbeLXou+Uj4p1QK9rKLxK/C+j0Le7RGzVPiIDL+yW9
+ j46n9tZ/t0MIO23kwscGejZK9DHXwehIsykr/809k5b3vemFFVMaNwyhsBKw5XV79Zfz
+ ta1oai2vqSDPOCHgGHeGLXZNlKa5CeLU8rnGR5jd/16+r7Nq7pbqsEK5xuEF3iOkSo6f
+ GLCYrJSodeLuS0xTJlJLqZqIutMp8b9NvZPSQwBHMlYLc+lHENJor30VnOixJfnrHA85
+ DrYA==
+X-Gm-Message-State: APjAAAXJIqClkAJ8KLFDYfr1A5XQ+aMNvUhborlqM1x16Rkbn3MoWs+H
+ e5ydY2udJZGZnhFdfxOrwUvBcwtagsv0kw==
+X-Google-Smtp-Source: APXvYqx2Df+s9byE/wNVstFnjLEksyrVQg6dm5A3OEDXYMZmbJ9PH0J1MBt8U1ezq/VXB9h6sxXS6Q==
+X-Received: by 2002:a05:620a:a8d:: with SMTP id
+ v13mr1326244qkg.113.1571982780765; 
+ Thu, 24 Oct 2019 22:53:00 -0700 (PDT)
+Received: from [10.250.15.239] ([76.191.34.78])
+ by smtp.gmail.com with ESMTPSA id e12sm517936qth.55.2019.10.24.22.52.59
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Thu, 24 Oct 2019 22:53:00 -0700 (PDT)
+From: Qian Cai <cai@lca.pw>
+Mime-Version: 1.0 (1.0)
 Subject: Re: [PATCH V7] mm/debug: Add tests validating architecture page table
  helpers
-To: Qian Cai <cai@lca.pw>
-References: <1571625739-29943-1-git-send-email-anshuman.khandual@arm.com>
- <FCAFFD72-3781-4474-8393-A4E40264473A@lca.pw>
-From: Anshuman Khandual <anshuman.khandual@arm.com>
-Message-ID: <ccdd4f7a-c7dc-ca10-d30c-0bc05c7136c7@arm.com>
-Date: Fri, 25 Oct 2019 09:16:07 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
- Thunderbird/52.9.1
-MIME-Version: 1.0
-In-Reply-To: <FCAFFD72-3781-4474-8393-A4E40264473A@lca.pw>
-Content-Language: en-US
+Date: Fri, 25 Oct 2019 01:52:59 -0400
+Message-Id: <69256008-2235-4AF1-A3BA-0146C82CCB93@lca.pw>
+References: <ccdd4f7a-c7dc-ca10-d30c-0bc05c7136c7@arm.com>
+In-Reply-To: <ccdd4f7a-c7dc-ca10-d30c-0bc05c7136c7@arm.com>
+To: Anshuman Khandual <Anshuman.Khandual@arm.com>
+X-Mailer: iPhone Mail (17A878)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191024_204558_758301_10D098F3 
-X-CRM114-Status: GOOD (  16.22  )
-X-Spam-Score: 1.3 (+)
+X-CRM114-CacheID: sfid-20191024_225306_278080_C73ED7DA 
+X-CRM114-Status: UNSURE (   9.37  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:741 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 1.3 RDNS_NONE Delivered to internal network by a host with no rDNS
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-snps-arc@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,28 +133,14 @@ Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.o
 
 
 
-On 10/24/2019 10:21 PM, Qian Cai wrote:
+> On Oct 24, 2019, at 11:45 PM, Anshuman Khandual <Anshuman.Khandual@arm.com> wrote:
 > 
-> 
->> On Oct 24, 2019, at 10:50 AM, Anshuman Khandual <Anshuman.Khandual@arm.com> wrote:
->>
->> Changes in V7:
->>
->> - Memory allocation and free routines for mapped pages have been droped
->> - Mapped pfns are derived from standard kernel text symbol per Matthew
->> - Moved debug_vm_pgtaable() after page_alloc_init_late() per Michal and Qian 
->> - Updated the commit message per Michal
->> - Updated W=1 GCC warning problem on x86 per Qian Cai
-> 
-> It would be interesting to know if you actually tested  out to see if the warning went away. As far I can tell, the GCC is quite stubborn there, so I am not going to insist.
-> 
+> Nothing specific. But just tested this with x86 defconfig with relevant configs
+> which are required for this test. Not sure if it involved W=1.
 
-Nothing specific. But just tested this with x86 defconfig with relevant configs
-which are required for this test. Not sure if it involved W=1. The problem is,
-there is no other or better way to have both the conditional checks in place
-while also reducing the chances this warning. IMHO both the conditional checks
-are required.
+No, it will not. It needs to run like,
 
+make W=1 -j 64 2>/tmp/warns
 _______________________________________________
 linux-snps-arc mailing list
 linux-snps-arc@lists.infradead.org
