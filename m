@@ -2,54 +2,88 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E7FE4F0CF7
-	for <lists+linux-snps-arc@lfdr.de>; Wed,  6 Nov 2019 04:22:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 223D9F0F14
+	for <lists+linux-snps-arc@lfdr.de>; Wed,  6 Nov 2019 07:41:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2jrypGpfb91O4skaF/h3baOu1EZd/2mrcVyfFr0wrho=; b=rN55FcHOMwtC4c
-	vlx+NKQW0ETEpJRX6XFNf5eifIYckSQNcQUwOx6pbF6FwS0QJB8MfTb67hhEIVBoLRQ4vcpOPbK+Z
-	bKkpGRbdUf8OK4qQZl7yJbashjK+hlXooXLMBowR70PKGZFg8yAErZD3e+sSHWga8VHVeX8TYkeY/
-	ZU792ZoS1lrXBA7H41zuvF92rwlndWSmr8VKXFewUSNrR13NCqtMi9D+hFn75D+R0W/WafyBqF7Sc
-	Rg1QGRUg48bt9DFPzqhADELp8vQwYojSvBvGrkPvgpDDgo7JhPmDh0xq47mUeJAv4D07Xpxf2hNTQ
-	zs9OQy5GXNiy4JlOF7mw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=MAMlEaZifnjhKW2pzGbb63NKScq+tB20064yvZ9cYbg=; b=EUvV3xyrgTdo/pog0J7Mrq0e+
+	uH+eEL6p4bIFwOuOmONhG5d/dspJc45b9XWFoHPw+YvLsQDlYYkgbjpk1mtT++/pFYh+cccAa62bK
+	3mvJm1SL/0AmuPvWLGr8qeVZa7xR9QfMdFkq9jSh8TIsLzKInjV+FnpUaNgZVvpD2RfQPZFXiPw+F
+	puab//LlwRpH6XsdrINcAkn++Gf8+hDIgDI951IQucN2/P1kiZvhJp6NbOq+Xj6fvbMFYNVVNCT5J
+	t/Cevy/lTcNSoUtcPm77AulAAvwo8eHWtwVxytL1zz+ihdHPqyBq/mjrJGNobeUcKAN/cWAy1TJRC
+	w0pDtsYag==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSBtr-0002z0-MA; Wed, 06 Nov 2019 03:22:27 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSBtk-0002sl-0S; Wed, 06 Nov 2019 03:22:21 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D732A30E;
- Tue,  5 Nov 2019 19:22:18 -0800 (PST)
-Received: from [192.168.225.149] (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 5A8D63F719;
- Tue,  5 Nov 2019 19:21:57 -0800 (PST)
+	id 1iSF0W-0007Ss-TC; Wed, 06 Nov 2019 06:41:32 +0000
+Received: from pegase1.c-s.fr ([93.17.236.30])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iSF0O-0007FB-BH; Wed, 06 Nov 2019 06:41:26 +0000
+Received: from localhost (mailhub1-int [192.168.12.234])
+ by localhost (Postfix) with ESMTP id 477H450GyXz9v00D;
+ Wed,  6 Nov 2019 07:41:09 +0100 (CET)
+Authentication-Results: localhost; dkim=pass
+ reason="1024-bit key; insecure key"
+ header.d=c-s.fr header.i=@c-s.fr header.b=uDQK58sa; dkim-adsp=pass;
+ dkim-atps=neutral
+X-Virus-Scanned: Debian amavisd-new at c-s.fr
+Received: from pegase1.c-s.fr ([192.168.12.234])
+ by localhost (pegase1.c-s.fr [192.168.12.234]) (amavisd-new, port 10024)
+ with ESMTP id NP7mUVlPVLBt; Wed,  6 Nov 2019 07:41:08 +0100 (CET)
+Received: from messagerie.si.c-s.fr (messagerie.si.c-s.fr [192.168.25.192])
+ by pegase1.c-s.fr (Postfix) with ESMTP id 477H445kq5z9v00C;
+ Wed,  6 Nov 2019 07:41:08 +0100 (CET)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=c-s.fr; s=mail;
+ t=1573022468; bh=ldK6jtPphgl+yNa6VSaAerjL+prNDwgkLRC6nRKEIeI=;
+ h=Subject:To:Cc:References:From:Date:In-Reply-To:From;
+ b=uDQK58saIN0zvehZkL7oENgA4DemT8lDWmLXhETHs2fgk7tiYooqK7uit5oPw6kqK
+ UOoMgZlJGvnNPw1TVCdC6OsuYDkWv6rJFk3JlidSUeiN1jyfI5kOdxu8g2Q0UGfHfG
+ nJ9ksEtevKFg7K5FRpbJoChZCjEM1dr9rYK/i7Rk=
+Received: from localhost (localhost [127.0.0.1])
+ by messagerie.si.c-s.fr (Postfix) with ESMTP id 973408B82D;
+ Wed,  6 Nov 2019 07:41:09 +0100 (CET)
+X-Virus-Scanned: amavisd-new at c-s.fr
+Received: from messagerie.si.c-s.fr ([127.0.0.1])
+ by localhost (messagerie.si.c-s.fr [127.0.0.1]) (amavisd-new, port 10023)
+ with ESMTP id A7VVbo-RdBde; Wed,  6 Nov 2019 07:41:09 +0100 (CET)
+Received: from [172.25.230.101] (unknown [172.25.230.101])
+ by messagerie.si.c-s.fr (Postfix) with ESMTP id 27E838B7CC;
+ Wed,  6 Nov 2019 07:41:09 +0100 (CET)
 Subject: Re: [PATCH V8] mm/debug: Add tests validating architecture page table
  helpers
-To: linux-mm@kvack.org
+To: Anshuman Khandual <anshuman.khandual@arm.com>, linux-mm@kvack.org
 References: <1572240562-23630-1-git-send-email-anshuman.khandual@arm.com>
-From: Anshuman Khandual <anshuman.khandual@arm.com>
-Message-ID: <3229d68d-0b9d-0719-3370-c6e1df0ea032@arm.com>
-Date: Wed, 6 Nov 2019 08:52:30 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
- Thunderbird/52.9.1
+ <3229d68d-0b9d-0719-3370-c6e1df0ea032@arm.com>
+From: Christophe Leroy <christophe.leroy@c-s.fr>
+Message-ID: <42160baa-0e9d-73d0-bf72-58bdbacf10ff@c-s.fr>
+Date: Wed, 6 Nov 2019 07:41:08 +0100
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-In-Reply-To: <1572240562-23630-1-git-send-email-anshuman.khandual@arm.com>
-Content-Language: en-US
+In-Reply-To: <3229d68d-0b9d-0719-3370-c6e1df0ea032@arm.com>
+Content-Language: fr
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191105_192220_095394_3E365D98 
-X-CRM114-Status: GOOD (  12.58  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191105_224124_678629_C7118FAB 
+X-CRM114-Status: GOOD (  12.63  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [93.17.236.30 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-snps-arc@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,12 +106,12 @@ Cc: Mark Rutland <mark.rutland@arm.com>, linux-ia64@vger.kernel.org,
  Matthew Wilcox <willy@infradead.org>, Steven Price <Steven.Price@arm.com>,
  Tetsuo Handa <penguin-kernel@i-love.sakura.ne.jp>,
  Gerald Schaefer <gerald.schaefer@de.ibm.com>,
- linux-snps-arc@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- Ingo Molnar <mingo@kernel.org>, Kees Cook <keescook@chromium.org>,
+ linux-snps-arc@lists.infradead.org, Ingo Molnar <mingo@kernel.org>,
+ Kees Cook <keescook@chromium.org>,
  Masahiro Yamada <yamada.masahiro@socionext.com>,
  Mark Brown <broonie@kernel.org>, "Kirill A . Shutemov" <kirill@shutemov.name>,
  Dan Williams <dan.j.williams@intel.com>, Vlastimil Babka <vbabka@suse.cz>,
- Christophe Leroy <christophe.leroy@c-s.fr>,
+ linux-arm-kernel@lists.infradead.org,
  Sri Krishna chowdary <schowdary@nvidia.com>,
  Ard Biesheuvel <ard.biesheuvel@linaro.org>,
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-mips@vger.kernel.org,
@@ -87,51 +121,36 @@ Cc: Mark Rutland <mark.rutland@arm.com>, linux-ia64@vger.kernel.org,
  Martin Schwidefsky <schwidefsky@de.ibm.com>,
  Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
  "David S. Miller" <davem@davemloft.net>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-snps-arc" <linux-snps-arc-bounces@lists.infradead.org>
 Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org
 
-
-
-On 10/28/2019 10:59 AM, Anshuman Khandual wrote:
-> +    -----------------------
-> +    |         arch |status|
-> +    -----------------------
-> +    |       alpha: | TODO |
-> +    |         arc: | TODO |
-> +    |         arm: | TODO |
-> +    |       arm64: |  ok  |
-> +    |         c6x: | TODO |
-> +    |        csky: | TODO |
-> +    |       h8300: | TODO |
-> +    |     hexagon: | TODO |
-> +    |        ia64: | TODO |
-> +    |        m68k: | TODO |
-> +    |  microblaze: | TODO |
-> +    |        mips: | TODO |
-> +    |       nds32: | TODO |
-> +    |       nios2: | TODO |
-> +    |    openrisc: | TODO |
-> +    |      parisc: | TODO |
-> +    |     powerpc: | TODO |
-> +    |       ppc32: |  ok  |
-> +    |       riscv: | TODO |
-> +    |        s390: | TODO |
-> +    |          sh: | TODO |
-> +    |       sparc: | TODO |
-> +    |          um: | TODO |
-> +    |   unicore32: | TODO |
-> +    |         x86: |  ok  |
-> +    |      xtensa: | TODO |
-> +    -----------------------
-
-While here, are there some volunteers to test this on any of the
-'yet to be tested and supported' platforms ?
-
-- Anshuman
-
-_______________________________________________
-linux-snps-arc mailing list
-linux-snps-arc@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-snps-arc
+CgpMZSAwNi8xMS8yMDE5IMOgIDA0OjIyLCBBbnNodW1hbiBLaGFuZHVhbCBhIMOpY3JpdMKgOgo+
+IAo+IAo+IE9uIDEwLzI4LzIwMTkgMTA6NTkgQU0sIEFuc2h1bWFuIEtoYW5kdWFsIHdyb3RlOgo+
+PiArICAgIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tCj4+ICsgICAgfCAgICAgICAgIGFyY2ggfHN0
+YXR1c3wKPj4gKyAgICAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQo+PiArICAgIHwgICAgICAgYWxw
+aGE6IHwgVE9ETyB8Cj4+ICsgICAgfCAgICAgICAgIGFyYzogfCBUT0RPIHwKPj4gKyAgICB8ICAg
+ICAgICAgYXJtOiB8IFRPRE8gfAo+PiArICAgIHwgICAgICAgYXJtNjQ6IHwgIG9rICB8Cj4+ICsg
+ICAgfCAgICAgICAgIGM2eDogfCBUT0RPIHwKPj4gKyAgICB8ICAgICAgICBjc2t5OiB8IFRPRE8g
+fAo+PiArICAgIHwgICAgICAgaDgzMDA6IHwgVE9ETyB8Cj4+ICsgICAgfCAgICAgaGV4YWdvbjog
+fCBUT0RPIHwKPj4gKyAgICB8ICAgICAgICBpYTY0OiB8IFRPRE8gfAo+PiArICAgIHwgICAgICAg
+IG02OGs6IHwgVE9ETyB8Cj4+ICsgICAgfCAgbWljcm9ibGF6ZTogfCBUT0RPIHwKPj4gKyAgICB8
+ICAgICAgICBtaXBzOiB8IFRPRE8gfAo+PiArICAgIHwgICAgICAgbmRzMzI6IHwgVE9ETyB8Cj4+
+ICsgICAgfCAgICAgICBuaW9zMjogfCBUT0RPIHwKPj4gKyAgICB8ICAgIG9wZW5yaXNjOiB8IFRP
+RE8gfAo+PiArICAgIHwgICAgICBwYXJpc2M6IHwgVE9ETyB8Cj4+ICsgICAgfCAgICAgcG93ZXJw
+YzogfCBUT0RPIHwKPj4gKyAgICB8ICAgICAgIHBwYzMyOiB8ICBvayAgfAoKTm90ZSB0aGF0IHBw
+YzMyIGlzIGEgcGFydCBvZiBwb3dlcnBjLCBub3QgYSBzdGFuZGFsb25lIGFyY2guCgpNYXliZSBz
+b21ldGhpbmcgbGlrZSB0aGUgZm9sbG93aW5nIHdvdWxkIGJlIG1vcmUgY29ycmVjdDoKfCAgcG93
+ZXJwYy8zMjogfCAgb2sgIHwKfCAgcG93ZXJwYy82NDogfCBUT0RPIHwKCkNocmlzdG9waGUKCj4+
+ICsgICAgfCAgICAgICByaXNjdjogfCBUT0RPIHwKPj4gKyAgICB8ICAgICAgICBzMzkwOiB8IFRP
+RE8gfAo+PiArICAgIHwgICAgICAgICAgc2g6IHwgVE9ETyB8Cj4+ICsgICAgfCAgICAgICBzcGFy
+YzogfCBUT0RPIHwKPj4gKyAgICB8ICAgICAgICAgIHVtOiB8IFRPRE8gfAo+PiArICAgIHwgICB1
+bmljb3JlMzI6IHwgVE9ETyB8Cj4+ICsgICAgfCAgICAgICAgIHg4NjogfCAgb2sgIHwKPj4gKyAg
+ICB8ICAgICAgeHRlbnNhOiB8IFRPRE8gfAo+PiArICAgIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t
+Cj4gCj4gV2hpbGUgaGVyZSwgYXJlIHRoZXJlIHNvbWUgdm9sdW50ZWVycyB0byB0ZXN0IHRoaXMg
+b24gYW55IG9mIHRoZQo+ICd5ZXQgdG8gYmUgdGVzdGVkIGFuZCBzdXBwb3J0ZWQnIHBsYXRmb3Jt
+cyA/Cj4gCj4gLSBBbnNodW1hbgo+IAoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX18KbGludXgtc25wcy1hcmMgbWFpbGluZyBsaXN0CmxpbnV4LXNucHMtYXJj
+QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9s
+aXN0aW5mby9saW51eC1zbnBzLWFyYwo=
