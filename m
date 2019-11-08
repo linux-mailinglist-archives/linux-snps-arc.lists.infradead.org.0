@@ -2,59 +2,59 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AD2BEF52B6
-	for <lists+linux-snps-arc@lfdr.de>; Fri,  8 Nov 2019 18:41:26 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 43DD9F52B3
+	for <lists+linux-snps-arc@lfdr.de>; Fri,  8 Nov 2019 18:41:23 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9X7o/a+QqT/6+DqQ8MRdVaA23n9GVSp/6mV//PN4tmk=; b=UVBV7s4FLuYkg2
-	2XwFn9+qBIcP1lVE8V+QhxRww61eL91ypwaMRCld34hy1lt0KYQG3C7jqjGNB+kWxyeuRmnAaOov8
-	5pCVjY5MrZFWSjVavTzDqxLvbDiXpIOkektMGvGhMo/rEZ4/wHIixTzQIjr1vA0nbT7H40DuCx7Yl
-	uX1qJ5CyK6Or8/s3LOocJPRRRHINUr7APUdMk0I+J6uofM8MOuBTCFjwMifM0b6XijEM+Qsd1lgbO
-	234i5+vHcTKe4yDsGaON8BYAXRkRWA9yHYht5BsvAId3B7cHh7CWmjia56QLBTA2glzkV70YfdzXV
-	DMfwZ6YNOtK4k2Rb2HUA==;
+	List-Owner; bh=i8EIUAh5X8srVvKX79ezySJXF+HnatwCslgvDK7vAv4=; b=lkBeTRAsK/eRHm
+	RSgdXCm2HqupBO78ctw6vWKQg/s2ds99N8+uNaAiHeSrTUQoln/BbkAPz/Wba9WYSAqaYmYpt+D4M
+	6d1aLMM27/Nzb/QS9WZowZ+QiZnT7iwwa5YqsnT9Fuz+xiCDdmKFIX5xJ2MhOijR5MOIpGYBWoOwS
+	YKtPn7Xyy4TRKagR3SxPcx/s0YIrKoONCzfHboAh+nSVEvSnoZI1qPBNv1Z/E0P3I8ZSUWHSS+7Cs
+	TBxBaqwkz8jNRK8EsX9RdE5joPnbIUYNRClNir5I0I5L3xyymzhYhJwzDgCZczxt4YjW/ZsjDORDk
+	zoiKF3VGvbahVjyCHngw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iT8GD-0007jO-Eh; Fri, 08 Nov 2019 17:41:25 +0000
+	id 1iT8GA-0007hx-29; Fri, 08 Nov 2019 17:41:22 +0000
 Received: from smtprelay-out1.synopsys.com ([198.182.47.102])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iT8G7-0007gu-Md
- for linux-snps-arc@lists.infradead.org; Fri, 08 Nov 2019 17:41:22 +0000
+ id 1iT8G7-0007gy-Mc
+ for linux-snps-arc@lists.infradead.org; Fri, 08 Nov 2019 17:41:20 +0000
 Received: from mailhost.synopsys.com (sv1-mailhost2.synopsys.com
  [10.205.2.132])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
  (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id F387FC0DEB;
- Fri,  8 Nov 2019 17:41:18 +0000 (UTC)
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 014D9C0DF1;
+ Fri,  8 Nov 2019 17:41:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1573234879; bh=QnZBVef/PdWov027kg2NOxZGewfQbZucnUaRGClwAnI=;
+ t=1573234879; bh=ZW7ClywPQ5mavJ/X95T8QJUJqFbD05UvbL6E/HUfpbw=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=dX2iks9OfE91u1xiXiIQZyq8Vxou02k/B5tkhVBnRFi3c7E5iM2V091wp/ptpcz0n
- DLvRIL0WHF/wwrZ7U/wp6Tljdg/BL7fNDFSSCxN6pUcpLDXhVJ/5r0iJ6Ub3IXNW1D
- T1R6RmonME+dmjHmt7wiZdMMmXWg9ZZc0HHax/iNNHM/iqE+88a/MQKIs4OWo/LHuk
- AntaUdCpRKQutyFl5wbsQH6lBClQInfIhha50S48O8yG2xnQgD+b4iL2vxdR+PsQhu
- BRgQd8AWR14yj3UJl1Z6+i77JsAvJBKV641HgJ3HSrK14rdiaYJzT6SBleQYD5CjGr
- JmKM471eQYkpA==
+ b=g7CdmijAg4p6o9yskfaeAHACr65uquXuLIxB+ghK6zUzQtcgahSNPOkLKKfIWc1ie
+ Pv1jn+LXkNg0LjmG6JTCAOjVAvVS0FaifijGmv04F9NdkJf0LpE4CsqfRdByd+BWYM
+ oCtSuHPkg2tv9kBkPv/pIdIqUbbeKhlzRoJS5wOpTAW5fOORz9KnEbS8DOrNGqoISy
+ W4nX1zK/byrQG/8vFp9IvHjsyt/vmXnPgSK4dY6aPSp6EGgyvo63WSQUVN2ScTwcOq
+ vo9lMW/GSmMtyEzEB9kypSYyvA/xWrMBxTGutLRzDfShKe/lavaqJgPurW1y28bWQt
+ RqGisCqfkOHpg==
 Received: from vineetg-Latitude-E7450.internal.synopsys.com
  (vineetg-latitude-e7450.internal.synopsys.com [10.10.161.28])
- by mailhost.synopsys.com (Postfix) with ESMTP id C3350A009F;
+ by mailhost.synopsys.com (Postfix) with ESMTP id D5C49A00A8;
  Fri,  8 Nov 2019 17:41:18 +0000 (UTC)
 From: Vineet Gupta <Vineet.Gupta1@synopsys.com>
 To: buildroot@busybox.net
-Subject: [PATCH 1/3] arch/config.in.arc: Introduce the ARC optimized hs38
- config
-Date: Fri,  8 Nov 2019 09:41:10 -0800
-Message-Id: <20191108174112.28183-2-vgupta@synopsys.com>
+Subject: [PATCH 2/3] arch/config.in.arc: Introduce ARC ISA toggle to ease
+ downstream toggles
+Date: Fri,  8 Nov 2019 09:41:11 -0800
+Message-Id: <20191108174112.28183-3-vgupta@synopsys.com>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20191108174112.28183-1-vgupta@synopsys.com>
 References: <20191108174112.28183-1-vgupta@synopsys.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191108_094119_760540_0FE56F12 
-X-CRM114-Status: UNSURE (   8.77  )
+X-CRM114-CacheID: sfid-20191108_094119_755919_893DB684 
+X-CRM114-Status: UNSURE (   9.14  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -90,83 +90,85 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-snps-arc" <linux-snps-arc-bounces@lists.infradead.org>
 Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org
 
-This corresponds to -mcu=hs38 with mpy-option=9 (64-bit multiplier)
-
 Signed-off-by: Vineet Gupta <vgupta@synopsys.com>
 ---
- arch/Config.in.arc | 21 ++++++++++++++-------
- 1 file changed, 14 insertions(+), 7 deletions(-)
+ arch/Config.in.arc | 25 +++++++++++++++++++++++--
+ 1 file changed, 23 insertions(+), 2 deletions(-)
 
 diff --git a/arch/Config.in.arc b/arch/Config.in.arc
-index c65bb01f1f4f..284951b82cee 100644
+index 284951b82cee..dbc608db39c6 100644
 --- a/arch/Config.in.arc
 +++ b/arch/Config.in.arc
-@@ -11,13 +11,19 @@ config BR2_arc750d
+@@ -1,3 +1,18 @@
++choice
++	prompt "Target ISA"
++	default BR2_arcompact
++	depends on BR2_arc
++	help
++	    Specific ARC ISA to use
++
++config BR2_arcompact
++	bool "ARCompact ISA"
++
++config BR2_arcv2
++	bool "ARCv2 ISA"
++
++endchoice
++
+ choice
+ 	prompt "Target CPU"
+ 	default BR2_arc770d
+@@ -7,12 +22,15 @@ choice
+ 
+ config BR2_arc750d
+ 	bool "ARC 750D"
++	depends on BR2_arcompact
+ 
  config BR2_arc770d
  	bool "ARC 770D"
++	depends on BR2_arcompact
  
--config BR2_archs38
-+config BR2_archs
+ config BR2_archs
  	bool "ARC HS38"
++	depends on BR2_arcv2
  	help
  	  Generic ARC HS capable of running Linux, i.e. with MMU,
--	  caches and multiplier. Also it corresponds to the default
-+	  caches and 32-bit multiplier. Also it corresponds to the default
- 	  configuration in older GNU toolchain versions.
+ 	  caches and 32-bit multiplier. Also it corresponds to the default
+@@ -20,6 +38,7 @@ config BR2_archs
  
-+config BR2_archs38
-+	bool "ARC HS38 with 64-bit mpy"
-+	help
-+	  Fully featured ARC HS capable of running Linux, i.e. with MMU,
-+	  caches and 64-bit multiplier.
-+
- 	  If you're not sure which version of ARC HS core you  build for
- 	  keep this one.
+ config BR2_archs38
+ 	bool "ARC HS38 with 64-bit mpy"
++	depends on BR2_arcv2
+ 	help
+ 	  Fully featured ARC HS capable of running Linux, i.e. with MMU,
+ 	  caches and 64-bit multiplier.
+@@ -29,6 +48,7 @@ config BR2_archs38
  
-@@ -43,7 +49,7 @@ endchoice
- # Choice of atomic instructions presence
- config BR2_ARC_ATOMIC_EXT
- 	bool "Atomic extension (LLOCK/SCOND instructions)"
--	default y if BR2_arc770d || BR2_archs38 || BR2_archs38_full || BR2_archs4x_rel31
-+	default y if BR2_arc770d || BR2_archs || BR2_archs38 || BR2_archs38_full || BR2_archs4x_rel31
+ config BR2_archs38_full
+ 	bool "ARC HS38 with Quad MAC & FPU"
++	depends on BR2_arcv2
+ 	help
+ 	  Fully featured ARC HS with additional support for
+ 	   - Dual- and quad multiply and MC oprations
+@@ -39,6 +59,7 @@ config BR2_archs38_full
  
- config BR2_ARCH
- 	default "arc"	if BR2_arcle
-@@ -60,13 +66,14 @@ config BR2_ENDIAN
- config BR2_GCC_TARGET_CPU
- 	default "arc700" if BR2_arc750d
- 	default "arc700" if BR2_arc770d
--	default "archs"	 if BR2_archs38
-+	default "archs"	 if BR2_archs
-+	default "hs38"	 if BR2_archs38
- 	default "hs38_linux"	 if BR2_archs38_full
+ config BR2_archs4x_rel31
+ 	bool "ARC HS48 rel 31"
++	depends on BR2_arcv2
+ 	help
+ 	   Latest release of HS48 processor
+ 	   - Dual- and quad multiply and MC oprations
+@@ -72,8 +93,8 @@ config BR2_GCC_TARGET_CPU
  	default "hs4x_rel31"	 if BR2_archs4x_rel31
  
  config BR2_READELF_ARCH_NAME
- 	default "ARCompact"	if BR2_arc750d || BR2_arc770d
--	default "ARCv2"		if BR2_archs38 || BR2_archs38_full || BR2_archs4x_rel31
-+	default "ARCv2"		if BR2_archs || BR2_archs38 || BR2_archs38_full || BR2_archs4x_rel31
+-	default "ARCompact"	if BR2_arc750d || BR2_arc770d
+-	default "ARCv2"		if BR2_archs || BR2_archs38 || BR2_archs38_full || BR2_archs4x_rel31
++	default "ARCompact"	if BR2_arcompact
++	default "ARCv2"		if BR2_arcv2
  
  choice
  	prompt "MMU Page Size"
-@@ -86,7 +93,7 @@ choice
- 
- config BR2_ARC_PAGE_SIZE_4K
- 	bool "4KB"
--	depends on BR2_arc770d || BR2_archs38 || BR2_archs38_full || BR2_archs4x_rel31
-+	depends on BR2_arc770d || BR2_archs || BR2_archs38 || BR2_archs38_full || BR2_archs4x_rel31
- 
- config BR2_ARC_PAGE_SIZE_8K
- 	bool "8KB"
-@@ -96,7 +103,7 @@ config BR2_ARC_PAGE_SIZE_8K
- 
- config BR2_ARC_PAGE_SIZE_16K
- 	bool "16KB"
--	depends on BR2_arc770d || BR2_archs38 || BR2_archs38_full || BR2_archs4x_rel31
-+	depends on BR2_arc770d || BR2_archs || BR2_archs38 || BR2_archs38_full || BR2_archs4x_rel31
- 
- endchoice
- 
 -- 
 2.20.1
 
