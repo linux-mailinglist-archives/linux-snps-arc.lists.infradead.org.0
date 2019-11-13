@@ -2,50 +2,50 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 46B61FB3C2
-	for <lists+linux-snps-arc@lfdr.de>; Wed, 13 Nov 2019 16:32:31 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5914FFB3D6
+	for <lists+linux-snps-arc@lfdr.de>; Wed, 13 Nov 2019 16:39:38 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rS8mvwy02RfCae7xFXlhN/cm+qIr1krC4Tp2USt1t34=; b=EhTPTQw7chbkmu
-	4Ae93ysTzRf5SfJi0/NxJya6RLi9G4C9byrrcz0QSRx5mGbsciTbmVLJJE3xALQfplCJ2xepG8zEz
-	rZ72DIiZI5hCXNyRo3ZvO0H5qvXSSFyIYqwzKYWORv9dmfv1ACOQvQ1INLwBnSBeoJIseq7DGJ/7g
-	aE5NGzi+diV1gcgkVMdgmVn3ftKjo1LbeMvJ0NqUIv523pY4bmYh79p4wn6tWKA+6gLd9K+5e+eww
-	zvYvVvUWrmUk2bAD/qHqWUkXIOoxjWWqfyp9fgpC1mtGa33dUKeeel184GbWh7xcXG4OF428znTrp
-	0FhLi/NLPCNKOWijh2qg==;
+	List-Owner; bh=Bf6Xw9Brm9h6bDTneOzJF2ROeKlQAnKWqr3gc/72tx4=; b=fc/Bwx2m8xESTJ
+	oGSEFjcdtS59Pc1qXTfd+zVZWJYkFTieiki5iHjm6VgOp7N2N47Dsxtf9nd+5/XmffVRlGIok7uBf
+	Gd/cppPEVjhkl18nUh6Xlso4xaydQUOmtljwTcTKGvfJVm9GHF6R0/Ga/6bAQyY2g3JN3Otib1RkL
+	CHj6gSi6uOEeFNeS9csfZNtslS5XMaz96dw1ATBMfyX/lnmT1wa2knq+QhWOrjTz/hkv3pFakStB8
+	FZhCdoAGiIKoBI5ot9r65+aV6DyrELXr3Y5JDXZ+bZ6WMn7JHCy4TuTYhtiL2o0D6bBeBaaW5JqOO
+	ZKhSQCJ2xLGH2JYwOYeA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUudB-00055J-UV; Wed, 13 Nov 2019 15:32:29 +0000
+	id 1iUuk5-0007S2-2X; Wed, 13 Nov 2019 15:39:37 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUud7-000541-Im; Wed, 13 Nov 2019 15:32:26 +0000
+ id 1iUuk0-0007QN-CR; Wed, 13 Nov 2019 15:39:33 +0000
 Received: from gandalf.local.home (cpe-66-24-58-225.stny.res.rr.com
  [66.24.58.225])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id BEBEA20679;
- Wed, 13 Nov 2019 15:32:15 +0000 (UTC)
-Date: Wed, 13 Nov 2019 10:32:14 -0500
+ by mail.kernel.org (Postfix) with ESMTPSA id 688C62248C;
+ Wed, 13 Nov 2019 15:39:24 +0000 (UTC)
+Date: Wed, 13 Nov 2019 10:39:22 -0500
 From: Steven Rostedt <rostedt@goodmis.org>
 To: Sergey Senozhatsky <sergey.senozhatsky.work@gmail.com>
 Subject: Re: [PATCH 00/50] Add log level to show_stack()
-Message-ID: <20191113103214.1585923c@gandalf.local.home>
-In-Reply-To: <20191112044447.GA121272@google.com>
+Message-ID: <20191113103922.3dc3e8e9@gandalf.local.home>
+In-Reply-To: <20191112021747.GA68506@google.com>
 References: <20191106030542.868541-1-dima@arista.com>
  <20191106083538.z5nlpuf64cigxigh@pathway.suse.cz>
  <20191108103719.GB175344@google.com>
  <20191108130447.h3wfgo4efjkto56f@pathway.suse.cz>
  <20191111012336.GA85185@google.com>
- <20191111091207.u3lrd6cmumnx4czr@pathway.suse.cz>
- <20191112044447.GA121272@google.com>
+ <13e72b62-c842-8ed5-5b41-bc1692b28f53@arista.com>
+ <20191112021747.GA68506@google.com>
 X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191113_073225_656276_6962F098 
-X-CRM114-Status: GOOD (  11.86  )
+X-CRM114-CacheID: sfid-20191113_073932_467019_CB19FDC0 
+X-CRM114-Status: GOOD (  10.67  )
 X-Spam-Score: -4.8 (----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-4.8 points)
@@ -127,23 +127,25 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-snps-arc" <linux-snps-arc-bounces@lists.infradead.org>
 Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org
 
-On Tue, 12 Nov 2019 13:44:47 +0900
+On Tue, 12 Nov 2019 11:17:47 +0900
 Sergey Senozhatsky <sergey.senozhatsky.work@gmail.com> wrote:
 
-> > > I do recall that we talked about per-CPU printk state bit which would
-> > > start/end "just print it" section. We probably can extend it to "just
-> > > log_store" type of functionality. Doesn't look like a very bad idea.  
-> > 
-> > The problem with per-CPU printk is that we would need to disable
-> > interrupts.  
+> void show_stack(struct task_struct *task, unsigned long *sp, int log_level)
+> {
+> 	printk_emergency_enter(log_level);
+> 	__show_stack(task, sp);
+> 	printk_emergency_exit();
+> }
+> // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
 > 
-> Or disable preemption and have loglevel per-CPU and per-context.
-> preempt_count can navigate us to the right context loglevel on
-> particular CPU. I'm talking here only about backtrace (error)
-> reporting contexts. Those can be atomic perfectly fine.
+> show_stack() never schedules, disabling preemption around it should
+> not change anything. Should it be interrupted, we will handle it via
+> preempt count.
 
-With my real-time hat on, I'm totally against disabling of preemption
-for this purpose.
+Please no! The whole point of the printk rewrite was to allow for
+printk to be preemptible and used in more contexts. The show_stack() can
+be all over the place and is not a fast function. Let's not disable
+preemption for it.
 
 -- Steve
 
