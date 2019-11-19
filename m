@@ -2,7 +2,7 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 86073102706
+	by mail.lfdr.de (Postfix) with ESMTPS id C6FBD102709
 	for <lists+linux-snps-arc@lfdr.de>; Tue, 19 Nov 2019 15:42:01 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
@@ -10,56 +10,61 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=aodOG+BWVFlNMkY90IxY8Ov1GDWihOOaHAjAgp02DDc=; b=SUFmztQ0JWZo+w
-	/ZjwO2T/rhON5HzLyNKi5QA7k7D5UvJyBVTbIQoaueG/Fnp73skHhfxKG1n0uzJzZRJRK8NIrGKFL
-	vhZGD8kUgXsiLwNrZmQkyqXmyXZJByzRHY7SHdETxIY+Uh86Wl3DRzC6jpg+tSrhvHkzCAI82bsdj
-	Ejr+9sDxJaFgb5S0bzw7LrU2CKKwOgeJ318bZTvl+9RcMHYwAWEoEzVvbayzhQI544U5GC+b4cMyz
-	4aWQWC0Ns+p/vHte0g1EybyA1TpV498oc7/c10Gh3myXllFTXbQfczQ6E9GeYZ/l10deP0o6caqQy
-	zZ3cWlxS5WneQgFq9s1Q==;
+	List-Owner; bh=X+4OPgM4KSTsmEGnESvNEL6Ip3LJs5iWQhrOWBZfHQY=; b=kbJCP819QB8PaS
+	AtbaGbXeY8l/pDF5X+jjfvMuVaxl1oHuHjVN0yKpuo3TsG5YLMmspBqqnK0rIRXscVrf4M013o3pr
+	DglaZg+T+XD7WBSPXnaQOO9jLbOnZro1hGGVGB1zwhNKRDPUfRfxDNI7skqnmE1Cv22fpQhEIcx93
+	iqmgES/XrU8OqhAXEx8cUbJolkYIDuVQGvVWkswrDzDFzAC1Cy72LzpQm5Md+SGLwrbk3B/iExMp1
+	J1xqGPESK/CCOZ/lBaZJOcL8FgroFxBhsGJXtGNotvWu2EOioCMdtavgetOkXTqkVnfQN4+JcjLg2
+	jM3yVh9U1Vcs0Kl9g3dA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iX4hc-0008Fj-9F; Tue, 19 Nov 2019 14:42:00 +0000
-Received: from smtprelay-out1.synopsys.com ([149.117.87.133])
+	id 1iX4hc-0008GE-Iq; Tue, 19 Nov 2019 14:42:00 +0000
+Received: from dc8-smtprelay2.synopsys.com ([198.182.47.102]
+ helo=smtprelay-out1.synopsys.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iX4hY-0008DT-9c
- for linux-snps-arc@lists.infradead.org; Tue, 19 Nov 2019 14:41:57 +0000
+ id 1iX4hZ-0008EH-RS
+ for linux-snps-arc@lists.infradead.org; Tue, 19 Nov 2019 14:41:59 +0000
 Received: from mailhost.synopsys.com (mdc-mailhost1.synopsys.com
  [10.225.0.209])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
  (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id B80EFC2ECC;
- Tue, 19 Nov 2019 14:41:54 +0000 (UTC)
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id D2D53C2577;
+ Tue, 19 Nov 2019 14:41:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1574174515; bh=UxM7GkeegeLhnO6SHHYpc+n30A4Lz5lkq5h2P2p9FQo=;
+ t=1574174517; bh=y/UJ6x3VYOJt5fIAD/1jTDgF9YTH0srcaXkWR4OGbd0=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=i5vTu8yZfQa4+mw1sqUYNzugmQthZjEJt3/ZT1uYV2Y+D2JGXbhwxh40P6yGqqfDe
- 3aZHMPa15xx9fBL9E8Teuz/z4Ztwrv+Xv9tNdEz8QjHWKtAn87l9RCwKJ4E4LbZRCa
- DPe6biz0gtzfH2ZDJ0pAKAiuGTc/mJxKlZzakiZTcc+/YZN0goEYxdu4xuAtiPTG+e
- NKgjzjCvzaiH+muaNqiYX/7lCfXwoBtabxNAlxdPNo1r7Svpmk6PiiBm1khv4iiufZ
- W60qCJ+qKmruGJkXg8DPx7SR7+EaeNBKLZQrU8hWQKSMWfPrnwQgzaBMoDvRyUfSZ3
- onwIolGHwO9jQ==
+ b=fPtTti2LVDPM9DgKHzdr1nFE/0ZhNsu3lkSW1EvgO3qMMEaJ2jmBoYY+fZOcw3wet
+ 4EdJL/drirgbr5SPdnJATxMYvflcxei+311eYSEc1UqC+D4yqpKCOi/nGKgkhdq6NB
+ u16RzcMaAu74XfVgGrgBi6L0/aE1I0JifzdswhnSTiI0o8P5Wx5USGSFXMu4s4BH6R
+ 3A8bzMEHS+c4px5RSnAnQ6d/OvzSX7T6t1HT0ObSi+yW3kRMRWeZXOr77t34lyHQGI
+ aTJoi/sgyKANCULKv+0SvFWR9C2CVac6GPcWSdwoWLaDKWx6AYlA4glo4Jdv/4cjyv
+ gn9EB64ZGggFw==
 Received: from paltsev-e7480.internal.synopsys.com
  (paltsev-e7480.internal.synopsys.com [10.121.3.76])
- by mailhost.synopsys.com (Postfix) with ESMTP id 096C6A0066;
- Tue, 19 Nov 2019 14:41:52 +0000 (UTC)
+ by mailhost.synopsys.com (Postfix) with ESMTP id A75AEA0069;
+ Tue, 19 Nov 2019 14:41:53 +0000 (UTC)
 From: Eugeniy Paltsev <Eugeniy.Paltsev@synopsys.com>
 To: dri-devel@lists.freedesktop.org,
  Alexey Brodkin <Alexey.Brodkin@synopsys.com>
-Subject: [PATCH 2/4] DRM: ARC: PGU: cleanup supported format list code
-Date: Tue, 19 Nov 2019 17:41:45 +0300
-Message-Id: <20191119144147.8022-3-Eugeniy.Paltsev@synopsys.com>
+Subject: [PATCH 3/4] DRM: ARC: PGU: replace unsupported by HW RGB888 format by
+ XRGB888
+Date: Tue, 19 Nov 2019 17:41:46 +0300
+Message-Id: <20191119144147.8022-4-Eugeniy.Paltsev@synopsys.com>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20191119144147.8022-1-Eugeniy.Paltsev@synopsys.com>
 References: <20191119144147.8022-1-Eugeniy.Paltsev@synopsys.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191119_064156_397810_8EB8B071 
-X-CRM114-Status: GOOD (  11.15  )
+X-CRM114-CacheID: sfid-20191119_064157_931347_357DF73C 
+X-CRM114-Status: UNSURE (   9.62  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [198.182.47.102 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -88,79 +93,53 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-snps-arc" <linux-snps-arc-bounces@lists.infradead.org>
 Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org
 
-Get rid of 'simplefb_format' structure usage as we only use its
-'fourcc' field.
+ARC PGU doesn't support RGB888 (24 bit) format but supports
+XRGB888 (32 bit) format. Fix incorrect format list in a driver.
 
 Signed-off-by: Eugeniy Paltsev <Eugeniy.Paltsev@synopsys.com>
 ---
- drivers/gpu/drm/arc/arcpgu_crtc.c | 25 +++++++++++--------------
- 1 file changed, 11 insertions(+), 14 deletions(-)
+ drivers/gpu/drm/arc/arcpgu_crtc.c | 6 +++---
+ drivers/gpu/drm/arc/arcpgu_regs.h | 2 +-
+ 2 files changed, 4 insertions(+), 4 deletions(-)
 
 diff --git a/drivers/gpu/drm/arc/arcpgu_crtc.c b/drivers/gpu/drm/arc/arcpgu_crtc.c
-index 31d9824c46cc..5473b19a52ee 100644
+index 5473b19a52ee..980e00180e6f 100644
 --- a/drivers/gpu/drm/arc/arcpgu_crtc.c
 +++ b/drivers/gpu/drm/arc/arcpgu_crtc.c
-@@ -20,9 +20,9 @@
+@@ -22,7 +22,7 @@
  
- #define ENCODE_PGU_XY(x, y)	((((x) - 1) << 16) | ((y) - 1))
- 
--static struct simplefb_format supported_formats[] = {
--	{ "r5g6b5", 16, {11, 5}, {5, 6}, {0, 5}, {0, 0}, DRM_FORMAT_RGB565 },
--	{ "r8g8b8", 24, {16, 8}, {8, 8}, {0, 8}, {0, 0}, DRM_FORMAT_RGB888 },
-+static const u32 arc_pgu_supported_formats[] = {
-+	DRM_FORMAT_RGB565,
-+	DRM_FORMAT_RGB888,
+ static const u32 arc_pgu_supported_formats[] = {
+ 	DRM_FORMAT_RGB565,
+-	DRM_FORMAT_RGB888,
++	DRM_FORMAT_XRGB8888,
  };
  
  static void arc_pgu_set_pxl_fmt(struct drm_crtc *crtc)
-@@ -30,20 +30,20 @@ static void arc_pgu_set_pxl_fmt(struct drm_crtc *crtc)
- 	struct arcpgu_drm_private *arcpgu = crtc_to_arcpgu_priv(crtc);
- 	const struct drm_framebuffer *fb = crtc->primary->state->fb;
- 	uint32_t pixel_format = fb->format->format;
--	struct simplefb_format *format = NULL;
-+	u32 format = DRM_FORMAT_INVALID;
- 	int i;
- 	u32 reg_ctrl;
- 
--	for (i = 0; i < ARRAY_SIZE(supported_formats); i++) {
--		if (supported_formats[i].fourcc == pixel_format)
--			format = &supported_formats[i];
-+	for (i = 0; i < ARRAY_SIZE(arc_pgu_supported_formats); i++) {
-+		if (arc_pgu_supported_formats[i] == pixel_format)
-+			format = arc_pgu_supported_formats[i];
- 	}
- 
--	if (WARN_ON(!format))
-+	if (WARN_ON(format == DRM_FORMAT_INVALID))
- 		return;
+@@ -44,9 +44,9 @@ static void arc_pgu_set_pxl_fmt(struct drm_crtc *crtc)
  
  	reg_ctrl = arc_pgu_read(arcpgu, ARCPGU_REG_CTRL);
--	if (format->fourcc == DRM_FORMAT_RGB565)
-+	if (format == DRM_FORMAT_RGB565)
- 		reg_ctrl &= ~ARCPGU_MODE_RGB888_MASK;
+ 	if (format == DRM_FORMAT_RGB565)
+-		reg_ctrl &= ~ARCPGU_MODE_RGB888_MASK;
++		reg_ctrl &= ~ARCPGU_MODE_XRGB8888;
  	else
- 		reg_ctrl |= ARCPGU_MODE_RGB888_MASK;
-@@ -195,18 +195,15 @@ static struct drm_plane *arc_pgu_plane_init(struct drm_device *drm)
- {
- 	struct arcpgu_drm_private *arcpgu = drm->dev_private;
- 	struct drm_plane *plane = NULL;
--	u32 formats[ARRAY_SIZE(supported_formats)], i;
- 	int ret;
+-		reg_ctrl |= ARCPGU_MODE_RGB888_MASK;
++		reg_ctrl |= ARCPGU_MODE_XRGB8888;
+ 	arc_pgu_write(arcpgu, ARCPGU_REG_CTRL, reg_ctrl);
+ }
  
- 	plane = devm_kzalloc(drm->dev, sizeof(*plane), GFP_KERNEL);
- 	if (!plane)
- 		return ERR_PTR(-ENOMEM);
+diff --git a/drivers/gpu/drm/arc/arcpgu_regs.h b/drivers/gpu/drm/arc/arcpgu_regs.h
+index dab2c380f7f3..b689a382d556 100644
+--- a/drivers/gpu/drm/arc/arcpgu_regs.h
++++ b/drivers/gpu/drm/arc/arcpgu_regs.h
+@@ -25,7 +25,7 @@
+ #define ARCPGU_CTRL_VS_POL_OFST	0x3
+ #define ARCPGU_CTRL_HS_POL_MASK	0x1
+ #define ARCPGU_CTRL_HS_POL_OFST	0x4
+-#define ARCPGU_MODE_RGB888_MASK	0x04
++#define ARCPGU_MODE_XRGB8888	BIT(2)
+ #define ARCPGU_STAT_BUSY_MASK	0x02
  
--	for (i = 0; i < ARRAY_SIZE(supported_formats); i++)
--		formats[i] = supported_formats[i].fourcc;
--
- 	ret = drm_universal_plane_init(drm, plane, 0xff, &arc_pgu_plane_funcs,
--				       formats, ARRAY_SIZE(formats),
-+				       arc_pgu_supported_formats,
-+				       ARRAY_SIZE(arc_pgu_supported_formats),
- 				       NULL,
- 				       DRM_PLANE_TYPE_PRIMARY, NULL);
- 	if (ret)
+ #endif
 -- 
 2.21.0
 
