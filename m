@@ -2,60 +2,59 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A282212B937
-	for <lists+linux-snps-arc@lfdr.de>; Fri, 27 Dec 2019 19:04:04 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0E22B12B93B
+	for <lists+linux-snps-arc@lfdr.de>; Fri, 27 Dec 2019 19:04:09 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=p8oAI91rDz7D/tYBubsZQRDzaAk8VnHKTcCjWXPD294=; b=TgAZ4wNhPdx4qR
-	tUOA/F63fmhC3reX4K6uud0Pczzp1ufGM+5mibIyjgFUqgIs5ZDCjKtyRVguVAzYp/cBjtW00Y4O1
-	nVIqpsDIxlOnrKh1H5ug6Kjy5vm/GZop9rwv1UtRilixu3Qs5Vrz6pkpn2GvH+kPzUQZSPh42bnM7
-	bt6Q0PPYflyVstZNi0E7tw2G2Yd1VyRs4oIh7OO07st1ViS175XVchEgfQSDYTN2k6zuhLei3mF2O
-	QmzVMFNPlGngEWElUGLkW5VGNlXu/lLYbV0cDZHhKr3d1BYlO7XXjS63PDi2s1LdpmTTZPvOXhsX1
-	ihgpkxacb7FYwAMpHGig==;
+	List-Owner; bh=+ALf/byO1YJCwfhHuV3PZuFBcDWFE28limPUWz7tpZQ=; b=FaKXKpiyB/mwHl
+	WqvWJp7jSKUZirhiS0VakGoMY+rtOLTKnjcr6+JicGy/GHeS+ZAEQJYeeX/Z4yxg41o9TjZv4vqjc
+	XARPYxtb+amS06DtExEtIvazcBe4Yq/QEuJFaVUrGIIolgO8ekBc/R3pNr7uRkAVGSSEMtNQCD0B2
+	zqWE1F6bpn/EF0JPpd74DSF7huj7c71Zggxc65YUj9jbYjJildtQEoBd4IfU63dAV4h4tc9d6d1NM
+	uejQ5fw3HO8uGOGs9f8SvgVBNLRKpuLppi91f13MrhfJDwMWOYU1WNp22vGvsElDbkl+wFlDlukfT
+	Elw+R0+Y6UcboCt24rnQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iktxz-0005Xk-9v; Fri, 27 Dec 2019 18:04:03 +0000
-Received: from us03-smtprelay2.synopsys.com ([149.117.87.133]
+	id 1ikty3-0005aI-NU; Fri, 27 Dec 2019 18:04:07 +0000
+Received: from sv2-smtprelay2.synopsys.com ([149.117.73.133]
  helo=smtprelay-out1.synopsys.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iktxw-0005V7-Ed
- for linux-snps-arc@lists.infradead.org; Fri, 27 Dec 2019 18:04:01 +0000
+ id 1iktxw-0005Vd-S5
+ for linux-snps-arc@lists.infradead.org; Fri, 27 Dec 2019 18:04:03 +0000
 Received: from mailhost.synopsys.com (mdc-mailhost2.synopsys.com
  [10.225.0.210])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
  (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id B2A53C09A7;
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 209E442CED;
  Fri, 27 Dec 2019 18:03:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1577469838; bh=FA6LUY6CHkOmJ9QzyFH4ZmwtZXrc9eBJr1JMrs9R+1I=;
+ t=1577469839; bh=Hes0n05dCzlQLemBmu3FmAF+1sPDQGmnFX0t0kYnTls=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=HZ2Qtek6HXlinyXMlGK64VmnZsxa+H5F/Nkxp0ScwPvSMthuo1z/8s64wHiM8c7u6
- 3c0pO2gyGlZbHW5yfbpBEDyoD+36aQz01u71xQAmJoY5XboOqxmfQ9v4348YgUF0rm
- y+7AFgL6vFiF+vJaTDDE1lQXhLrlE6VHrBtJgUMDSaYRSRcDvTGg0HZjBcIf0v+H+2
- TlW0fc+G1k83jztbi4z5ali9MA8yK9JhgORt/kFYC/CxKCyTdLVJZx2WWj+EIDxN3Z
- sSnmxfdhQ8WEnn7+zY2nZeybPXgSIjMEB4Yc07WTVPfc35NMYM2ThGJtqubWOyRiJU
- ByopaDgHEkjhQ==
+ b=ASV7Z7+/bOTCx7iaXWb8kPRRMQDHN2iF8A+EXxt8yQe455/l85/eYsGGdM6y9xq7P
+ Khj+fsn70hej3Cnzc7fpw/KC1sFBrd8hrsMKCsXP3WeUP3wWoo++0hHlrd6Cjaqnci
+ sW1HVG88AC6BhS1g8z2JN71Su/lPbeC+bW++pglfEPS+zlvU3/r2SAtSURIgWBmC9N
+ 8YPRz7rRfqwwNR1PPmX5RW6kJjjAcaVY5pPqSuKSIm2CeevuvxUJFaDYxKVDkXFGGT
+ +21PJnTVCJe58+ALzkZ+8BqkvRl1H8UsjXlUduvSuXZEV6zVjf8rXxxguV2iUAhovV
+ RwLAGsbMvLGEQ==
 Received: from paltsev-e7480.internal.synopsys.com (unknown [10.121.8.65])
- by mailhost.synopsys.com (Postfix) with ESMTP id DEE08A0063;
- Fri, 27 Dec 2019 18:03:55 +0000 (UTC)
+ by mailhost.synopsys.com (Postfix) with ESMTP id 6B1CBA0067;
+ Fri, 27 Dec 2019 18:03:56 +0000 (UTC)
 From: Eugeniy Paltsev <Eugeniy.Paltsev@synopsys.com>
 To: linux-snps-arc@lists.infradead.org,
  Vineet Gupta <Vineet.Gupta1@synopsys.com>
-Subject: [PATCH 1/5] ARC: pt_regs: remove hardcoded registers offset
-Date: Fri, 27 Dec 2019 21:03:43 +0300
-Message-Id: <20191227180347.3579-2-Eugeniy.Paltsev@synopsys.com>
+Subject: [PATCH 2/5] ARC: add helpers to sanitize config options
+Date: Fri, 27 Dec 2019 21:03:44 +0300
+Message-Id: <20191227180347.3579-3-Eugeniy.Paltsev@synopsys.com>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20191227180347.3579-1-Eugeniy.Paltsev@synopsys.com>
 References: <20191227180347.3579-1-Eugeniy.Paltsev@synopsys.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191227_100400_518759_5F8F5377 
-X-CRM114-Status: UNSURE (   7.74  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191227_100400_912457_6A1AE965 
+X-CRM114-Status: GOOD (  10.38  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -88,67 +87,69 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-snps-arc" <linux-snps-arc-bounces@lists.infradead.org>
 Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org
 
-Replace hardcoded registers offset numbers by calculated via
-offsetof.
+We'll use this macro in coming patches extensively.
 
 Signed-off-by: Eugeniy Paltsev <Eugeniy.Paltsev@synopsys.com>
 ---
- arch/arc/include/asm/entry-arcv2.h | 8 ++++----
- arch/arc/kernel/asm-offsets.c      | 9 +++++++++
- 2 files changed, 13 insertions(+), 4 deletions(-)
+ arch/arc/kernel/setup.c | 29 ++++++++++++++++-------------
+ 1 file changed, 16 insertions(+), 13 deletions(-)
 
-diff --git a/arch/arc/include/asm/entry-arcv2.h b/arch/arc/include/asm/entry-arcv2.h
-index 41b16f21beec..0b8b63d0bec1 100644
---- a/arch/arc/include/asm/entry-arcv2.h
-+++ b/arch/arc/include/asm/entry-arcv2.h
-@@ -162,7 +162,7 @@
- #endif
- 
- #ifdef CONFIG_ARC_HAS_ACCL_REGS
--	ST2	r58, r59, PT_sp + 12
-+	ST2	r58, r59, PT_r58
- #endif
- 
- .endm
-@@ -172,8 +172,8 @@
- 
- 	LD2	gp, fp, PT_r26		; gp (r26), fp (r27)
- 
--	ld	r12, [sp, PT_sp + 4]
--	ld	r30, [sp, PT_sp + 8]
-+	ld	r12, [sp, PT_r12]
-+	ld	r30, [sp, PT_r30]
- 
- 	; Restore SP (into AUX_USER_SP) only if returning to U mode
- 	;  - for K mode, it will be implicitly restored as stack is unwound
-@@ -190,7 +190,7 @@
- #endif
- 
- #ifdef CONFIG_ARC_HAS_ACCL_REGS
--	LD2	r58, r59, PT_sp + 12
-+	LD2	r58, r59, PT_r58
- #endif
- .endm
- 
-diff --git a/arch/arc/kernel/asm-offsets.c b/arch/arc/kernel/asm-offsets.c
-index 631ebb5d3458..c783bcd35eb8 100644
---- a/arch/arc/kernel/asm-offsets.c
-+++ b/arch/arc/kernel/asm-offsets.c
-@@ -67,5 +67,14 @@ int main(void)
- 	DEFINE(SZ_CALLEE_REGS, sizeof(struct callee_regs));
- 	DEFINE(SZ_PT_REGS, sizeof(struct pt_regs));
- 
-+#ifdef CONFIG_ISA_ARCV2
-+	OFFSET(PT_r12, pt_regs, r12);
-+	OFFSET(PT_r30, pt_regs, r30);
-+#endif
-+#ifdef CONFIG_ARC_HAS_ACCL_REGS
-+	OFFSET(PT_r58, pt_regs, r58);
-+	OFFSET(PT_r59, pt_regs, r59);
-+#endif
-+
- 	return 0;
+diff --git a/arch/arc/kernel/setup.c b/arch/arc/kernel/setup.c
+index 7ee89dc61f6e..edb55b6ee278 100644
+--- a/arch/arc/kernel/setup.c
++++ b/arch/arc/kernel/setup.c
+@@ -389,11 +389,23 @@ static char *arc_extn_mumbojumbo(int cpu_id, char *buf, int len)
+ 	return buf;
  }
+ 
++static void chk_opt_strict(char *opt_name, bool hw_exists, bool opt_ena)
++{
++	if (hw_exists && !opt_ena)
++		pr_warn(" ! Enable %s for working apps\n", opt_name);
++	else if (!hw_exists && opt_ena)
++		panic("Disable %s, hardware NOT present\n", opt_name);
++}
++
++#define CHK_OPT_STRICT(opt_name, hw_exists)				\
++({									\
++	chk_opt_strict(#opt_name, hw_exists, IS_ENABLED(opt_name));	\
++})
++
+ static void arc_chk_core_config(void)
+ {
+ 	struct cpuinfo_arc *cpu = &cpuinfo_arc700[smp_processor_id()];
+-	int saved = 0, present = 0;
+-	char *opt_nm = NULL;
++	int present = 0;
+ 
+ 	if (!cpu->extn.timer0)
+ 		panic("Timer0 is not present!\n");
+@@ -425,23 +437,14 @@ static void arc_chk_core_config(void)
+ 	 */
+ 
+ 	if (is_isa_arcompact()) {
+-		opt_nm = "CONFIG_ARC_FPU_SAVE_RESTORE";
+-		saved = IS_ENABLED(CONFIG_ARC_FPU_SAVE_RESTORE);
+-
+ 		/* only DPDP checked since SP has no arch visible regs */
+ 		present = cpu->extn.fpu_dp;
++		CHK_OPT_STRICT(CONFIG_ARC_FPU_SAVE_RESTORE, present);
+ 	} else {
+-		opt_nm = "CONFIG_ARC_HAS_ACCL_REGS";
+-		saved = IS_ENABLED(CONFIG_ARC_HAS_ACCL_REGS);
+-
+ 		/* Accumulator Low:High pair (r58:59) present if DSP MPY or FPU */
+ 		present = cpu->extn_mpy.dsp | cpu->extn.fpu_sp | cpu->extn.fpu_dp;
++		CHK_OPT_STRICT(CONFIG_ARC_HAS_ACCL_REGS, present);
+ 	}
+-
+-	if (present && !saved)
+-		pr_warn("Enable %s for working apps\n", opt_nm);
+-	else if (!present && saved)
+-		panic("Disable %s, hardware NOT present\n", opt_nm);
+ }
+ 
+ /*
 -- 
 2.21.0
 
