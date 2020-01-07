@@ -2,8 +2,8 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 00262132BF8
-	for <lists+linux-snps-arc@lfdr.de>; Tue,  7 Jan 2020 17:55:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1107A132BFB
+	for <lists+linux-snps-arc@lfdr.de>; Tue,  7 Jan 2020 17:55:38 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,31 +11,31 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=bjEfHALM9rOoaoO1npEB1WpiB4ohVua0+82sWy71gNg=; b=mfrDfV6YWS6ifGrtNxyQH9ZGuO
-	FNILtYvUghBvoG3xfO7jbLFEBigpAb143tIAUgyKtua1tVZY0wG39iq7UMioGo1ta+i69U152TeQi
-	zZeD7e/4yI3TGveKwtUTRkN7BYntSstEZ1AN1CS0WEbYOkyQ1TN39+eTuMVPPiOwPHxp86Pny5+u8
-	6Ou4DTDyTsI2VoT3I0Czg5JcuwO+vMerlS6blBORC0FGdRyLi0rUPyO2WCAHE6kpdE+c+O5MZflqn
-	YRvBsUoUCDDvGwlsK+o+lyumd0KsYou5oodEQERIlKd3vxicEByTtsRRKJ5slgNM5FUPPS7SYXgs2
-	Jcp4jI8A==;
+	bh=zu2ckcLu72gO7XuJ8/neSvMNYRHQ31MBX1qQH0u3b6w=; b=qsKKwBp721pVfxmmkdG8qK9frG
+	Al/SkxVsGy1i1M6yU08yXCaXffGQ1gFClsURyWHxr1XaCRQCMHCvpuRBiyg5OsDpEhoOPW6lkEMgy
+	vznnr4ynT/hVePS7fSY5GlcbUvfQuVGVRyqtSdxuhD5LyTYV/s3Uitn4CEomvdu82Fv3UzW3B/KNL
+	RY3FMXJ1LQazsM8DV6EzXyhdCoD24b6/5gwVgyQd8ggmJK7w2XxV2hLFdDsKYNuygdWaqPAyXgN52
+	sbuMZt2QZp9B/vMnTvpp/H9pNTYKLisuguDQ/Zw+tNhBBAQwRwqH3ntz6eyoIsh9SUnKhOileZbYf
+	j/HPs9Yw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ios8e-0003nD-Ms; Tue, 07 Jan 2020 16:55:28 +0000
+	id 1ios8m-0003pD-RF; Tue, 07 Jan 2020 16:55:36 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ios8b-0003md-Jh
- for linux-snps-arc@lists.infradead.org; Tue, 07 Jan 2020 16:55:26 +0000
+ id 1ios8k-0003oi-6o
+ for linux-snps-arc@lists.infradead.org; Tue, 07 Jan 2020 16:55:35 +0000
 Received: from PC-kkoz.proceq.com (unknown [213.160.61.66])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id C24FD2467C;
- Tue,  7 Jan 2020 16:55:17 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id A58CC24683;
+ Tue,  7 Jan 2020 16:55:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1578416125;
- bh=yZ1alr9A2nUZ2Hv+vTN9H+etC5HSYvMyPLdn1mrb4CQ=;
+ s=default; t=1578416133;
+ bh=SKElI/qU0szvVwXxdSSdNcpAtTnuFpcsNCmvah0x66E=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=FdNtYmqfn+ySYXxZ76v0NIWq0zhHwvOM8yur5NsMwL9rYxXUQqdTfG2PKQgr9eiCm
- rnS6aCKPmbyo4SkOUcjWvVrhQO2ADV8gPXWHOKs+SB96U4jGlc/Wlzx/YljEz2Jxiz
- 1Y1+Nx/AbkFdwy5Y7GzCUfFm5PLKFNq3NfsB+LJo=
+ b=ICZY6NpgTR+BNtLudTIkEs1KULVPT+4ew+12QlnGbZSOjB5RgZ5me6i3Y9Kw4ozDy
+ BRZpaRIA+vgiXZdWeyJw87F0OFMVl67R6DcyNgL8FZZaOhwNKN1EXPz/I++GVPoGae
+ k2V6DgLuRImkZHWvFjIdZLp+urcKlQG5sN+mla+o=
 From: Krzysztof Kozlowski <krzk@kernel.org>
 To: Richard Henderson <rth@twiddle.net>,
  Ivan Kokshaysky <ink@jurassic.park.msu.ru>,
@@ -64,16 +64,16 @@ To: Richard Henderson <rth@twiddle.net>,
  linux-wireless@vger.kernel.org, netdev@vger.kernel.org,
  linux-ntb@googlegroups.com, virtualization@lists.linux-foundation.org,
  linux-arch@vger.kernel.org
-Subject: [RFT 11/13] net: wireless: rtl818x: Constify ioreadX() iomem argument
- (as in generic implementation)
-Date: Tue,  7 Jan 2020 17:53:10 +0100
-Message-Id: <1578415992-24054-14-git-send-email-krzk@kernel.org>
+Subject: [RFT 12/13] ntb: intel: Constify ioreadX() iomem argument (as in
+ generic implementation)
+Date: Tue,  7 Jan 2020 17:53:11 +0100
+Message-Id: <1578415992-24054-15-git-send-email-krzk@kernel.org>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1578415992-24054-1-git-send-email-krzk@kernel.org>
 References: <1578415992-24054-1-git-send-email-krzk@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200107_085525_692018_754685DA 
-X-CRM114-Status: GOOD (  11.57  )
+X-CRM114-CacheID: sfid-20200107_085534_289925_A4A678D8 
+X-CRM114-Status: GOOD (  12.15  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -118,34 +118,50 @@ consistency among architectures.
 
 Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
 ---
- drivers/net/wireless/realtek/rtl818x/rtl8180/rtl8180.h | 6 +++---
- 1 file changed, 3 insertions(+), 3 deletions(-)
+ drivers/ntb/hw/intel/ntb_hw_gen1.c  | 2 +-
+ drivers/ntb/hw/intel/ntb_hw_gen3.h  | 2 +-
+ drivers/ntb/hw/intel/ntb_hw_intel.h | 2 +-
+ 3 files changed, 3 insertions(+), 3 deletions(-)
 
-diff --git a/drivers/net/wireless/realtek/rtl818x/rtl8180/rtl8180.h b/drivers/net/wireless/realtek/rtl818x/rtl8180/rtl8180.h
-index 7948a2da195a..2ff00800d45b 100644
---- a/drivers/net/wireless/realtek/rtl818x/rtl8180/rtl8180.h
-+++ b/drivers/net/wireless/realtek/rtl818x/rtl8180/rtl8180.h
-@@ -150,17 +150,17 @@ void rtl8180_write_phy(struct ieee80211_hw *dev, u8 addr, u32 data);
- void rtl8180_set_anaparam(struct rtl8180_priv *priv, u32 anaparam);
- void rtl8180_set_anaparam2(struct rtl8180_priv *priv, u32 anaparam2);
- 
--static inline u8 rtl818x_ioread8(struct rtl8180_priv *priv, u8 __iomem *addr)
-+static inline u8 rtl818x_ioread8(struct rtl8180_priv *priv, const u8 __iomem *addr)
- {
- 	return ioread8(addr);
+diff --git a/drivers/ntb/hw/intel/ntb_hw_gen1.c b/drivers/ntb/hw/intel/ntb_hw_gen1.c
+index bb57ec239029..9202502a9787 100644
+--- a/drivers/ntb/hw/intel/ntb_hw_gen1.c
++++ b/drivers/ntb/hw/intel/ntb_hw_gen1.c
+@@ -1202,7 +1202,7 @@ int intel_ntb_peer_spad_write(struct ntb_dev *ntb, int pidx, int sidx,
+ 			       ndev->peer_reg->spad);
  }
  
--static inline u16 rtl818x_ioread16(struct rtl8180_priv *priv, __le16 __iomem *addr)
-+static inline u16 rtl818x_ioread16(struct rtl8180_priv *priv, const __le16 __iomem *addr)
+-static u64 xeon_db_ioread(void __iomem *mmio)
++static u64 xeon_db_ioread(const void __iomem *mmio)
  {
- 	return ioread16(addr);
+ 	return (u64)ioread16(mmio);
  }
+diff --git a/drivers/ntb/hw/intel/ntb_hw_gen3.h b/drivers/ntb/hw/intel/ntb_hw_gen3.h
+index 75fb86ca27bb..d1455f24ec99 100644
+--- a/drivers/ntb/hw/intel/ntb_hw_gen3.h
++++ b/drivers/ntb/hw/intel/ntb_hw_gen3.h
+@@ -91,7 +91,7 @@
+ #define GEN3_DB_TOTAL_SHIFT		33
+ #define GEN3_SPAD_COUNT			16
  
--static inline u32 rtl818x_ioread32(struct rtl8180_priv *priv, __le32 __iomem *addr)
-+static inline u32 rtl818x_ioread32(struct rtl8180_priv *priv, const __le32 __iomem *addr)
+-static inline u64 gen3_db_ioread(void __iomem *mmio)
++static inline u64 gen3_db_ioread(const void __iomem *mmio)
  {
- 	return ioread32(addr);
+ 	return ioread64(mmio);
  }
+diff --git a/drivers/ntb/hw/intel/ntb_hw_intel.h b/drivers/ntb/hw/intel/ntb_hw_intel.h
+index e071e28bca3f..3c0a5a2da241 100644
+--- a/drivers/ntb/hw/intel/ntb_hw_intel.h
++++ b/drivers/ntb/hw/intel/ntb_hw_intel.h
+@@ -102,7 +102,7 @@ struct intel_ntb_dev;
+ struct intel_ntb_reg {
+ 	int (*poll_link)(struct intel_ntb_dev *ndev);
+ 	int (*link_is_up)(struct intel_ntb_dev *ndev);
+-	u64 (*db_ioread)(void __iomem *mmio);
++	u64 (*db_ioread)(const void __iomem *mmio);
+ 	void (*db_iowrite)(u64 db_bits, void __iomem *mmio);
+ 	unsigned long			ntb_ctl;
+ 	resource_size_t			db_size;
 -- 
 2.7.4
 
