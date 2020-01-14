@@ -2,8 +2,8 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D2DF113AEA8
-	for <lists+linux-snps-arc@lfdr.de>; Tue, 14 Jan 2020 17:11:02 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0D7E813AE8B
+	for <lists+linux-snps-arc@lfdr.de>; Tue, 14 Jan 2020 17:10:02 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,53 +11,52 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=PWfR5vzK2NTcFPCk9cdj0Lp9tqYY3UK3SuBa8YlJ5L4=; b=EcsMZA70VxHBwes871nX4G3pVN
-	hKMeC/my9r3Hp2s0pFDJTPXTHi1EEOSrUwbqu4gqyHpohEnBjEE5O3xX2PfH9WZD90Qc6/1F3MTzb
-	Xaf1hE3XQkw3Kb6AXUvaa4ho4xVmtrLPE4lV+FOtfAWpE/YLLMwtngeMBsXWZiQ2km+/hqyN7i52+
-	038V/8xDp0TIL5mCezv0jI/LH0dqjtrwfyg1sNhx+h0M7q5HS//AQUr7ViC6LvfvXp3hQLuvbLgdj
-	3YWdLrFWyBEPiDFZ1WxK6/w+icw+XHBauKBYwlnYIwnwBcZPb2uKZsBsMhn+l3PindDa6Xaa6LrCr
-	fhTyU6gg==;
+	bh=CHZ93aeQEgJEfeGOJVLc/NlTBJHj/TS6857yTXKXjCQ=; b=lTsLq3bo/yoW2ZHFHrCR7ztE9X
+	i7TSH67PBlSmPxgyUcl5cluyBmmvUAPHgUluEF/H8YgBiT4+/qxEfLG1sSFtt0dy8cAgaIHqwcv4d
+	kOUNtw84OSk0Ci2ZZQt9Zu1FYQUnCKenNvRgXauu+1oUXKg8q0qMipxMerKt7NWFFWRqi1yViMbF6
+	Jtw5/kUczlnqW4vPc92OTTuOOMBIgJKgz3Fj2FWFxY9Zgg7o3hoykHBK3f8cT+uZl2mRmdU5laH45
+	wD5R5C4ZBPGT5aLzrsUMLFzNXd44lnb5Soyg5zg6411vFEnpy0xZ/XAmMxEjT8TaDUb3IzD6EdwpR
+	tpTnwAoA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1irOmT-0008Hd-Am; Tue, 14 Jan 2020 16:11:01 +0000
-Received: from us03-smtprelay2.synopsys.com ([149.117.87.133]
- helo=smtprelay-out1.synopsys.com)
+	id 1irOlS-000671-Lo; Tue, 14 Jan 2020 16:09:58 +0000
+Received: from smtprelay-out1.synopsys.com ([149.117.87.133])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1irOlC-0005vK-Gd; Tue, 14 Jan 2020 16:09:48 +0000
+ id 1irOlA-0005uc-Jy; Tue, 14 Jan 2020 16:09:44 +0000
 Received: from mailhost.synopsys.com (mdc-mailhost1.synopsys.com
  [10.225.0.209])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
  (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id A9A60C0625;
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 8D9B4C0623;
  Tue, 14 Jan 2020 16:09:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1579018182; bh=IpgC8gwCLfuMhlz/18scusRLH4OpcFzXcL5IZQwNnHQ=;
+ t=1579018178; bh=SATy7ndJEIOBEqXRG+bt0KtbNZXEPfoL4GDzHGjf0uE=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:In-Reply-To:
  References:From;
- b=kThH+XYfPaJRH4DPNarOkI+XphSw/f6G6Ld25d7xlQ7r/qhsDgyU3gPBfAAmk2hue
- r4x8azQ3rkTEppHVrggSEFU0hz3f9SCJmMVARO9NxY/F1nhTPYS1LB/mI2oh90uDNB
- Cm3udueCSmYBnpC9pZCdXSwfqhFkevW2isarqK4erxL8fA02uJ6mcfNaJEb2YfFz9B
- Eu9Yc2t1nxqvr0i/d4AUopRG2Yz37eiEqNrN4E7feik5iwQTSqZtxYep8IErQE89j/
- EZmn3qNVIR8gMDt4WDwu46jS2MXw9EJuqulIRnqBvn1ikQyJSVRUmzHd6P0KBe7zlo
- 19cSyJMmQViwQ==
+ b=C8wENoLnQk0kfxeOxzbHVodoBqbIP2P0Gm53bCX8t5qxrIWoSloaUxjR6/I/faQ6O
+ sLvH0mEREQo57rWGgh71HGdo1+VWns9oo9TsUlzuM3jIUy+smkOb8Fn+USgRq/CBOR
+ reWDvENZ1mK1v/LA6ObAD1cn7+AdlwYnvLQVjjwXpYQNlRtNzM2Igc9S6OCHjGqyZU
+ 5Ftk2G+EpcTsMx4UvzCeyb1GeWsEjr/55B8wJWLtDFnClg558bSVPkT/nVDEjdODYx
+ lruSdDM8zkrcyAF4ytaoJpJjD2v7T3QRiiiqAOe0GoCQxGHuZ8uFWCL+35+PVyDiEg
+ pkwv2M5FzZClA==
 Received: from de02dwia024.internal.synopsys.com
  (de02dwia024.internal.synopsys.com [10.225.19.81])
- by mailhost.synopsys.com (Postfix) with ESMTP id 136EAA0061;
+ by mailhost.synopsys.com (Postfix) with ESMTP id 28468A006C;
  Tue, 14 Jan 2020 16:09:35 +0000 (UTC)
 From: Jose Abreu <Jose.Abreu@synopsys.com>
 To: netdev@vger.kernel.org
-Subject: [PATCH net 1/4] net: stmmac: selftests: Make it work in Synopsys
- AXS101 boards
-Date: Tue, 14 Jan 2020 17:09:21 +0100
-Message-Id: <73b03cd37079ed3e2a5bc8568bcaa21dffe6198a.1579017787.git.Jose.Abreu@synopsys.com>
+Subject: [PATCH net 2/4] net: stmmac: selftests: Mark as fail when received
+ VLAN ID != expected
+Date: Tue, 14 Jan 2020 17:09:22 +0100
+Message-Id: <2d9e75a94a3e4c120ff7e2135c6f0976ab9d0708.1579017787.git.Jose.Abreu@synopsys.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <cover.1579017787.git.Jose.Abreu@synopsys.com>
 References: <cover.1579017787.git.Jose.Abreu@synopsys.com>
 In-Reply-To: <cover.1579017787.git.Jose.Abreu@synopsys.com>
 References: <cover.1579017787.git.Jose.Abreu@synopsys.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200114_080942_656133_E239CDBB 
-X-CRM114-Status: GOOD (  12.63  )
+X-CRM114-CacheID: sfid-20200114_080940_737960_900F7A80 
+X-CRM114-Status: GOOD (  12.40  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -98,12 +97,10 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-snps-arc" <linux-snps-arc-bounces@lists.infradead.org>
 Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org
 
-Synopsys AXS101 boards do not support unaligned memory loads or stores.
-Change the selftests mechanism to explicity:
-- Not add extra alignment in TX SKB
-- Use the unaligned version of ether_addr_equal()
+When the VLAN ID does not match the expected one it means filter failed
+in HW. Fix it.
 
-Fixes: 091810dbded9 ("net: stmmac: Introduce selftests support")
+Fixes: 94e18382003c ("net: stmmac: selftests: Add selftest for VLAN TX Offload")
 Signed-off-by: Jose Abreu <Jose.Abreu@synopsys.com>
 
 ---
@@ -120,79 +117,27 @@ Cc: Alexey Brodkin <abrodkin@synopsys.com>
 Cc: Vineet Gupta <vgupta@synopsys.com>
 Cc: linux-snps-arc@lists.infradead.org
 ---
- .../net/ethernet/stmicro/stmmac/stmmac_selftests.c   | 20 +++++++++++---------
- 1 file changed, 11 insertions(+), 9 deletions(-)
+ drivers/net/ethernet/stmicro/stmmac/stmmac_selftests.c | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
 
 diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_selftests.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_selftests.c
-index 36a4c43a799a..6516d65e84b8 100644
+index 6516d65e84b8..7edee3c87ac9 100644
 --- a/drivers/net/ethernet/stmicro/stmmac/stmmac_selftests.c
 +++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_selftests.c
-@@ -80,7 +80,7 @@ static struct sk_buff *stmmac_test_get_udp_skb(struct stmmac_priv *priv,
- 	if (attr->max_size && (attr->max_size > size))
- 		size = attr->max_size;
- 
--	skb = netdev_alloc_skb_ip_align(priv->dev, size);
-+	skb = netdev_alloc_skb(priv->dev, size);
- 	if (!skb)
- 		return NULL;
- 
-@@ -244,6 +244,8 @@ static int stmmac_test_loopback_validate(struct sk_buff *skb,
- 					 struct net_device *orig_ndev)
- {
- 	struct stmmac_test_priv *tpriv = pt->af_packet_priv;
-+	unsigned char *src = tpriv->packet->src;
-+	unsigned char *dst = tpriv->packet->dst;
- 	struct stmmachdr *shdr;
- 	struct ethhdr *ehdr;
- 	struct udphdr *uhdr;
-@@ -260,15 +262,15 @@ static int stmmac_test_loopback_validate(struct sk_buff *skb,
- 		goto out;
- 
- 	ehdr = (struct ethhdr *)skb_mac_header(skb);
--	if (tpriv->packet->dst) {
--		if (!ether_addr_equal(ehdr->h_dest, tpriv->packet->dst))
-+	if (dst) {
-+		if (!ether_addr_equal_unaligned(ehdr->h_dest, dst))
+@@ -853,8 +853,12 @@ static int stmmac_test_vlan_validate(struct sk_buff *skb,
+ 	if (tpriv->vlan_id) {
+ 		if (skb->vlan_proto != htons(proto))
  			goto out;
- 	}
- 	if (tpriv->packet->sarc) {
--		if (!ether_addr_equal(ehdr->h_source, ehdr->h_dest))
-+		if (!ether_addr_equal_unaligned(ehdr->h_source, ehdr->h_dest))
+-		if (skb->vlan_tci != tpriv->vlan_id)
++		if (skb->vlan_tci != tpriv->vlan_id) {
++			/* Means filter did not work. */
++			tpriv->ok = false;
++			complete(&tpriv->comp);
  			goto out;
--	} else if (tpriv->packet->src) {
--		if (!ether_addr_equal(ehdr->h_source, tpriv->packet->src))
-+	} else if (src) {
-+		if (!ether_addr_equal_unaligned(ehdr->h_source, src))
- 			goto out;
- 	}
- 
-@@ -714,7 +716,7 @@ static int stmmac_test_flowctrl_validate(struct sk_buff *skb,
- 	struct ethhdr *ehdr;
- 
- 	ehdr = (struct ethhdr *)skb_mac_header(skb);
--	if (!ether_addr_equal(ehdr->h_source, orig_ndev->dev_addr))
-+	if (!ether_addr_equal_unaligned(ehdr->h_source, orig_ndev->dev_addr))
- 		goto out;
- 	if (ehdr->h_proto != htons(ETH_P_PAUSE))
- 		goto out;
-@@ -856,7 +858,7 @@ static int stmmac_test_vlan_validate(struct sk_buff *skb,
++		}
  	}
  
  	ehdr = (struct ethhdr *)skb_mac_header(skb);
--	if (!ether_addr_equal(ehdr->h_dest, tpriv->packet->dst))
-+	if (!ether_addr_equal_unaligned(ehdr->h_dest, tpriv->packet->dst))
- 		goto out;
- 
- 	ihdr = ip_hdr(skb);
-@@ -1586,7 +1588,7 @@ static int stmmac_test_arp_validate(struct sk_buff *skb,
- 	struct arphdr *ahdr;
- 
- 	ehdr = (struct ethhdr *)skb_mac_header(skb);
--	if (!ether_addr_equal(ehdr->h_dest, tpriv->packet->src))
-+	if (!ether_addr_equal_unaligned(ehdr->h_dest, tpriv->packet->src))
- 		goto out;
- 
- 	ahdr = arp_hdr(skb);
 -- 
 2.7.4
 
