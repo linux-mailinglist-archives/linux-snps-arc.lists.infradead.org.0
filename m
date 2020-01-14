@@ -2,128 +2,56 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5B3A9139804
-	for <lists+linux-snps-arc@lfdr.de>; Mon, 13 Jan 2020 18:48:42 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D815D13AEA7
+	for <lists+linux-snps-arc@lfdr.de>; Tue, 14 Jan 2020 17:11:01 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RyuHcadryNUK1xrTN/KyDYFpNGk7FAXL1aBo9tKZBhM=; b=aHvD6BBDKFDvag
-	VBvqrO6rRaQov3Bv42+o4kf8Z1UscWzRp0ifjVMsZ1w0QH1PtG/8AAFFwEVo5PFbKp4ghEqeZzFlU
-	K+krGpmuqhuuxgY4pCF/neMdc53O5LwjJs9sJPGEeIuUOa1ZTV0jLSZD8xzPW2NcCuxVjUYrqJ973
-	btQs0KoHOnhmwzbeqI4hilgIriQvgv4nZBe1pnfRp7J+GWbo6uH0B2R1LNo0TBwrFglQlcYB8EH4h
-	BtiElaI/7MAx/Mg3m0F4W03tJHqqGm2JwFsBym0JDy8XWN4TyPEV5mTwpQJ6IJ85JXpvHNXGOrlQM
-	XIHW+dVi1dQWS4kzuubA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=7HRP4CLu3oeJm5FZoSIoB8Lw8O5zwG2NVAiRfFQGH+s=; b=dDB
+	PyfL1FMjbngxy0kn2wNBw+B/+QjTSb1+R5bqAkTTgZIzFSk7ZGm0cltSfHTMfO0zwCEXLAWEsBuMR
+	Nm55MTxWKEvo4h6gWt81zS6ENJCGyqp1u2wJ3jAaxZrAiWOZ4y7UKOB0NvujC6dwtSaAHl60hmU9n
+	MhZB8GO0FDOxHUikwrQZDqqzcZlTY4LizN6Ye6CTGPZSx+xTqIMMHWBajw+I6ZfEejHY9HzFoZ5q1
+	wfjNARRHono2XFSruYRgUIViU3lz4wshCM79zRgKov2qXksFUq36YxsXnJQLSjwAmfpIErfME1kXV
+	+ENgjaaavZgNw1xOTHfS1O5EvtU46eg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ir3pR-0004nN-42; Mon, 13 Jan 2020 17:48:41 +0000
+	id 1irOmS-0008GU-7Y; Tue, 14 Jan 2020 16:11:00 +0000
 Received: from us03-smtprelay2.synopsys.com ([149.117.87.133]
  helo=smtprelay-out1.synopsys.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ir3pO-0004mi-Rg
- for linux-snps-arc@lists.infradead.org; Mon, 13 Jan 2020 17:48:40 +0000
-Received: from mailhost.synopsys.com (badc-mailhost2.synopsys.com
- [10.192.0.18])
+ id 1irOlA-0005ub-Ir; Tue, 14 Jan 2020 16:09:48 +0000
+Received: from mailhost.synopsys.com (mdc-mailhost1.synopsys.com
+ [10.225.0.209])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
  (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id DC9DFC05DD;
- Mon, 13 Jan 2020 17:48:36 +0000 (UTC)
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 8B4D0C0620;
+ Tue, 14 Jan 2020 16:09:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1578937717; bh=SgfONOjE8Fyh5NpLq6j8jNfDREZB9lckuzsakAXlDew=;
- h=From:To:CC:Subject:Date:References:In-Reply-To:From;
- b=VxCJJ1m88sBWx8pm0sdvj0cLpNltRFZGXnBOCsjtsYRJ8xzSItpojJwM2MbAUd6SS
- BxjhKB7r8VhcA52bS838/Gdujbpct/BolnDoXPESuHrTeUmCl9eLOGLoxfBT9KfiIH
- UwrsmGkMew5A/y351N8G/KI49as2A+0Jl1Zebj30XJZ0cDZ0dmCDtz3CCzMh6ZtgUn
- o/PrwBfLHFTyCw3vPhrvY+BTHjSYmsf5L+VtRXlzffMF1Spl7eRx6NbxspIT+XkCr5
- Nqr6x36lUhH1/fbOZKOEPpDluje2pBtzo/7bkDJzvPulLJy/y/tf8mZm7cui/wMctv
- Z86Tval1rgkcQ==
-Received: from US01WEHTC3.internal.synopsys.com
- (us01wehtc3.internal.synopsys.com [10.15.84.232])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-SHA384 (256/256 bits))
- (No client certificate requested)
- by mailhost.synopsys.com (Postfix) with ESMTPS id 16194A00B3;
- Mon, 13 Jan 2020 17:48:35 +0000 (UTC)
-Received: from US01HYBRID2.internal.synopsys.com (10.15.246.24) by
- US01WEHTC3.internal.synopsys.com (10.15.84.232) with Microsoft SMTP Server
- (TLS) id 14.3.408.0; Mon, 13 Jan 2020 09:48:35 -0800
-Received: from NAM02-CY1-obe.outbound.protection.outlook.com (10.202.3.67) by
- mrs.synopsys.com (10.15.246.24) with Microsoft SMTP Server (TLS) id
- 14.3.408.0; Mon, 13 Jan 2020 09:48:35 -0800
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=iQ5AoaLSoBncJCx6e8FCsh1FIbQWsTTvOJp7HrIH5GfqklC2I0SgweLuXffhNYzy3O6SCUc+m/BiXoiuJKEBbqE8z/NFozXE72i7VO9vTsBy91BbNlXxxJgJ9FPjN2DLRtsRAl/Ped6IvhNTHZ0srA8m8L5ijSeX3bA8Sh6gwP2JLWFzXfspvs0YkziaFm6AYp0oVnpR1E5st/3MgwgtV7gnhQwpAKGr6nuaBkeskrbNIUWEW6m7Rtx4Sm5g3LaymfBCHUR6707ZpYTBqEZxT65rk0F5f0d8zNAT9K3QJ3JwjRnvvc5BJBH1EUkcTJf3Ra2y21Gp0P+ZYRrq9nGGhA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=SgfONOjE8Fyh5NpLq6j8jNfDREZB9lckuzsakAXlDew=;
- b=hGLVoCvdwXFHEPYVPdJzd/SkOQDOgpx+GGInnhk5GPPgdHi521vCsYN2my8uX8JWFUnFtrfBQDNdPcsKldyzYjyUJShdI7rT4d7DgoiZEJGfAtJgX65TRjnzfQYIOgCjEtFxQVg38UXUESc9PYGTgOeDu454UJyJVh3YPLWDseUJqTxlYIEdzQAKevUDnFfAyag/6aiRj3yduBRYPKdiFm9Xi2EaI91V97RXx65elf74xR9xgPSReKCIdmDFQu/T74OzaTnh7RK0p5JqKAI2Za5ep0GmIcbRBx/rAsoYcytZpxdWC1Hz2Z+pW1SGXilofxqPGtW25zL1DLsbLc3o/Q==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=synopsys.com; dmarc=pass action=none header.from=synopsys.com;
- dkim=pass header.d=synopsys.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=synopsys.onmicrosoft.com; s=selector2-synopsys-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=SgfONOjE8Fyh5NpLq6j8jNfDREZB9lckuzsakAXlDew=;
- b=Zz562H2CFpLDj57k41lW0SW/PWAs5KqZPyE8DnpgwtOqosfLAFTWPtzDVqWR8/MuttI6CFdEzuzZtOylRfBHkB+a4J0XueP5mWyUeHPm2rIkobHn57QCNALphYJb9CjWngD7tp0Sql7kmFWB2ZOUyoT9Viz1ypSuaU+pWdXmrWg=
-Received: from BYAPR12MB3592.namprd12.prod.outlook.com (20.178.54.89) by
- BYAPR12MB2743.namprd12.prod.outlook.com (20.177.125.220) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2623.13; Mon, 13 Jan 2020 17:48:34 +0000
-Received: from BYAPR12MB3592.namprd12.prod.outlook.com
- ([fe80::39a1:22ee:7030:8333]) by BYAPR12MB3592.namprd12.prod.outlook.com
- ([fe80::39a1:22ee:7030:8333%6]) with mapi id 15.20.2623.015; Mon, 13 Jan 2020
- 17:48:34 +0000
-From: Vineet Gupta <Vineet.Gupta1@synopsys.com>
-To: Thomas Petazzoni <thomas.petazzoni@bootlin.com>
-Subject: Re: [Buildroot] [PATCH v2] binutils/ARC: cleanup
-Thread-Topic: [Buildroot] [PATCH v2] binutils/ARC: cleanup
-Thread-Index: AQHVtSGs38UNztCKG0uOj35vXBRGOafGtvEAgCJSJoA=
-Date: Mon, 13 Jan 2020 17:48:34 +0000
-Message-ID: <585b63d8-16e1-4891-fc0d-8121acb59a73@synopsys.com>
-References: <20191206221918.1c05e316@windsurf.home>
- <20191217213253.12446-1-vgupta@synopsys.com>
- <20191222224144.38603994@windsurf>
-In-Reply-To: <20191222224144.38603994@windsurf>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-user-agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=vgupta@synopsys.com; 
-x-originating-ip: [149.117.75.11]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 2a08c5ec-141c-4393-9b0b-08d79850cf84
-x-ms-traffictypediagnostic: BYAPR12MB2743:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <BYAPR12MB274317785262314958D5B182B6350@BYAPR12MB2743.namprd12.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:6790;
-x-forefront-prvs: 028166BF91
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10019020)(136003)(366004)(346002)(39860400002)(376002)(396003)(199004)(189003)(8676002)(81166006)(31686004)(81156014)(316002)(478600001)(54906003)(5660300002)(4326008)(66476007)(6512007)(6486002)(107886003)(66946007)(76116006)(66556008)(64756008)(66446008)(8936002)(2616005)(36756003)(6916009)(86362001)(53546011)(2906002)(31696002)(71200400001)(186003)(26005)(6506007);
- DIR:OUT; SFP:1102; SCL:1; SRVR:BYAPR12MB2743;
- H:BYAPR12MB3592.namprd12.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: synopsys.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: M0IzSef3yrooNE76W/WvhTRBATE6N5oP6hNdOe7+yU9/yDhnr7riuUfXNi2MGaAZ8Id6nfoAVffds8DyMi27DnsCPzKUwgKTqO55H6LcUo8GIakHsZl/J6zWGOiwDkguzP8h51mXtkjO3ZCAmjYBXqOFbBFMkZkeECiNsnIcEDLMxdeGVavY/UNlI+VV/QlVt1An+rYrC6YCI97K6S3xq6nEultwRpO5LJ60hqNwL5VhCG6J8DyTw/dkUZKQSAGNAdvHUnJIG9eQaf1cOn0g7mmS5H8wv/vljZGFhC9mYPuybR/1zOfR2gDwQXaKMs29ElDulKUckQt5z6o11EdtFxbm6ExNx8PQOD7u1M0BeVs+d7JbSPwCBCiyYINp1Sh93O9KhFW3JKXIRNTYJzlA1aSCADGQzT0Pma8BWHhDqO2ehVjw4U7TanODbYbnckNg
-Content-ID: <8A5ADCCC17F08941BA1AFA6F089A1789@namprd12.prod.outlook.com>
-MIME-Version: 1.0
-X-MS-Exchange-CrossTenant-Network-Message-Id: 2a08c5ec-141c-4393-9b0b-08d79850cf84
-X-MS-Exchange-CrossTenant-originalarrivaltime: 13 Jan 2020 17:48:34.0815 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: c33c9f88-1eb7-4099-9700-16013fd9e8aa
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: vk00YTTF6DQmLbqZ2Yg7IVN7gLtReCHtrTE58Z2fxvqTQDO/2mtmKTSjHCNR2xenLWF21oUt27CPidActH1a2A==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: BYAPR12MB2743
-X-OriginatorOrg: synopsys.com
+ t=1579018177; bh=lMsPxq+6nqsKDOeBMq7JTDZwDRAvL67CUWdXLkXkMqk=;
+ h=From:To:Cc:Subject:Date:From;
+ b=iffSGqxx8OFb+Pmq5zvInZjDB2S3nvyAmHaayuDazU2IvKr/ANqsV+5cZMMo8mEA7
+ D/qW49WaOk4HilFsZS4A6AtLQpWaLJHDroppQP33m0JNSFWe0yPFn0Anbbg8bTjS9+
+ NC5VtqbX5LZ3aE5VqaUl+HbTu18GVXyBoUFKuDW4bBBFWCjHssPmMRURjNyldKlSTd
+ jOZVxY2F2e5aMUW8ntYKkUK21GyFdSAxBUD4StzGG/z/L8ThH3c4OIuxFdChJUTV0J
+ /CyV16jzSwo0YukQ+a8zJk4cwoeD+HK9N3ktwFJPa3+MsS7cwCl8d4h6SGO0uaqTgz
+ J/sl3s3Q7dV3A==
+Received: from de02dwia024.internal.synopsys.com
+ (de02dwia024.internal.synopsys.com [10.225.19.81])
+ by mailhost.synopsys.com (Postfix) with ESMTP id 221CDA005B;
+ Tue, 14 Jan 2020 16:09:34 +0000 (UTC)
+From: Jose Abreu <Jose.Abreu@synopsys.com>
+To: netdev@vger.kernel.org
+Subject: [PATCH net 0/4] net: stmmac: Fix selftests in Synopsys AXS101 board
+Date: Tue, 14 Jan 2020 17:09:20 +0100
+Message-Id: <cover.1579017787.git.Jose.Abreu@synopsys.com>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200113_094838_966458_8415CE0E 
-X-CRM114-Status: GOOD (  20.54  )
+X-CRM114-CacheID: sfid-20200114_080940_753407_078E127C 
+X-CRM114-Status: UNSURE (   8.98  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -134,10 +62,10 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-snps-arc@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -149,74 +77,101 @@ List-Post: <mailto:linux-snps-arc@lists.infradead.org>
 List-Help: <mailto:linux-snps-arc-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-snps-arc>, 
  <mailto:linux-snps-arc-request@lists.infradead.org?subject=subscribe>
-Cc: "buildroot@busybox.net" <buildroot@busybox.net>,
- Evgeniy Didin <Evgeniy.Didin@synopsys.com>,
- "linux-snps-arc@lists.infradead.org" <linux-snps-arc@lists.infradead.org>,
- Alexey Brodkin <Alexey.Brodkin@synopsys.com>
+Cc: Jose Abreu <Jose.Abreu@synopsys.com>, Joao Pinto <Joao.Pinto@synopsys.com>,
+ Alexandre Torgue <alexandre.torgue@st.com>,
+ Vineet Gupta <Vineet.Gupta1@synopsys.com>,
+ Alexey Brodkin <Alexey.Brodkin@synopsys.com>, linux-kernel@vger.kernel.org,
+ linux-stm32@st-md-mailman.stormreply.com,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Giuseppe Cavallaro <peppe.cavallaro@st.com>,
+ linux-snps-arc@lists.infradead.org, "David S. Miller" <davem@davemloft.net>,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-snps-arc" <linux-snps-arc-bounces@lists.infradead.org>
 Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org
 
-Hi Thomas,
+Set of fixes for sefltests so that they work in Synopsys AXS101 board.
 
-On 12/22/19 1:41 PM, Thomas Petazzoni wrote:
-> Hello Vineet,
->
-> On Tue, 17 Dec 2019 13:32:53 -0800
-> Vineet Gupta <Vineet.Gupta1@synopsys.com> wrote:
->
->> Remove special handling for ARC - as it is not needed for cksy etc.
->>
->> A nice side benefit is that the ARC specific version now only needs to
->> be specified in single place (vs 3 currently) in binutils/Config.in.host
->>
->> Signed-off-by: Vineet Gupta <vgupta@synopsys.com>
->> ---
->>  package/binutils/binutils.mk | 6 +-----
->>  1 file changed, 1 insertion(+), 5 deletions(-)
->>
->> diff --git a/package/binutils/binutils.mk b/package/binutils/binutils.mk
->> index a19d6940f7c1..3ae5561d67d3 100644
->> --- a/package/binutils/binutils.mk
->> +++ b/package/binutils/binutils.mk
->> @@ -8,14 +8,10 @@
->>  # If not, we do like other packages
->>  BINUTILS_VERSION = $(call qstrip,$(BR2_BINUTILS_VERSION))
->>  ifeq ($(BINUTILS_VERSION),)
->> -ifeq ($(BR2_arc),y)
->> -BINUTILS_VERSION = arc-2019.09-rc1
->> -else
->>  BINUTILS_VERSION = 2.32
->>  endif
->> -endif # BINUTILS_VERSION
->>  
->> -ifeq ($(BINUTILS_VERSION),arc-2019.09-rc1)
->> +ifeq ($(BR2_BINUTILS_VERSION_ARC),y)
->>  BINUTILS_SITE = $(call github,foss-for-synopsys-dwc-arc-processors,binutils-gdb,$(BINUTILS_VERSION))
->>  BINUTILS_SOURCE = binutils-gdb-$(BINUTILS_VERSION).tar.gz
->>  BINUTILS_FROM_GIT = y
-> In fact, I was wrong, this also does not work, in the following
-> situation:
->
->  - You're using a pre-compiled external toolchain, so host-binutils is
->    not selected/enabled, so the version selection in
->    package/binutils/Config.in.host is not used, and therefore
->    BR2_BINUTILS_VERSION_ARC cannot be set to 'y'.
->
->  - You have binutils enabled for the target.
->
-> Then, with your patch, we will no longer select the ARC-specific fork
-> of binutils.
->
-> Basically, for the target binutils (just like for target gdb), we don't
-> have any version selection, so we force using one specific version
-> depending on the architecture.
+Final output:
 
-Does that mean that other arch in that file (csky) with custom github location is
-affected with the issue you mentioned above ?
+$ ethtool -t eth0
+The test result is PASS
+The test extra info:
+ 1. MAC Loopback                 0
+ 2. PHY Loopback                 -95
+ 3. MMC Counters                 0
+ 4. EEE                          -95
+ 5. Hash Filter MC               0
+ 6. Perfect Filter UC            0
+ 7. MC Filter                    0
+ 8. UC Filter                    0
+ 9. Flow Control                 -95
+10. RSS                          -95
+11. VLAN Filtering               -95
+12. VLAN Filtering (perf)        -95
+13. Double VLAN Filter           -95
+14. Double VLAN Filter (perf)    -95
+15. Flexible RX Parser           -95
+16. SA Insertion (desc)          -95
+17. SA Replacement (desc)        -95
+18. SA Insertion (reg)           -95
+19. SA Replacement (reg)         -95
+20. VLAN TX Insertion            -95
+21. SVLAN TX Insertion           -95
+22. L3 DA Filtering              -95
+23. L3 SA Filtering              -95
+24. L4 DA TCP Filtering          -95
+25. L4 SA TCP Filtering          -95
+26. L4 DA UDP Filtering          -95
+27. L4 SA UDP Filtering          -95
+28. ARP Offload                  -95
+29. Jumbo Frame                  0
+30. Multichannel Jumbo           -95
+31. Split Header                 -95
 
--Vineet
+Description:
+
+1) Fixes the unaligned accesses that caused CPU halt in Synopsys AXS101
+boards.
+
+2) Fixes the VLAN tests when filtering failed to work.
+
+3) Fixes the VLAN Perfect tests when filtering is not available in HW.
+
+4) Fixes the Ethernet DT bindings for AXS101 board.
+
+---
+Cc: Giuseppe Cavallaro <peppe.cavallaro@st.com>
+Cc: Alexandre Torgue <alexandre.torgue@st.com>
+Cc: Jose Abreu <joabreu@synopsys.com>
+Cc: "David S. Miller" <davem@davemloft.net>
+Cc: Maxime Coquelin <mcoquelin.stm32@gmail.com>
+Cc: netdev@vger.kernel.org
+Cc: linux-stm32@st-md-mailman.stormreply.com
+Cc: linux-arm-kernel@lists.infradead.org
+Cc: linux-kernel@vger.kernel.org
+Cc: Alexey Brodkin <abrodkin@synopsys.com>
+Cc: Vineet Gupta <vgupta@synopsys.com>
+Cc: linux-snps-arc@lists.infradead.org
+---
+
+Jose Abreu (4):
+  net: stmmac: selftests: Make it work in Synopsys AXS101 boards
+  net: stmmac: selftests: Mark as fail when received VLAN ID != expected
+  net: stmmac: selftests: Guard VLAN Perfect test against non supported
+    HW
+  ARC: [plat-axs10x]: Add missing multicast filter number to GMAC node
+
+ arch/arc/boot/dts/axs10x_mb.dtsi                   |  1 +
+ .../net/ethernet/stmicro/stmmac/stmmac_selftests.c | 32 +++++++++++++++-------
+ 2 files changed, 23 insertions(+), 10 deletions(-)
+
+-- 
+2.7.4
+
+
 _______________________________________________
 linux-snps-arc mailing list
 linux-snps-arc@lists.infradead.org
