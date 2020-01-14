@@ -2,76 +2,76 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3582213B431
-	for <lists+linux-snps-arc@lfdr.de>; Tue, 14 Jan 2020 22:22:35 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 47CE813B465
+	for <lists+linux-snps-arc@lfdr.de>; Tue, 14 Jan 2020 22:33:15 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qz9H25UygQXkwyoFqrS3LqqyV5jXHkQC8am3XmDm2/0=; b=nvu88LPj9QnReX
-	hT9yygOYCXElz/A93S8ZSRGvWkLI1m+I60FDmSgnMU/7lU+73q/clRADgOdbdywmlxWDEoAVFVSGi
-	V87WPmg7zfh0xrWxU15ViIHH/n9MiwntBDu7la/kEFGoMhaa0yLRqlv2dhQV1ztoV62iyesxe7cs5
-	4eUvg1jCxzfv+z4iwjaUTKL6af2wlaRjVfaEO+BE+doVm9F9139yp2wZdHXSzymF2msvzVv0c18OM
-	Vqtivl5oxNt9aRYaPsrMRSvItRq337tdFij33VxzULpj7LaSFGDrwhFb9+GkNIrSoQFai8aziwupd
-	4X4ReYhRUwoYh4Nv7EHA==;
+	List-Owner; bh=lQKPvY0ACiekF7ZsHk+Lrv897pLwmenjOyfr/YEi3Rg=; b=U6P+8obxjElbEr
+	1hgI0PUPS7I9h2KbqLdUwlYM26CiRkCr3Li0yKx5UG+6plDBhu+sjJJcxim8mKHViHA3aGX8JY5OL
+	3FxBmPnzuytnDLNms4lPb24Tmy9vhQVV6wGGi9c7jSk3unRF2TfnL4qD4g6d0nZm4OxN0yUJuZYc0
+	AMf9M2/PEfv5ma2PBuTtdDt1wz12eckwqSxOtql7K4nzw/LSo5ZC0scWvEWmWIhS3QXTJwGp2JSqA
+	XXZJU6THIr+pvxKi1G6vPluKpjn6sRez0sPhVbhcJjdvCqEC3PV35s5luWkVNgd3GT4G2mmwq1Lm8
+	fX7NaIq9IeMNkREYEiow==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1irTdy-0004CK-0I; Tue, 14 Jan 2020 21:22:34 +0000
+	id 1irToI-0007Bu-2P; Tue, 14 Jan 2020 21:33:14 +0000
 Received: from mail-lf1-x143.google.com ([2a00:1450:4864:20::143])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1irTds-0003wE-JT
- for linux-snps-arc@lists.infradead.org; Tue, 14 Jan 2020 21:22:32 +0000
-Received: by mail-lf1-x143.google.com with SMTP id 15so11010958lfr.2
- for <linux-snps-arc@lists.infradead.org>; Tue, 14 Jan 2020 13:22:27 -0800 (PST)
+ id 1irToF-0007BX-Aw
+ for linux-snps-arc@lists.infradead.org; Tue, 14 Jan 2020 21:33:12 +0000
+Received: by mail-lf1-x143.google.com with SMTP id l18so11021267lfc.1
+ for <linux-snps-arc@lists.infradead.org>; Tue, 14 Jan 2020 13:33:10 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=linux-foundation.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=sA09QfXfHalAafAysRZFEbl/WyLTN07MU6TFhyXENpY=;
- b=ZuB9kWPAPxoZGiuuomw2iudECT1rt4Q/HncS4ElvHzHC6yUT2oQ0HUnEnUGkTmGfs5
- jSF+DX0BEvuJ4HATwr4M5/u+JM7dyP0AtYM8/eZRZWfxVC069BAzSr0Gdwlw9jjgh6al
- CCB0j1K9REL8bGh8CtUBoa4q17ax6w7GJvMoo=
+ :cc; bh=f5uoKw2YKLElJKDx+jK5wl0K2xjBXMt47XAsAkyAM+o=;
+ b=gVkyh4tPO8RK11oXNRTkFnFw5qS02VpB8fRn7yuyjXBrIM8r/+uUtu3n5AJSu/v+0r
+ 3KVUAw32daILdFTdwNmZ41g6fmO4U+5YEKf3aZPOaD0BxhRqx8Hhmkwlmzo36zFaxnqP
+ lOdeXPMNVWW1hl8kB5QPM3J99EYMRT9fPNA7w=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=sA09QfXfHalAafAysRZFEbl/WyLTN07MU6TFhyXENpY=;
- b=no0zGkt0EnYk2Vw+qxmQOyvnxsby7eC5kFOD7ASfvqQkU99+9tgOLVtDUFloww5Con
- szbkhgP4LxY+cB4Tt9rvbdxk48dB/+lB177L9/oj2FuKg7lglgUjjOygVdSFwMYhmX8l
- yz5xsM+dBbEPmMjW3AJSz3EsNTJPC/efu7vE/4n5arqmXJR7KFvjqWQV7XQaUJte1Vlj
- O775oB0xu3eJz9/QO9NF29/pwoCYf2G42vKeFT6fgVROV/pK/lVyvdOyC9gKE3XcGYWP
- QPjh73zsckI8J9/39pwBGkbCXCYSuXnbW5reAW2Q8G4ndpa6AYq3IkoGSRdPzmgyLyR8
- N+Tw==
-X-Gm-Message-State: APjAAAWsIuqq+yQksSzlB4IEy5cxTlX8Q3cgZty/zpwgRUzFeb1JzPmQ
- beV8OR4IuKKqXQDNfc6CyIC3vFq6KsQ=
-X-Google-Smtp-Source: APXvYqwIXY/aast4545FXTqi0CiE0VkkiNxz6cXw3fbkLvxROT0bBYMtbCJUGl1H7vkGv/kd0b1qJA==
-X-Received: by 2002:a19:ec14:: with SMTP id b20mr2908763lfa.63.1579036945780; 
- Tue, 14 Jan 2020 13:22:25 -0800 (PST)
-Received: from mail-lj1-f179.google.com (mail-lj1-f179.google.com.
- [209.85.208.179])
- by smtp.gmail.com with ESMTPSA id h24sm8126372ljl.80.2020.01.14.13.22.24
+ bh=f5uoKw2YKLElJKDx+jK5wl0K2xjBXMt47XAsAkyAM+o=;
+ b=qwcYVg9zXUG9kUSyoiGaSmO4gmba9Z+gR3+6iVhzI0y6VeOui+bOg7tHwKGcfZmeZ1
+ 2G3kbJIWZffYrl3RzwXZC4mWH9PI6yKwpAqjUZost+jsxfRIjgQkcB5hZjq0dN0NyTFt
+ hQe8fDxjIlDN3EUxRqwyR9Unccze7HS36yuXdHTWs3eLpiU3i28p1V0BqNc49S7uVJFy
+ htjScQ2nlV5GFMJ3L+QwWcZhyUEqUV1hyn7ujg/9/dVj6B6Dp7Ad5VD0mX9OqizLya/d
+ epCAUVlzGMtA9nyzFNuolCKGBm50Mcxc9Fcwh8ccer7MHHbxzjpmm/59nSnoNZwQTMmA
+ aRQQ==
+X-Gm-Message-State: APjAAAV1XJh/D4eRPY7+2HWlMH8stIuYKLjVWTCgTCuKSTrYFWORZlgf
+ bWRiklNrD3sqEuskt1/KWA8i5b+5IRo=
+X-Google-Smtp-Source: APXvYqzCLQ4Sny31B9HSxOhQJ49lJDOx5/oCP6I9nPVs9jyU04QOT9TlPsRUxxBv1mO625bQQRLBaA==
+X-Received: by 2002:a19:4bcf:: with SMTP id y198mr2913843lfa.204.1579037588200; 
+ Tue, 14 Jan 2020 13:33:08 -0800 (PST)
+Received: from mail-lj1-f172.google.com (mail-lj1-f172.google.com.
+ [209.85.208.172])
+ by smtp.gmail.com with ESMTPSA id t29sm7805711lfg.84.2020.01.14.13.33.06
  for <linux-snps-arc@lists.infradead.org>
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Tue, 14 Jan 2020 13:22:24 -0800 (PST)
-Received: by mail-lj1-f179.google.com with SMTP id y4so16046894ljj.9
- for <linux-snps-arc@lists.infradead.org>; Tue, 14 Jan 2020 13:22:24 -0800 (PST)
-X-Received: by 2002:a2e:800b:: with SMTP id j11mr15632652ljg.126.1579036943823; 
- Tue, 14 Jan 2020 13:22:23 -0800 (PST)
+ Tue, 14 Jan 2020 13:33:07 -0800 (PST)
+Received: by mail-lj1-f172.google.com with SMTP id r19so16098569ljg.3
+ for <linux-snps-arc@lists.infradead.org>; Tue, 14 Jan 2020 13:33:06 -0800 (PST)
+X-Received: by 2002:a2e:9510:: with SMTP id f16mr15481129ljh.249.1579037586642; 
+ Tue, 14 Jan 2020 13:33:06 -0800 (PST)
 MIME-Version: 1.0
 References: <20200114200846.29434-1-vgupta@synopsys.com>
- <20200114200846.29434-3-vgupta@synopsys.com>
-In-Reply-To: <20200114200846.29434-3-vgupta@synopsys.com>
+ <20200114200846.29434-2-vgupta@synopsys.com>
+In-Reply-To: <20200114200846.29434-2-vgupta@synopsys.com>
 From: Linus Torvalds <torvalds@linux-foundation.org>
-Date: Tue, 14 Jan 2020 13:22:07 -0800
-X-Gmail-Original-Message-ID: <CAHk-=wgoc5DaF6=WxsAcft_Lp4XUYTiRhhCJGcmM5PwEDXY6Gw@mail.gmail.com>
-Message-ID: <CAHk-=wgoc5DaF6=WxsAcft_Lp4XUYTiRhhCJGcmM5PwEDXY6Gw@mail.gmail.com>
-Subject: Re: [RFC 2/4] lib/strncpy_from_user: Remove redundant user space
- pointer range check
+Date: Tue, 14 Jan 2020 13:32:50 -0800
+X-Gmail-Original-Message-ID: <CAHk-=wjChjfOaDnGygOJpC36R6mtT7=Xf6wWTzD_wLJm=quu0Q@mail.gmail.com>
+Message-ID: <CAHk-=wjChjfOaDnGygOJpC36R6mtT7=Xf6wWTzD_wLJm=quu0Q@mail.gmail.com>
+Subject: Re: [RFC 1/4] asm-generic/uaccess: don't define inline functions if
+ noinline lib/* in use
 To: Vineet Gupta <Vineet.Gupta1@synopsys.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200114_132228_662792_16712563 
-X-CRM114-Status: GOOD (  14.37  )
+X-CRM114-CacheID: sfid-20200114_133311_396922_0D6DD7AE 
+X-CRM114-Status: GOOD (  10.58  )
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.1 points)
@@ -115,79 +115,39 @@ Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.o
 On Tue, Jan 14, 2020 at 12:09 PM Vineet Gupta
 <Vineet.Gupta1@synopsys.com> wrote:
 >
-> This came up when switching ARC to word-at-a-time interface and using
-> generic/optimized strncpy_from_user
->
-> It seems the existing code checks for user buffer/string range multiple
-> times and one of tem cn be avoided.
+> There are 2 generic varaints of strncpy_from_user() / strnlen_user()
+>  (1). inline version in asm-generic/uaccess.h
 
-NO!
+I think we should get rid of this entirely. It's just a buggy garbage
+implementation that nobody should ever actually use.
 
-DO NOT DO THIS.
+It does just about everything wrong that you *can* do, wrong,
+including doing the NUL-filling termination of standard strncpy() that
+"strncpy_from_user()" doesn't actually do.
 
-This is seriously buggy.
+So:
 
->  long strncpy_from_user(char *dst, const char __user *src, long count)
->  {
-> -       unsigned long max_addr, src_addr;
-> -
->         if (unlikely(count <= 0))
->                 return 0;
->
-> -       max_addr = user_addr_max();
-> -       src_addr = (unsigned long)untagged_addr(src);
-> -       if (likely(src_addr < max_addr)) {
-> -               unsigned long max = max_addr - src_addr;
-> +       kasan_check_write(dst, count);
-> +       check_object_size(dst, count, false);
-> +       if (user_access_begin(src, count)) {
+ - the asm-generic/uaccess.h __strncpy_from_user() function is just
+horribly wrong
 
-You can't do that "user_access_begin(src, count)", because "count" is
-the maximum _possible_ length, but it is *NOT* necessarily the actual
-length of the string we really get from user space!
+ - the generic/uaccess.h version of strncpy_from_user() shouldn't be
+an inline function either, since the only thing it can do inline is
+the bogus one-byte access check that _barely_ makes security work (you
+also need to have a guard page to _actually_ make it work, and I'm not
+atr all convinced that people do).
 
-Think of this situation:
+the whole thing is just broken and should be removed from a header file.
 
- - user has a 5-byte string at the end of the address space
+>  (2). optimized word-at-a-time version in lib/*
 
- - kernel does a
+That is - outside of the original x86 strncpy_from_user() - the only
+copy of this function that historically gets all the corner cases
+right. And even those we've gotten wrong occasionally.
 
-     n = strncpy_from_user(uaddr, page, PAGE_SIZE)
+I would suggest that anybody who uses asm-generic/uaccess.h needs to
+simply use the generic library version.
 
-now your "user_access_begin(src, count)" will _fail_, because "uaddr"
-is close to the end of the user address space, and there's not room
-for PAGE_SIZE bytes any more.
-
-But "count" isn't actually how many bytes we will access from user
-space, it's only the maximum limit on the *target*. IOW, it's about a
-kernel buffer size, not about the user access size.
-
-Because we'll only access that 5-byte string, which fits just fine in
-the user space, and doing that "user_access_begin(src, count)" gives
-the wrong answer.
-
-The fact is, copying a string from user space is *very* different from
-copying a fixed number of bytes, and that whole dance with
-
-        max_addr = user_addr_max();
-
-is absolutely required and necessary.
-
-You completely broke string copying.
-
-It is very possible that string copying was horribly broken on ARC
-before too - almost nobody ever gets this right, but the generic
-routine does.
-
-So the generic routine is not only faster, it is *correct*, and your
-change broke it.
-
-Don't touch generic code. If you want to use the generic code, please
-do so. But DO NOT TOUCH IT. It is correct, your patch is wrong.
-
-The exact same issue is true in strnlen_user(). Don't break it.
-
-              Linus
+             Linus
 
 _______________________________________________
 linux-snps-arc mailing list
