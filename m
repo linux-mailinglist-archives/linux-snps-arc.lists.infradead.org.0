@@ -2,7 +2,7 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (unknown [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9CF71141547
+	by mail.lfdr.de (Postfix) with ESMTPS id 984A9141544
 	for <lists+linux-snps-arc@lfdr.de>; Sat, 18 Jan 2020 01:49:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
@@ -10,51 +10,50 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sIdMfr5mkMWaiiBad3c8dcfUraiU6l5/pk5OjP+cRRc=; b=rUy2k0vVDAuBH7
-	L/43KKgyKaZlVUQMo05I2siFBWwHGny6l49ca+6miKWOSg3HmIoOvTBTZrP3IyRyXoMrKNwx8wBw1
-	w3+Tr6XsR90rAGnF4GIp4dlcG9eB6eS2F2Q2GiV5p6tpsjZuDL3VH0nOJu6r7gYv9z+1pvYijrwr+
-	vV3Ud7RBjuYoltSLAgWbFma5ik73DLemk5qIo5aCY9oF9Zft272VmKzAV62ALWALSEQYhMrGgx+NW
-	sjWFofpm0TfkWTVfnZh7kPd8c4O4N0/LfNOze/NIZE1Ev2/Y0FeB4hRxGqIPdNtlX+aivKtQTo5cp
-	+Zf9QOul0GRNspUQtwHQ==;
+	List-Owner; bh=p83VM/xfPpCxPKXMND35Ggxrzfhw7ZvlKw1+gGFDhZM=; b=f1Tg94L+cjjfiO
+	cOUl0vDk59RGdbiQ+XDJYmuHw9JV2j1cxzu1Bb7Csq/3A1Jj4vfbdwrRSvPk50LNUHIgVZwjlhsfK
+	CPR+3U71hFC0PW+WcCeKHn17ZdZg/DwO5Xq62oDO/SYV11B8Rd3q5kuJLz8Kht2UzX4RguRRcbVtZ
+	rvBA1vHOJ7FLo5ZyITy/IKIKEgCBPgW5y8Y+HlXLtITu2q1Kvwrmg4VJ9WzZkUs3CKm0EoY7X/gwh
+	SbHwqk2Rlvue/c5NqiSXjn8spnY+DdTzp/ytWrMUYWEFxRO+Iu2taJfYYPLboK+xP7bKknIh71Ftd
+	cYAxiO//6Da+RgXpxDAw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iscIh-0001ho-KK; Sat, 18 Jan 2020 00:49:19 +0000
-Received: from us03-smtprelay2.synopsys.com ([149.117.87.133]
- helo=smtprelay-out1.synopsys.com)
+	id 1iscIg-0001hA-Cz; Sat, 18 Jan 2020 00:49:18 +0000
+Received: from smtprelay-out1.synopsys.com ([149.117.87.133])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iscId-0001fe-0E
- for linux-snps-arc@lists.infradead.org; Sat, 18 Jan 2020 00:49:18 +0000
+ id 1iscId-0001fX-0D
+ for linux-snps-arc@lists.infradead.org; Sat, 18 Jan 2020 00:49:16 +0000
 Received: from mailhost.synopsys.com (sv1-mailhost2.synopsys.com
  [10.205.2.132])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
  (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 4DCA4C00D4
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 848BBC00CC
  for <linux-snps-arc@lists.infradead.org>; Sat, 18 Jan 2020 00:49:11 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1579308552; bh=jbhMr8e6s9SXc2zrmTZZvh+RHHll9HCIZKSvJ4ViuQQ=;
+ t=1579308551; bh=euJCSm/lqDARP+dZzKMbbLq5OaeQs4jyKIY6Orus2XY=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=FbpYdMuFdlNMrdDTzAEiTD6VToDhPIIvZi6Pxwf000yx1N7w4e4gPXEIcHnc0cCKg
- bmTjp5lvRRy7JaaZ00SX3fm7gAy+PmOKHzrdIACxFsTJCBtEWAXFZO/EHpl9eRGrLw
- OJL3P+AUY7Hfn1DlSh0S6lSKNse9qMam477/5WMSkX/BKHiX4cTchWRycTBo3YtqMG
- Y4gHXB0XCRbdQwdf4LqDvGWKP0VbaPsIYXWzt7+Op9jKdFc64HWVTdV4l0fukDok8M
- IGqSJ0LfMT3MUJpcTp5LzCoiUguV8LCY2wZ5gnxqL5xhZWhLKb6EXrLYAAX43LVLfC
- uytpoDdqiM1gw==
+ b=SliZjIAgIyhY86W2nIAu6j+Aq0OT7CN2SExb/v8Yer3KEPxEI5oFZf3jG4YrpKeMX
+ SLumt9JglRvxXf/lMFF0Y8gWzj1UKp/YLeZOen09pGWOVoGiUO1WIwhnxEgeDC0dGr
+ ecLhrjKNggZMvddVcm4HEsyjukwkhhDJAy0sxaYAPJg5lWfyz8W422ExgJA6fVJI82
+ reKww7BBbwB4Xpa0USiwlB/nzdlI1I1se4HeYRAm4iFb70+HNvYiAUPwsIMM1AL+6L
+ eQNExkioNIzpgz+SkLD7s4x6/ND3h0O7fH4EQQUH+B4AAnnYbuLtPyMW9CVQdeRn57
+ BMej/dgTS4bpQ==
 Received: from vineetg-Latitude-E7450.internal.synopsys.com
  (vineetg-latitude-e7450.internal.synopsys.com [10.10.161.29])
- by mailhost.synopsys.com (Postfix) with ESMTP id DEE2AA007D;
+ by mailhost.synopsys.com (Postfix) with ESMTP id E73FFA0080;
  Sat, 18 Jan 2020 00:49:10 +0000 (UTC)
 From: Vineet Gupta <Vineet.Gupta1@synopsys.com>
 To: linux-snps-arc@lists.infradead.org
-Subject: [PATCH] ARC: fpu: preserve userspace fpu state
-Date: Fri, 17 Jan 2020 16:49:04 -0800
-Message-Id: <20200118004905.30201-3-vgupta@synopsys.com>
+Subject: [PATCH 2/2] ARCv2: fpu: preserve userspace fpu state
+Date: Fri, 17 Jan 2020 16:49:05 -0800
+Message-Id: <20200118004905.30201-4-vgupta@synopsys.com>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200118004905.30201-1-vgupta@synopsys.com>
 References: <20200118004905.30201-1-vgupta@synopsys.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200117_164915_152395_343735A4 
-X-CRM114-Status: GOOD (  16.62  )
+X-CRM114-CacheID: sfid-20200117_164915_151942_91F92299 
+X-CRM114-Status: GOOD (  13.21  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -89,16 +88,13 @@ Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.o
 
 Signed-off-by: Vineet Gupta <vgupta@synopsys.com>
 ---
- arch/arc/Kconfig                 | 15 +++------
- arch/arc/include/asm/arcregs.h   |  2 ++
- arch/arc/include/asm/fpu.h       | 54 ++++++++++++++++++++++++++++++++
- arch/arc/include/asm/processor.h | 10 +-----
- arch/arc/include/asm/switch_to.h | 17 ++--------
- arch/arc/kernel/Makefile         |  2 ++
- arch/arc/kernel/fpu.c            | 28 +++++++++++++++++
- arch/arc/kernel/process.c        |  8 ++++-
- 8 files changed, 101 insertions(+), 35 deletions(-)
- create mode 100644 arch/arc/include/asm/fpu.h
+ arch/arc/Kconfig               | 15 +++++----------
+ arch/arc/include/asm/arcregs.h |  2 ++
+ arch/arc/include/asm/fpu.h     | 28 +++++++++++++++++++++++++++-
+ arch/arc/kernel/Makefile       |  2 ++
+ arch/arc/kernel/fpu.c          | 27 +++++++++++++++++++++++++++
+ arch/arc/kernel/process.c      |  6 +++++-
+ 6 files changed, 68 insertions(+), 12 deletions(-)
 
 diff --git a/arch/arc/Kconfig b/arch/arc/Kconfig
 index 3b074c4d31fb..2e56cd5277b7 100644
@@ -148,37 +144,27 @@ index 5134f0baf33c..f7e432448e4b 100644
  /* Common for ARCompact and ARCv2 status register */
  #define ARC_REG_STATUS32	0x0A
 diff --git a/arch/arc/include/asm/fpu.h b/arch/arc/include/asm/fpu.h
-new file mode 100644
-index 000000000000..d0e51b863f4c
---- /dev/null
+index de467423d99b..64347250fdf5 100644
+--- a/arch/arc/include/asm/fpu.h
 +++ b/arch/arc/include/asm/fpu.h
-@@ -0,0 +1,54 @@
-+/* SPDX-License-Identifier: GPL-2.0-only */
-+/*
-+ * Copyright (C) 2020 Synopsys, Inc. (www.synopsys.com)
-+ *
-+ */
-+
-+#ifndef _ASM_ARC_FPU_H
-+#define _ASM_ARC_FPU_H
-+
-+#ifdef CONFIG_ARC_FPU_SAVE_RESTORE
-+
-+#include <asm/ptrace.h>
-+
+@@ -11,6 +11,8 @@
+ 
+ #include <asm/ptrace.h>
+ 
 +#ifdef CONFIG_ISA_ARCOMPACT
 +
-+/* These DPFP regs need to be saved/restored across ctx-sw */
-+struct arc_fpu {
-+	struct {
-+		unsigned int l, h;
-+	} aux_dpfp[2];
-+};
-+
+ /* These DPFP regs need to be saved/restored across ctx-sw */
+ struct arc_fpu {
+ 	struct {
+@@ -18,11 +20,35 @@ struct arc_fpu {
+ 	} aux_dpfp[2];
+ };
+ 
+-extern void fpu_save_restore(struct task_struct *p, struct task_struct *n);
 +#define fpu_init_task(regs)
-+
-+#else
-+
+ 
+ #else
+ 
 +/*
 + * ARCv2 FPU Control aux register
 + *   - bits to enable Traps on Exceptions
@@ -200,69 +186,12 @@ index 000000000000..d0e51b863f4c
 +
 +extern void fpu_save_restore(struct task_struct *p, struct task_struct *n);
 +
-+#else
++#else	/* !CONFIG_ARC_FPU_SAVE_RESTORE */
 +
-+#define fpu_save_restore(p, n)
-+
-+#endif	/* CONFIG_ARC_FPU_SAVE_RESTORE */
-+
-+#endif	/* _ASM_ARC_FPU_H */
-diff --git a/arch/arc/include/asm/processor.h b/arch/arc/include/asm/processor.h
-index 706edeaa5583..ec532d1e0725 100644
---- a/arch/arc/include/asm/processor.h
-+++ b/arch/arc/include/asm/processor.h
-@@ -14,15 +14,7 @@
- #ifndef __ASSEMBLY__
+ #define fpu_save_restore(p, n)
++#define fpu_init_task(regs)
  
- #include <asm/ptrace.h>
--
--#ifdef CONFIG_ARC_FPU_SAVE_RESTORE
--/* These DPFP regs need to be saved/restored across ctx-sw */
--struct arc_fpu {
--	struct {
--		unsigned int l, h;
--	} aux_dpfp[2];
--};
--#endif
-+#include <asm/fpu.h>
- 
- #ifdef CONFIG_ARC_PLAT_EZNPS
- struct eznps_dp {
-diff --git a/arch/arc/include/asm/switch_to.h b/arch/arc/include/asm/switch_to.h
-index 77f123385e96..aadf65b2b56c 100644
---- a/arch/arc/include/asm/switch_to.h
-+++ b/arch/arc/include/asm/switch_to.h
-@@ -9,19 +9,7 @@
- #ifndef __ASSEMBLY__
- 
- #include <linux/sched.h>
--
--#ifdef CONFIG_ARC_FPU_SAVE_RESTORE
--
--extern void fpu_save_restore(struct task_struct *p, struct task_struct *n);
--#define ARC_FPU_PREV(p, n)	fpu_save_restore(p, n)
--#define ARC_FPU_NEXT(t)
--
--#else
--
--#define ARC_FPU_PREV(p, n)
--#define ARC_FPU_NEXT(n)
--
--#endif /* !CONFIG_ARC_FPU_SAVE_RESTORE */
-+#include <asm/fpu.h>
- 
- #ifdef CONFIG_ARC_PLAT_EZNPS
- extern void dp_save_restore(struct task_struct *p, struct task_struct *n);
-@@ -36,9 +24,8 @@ struct task_struct *__switch_to(struct task_struct *p, struct task_struct *n);
- #define switch_to(prev, next, last)	\
- do {					\
- 	ARC_EZNPS_DP_PREV(prev, next);	\
--	ARC_FPU_PREV(prev, next);	\
-+	fpu_save_restore(prev, next);	\
- 	last = __switch_to(prev, next);\
--	ARC_FPU_NEXT(next);		\
- 	mb();				\
- } while (0)
+ #endif	/* CONFIG_ARC_FPU_SAVE_RESTORE */
  
 diff --git a/arch/arc/kernel/Makefile b/arch/arc/kernel/Makefile
 index e784f5396dda..75539670431a 100644
@@ -279,20 +208,19 @@ index e784f5396dda..75539670431a 100644
  ifdef CONFIG_ARC_DW2_UNWIND
  CFLAGS_ctx_sw.o += -fno-omit-frame-pointer
 diff --git a/arch/arc/kernel/fpu.c b/arch/arc/kernel/fpu.c
-index 07e22b563fbb..7bc534a7cd20 100644
+index 7a3b56ce56bb..c67c0f0f5f77 100644
 --- a/arch/arc/kernel/fpu.c
 +++ b/arch/arc/kernel/fpu.c
-@@ -7,6 +7,9 @@
- 
+@@ -8,6 +8,8 @@
  #include <linux/sched.h>
- #include <asm/switch_to.h>
-+#include <asm/fpu.h>
-+
-+#ifdef CONFIG_ISA_ARCOMPACT
+ #include <asm/fpu.h>
  
++#ifdef CONFIG_ISA_ARCOMPACT
++
  /*
   * To save/restore FPU regs, simplest scheme would use LR/SR insns.
-@@ -50,3 +53,28 @@ void fpu_save_restore(struct task_struct *prev, struct task_struct *next)
+  * However since SR serializes the pipeline, an alternate "hack" can be used
+@@ -50,3 +52,28 @@ void fpu_save_restore(struct task_struct *prev, struct task_struct *next)
  		: "r" (zero), "r" (*(readfrom + 3)), "r" (*(readfrom + 2))
  	);
  }
@@ -322,18 +250,18 @@ index 07e22b563fbb..7bc534a7cd20 100644
 +
 +#endif
 diff --git a/arch/arc/kernel/process.c b/arch/arc/kernel/process.c
-index e1889ce3faf9..0ecde4405aaf 100644
+index e1889ce3faf9..804065b887e4 100644
 --- a/arch/arc/kernel/process.c
 +++ b/arch/arc/kernel/process.c
-@@ -5,6 +5,8 @@
-  * Amit Bhor, Kanika Nema: Codito Technologies 2004
-  */
+@@ -20,6 +20,8 @@
+ #include <linux/elf.h>
+ #include <linux/tick.h>
  
 +#include <asm/fpu.h>
 +
- #include <linux/errno.h>
- #include <linux/module.h>
- #include <linux/sched.h>
+ SYSCALL_DEFINE1(arc_settls, void *, user_tls_data_ptr)
+ {
+ 	task_thread_info(current)->thr_ptr = (unsigned int)user_tls_data_ptr;
 @@ -264,7 +266,7 @@ int copy_thread(unsigned long clone_flags,
  /*
   * Do necessary setup to start up a new user task
@@ -343,13 +271,11 @@ index e1889ce3faf9..0ecde4405aaf 100644
  {
  	regs->sp = usp;
  	regs->ret = pc;
-@@ -280,6 +282,10 @@ void start_thread(struct pt_regs * regs, unsigned long pc, unsigned long usp)
+@@ -280,6 +282,8 @@ void start_thread(struct pt_regs * regs, unsigned long pc, unsigned long usp)
  	regs->eflags = 0;
  #endif
  
-+#ifdef CONFIG_ARC_FPU_SAVE_RESTORE
 +	fpu_init_task(regs);
-+#endif
 +
  	/* bogus seed values for debugging */
  	regs->lp_start = 0x10;
