@@ -1,142 +1,72 @@
 Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
-Received: from bombadil.infradead.org (unknown [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5BE2F141548
-	for <lists+linux-snps-arc@lfdr.de>; Sat, 18 Jan 2020 01:53:07 +0100 (CET)
+Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
+	by mail.lfdr.de (Postfix) with ESMTPS id C0A6F1427E3
+	for <lists+linux-snps-arc@lfdr.de>; Mon, 20 Jan 2020 11:10:01 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QH4OUhDyR+XFAlnwYa05/vat0bfuI9Yptbp8IsETucY=; b=eI0Yh+ZDa3Yasm
-	kmQL1p7Q+ZG5LLGhFYQ1HBz3/lZ5v7zqJ1HmuGMUglIT3MSTy6ELtZxY9GOPPhWpgOcfkXGXihDNv
-	GP7UGzarK9EXLWUU7aFScQZ1OqhV2rXAR+o6vMH3xM44NL2HSeNyW7sioQCDvrMQn4+0Ra+0XstwY
-	BKkqbFjqzOt6NTMNFSzaxyLQcVeD3IzkStj4ZzgXn5/nq8+d9njtD4kOULl1cp5tKVijK7yPIxgOw
-	zUWGi1pPduB9Ca2x61pvEJvgSO8QVqm6YjI3qXdM/PB189dy3hihIzKaHLF11FYqnRGPQfbpmrv/p
-	CxF5DdhPCoCkBNNVaOjA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=1+uFOzSL6endnnhq1IryYpmWK26idA0WkmajxY5ALJE=; b=CTn
+	RAqitZ0mlIkVhwr4JOd9HU4/GmWfdS5Hj4zlH+Bk+aawml7M8JFc49nh1pLHnw9kp8e/s40YrNKaq
+	fRTfv2xtSdDjBcSulqBylSsgu7pzDyvQ6lkbU5YRmBXxE3JCF1bVZg/FoYzP3psHxwB0smTMqCES7
+	fYf7pwcZr4Cf6lZy0foRuwEMTXwz86VIbcg+IDX+YmoF2D8RWAR0bZjTCNTVhRJB9N4KiCRy0kuPQ
+	j06PsEnxGKznmpWkuDGLVRZycHAy/IDx6t9WgVPQmTT9cwYqNWxH+bW7s4c/8n7IQtAqjzDshVsiR
+	gn5SxEXjJAEDddqLyzbIPV75x46fmAw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iscM7-00031G-4v; Sat, 18 Jan 2020 00:52:51 +0000
-Received: from smtprelay-out1.synopsys.com ([149.117.87.133])
+	id 1itU0O-0007DM-Ir; Mon, 20 Jan 2020 10:10:00 +0000
+Received: from sv2-smtprelay2.synopsys.com ([149.117.73.133]
+ helo=smtprelay-out1.synopsys.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iscM4-00030w-A8
- for linux-snps-arc@lists.infradead.org; Sat, 18 Jan 2020 00:52:49 +0000
-Received: from mailhost.synopsys.com (badc-mailhost2.synopsys.com
- [10.192.0.18])
+ id 1itU0I-0007Cw-UL
+ for linux-snps-arc@lists.infradead.org; Mon, 20 Jan 2020 10:09:59 +0000
+Received: from mailhost.synopsys.com (mdc-mailhost1.synopsys.com
+ [10.225.0.209])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
  (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id C5D3FC00D3
- for <linux-snps-arc@lists.infradead.org>; Sat, 18 Jan 2020 00:52:47 +0000 (UTC)
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id D41E94052A;
+ Mon, 20 Jan 2020 10:09:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1579308767; bh=cXk/7YPSYOVtKSzt2GnKkn/aRlWstbbKm4qcu9c/OSI=;
- h=From:To:CC:Subject:Date:References:In-Reply-To:From;
- b=VXPq+JGi21w4LI5JfuHjeyU4QksCvfKskCItro6jsBZpzOvCMMiG7Rss2esp+Qvm5
- coVaVJCBN9EWPZrJNrV9tGPjRLwqJA+SMokUa2WwXTb/A1A7TPOh8HRuELYA0sPi6l
- q5PNrVDioKSy7JL7EAlWaT+Qp+l4Szil6SunCELulZfea0zNpxH8bAdidJMfe5S+ZZ
- e+gvBAQawywXSfmYRYCfMwtD6uA54Cp1sTxH6ZHZkCaPTdgOxln1nJC9H8E2Cm/6gd
- GkyXg+9ZhrO4ZkrcbqCNk9kRjTRB8305EMIkt5YZVmu8Jt1e5VDMz0yZVNz06FNKxz
- NJeiOEegJ3XrQ==
-Received: from US01WEHTC3.internal.synopsys.com
- (us01wehtc3.internal.synopsys.com [10.15.84.232])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-SHA384 (256/256 bits))
- (No client certificate requested)
- by mailhost.synopsys.com (Postfix) with ESMTPS id 867EDA0067
- for <linux-snps-arc@lists.infradead.org>; Sat, 18 Jan 2020 00:52:47 +0000 (UTC)
-Received: from us01hybrid1.internal.synopsys.com (10.200.27.51) by
- US01WEHTC3.internal.synopsys.com (10.15.84.232) with Microsoft SMTP Server
- (TLS) id 14.3.408.0; Fri, 17 Jan 2020 16:52:46 -0800
-Received: from NAM12-MW2-obe.outbound.protection.outlook.com (10.202.3.67) by
- mrs.synopsys.com (10.200.27.51) with Microsoft SMTP Server (TLS) id
- 14.3.408.0; Fri, 17 Jan 2020 16:52:46 -0800
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=aJJfVhPHVypa9OAmN25JXBIBqKqx964Mj2fVToLkuoY4DgPQXVrEgjVnz2dJY48iM73NI+iOYUnkFBySDECRcnqAqk11JkbGDGTd+9LtVNcG6nzVmuzRv6YO3wGYmTMTogiBAWm0mbnSbzCRPWuylKdjhGhE0isOarzFGZDJLRbGr9t7/G70KIVbdUR1TH0OEI7n++sKv3CW2EQddQamvgOmU/Dyz0OuhRPRoxXnNklafdNUN9X5cbQBzoIZ2bq4DCPS8llTSAnTDPonzqjJt/cGHVSGv6JCXDrtdedtrfEgu87tfoiS8+2i4X/oYww70tI5yJXIYgq/b+f/qZq6Ow==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=cXk/7YPSYOVtKSzt2GnKkn/aRlWstbbKm4qcu9c/OSI=;
- b=mcEAdKALLt5B7e/0ZDeXwkx5rhjdGRFLubq4PmQdPNJtU6KoYuH9Hw8xZIGetc5hvioiC31Ivzgyx/zhSv4To5gKrRyL/XfraJEmD5bHwp8MNMCTUMYfQFMoAsbLqi+woazv7hIfnMyy+h0utcAdwAUjsc53GndfNklCgdjqNS2ID6PYp/bssqMuZtRZkD0yGgqPjR5XeShQ+Nfsbx63bEKaDtPzEZ89eb9P/kE95xzDgAft0dN6RlHxrz8dslftcCXLtGpUFxP4dFPEF+IEo5Nkcc5MqWzJ0oVKHs3/9jrVBIRBPcorvMUFFbuEpJJM/zvOXWYgJPcMvE0DvpjplQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=synopsys.com; dmarc=pass action=none header.from=synopsys.com;
- dkim=pass header.d=synopsys.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=synopsys.onmicrosoft.com; s=selector2-synopsys-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=cXk/7YPSYOVtKSzt2GnKkn/aRlWstbbKm4qcu9c/OSI=;
- b=JGtSpZ+b46qOC83zdYMA96HNrI6lCLMde7o0nekkYDyVyA1COVAOll78EL+cJqoSyyT+aAb3nkiYtBV5Sfz9Do78pXPQB8GuoAC1iBoIslo6uyxXPKbLcX1nDHIRSV1of8ZkEIgCEj9snx6zX98aiYAnbHns62WB8r7XpA2P5hQ=
-Received: from BYAPR12MB3592.namprd12.prod.outlook.com (20.178.54.89) by
- BYAPR12MB2615.namprd12.prod.outlook.com (20.177.125.221) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2644.23; Sat, 18 Jan 2020 00:52:45 +0000
-Received: from BYAPR12MB3592.namprd12.prod.outlook.com
- ([fe80::39a1:22ee:7030:8333]) by BYAPR12MB3592.namprd12.prod.outlook.com
- ([fe80::39a1:22ee:7030:8333%6]) with mapi id 15.20.2644.023; Sat, 18 Jan 2020
- 00:52:45 +0000
-From: Vineet Gupta <Vineet.Gupta1@synopsys.com>
-To: "linux-snps-arc@lists.infradead.org" <linux-snps-arc@lists.infradead.org>
-Subject: Re: [PATCH] ARC: fpu: preserve userspace fpu state
-Thread-Topic: [PATCH] ARC: fpu: preserve userspace fpu state
-Thread-Index: AQHVzZkvvM1ELL5hOkO48rYSB65z2afvmAIA
-Date: Sat, 18 Jan 2020 00:52:45 +0000
-Message-ID: <9fd48331-d7c2-b1e4-89a7-88f8f8b6ce90@synopsys.com>
-References: <20200118004905.30201-1-vgupta@synopsys.com>
- <20200118004905.30201-3-vgupta@synopsys.com>
-In-Reply-To: <20200118004905.30201-3-vgupta@synopsys.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-user-agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=vgupta@synopsys.com; 
-x-originating-ip: [149.117.75.11]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: e643e213-0b21-46bc-5702-08d79bb0bb2b
-x-ms-traffictypediagnostic: BYAPR12MB2615:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <BYAPR12MB2615413EC7A349096A7AE6B3B6300@BYAPR12MB2615.namprd12.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:1303;
-x-forefront-prvs: 0286D7B531
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10019020)(366004)(39860400002)(136003)(396003)(346002)(376002)(199004)(189003)(8676002)(6512007)(31686004)(36756003)(71200400001)(8936002)(81166006)(6916009)(81156014)(478600001)(107886003)(4326008)(5660300002)(66476007)(64756008)(66556008)(76116006)(66946007)(66446008)(6486002)(2616005)(31696002)(316002)(4744005)(86362001)(53546011)(6506007)(2906002)(26005)(186003);
- DIR:OUT; SFP:1102; SCL:1; SRVR:BYAPR12MB2615;
- H:BYAPR12MB3592.namprd12.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: synopsys.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: yQ8I626aaTpJSXowBidYLg0vC+87CUz7Pbk1js0o1QM+gTpk0Enm17ZmQGwm89pCfIzB/XlensLqKbb2vldgQciBMLpq2fiWxR4YemU5e72q65Rd9tjqhpG65ODmMHxVxW3/rhigJX3jTim/H84jFu6McsZlKjnebptUGU19g1VdtR6a++E+u0HDG0m6QP7nbI5yPUqYNYYG0N/3ccO6Iyjojvny1h4zj4xr0Wj4nIA+pQwOhOFFs+SLUQvtC/Fx0SvXm65SwYvMQUs36KytcejMyQpA6G27/MC6J3+s4tI/dBAGQiJofTP4x/aaQ7UWWVGbH1AkrU9CC587a0E+YFKYQLT7z5+XTw4uM5daPfWLnef9yWRy8Pk9v1hh5IOm7EXzE4anJoN7MEtQ5byT4EXnjnGfJOFlirtN+9tkZmi8y90CZGFRC9aMJRVk0PRU
-Content-ID: <905943AA17D56F4C814B92B7A62EF6CB@namprd12.prod.outlook.com>
-MIME-Version: 1.0
-X-MS-Exchange-CrossTenant-Network-Message-Id: e643e213-0b21-46bc-5702-08d79bb0bb2b
-X-MS-Exchange-CrossTenant-originalarrivaltime: 18 Jan 2020 00:52:45.2323 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: c33c9f88-1eb7-4099-9700-16013fd9e8aa
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: /PDNwUF5c8aZQrTRvki0qtR++j07qCOfezvSWGEO45xzPI5EfKvdQRPb0Ba4g+u/TkDKZZF8/v2qUbPir9dYOQ==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: BYAPR12MB2615
-X-OriginatorOrg: synopsys.com
+ t=1579514992; bh=xPaTWfePXY611wuEfKcw+1Ot1+JQuxG5IdJAmY64a6I=;
+ h=From:To:Cc:Subject:Date:From;
+ b=Q7WBqy+Ul+fau44a9ga918myLyaTGN9i1QtYD11Jz9Ucmip1191V+eX6CFw/Om+vB
+ /ty/UeKIPTnRFFUDtCPnZVDOpjkfsoXXoh3KCqTp4IiisVLk13Lpujze8JN9jXFQy+
+ SiuRJeu44g2OBxGfmbuMCE0QSmiVzXVrEJb2wXr9qGrnVTb96ZOQ7hNyhfW4xM/Uu7
+ jG+s/t/da0Z0TvJW7rrWI4Vg1eM3KOKlXQh8rz0+at1ARr6h/YsOXOQc2cIw12+m1W
+ cRJVTLtKCO87epUfRuS3G5rjy7KWfg0vJ6e7Lgz8ahcJ+NjyrheQzx4Pr4v1L2bfSg
+ I7L3xPqBxeGzA==
+Received: from ru20arcgnu1.internal.synopsys.com
+ (ru20arcgnu1.internal.synopsys.com [10.121.9.48])
+ by mailhost.synopsys.com (Postfix) with ESMTP id 785E1A005C;
+ Mon, 20 Jan 2020 10:09:48 +0000 (UTC)
+From: Alexey Brodkin <Alexey.Brodkin@synopsys.com>
+To: u-boot@lists.denx.de
+Subject: [PATCH] ARC: Don't mess with endianess settings
+Date: Mon, 20 Jan 2020 13:09:40 +0300
+Message-Id: <20200120100940.904-1-abrodkin@synopsys.com>
+X-Mailer: git-send-email 2.16.2
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200117_165248_609782_B0E0AD74 
-X-CRM114-Status: UNSURE (   9.97  )
+X-CRM114-CacheID: sfid-20200120_020954_984857_88E7C96A 
+X-CRM114-Status: UNSURE (   9.33  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-snps-arc@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -148,29 +78,49 @@ List-Post: <mailto:linux-snps-arc@lists.infradead.org>
 List-Help: <mailto:linux-snps-arc-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-snps-arc>, 
  <mailto:linux-snps-arc-request@lists.infradead.org?subject=subscribe>
-Cc: Eugeniy Paltsev <Eugeniy.Paltsev@synopsys.com>
+Cc: linux-snps-arc@lists.infradead.org,
+ Alexey Brodkin <Alexey.Brodkin@synopsys.com>, uboot-snps-arc@synopsys.com
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-snps-arc" <linux-snps-arc-bounces@lists.infradead.org>
 Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org
 
-On 1/17/20 4:49 PM, Vineet Gupta wrote:
-> Signed-off-by: Vineet Gupta <vgupta@synopsys.com>
-> ---
->  arch/arc/Kconfig                 | 15 +++------
->  arch/arc/include/asm/arcregs.h   |  2 ++
->  arch/arc/include/asm/fpu.h       | 54 ++++++++++++++++++++++++++++++++
->  arch/arc/include/asm/processor.h | 10 +-----
->  arch/arc/include/asm/switch_to.h | 17 ++--------
->  arch/arc/kernel/Makefile         |  2 ++
->  arch/arc/kernel/fpu.c            | 28 +++++++++++++++++
->  arch/arc/kernel/process.c        |  8 ++++-
->  8 files changed, 101 insertions(+), 35 deletions(-)
->  create mode 100644 arch/arc/include/asm/fpu.h
+There seem to be not that much sense in explicitly setting endianess
+flags for the tools as we assume the tool with required endianess is
+used. I.e. we use LE tools for building for LE targets and BE tools
+for BE targets.
 
-Please ignore this stray patch - this was before i split it into the 2 pieces !
+Signed-off-by: Alexey Brodkin <abrodkin@synopsys.com>
+---
+ arch/arc/config.mk | 10 ----------
+ 1 file changed, 10 deletions(-)
 
--Vineet
+diff --git a/arch/arc/config.mk b/arch/arc/config.mk
+index 18005d9993..4b8a0870eb 100644
+--- a/arch/arc/config.mk
++++ b/arch/arc/config.mk
+@@ -8,16 +8,6 @@ else
+ CONFIG_SYS_BIG_ENDIAN = 1
+ endif
+ 
+-ifdef CONFIG_SYS_LITTLE_ENDIAN
+-PLATFORM_LDFLAGS += -EL
+-PLATFORM_CPPFLAGS += -mlittle-endian
+-endif
+-
+-ifdef CONFIG_SYS_BIG_ENDIAN
+-PLATFORM_LDFLAGS += -EB
+-PLATFORM_CPPFLAGS += -mbig-endian
+-endif
+-
+ ifdef CONFIG_ARC_MMU_VER
+ CONFIG_MMU = 1
+ endif
+-- 
+2.16.2
+
+
 _______________________________________________
 linux-snps-arc mailing list
 linux-snps-arc@lists.infradead.org
