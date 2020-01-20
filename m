@@ -2,8 +2,8 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0AD4C142866
-	for <lists+linux-snps-arc@lfdr.de>; Mon, 20 Jan 2020 11:46:52 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B5176142864
+	for <lists+linux-snps-arc@lfdr.de>; Mon, 20 Jan 2020 11:46:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,50 +11,52 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=Vrt2VZr07N8Gv0HaNTBXLrBUrJMp+Ro91VmffmfQ+Y4=; b=tQG7Co7ODYTzA7CvLY7gMpUMzu
-	M5toarbTEEoQ8FdB9AXR/1xY/uLHMo/d8TD3BRz3cnd9WJ1lsEg5EIUsiWnuTq/UvgGZUPRNBmOsb
-	Q6TO5Lw5sXNvnPtBwG4plNMfelHL1Yu5N0k/I4+ypa1629fH9pvl2aU1ifS6wAajq0KL6Oye7F1Gz
-	y74m2vivXunWl+XUHiNzdchPqDRulI4yil+PHHqfCSea3NWG5/yhS4hy8UIcxX2eeWhNUJpzvmIG5
-	W9opbM7xWaK2yCxJCQRkrUFLYk5soIgryyCrq+XvqKhb/8f40J4Qucxm7+Lx7fP2U5FYU4W5lZFD/
-	XiC/AtAw==;
+	bh=51xq4bgHI14s9QM8XC37c5XzSugmqyG2tszgms3POc0=; b=NprDUrkuRKnT+1asIPALLbE388
+	nm0YywH0d18CVY0L4uRUmNqYRkz1Bks7+5Tfy9LrVOL4FANDDJRpKgFmphu74KFyc3uVyhYw91lHt
+	df9ysgvHAYSJ3/PfcFmVJokVfES7cyURCvSEtH9bT5Ve3qHWCwv0fS2CejJuHpZN6OvFhxU38jOJF
+	gP5NKUP6UhzsKWvIn9lTYBo2UhNDE9wlaRcL3DfcRi9VY6XJCX9kGjBfWS51AVEE7VD+3oVOMEDfN
+	SR7UCUV9Hv/usYirFXQNEAor2pi+VN5h0uQVWpqKVIBrVtiQkX7mmJJcr/6ZDumMBnO6gyo0PcVir
+	I1oh3NsA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1itUa2-0004Ic-Op; Mon, 20 Jan 2020 10:46:50 +0000
+	id 1itUa0-0004Hc-Ff; Mon, 20 Jan 2020 10:46:48 +0000
 Received: from us03-smtprelay2.synopsys.com ([149.117.87.133]
  helo=smtprelay-out1.synopsys.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1itUZy-0004GI-96
- for linux-snps-arc@lists.infradead.org; Mon, 20 Jan 2020 10:46:49 +0000
+ id 1itUZy-0004GG-99
+ for linux-snps-arc@lists.infradead.org; Mon, 20 Jan 2020 10:46:47 +0000
 Received: from mailhost.synopsys.com (mdc-mailhost1.synopsys.com
  [10.225.0.209])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
  (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 390A0C04F7;
- Mon, 20 Jan 2020 10:46:40 +0000 (UTC)
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 32392C04F5;
+ Mon, 20 Jan 2020 10:46:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1579517201; bh=9hNjPN5JegrAlPQCeDdpzlwk09YMaZRioVttgMtg9NA=;
+ t=1579517201; bh=q8VjuuCK95PHz68NYZhkjHEIrxv1ORP0AB/mKEGgQds=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=XjA9CjKQqqlpAz9FHkc6MrDq3CHcEuxhQOxuvmumPQptQbk0pdb0xAHJPHnXorjBj
- Qfqrrhex/JtMiwYtnP2cibvGiC2f2swPezDwP7Z4DecRRE2rHeI/a+GLGz6RFyXVHn
- fsE/oZHVHtPNzcHOmI0SuZVuOQv8mGoKJCZmlxfdsONOQB7EFe1tupxmaFWGgwTXi2
- bGiOIVSalvMxj5rWX6jMufIsZMMVVFHc0p6uCgfRZdoqLWQuMcdxF9CWrYwmySNSOh
- lqMTsVzdbVHPWmFjHkiMW2KDhNW50z3+tpbT5RRXRpyZbQFWjpSbw9ipZwA58Ud60i
- GK2Rp2GfFXnlw==
+ b=b2Qd+RYV/hvstxDf3mR78l8MewG3oIylvEZ2ZLyJzTWphoVX57SmmX7QIjxcQ3g3r
+ OEsI4ft7HXMDe7dNP2DCBzg0vNtIIutea6/xr4qJn+jOuZ4XKTj5YiIbyf7frwZDIx
+ kYEfCqUdO94CK//EyRjWEd/9KuOIIBwERgY9YtmI54X5tNULvUA5pwy6TN/rT8mFpa
+ N8CgGE31LIplBmqY5U9UvzcF5f/IJmNN0HHNkZhNhLgN5oGp0jHoeQN0igjbt7pUMH
+ ALPOIc+S7gk2CQe60j8auzjb9v78oj1K/OahbMjpoLNFPZdsWb/lK+UcpM8lzwmR03
+ WnGBi7POMarog==
 Received: from ru20arcgnu1.internal.synopsys.com
  (ru20arcgnu1.internal.synopsys.com [10.121.9.48])
- by mailhost.synopsys.com (Postfix) with ESMTP id 25185A0064;
+ by mailhost.synopsys.com (Postfix) with ESMTP id 9538DA0068;
  Mon, 20 Jan 2020 10:46:39 +0000 (UTC)
 From: Alexey Brodkin <Alexey.Brodkin@synopsys.com>
 To: u-boot@lists.denx.de
-Subject: [PATCH 1/3] ARC: nSIM: switch from ARC UART to DW UART
-Date: Mon, 20 Jan 2020 13:46:33 +0300
-Message-Id: <20200120104635.33290-2-abrodkin@synopsys.com>
+Subject: [PATCH 2/3] ARC: nsim_{700|700be|hs38be}_defconfigs: Disable
+ networking
+Date: Mon, 20 Jan 2020 13:46:34 +0300
+Message-Id: <20200120104635.33290-3-abrodkin@synopsys.com>
 X-Mailer: git-send-email 2.16.2
 In-Reply-To: <20200120104635.33290-1-abrodkin@synopsys.com>
 References: <20200120104635.33290-1-abrodkin@synopsys.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200120_024646_432243_3E4C8F23 
-X-CRM114-Status: GOOD (  11.85  )
+X-CRM114-CacheID: sfid-20200120_024646_382134_281EBD00 
+X-CRM114-Status: UNSURE (   9.80  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -88,174 +90,55 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-snps-arc" <linux-snps-arc-bounces@lists.infradead.org>
 Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org
 
-Since v2019.06 DesingWare nSIM supports DesignWare UART simulation
-and so we may switch from pretty unusual ARC UART to much more standard
-DesignWare UART (which in case of U-Boot is just an ordinary 16650 UART).
+We don't have yet any brc700 or big-enadian platforms with networking
+support to run this particular configuration.
 
-This among other things makes built dinaries compatible with our other
-platforms to name a few: FPGA-based HAPS boards, QEMU and even ZeBU.
+Whenever QEMU for ARC supports arc700 or big-endian targets we may revisit
+this one.
 
 Signed-off-by: Alexey Brodkin <abrodkin@synopsys.com>
 ---
- arch/arc/dts/nsim.dts         | 12 +++++++-----
- configs/nsim_700_defconfig    |  8 ++++----
- configs/nsim_700be_defconfig  |  8 ++++----
- configs/nsim_hs38_defconfig   |  8 ++++----
- configs/nsim_hs38be_defconfig |  8 ++++----
- 5 files changed, 23 insertions(+), 21 deletions(-)
+ configs/nsim_700_defconfig    | 1 +
+ configs/nsim_700be_defconfig  | 1 +
+ configs/nsim_hs38be_defconfig | 1 +
+ 3 files changed, 3 insertions(+)
 
-diff --git a/arch/arc/dts/nsim.dts b/arch/arc/dts/nsim.dts
-index 243ecb178e..a3f3964d35 100644
---- a/arch/arc/dts/nsim.dts
-+++ b/arch/arc/dts/nsim.dts
-@@ -1,6 +1,6 @@
- // SPDX-License-Identifier: GPL-2.0+
- /*
-- * Copyright (C) 2015-2016 Synopsys, Inc. (www.synopsys.com)
-+ * Copyright (C) 2015-2016, 2019 Synopsys, Inc. (www.synopsys.com)
-  */
- /dts-v1/;
- 
-@@ -10,7 +10,7 @@
- 	model = "snps,nsim";
- 
- 	aliases {
--		console = &arcuart0;
-+		console = &uart0;
- 	};
- 
- 	cpu_card {
-@@ -22,9 +22,11 @@
- 		};
- 	};
- 
--	arcuart0: serial@0xc0fc1000 {
--		compatible = "snps,arc-uart";
--		reg = <0xc0fc1000 0x100>;
-+	uart0: serial@f0000000 {
-+		compatible = "snps,dw-apb-uart";
-+		reg = <0xf0000000 0x1000>;
-+		reg-shift = <2>;
-+		reg-io-width = <4>;
- 		clock-frequency = <70000000>;
- 	};
- 
 diff --git a/configs/nsim_700_defconfig b/configs/nsim_700_defconfig
-index 5633113b09..2d4a58b178 100644
+index 2d4a58b178..6a38e2c246 100644
 --- a/configs/nsim_700_defconfig
 +++ b/configs/nsim_700_defconfig
-@@ -1,13 +1,13 @@
- CONFIG_ARC=y
- CONFIG_TARGET_NSIM=y
- CONFIG_SYS_TEXT_BASE=0x81000000
--CONFIG_DEBUG_UART_BASE=0xc0fc1000
-+CONFIG_DEBUG_UART_BASE=0xf0000000
- CONFIG_DEBUG_UART_CLOCK=70000000
- CONFIG_SYS_CLK_FREQ=70000000
- CONFIG_DEBUG_UART=y
- CONFIG_BOOTDELAY=3
- CONFIG_USE_BOOTARGS=y
--CONFIG_BOOTARGS="console=ttyARC0,115200n8"
-+CONFIG_BOOTARGS="console=ttyS0,115200n8"
- CONFIG_SYS_PROMPT="nsim# "
- # CONFIG_CMD_SETEXPR is not set
- CONFIG_OF_CONTROL=y
-@@ -16,6 +16,6 @@ CONFIG_DEFAULT_DEVICE_TREE="nsim"
+@@ -14,6 +14,7 @@ CONFIG_OF_CONTROL=y
+ CONFIG_OF_EMBED=y
+ CONFIG_DEFAULT_DEVICE_TREE="nsim"
  CONFIG_SYS_RELOC_GD_ENV_ADDR=y
++# CONFIG_NET is not set
  CONFIG_DM=y
  CONFIG_DM_SERIAL=y
--CONFIG_DEBUG_ARC_SERIAL=y
--CONFIG_ARC_SERIAL=y
-+CONFIG_DEBUG_UART_SHIFT=2
-+CONFIG_SYS_NS16550=y
- CONFIG_USE_PRIVATE_LIBGCC=y
+ CONFIG_DEBUG_UART_SHIFT=2
 diff --git a/configs/nsim_700be_defconfig b/configs/nsim_700be_defconfig
-index 40f7ec7e1f..61eea91449 100644
+index 61eea91449..d3ed84a415 100644
 --- a/configs/nsim_700be_defconfig
 +++ b/configs/nsim_700be_defconfig
-@@ -2,13 +2,13 @@ CONFIG_ARC=y
- CONFIG_CPU_BIG_ENDIAN=y
- CONFIG_TARGET_NSIM=y
- CONFIG_SYS_TEXT_BASE=0x81000000
--CONFIG_DEBUG_UART_BASE=0xc0fc1000
-+CONFIG_DEBUG_UART_BASE=0xf0000000
- CONFIG_DEBUG_UART_CLOCK=70000000
- CONFIG_SYS_CLK_FREQ=70000000
- CONFIG_DEBUG_UART=y
- CONFIG_BOOTDELAY=3
- CONFIG_USE_BOOTARGS=y
--CONFIG_BOOTARGS="console=ttyARC0,115200n8"
-+CONFIG_BOOTARGS="console=ttyS0,115200n8"
- CONFIG_SYS_PROMPT="nsim# "
- # CONFIG_CMD_SETEXPR is not set
- CONFIG_OF_CONTROL=y
-@@ -17,6 +17,6 @@ CONFIG_DEFAULT_DEVICE_TREE="nsim"
+@@ -15,6 +15,7 @@ CONFIG_OF_CONTROL=y
+ CONFIG_OF_EMBED=y
+ CONFIG_DEFAULT_DEVICE_TREE="nsim"
  CONFIG_SYS_RELOC_GD_ENV_ADDR=y
++# CONFIG_NET is not set
  CONFIG_DM=y
  CONFIG_DM_SERIAL=y
--CONFIG_DEBUG_ARC_SERIAL=y
--CONFIG_ARC_SERIAL=y
-+CONFIG_DEBUG_UART_SHIFT=2
-+CONFIG_SYS_NS16550=y
- CONFIG_USE_PRIVATE_LIBGCC=y
-diff --git a/configs/nsim_hs38_defconfig b/configs/nsim_hs38_defconfig
-index 2820a6fca3..ce68de3251 100644
---- a/configs/nsim_hs38_defconfig
-+++ b/configs/nsim_hs38_defconfig
-@@ -2,13 +2,13 @@ CONFIG_ARC=y
- CONFIG_ISA_ARCV2=y
- CONFIG_TARGET_NSIM=y
- CONFIG_SYS_TEXT_BASE=0x81000000
--CONFIG_DEBUG_UART_BASE=0xc0fc1000
-+CONFIG_DEBUG_UART_BASE=0xf0000000
- CONFIG_DEBUG_UART_CLOCK=70000000
- CONFIG_SYS_CLK_FREQ=70000000
- CONFIG_DEBUG_UART=y
- CONFIG_BOOTDELAY=3
- CONFIG_USE_BOOTARGS=y
--CONFIG_BOOTARGS="console=ttyARC0,115200n8"
-+CONFIG_BOOTARGS="console=ttyS0,115200n8"
- CONFIG_SYS_PROMPT="nsim# "
- # CONFIG_CMD_SETEXPR is not set
- CONFIG_OF_CONTROL=y
-@@ -17,6 +17,6 @@ CONFIG_DEFAULT_DEVICE_TREE="nsim"
- CONFIG_SYS_RELOC_GD_ENV_ADDR=y
- CONFIG_DM=y
- CONFIG_DM_SERIAL=y
--CONFIG_DEBUG_ARC_SERIAL=y
--CONFIG_ARC_SERIAL=y
-+CONFIG_DEBUG_UART_SHIFT=2
-+CONFIG_SYS_NS16550=y
- CONFIG_USE_PRIVATE_LIBGCC=y
+ CONFIG_DEBUG_UART_SHIFT=2
 diff --git a/configs/nsim_hs38be_defconfig b/configs/nsim_hs38be_defconfig
-index e533fae2b1..5d2ea59d52 100644
+index 5d2ea59d52..b074b4ca98 100644
 --- a/configs/nsim_hs38be_defconfig
 +++ b/configs/nsim_hs38be_defconfig
-@@ -3,13 +3,13 @@ CONFIG_ISA_ARCV2=y
- CONFIG_CPU_BIG_ENDIAN=y
- CONFIG_TARGET_NSIM=y
- CONFIG_SYS_TEXT_BASE=0x81000000
--CONFIG_DEBUG_UART_BASE=0xc0fc1000
-+CONFIG_DEBUG_UART_BASE=0xf0000000
- CONFIG_DEBUG_UART_CLOCK=70000000
- CONFIG_SYS_CLK_FREQ=70000000
- CONFIG_DEBUG_UART=y
- CONFIG_BOOTDELAY=3
- CONFIG_USE_BOOTARGS=y
--CONFIG_BOOTARGS="console=ttyARC0,115200n8"
-+CONFIG_BOOTARGS="console=ttyS0,115200n8"
- CONFIG_SYS_PROMPT="nsim# "
- # CONFIG_CMD_SETEXPR is not set
- CONFIG_OF_CONTROL=y
-@@ -18,6 +18,6 @@ CONFIG_DEFAULT_DEVICE_TREE="nsim"
+@@ -16,6 +16,7 @@ CONFIG_OF_CONTROL=y
+ CONFIG_OF_EMBED=y
+ CONFIG_DEFAULT_DEVICE_TREE="nsim"
  CONFIG_SYS_RELOC_GD_ENV_ADDR=y
++# CONFIG_NET is not set
  CONFIG_DM=y
  CONFIG_DM_SERIAL=y
--CONFIG_DEBUG_ARC_SERIAL=y
--CONFIG_ARC_SERIAL=y
-+CONFIG_DEBUG_UART_SHIFT=2
-+CONFIG_SYS_NS16550=y
- CONFIG_USE_PRIVATE_LIBGCC=y
+ CONFIG_DEBUG_UART_SHIFT=2
 -- 
 2.16.2
 
