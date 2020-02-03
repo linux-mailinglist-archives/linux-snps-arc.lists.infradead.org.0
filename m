@@ -2,51 +2,51 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 347CA150B7B
-	for <lists+linux-snps-arc@lfdr.de>; Mon,  3 Feb 2020 17:28:04 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A4214150B28
+	for <lists+linux-snps-arc@lfdr.de>; Mon,  3 Feb 2020 17:25:17 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=s4Nh2/VITRCOTW60J0DK+N/Ov5FRKGAtxdJGaTTMDjY=; b=Yu2zA5BUjVuHZY
-	/lzMJ6LgKwp/6jD8cPypPsWTYeHkBLhQ2TTZJxRUjJeEgEHQxVZjW7CEWZRKJuJFyAqPB9dSSx2a1
-	soLxF8YmrTt6uV/3xCet1j0U4dhQvolE39+9Xfv0tIWpc7o8aJTuaUW6GCWHFhlMSmUnhGB3dEH1b
-	gBqVwqgjqp8j+6R5LLRTkhjnOnqWCzqwAQxbj4Dtj2fbk/zJNYTApWC8Uzk5sCZbN52sGJvR4bugM
-	Wq4t9JOzPJ7AyR8Mr7stLayoyiUGtYtQXqhrWY2h3/bd5AyIAI7SdGzfxpys8/a5kDnjLjb92m+5j
-	IBqkeozeZwNfJU7hC94w==;
+	List-Owner; bh=ne/4Yy2pm/a5TumGCOPsuXHJcCjKeX3QoiTDF24ttB8=; b=e166dD+x7rk/nc
+	4RondmXpzsNRBx0tUXq3hzaw0c4syZfBQX0C0VeiHpyla0nqNn9KX6I8uf6Uw858BYnos3N4p4EwT
+	178Rg506YXTaQCXcmVB3/Nxd4c6jWpQYJ2coe/M3Q7qbJseIqCS9TdR8/eIR4+UCBe7WnfKnPujKg
+	tYkOIbFqVKKuQciuOQpzAKe+ijAA3Oz3ANHMeYZ+2aDFPF8An4+JIROyNcPqJFn4h+77l8k+4/O9D
+	N/JNPMJ8wmkM+nqTTi5jYhXgHD9b/iYiTKDlHLnQt/TKwHp0KfS5oez9vWkS56/cB/Z0F+5YcWeAE
+	OZMAv4IDigSkJUz1OtXQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iyeZu-0001Ay-NQ; Mon, 03 Feb 2020 16:28:02 +0000
+	id 1iyeXE-0000pX-Cu; Mon, 03 Feb 2020 16:25:16 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iyeZs-0001AK-3B
- for linux-snps-arc@lists.infradead.org; Mon, 03 Feb 2020 16:28:01 +0000
+ id 1iyeXB-0000on-Lt
+ for linux-snps-arc@lists.infradead.org; Mon, 03 Feb 2020 16:25:14 +0000
 Received: from localhost (unknown [104.132.45.99])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 556622080C;
- Mon,  3 Feb 2020 16:27:59 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id A27462087E;
+ Mon,  3 Feb 2020 16:25:11 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1580747279;
- bh=jVxsJgPWE3lwIUElOdauuh6S25hKs4MOUOwnIQNQnqM=;
+ s=default; t=1580747112;
+ bh=g8iDQnd6Yr9F7M26ThvnaNNeqrJbWLkQXykum1JpWXY=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=eHkCJ+NdtcB9FxDi5PbNzdybYraSEUgUrCQ8PhQ0+cbpU5CUFV2NXQrAZof+FxPmC
- e6YWFsdsccxms2uyTo01PWYOZm5ogZ23+meen32tHcTbABPO5k3LGQw1FUrE9Dvhr1
- 8aOj/1efJeXtgXJgNXY4pMi91cBv6aVTJ0JvY9RQ=
+ b=RD4RJH0gvlltCVDkFr0YWbOT56WMCNeckyluWO8cCiAIfVH6B1al4uZPgstqP9E++
+ uyzwYzsImn3tnULrcMs2GFG4C+zgHQp/jzaMhihRq9NK1JCJzr9iderz8Rva2Qz8JQ
+ 5WhV3KB9/hzPe4No4O5U5/tiI+cuOD49IRyoAofU=
 From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 To: linux-kernel@vger.kernel.org
-Subject: [PATCH 4.14 18/89] arc: eznps: fix allmodconfig kconfig warning
-Date: Mon,  3 Feb 2020 16:19:03 +0000
-Message-Id: <20200203161919.341004715@linuxfoundation.org>
+Subject: [PATCH 4.9 17/68] arc: eznps: fix allmodconfig kconfig warning
+Date: Mon,  3 Feb 2020 16:19:13 +0000
+Message-Id: <20200203161907.915759199@linuxfoundation.org>
 X-Mailer: git-send-email 2.25.0
-In-Reply-To: <20200203161916.847439465@linuxfoundation.org>
-References: <20200203161916.847439465@linuxfoundation.org>
+In-Reply-To: <20200203161904.705434837@linuxfoundation.org>
+References: <20200203161904.705434837@linuxfoundation.org>
 User-Agent: quilt/0.66
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200203_082800_159357_A764B2DA 
+X-CRM114-CacheID: sfid-20200203_082513_736394_5D003702 
 X-CRM114-Status: UNSURE (   8.99  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.0 (-----)
@@ -105,12 +105,12 @@ Signed-off-by: Sasha Levin <sashal@kernel.org>
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/arch/arc/plat-eznps/Kconfig b/arch/arc/plat-eznps/Kconfig
-index 8eff057efcaeb..ce908e2c52824 100644
+index 1d175cc6ad6d3..86f844caa405d 100644
 --- a/arch/arc/plat-eznps/Kconfig
 +++ b/arch/arc/plat-eznps/Kconfig
-@@ -7,7 +7,7 @@
- menuconfig ARC_PLAT_EZNPS
+@@ -7,7 +7,7 @@ menuconfig ARC_PLAT_EZNPS
  	bool "\"EZchip\" ARC dev platform"
+ 	select ARC_HAS_COH_CACHES if SMP
  	select CPU_BIG_ENDIAN
 -	select CLKSRC_NPS
 +	select CLKSRC_NPS if !PHYS_ADDR_T_64BIT
