@@ -2,56 +2,56 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E878215E6FF
-	for <lists+linux-snps-arc@lfdr.de>; Fri, 14 Feb 2020 17:51:51 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7A56815E7B0
+	for <lists+linux-snps-arc@lfdr.de>; Fri, 14 Feb 2020 17:56:07 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5FYkDh+nCNlNOud5If+WCJtboc3vEvDY1/apKoKQp2k=; b=CswdWpAuU7ZcoU
-	BrDc+PIvy7h0Pvku11nS/VK8z1YEvF/1a635+msWRRv4dJQhIn3qbME/zm7GaUOZjSlLCNJp+RK/e
-	HOZY+1YycX1LdIJtY3bEzRb68bnn5jAuyuyiJPkQWGvi7v6ddieOcCkFD22Sz7/e6ZiVWMJb/MKfy
-	hiedJClNz04GzHgccAHvQe8LD9NljVHB5sJGxlsVhIl3ejHm2hdrdqtyI01LgUdj19RuRxs6M4Vfd
-	0UJeejfZjNGgGz07S3T8hzv7rE6AoC0v7vKIeUczpc2Q4aY+DTecaSsnId+i/9AweicouNS+s5Djx
-	W+B60AqsRaRwMagiMUgA==;
+	List-Owner; bh=Us2cWl2VgYSetNjEOilKfNCnOvCk2nFt3B+ykXBkoqI=; b=N6Cthi6xRj31uw
+	2yiGO86xQ0Fb4HxCp5yu3nezB4/EwWNJWz2YpdXzdYkl+KdzosO2B+fvOiATELST9o6gJ0HxGt0xf
+	+sOumyNCv1FuRadWnn8OSMDMSCyaD52ZkUuz4DD22NS++NoyrV5HuxSGwYkfJUz0SqAfYYDYdEnyV
+	rFoj605bOlWTlgwnTkvhVdGwL0cI0tAJhQuRWFeIhsPupGAlVNwlzLDxLUVHlHG4XxT9OHL0JAJCB
+	mVcncQgU2r59qBX/zxkpMQKpdNmwRZT26r/ilrR0SsTnT8R+XbKuoOdOz69v8aUYAZpcxFL0IaPDv
+	OC4B83udaqzM6iRDQgVw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j2eBy-0007mF-EO; Fri, 14 Feb 2020 16:51:50 +0000
+	id 1j2eG5-0004xP-Lp; Fri, 14 Feb 2020 16:56:05 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2dh5-0002ox-0R
- for linux-snps-arc@lists.infradead.org; Fri, 14 Feb 2020 16:19:57 +0000
+ id 1j2dkR-0006x2-Qo
+ for linux-snps-arc@lists.infradead.org; Fri, 14 Feb 2020 16:23:26 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 79B002470C;
- Fri, 14 Feb 2020 16:19:53 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 435D224761;
+ Fri, 14 Feb 2020 16:23:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1581697194;
- bh=J+cD7ae9Q47vSdnutjU4ymEVk+kSRaBnycI4ag1zGXM=;
+ s=default; t=1581697403;
+ bh=wNzpmrTLzn6gJRvC4JafV65zvZOd9clsecn15jQjLKo=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=quTDitaODj0PksUQ4AcmsF8v4eLeuZCKDHfBQLkUoJzFzf1NaZQrt8IcIYnvDDkHN
- DEZYHokdWGPqFgYp+toMowLlqa9uLf2gaJgmzyNq5S76o6yN0p3VxNO5iJlozrtV7X
- AfLK7NScQFpdK0vHxdZ5KQpseyvWVdcF0E3cMWyw=
+ b=ptWd/wUruTNXJDR6RT0VRvGmCMtRtYNVwm8/aw3+dx02R/NtHNOGYPMQQ8WDtNknY
+ dHCkx7pJdYzFtX99y+rITzUny7JqMoHu5gOJXFrr44Wgj4o1yUlECrIS2i9JeQTque
+ t00xwNB9wiBeOpD0bjf/wXWGT5jMb8kW84pAx56o=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.14 123/186] ARC: [plat-axs10x]: Add missing
- multicast filter number to GMAC node
-Date: Fri, 14 Feb 2020 11:16:12 -0500
-Message-Id: <20200214161715.18113-123-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.9 096/141] ARC: [plat-axs10x]: Add missing multicast
+ filter number to GMAC node
+Date: Fri, 14 Feb 2020 11:20:36 -0500
+Message-Id: <20200214162122.19794-96-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20200214161715.18113-1-sashal@kernel.org>
-References: <20200214161715.18113-1-sashal@kernel.org>
+In-Reply-To: <20200214162122.19794-1-sashal@kernel.org>
+References: <20200214162122.19794-1-sashal@kernel.org>
 MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200214_081955_216067_F2757D37 
-X-CRM114-Status: UNSURE (   9.39  )
+X-CRM114-CacheID: sfid-20200214_082323_923476_6525B0E3 
+X-CRM114-Status: UNSURE (   9.20  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -106,10 +106,10 @@ Signed-off-by: Sasha Levin <sashal@kernel.org>
  1 file changed, 1 insertion(+)
 
 diff --git a/arch/arc/boot/dts/axs10x_mb.dtsi b/arch/arc/boot/dts/axs10x_mb.dtsi
-index e114000a84f56..d825b9dbae5de 100644
+index d6c1bbc98ac3b..15698b3e490ff 100644
 --- a/arch/arc/boot/dts/axs10x_mb.dtsi
 +++ b/arch/arc/boot/dts/axs10x_mb.dtsi
-@@ -70,6 +70,7 @@
+@@ -63,6 +63,7 @@
  			interrupt-names = "macirq";
  			phy-mode = "rgmii";
  			snps,pbl = < 32 >;
