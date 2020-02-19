@@ -2,8 +2,8 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D6433164CBD
-	for <lists+linux-snps-arc@lfdr.de>; Wed, 19 Feb 2020 18:51:52 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id F313D164CC5
+	for <lists+linux-snps-arc@lfdr.de>; Wed, 19 Feb 2020 18:52:02 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,31 +11,31 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=pD02nIy3R75/GhOFA6bowA6WFyH31uicT1QJtmeq6zA=; b=V83QLCYSLTv3seMaBezWS/v2VA
-	xBVDGezOgUa+w6251nXTcg0ENEdrFQsWFuX+kP1XLj7L92LEPaQMDkiuZTBxhFapiCZYyQSaJG6wQ
-	2bRlATrg+i7VGR0sBQrYovjleg9nea7IXe1SweXy3mLVcnjXYZTK4nvCu7VOhF/NvAMg7/CAEeHJO
-	xA8F7tJXZvXNaO721wx68KvP20UlBxz55PWIhAwaancuXxFQpk16Y9u8p3E5BGu9Hn57Mp90zDiQx
-	QKW4WcvOOE8Cet/UL8yF53jJ1af/VoEJK3pqPJXZAUdb6Rdx1XM1O20KcPQ81JlwvScFAtXpKc8Gp
-	7oVovkRw==;
+	bh=mC0RzAUeGuC/KOBR1OQ3y6r70ep2KQNCijmeIol7co8=; b=s498xVNTcTViOlIOxLeKUFX9Z+
+	kAfjDbnNlgAcXTJU4T8d7eea46p2LyyH57ai1glzU/cI1jaZmv6BMXImL1CeTnZeDGtwKE5fI4bt1
+	8Ho55CpHW8FCJXcRZ/FYI27oeEUfkN5WnOyAA5wvTlfOoBQmdp+O5aQMEfaBar71sNm+081gsul0M
+	jCHm6Jn5McrUFaO/Bvh3DQkhXMbPGl7Y/LrhqNp/qU3iBM4mxqTmSDwW7ln0V0EncTLforH9s6Ohg
+	RfpL1dRsQMdo2qFtOYONk+F6ImZmbVly4ojJQcF9zfBoEGHAVqI+r0AlwM+XMjt8+d1BuBxIKOUCd
+	sRYrfoSg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4TVn-00022o-KO; Wed, 19 Feb 2020 17:51:51 +0000
+	id 1j4TVx-000261-OO; Wed, 19 Feb 2020 17:52:01 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4TVk-0001vQ-JZ
- for linux-snps-arc@lists.infradead.org; Wed, 19 Feb 2020 17:51:50 +0000
+ id 1j4TVv-00025X-6w
+ for linux-snps-arc@lists.infradead.org; Wed, 19 Feb 2020 17:52:00 +0000
 Received: from localhost.localdomain (unknown [194.230.155.125])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 0A50C2467A;
- Wed, 19 Feb 2020 17:51:36 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id C3EF324672;
+ Wed, 19 Feb 2020 17:51:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1582134708;
- bh=GncZJES9Pi+VGkKtqPts7U7bz/5zDiGW+ajpMZK1gUg=;
+ s=default; t=1582134718;
+ bh=2gDbrtlrI3Wh9HVURrYGxvGcl+OexnI7Xd0KupjKyjg=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=Nps+RvDLKubC92VpmGQNWlndGFmfjWMGeb/g/eNgFR+xzszyfLi3xXawp++hyqb4m
- ORI6JWrkg6Q0W5ZsjhcSlCeeWNf6wixSeJxFI9h33iYowSawPTurEgX2Wj3C+53d5H
- P0IAjNbkxQCAyEjUuRHhnl2u9svOTEBYnry5h4XA=
+ b=edkRajat2UNJS10RWJb/1RntpeeJvXzGEKSl8t+0qmueFy60wVKSkZY9k3um0UCWK
+ BDJJRT4tj0OYJkV5EJS//0rfJOrz9S0kvr3zdTuqdKL9Dv8NVW/B+Iz2qn1Os5BqCU
+ brhDmyKjHMktBxYrUCddp3CdipBpPeIOiqI/MDPs=
 From: Krzysztof Kozlowski <krzk@kernel.org>
 To: Richard Henderson <rth@twiddle.net>,
  Ivan Kokshaysky <ink@jurassic.park.msu.ru>,
@@ -65,16 +65,16 @@ To: Richard Henderson <rth@twiddle.net>,
  linux-wireless@vger.kernel.org, netdev@vger.kernel.org,
  linux-ntb@googlegroups.com, virtualization@lists.linux-foundation.org,
  linux-arch@vger.kernel.org
-Subject: [RESEND PATCH v2 4/9] virtio: pci: Constify ioreadX() iomem argument
- (as in generic implementation)
-Date: Wed, 19 Feb 2020 18:50:02 +0100
-Message-Id: <20200219175007.13627-5-krzk@kernel.org>
+Subject: [RESEND PATCH v2 5/9] arc: Constify ioreadX() iomem argument (as in
+ generic implementation)
+Date: Wed, 19 Feb 2020 18:50:03 +0100
+Message-Id: <20200219175007.13627-6-krzk@kernel.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200219175007.13627-1-krzk@kernel.org>
 References: <20200219175007.13627-1-krzk@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200219_095148_682595_4C97A5DB 
-X-CRM114-Status: GOOD (  12.88  )
+X-CRM114-CacheID: sfid-20200219_095159_291009_C17D959A 
+X-CRM114-Status: GOOD (  13.69  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -113,45 +113,43 @@ Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.o
 The ioreadX() helpers have inconsistent interface.  On some architectures
 void *__iomem address argument is a pointer to const, on some not.
 
-Implementations of ioreadX() do not modify the memory under the address
-so they can be converted to a "const" version for const-safety and
-consistency among architectures.
+Implementations of ioreadX() do not modify the memory under the
+address so they can be converted to a "const" version for const-safety
+and consistency among architectures.
 
 Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
-Reviewed-by: Geert Uytterhoeven <geert+renesas@glider.be>
+Acked-by: Alexey Brodkin <abrodkin@synopsys.com>
 
 ---
 
 Changes since v1:
-1. Add Geert's review.
+1. Add Alexey's ack.
 ---
- drivers/virtio/virtio_pci_modern.c | 6 +++---
- 1 file changed, 3 insertions(+), 3 deletions(-)
+ arch/arc/plat-axs10x/axs10x.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/virtio/virtio_pci_modern.c b/drivers/virtio/virtio_pci_modern.c
-index 7abcc50838b8..fc58db4ab6c3 100644
---- a/drivers/virtio/virtio_pci_modern.c
-+++ b/drivers/virtio/virtio_pci_modern.c
-@@ -26,16 +26,16 @@
-  * method, i.e. 32-bit accesses for 32-bit fields, 16-bit accesses
-  * for 16-bit fields and 8-bit accesses for 8-bit fields.
-  */
--static inline u8 vp_ioread8(u8 __iomem *addr)
-+static inline u8 vp_ioread8(const u8 __iomem *addr)
- {
- 	return ioread8(addr);
- }
--static inline u16 vp_ioread16 (__le16 __iomem *addr)
-+static inline u16 vp_ioread16 (const __le16 __iomem *addr)
- {
- 	return ioread16(addr);
- }
+diff --git a/arch/arc/plat-axs10x/axs10x.c b/arch/arc/plat-axs10x/axs10x.c
+index 63ea5a606ecd..180c260a8221 100644
+--- a/arch/arc/plat-axs10x/axs10x.c
++++ b/arch/arc/plat-axs10x/axs10x.c
+@@ -84,7 +84,7 @@ static void __init axs10x_print_board_ver(unsigned int creg, const char *str)
+ 		unsigned int val;
+ 	} board;
  
--static inline u32 vp_ioread32(__le32 __iomem *addr)
-+static inline u32 vp_ioread32(const __le32 __iomem *addr)
- {
- 	return ioread32(addr);
+-	board.val = ioread32((void __iomem *)creg);
++	board.val = ioread32((const void __iomem *)creg);
+ 	pr_info("AXS: %s FPGA Date: %u-%u-%u\n", str, board.d, board.m,
+ 		board.y);
  }
+@@ -95,7 +95,7 @@ static void __init axs10x_early_init(void)
+ 	char mb[32];
+ 
+ 	/* Determine motherboard version */
+-	if (ioread32((void __iomem *) CREG_MB_CONFIG) & (1 << 28))
++	if (ioread32((const void __iomem *) CREG_MB_CONFIG) & (1 << 28))
+ 		mb_rev = 3;	/* HT-3 (rev3.0) */
+ 	else
+ 		mb_rev = 2;	/* HT-2 (rev2.0) */
 -- 
 2.17.1
 
