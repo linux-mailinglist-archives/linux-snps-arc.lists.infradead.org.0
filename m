@@ -2,40 +2,50 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1B67C1661DE
-	for <lists+linux-snps-arc@lfdr.de>; Thu, 20 Feb 2020 17:08:32 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 21A51166295
+	for <lists+linux-snps-arc@lfdr.de>; Thu, 20 Feb 2020 17:28:01 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/Mm1P4cg15WHfNI1MWAQRPUmOcZzNUQt7cC5SdszzrU=; b=mmELZ33saq0Erv
-	+RvIbDm0TeL5ykbfC6t0sfXKkfT2c22fOJF0dEF43AFD8hauSoTIv4JUaTNUth5kxMg6wuF4zSMIE
-	iv3YOBua2bHESq3yihQOapcyQi0Oh4nWL6kiMvJI2E8Cf9S4cs0B1gfdM0SFJpVqZ0ItBeH09t539
-	CxUmpuJaVbJ3bckX3Q67sCpY2GlJbKP7ZlG7j+9uo2ZovvHMnzpHsYZ4AhQntk4a8SUGhP5RWD2qF
-	hTRcUv0jqc2vcN33mJOFPNU6I0HXe8UGp2LAFsxs/e11gBv2QgpdiaJ6izzp/YRLkHvfz3p8piO70
-	gxkENE4uc7UrPy2mSt7A==;
+	List-Owner; bh=VkTeDftykqXsU88Wt6PxLM05r0T+ysdy5lveFom8N4o=; b=FT5tQMXBiykRyc
+	mYHy3+WoAeuDAPqxKEZewcAagFfUUPxk8l19yHu0WQz0+RKfvv6XGJuU3vIjQwEQV5sZAGtftCEnU
+	6I9oP5EAh3z8ydhnBJz+ihWurT64u/sk+c1IZUHOtCX0gvJFjkja0m3gufR3oOvbpvfX+wHXPWlzf
+	ZsCgixN4fjpj6De8tK/Hnoy2/zIzbvjtzZHUbdMju7j8uK8dcpOnY6vCTJrr4c4W9+VsGEfe1SSHR
+	9cJdmVL1/X+htvnY3ty2Am4Yipi7SYyMnmn3zrMG4A4rzfruPgHNAM5ZJCzNa4Vu53fPD44iSQqGi
+	v85KizpUT9nUfYT42ccw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4oNK-0003un-J7; Thu, 20 Feb 2020 16:08:30 +0000
-Received: from mout.kundenserver.de ([212.227.17.13])
+	id 1j4ogB-0004EZ-Sv; Thu, 20 Feb 2020 16:27:59 +0000
+Received: from isilmar-4.linta.de ([136.243.71.142])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4oNH-0003uF-0Y
- for linux-snps-arc@lists.infradead.org; Thu, 20 Feb 2020 16:08:28 +0000
-Received: from mail-qk1-f180.google.com ([209.85.222.180]) by
- mrelayeu.kundenserver.de (mreue106 [212.227.15.145]) with ESMTPSA (Nemesis)
- id 1MWSJJ-1ixyiZ3RPP-00Xtdw for <linux-snps-arc@lists.infradead.org>; Thu, 20
- Feb 2020 17:08:25 +0100
-Received: by mail-qk1-f180.google.com with SMTP id t83so4065511qke.3
- for <linux-snps-arc@lists.infradead.org>; Thu, 20 Feb 2020 08:08:23 -0800 (PST)
-X-Gm-Message-State: APjAAAWgDuiyky4NdObGnBHquxzfYBE65VKSGaCEHoMCD6HiKsHeuFT+
- wONkFgoI3d/UOxcFVGETz6lJ6ywkOd4quaM7zgo=
-X-Google-Smtp-Source: APXvYqzbNNvJkrxg3nkEs7SdslTS6Bb/YIX7hYpXfww+zL64xDyuZ3JiaIuj+/PMFAUyd5xKjCQr+simzLgSldvqNfY=
-X-Received: by 2002:a05:620a:909:: with SMTP id
- v9mr28233691qkv.138.1582214902630; 
- Thu, 20 Feb 2020 08:08:22 -0800 (PST)
-MIME-Version: 1.0
+ id 1j4og8-0004Dq-8G
+ for linux-snps-arc@lists.infradead.org; Thu, 20 Feb 2020 16:27:58 +0000
+Received: from isilmar-4.linta.de (isilmar.linta [10.0.0.1])
+ by isilmar-4.linta.de (Postfix) with ESMTP id 21589200B42;
+ Thu, 20 Feb 2020 16:27:49 +0000 (UTC)
+Date: Thu, 20 Feb 2020 17:27:36 +0100
+From: Helmut Grohne <helmut@subdivi.de>
+To: Arnd Bergmann <arnd@arndb.de>
+Subject: Re: switching ARC to 64-bit time_t (Re: [RFC v6 07/23] RISC-V: Use
+ 64-bit time_t and off_t for RV32 and RV64)
+Message-ID: <20200220162735.GA26634@alf.mars>
+Mail-Followup-To: Helmut Grohne <helmut@subdivi.de>,
+ Arnd Bergmann <arnd@arndb.de>, Lukasz Majewski <lukma@denx.de>,
+ Vineet Gupta <Vineet.Gupta1@synopsys.com>,
+ Alistair Francis <alistair23@gmail.com>,
+ Joseph Myers <joseph@codesourcery.com>,
+ Florian Weimer <fweimer@redhat.com>,
+ GNU C Library <libc-alpha@sourceware.org>,
+ Palmer Dabbelt <palmerdabbelt@google.com>,
+ Zong Li <zongbox@gmail.com>,
+ Alistair Francis <alistair.francis@wdc.com>,
+ Adhemerval Zanella <adhemerval.zanella@linaro.org>,
+ "Maciej W. Rozycki" <macro@wdc.com>,
+ arcml <linux-snps-arc@lists.infradead.org>,
+ debian-arm@lists.debian.org
 References: <cover.1578824547.git.alistair.francis@wdc.com>
  <4e95f95966d8d7c6a8339160dc62d81c1f6a1bfb.1578824547.git.alistair.francis@wdc.com>
  <00574bfb-981a-3a1c-cbdf-b2fee4eddc32@gmail.com>
@@ -45,47 +55,20 @@ References: <cover.1578824547.git.alistair.francis@wdc.com>
  <8a9784b3-fc52-adc3-4595-33142b059388@synopsys.com>
  <20200220001136.2f14236e@jawa>
  <CAK8P3a1b73K+RjfHONWLy_dFUucXxwd+0jTnHmkf6YqwRjit4w@mail.gmail.com>
- <20200220103716.2f526933@jawa>
- <CAK8P3a1nte0nGMw8_aeS__iJsTvsSGYYuKivAYBdiGH-GjVGew@mail.gmail.com>
- <20200220141451.3fa2fc3f@jawa>
- <CAK8P3a2qLZBAuP-YT2=KZoP+V23TAKvw5W1_2t7rEr2RobLsWw@mail.gmail.com>
- <20200220164245.035e09b1@jawa>
-In-Reply-To: <20200220164245.035e09b1@jawa>
-From: Arnd Bergmann <arnd@arndb.de>
-Date: Thu, 20 Feb 2020 17:08:06 +0100
-X-Gmail-Original-Message-ID: <CAK8P3a2vvuqzLQqrYkyyYBFATDjCpBuR2Zquu-xB2BWmc5GQWA@mail.gmail.com>
-Message-ID: <CAK8P3a2vvuqzLQqrYkyyYBFATDjCpBuR2Zquu-xB2BWmc5GQWA@mail.gmail.com>
-Subject: Re: switching ARC to 64-bit time_t (Re: [RFC v6 07/23] RISC-V: Use
- 64-bit time_t and off_t for RV32 and RV64)
-To: Lukasz Majewski <lukma@denx.de>
-X-Provags-ID: V03:K1:8AJeuhnTNNnTLeCg/REFxOhnasO/+8/x6bCTx8ZGtzBmc9Vxiwg
- n5nmGy1KbgbxtthPNwpUxeMYAPF/pJe0Or7/qFZdGQgPxklZJ2adZGzHM6ImRWDIQUUHSBa
- o0eAFeXD0oVXBNqmvgCRYECqEQnmHI7cVBKHukDqmrgnEbHPEf0cZDOQ3ZJEG3PVo8SIitR
- p45GHZ1dMqRDwN/Rr2n9A==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:0tESzPArwsI=:bkRkF8zhQ7rpFJeOc3SYmR
- MX0/3lin+bXMLc1FL7F64Pg6/q8xar3Z33yec/rzqa6gSNmLopAn7kQbLfAf9i6Tk0SkRsrL8
- qByhO060kHrHYbfQ4NjHkkraJOa/+fyOKdTj1CLMhNAXqtJLix+N0JSS9MT6Ve0OSxhlcY08h
- PDbjUHWRP8uT0wKJrf6YPXptzuiMFQ6S/tpWZNSyxWPehDk0zz2MOM3gc7zVpPBYmFEpFYYAb
- jHx7Ld0MMFsRVP/Hf4ZFyBDamIl7FluZJyufNSX/NkNJrXqfKxf/ATbuXUOjmBRoa/j6O+g9i
- xWB4DH437xZDYaWpzmmwT7R2OR9m8zPZcUYfDPa+sUJl/kAmewpRH5pTlIRrtDNdgmardQCsM
- lgX3ByNHi5D9Gn87l5tmZr7E6izaQuiUD798CDQx2rIZdMC9bv6pUIOVOjwtBXy7DFjnfiO09
- XTAXZrfKDfb8zLgW1dPE9pAAVZYzj7EcFgMYTkm4VWkq3ZI8KUJX7kgPu1PA0oeDWplf0wUIU
- WByUK3vlQajINa42xnWC58tt0bQfhlU/vY2JrxGp/bd5e9u1o0ErxXztOc3pgW09bLzIKM0Ko
- NyBLmLWDnDchx6l+BYiaLVPqcUlcbwI8Ne/wEIixn/BUbr8EAB5VLL6QqTRa9mKhBm9Qnhe0o
- u6vXt08SswfbAqDpXEt64ehnJ0QY95WGevKlRVkWnaXPaEmYlVc563fFFYQwCYHLucUkWEual
- vZa8Dgd1JsXQvpU+Y4j7xxfb6ayx+HtKkxT5yyLj1phIVAK+AkHVleSP6OISCqjNh3lcliFuG
- aJN1SSA09WvkjIb7n5X1D7Ex3UKKxBV23LU7TLs9CjVIF1QYa4=
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <CAK8P3a1b73K+RjfHONWLy_dFUucXxwd+0jTnHmkf6YqwRjit4w@mail.gmail.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200220_080827_361182_89F332E9 
-X-CRM114-Status: GOOD (  12.75  )
+X-CRM114-CacheID: sfid-20200220_082756_440807_8E5C7DA0 
+X-CRM114-Status: GOOD (  13.76  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.17.13 listed in list.dnswl.org]
+ no trust [136.243.71.142 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-snps-arc@lists.infradead.org
@@ -99,11 +82,12 @@ List-Post: <mailto:linux-snps-arc@lists.infradead.org>
 List-Help: <mailto:linux-snps-arc-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-snps-arc>, 
  <mailto:linux-snps-arc-request@lists.infradead.org?subject=subscribe>
-Cc: Florian Weimer <fweimer@redhat.com>, Helmut Grohne <helmutg@debian.org>,
- GNU C Library <libc-alpha@sourceware.org>, Viresh Kumar <vireshk@kernel.org>,
+Cc: Florian Weimer <fweimer@redhat.com>,
+ GNU C Library <libc-alpha@sourceware.org>,
  Vineet Gupta <Vineet.Gupta1@synopsys.com>,
- Palmer Dabbelt <palmerdabbelt@google.com>, Zong Li <zongbox@gmail.com>,
- debian-arm@lists.debian.org, Alistair Francis <alistair.francis@wdc.com>,
+ Palmer Dabbelt <palmerdabbelt@google.com>, Lukasz Majewski <lukma@denx.de>,
+ Zong Li <zongbox@gmail.com>, debian-arm@lists.debian.org,
+ Alistair Francis <alistair.francis@wdc.com>,
  Adhemerval Zanella <adhemerval.zanella@linaro.org>,
  "Maciej W. Rozycki" <macro@wdc.com>, Alistair Francis <alistair23@gmail.com>,
  arcml <linux-snps-arc@lists.infradead.org>,
@@ -113,36 +97,50 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-snps-arc" <linux-snps-arc-bounces@lists.infradead.org>
 Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org
 
-On Thu, Feb 20, 2020 at 4:42 PM Lukasz Majewski <lukma@denx.de> wrote:
-> > On Thu, Feb 20, 2020 at 2:15 PM Lukasz Majewski <lukma@denx.de> wrote:
+Hi Arnd,
 
->
-> I do see two approaches here:
->
-> 1. In glibc:
->
-> When -D_TIME_BITS=64 is set - redirections are enabled for syscall
-> wrappers; for example __clock_settime64 is used instead of
-> __clock_settime (e.g. sysdeps/unix/sysv/linux/clock_settime).
->
-> The latter is guarded by #ifdef __TIMESIZE != 64 so we could change
-> mechanically that __clock_settime returns -1 and sets errno to -ENOTSUPP
+On Thu, Feb 20, 2020 at 09:31:32AM +0100, Arnd Bergmann wrote:
+> > > How do I build a latest RISCV 32-bit kernel + userland - do you have
+> > > a buildroot branch somewhere that I can build / test with qemu ?
+> >
+> > Maybe a bit off topic - there is such QEMU and Yocto/OE based test
+> > sandbox for ARM32:
+> >
+> > https://github.com/lmajewski/meta-y2038
+> >
+> > (the README provides steps for setup).
+> 
+> (continuing off-topic, with debian-arm and Helmut on Cc)
+> 
+> Would it be possible to take a snapshot of your glibc tree and
+> start testing this out with debian-rebootstrap [1]?
 
-What I meant is to remove the __clock_settime function from the
-library entirely to cause a link failure. I suppose replacing most
-"__TIMESIZE != 64" with '0' would do that. Ideally I'd just set
-__TIMESIZE to 64, but doing that would make the ABI incompatible
-with mainline glibc.
+This is exacty what rebootstrap is for. You should be able to experiment
+with different ABIs without committing to a particular ABI. You can
+fiddle with such aspects and then cross build a pile of around 120
+Debian packages. That should uncover the most significant problems. You
+don't even have to change the GNU triplet. You can just create an
+incompatible throw-away port with an existing architecture name as
+rebootstrap refuses to reuse any existing binary packages for the host
+architecture.
 
-> 2. In kernel - return -ENOTSUPP when clock_settime syscall instead of
-> clock_settime64 is invoked.
+If you want to pursue that route, get in touch with
+debian-cross@lists.debian.org or #debian-bootstrap on irc.oftc.net. The
+usual route is forking the rebootstrap.git repository. You just hack up
+your toolchain modifications an retry the bootstrap from scratch until
+you are satisfied. Be prepared to put up with half a day or a day of CPU
+time for a single run. Don't hesitate to ask for help if you have
+undecipherable build failures. Balint Reczey has done something quite
+similar to what you're up to: He attempted creating ports that are
+instrumented with sanitizers.
 
-We already have that with CONFIG_COMPAT_32BIT_TIME, but
-at the moment I think that still breaks glibc's usage of __NR_futex,
-and a compile-time error is always better than a runtime error,
-as it's easier to catch them reliably
+Since I saw arc in the subject, I also threw arc at rebootstrap. Turns
+out that glibc 2.30 does not yet cover arc and using unpackaged versions
+of glibc is non-trivial for rebootstrap, so I cannot do much about that.
+Once arc support is in a released version of glibc, I'd be happy to be
+pinged about it.
 
-      Arnd
+Helmut
 
 _______________________________________________
 linux-snps-arc mailing list
