@@ -2,54 +2,39 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4B4331687F6
-	for <lists+linux-snps-arc@lfdr.de>; Fri, 21 Feb 2020 20:57:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 34049168DAC
+	for <lists+linux-snps-arc@lfdr.de>; Sat, 22 Feb 2020 09:43:07 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=w8tcfkAn8mR195DoFshzg8cIiePFLUj+K5kfLqaAnjc=; b=jH/gD5zDzsSFIS
-	HM2SSO/8AMB3fimSqhl8NWlfGHH6NZln2X46v62gnWvRxB4RxjCJQ3nj1OTh3Du8eMfvoEed7DxmG
-	8SY5izgaci7/hXA1hJek2MjxWg1iRViz0SadekfA5FZIlsb/ujwnmu/RgSySszWDsX9moJqNagQ2/
-	LggAey1rVo8f6DfGi1/Vq4mC7xGKqYCUJFVtzLVT/bL38gRxd8V3ZREuBT0lJCCJ6m89iINpR3/EF
-	BFBVLuajs2a5o6sox/n3P784os1g/1qNO2WPbK02PsOFD9VtMThTisdC0w3F/TyOkdRsj1tsFefK2
-	rv/pAmlVSC1Sdjy/jtMA==;
+	List-Owner; bh=cnEk2+ycOBYff4ah3Fi7tGemfCYoWRWukGKz+VGxIt8=; b=ADAnFD0QBP7c9h
+	A/jl4gYfwfXHV8goIfNN1M1N/bD5foYQBw0CR3b9G5dvJpai1nAq/mcoxK2qYwjT4+vknncVi5XoU
+	3o85wKeG3nx2YGMHaW/mn3EuDqykpe0IuUy2Ts6nsYGZUASS+U/Pcjf9xTgeCnwsKHw2BYsE1Cyb9
+	RfyFKE0NdK7QGJ9eblcfRSqVTcOBsNQaaYPrLyVf2e5ivagjBTX9mjidRtvUELYF7K5F7fRsf7MWk
+	ILJycxFQmsZ2l1RXUwUB0W5qP1ZKjHJxqGDcJr/tjTuk28rPQ8e84jq3zmaAzsvs+7CI7MRg14H4u
+	FLgToRFklAb8I+M41AlQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j5EQB-0000go-0o; Fri, 21 Feb 2020 19:57:11 +0000
-Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
+	id 1j5QNN-0000Ov-Uj; Sat, 22 Feb 2020 08:43:05 +0000
+Received: from mout.kundenserver.de ([212.227.126.130])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j5EQ7-0000fp-QL
- for linux-snps-arc@lists.infradead.org; Fri, 21 Feb 2020 19:57:09 +0000
-Received: by mail-lj1-x244.google.com with SMTP id a13so3409776ljm.10
- for <linux-snps-arc@lists.infradead.org>; Fri, 21 Feb 2020 11:57:06 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=oO/0oVAREgr5MfORTF+oGjH3ppE6bYdphuMutbzWe50=;
- b=S87U37rz4HAdl8X08Xan5Oeck91WSZLmvEQsW9EHVq6zXrZzArk62W6tVWAe/wgh2E
- O7/5XgcKLdZYc4sFW/TU/Wkh90ud4Qp7UKY/dOpC/wVPrXmnnkt/lZ/I2fMylk+HJ7Dd
- p/X3qIrBxAt5/IYqU7kIsS0G/U32KgOaYJDQG7Pel5YMHZYli0xywJ+OLmj2ROJIt5hs
- kj0pD/LIhEXBLk6ltBKFJqk3NhTi3fNq5DH8rfHWCT4j+A4F9Q9GTGRkeNPajkBpf4vl
- bMCIgQNKrg5eN8MqZqkXMVVeSM1tTJzbpUqdvYfSXpE+YL7o5V8x72tM5DAzlQ5XjB5k
- nQFw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=oO/0oVAREgr5MfORTF+oGjH3ppE6bYdphuMutbzWe50=;
- b=aPb9SSWgLv+swgKXTY0sIbBiXEomrknV8T60rCqXE/1+m2XM3fnUBaj/WO+r3WNxCu
- lbwJbaoTklWg4eEN/5RJ02N5dybxzOep045eZffnyHgWBcW0ABJPe+gyH2HcmXQHDpvT
- nOmwV2DdAJ6qss5O/+XS+Gxcza6YHOhF0PgqkKufSgKDde4MOsrVyBtZ1FNhOxLuBAVb
- EwwfJeGGJSuGvUheDqekGWR3G2Avws70XZD7XT86ZorspoSxXibxQilxiU7uBrLXeB6G
- Q8BEp0R/dOPwuOV/QfJs/sGHwT5InA+nfVAGAMrOQlg8LDN6mMaughhh786mDXNpVed5
- kC0w==
-X-Gm-Message-State: APjAAAXM+kFcXGb5YCIzDraWtKVb7kS40PjOgw6pdxCsJIdABoDUrrdG
- eog3ZLvPSh4FDViI/eTHWQWiA5ULPh4JJMzvYH0=
-X-Google-Smtp-Source: APXvYqyA15fw+GBy2LBQm36S1dD7ppXchoj+E8qAUuilm2qEJvEg3A0eeazpf7RU33u2oPeZl+nAMoD+jAsMg31XIsA=
-X-Received: by 2002:a2e:7609:: with SMTP id r9mr23017875ljc.238.1582315025381; 
- Fri, 21 Feb 2020 11:57:05 -0800 (PST)
+ id 1j5QNL-0000OZ-2f
+ for linux-snps-arc@lists.infradead.org; Sat, 22 Feb 2020 08:43:05 +0000
+Received: from mail-qk1-f181.google.com ([209.85.222.181]) by
+ mrelayeu.kundenserver.de (mreue010 [212.227.15.129]) with ESMTPSA (Nemesis)
+ id 1Mj8a5-1jbTnj0n3N-00fDYM for <linux-snps-arc@lists.infradead.org>; Sat, 22
+ Feb 2020 09:42:58 +0100
+Received: by mail-qk1-f181.google.com with SMTP id 11so118074qkd.1
+ for <linux-snps-arc@lists.infradead.org>; Sat, 22 Feb 2020 00:42:56 -0800 (PST)
+X-Gm-Message-State: APjAAAWC/ZKEQ6omJb3ivEhPPzpuc+fjafoizNMUkZkvG0wr1tXKNJ/c
+ BxKyU42M3tB6HUDpl9DyE6IJxkSigecCqsDIXkM=
+X-Google-Smtp-Source: APXvYqzdf7qDgvBfOyUcK60taKavJhXx5pdJkhD02mhP1sS6incDiD6X7KcZ2ivIxldD7tHZYwjk2o+7tAkrZQlb1/U=
+X-Received: by 2002:a05:620a:909:: with SMTP id
+ v9mr37452996qkv.138.1582360975994; 
+ Sat, 22 Feb 2020 00:42:55 -0800 (PST)
 MIME-Version: 1.0
 References: <cover.1578824547.git.alistair.francis@wdc.com>
  <4e95f95966d8d7c6a8339160dc62d81c1f6a1bfb.1578824547.git.alistair.francis@wdc.com>
@@ -61,38 +46,47 @@ References: <cover.1578824547.git.alistair.francis@wdc.com>
  <20200220001136.2f14236e@jawa>
  <CAK8P3a1b73K+RjfHONWLy_dFUucXxwd+0jTnHmkf6YqwRjit4w@mail.gmail.com>
  <20200220103716.2f526933@jawa>
- <CAK8P3a1nte0nGMw8_aeS__iJsTvsSGYYuKivAYBdiGH-GjVGew@mail.gmail.com>
-In-Reply-To: <CAK8P3a1nte0nGMw8_aeS__iJsTvsSGYYuKivAYBdiGH-GjVGew@mail.gmail.com>
-From: Alistair Francis <alistair23@gmail.com>
-Date: Fri, 21 Feb 2020 11:56:38 -0800
-Message-ID: <CAKmqyKMKZMEtzGNTz2x0VDGyU8YHp0rLFQNEJ+XU6r1BYAOExg@mail.gmail.com>
+In-Reply-To: <20200220103716.2f526933@jawa>
+From: Arnd Bergmann <arnd@arndb.de>
+Date: Sat, 22 Feb 2020 09:42:39 +0100
+X-Gmail-Original-Message-ID: <CAK8P3a2n6fRm4C5Ywyk5ys92jSOAc5SwvBVZyFOY9=4rB2pyjw@mail.gmail.com>
+Message-ID: <CAK8P3a2n6fRm4C5Ywyk5ys92jSOAc5SwvBVZyFOY9=4rB2pyjw@mail.gmail.com>
 Subject: Re: switching ARC to 64-bit time_t (Re: [RFC v6 07/23] RISC-V: Use
  64-bit time_t and off_t for RV32 and RV64)
-To: Arnd Bergmann <arnd@arndb.de>
+To: Lukasz Majewski <lukma@denx.de>
+X-Provags-ID: V03:K1:ojApY1eGg1I4pAcyCNevWVDv0FkuDGR3liplh1agaU0B8TwHEik
+ 0ZZrtCA6p9ZzUXcNFkAWji29BGoOoORiGHFp/WPFOzTg0CxqBkN9UVivvMecGemud5tqSwi
+ ryjoUNksoUFxPxW0vHizhySZTXqDb2pqU1WCoHqMs82Jj1hz7KlvEZnfcCuFnF07MB4fE9q
+ kqNqmYzo7e49bzMpFO11w==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:W8ncxF8RI1Q=:bBYOdmoaSoF+eCK1NTw1r9
+ Zkr+9Y6Wg1nm1tbZKgVFeTZa07KjS7FcuI0BwxhSPhAoVBOdGBL1yNshflK5Av2HiYSmGJPH8
+ jjTvthJYHWq83v/wx2GnxZDx3thsL+HhuKiFsJfU7fJmklUtl/MBjPAY9bqrPT6J1A5Ew4icF
+ jETBXwzVW6nJphYvsSNFQVwxa2Xx0+SISl9JxEYfs8PzZ6hjSq5rQs4WVQwznzTpeIyeBni0U
+ pbS/OQFVf1xjgkeQbY74O7DXLbJKb4ptFygNt1VlFVU8/bc8kMu7HtqXisyTC7IZ4xQQL1F9U
+ VvJeh2XyEFASUbdyW0beM06s/K7OTkHlxLlRz0+B7Qq+Ag63JTtKg6OtDuC+sGk4TDuAdlpzd
+ MdbUHb0lxXLj0G5f1nIOvlaTR4wnez5E3mEf9ia6AZBRLpYDawT14qc8tYYcPigGnBp3sNvO5
+ IqpY6Hy7POLAUPSySWnRZ1dn6Jbuktdin2WNNwP67P9pxVuGYIFM1EACdnpVK0mK1Y9N+2phu
+ CoWWPFPMuBPgEyTB3/4Z0iepr+Z7Cl1wtXRmCkB4tbgajoderf4DzynvBP9/5cs9F3+FAGhUX
+ yp4V/IVLQZy9g5LpqJYlI5DwzaVveeu9f1QpJr9JQUs32iZy8Fr4d3MdtJNvl5m2VpZ3gju+l
+ UWuiOZDFZ3SOpV213JiAw4N+q9B559kvinF/B81GsvCdGzzGXMQobausqVDTEJ7veHa2MBHDn
+ h4QEMVxFucGBD4KYzFgSybG25O2HilLcvSx+A/GYwxBbiWKNshkNE5fpc9gD/YWAWvub3DClU
+ RzQHrFTsBzE4YlezS+lW640Jus52Ji8PrULHqb6JoJMw+gjrx0=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200221_115707_858314_609C9D03 
-X-CRM114-Status: GOOD (  23.59  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20200222_004303_415169_C9BA5B92 
+X-CRM114-Status: UNSURE (   8.88  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:244 listed in]
- [list.dnswl.org]
+ no trust [212.227.126.130 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [alistair23[at]gmail.com]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [alistair23[at]gmail.com]
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [212.227.126.130 listed in wl.mailspike.net]
 X-BeenThere: linux-snps-arc@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -107,11 +101,10 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-snps-arc>,
 Cc: Florian Weimer <fweimer@redhat.com>, Helmut Grohne <helmutg@debian.org>,
  GNU C Library <libc-alpha@sourceware.org>,
  Vineet Gupta <Vineet.Gupta1@synopsys.com>,
- Palmer Dabbelt <palmerdabbelt@google.com>, Lukasz Majewski <lukma@denx.de>,
- Zong Li <zongbox@gmail.com>, debian-arm@lists.debian.org,
- Alistair Francis <alistair.francis@wdc.com>,
+ Palmer Dabbelt <palmerdabbelt@google.com>, Zong Li <zongbox@gmail.com>,
+ debian-arm@lists.debian.org, Alistair Francis <alistair.francis@wdc.com>,
  Adhemerval Zanella <adhemerval.zanella@linaro.org>,
- "Maciej W. Rozycki" <macro@wdc.com>,
+ "Maciej W. Rozycki" <macro@wdc.com>, Alistair Francis <alistair23@gmail.com>,
  arcml <linux-snps-arc@lists.infradead.org>,
  Joseph Myers <joseph@codesourcery.com>
 Content-Type: text/plain; charset="us-ascii"
@@ -119,75 +112,57 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-snps-arc" <linux-snps-arc-bounces@lists.infradead.org>
 Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org
 
-On Thu, Feb 20, 2020 at 4:37 AM Arnd Bergmann <arnd@arndb.de> wrote:
->
-> On Thu, Feb 20, 2020 at 10:37 AM Lukasz Majewski <lukma@denx.de> wrote:
-> > > On Thu, Feb 20, 2020 at 12:11 AM Lukasz Majewski <lukma@denx.de>
-> > >
-> > > Would it be possible to take a snapshot of your glibc tree
-> >
-> > The description of the status of Y2038 supporting glibc on ARM 32 can
-> > be found here [1].
-> >
-> > The most recent patches for Y2038 supporting glibc can be always found
-> > in the 'y2038_edge' branch [2].
->
-> Ok.
->
-> > > and start testing this out with debian-rebootstrap [1]?
-> >
-> > I've been using OE/Yocto for testing as it allows building glibc
-> > sources for x86_64, x86, x86-x32, arm32 (probably also for ppc32 and
-> > mips - but not tested).
-> >...
-> > However, I did not yet tried debian-rebootstrap. I will look if this
-> > can be reused as well.
->
-> The reason I'm asking about debian-rebootstrap is less about testing
-> glibc itself than about testing the rest of user space to figure out better
-> what needs to be done when rebuilding with _TIME_BITS=64, and to
-> start fixing more upstream packages, with the hope of having enough
-> of it done in time for the Debian 11 release.
+On Thu, Feb 20, 2020 at 10:37 AM Lukasz Majewski <lukma@denx.de> wrote:
 
-We have started to do that for RISC-V 32-bit. I have fixed up some
-things in Busybox and OpenSSL to improve 64-bit time_t support on
-32-bit archs. In meta-riscv (and OpenEmbedded layer) we are tracking
-issues: https://github.com/riscv/meta-riscv/issues/202
+> [2] - https://github.com/lmajewski/y2038_glibc/commits/y2038_edge
 
-Right now it's all compile focused though, not so much run time testing.
+I tried packaging this into a .deb package for use with rebootstrap, but
+ran into a couple of test failures from glibc itself, when testing the i386
+version while running on an older x86_64 kernel (4.15):
 
-Alistair
++---------------------------------------------------------------------+
+|     Encountered regressions that don't match expected failures.     |
++---------------------------------------------------------------------+
+FAIL: elf/check-localplt
+FAIL: nptl/tst-cancel19
+FAIL: rt/tst-mqueue2
+make: *** [debian/rules.d/build.mk:116:
+/home/arnd/glibc-2.31/stamp-dir/check_i386] Error 1
 
->
-> > > Are there any glibc issues that prevent it from working correctly,
-> >
-> > I think that the glibc wrappers for most important syscalls are now
-> > converted.
-> >
-> > What is missing:
-> >
-> > - NTPL (threads)
-> > - stat
->
-> Do you mean that code using these will fail to work correctly with
-> -D_TIME_BITS=64 at the moment, or that the interfaces are there
-> but they are not y2038 safe? Without pthreads or stat, we probably
-> wouldn't get too far in rebootstrap, but if the interfaces are there
-> and mostly work, then we don't need to rely on them being
-> y2038-safe just yet. An obvious next step would be to run the
-> resulting code with the RTC set 20 years ahead, and that requires
-> it all to work.
->
-> > - In-glibc test coverage when -D_TIME_BITS=64 is used. I do have
-> >   some basic tests [4], but this may be not enough.
->
-> This is probably something where debian-rebootstrap could help,
-> as building and testing more user space packages will excercise
-> additional code paths in glibc as well. There is also some work
-> in Linaro to ensure that LTP tests the low-level syscall interfaces
-> in both the time32 and time64 variants.
->
->       Arnd
+elf/check-localplt complains about the newly added symbols
+
+Extra PLT reference: libc.so: __lutimes64
+Extra PLT reference: libc.so: __wait4_time64
+Extra PLT reference: libc.so: __setitimer64
+Extra PLT reference: libc.so: __utime64
+Extra PLT reference: libc.so: __timerfd_gettime64
+Extra PLT reference: libc.so: __clock_settime64
+Extra PLT reference: libc.so: __utimes64
+Extra PLT reference: libc.so: __gettimeofday64
+Extra PLT reference: libc.so: __clock_gettime64
+Extra PLT reference: libc.so: __futimesat64
+Extra PLT reference: libc.so: __clock_getres64
+Extra PLT reference: libc.so: __futimes64
+Extra PLT reference: libc.so: __futimens64
+Extra PLT reference: libc.so: __utimensat64
+Extra PLT reference: libc.so: __getrusage64
+Extra PLT reference: libc.so: __timespec_get64
+Extra PLT reference: libc.so: __getitimer64
+Extra PLT reference: libc.so: __ppoll64
+Extra PLT reference: libc.so: __timerfd_settime64
+Extra PLT reference: libc.so: __clock_nanosleep_time64
+Extra PLT reference: libc.so: __sched_rr_get_interval64
+Extra PLT reference: libc.so: __settimeofday64
+Extra PLT reference: librt.so: __timer_gettime64
+Extra PLT reference: librt.so: __mq_timedreceive_time64
+Extra PLT reference: librt.so: __mq_timedsend_time64
+Extra PLT reference: librt.so: __timer_settime64
+
+which seems a bug in the test suite. The other two get a segfault
+that I have not debugged, but I guess this is likely a problem in your
+patches. Have you seen the same thing?
+
+       Arnd
 
 _______________________________________________
 linux-snps-arc mailing list
