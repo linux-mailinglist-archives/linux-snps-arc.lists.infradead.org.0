@@ -2,99 +2,98 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 85C6D16AF48
-	for <lists+linux-snps-arc@lfdr.de>; Mon, 24 Feb 2020 19:36:53 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id F35EE16AF5F
+	for <lists+linux-snps-arc@lfdr.de>; Mon, 24 Feb 2020 19:39:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:To:From:Subject:
-	MIME-Version:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=FV8ACMmtv82WyDh6kqyl34yna+q0uL3XoDcPDRrXQ1Q=; b=gfC
-	XnCG1VKoAshuYX4HSzdFoR/rSK0/FK/pcTp3BGhfVhCGTpKOl8HyIlt4ndHm67a523LT/u/xXxe6G
-	zgLaKspFvcynXlBflabQ6NV/shqcoycDVa9rLIVMHoixsRqdJwEtnJDPyhT9iU3CI4cVwEBVGRKQ6
-	yrnOX2vwSAHIIZzK55Pjtf5YJs/kvgD1kcxKtvqiLjH/BkYYJjPXti3dg8AQPSSY7hHBFGvpm4Xuc
-	9OKUv+c9lkhgC5NyaC99BlqiOcn+r1DS0kju1xXOLh1hFIGV+Wuo6KYL7rrpbpQ2X1Yg1IoZj2ibe
-	WM4/lljvCsOo1PnjCID3kiz/1KLOiRg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:In-Reply-To:
+	Date:References:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=RVvnZbagGTb85fRqcEhF7qyV064YXU2HKn2AKH/cr7M=; b=Zc6ziO0MBq+aPP
+	wCfE53sxHn8UgX2vIfLb5YwVL9v+wEL1myLXODD56YNu7RLpiHv+kImp/FnTFzDtGNfR2LJ0iRUIV
+	lVyEnkHagLlM4MQZASYJezwuXvfPwmHxOm9zXDVFpsDokWVp2jpRe7RSJ9Bw5239K1HhuhQtUTs4O
+	fp12Jc5D9zza1H86xXPFgMJwyGUldbsdBMaosU/C5W/V2yikEH745dMQkZaFBuarSzArMf16E8CjK
+	NpeMFkNJd3L4wvOZ/48YgzBOpTChwpFmoK1dFPUKN18Vw+gnEXl1b34WnvzZ7Ry0yylj/nDFwyoAV
+	KV5A1/XnPdlrqL2gNg+Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6Ib6-0002Bi-8l; Mon, 24 Feb 2020 18:36:52 +0000
-Received: from mx0b-001b2d01.pphosted.com ([148.163.158.5]
- helo=mx0a-001b2d01.pphosted.com)
+	id 1j6Ie6-0002OS-OB; Mon, 24 Feb 2020 18:39:58 +0000
+Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6Ib3-0002Ak-Ru
- for linux-snps-arc@lists.infradead.org; Mon, 24 Feb 2020 18:36:51 +0000
-Received: from pps.filterd (m0098414.ppops.net [127.0.0.1])
- by mx0b-001b2d01.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 01OIKjEW133754
- for <linux-snps-arc@lists.infradead.org>; Mon, 24 Feb 2020 13:36:49 -0500
-Received: from e06smtp04.uk.ibm.com (e06smtp04.uk.ibm.com [195.75.94.100])
- by mx0b-001b2d01.pphosted.com with ESMTP id 2yb1arsp64-1
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=NOT)
- for <linux-snps-arc@lists.infradead.org>; Mon, 24 Feb 2020 13:36:49 -0500
-Received: from localhost
- by e06smtp04.uk.ibm.com with IBM ESMTP SMTP Gateway: Authorized Use Only!
- Violators will be prosecuted
- for <linux-snps-arc@lists.infradead.org> from <noreply@ellerman.id.au>;
- Mon, 24 Feb 2020 18:36:47 -0000
-Received: from b06cxnps4075.portsmouth.uk.ibm.com (9.149.109.197)
- by e06smtp04.uk.ibm.com (192.168.101.134) with IBM ESMTP SMTP Gateway:
- Authorized Use Only! Violators will be prosecuted; 
- (version=TLSv1/SSLv3 cipher=AES256-GCM-SHA384 bits=256/256)
- Mon, 24 Feb 2020 18:36:44 -0000
-Received: from d06av24.portsmouth.uk.ibm.com (d06av24.portsmouth.uk.ibm.com
- [9.149.105.60])
- by b06cxnps4075.portsmouth.uk.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP id
- 01OIahnq37486692
- (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Mon, 24 Feb 2020 18:36:43 GMT
-Received: from d06av24.portsmouth.uk.ibm.com (unknown [127.0.0.1])
- by IMSVA (Postfix) with ESMTP id 75EF64204B;
- Mon, 24 Feb 2020 18:36:43 +0000 (GMT)
-Received: from d06av24.portsmouth.uk.ibm.com (unknown [127.0.0.1])
- by IMSVA (Postfix) with ESMTP id 205C842042;
- Mon, 24 Feb 2020 18:36:43 +0000 (GMT)
-Received: from ozlabs.au.ibm.com (unknown [9.192.253.14])
- by d06av24.portsmouth.uk.ibm.com (Postfix) with ESMTP;
- Mon, 24 Feb 2020 18:36:43 +0000 (GMT)
-Received: from bran.ozlabs.ibm.com (haven.au.ibm.com [9.192.254.114])
- by ozlabs.au.ibm.com (Postfix) with ESMTP id 767C4A01C4;
- Tue, 25 Feb 2020 05:36:38 +1100 (AEDT)
-Received: from 03820ad8799d (ka2.ozlabs.ibm.com [10.61.145.21])
- by bran.ozlabs.ibm.com (Postfix) with ESMTP id EECD7E00F6;
- Tue, 25 Feb 2020 05:36:41 +1100 (AEDT)
+ id 1j6Ie5-0002Nx-Er
+ for linux-snps-arc@bombadil.infradead.org; Mon, 24 Feb 2020 18:39:57 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=merlin.20170209; h=Content-Transfer-Encoding:Content-Type:
+ MIME-Version:Message-ID:In-Reply-To:Date:References:Subject:Cc:To:From:Sender
+ :Reply-To:Content-ID:Content-Description;
+ bh=wxr1t1iYzYIc7CCUkuk/yPrVLrkk08H00fL1QpFQ0sQ=; b=zQOE5i46RR7lb1+/w6MusP39aa
+ aadbOWiFtNoavmWA9/vKBV7EHigFI7F1WuBe7PGntx5dRQ2b9nrSuizN6v6wHJom/JI7TIWiCzt07
+ EZJRiG5jeyzkcl5DbIXJIQqUZmVnUhXFdJOgH7tU7EMa0oxo7BX6nwu8jOG0Wt27X588OXF+ud+1s
+ IwvSoIAJ/Fo7gKxo/SvCVIqN5tE5mj3CMM76Fx7vF89y/j9L3KAmeQ6cOwd2ufTRpW8sdHY09YjfS
+ C9KgCoHFTfwHOpZvEwgJ3QHPHwVCM2osrasAjtYrBa2dVBM/a5qkwV9SK/A3S068+7o2T3Aam6ZmF
+ MEyEe5Pw==;
+Received: from us-smtp-delivery-1.mimecast.com ([205.139.110.120]
+ helo=us-smtp-1.mimecast.com)
+ by merlin.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j6Ie3-0004rP-AC
+ for linux-snps-arc@lists.infradead.org; Mon, 24 Feb 2020 18:39:55 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1582569553;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=wxr1t1iYzYIc7CCUkuk/yPrVLrkk08H00fL1QpFQ0sQ=;
+ b=XU083ZV5Vg0jngvMS4Z8vS9PlBGGJJF4YQKxQFQvZI2XATglO365Zv50wPRJWtYFzgncIx
+ l6v6Ri/m6dmI5412JE4rPRb0e7JZEgtmcfAyhDMs84g7XZ+bGydOqA25zWrzlyC2Aim9C0
+ 3qdZhJlljw2K5EKxwsTxEwczujsaVP0=
+Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
+ [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-478--SdFeg1uMo22AX3bHqw30Q-1; Mon, 24 Feb 2020 13:39:11 -0500
+X-MC-Unique: -SdFeg1uMo22AX3bHqw30Q-1
+Received: from smtp.corp.redhat.com (int-mx08.intmail.prod.int.phx2.redhat.com
+ [10.5.11.23])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id C1F5E800D5C;
+ Mon, 24 Feb 2020 18:39:09 +0000 (UTC)
+Received: from oldenburg2.str.redhat.com (ovpn-116-104.ams2.redhat.com
+ [10.36.116.104])
+ by smtp.corp.redhat.com (Postfix) with ESMTPS id 52CFB399;
+ Mon, 24 Feb 2020 18:39:07 +0000 (UTC)
+From: Florian Weimer <fweimer@redhat.com>
+To: Vineet Gupta <Vineet.Gupta1@synopsys.com>
+Subject: Re: [PATCH] asm-generic ABI: Allow statx syscall despite fstatat64,
+ fstat64
+References: <20200224182305.28027-1-vgupta@synopsys.com>
+Date: Mon, 24 Feb 2020 19:39:06 +0100
+In-Reply-To: <20200224182305.28027-1-vgupta@synopsys.com> (Vineet Gupta's
+ message of "Mon, 24 Feb 2020 10:23:05 -0800")
+Message-ID: <87wo8bn839.fsf@oldenburg2.str.redhat.com>
+User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/26.3 (gnu/linux)
 MIME-Version: 1.0
-Subject: kisskb: OK linus/axs101_defconfig/arcompact Tue Feb 25, 05:35
-From: noreply@ellerman.id.au
-To: Vineet.Gupta1@synopsys.com, Alexey.Brodkin@synopsys.com,
- linux-snps-arc@lists.infradead.org
-Date: Mon, 24 Feb 2020 18:36:41 -0000
-X-TM-AS-GCONF: 00
-x-cbid: 20022418-0016-0000-0000-000002E9DFAD
-X-IBM-AV-DETECTION: SAVI=unused REMOTE=unused XFE=unused
-x-cbparentid: 20022418-0017-0000-0000-0000334D085D
-Message-Id: <20200224183641.1.48967@03820ad8799d>
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.572
- definitions=2020-02-24_07:2020-02-21,
- 2020-02-24 signatures=0
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- lowpriorityscore=0
- priorityscore=1501 mlxlogscore=681 malwarescore=0 mlxscore=0 adultscore=0
- phishscore=0 bulkscore=0 clxscore=1034 impostorscore=0 spamscore=0
- suspectscore=2 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2001150001 definitions=main-2002240135
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200224_103650_022370_074BBFEF 
-X-CRM114-Status: GOOD (  11.87  )
-X-Spam-Score: -0.0 (/)
-X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+X-Scanned-By: MIMEDefang 2.84 on 10.5.11.23
+X-Mimecast-Spam-Score: 0
+X-Mimecast-Originator: redhat.com
+X-Spam-Note: CRM114 invocation failed
+X-Spam-Score: -0.2 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [148.163.158.5 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [205.139.110.120 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.7 SPF_NEUTRAL            SPF: sender does not match SPF record (neutral)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-snps-arc@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -106,27 +105,27 @@ List-Post: <mailto:linux-snps-arc@lists.infradead.org>
 List-Help: <mailto:linux-snps-arc-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-snps-arc>, 
  <mailto:linux-snps-arc-request@lists.infradead.org?subject=subscribe>
+Cc: alistair23@gmail.com, linux-snps-arc@lists.infradead.org,
+ libc-alpha@sourceware.org, lukma@denx.de, arnd@arndb.de
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-snps-arc" <linux-snps-arc-bounces@lists.infradead.org>
 Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org
 
-OK linus/axs101_defconfig/arcompact Tue Feb 25, 05:35
+* Vineet Gupta:
 
-http://kisskb.ellerman.id.au/kisskb/buildresult/14151237/
+> +/* Ports define to 1 when glibc struct stat64 is not compatible with
+> +   kernel stat64. This forces use of statx syscall (and explicit interworking)
+> +   even when fstat64 syscall is available. For asm-generic ABI this happened
+> +   with switch to 64-bit time_t.  */
+> +
+> +# undef STAT64_IS_NOT_KERNEL_STAT64
 
-Commit:   Merge branch 'akpm' (patches from Andrew)
-          b0dd1eb220c06892e0a4098378c4296650f3f8db
-Compiler: arc-buildroot-linux-uclibc-gcc (Buildroot 2015.08.1) 4.8.4 / GNU ld (GNU Binutils) 2.23.2
+Sorry, I think that going forward, we prefer that such macros are always
+defined, with values 0 or 1 as appropriate.
 
-No errors found in log
-
-Possible warnings (3)
-----------------------
-
-drivers/gpu/drm/drm_dp_mst_topology.c:5400:9: warning: missing braces around initializer [-Wmissing-braces]
-drivers/gpu/drm/drm_dp_mst_topology.c:5400:9: warning: (near initialization for 'desc.ident') [-Wmissing-braces]
-net/ipv4/tcp_input.c:4398:49: warning: array subscript is above array bounds [-Warray-bounds]
+Thanks,
+Florian
 
 
 _______________________________________________
