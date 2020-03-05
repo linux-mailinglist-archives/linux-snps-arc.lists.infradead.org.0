@@ -2,53 +2,71 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E5E9C17A038
-	for <lists+linux-snps-arc@lfdr.de>; Thu,  5 Mar 2020 07:51:01 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 40B6817AF4D
+	for <lists+linux-snps-arc@lfdr.de>; Thu,  5 Mar 2020 21:03:12 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=zvUcijnU8a9gF+TtaJY9THoLyyXR9oDwYA+0UBe92U0=; b=nI6PBPvb3tYzQc2ZSvYA/Dj1gJ
-	xdtQVqvXH/6+vn8HP3hzzkPgPa+nM1E8eX9nyHxQ89HDiMpfD0yMmekFeOUto2QSTzGqZu4f/x8OH
-	b/I41TlJuetveVTy4sewe2qBs9gUBRPnO/I6h13JulSX9FVd/pk/0T9FCEVxcbgXFlRltHxhCFziw
-	6nj+IaVFaYXPskuTv2IMWZoIXZodFo0ERwRk1dARJjJasaon45vqjL4n0xV76Hd1pMNsnfXLuFCqG
-	NsKhmFRBdUAcWlDFl77qbFZjEEZROL+IhqrZrFEo8lrHZqnXAHNxvrtUC+4eK7cP0kqXE4+do+qgR
-	zmA2wSUA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=39UKYoLrutA0FLk0do9HvlhRjwIYmQuZIBWu3WcUKgE=; b=ZlxfjBG3Qi28Y+
+	pyqdN/eqko7/NyQ9a+u5WcebiGZX0evdLfnheZIiWRIKIk6/LaH36FU2juumLTUPBr/zBU7FXYGt6
+	3j0Xm4mYskVmxNq9NJ5cu1/65ws4d7Mk9rcpBt5vZiEBRcnYFmuVNbWZI6toJdsqecqfF9s9h5wQs
+	evmK9JTqTktf73zyuqVmfZSolq8ziISvEJGdTUj0W5HNOF+BppmBrX7bywXvxJ5jUd4Afd0MT/oH2
+	NqEldyMV7psrakXoOMmrWtBOE2YwncFGodieOMMSyBaBw8DFVdXtUS9g/a5uheGkZrfUg+KtpJSHa
+	kIQwirSbFNVRa2a57jRA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j9kLU-0008MK-E9; Thu, 05 Mar 2020 06:51:00 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j9kLM-0008GU-MI; Thu, 05 Mar 2020 06:50:55 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 3F9941FB;
- Wed,  4 Mar 2020 22:50:51 -0800 (PST)
-Received: from p8cg001049571a15.arm.com (unknown [10.163.1.88])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id B5EE33F534;
- Wed,  4 Mar 2020 22:54:31 -0800 (PST)
-From: Anshuman Khandual <anshuman.khandual@arm.com>
-To: linux-mm@kvack.org
-Subject: [PATCH 1/2] mm/vma: Define a default value for VM_DATA_DEFAULT_FLAGS
-Date: Thu,  5 Mar 2020 12:20:13 +0530
-Message-Id: <1583391014-8170-2-git-send-email-anshuman.khandual@arm.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1583391014-8170-1-git-send-email-anshuman.khandual@arm.com>
-References: <1583391014-8170-1-git-send-email-anshuman.khandual@arm.com>
+	id 1j9wi6-0006lY-Ui; Thu, 05 Mar 2020 20:03:10 +0000
+Received: from smtprelay-out1.synopsys.com ([149.117.87.133])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j9wi2-0006iE-N7
+ for linux-snps-arc@lists.infradead.org; Thu, 05 Mar 2020 20:03:08 +0000
+Received: from mailhost.synopsys.com (mdc-mailhost1.synopsys.com
+ [10.225.0.209])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
+ (No client certificate requested)
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 12234C10DD;
+ Thu,  5 Mar 2020 20:03:01 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
+ t=1583438586; bh=KxmfiRKc96Lw0HUN1flKo0En+90Ix6xmPDnhmOpmCYU=;
+ h=From:To:Cc:Subject:Date:From;
+ b=RUxeWUMRh/BaX0ePHWDbb+qAtJSk16MF80nfXBNyY9NIsRGbaNfQnEDp0O1Dt41Zs
+ SSjm4S+WFKMGbxMw2Efo/u4Lq09Y/L659RZXh6FMfKTuwwcbstalog6UF01G3+JpFN
+ RbHrcnupp285rzUM7yjJ7ecR2j6jW/YyqyPSVDaRGC9KhZf81U/7mUQfdgvKXnKZ7y
+ bnO5j938rmbrkL665pB8DN9h5ljM5M5Erl/3tyJdskP0bq1mJIYlyBZvR10iYlDCyj
+ NJYcLsYQeKmbt+A8GX6Gq22JPXS13rrbAl8iw3uVHslPd+HbT6dKx9JGVoKyS8Cko+
+ s18puZuPKdojQ==
+Received: from paltsev-e7480.internal.synopsys.com (unknown [10.121.8.79])
+ by mailhost.synopsys.com (Postfix) with ESMTP id 58E0CA005B;
+ Thu,  5 Mar 2020 20:02:58 +0000 (UTC)
+From: Eugeniy Paltsev <Eugeniy.Paltsev@synopsys.com>
+To: linux-snps-arc@lists.infradead.org,
+ Vineet Gupta <Vineet.Gupta1@synopsys.com>
+Subject: [PATCH v2 0/4] ARC: handle DSP presence in HW
+Date: Thu,  5 Mar 2020 23:02:48 +0300
+Message-Id: <20200305200252.14278-1-Eugeniy.Paltsev@synopsys.com>
+X-Mailer: git-send-email 2.21.1
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200304_225052_843367_EE7EFFAB 
-X-CRM114-Status: GOOD (  12.27  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200305_120306_789790_70463A66 
+X-CRM114-Status: UNSURE (   9.60  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-snps-arc@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -60,559 +78,58 @@ List-Post: <mailto:linux-snps-arc@lists.infradead.org>
 List-Help: <mailto:linux-snps-arc-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-snps-arc>, 
  <mailto:linux-snps-arc-request@lists.infradead.org?subject=subscribe>
-Cc: Rich Felker <dalias@libc.org>, linux-ia64@vger.kernel.org,
- linux-sh@vger.kernel.org, Catalin Marinas <catalin.marinas@arm.com>,
- Heiko Carstens <heiko.carstens@de.ibm.com>, linux-mips@vger.kernel.org,
- "James E.J. Bottomley" <James.Bottomley@HansenPartnership.com>,
- Guo Ren <guoren@kernel.org>, linux-parisc@vger.kernel.org,
- sparclinux@vger.kernel.org, linux-hexagon@vger.kernel.org,
- linux-riscv@lists.infradead.org, Jonas Bonn <jonas@southpole.se>,
- linux-s390@vger.kernel.org, linux-snps-arc@lists.infradead.org,
- linux-c6x-dev@linux-c6x.org, Brian Cain <bcain@codeaurora.org>,
- Michael Ellerman <mpe@ellerman.id.au>, hughd@google.com,
- Russell King <linux@armlinux.org.uk>, Ley Foon Tan <ley.foon.tan@intel.com>,
- Geert Uytterhoeven <geert@linux-m68k.org>,
- linux-arm-kernel@lists.infradead.org, Mark Salter <msalter@redhat.com>,
- Paul Burton <paulburton@kernel.org>, uclinux-h8-devel@lists.sourceforge.jp,
- linux-xtensa@linux-xtensa.org, Anshuman Khandual <anshuman.khandual@arm.com>,
- Jeff Dike <jdike@addtoit.com>, linux-um@lists.infradead.org,
- linux-m68k@lists.linux-m68k.org, openrisc@lists.librecores.org,
- Paul Walmsley <paul.walmsley@sifive.com>, Thomas Gleixner <tglx@linutronix.de>,
- Guan Xuetao <gxt@pku.edu.cn>, vbabka@suse.cz,
- Richard Henderson <rth@twiddle.net>, Chris Zankel <chris@zankel.net>,
- Michal Simek <monstr@monstr.eu>, Tony Luck <tony.luck@intel.com>,
- Yoshinori Sato <ysato@users.sourceforge.jp>, Nick Hu <nickhu@andestech.com>,
- Vineet Gupta <vgupta@synopsys.com>, linux-kernel@vger.kernel.org,
- Ralf Baechle <ralf@linux-mips.org>, linux-alpha@vger.kernel.org,
- nios2-dev@lists.rocketboards.org, Andrew Morton <akpm@linux-foundation.org>,
- linuxppc-dev@lists.ozlabs.org, "David S. Miller" <davem@davemloft.net>
-MIME-Version: 1.0
+Cc: Alexey Brodkin <Alexey.Brodkin@synopsys.com>,
+ Eugeniy Paltsev <Eugeniy.Paltsev@synopsys.com>, linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-snps-arc" <linux-snps-arc-bounces@lists.infradead.org>
 Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org
 
-There are many platforms with exact same value for VM_DATA_DEFAULT_FLAGS
-This creates a default value for VM_DATA_DEFAULT_FLAGS in line with the
-existing VM_STACK_DEFAULT_FLAGS. While here, also define some more macros
-with standard VMA access flag combinations that are used frequently across
-many platforms. Apart from simplification, this reduces code duplication
-as well.
+Arc processors may have DSP extension which is optional.
+In this patch series we:
+* Handle issues caused by DSP extension presence in HW
+* Add optional support for DSP-enabled applications in
+  userspace (with optional AGU extension support)
 
-Cc: Richard Henderson <rth@twiddle.net>
-Cc: Vineet Gupta <vgupta@synopsys.com>
-Cc: Russell King <linux@armlinux.org.uk>
-Cc: Catalin Marinas <catalin.marinas@arm.com>
-Cc: Mark Salter <msalter@redhat.com>
-Cc: Guo Ren <guoren@kernel.org>
-Cc: Yoshinori Sato <ysato@users.sourceforge.jp>
-Cc: Brian Cain <bcain@codeaurora.org>
-Cc: Tony Luck <tony.luck@intel.com>
-Cc: Geert Uytterhoeven <geert@linux-m68k.org>
-Cc: Michal Simek <monstr@monstr.eu>
-Cc: Ralf Baechle <ralf@linux-mips.org>
-Cc: Paul Burton <paulburton@kernel.org>
-Cc: Nick Hu <nickhu@andestech.com>
-Cc: Ley Foon Tan <ley.foon.tan@intel.com>
-Cc: Jonas Bonn <jonas@southpole.se>
-Cc: "James E.J. Bottomley" <James.Bottomley@HansenPartnership.com>
-Cc: Michael Ellerman <mpe@ellerman.id.au>
-Cc: Paul Walmsley <paul.walmsley@sifive.com>
-Cc: Heiko Carstens <heiko.carstens@de.ibm.com>
-Cc: Rich Felker <dalias@libc.org>
-Cc: "David S. Miller" <davem@davemloft.net>
-Cc: Guan Xuetao <gxt@pku.edu.cn>
-Cc: Thomas Gleixner <tglx@linutronix.de>
-Cc: Jeff Dike <jdike@addtoit.com>
-Cc: Chris Zankel <chris@zankel.net>
-Cc: Andrew Morton <akpm@linux-foundation.org>
-Cc: linux-alpha@vger.kernel.org
-Cc: linux-kernel@vger.kernel.org
-Cc: linux-snps-arc@lists.infradead.org
-Cc: linux-arm-kernel@lists.infradead.org
-Cc: linux-c6x-dev@linux-c6x.org
-Cc: uclinux-h8-devel@lists.sourceforge.jp
-Cc: linux-hexagon@vger.kernel.org
-Cc: linux-ia64@vger.kernel.org
-Cc: linux-m68k@lists.linux-m68k.org
-Cc: linux-mips@vger.kernel.org
-Cc: nios2-dev@lists.rocketboards.org
-Cc: openrisc@lists.librecores.org
-Cc: linux-parisc@vger.kernel.org
-Cc: linuxppc-dev@lists.ozlabs.org
-Cc: linux-riscv@lists.infradead.org
-Cc: linux-s390@vger.kernel.org
-Cc: linux-sh@vger.kernel.org
-Cc: sparclinux@vger.kernel.org
-Cc: linux-um@lists.infradead.org
-Cc: linux-xtensa@linux-xtensa.org
-Cc: linux-mm@kvack.org
-Signed-off-by: Anshuman Khandual <anshuman.khandual@arm.com>
-Acked-by: Geert Uytterhoeven <geert@linux-m68k.org>
-Reviewed-by: Vlastimil Babka <vbabka@suse.cz>
----
- arch/alpha/include/asm/page.h      |  3 ---
- arch/arc/include/asm/page.h        |  2 +-
- arch/arm/include/asm/page.h        |  4 +---
- arch/arm64/include/asm/page.h      |  4 +---
- arch/c6x/include/asm/page.h        |  5 +----
- arch/csky/include/asm/page.h       |  3 ---
- arch/h8300/include/asm/page.h      |  2 --
- arch/hexagon/include/asm/page.h    |  3 +--
- arch/ia64/include/asm/page.h       |  5 +----
- arch/m68k/include/asm/page.h       |  3 ---
- arch/microblaze/include/asm/page.h |  2 --
- arch/mips/include/asm/page.h       |  5 +----
- arch/nds32/include/asm/page.h      |  3 ---
- arch/nios2/include/asm/page.h      |  3 +--
- arch/openrisc/include/asm/page.h   |  5 -----
- arch/parisc/include/asm/page.h     |  3 ---
- arch/powerpc/include/asm/page.h    |  9 ++-------
- arch/powerpc/include/asm/page_64.h |  7 ++-----
- arch/riscv/include/asm/page.h      |  3 +--
- arch/s390/include/asm/page.h       |  3 +--
- arch/sh/include/asm/page.h         |  3 ---
- arch/sparc/include/asm/page_32.h   |  3 ---
- arch/sparc/include/asm/page_64.h   |  3 ---
- arch/unicore32/include/asm/page.h  |  3 ---
- arch/x86/include/asm/page_types.h  |  4 +---
- arch/x86/um/asm/vm-flags.h         | 10 ++--------
- arch/xtensa/include/asm/page.h     |  3 ---
- include/linux/mm.h                 | 14 ++++++++++++++
- 28 files changed, 31 insertions(+), 89 deletions(-)
+Changes v1->v2:
+ * use r10:r11 register pair as a scratch for ASM code instead of
+   r58:r59
+ * reset DSP_CTRL to value suitable for kernel also in case of
+   DSP for userspcae enabled
+ * Use "Ir" instead of "I" parameter modifier to inline ASM
+   to give compiler wiggle room.
+ * Save / restore ACC0_GLO, ACC0_GHI only in case of context
+   switch
+ * Don't define additional options in headers to not introduce
+   explicit include dependencies
+ * Mode DSP config check to DSP code itself
+ * Minor fixes
 
-diff --git a/arch/alpha/include/asm/page.h b/arch/alpha/include/asm/page.h
-index f3fb2848470a..e241bd88880f 100644
---- a/arch/alpha/include/asm/page.h
-+++ b/arch/alpha/include/asm/page.h
-@@ -90,9 +90,6 @@ typedef struct page *pgtable_t;
- #define virt_addr_valid(kaddr)	pfn_valid(__pa(kaddr) >> PAGE_SHIFT)
- #endif /* CONFIG_DISCONTIGMEM */
- 
--#define VM_DATA_DEFAULT_FLAGS		(VM_READ | VM_WRITE | VM_EXEC | \
--					 VM_MAYREAD | VM_MAYWRITE | VM_MAYEXEC)
--
- #include <asm-generic/memory_model.h>
- #include <asm-generic/getorder.h>
- 
-diff --git a/arch/arc/include/asm/page.h b/arch/arc/include/asm/page.h
-index 0a32e8cfd074..b0dfed0f12be 100644
---- a/arch/arc/include/asm/page.h
-+++ b/arch/arc/include/asm/page.h
-@@ -102,7 +102,7 @@ typedef pte_t * pgtable_t;
- #define virt_addr_valid(kaddr)  pfn_valid(virt_to_pfn(kaddr))
- 
- /* Default Permissions for stack/heaps pages (Non Executable) */
--#define VM_DATA_DEFAULT_FLAGS   (VM_READ | VM_WRITE | VM_MAYREAD | VM_MAYWRITE | VM_MAYEXEC)
-+#define VM_DATA_DEFAULT_FLAGS	VM_DATA_FLAGS_NON_EXEC
- 
- #define WANT_PAGE_VIRTUAL   1
- 
-diff --git a/arch/arm/include/asm/page.h b/arch/arm/include/asm/page.h
-index c2b75cba26df..11b058a72a5b 100644
---- a/arch/arm/include/asm/page.h
-+++ b/arch/arm/include/asm/page.h
-@@ -161,9 +161,7 @@ extern int pfn_valid(unsigned long);
- 
- #endif /* !__ASSEMBLY__ */
- 
--#define VM_DATA_DEFAULT_FLAGS \
--	(((current->personality & READ_IMPLIES_EXEC) ? VM_EXEC : 0) | \
--	 VM_READ | VM_WRITE | VM_MAYREAD | VM_MAYWRITE | VM_MAYEXEC)
-+#define VM_DATA_DEFAULT_FLAGS	VM_DATA_FLAGS_TSK_EXEC
- 
- #include <asm-generic/getorder.h>
- 
-diff --git a/arch/arm64/include/asm/page.h b/arch/arm64/include/asm/page.h
-index d39ddb258a04..cb4e1e6ca385 100644
---- a/arch/arm64/include/asm/page.h
-+++ b/arch/arm64/include/asm/page.h
-@@ -32,9 +32,7 @@ extern int pfn_valid(unsigned long);
- 
- #endif /* !__ASSEMBLY__ */
- 
--#define VM_DATA_DEFAULT_FLAGS \
--	(((current->personality & READ_IMPLIES_EXEC) ? VM_EXEC : 0) | \
--	 VM_READ | VM_WRITE | VM_MAYREAD | VM_MAYWRITE | VM_MAYEXEC)
-+#define VM_DATA_DEFAULT_FLAGS	VM_DATA_FLAGS_TSK_EXEC
- 
- #include <asm-generic/getorder.h>
- 
-diff --git a/arch/c6x/include/asm/page.h b/arch/c6x/include/asm/page.h
-index 70db1e7632bc..40079899084d 100644
---- a/arch/c6x/include/asm/page.h
-+++ b/arch/c6x/include/asm/page.h
-@@ -2,10 +2,7 @@
- #ifndef _ASM_C6X_PAGE_H
- #define _ASM_C6X_PAGE_H
- 
--#define VM_DATA_DEFAULT_FLAGS \
--	(VM_READ | VM_WRITE | \
--	((current->personality & READ_IMPLIES_EXEC) ? VM_EXEC : 0) | \
--		 VM_MAYREAD | VM_MAYWRITE | VM_MAYEXEC)
-+#define VM_DATA_DEFAULT_FLAGS	VM_DATA_FLAGS_TSK_EXEC
- 
- #include <asm-generic/page.h>
- 
-diff --git a/arch/csky/include/asm/page.h b/arch/csky/include/asm/page.h
-index 9738eacefdc7..9b98bf31d57c 100644
---- a/arch/csky/include/asm/page.h
-+++ b/arch/csky/include/asm/page.h
-@@ -85,9 +85,6 @@ extern unsigned long va_pa_offset;
- 				 PHYS_OFFSET_OFFSET)
- #define virt_to_page(x)	(mem_map + MAP_NR(x))
- 
--#define VM_DATA_DEFAULT_FLAGS	(VM_READ | VM_WRITE | VM_EXEC | \
--				VM_MAYREAD | VM_MAYWRITE | VM_MAYEXEC)
--
- #define pfn_to_kaddr(x)	__va(PFN_PHYS(x))
- 
- #include <asm-generic/memory_model.h>
-diff --git a/arch/h8300/include/asm/page.h b/arch/h8300/include/asm/page.h
-index 8da5124ad344..53e037544239 100644
---- a/arch/h8300/include/asm/page.h
-+++ b/arch/h8300/include/asm/page.h
-@@ -6,8 +6,6 @@
- #include <linux/types.h>
- 
- #define MAP_NR(addr) (((uintptr_t)(addr)-PAGE_OFFSET) >> PAGE_SHIFT)
--#define VM_DATA_DEFAULT_FLAGS	(VM_READ | VM_WRITE | VM_EXEC | \
--				 VM_MAYREAD | VM_MAYWRITE | VM_MAYEXEC)
- 
- #ifndef __ASSEMBLY__
- extern unsigned long rom_length;
-diff --git a/arch/hexagon/include/asm/page.h b/arch/hexagon/include/asm/page.h
-index ee31f36f48f3..7cbf719c578e 100644
---- a/arch/hexagon/include/asm/page.h
-+++ b/arch/hexagon/include/asm/page.h
-@@ -93,8 +93,7 @@ struct page;
- #define virt_to_page(kaddr) pfn_to_page(PFN_DOWN(__pa(kaddr)))
- 
- /* Default vm area behavior is non-executable.  */
--#define VM_DATA_DEFAULT_FLAGS (VM_READ | VM_WRITE | \
--				VM_MAYREAD | VM_MAYWRITE | VM_MAYEXEC)
-+#define VM_DATA_DEFAULT_FLAGS	VM_DATA_FLAGS_NON_EXEC
- 
- #define pfn_valid(pfn) ((pfn) < max_mapnr)
- #define virt_addr_valid(kaddr) pfn_valid(__pa(kaddr) >> PAGE_SHIFT)
-diff --git a/arch/ia64/include/asm/page.h b/arch/ia64/include/asm/page.h
-index 5798bd2b462c..b69a5499d75b 100644
---- a/arch/ia64/include/asm/page.h
-+++ b/arch/ia64/include/asm/page.h
-@@ -218,10 +218,7 @@ get_order (unsigned long size)
- 
- #define PAGE_OFFSET			RGN_BASE(RGN_KERNEL)
- 
--#define VM_DATA_DEFAULT_FLAGS		(VM_READ | VM_WRITE |					\
--					 VM_MAYREAD | VM_MAYWRITE | VM_MAYEXEC |		\
--					 (((current->personality & READ_IMPLIES_EXEC) != 0)	\
--					  ? VM_EXEC : 0))
-+#define VM_DATA_DEFAULT_FLAGS	VM_DATA_FLAGS_TSK_EXEC
- 
- #define GATE_ADDR		RGN_BASE(RGN_GATE)
- 
-diff --git a/arch/m68k/include/asm/page.h b/arch/m68k/include/asm/page.h
-index 05e1e1e77a9a..9d2ef0a51720 100644
---- a/arch/m68k/include/asm/page.h
-+++ b/arch/m68k/include/asm/page.h
-@@ -55,9 +55,6 @@ extern unsigned long _ramend;
- #define __phys_to_pfn(paddr)	((unsigned long)((paddr) >> PAGE_SHIFT))
- #define __pfn_to_phys(pfn)	PFN_PHYS(pfn)
- 
--#define VM_DATA_DEFAULT_FLAGS	(VM_READ | VM_WRITE | VM_EXEC | \
--				 VM_MAYREAD | VM_MAYWRITE | VM_MAYEXEC)
--
- #include <asm-generic/getorder.h>
- 
- #endif /* _M68K_PAGE_H */
-diff --git a/arch/microblaze/include/asm/page.h b/arch/microblaze/include/asm/page.h
-index f4b44b24b02e..43bd560b7b67 100644
---- a/arch/microblaze/include/asm/page.h
-+++ b/arch/microblaze/include/asm/page.h
-@@ -197,8 +197,6 @@ extern int page_is_ram(unsigned long pfn);
- 
- #ifdef CONFIG_MMU
- 
--#define VM_DATA_DEFAULT_FLAGS	(VM_READ | VM_WRITE | VM_EXEC | \
--				 VM_MAYREAD | VM_MAYWRITE | VM_MAYEXEC)
- #endif /* CONFIG_MMU */
- 
- #endif /* __KERNEL__ */
-diff --git a/arch/mips/include/asm/page.h b/arch/mips/include/asm/page.h
-index 0ba4ce6e2bf3..e2f503fc7a84 100644
---- a/arch/mips/include/asm/page.h
-+++ b/arch/mips/include/asm/page.h
-@@ -253,10 +253,7 @@ extern bool __virt_addr_valid(const volatile void *kaddr);
- #define virt_addr_valid(kaddr)						\
- 	__virt_addr_valid((const volatile void *) (kaddr))
- 
--#define VM_DATA_DEFAULT_FLAGS \
--	(VM_READ | VM_WRITE | \
--	 ((current->personality & READ_IMPLIES_EXEC) ? VM_EXEC : 0) | \
--	 VM_MAYREAD | VM_MAYWRITE | VM_MAYEXEC)
-+#define VM_DATA_DEFAULT_FLAGS	VM_DATA_FLAGS_TSK_EXEC
- 
- #include <asm-generic/memory_model.h>
- #include <asm-generic/getorder.h>
-diff --git a/arch/nds32/include/asm/page.h b/arch/nds32/include/asm/page.h
-index 86b32014c5f9..add33a7f02c8 100644
---- a/arch/nds32/include/asm/page.h
-+++ b/arch/nds32/include/asm/page.h
-@@ -59,9 +59,6 @@ typedef struct page *pgtable_t;
- 
- #endif /* !__ASSEMBLY__ */
- 
--#define VM_DATA_DEFAULT_FLAGS	(VM_READ | VM_WRITE | VM_EXEC | \
--				 VM_MAYREAD | VM_MAYWRITE | VM_MAYEXEC)
--
- #endif /* __KERNEL__ */
- 
- #endif
-diff --git a/arch/nios2/include/asm/page.h b/arch/nios2/include/asm/page.h
-index 79fcac61f6ef..6a989819a7c1 100644
---- a/arch/nios2/include/asm/page.h
-+++ b/arch/nios2/include/asm/page.h
-@@ -98,8 +98,7 @@ static inline bool pfn_valid(unsigned long pfn)
- # define virt_to_page(vaddr)	pfn_to_page(PFN_DOWN(virt_to_phys(vaddr)))
- # define virt_addr_valid(vaddr)	pfn_valid(PFN_DOWN(virt_to_phys(vaddr)))
- 
--# define VM_DATA_DEFAULT_FLAGS	(VM_READ | VM_WRITE | \
--				 VM_MAYREAD | VM_MAYWRITE | VM_MAYEXEC)
-+# define VM_DATA_DEFAULT_FLAGS	VM_DATA_FLAGS_NON_EXEC
- 
- #include <asm-generic/memory_model.h>
- 
-diff --git a/arch/openrisc/include/asm/page.h b/arch/openrisc/include/asm/page.h
-index 01069db59454..aab6e64d6db4 100644
---- a/arch/openrisc/include/asm/page.h
-+++ b/arch/openrisc/include/asm/page.h
-@@ -86,11 +86,6 @@ typedef struct page *pgtable_t;
- 
- #endif /* __ASSEMBLY__ */
- 
--
--#define VM_DATA_DEFAULT_FLAGS	(VM_READ | VM_WRITE | VM_EXEC | \
--				 VM_MAYREAD | VM_MAYWRITE | VM_MAYEXEC)
--
--
- #include <asm-generic/memory_model.h>
- #include <asm-generic/getorder.h>
- 
-diff --git a/arch/parisc/include/asm/page.h b/arch/parisc/include/asm/page.h
-index 796ae29e9b9a..6b3f6740a6a6 100644
---- a/arch/parisc/include/asm/page.h
-+++ b/arch/parisc/include/asm/page.h
-@@ -180,9 +180,6 @@ extern int npmem_ranges;
- #define page_to_phys(page)	(page_to_pfn(page) << PAGE_SHIFT)
- #define virt_to_page(kaddr)     pfn_to_page(__pa(kaddr) >> PAGE_SHIFT)
- 
--#define VM_DATA_DEFAULT_FLAGS	(VM_READ | VM_WRITE | VM_EXEC | \
--				 VM_MAYREAD | VM_MAYWRITE | VM_MAYEXEC)
--
- #include <asm-generic/memory_model.h>
- #include <asm-generic/getorder.h>
- #include <asm/pdc.h>
-diff --git a/arch/powerpc/include/asm/page.h b/arch/powerpc/include/asm/page.h
-index 080a0bf8e54b..3ee8df0f66e0 100644
---- a/arch/powerpc/include/asm/page.h
-+++ b/arch/powerpc/include/asm/page.h
-@@ -240,13 +240,8 @@ static inline bool pfn_valid(unsigned long pfn)
-  * and needs to be executable.  This means the whole heap ends
-  * up being executable.
-  */
--#define VM_DATA_DEFAULT_FLAGS32 \
--	(((current->personality & READ_IMPLIES_EXEC) ? VM_EXEC : 0) | \
--				 VM_READ | VM_WRITE | \
--				 VM_MAYREAD | VM_MAYWRITE | VM_MAYEXEC)
--
--#define VM_DATA_DEFAULT_FLAGS64	(VM_READ | VM_WRITE | \
--				 VM_MAYREAD | VM_MAYWRITE | VM_MAYEXEC)
-+#define VM_DATA_DEFAULT_FLAGS32	VM_DATA_FLAGS_TSK_EXEC
-+#define VM_DATA_DEFAULT_FLAGS64	VM_DATA_FLAGS_NON_EXEC
- 
- #ifdef __powerpc64__
- #include <asm/page_64.h>
-diff --git a/arch/powerpc/include/asm/page_64.h b/arch/powerpc/include/asm/page_64.h
-index 5962797f784a..79a9b7c6a132 100644
---- a/arch/powerpc/include/asm/page_64.h
-+++ b/arch/powerpc/include/asm/page_64.h
-@@ -94,11 +94,8 @@ extern u64 ppc64_pft_size;
-  * stack by default, so in the absence of a PT_GNU_STACK program header
-  * we turn execute permission off.
-  */
--#define VM_STACK_DEFAULT_FLAGS32	(VM_READ | VM_WRITE | VM_EXEC | \
--					 VM_MAYREAD | VM_MAYWRITE | VM_MAYEXEC)
--
--#define VM_STACK_DEFAULT_FLAGS64	(VM_READ | VM_WRITE | \
--					 VM_MAYREAD | VM_MAYWRITE | VM_MAYEXEC)
-+#define VM_STACK_DEFAULT_FLAGS32	VM_DATA_FLAGS_EXEC
-+#define VM_STACK_DEFAULT_FLAGS64	VM_DATA_FLAGS_NON_EXEC
- 
- #define VM_STACK_DEFAULT_FLAGS \
- 	(is_32bit_task() ? \
-diff --git a/arch/riscv/include/asm/page.h b/arch/riscv/include/asm/page.h
-index 8ca1930caa44..2d50f76efe48 100644
---- a/arch/riscv/include/asm/page.h
-+++ b/arch/riscv/include/asm/page.h
-@@ -137,8 +137,7 @@ extern phys_addr_t __phys_addr_symbol(unsigned long x);
- 
- #define virt_addr_valid(vaddr)	(pfn_valid(virt_to_pfn(vaddr)))
- 
--#define VM_DATA_DEFAULT_FLAGS	(VM_READ | VM_WRITE | \
--				 VM_MAYREAD | VM_MAYWRITE | VM_MAYEXEC)
-+#define VM_DATA_DEFAULT_FLAGS	VM_DATA_FLAGS_NON_EXEC
- 
- #include <asm-generic/memory_model.h>
- #include <asm-generic/getorder.h>
-diff --git a/arch/s390/include/asm/page.h b/arch/s390/include/asm/page.h
-index 1019efd85b9d..089f49230966 100644
---- a/arch/s390/include/asm/page.h
-+++ b/arch/s390/include/asm/page.h
-@@ -176,8 +176,7 @@ static inline int devmem_is_allowed(unsigned long pfn)
- 
- #define virt_addr_valid(kaddr)	pfn_valid(__pa(kaddr) >> PAGE_SHIFT)
- 
--#define VM_DATA_DEFAULT_FLAGS	(VM_READ | VM_WRITE | \
--				 VM_MAYREAD | VM_MAYWRITE | VM_MAYEXEC)
-+#define VM_DATA_DEFAULT_FLAGS	VM_DATA_FLAGS_NON_EXEC
- 
- #include <asm-generic/memory_model.h>
- #include <asm-generic/getorder.h>
-diff --git a/arch/sh/include/asm/page.h b/arch/sh/include/asm/page.h
-index 5eef8be3e59f..ea8d68f58e39 100644
---- a/arch/sh/include/asm/page.h
-+++ b/arch/sh/include/asm/page.h
-@@ -182,9 +182,6 @@ typedef struct page *pgtable_t;
- #endif
- #define virt_addr_valid(kaddr)	pfn_valid(__pa(kaddr) >> PAGE_SHIFT)
- 
--#define VM_DATA_DEFAULT_FLAGS	(VM_READ | VM_WRITE | VM_EXEC | \
--				 VM_MAYREAD | VM_MAYWRITE | VM_MAYEXEC)
--
- #include <asm-generic/memory_model.h>
- #include <asm-generic/getorder.h>
- 
-diff --git a/arch/sparc/include/asm/page_32.h b/arch/sparc/include/asm/page_32.h
-index b76d59edec8c..478260002836 100644
---- a/arch/sparc/include/asm/page_32.h
-+++ b/arch/sparc/include/asm/page_32.h
-@@ -133,9 +133,6 @@ extern unsigned long pfn_base;
- #define pfn_valid(pfn)		(((pfn) >= (pfn_base)) && (((pfn)-(pfn_base)) < max_mapnr))
- #define virt_addr_valid(kaddr)	((((unsigned long)(kaddr)-PAGE_OFFSET)>>PAGE_SHIFT) < max_mapnr)
- 
--#define VM_DATA_DEFAULT_FLAGS	(VM_READ | VM_WRITE | VM_EXEC | \
--				 VM_MAYREAD | VM_MAYWRITE | VM_MAYEXEC)
--
- #include <asm-generic/memory_model.h>
- #include <asm-generic/getorder.h>
- 
-diff --git a/arch/sparc/include/asm/page_64.h b/arch/sparc/include/asm/page_64.h
-index e80f2d5bf62f..254dffd85fb1 100644
---- a/arch/sparc/include/asm/page_64.h
-+++ b/arch/sparc/include/asm/page_64.h
-@@ -158,9 +158,6 @@ extern unsigned long PAGE_OFFSET;
- 
- #endif /* !(__ASSEMBLY__) */
- 
--#define VM_DATA_DEFAULT_FLAGS	(VM_READ | VM_WRITE | VM_EXEC | \
--				 VM_MAYREAD | VM_MAYWRITE | VM_MAYEXEC)
--
- #include <asm-generic/getorder.h>
- 
- #endif /* _SPARC64_PAGE_H */
-diff --git a/arch/unicore32/include/asm/page.h b/arch/unicore32/include/asm/page.h
-index 8a89335673f9..96d6bdf180bd 100644
---- a/arch/unicore32/include/asm/page.h
-+++ b/arch/unicore32/include/asm/page.h
-@@ -69,9 +69,6 @@ extern int pfn_valid(unsigned long);
- 
- #endif /* !__ASSEMBLY__ */
- 
--#define VM_DATA_DEFAULT_FLAGS \
--	(VM_READ | VM_WRITE | VM_EXEC | VM_MAYREAD | VM_MAYWRITE | VM_MAYEXEC)
--
- #include <asm-generic/getorder.h>
- 
- #endif
-diff --git a/arch/x86/include/asm/page_types.h b/arch/x86/include/asm/page_types.h
-index c85e15010f48..e27aa6be6320 100644
---- a/arch/x86/include/asm/page_types.h
-+++ b/arch/x86/include/asm/page_types.h
-@@ -35,9 +35,7 @@
- 
- #define PAGE_OFFSET		((unsigned long)__PAGE_OFFSET)
- 
--#define VM_DATA_DEFAULT_FLAGS \
--	(((current->personality & READ_IMPLIES_EXEC) ? VM_EXEC : 0 ) | \
--	 VM_READ | VM_WRITE | VM_MAYREAD | VM_MAYWRITE | VM_MAYEXEC)
-+#define VM_DATA_DEFAULT_FLAGS	VM_DATA_FLAGS_TSK_EXEC
- 
- #define __PHYSICAL_START	ALIGN(CONFIG_PHYSICAL_START, \
- 				      CONFIG_PHYSICAL_ALIGN)
-diff --git a/arch/x86/um/asm/vm-flags.h b/arch/x86/um/asm/vm-flags.h
-index 7c297e9e2413..df7a3896f5dd 100644
---- a/arch/x86/um/asm/vm-flags.h
-+++ b/arch/x86/um/asm/vm-flags.h
-@@ -9,17 +9,11 @@
- 
- #ifdef CONFIG_X86_32
- 
--#define VM_DATA_DEFAULT_FLAGS \
--	(VM_READ | VM_WRITE | \
--	((current->personality & READ_IMPLIES_EXEC) ? VM_EXEC : 0 ) | \
--		 VM_MAYREAD | VM_MAYWRITE | VM_MAYEXEC)
-+#define VM_DATA_DEFAULT_FLAGS	VM_DATA_FLAGS_TSK_EXEC
- 
- #else
- 
--#define VM_DATA_DEFAULT_FLAGS (VM_READ | VM_WRITE | VM_EXEC | \
--	VM_MAYREAD | VM_MAYWRITE | VM_MAYEXEC)
--#define VM_STACK_DEFAULT_FLAGS (VM_GROWSDOWN | VM_READ | VM_WRITE | \
--	VM_EXEC | VM_MAYREAD | VM_MAYWRITE | VM_MAYEXEC)
-+#define VM_STACK_DEFAULT_FLAGS (VM_GROWSDOWN | VM_DATA_FLAGS_EXEC)
- 
- #endif
- #endif
-diff --git a/arch/xtensa/include/asm/page.h b/arch/xtensa/include/asm/page.h
-index f4771c29c7e9..37ce25ef92d6 100644
---- a/arch/xtensa/include/asm/page.h
-+++ b/arch/xtensa/include/asm/page.h
-@@ -203,8 +203,5 @@ static inline unsigned long ___pa(unsigned long va)
- 
- #endif /* __ASSEMBLY__ */
- 
--#define VM_DATA_DEFAULT_FLAGS	(VM_READ | VM_WRITE | VM_EXEC | \
--				 VM_MAYREAD | VM_MAYWRITE | VM_MAYEXEC)
--
- #include <asm-generic/memory_model.h>
- #endif /* _XTENSA_PAGE_H */
-diff --git a/include/linux/mm.h b/include/linux/mm.h
-index b0e53ef13ff1..3861524368a4 100644
---- a/include/linux/mm.h
-+++ b/include/linux/mm.h
-@@ -342,6 +342,20 @@ extern unsigned int kobjsize(const void *objp);
- /* Bits set in the VMA until the stack is in its final location */
- #define VM_STACK_INCOMPLETE_SETUP	(VM_RAND_READ | VM_SEQ_READ)
- 
-+#define TASK_EXEC ((current->personality & READ_IMPLIES_EXEC) ? VM_EXEC : 0)
-+
-+/* Common data flag combinations */
-+#define VM_DATA_FLAGS_TSK_EXEC	(VM_READ | VM_WRITE | TASK_EXEC | \
-+				 VM_MAYREAD | VM_MAYWRITE | VM_MAYEXEC)
-+#define VM_DATA_FLAGS_NON_EXEC	(VM_READ | VM_WRITE | VM_MAYREAD | \
-+				 VM_MAYWRITE | VM_MAYEXEC)
-+#define VM_DATA_FLAGS_EXEC	(VM_READ | VM_WRITE | VM_EXEC | \
-+				 VM_MAYREAD | VM_MAYWRITE | VM_MAYEXEC)
-+
-+#ifndef VM_DATA_DEFAULT_FLAGS		/* arch can override this */
-+#define VM_DATA_DEFAULT_FLAGS  VM_DATA_FLAGS_EXEC
-+#endif
-+
- #ifndef VM_STACK_DEFAULT_FLAGS		/* arch can override this */
- #define VM_STACK_DEFAULT_FLAGS VM_DATA_DEFAULT_FLAGS
- #endif
+Eugeniy Paltsev (4):
+  ARC: add helpers to sanitize config options
+  ARC: handle DSP presence in HW
+  ARC: add support for DSP-enabled userspace applications
+  ARC: allow userspace DSP applications to use AGU extensions
+
+ arch/arc/Kconfig                   |  50 +++++++++-
+ arch/arc/include/asm/arcregs.h     |  26 +++++
+ arch/arc/include/asm/asserts.h     |  34 +++++++
+ arch/arc/include/asm/dsp-impl.h    | 150 +++++++++++++++++++++++++++++
+ arch/arc/include/asm/dsp.h         |  29 ++++++
+ arch/arc/include/asm/entry-arcv2.h |   6 ++
+ arch/arc/include/asm/processor.h   |   4 +
+ arch/arc/include/asm/ptrace.h      |   3 +
+ arch/arc/include/asm/switch_to.h   |   2 +
+ arch/arc/kernel/asm-offsets.c      |   4 +
+ arch/arc/kernel/head.S             |   4 +
+ arch/arc/kernel/setup.c            |  34 ++++---
+ 12 files changed, 332 insertions(+), 14 deletions(-)
+ create mode 100644 arch/arc/include/asm/asserts.h
+ create mode 100644 arch/arc/include/asm/dsp-impl.h
+ create mode 100644 arch/arc/include/asm/dsp.h
+
 -- 
-2.20.1
+2.21.1
 
 
 _______________________________________________
