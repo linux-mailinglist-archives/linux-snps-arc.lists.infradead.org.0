@@ -2,57 +2,58 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 40B6817AF4D
-	for <lists+linux-snps-arc@lfdr.de>; Thu,  5 Mar 2020 21:03:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E185517AF4B
+	for <lists+linux-snps-arc@lfdr.de>; Thu,  5 Mar 2020 21:03:09 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=39UKYoLrutA0FLk0do9HvlhRjwIYmQuZIBWu3WcUKgE=; b=ZlxfjBG3Qi28Y+
-	pyqdN/eqko7/NyQ9a+u5WcebiGZX0evdLfnheZIiWRIKIk6/LaH36FU2juumLTUPBr/zBU7FXYGt6
-	3j0Xm4mYskVmxNq9NJ5cu1/65ws4d7Mk9rcpBt5vZiEBRcnYFmuVNbWZI6toJdsqecqfF9s9h5wQs
-	evmK9JTqTktf73zyuqVmfZSolq8ziISvEJGdTUj0W5HNOF+BppmBrX7bywXvxJ5jUd4Afd0MT/oH2
-	NqEldyMV7psrakXoOMmrWtBOE2YwncFGodieOMMSyBaBw8DFVdXtUS9g/a5uheGkZrfUg+KtpJSHa
-	kIQwirSbFNVRa2a57jRA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=FL2PdGcvsUE/q1s9kJKbVvHVsrga9G30CpzLluszDy4=; b=WNfCX6HJWz4vSN
+	l32LlrR1+F5PriTMNgm2L8AbXvwCkJBOFxq72NoHbZWm65gfoCWcdbkS96zOR2cgICjaPdLarn12V
+	icmRP7hVN5osbvdYRnKzQ7iYE/kPgoFl8Dez2yWcNJQMDMlRab+MP2MHtJEm1nF+e/vWPnSTdSem3
+	1CQSPwsBLfw8G2+kuXQoW9Jv76J6VRKJwJUHRv6c6QpfvmFgBA9XSMd2/S8+oRJFts1PGFc03L7Qp
+	YSLrEhgDEXVGCxHe16zOc3tE239FE6pOu8Blzhgly/u4IwIdHjA3eYs8UlYe4nV9PvUqZ3gYZiquk
+	IH9nRrsF5yiD5qV2ReFA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j9wi6-0006lY-Ui; Thu, 05 Mar 2020 20:03:10 +0000
+	id 1j9wi4-0006ji-IO; Thu, 05 Mar 2020 20:03:08 +0000
 Received: from smtprelay-out1.synopsys.com ([149.117.87.133])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j9wi2-0006iE-N7
- for linux-snps-arc@lists.infradead.org; Thu, 05 Mar 2020 20:03:08 +0000
+ id 1j9wi0-0006gm-Kq
+ for linux-snps-arc@lists.infradead.org; Thu, 05 Mar 2020 20:03:07 +0000
 Received: from mailhost.synopsys.com (mdc-mailhost1.synopsys.com
  [10.225.0.209])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
  (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 12234C10DD;
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id D8D60C10CC;
  Thu,  5 Mar 2020 20:03:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1583438586; bh=KxmfiRKc96Lw0HUN1flKo0En+90Ix6xmPDnhmOpmCYU=;
- h=From:To:Cc:Subject:Date:From;
- b=RUxeWUMRh/BaX0ePHWDbb+qAtJSk16MF80nfXBNyY9NIsRGbaNfQnEDp0O1Dt41Zs
- SSjm4S+WFKMGbxMw2Efo/u4Lq09Y/L659RZXh6FMfKTuwwcbstalog6UF01G3+JpFN
- RbHrcnupp285rzUM7yjJ7ecR2j6jW/YyqyPSVDaRGC9KhZf81U/7mUQfdgvKXnKZ7y
- bnO5j938rmbrkL665pB8DN9h5ljM5M5Erl/3tyJdskP0bq1mJIYlyBZvR10iYlDCyj
- NJYcLsYQeKmbt+A8GX6Gq22JPXS13rrbAl8iw3uVHslPd+HbT6dKx9JGVoKyS8Cko+
- s18puZuPKdojQ==
+ t=1583438582; bh=vxL14RdUad0AnLPPemYFpGsISJKfQ55yThyifBwET8k=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=XnJz21DwzKGw0x3UKAblbca30zUHfRj9ndM/wWr1LmbEJT/u5QTfB68FTfSI14iM7
+ L6CwM9Davxn8xBS8vzWpCUw0XTwUi7Ma6uz2avYtFw8d7jG/BSMtUk0vD9lM5jyxyb
+ mlu61OKu4SDj9jLPe8H7wrWNo1lmdixRfZuHtnGHsMZCp3J62jop+LVH7iRj543P9N
+ 6jaHCIgAI2PA57OMp45wJC/89xkBAJmslKt3cdWps9WDOQ9U2IPLu5Rs7ShnMnFLqy
+ 4X5EUqy+Sbf3R1eAC7f1scLNTdgAYFMTtvwkMES2o8xBqEZXgPheXQS9ePInBd2UGd
+ F6yFY5H90Dj3w==
 Received: from paltsev-e7480.internal.synopsys.com (unknown [10.121.8.79])
- by mailhost.synopsys.com (Postfix) with ESMTP id 58E0CA005B;
- Thu,  5 Mar 2020 20:02:58 +0000 (UTC)
+ by mailhost.synopsys.com (Postfix) with ESMTP id E903BA0061;
+ Thu,  5 Mar 2020 20:02:59 +0000 (UTC)
 From: Eugeniy Paltsev <Eugeniy.Paltsev@synopsys.com>
 To: linux-snps-arc@lists.infradead.org,
  Vineet Gupta <Vineet.Gupta1@synopsys.com>
-Subject: [PATCH v2 0/4] ARC: handle DSP presence in HW
-Date: Thu,  5 Mar 2020 23:02:48 +0300
-Message-Id: <20200305200252.14278-1-Eugeniy.Paltsev@synopsys.com>
+Subject: [PATCH v2 1/4] ARC: add helpers to sanitize config options
+Date: Thu,  5 Mar 2020 23:02:49 +0300
+Message-Id: <20200305200252.14278-2-Eugeniy.Paltsev@synopsys.com>
 X-Mailer: git-send-email 2.21.1
+In-Reply-To: <20200305200252.14278-1-Eugeniy.Paltsev@synopsys.com>
+References: <20200305200252.14278-1-Eugeniy.Paltsev@synopsys.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200305_120306_789790_70463A66 
-X-CRM114-Status: UNSURE (   9.60  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200305_120304_746980_A8113CB9 
+X-CRM114-Status: GOOD (  14.84  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -85,49 +86,104 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-snps-arc" <linux-snps-arc-bounces@lists.infradead.org>
 Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org
 
-Arc processors may have DSP extension which is optional.
-In this patch series we:
-* Handle issues caused by DSP extension presence in HW
-* Add optional support for DSP-enabled applications in
-  userspace (with optional AGU extension support)
+We'll use this macro in coming patches extensively.
 
-Changes v1->v2:
- * use r10:r11 register pair as a scratch for ASM code instead of
-   r58:r59
- * reset DSP_CTRL to value suitable for kernel also in case of
-   DSP for userspcae enabled
- * Use "Ir" instead of "I" parameter modifier to inline ASM
-   to give compiler wiggle room.
- * Save / restore ACC0_GLO, ACC0_GHI only in case of context
-   switch
- * Don't define additional options in headers to not introduce
-   explicit include dependencies
- * Mode DSP config check to DSP code itself
- * Minor fixes
-
-Eugeniy Paltsev (4):
-  ARC: add helpers to sanitize config options
-  ARC: handle DSP presence in HW
-  ARC: add support for DSP-enabled userspace applications
-  ARC: allow userspace DSP applications to use AGU extensions
-
- arch/arc/Kconfig                   |  50 +++++++++-
- arch/arc/include/asm/arcregs.h     |  26 +++++
- arch/arc/include/asm/asserts.h     |  34 +++++++
- arch/arc/include/asm/dsp-impl.h    | 150 +++++++++++++++++++++++++++++
- arch/arc/include/asm/dsp.h         |  29 ++++++
- arch/arc/include/asm/entry-arcv2.h |   6 ++
- arch/arc/include/asm/processor.h   |   4 +
- arch/arc/include/asm/ptrace.h      |   3 +
- arch/arc/include/asm/switch_to.h   |   2 +
- arch/arc/kernel/asm-offsets.c      |   4 +
- arch/arc/kernel/head.S             |   4 +
- arch/arc/kernel/setup.c            |  34 ++++---
- 12 files changed, 332 insertions(+), 14 deletions(-)
+Signed-off-by: Eugeniy Paltsev <Eugeniy.Paltsev@synopsys.com>
+---
+ arch/arc/include/asm/asserts.h | 24 ++++++++++++++++++++++++
+ arch/arc/kernel/setup.c        | 25 ++++++++++++-------------
+ 2 files changed, 36 insertions(+), 13 deletions(-)
  create mode 100644 arch/arc/include/asm/asserts.h
- create mode 100644 arch/arc/include/asm/dsp-impl.h
- create mode 100644 arch/arc/include/asm/dsp.h
 
+diff --git a/arch/arc/include/asm/asserts.h b/arch/arc/include/asm/asserts.h
+new file mode 100644
+index 000000000000..3314efbeb528
+--- /dev/null
++++ b/arch/arc/include/asm/asserts.h
+@@ -0,0 +1,24 @@
++/* SPDX-License-Identifier: GPL-2.0-only */
++/*
++ * Copyright (C) 2020 Synopsys, Inc. (www.synopsys.com)
++ *
++ * Author: Eugeniy Paltsev <Eugeniy.Paltsev@synopsys.com>
++ */
++#ifndef __ASM_ARC_ASSERTS_H
++#define __ASM_ARC_ASSERTS_H
++
++/* Helpers to sanitize config options. */
++
++void chk_opt_strict(char *opt_name, bool hw_exists, bool opt_ena);
++
++/*
++ * Check required config option:
++ *  - panic in case of OPT enabled but corresponding HW absent.
++ *  - warn in case of OPT disabled but corresponding HW exists.
++*/
++#define CHK_OPT_STRICT(opt_name, hw_exists)				\
++({									\
++	chk_opt_strict(#opt_name, hw_exists, IS_ENABLED(opt_name));	\
++})
++
++#endif /* __ASM_ARC_ASSERTS_H */
+diff --git a/arch/arc/kernel/setup.c b/arch/arc/kernel/setup.c
+index aa41af6ef4ac..820c0cfb0702 100644
+--- a/arch/arc/kernel/setup.c
++++ b/arch/arc/kernel/setup.c
+@@ -19,6 +19,7 @@
+ #include <uapi/linux/mount.h>
+ #include <asm/sections.h>
+ #include <asm/arcregs.h>
++#include <asm/asserts.h>
+ #include <asm/tlb.h>
+ #include <asm/setup.h>
+ #include <asm/page.h>
+@@ -389,11 +390,18 @@ static char *arc_extn_mumbojumbo(int cpu_id, char *buf, int len)
+ 	return buf;
+ }
+ 
++void chk_opt_strict(char *opt_name, bool hw_exists, bool opt_ena)
++{
++	if (hw_exists && !opt_ena)
++		pr_warn(" ! Enable %s for working apps\n", opt_name);
++	else if (!hw_exists && opt_ena)
++		panic("Disable %s, hardware NOT present\n", opt_name);
++}
++
+ static void arc_chk_core_config(void)
+ {
+ 	struct cpuinfo_arc *cpu = &cpuinfo_arc700[smp_processor_id()];
+-	int saved = 0, present = 0;
+-	char *opt_nm = NULL;
++	int present = 0;
+ 
+ 	if (!cpu->extn.timer0)
+ 		panic("Timer0 is not present!\n");
+@@ -425,23 +433,14 @@ static void arc_chk_core_config(void)
+ 	 */
+ 
+ 	if (is_isa_arcompact()) {
+-		opt_nm = "CONFIG_ARC_FPU_SAVE_RESTORE";
+-		saved = IS_ENABLED(CONFIG_ARC_FPU_SAVE_RESTORE);
+-
+ 		/* only DPDP checked since SP has no arch visible regs */
+ 		present = cpu->extn.fpu_dp;
++		CHK_OPT_STRICT(CONFIG_ARC_FPU_SAVE_RESTORE, present);
+ 	} else {
+-		opt_nm = "CONFIG_ARC_HAS_ACCL_REGS";
+-		saved = IS_ENABLED(CONFIG_ARC_HAS_ACCL_REGS);
+-
+ 		/* Accumulator Low:High pair (r58:59) present if DSP MPY or FPU */
+ 		present = cpu->extn_mpy.dsp | cpu->extn.fpu_sp | cpu->extn.fpu_dp;
++		CHK_OPT_STRICT(CONFIG_ARC_HAS_ACCL_REGS, present);
+ 	}
+-
+-	if (present && !saved)
+-		pr_warn("Enable %s for working apps\n", opt_nm);
+-	else if (!present && saved)
+-		panic("Disable %s, hardware NOT present\n", opt_nm);
+ }
+ 
+ /*
 -- 
 2.21.1
 
