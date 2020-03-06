@@ -2,58 +2,58 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D0F4617C557
-	for <lists+linux-snps-arc@lfdr.de>; Fri,  6 Mar 2020 19:24:37 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E3CC917C55D
+	for <lists+linux-snps-arc@lfdr.de>; Fri,  6 Mar 2020 19:24:43 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NRsZhRU8ddkgFj8G4r7UaEVeyg3y4+HE37wL7o9Ifio=; b=tQdzLFMDHzrLLD
-	WpjPObVBH/nbcy4NYfGU3gICPyBMmum1mtSv7xQKAWSgo57Q/xNmtqZyBwxvQG9WWvMhoJNuGAbxR
-	CuUEvw4nbyEQ5i4/4GdvwiBp/gG3GGNU7ldK8HndfxavAFrb92yPVZBkHoMnIaz9quOiqCTdGDEzZ
-	mIP7PE92ng/z5Sg6rb+62M/f5e67DizeUTJAXSAk/7nxh86mIrSt65YHXBsijaz1BrvEV9bJCSWlM
-	vrjarv5P4oH/Sp56kEmyanoR2U/xPn6GZk2Lz16lc49qG+TYD7dOJeXjdaINlg3M9SOy+FsCp9Qqt
-	29TINMdUgilHhKhj3YJw==;
+	List-Owner; bh=7JjtH6O8q+HApvugTF0l4tbsKdqJ/YqRn9JqQK9M25I=; b=F5XqRAEpEC/tun
+	mE6L0xxMMa6pgYfdXMH6iRWNnjKVkVUvoUPyjW3o3mEM3UP4VGFuSk7A8Lu3GdOb2woSkY4YppGV+
+	YmVW8j4DYYlosA0uzgch17LQrPjIcuY00CLTyC9P+p4z0SXR5rWU76dD2YoYiMf6cE0yqIjs0g/lp
+	+7L47pqaO5ktNvC+otp+xRhleoM7hkk5XdcZJU2a93pTPDIZZch5vGfmFSuoXGosaGYJ1rE6Zb6UZ
+	mtLoazpJ3Kp1zxSfFwBQc4zjZAntw13P2XTC464NC8/1kMB8elOoHA8zWghgAxfvKHI9e2r0rAME0
+	GDd7G9RNozN3mgyBtNLA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jAHeG-0001V3-Dw; Fri, 06 Mar 2020 18:24:36 +0000
+	id 1jAHeL-0001YO-Uf; Fri, 06 Mar 2020 18:24:41 +0000
 Received: from smtprelay-out1.synopsys.com ([149.117.87.133])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jAHeA-0001Oy-4w
- for linux-snps-arc@lists.infradead.org; Fri, 06 Mar 2020 18:24:34 +0000
+ id 1jAHeA-0001P0-4z
+ for linux-snps-arc@lists.infradead.org; Fri, 06 Mar 2020 18:24:38 +0000
 Received: from mailhost.synopsys.com (sv1-mailhost2.synopsys.com
  [10.205.2.132])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
  (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 16854C00DE;
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 2221AC00E0;
  Fri,  6 Mar 2020 18:24:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1583519068; bh=XzFb4IuvvCGoe9eR97CdUcms/QcI3Ijj19X3a+vZnB8=;
+ t=1583519068; bh=BjLBfKHCVwdg/IJOOmdqmeWrXteeKpsFOB2oiSCV//g=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=Ih5bXShfw/Vvq5Om4LgzcfTYs2EysVtPS598gy/vcnRxBnAJSs2gWRP0DaymxuRtD
- +0q7N6s7eUF/RxcECQFLkQd+kTqKZRBJqFFQ5X+eu4G/4beGp+ZOCVr0IqS+7/7VSw
- PLS7rpGj5qS/tdy+zCxL/ES0xHrnm06n3N6XuSFzfGSk1xhKEdFqgItnztYqP5sWK0
- RTf2J9gK9gv8EkCsGXNLsbrxCL3HD3TEgDmo6TFv7lCfVWjrAtPt+mKc1y/3Dxupz4
- S9CFEKjCVXQ+wo/FSH2XXAreYs441gd3A09R7A7+qQQ2RsG+FCTo9w3pL2kLySjo4X
- ANosFhIi7NJCA==
+ b=TvlWr74RNxp7j6aZxGedLtaiMe/KXvk8uBwQxALuR9erY5gOuakGp8qJCsTTb+STD
+ TPsgkNh4sbbn8L9LpUlGyOhgy1IT8VHqmOb0kQi3dJK7hG1aA1Lr/9LK0WYpQZnSIp
+ k2b76IUtERYN19pOK6PTX8K89tHdf9wrAxdxsEuvrmSpxTEUQsCT3BFftUQMJxB7OE
+ Yb8cCpDf2zSXYnJIlSXknLjMYD2N8lq1ILwxtKSUvT+vXh8XuJzPJuUN5+UdN2XCgI
+ 6uDc77KsL2lB2PiVNVFJAphk3uCIgkriquCRh9Wm5Tji7++q0gNBxkicKUXT/NG+Ko
+ HQIpvR6uIpHlA==
 Received: from vineetg-Latitude-E7450.internal.synopsys.com
  (vineetg-latitude-e7450.internal.synopsys.com [10.10.161.28])
- by mailhost.synopsys.com (Postfix) with ESMTP id C3E7DA0084;
+ by mailhost.synopsys.com (Postfix) with ESMTP id D3D4AA0087;
  Fri,  6 Mar 2020 18:24:27 +0000 (UTC)
 From: Vineet Gupta <Vineet.Gupta1@synopsys.com>
 To: libc-alpha@sourceware.org
-Subject: [PATCH v3 06/17] ARC: Atomics and Locking primitives
-Date: Fri,  6 Mar 2020 10:24:08 -0800
-Message-Id: <20200306182419.13945-7-vgupta@synopsys.com>
+Subject: [PATCH v3 07/17] ARC: math soft float support
+Date: Fri,  6 Mar 2020 10:24:09 -0800
+Message-Id: <20200306182419.13945-8-vgupta@synopsys.com>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200306182419.13945-1-vgupta@synopsys.com>
 References: <20200306182419.13945-1-vgupta@synopsys.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200306_102430_289014_471F02A1 
-X-CRM114-Status: GOOD (  13.11  )
+X-CRM114-CacheID: sfid-20200306_102430_287377_F234C064 
+X-CRM114-Status: GOOD (  15.36  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -88,20 +88,25 @@ Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.o
 
 Signed-off-by: Vineet Gupta <vgupta@synopsys.com>
 ---
- sysdeps/arc/atomic-machine.h      | 73 +++++++++++++++++++++++++++++++
- sysdeps/arc/nptl/bits/semaphore.h | 32 ++++++++++++++
- 2 files changed, 105 insertions(+)
- create mode 100644 sysdeps/arc/atomic-machine.h
- create mode 100644 sysdeps/arc/nptl/bits/semaphore.h
+ sysdeps/arc/bits/fenv.h                   | 72 ++++++++++++++++++++++
+ sysdeps/arc/nofpu/Implies                 |  1 +
+ sysdeps/arc/nofpu/math-tests-exceptions.h | 27 +++++++++
+ sysdeps/arc/nofpu/math-tests-rounding.h   | 27 +++++++++
+ sysdeps/arc/sfp-machine.h                 | 73 +++++++++++++++++++++++
+ 5 files changed, 200 insertions(+)
+ create mode 100644 sysdeps/arc/bits/fenv.h
+ create mode 100644 sysdeps/arc/nofpu/Implies
+ create mode 100644 sysdeps/arc/nofpu/math-tests-exceptions.h
+ create mode 100644 sysdeps/arc/nofpu/math-tests-rounding.h
+ create mode 100644 sysdeps/arc/sfp-machine.h
 
-diff --git a/sysdeps/arc/atomic-machine.h b/sysdeps/arc/atomic-machine.h
+diff --git a/sysdeps/arc/bits/fenv.h b/sysdeps/arc/bits/fenv.h
 new file mode 100644
-index 000000000000..ae16c607dcc4
+index 000000000000..547f0103a53d
 --- /dev/null
-+++ b/sysdeps/arc/atomic-machine.h
-@@ -0,0 +1,73 @@
-+/* Low-level functions for atomic operations. ARC version.
-+   Copyright (C) 2012-2020 Free Software Foundation, Inc.
++++ b/sysdeps/arc/bits/fenv.h
+@@ -0,0 +1,72 @@
++/* Copyright (C) 2012-2020 Free Software Foundation, Inc.
 +   This file is part of the GNU C Library.
 +
 +   The GNU C Library is free software; you can redistribute it and/or
@@ -118,69 +123,76 @@ index 000000000000..ae16c607dcc4
 +   License along with the GNU C Library.  If not, see
 +   <https://www.gnu.org/licenses/>.  */
 +
-+#ifndef _ARC_BITS_ATOMIC_H
-+#define _ARC_BITS_ATOMIC_H 1
-+
-+#include <stdint.h>
-+
-+typedef int32_t atomic32_t;
-+typedef uint32_t uatomic32_t;
-+typedef int_fast32_t atomic_fast32_t;
-+typedef uint_fast32_t uatomic_fast32_t;
-+
-+typedef intptr_t atomicptr_t;
-+typedef uintptr_t uatomicptr_t;
-+typedef intmax_t atomic_max_t;
-+typedef uintmax_t uatomic_max_t;
-+
-+#define __HAVE_64B_ATOMICS 0
-+#define USE_ATOMIC_COMPILER_BUILTINS 1
-+
-+/* ARC does have legacy atomic EX reg, [mem] instruction but the micro-arch
-+   is not as optimal as LLOCK/SCOND specially for SMP.  */
-+#define ATOMIC_EXCHANGE_USES_CAS 1
-+
-+#define __arch_compare_and_exchange_bool_8_acq(mem, newval, oldval)	\
-+  (abort (), 0)
-+#define __arch_compare_and_exchange_bool_16_acq(mem, newval, oldval)	\
-+  (abort (), 0)
-+#define __arch_compare_and_exchange_bool_64_acq(mem, newval, oldval)	\
-+  (abort (), 0)
-+
-+#define __arch_compare_and_exchange_val_8_int(mem, newval, oldval, model)	\
-+  (abort (), (__typeof (*mem)) 0)
-+#define __arch_compare_and_exchange_val_16_int(mem, newval, oldval, model)	\
-+  (abort (), (__typeof (*mem)) 0)
-+#define __arch_compare_and_exchange_val_64_int(mem, newval, oldval, model)	\
-+  (abort (), (__typeof (*mem)) 0)
-+
-+#define __arch_compare_and_exchange_val_32_int(mem, newval, oldval, model)	\
-+  ({										\
-+    typeof (*mem) __oldval = (oldval);                                  	\
-+    __atomic_compare_exchange_n (mem, (void *) &__oldval, newval, 0,    	\
-+                                 model, __ATOMIC_RELAXED);              	\
-+    __oldval;                                                           	\
-+  })
-+
-+#define atomic_compare_and_exchange_val_acq(mem, new, old)		\
-+  __atomic_val_bysize (__arch_compare_and_exchange_val, int,		\
-+		       mem, new, old, __ATOMIC_ACQUIRE)
-+
-+#ifdef __ARC700__
-+#define atomic_full_barrier()  ({ asm volatile ("sync":::"memory"); })
-+#else
-+#define atomic_full_barrier()  ({ asm volatile ("dmb 3":::"memory"); })
++#ifndef _FENV_H
++# error "Never use <bits/fenv.h> directly; include <fenv.h> instead."
 +#endif
 +
-+#endif /* _ARC_BITS_ATOMIC_H */
-diff --git a/sysdeps/arc/nptl/bits/semaphore.h b/sysdeps/arc/nptl/bits/semaphore.h
++enum
++  {
++    FE_INVALID   =
++# define FE_INVALID	(0x01)
++      FE_INVALID,
++    FE_DIVBYZERO =
++# define FE_DIVBYZERO	(0x02)
++      FE_DIVBYZERO,
++    FE_OVERFLOW  =
++# define FE_OVERFLOW	(0x04)
++      FE_OVERFLOW,
++    FE_UNDERFLOW =
++# define FE_UNDERFLOW	(0x08)
++      FE_UNDERFLOW,
++    FE_INEXACT   =
++# define FE_INEXACT	(0x10)
++      FE_INEXACT
++  };
++
++# define FE_ALL_EXCEPT \
++	(FE_INVALID | FE_DIVBYZERO | FE_OVERFLOW | FE_UNDERFLOW | FE_INEXACT)
++
++enum
++  {
++    FE_TOWARDZERO =
++# define FE_TOWARDZERO	(0x0)
++      FE_TOWARDZERO,
++    FE_TONEAREST  =
++# define FE_TONEAREST	(0x1)
++      FE_TONEAREST,
++    FE_UPWARD     =
++# define FE_UPWARD	(0x2)
++      FE_UPWARD,
++    FE_DOWNWARD   =
++# define FE_DOWNWARD	(0x3)
++      FE_DOWNWARD
++  };
++
++typedef unsigned int fexcept_t;
++typedef unsigned int fenv_t;
++
++/* If the default argument is used we use this value.  */
++#define FE_DFL_ENV	((const fenv_t *) -1)
++
++#if __GLIBC_USE (IEC_60559_BFP_EXT)
++/* Type representing floating-point control modes.  */
++typedef unsigned int femode_t;
++
++/* Default floating-point control modes.  */
++# define FE_DFL_MODE	((const femode_t *) -1L)
++#endif
+diff --git a/sysdeps/arc/nofpu/Implies b/sysdeps/arc/nofpu/Implies
 new file mode 100644
-index 000000000000..772dc4cb9b01
+index 000000000000..abcbadb25f22
 --- /dev/null
-+++ b/sysdeps/arc/nptl/bits/semaphore.h
-@@ -0,0 +1,32 @@
-+/* Machine-specific POSIX semaphore type layouts.  ARC version.
-+   Copyright (C) 2002-2020 Free Software Foundation, Inc.
++++ b/sysdeps/arc/nofpu/Implies
+@@ -0,0 +1 @@
++ieee754/soft-fp
+diff --git a/sysdeps/arc/nofpu/math-tests-exceptions.h b/sysdeps/arc/nofpu/math-tests-exceptions.h
+new file mode 100644
+index 000000000000..7d74720db94b
+--- /dev/null
++++ b/sysdeps/arc/nofpu/math-tests-exceptions.h
+@@ -0,0 +1,27 @@
++/* Configuration for math tests. exceptions support ARC version.
++   Copyright (C) 2017-2020 Free Software Foundation, Inc.
 +   This file is part of the GNU C Library.
 +
 +   The GNU C Library is free software; you can redistribute it and/or
@@ -197,20 +209,127 @@ index 000000000000..772dc4cb9b01
 +   License along with the GNU C Library; if not, see
 +   <https://www.gnu.org/licenses/>.  */
 +
-+#ifndef _SEMAPHORE_H
-+# error "Never use <bits/semaphore.h> directly; include <semaphore.h> instead."
++#ifndef ARC_NOFPU_MATH_TESTS_EXCEPTIONS_H
++#define ARC_NOFPU_MATH_TESTS_EXCEPTIONS_H 1
++
++/* Soft-float doesnot support exceptions.  */
++#define EXCEPTION_TESTS_float		0
++#define EXCEPTION_TESTS_double		0
++#define EXCEPTION_TESTS_long_double	0
++
 +#endif
+diff --git a/sysdeps/arc/nofpu/math-tests-rounding.h b/sysdeps/arc/nofpu/math-tests-rounding.h
+new file mode 100644
+index 000000000000..6e5376cb35b5
+--- /dev/null
++++ b/sysdeps/arc/nofpu/math-tests-rounding.h
+@@ -0,0 +1,27 @@
++/* Configuration for math tests: rounding mode support.  ARC version.
++   Copyright (C) 2017-2020 Free Software Foundation, Inc.
++   This file is part of the GNU C Library.
 +
-+#define __SIZEOF_SEM_T	16
++   The GNU C Library is free software; you can redistribute it and/or
++   modify it under the terms of the GNU Lesser General Public
++   License as published by the Free Software Foundation; either
++   version 2.1 of the License, or (at your option) any later version.
 +
-+/* Value returned if `sem_open' failed.  */
-+#define SEM_FAILED      ((sem_t *) 0)
++   The GNU C Library is distributed in the hope that it will be useful,
++   but WITHOUT ANY WARRANTY; without even the implied warranty of
++   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
++   Lesser General Public License for more details.
 +
-+typedef union
-+{
-+  char __size[__SIZEOF_SEM_T];
-+  long int __align;
-+} sem_t;
++   You should have received a copy of the GNU Lesser General Public
++   License along with the GNU C Library; if not, see
++   <https://www.gnu.org/licenses/>.  */
++
++#ifndef ARC_NOFPU_MATH_TESTS_ROUNDING_H
++#define ARC_NOFPU_MATH_TESTS_ROUNDING_H 1
++
++/* Soft-float only supports to-nearest rounding mode.  */
++#define ROUNDING_TESTS_float(MODE)		((MODE) == FE_TONEAREST)
++#define ROUNDING_TESTS_double(MODE)		((MODE) == FE_TONEAREST)
++#define ROUNDING_TESTS_long_double(MODE)	((MODE) == FE_TONEAREST)
++
++#endif
+diff --git a/sysdeps/arc/sfp-machine.h b/sysdeps/arc/sfp-machine.h
+new file mode 100644
+index 000000000000..c58615461deb
+--- /dev/null
++++ b/sysdeps/arc/sfp-machine.h
+@@ -0,0 +1,73 @@
++/* Machine-dependent software floating-point definitions.  ARC version.
++   Copyright (C) 2004-2020 Free Software Foundation, Inc.
++   This file is part of the GNU C Library.
++   Contributed by Richard Henderson (rth@cygnus.com),
++		  Jakub Jelinek (jj@ultra.linux.cz) and
++		  David S. Miller (davem@redhat.com).
++
++   The GNU C Library is free software; you can redistribute it and/or
++   modify it under the terms of the GNU Lesser General Public
++   License as published by the Free Software Foundation; either
++   version 2.1 of the License, or (at your option) any later version.
++
++   The GNU C Library is distributed in the hope that it will be useful,
++   but WITHOUT ANY WARRANTY; without even the implied warranty of
++   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
++   Lesser General Public License for more details.
++
++   You should have received a copy of the GNU Lesser General Public
++   License along with the GNU C Library.  If not, see
++   <https://www.gnu.org/licenses/>.  */
++
++
++#define _FP_W_TYPE_SIZE		32
++#define _FP_W_TYPE		unsigned long
++#define _FP_WS_TYPE		signed long
++#define _FP_I_TYPE		long
++
++#define _FP_MUL_MEAT_S(R,X,Y)				\
++  _FP_MUL_MEAT_1_wide(_FP_WFRACBITS_S,R,X,Y,umul_ppmm)
++#define _FP_MUL_MEAT_D(R,X,Y)				\
++  _FP_MUL_MEAT_2_wide(_FP_WFRACBITS_D,R,X,Y,umul_ppmm)
++#define _FP_MUL_MEAT_Q(R,X,Y)				\
++  _FP_MUL_MEAT_4_wide(_FP_WFRACBITS_Q,R,X,Y,umul_ppmm)
++
++#define _FP_MUL_MEAT_DW_S(R,X,Y)				\
++  _FP_MUL_MEAT_DW_1_wide(_FP_WFRACBITS_S,R,X,Y,umul_ppmm)
++#define _FP_MUL_MEAT_DW_D(R,X,Y)				\
++  _FP_MUL_MEAT_DW_2_wide(_FP_WFRACBITS_D,R,X,Y,umul_ppmm)
++#define _FP_MUL_MEAT_DW_Q(R,X,Y)				\
++  _FP_MUL_MEAT_DW_4_wide(_FP_WFRACBITS_Q,R,X,Y,umul_ppmm)
++
++#define _FP_DIV_MEAT_S(R,X,Y)	_FP_DIV_MEAT_1_loop(S,R,X,Y)
++#define _FP_DIV_MEAT_D(R,X,Y)	_FP_DIV_MEAT_2_udiv(D,R,X,Y)
++#define _FP_DIV_MEAT_Q(R,X,Y)	_FP_DIV_MEAT_4_udiv(Q,R,X,Y)
++
++#define _FP_NANFRAC_S		((_FP_QNANBIT_S << 1) - 1)
++#define _FP_NANFRAC_D		((_FP_QNANBIT_D << 1) - 1), -1
++#define _FP_NANFRAC_Q		((_FP_QNANBIT_Q << 1) - 1), -1, -1, -1
++#define _FP_NANSIGN_S		0
++#define _FP_NANSIGN_D		0
++#define _FP_NANSIGN_Q		0
++
++#define _FP_KEEPNANFRACP 1
++#define _FP_QNANNEGATEDP 0
++
++/* This is arbitrarily taken from the PowerPC version.  */
++#define _FP_CHOOSENAN(fs, wc, R, X, Y, OP)			\
++  do {								\
++    if ((_FP_FRAC_HIGH_RAW_##fs(X) & _FP_QNANBIT_##fs)		\
++	&& !(_FP_FRAC_HIGH_RAW_##fs(Y) & _FP_QNANBIT_##fs))	\
++      {								\
++	R##_s = Y##_s;						\
++	_FP_FRAC_COPY_##wc(R,Y);				\
++      }								\
++    else							\
++      {								\
++	R##_s = X##_s;						\
++	_FP_FRAC_COPY_##wc(R,X);				\
++      }								\
++    R##_c = FP_CLS_NAN;						\
++  } while (0)
++
++#define _FP_TININESS_AFTER_ROUNDING 0
 -- 
 2.20.1
 
