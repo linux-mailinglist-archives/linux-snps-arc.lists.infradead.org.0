@@ -2,56 +2,60 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E631C17C55B
-	for <lists+linux-snps-arc@lfdr.de>; Fri,  6 Mar 2020 19:24:41 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CB51717C553
+	for <lists+linux-snps-arc@lfdr.de>; Fri,  6 Mar 2020 19:24:33 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=5DJPpWSWake3MMBBhGFXGHZuFcB7dRhyX0Fo9TAxC5o=; b=uC3H3+r4KgCatd
-	CktLSX5/QwZScaSTHCm01xlrdIU47HROPyfLGYFrqYxpWfbxuo7QVwMafSwWXdkD/7hqVLLhae7O2
-	yfH9xAk+iF+vp2/SHKy16makjse0wPP59g6ldt3vX3znQzegmFFziESA9dbKZDFzZwcobg1MkNZ1V
-	4UYH4kc6RqOv4I224mzdeLxIaRY//mRkEhsMyU5JZUMXlkCl30Io5nvtLRY/RUnVw2bioghQu5Wxa
-	J6MPfSOlPZziP3TBguZxw+reNygjk56pCGqR+ar1p4gBuXR4YrZGPP2YDe2wekkcRxnBjH1UL401f
-	jpFz3Xh4wij0VWyfr5tw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=yR4UsFzYcXRwUP6u6SvC+Tmh4Tk0BCo9ahbRQtdeXpM=; b=eIop1TsVh8z0O9
+	WiJg5lrV3SQqD7MTS4owsnFInsEW31BzBElNOkRqW5MJz2NvE29qdi6Q/tuRVVtPUPhUWW8MQRHT+
+	VyhufRDvHFQIV5ZfjqxlT+PMTeX9Dr1O+SZoHQ5y8KG7rnIsr9CgdYgJY+2oscU6UpVRWMB30WujH
+	y9TsZvu6zs54leH+YVgZWfpQsSBfPvJBhySougHCqWcykK34SEpW/43N6j5vKU1QKQ2PnfD+YX+Rw
+	yA89RN9Hh4zg9zE6ggWnHt6ciwKuuTEkCqC5jqldKNon9ggWnJ8wrSpqyEA1Q3+o/q+FBiVlvLFXj
+	b4GcI9zCwrs52C8TqUaA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jAHeJ-0001Wc-QZ; Fri, 06 Mar 2020 18:24:39 +0000
+	id 1jAHeC-0001SC-Hn; Fri, 06 Mar 2020 18:24:32 +0000
 Received: from smtprelay-out1.synopsys.com ([149.117.87.133])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jAHeA-0001Os-55
- for linux-snps-arc@lists.infradead.org; Fri, 06 Mar 2020 18:24:34 +0000
+ id 1jAHeA-0001Ox-3V
+ for linux-snps-arc@lists.infradead.org; Fri, 06 Mar 2020 18:24:31 +0000
 Received: from mailhost.synopsys.com (sv1-mailhost2.synopsys.com
  [10.205.2.132])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
  (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id E7458C00C0;
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 01EB7C00C7;
  Fri,  6 Mar 2020 18:24:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1583519068; bh=q0fZlFnoWzOPodDjo6Ggc7PKqWG6SgCzjxnASyS3nes=;
- h=From:To:Cc:Subject:Date:From;
- b=SGTLB7UV/45Fr+yNX6UyJNw/QM9mAaM+k/Kn8VS9Dj6ZyNxrsF+ViVVmWj8rGNWyy
- Ppb1vi2TYefM4kCcy7PVpLkJ/QfkPM9mSFSFj5ZFSn+DBAkipwK7A4aDZJoKMYiNhM
- hSpp6zqDJcRkUhir/zbtoWo04WLkJEZPMsdr/E5OFFz/vV0gn3pGqZ+CiyfADbQFir
- /3KLMxvZ3UAW/3OGDKbBAAWoW65emohpn6FJ4QmN9oBciaLD0IxzZnGrx+AkIdVQGY
- EHj3oYwcovCarUno7uSqztzq9oxKRtDQlElX4tSxK/148uPFUYcjks5E395Y9gk6oT
- 1jaePgw0f0LTg==
+ t=1583519068; bh=Pb/epUPlJqEEBZOQ82k8aY5UgqWbgBxI3MOnpVBjbg8=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=fRDMzQ5Vhe/PZDFtXSiJtNFNItknnpeSwxMh1ccvdGCLtja0A1UnSM0C7PUdt/fvp
+ ocZS5W5WpsnRm8vF0nmwQpzo8wY7aZKZQOq6Y6vmuc88bU9NS4XuzXs0M+n3ValB7S
+ OYWw/ewx+9F6li4Dw+p7EmG81r5Sf2hr5T3fcIBVq+Lpb+8ahEWKDCCLEjbFmlY7Rj
+ TuXWMcS6dcbj1pXXPnm7X5+7Nk1vhEvoOE/Lvtg7oQkOnKfngUGBGarqzwqz7JxaLp
+ 4CYv8r5CgWnE7ACy4divsE003f/QuAvcqayLyTlpz4vOgWs2ChfR3bFGO13IbqPWzw
+ Glkw9CyiU8mJw==
 Received: from vineetg-Latitude-E7450.internal.synopsys.com
  (vineetg-latitude-e7450.internal.synopsys.com [10.10.161.28])
- by mailhost.synopsys.com (Postfix) with ESMTP id 38AC2A006D;
- Fri,  6 Mar 2020 18:24:21 +0000 (UTC)
+ by mailhost.synopsys.com (Postfix) with ESMTP id 86DEFA006E;
+ Fri,  6 Mar 2020 18:24:27 +0000 (UTC)
 From: Vineet Gupta <Vineet.Gupta1@synopsys.com>
 To: libc-alpha@sourceware.org
-Subject: [PATCH v3 00/17] glibc port to ARC processors
-Date: Fri,  6 Mar 2020 10:24:02 -0800
-Message-Id: <20200306182419.13945-1-vgupta@synopsys.com>
+Subject: [PATCH v3 01/17] gcc PR 88409: miscompilation due to missing cc
+ clobber in longlong.h macros
+Date: Fri,  6 Mar 2020 10:24:03 -0800
+Message-Id: <20200306182419.13945-2-vgupta@synopsys.com>
 X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20200306182419.13945-1-vgupta@synopsys.com>
+References: <20200306182419.13945-1-vgupta@synopsys.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200306_102430_286039_77B580B5 
-X-CRM114-Status: GOOD (  11.39  )
+X-CRM114-CacheID: sfid-20200306_102430_183828_B1390B0E 
+X-CRM114-Status: UNSURE (   9.06  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -84,357 +88,57 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-snps-arc" <linux-snps-arc-bounces@lists.infradead.org>
 Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org
 
-Hi,
+simple test such as below was failing.
 
-This patchset implements glibc port to ARC HS48x processor from Synopsys.
+| void main(int argc, char *argv[])
+| {
+|    size_t total_time = 115424;                       // expected 115.424
+|    double secs = (double)total_time/(double)1000;
+|    printf("%s %d %lf\n", "secs", total_time, secs);  // prints 113.504
+|    printf("%d\n", (size_t)secs);
+| }
 
-It is based on 64-time time and offset work by Alistair and others.
-Thank you guys for all the hard-work.
+The printf eventually called into glibc stdlib/divrem.c:__mpn_divrem()
+which uses the __arc__ specific inline asm macros from longlong.h which
+were causing miscompilation.
 
-Code
------
+include/
+2019-03-28  Vineet Gupta <vgupta@synopsys.com>
 
-git@github.com:foss-for-synopsys-dwc-arc-processors/glibc.git  #arc-glibc-next-64-bit-time
+	PR 89877
 
-Changes since v2:
+	* longlong.h [__arc__] (add_ssaaaa): Add cc clobber
+	(sub_ddmmss): Likewise.
 
-   * Support for Hardware Floating Point
+Signed-off-by: Vineet Gupta <vgupta@synopsys.com>
+---
+ stdlib/longlong.h | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
 
-   * 64-bit time and offsets ABI (although all such changes are confined
-     to a single patch)
-
-
-Documentation:
---------------
-
-(a) ABI doc:
-https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/wiki/files/ARCv2_ABI.pdf
-
-(b) Programmer's Reference Manual (PRM) : needs a download request to be filled
-https://www.synopsys.com/dw/ipdir.php?ds=arc-hs44-hs46-hs48
-https://www.synopsys.com/dw/doc.php/ds/cc/programmers-reference-manual-ARC-HS.pdf
-
-Test Results:
---------------
-(a) build-many-glibcs.py
-
-| Summary of test results:
-|   1251 PASS
-|     15 XFAIL
-
-(b) Full testsuite ran in a cross compile setup using buildroot on HSDK development
-    platform. Bulk of failures come from cross testing setup and I
-    intend to improve things with native testing going forward.
-
-| Summary of test results:
-|     30 FAIL
-|
-| FAIL: elf/tst-dlopen-self-container	# Cannot create testroot lock.
-| FAIL: elf/tst-dlopen-tlsmodid-container#   ditto
-| FAIL: elf/tst-ldconfig-bad-aux-cache	#    ditto
-| FAIL: elf/tst-ldconfig-ld_so_conf-update # ditto
-| FAIL: elf/tst-pldd			#    ditto
-| FAIL: iconv/test-iconvconfig		# Needs gconv installed
-| FAIL: io/ftwtest			# Requires execution by non-root
-| FAIL: io/tst-lockf
-| FAIL: libio/tst-wfile-sync
-| FAIL: nptl/test-cond-printers		# needs Python3 and target GDB on target
-| FAIL: nptl/test-condattr-printers	#    ditto
-| FAIL: nptl/test-mutex-printers	#    ditto
-| FAIL: nptl/test-mutexattr-printers	#    ditto
-| FAIL: nptl/test-rwlock-printers	#    ditto
-| FAIL: nptl/test-rwlockattr-printers	#    ditto
-| FAIL: nptl/tst-pthread-getattr	# Cannot create testroot lock.
-| FAIL: nptl/tst-umask1			# passes if run natively on target (NFS ACLv3 support needed)
-| FAIL: nss/bug-erange
-| FAIL: nss/tst-nss-db-endgrent		# Cannot create testroot lock.
-| FAIL: nss/tst-nss-db-endpwent		#    ditto
-| FAIL: nss/tst-nss-files-hosts-long	#    ditto
-| FAIL: nss/tst-nss-test3		#    ditto
-| FAIL: nss/tst-nss-files-hosts-getent	# Timed out
-| FAIL: nss/tst-nss-files-hosts-multi	# Timed out
-| FAIL: posix/bug-ga2			# DNS issue: google DNS vs. SNPS
-| FAIL: posix/globtest			# require same user on target and host
-| FAIL: posix/tst-getaddrinfo5		# passes outside corporate network
-| FAIL: stdio-common/bug22		# Needs more RAM: 2 GB memory
-| FAIL: sunrpc/bug20790			# missing cpp on target
-| FAIL: timezone/tst-tzset		# passes outside corporate network
-
-
-kindly review.
-
-Thx,
--Vineet
-
-Vineet Gupta (17):
-  gcc PR 88409: miscompilation due to missing cc clobber in longlong.h
-    macros
-  ARC: add definitions to elf/elf.h
-  ARC: ABI Implementation
-  ARC: startup and dynamic linking code
-  ARC: Thread Local Storage support
-  ARC: Atomics and Locking primitives
-  ARC: math soft float support
-  ARC: hardware floating point support
-  ARC: Linux Syscall Interface
-  ARC: Linux ABI
-  ARC: Linux Startup and Dynamic Loading
-  ARC: ABI lists
-  ARC: Update syscall-names.list for ARC specific syscalls
-  ARC: Build Infrastructure
-  build-many-glibcs.py: Enable ARC builds
-  NEWS: mention ARC port
-  ARC: changes to enable 64-bit time_t, off_t, ino_t etc
-
- NEWS                                          |    6 +
- elf/elf.h                                     |   70 +-
- scripts/build-many-glibcs.py                  |    7 +
- stdlib/longlong.h                             |    6 +-
- sysdeps/arc/Implies                           |    3 +
- sysdeps/arc/Makefile                          |   25 +
- sysdeps/arc/Versions                          |    6 +
- sysdeps/arc/__longjmp.S                       |   50 +
- sysdeps/arc/abort-instr.h                     |    2 +
- sysdeps/arc/atomic-machine.h                  |   73 +
- sysdeps/arc/bits/endianness.h                 |   15 +
- sysdeps/arc/bits/fenv.h                       |   77 +
- sysdeps/arc/bits/link.h                       |   52 +
- sysdeps/arc/bits/setjmp.h                     |   26 +
- sysdeps/arc/bsd-_setjmp.S                     |    1 +
- sysdeps/arc/bsd-setjmp.S                      |    1 +
- sysdeps/arc/configure                         |   14 +
- sysdeps/arc/configure.ac                      |   11 +
- sysdeps/arc/dl-machine.h                      |  340 +++
- sysdeps/arc/dl-runtime.c                      |   39 +
- sysdeps/arc/dl-sysdep.h                       |   25 +
- sysdeps/arc/dl-tls.h                          |   30 +
- sysdeps/arc/dl-trampoline.S                   |   80 +
- sysdeps/arc/entry.h                           |    5 +
- sysdeps/arc/fpu/e_sqrt.c                      |   27 +
- sysdeps/arc/fpu/e_sqrtf.c                     |   27 +
- sysdeps/arc/fpu/fclrexcpt.c                   |   36 +
- sysdeps/arc/fpu/fegetenv.c                    |   37 +
- sysdeps/arc/fpu/fegetmode.c                   |   31 +
- sysdeps/arc/fpu/fegetround.c                  |   32 +
- sysdeps/arc/fpu/feholdexcpt.c                 |   43 +
- sysdeps/arc/fpu/fesetenv.c                    |   48 +
- sysdeps/arc/fpu/fesetexcept.c                 |   32 +
- sysdeps/arc/fpu/fesetmode.c                   |   41 +
- sysdeps/arc/fpu/fesetround.c                  |   39 +
- sysdeps/arc/fpu/feupdateenv.c                 |   46 +
- sysdeps/arc/fpu/fgetexcptflg.c                |   31 +
- sysdeps/arc/fpu/fraiseexcpt.c                 |   39 +
- sysdeps/arc/fpu/fsetexcptflg.c                |   38 +
- sysdeps/arc/fpu/ftestexcept.c                 |   33 +
- sysdeps/arc/fpu/libm-test-ulps                | 1703 ++++++++++++++
- sysdeps/arc/fpu/libm-test-ulps-name           |    1 +
- sysdeps/arc/fpu/s_fma.c                       |   28 +
- sysdeps/arc/fpu/s_fmaf.c                      |   28 +
- sysdeps/arc/fpu_control.h                     |  101 +
- sysdeps/arc/gccframe.h                        |   21 +
- sysdeps/arc/get-rounding-mode.h               |   38 +
- sysdeps/arc/gmp-mparam.h                      |   23 +
- sysdeps/arc/jmpbuf-offsets.h                  |   47 +
- sysdeps/arc/jmpbuf-unwind.h                   |   47 +
- sysdeps/arc/ldsodefs.h                        |   43 +
- sysdeps/arc/libc-tls.c                        |   27 +
- sysdeps/arc/machine-gmon.h                    |   35 +
- sysdeps/arc/math-tests-trap.h                 |   27 +
- sysdeps/arc/memusage.h                        |   23 +
- sysdeps/arc/nofpu/Implies                     |    1 +
- sysdeps/arc/nofpu/libm-test-ulps              |  390 +++
- sysdeps/arc/nofpu/libm-test-ulps-name         |    1 +
- sysdeps/arc/nofpu/math-tests-exceptions.h     |   27 +
- sysdeps/arc/nofpu/math-tests-rounding.h       |   27 +
- sysdeps/arc/nptl/Makefile                     |   22 +
- sysdeps/arc/nptl/bits/semaphore.h             |   32 +
- sysdeps/arc/nptl/pthreaddef.h                 |   32 +
- sysdeps/arc/nptl/tcb-offsets.sym              |   11 +
- sysdeps/arc/nptl/tls.h                        |  150 ++
- sysdeps/arc/preconfigure                      |   15 +
- sysdeps/arc/setjmp.S                          |   66 +
- sysdeps/arc/sfp-machine.h                     |   73 +
- sysdeps/arc/sotruss-lib.c                     |   51 +
- sysdeps/arc/stackinfo.h                       |   33 +
- sysdeps/arc/start.S                           |   74 +
- sysdeps/arc/sysdep.h                          |   48 +
- sysdeps/arc/tininess.h                        |    1 +
- sysdeps/arc/tls-macros.h                      |   47 +
- sysdeps/arc/tst-audit.h                       |   23 +
- sysdeps/unix/sysv/linux/arc/Implies           |    3 +
- sysdeps/unix/sysv/linux/arc/Makefile          |   20 +
- sysdeps/unix/sysv/linux/arc/Versions          |   16 +
- sysdeps/unix/sysv/linux/arc/arch-syscall.h    |  317 +++
- sysdeps/unix/sysv/linux/arc/bits/procfs.h     |   35 +
- .../sysv/linux/arc/bits/socket-constants.h    |   38 +
- sysdeps/unix/sysv/linux/arc/bits/timesize.h   |   21 +
- .../sysv/linux/arc/bits/types/__sigset_t.h    |   12 +
- sysdeps/unix/sysv/linux/arc/c++-types.data    |   67 +
- sysdeps/unix/sysv/linux/arc/clone.S           |   98 +
- sysdeps/unix/sysv/linux/arc/configure         |    4 +
- sysdeps/unix/sysv/linux/arc/configure.ac      |    4 +
- sysdeps/unix/sysv/linux/arc/dl-static.c       |   84 +
- sysdeps/unix/sysv/linux/arc/getcontext.S      |   63 +
- sysdeps/unix/sysv/linux/arc/jmp_buf-macros.h  |    6 +
- sysdeps/unix/sysv/linux/arc/kernel-features.h |   28 +
- sysdeps/unix/sysv/linux/arc/kernel_stat.h     |   26 +
- sysdeps/unix/sysv/linux/arc/ld.abilist        |    5 +
- sysdeps/unix/sysv/linux/arc/ldsodefs.h        |   32 +
- .../sysv/linux/arc/libBrokenLocale.abilist    |    1 +
- sysdeps/unix/sysv/linux/arc/libanl.abilist    |    4 +
- sysdeps/unix/sysv/linux/arc/libc.abilist      | 2083 +++++++++++++++++
- sysdeps/unix/sysv/linux/arc/libcrypt.abilist  |    2 +
- sysdeps/unix/sysv/linux/arc/libdl.abilist     |    9 +
- sysdeps/unix/sysv/linux/arc/libm.abilist      |  699 ++++++
- .../unix/sysv/linux/arc/libpthread.abilist    |  217 ++
- sysdeps/unix/sysv/linux/arc/libresolv.abilist |   79 +
- sysdeps/unix/sysv/linux/arc/librt.abilist     |   35 +
- .../unix/sysv/linux/arc/libthread_db.abilist  |   40 +
- sysdeps/unix/sysv/linux/arc/libutil.abilist   |    6 +
- sysdeps/unix/sysv/linux/arc/localplt.data     |   12 +
- sysdeps/unix/sysv/linux/arc/makecontext.c     |   75 +
- sysdeps/unix/sysv/linux/arc/mmap_internal.h   |   27 +
- sysdeps/unix/sysv/linux/arc/pt-vfork.S        |    1 +
- sysdeps/unix/sysv/linux/arc/setcontext.S      |   92 +
- sysdeps/unix/sysv/linux/arc/shlib-versions    |    2 +
- sysdeps/unix/sysv/linux/arc/sigaction.c       |   31 +
- sysdeps/unix/sysv/linux/arc/sigcontextinfo.h  |   28 +
- sysdeps/unix/sysv/linux/arc/sigrestorer.S     |   29 +
- sysdeps/unix/sysv/linux/arc/swapcontext.S     |   92 +
- sysdeps/unix/sysv/linux/arc/sys/cachectl.h    |   36 +
- sysdeps/unix/sysv/linux/arc/sys/ucontext.h    |   63 +
- sysdeps/unix/sysv/linux/arc/sys/user.h        |   31 +
- sysdeps/unix/sysv/linux/arc/syscall.S         |   38 +
- sysdeps/unix/sysv/linux/arc/syscalls.list     |    3 +
- sysdeps/unix/sysv/linux/arc/sysdep.c          |   33 +
- sysdeps/unix/sysv/linux/arc/sysdep.h          |  219 ++
- sysdeps/unix/sysv/linux/arc/ucontext-macros.h |   29 +
- sysdeps/unix/sysv/linux/arc/ucontext_i.sym    |   20 +
- sysdeps/unix/sysv/linux/arc/vfork.S           |   42 +
- sysdeps/unix/sysv/linux/syscall-names.list    |    3 +
- 126 files changed, 9817 insertions(+), 3 deletions(-)
- create mode 100644 sysdeps/arc/Implies
- create mode 100644 sysdeps/arc/Makefile
- create mode 100644 sysdeps/arc/Versions
- create mode 100644 sysdeps/arc/__longjmp.S
- create mode 100644 sysdeps/arc/abort-instr.h
- create mode 100644 sysdeps/arc/atomic-machine.h
- create mode 100644 sysdeps/arc/bits/endianness.h
- create mode 100644 sysdeps/arc/bits/fenv.h
- create mode 100644 sysdeps/arc/bits/link.h
- create mode 100644 sysdeps/arc/bits/setjmp.h
- create mode 100644 sysdeps/arc/bsd-_setjmp.S
- create mode 100644 sysdeps/arc/bsd-setjmp.S
- create mode 100644 sysdeps/arc/configure
- create mode 100644 sysdeps/arc/configure.ac
- create mode 100644 sysdeps/arc/dl-machine.h
- create mode 100644 sysdeps/arc/dl-runtime.c
- create mode 100644 sysdeps/arc/dl-sysdep.h
- create mode 100644 sysdeps/arc/dl-tls.h
- create mode 100644 sysdeps/arc/dl-trampoline.S
- create mode 100644 sysdeps/arc/entry.h
- create mode 100644 sysdeps/arc/fpu/e_sqrt.c
- create mode 100644 sysdeps/arc/fpu/e_sqrtf.c
- create mode 100644 sysdeps/arc/fpu/fclrexcpt.c
- create mode 100644 sysdeps/arc/fpu/fegetenv.c
- create mode 100644 sysdeps/arc/fpu/fegetmode.c
- create mode 100644 sysdeps/arc/fpu/fegetround.c
- create mode 100644 sysdeps/arc/fpu/feholdexcpt.c
- create mode 100644 sysdeps/arc/fpu/fesetenv.c
- create mode 100644 sysdeps/arc/fpu/fesetexcept.c
- create mode 100644 sysdeps/arc/fpu/fesetmode.c
- create mode 100644 sysdeps/arc/fpu/fesetround.c
- create mode 100644 sysdeps/arc/fpu/feupdateenv.c
- create mode 100644 sysdeps/arc/fpu/fgetexcptflg.c
- create mode 100644 sysdeps/arc/fpu/fraiseexcpt.c
- create mode 100644 sysdeps/arc/fpu/fsetexcptflg.c
- create mode 100644 sysdeps/arc/fpu/ftestexcept.c
- create mode 100644 sysdeps/arc/fpu/libm-test-ulps
- create mode 100644 sysdeps/arc/fpu/libm-test-ulps-name
- create mode 100644 sysdeps/arc/fpu/s_fma.c
- create mode 100644 sysdeps/arc/fpu/s_fmaf.c
- create mode 100644 sysdeps/arc/fpu_control.h
- create mode 100644 sysdeps/arc/gccframe.h
- create mode 100644 sysdeps/arc/get-rounding-mode.h
- create mode 100644 sysdeps/arc/gmp-mparam.h
- create mode 100644 sysdeps/arc/jmpbuf-offsets.h
- create mode 100644 sysdeps/arc/jmpbuf-unwind.h
- create mode 100644 sysdeps/arc/ldsodefs.h
- create mode 100644 sysdeps/arc/libc-tls.c
- create mode 100644 sysdeps/arc/machine-gmon.h
- create mode 100644 sysdeps/arc/math-tests-trap.h
- create mode 100644 sysdeps/arc/memusage.h
- create mode 100644 sysdeps/arc/nofpu/Implies
- create mode 100644 sysdeps/arc/nofpu/libm-test-ulps
- create mode 100644 sysdeps/arc/nofpu/libm-test-ulps-name
- create mode 100644 sysdeps/arc/nofpu/math-tests-exceptions.h
- create mode 100644 sysdeps/arc/nofpu/math-tests-rounding.h
- create mode 100644 sysdeps/arc/nptl/Makefile
- create mode 100644 sysdeps/arc/nptl/bits/semaphore.h
- create mode 100644 sysdeps/arc/nptl/pthreaddef.h
- create mode 100644 sysdeps/arc/nptl/tcb-offsets.sym
- create mode 100644 sysdeps/arc/nptl/tls.h
- create mode 100644 sysdeps/arc/preconfigure
- create mode 100644 sysdeps/arc/setjmp.S
- create mode 100644 sysdeps/arc/sfp-machine.h
- create mode 100644 sysdeps/arc/sotruss-lib.c
- create mode 100644 sysdeps/arc/stackinfo.h
- create mode 100644 sysdeps/arc/start.S
- create mode 100644 sysdeps/arc/sysdep.h
- create mode 100644 sysdeps/arc/tininess.h
- create mode 100644 sysdeps/arc/tls-macros.h
- create mode 100644 sysdeps/arc/tst-audit.h
- create mode 100644 sysdeps/unix/sysv/linux/arc/Implies
- create mode 100644 sysdeps/unix/sysv/linux/arc/Makefile
- create mode 100644 sysdeps/unix/sysv/linux/arc/Versions
- create mode 100644 sysdeps/unix/sysv/linux/arc/arch-syscall.h
- create mode 100644 sysdeps/unix/sysv/linux/arc/bits/procfs.h
- create mode 100644 sysdeps/unix/sysv/linux/arc/bits/socket-constants.h
- create mode 100644 sysdeps/unix/sysv/linux/arc/bits/timesize.h
- create mode 100644 sysdeps/unix/sysv/linux/arc/bits/types/__sigset_t.h
- create mode 100644 sysdeps/unix/sysv/linux/arc/c++-types.data
- create mode 100644 sysdeps/unix/sysv/linux/arc/clone.S
- create mode 100644 sysdeps/unix/sysv/linux/arc/configure
- create mode 100644 sysdeps/unix/sysv/linux/arc/configure.ac
- create mode 100644 sysdeps/unix/sysv/linux/arc/dl-static.c
- create mode 100644 sysdeps/unix/sysv/linux/arc/getcontext.S
- create mode 100644 sysdeps/unix/sysv/linux/arc/jmp_buf-macros.h
- create mode 100644 sysdeps/unix/sysv/linux/arc/kernel-features.h
- create mode 100644 sysdeps/unix/sysv/linux/arc/kernel_stat.h
- create mode 100644 sysdeps/unix/sysv/linux/arc/ld.abilist
- create mode 100644 sysdeps/unix/sysv/linux/arc/ldsodefs.h
- create mode 100644 sysdeps/unix/sysv/linux/arc/libBrokenLocale.abilist
- create mode 100644 sysdeps/unix/sysv/linux/arc/libanl.abilist
- create mode 100644 sysdeps/unix/sysv/linux/arc/libc.abilist
- create mode 100644 sysdeps/unix/sysv/linux/arc/libcrypt.abilist
- create mode 100644 sysdeps/unix/sysv/linux/arc/libdl.abilist
- create mode 100644 sysdeps/unix/sysv/linux/arc/libm.abilist
- create mode 100644 sysdeps/unix/sysv/linux/arc/libpthread.abilist
- create mode 100644 sysdeps/unix/sysv/linux/arc/libresolv.abilist
- create mode 100644 sysdeps/unix/sysv/linux/arc/librt.abilist
- create mode 100644 sysdeps/unix/sysv/linux/arc/libthread_db.abilist
- create mode 100644 sysdeps/unix/sysv/linux/arc/libutil.abilist
- create mode 100644 sysdeps/unix/sysv/linux/arc/localplt.data
- create mode 100644 sysdeps/unix/sysv/linux/arc/makecontext.c
- create mode 100644 sysdeps/unix/sysv/linux/arc/mmap_internal.h
- create mode 100644 sysdeps/unix/sysv/linux/arc/pt-vfork.S
- create mode 100644 sysdeps/unix/sysv/linux/arc/setcontext.S
- create mode 100644 sysdeps/unix/sysv/linux/arc/shlib-versions
- create mode 100644 sysdeps/unix/sysv/linux/arc/sigaction.c
- create mode 100644 sysdeps/unix/sysv/linux/arc/sigcontextinfo.h
- create mode 100644 sysdeps/unix/sysv/linux/arc/sigrestorer.S
- create mode 100644 sysdeps/unix/sysv/linux/arc/swapcontext.S
- create mode 100644 sysdeps/unix/sysv/linux/arc/sys/cachectl.h
- create mode 100644 sysdeps/unix/sysv/linux/arc/sys/ucontext.h
- create mode 100644 sysdeps/unix/sysv/linux/arc/sys/user.h
- create mode 100644 sysdeps/unix/sysv/linux/arc/syscall.S
- create mode 100644 sysdeps/unix/sysv/linux/arc/syscalls.list
- create mode 100644 sysdeps/unix/sysv/linux/arc/sysdep.c
- create mode 100644 sysdeps/unix/sysv/linux/arc/sysdep.h
- create mode 100644 sysdeps/unix/sysv/linux/arc/ucontext-macros.h
- create mode 100644 sysdeps/unix/sysv/linux/arc/ucontext_i.sym
- create mode 100644 sysdeps/unix/sysv/linux/arc/vfork.S
-
+diff --git a/stdlib/longlong.h b/stdlib/longlong.h
+index ee4aac1bb5a0..638b7894d48c 100644
+--- a/stdlib/longlong.h
++++ b/stdlib/longlong.h
+@@ -199,7 +199,8 @@ extern UDItype __udiv_qrnnd (UDItype *, UDItype, UDItype, UDItype);
+ 	   : "%r" ((USItype) (ah)),					\
+ 	     "rICal" ((USItype) (bh)),					\
+ 	     "%r" ((USItype) (al)),					\
+-	     "rICal" ((USItype) (bl)))
++	     "rICal" ((USItype) (bl))					\
++	   : "cc")
+ #define sub_ddmmss(sh, sl, ah, al, bh, bl) \
+   __asm__ ("sub.f	%1, %4, %5\n\tsbc	%0, %2, %3"		\
+ 	   : "=r" ((USItype) (sh)),					\
+@@ -207,7 +208,8 @@ extern UDItype __udiv_qrnnd (UDItype *, UDItype, UDItype, UDItype);
+ 	   : "r" ((USItype) (ah)),					\
+ 	     "rICal" ((USItype) (bh)),					\
+ 	     "r" ((USItype) (al)),					\
+-	     "rICal" ((USItype) (bl)))
++	     "rICal" ((USItype) (bl))					\
++	   : "cc")
+ 
+ #define __umulsidi3(u,v) ((UDItype)(USItype)u*(USItype)v)
+ #ifdef __ARC_NORM__
 -- 
 2.20.1
 
