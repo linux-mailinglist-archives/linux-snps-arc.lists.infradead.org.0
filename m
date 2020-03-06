@@ -2,62 +2,81 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 90EE417C559
-	for <lists+linux-snps-arc@lfdr.de>; Fri,  6 Mar 2020 19:24:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0F05317C735
+	for <lists+linux-snps-arc@lfdr.de>; Fri,  6 Mar 2020 21:45:09 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Roc0Xhu4+0fKqHrEBNagys+TnOnTcIl2Lla/zd2+/Fw=; b=K9ns+gmzuzx9C3
-	dFH8znoZfHpDUm8k4OEgAscuXV3FUFDpCgwk0bNMFGd1X49szJSnBObFJUJcl7cQcldyoSmCjacf+
-	KM6zduC/yOgkZxnBd3j7tS7QwAqie+StAhSDvoB/BVKJ9C6Eb9dl/szLgFl3PQvrHQGYpHP03NZ2H
-	fb4ipCQxXg3Su5Xkdv5tWzE7xaubfQvpuIO9/SfDk/H4SY1HrR5CSNqZ0vJZiCSv7ge8McKSq1FMk
-	PlUV99nwZP5FSvl4Bzvhg/Y3o9+cmmBmePQk6kik6Lt8w2vVHMUwKsZ/C3Z8jBF4AhCRSiPO2TtJs
-	kfQv7ZUHRUkk6xzFIdHA==;
+	List-Owner; bh=pLoAUQnxi4AzDxkojhnRvPPw7p9el9QFSBjJZYeNBpI=; b=VJB0H6m6kwu/lY
+	qBFjNk2ux/rqc9q+wKTVYm0jz/UY6m0hbVA8KKub3mY89QIm0n8Q5bi9f+eA24zOcQh3Ff7PCjH8X
+	s9lnakHOorK9RjbZkGz74SBUX8d8Za1ICFjrGPid3tPPH9UHE6MTdrNDpNIR0PNXI2GKbQ9xJRQQB
+	2Etf2oAzIcTx2mVkzjmEiyfBSVS4BvJJspOExKooRH6EeOwPf2D20rKJs9UvwDCieEbMOSllDFiLz
+	L48P3hWdKwG17cqKXskHz4cMijXR8Efwh3MRth9bqi9HGermSjZucN9oZOx4jkTDCUERaIz10vXDT
+	Ao4BUM9AKH+bGzYlWOYQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jAHeI-0001Vo-0P; Fri, 06 Mar 2020 18:24:38 +0000
-Received: from smtprelay-out1.synopsys.com ([149.117.73.133])
+	id 1jAJqD-0000j1-Di; Fri, 06 Mar 2020 20:45:05 +0000
+Received: from mail-qt1-x841.google.com ([2607:f8b0:4864:20::841])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jAHeA-0001P2-A8
- for linux-snps-arc@lists.infradead.org; Fri, 06 Mar 2020 18:24:34 +0000
-Received: from mailhost.synopsys.com (sv1-mailhost2.synopsys.com
- [10.205.2.132])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
- (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 9E7404033D;
- Fri,  6 Mar 2020 18:24:28 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1583519068; bh=bLPhwK/uyXv5STMjWdMbYozeJaQn/2CfXOn2ABQU+zQ=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=IJN8KpTanhzIwUiSJqMKhsJJbyb3/GXASBP+QsuXM3LhtCt0vfR3l8K2SLQE4Kay3
- Utj97rkeSD1eeLYw2zPDW09b7dBhUK6isFt4o/9m6SC7F2xg6nXVEuEqtaXaOPiWRr
- Nrg8Kjf0HBRizL7nzJZa9fjEsMWEpstOXyc3B4wrwyQvRKGi4OyYHxQLyuNnDt8xmP
- Y10x7r14Xtf4PPeJCG9Y+w81bSV9tFdkGuSqMCtAHyT+CajUH/6kF/wLFopR4UtgU3
- QNosS6lMEuolY4h4s5c+xFUpFqOBqMsDY2efsKVEiT4oiww9vBI/oOQG/XoSPjCdcl
- z1mlWUx5HvLNw==
-Received: from vineetg-Latitude-E7450.internal.synopsys.com
- (vineetg-latitude-e7450.internal.synopsys.com [10.10.161.28])
- by mailhost.synopsys.com (Postfix) with ESMTP id 76D6DA0075;
- Fri,  6 Mar 2020 18:24:28 +0000 (UTC)
-From: Vineet Gupta <Vineet.Gupta1@synopsys.com>
-To: libc-alpha@sourceware.org
-Subject: [PATCH v3 17/17] ARC: changes to enable 64-bit time_t, off_t,
- ino_t etc
-Date: Fri,  6 Mar 2020 10:24:19 -0800
-Message-Id: <20200306182419.13945-18-vgupta@synopsys.com>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20200306182419.13945-1-vgupta@synopsys.com>
-References: <20200306182419.13945-1-vgupta@synopsys.com>
-MIME-Version: 1.0
-X-Spam-Note: CRM114 invocation failed
+ id 1jAJpu-0000UP-NQ
+ for linux-snps-arc@lists.infradead.org; Fri, 06 Mar 2020 20:44:50 +0000
+Received: by mail-qt1-x841.google.com with SMTP id 59so2770897qtb.1
+ for <linux-snps-arc@lists.infradead.org>; Fri, 06 Mar 2020 12:44:45 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=lca.pw; s=google;
+ h=message-id:subject:from:to:cc:date:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=VIytyDCq7f0kiHtZyAPYuhAfxkdQ6oPpVlPc91ezlzw=;
+ b=sVQp0SNzavyEmQgQgPO7gOzbjdxNHOBGOKLb2+i6xH5nTB6ZP6ociRcsHZFKZahWzv
+ lVQMhT0TucKZE0jr1svRTaAecWqS9Lak/5QCDTaDSkOc6vq9y74In5QZ3C0vju5Y/YSJ
+ seKiYzybOes0y2OWOOVvb45ZEYoBXTTL7/NQZvUeV5Umj/iFPmYuELjQmpwwRG/RbM00
+ WMRsRryr0bUnfhZtTUXyLUc60zizY1/bRX7olknPmplQ8VZG+HU7CqTLWPWwICtR5QAk
+ sPbgocfLtbClg6uijm1uY7WawL446OXTMUcERTf+StMaVG507VDTlm1AAJaTPJabMPKz
+ 9fdA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:message-id:subject:from:to:cc:date:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=VIytyDCq7f0kiHtZyAPYuhAfxkdQ6oPpVlPc91ezlzw=;
+ b=m4Z1gnIfPzNLZhXKSzCLvKQADDlqgfX17w0ds4N8s+0CnVC++jSML6+6SBe7l4vy+6
+ 8tnYUNXOOB2KT+VAWN8D42VlmxbrVBsqBIVPjBnKA2ZxkJ8bhgtm9CRvj3fBfLjyUGRN
+ b4NnDCyoVq8ut7oeNjWqZqADcSX/uT4CBC1hCXO7IYQaZJ8YJ07ue1bMvAS58TP9BlBO
+ AuxPnFGkL1/M5IKhG3Hu6+LRPc7Rw8jNb0q1MbriKhHQxU5Eah4jwY9wo7hKAe6MWhjL
+ L3wJ7tog08ZTOODBOdF58LcmvK5+OTOhA7Mu6qBggsg2wkaayF6JR8lP6TNuk/cgv1eB
+ f5lQ==
+X-Gm-Message-State: ANhLgQ04xkJKFmHO4UjElHaSAinfHd4g5dhkEEj3nFLXj1KPrXP0V6p9
+ oNFevWyj2ADBV9RLvRYx0+a0jA==
+X-Google-Smtp-Source: ADFU+vtc3atgWoG361itKB4xApBMGrMUExpxNIdab4Ow4UUWS5fC6T+QADXDozQS4OkwoR392p5sKA==
+X-Received: by 2002:ac8:43c1:: with SMTP id w1mr4780630qtn.381.1583527484932; 
+ Fri, 06 Mar 2020 12:44:44 -0800 (PST)
+Received: from dhcp-41-57.bos.redhat.com (nat-pool-bos-t.redhat.com.
+ [66.187.233.206])
+ by smtp.gmail.com with ESMTPSA id g15sm14611541qtq.71.2020.03.06.12.44.42
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Fri, 06 Mar 2020 12:44:44 -0800 (PST)
+Message-ID: <1583527481.7365.165.camel@lca.pw>
+Subject: Re: [PATCH V15] mm/debug: Add tests validating architecture page
+ table helpers
+From: Qian Cai <cai@lca.pw>
+To: Anshuman Khandual <anshuman.khandual@arm.com>, linux-mm@kvack.org
+Date: Fri, 06 Mar 2020 15:44:41 -0500
+In-Reply-To: <1583452659-11801-1-git-send-email-anshuman.khandual@arm.com>
+References: <1583452659-11801-1-git-send-email-anshuman.khandual@arm.com>
+X-Mailer: Evolution 3.22.6 (3.22.6-10.el7) 
+Mime-Version: 1.0
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20200306_124446_821589_0F6AB826 
+X-CRM114-Status: GOOD (  15.83  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:841 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -78,220 +97,89 @@ List-Post: <mailto:linux-snps-arc@lists.infradead.org>
 List-Help: <mailto:linux-snps-arc-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-snps-arc>, 
  <mailto:linux-snps-arc-request@lists.infradead.org?subject=subscribe>
-Cc: Vineet Gupta <Vineet.Gupta1@synopsys.com>,
- linux-snps-arc@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Catalin Marinas <catalin.marinas@arm.com>,
+ Heiko Carstens <heiko.carstens@de.ibm.com>, Paul Mackerras <paulus@samba.org>,
+ "H. Peter Anvin" <hpa@zytor.com>, linux-riscv@lists.infradead.org,
+ Will Deacon <will@kernel.org>, linux-arch@vger.kernel.org,
+ linux-s390@vger.kernel.org, Michael Ellerman <mpe@ellerman.id.au>,
+ x86@kernel.org, Mike Rapoport <rppt@linux.ibm.com>,
+ Christian Borntraeger <borntraeger@de.ibm.com>, Ingo Molnar <mingo@redhat.com>,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+ linux-snps-arc@lists.infradead.org, Vasily Gorbik <gor@linux.ibm.com>,
+ Borislav Petkov <bp@alien8.de>, Paul Walmsley <paul.walmsley@sifive.com>,
+ "Kirill A . Shutemov" <kirill@shutemov.name>,
+ Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
+ Christophe Leroy <christophe.leroy@c-s.fr>, Vineet Gupta <vgupta@synopsys.com>,
+ linux-kernel@vger.kernel.org, Palmer Dabbelt <palmer@dabbelt.com>,
+ Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-snps-arc" <linux-snps-arc-bounces@lists.infradead.org>
 Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org
 
-Signed-off-by: Vineet Gupta <vgupta@synopsys.com>
----
- .../sysv/linux/arc/bits/socket-constants.h    |  4 +--
- sysdeps/unix/sysv/linux/arc/bits/timesize.h   | 21 +++++++++++++++
- sysdeps/unix/sysv/linux/arc/c++-types.data    | 16 ++++++------
- sysdeps/unix/sysv/linux/arc/configure         |  2 +-
- sysdeps/unix/sysv/linux/arc/configure.ac      |  2 +-
- sysdeps/unix/sysv/linux/arc/kernel_stat.h     | 26 +++++++++++++++++++
- sysdeps/unix/sysv/linux/arc/libc.abilist      |  6 ++---
- sysdeps/unix/sysv/linux/arc/sysdep.h          | 12 +++++++++
- 8 files changed, 74 insertions(+), 15 deletions(-)
- create mode 100644 sysdeps/unix/sysv/linux/arc/bits/timesize.h
- create mode 100644 sysdeps/unix/sysv/linux/arc/kernel_stat.h
-
-diff --git a/sysdeps/unix/sysv/linux/arc/bits/socket-constants.h b/sysdeps/unix/sysv/linux/arc/bits/socket-constants.h
-index 053b5cee399a..74b0c06edb36 100644
---- a/sysdeps/unix/sysv/linux/arc/bits/socket-constants.h
-+++ b/sysdeps/unix/sysv/linux/arc/bits/socket-constants.h
-@@ -30,9 +30,9 @@
- #define SO_OOBINLINE 10
- #define SO_RCVBUF 8
- #define SO_RCVLOWAT 18
--#define SO_RCVTIMEO 20
-+#define SO_RCVTIMEO 66
- #define SO_REUSEADDR 2
- #define SO_SNDBUF 7
- #define SO_SNDLOWAT 19
--# define SO_SNDTIMEO 21
-+# define SO_SNDTIMEO 67
- #define SO_TYPE 3
-diff --git a/sysdeps/unix/sysv/linux/arc/bits/timesize.h b/sysdeps/unix/sysv/linux/arc/bits/timesize.h
-new file mode 100644
-index 000000000000..1259077c6412
---- /dev/null
-+++ b/sysdeps/unix/sysv/linux/arc/bits/timesize.h
-@@ -0,0 +1,21 @@
-+/* Bit size of the time_t type at glibc build time, general case.
-+   Copyright (C) 2019-2020 Free Software Foundation, Inc.
-+   This file is part of the GNU C Library.
-+
-+   The GNU C Library is free software; you can redistribute it and/or
-+   modify it under the terms of the GNU Lesser General Public
-+   License as published by the Free Software Foundation; either
-+   version 2.1 of the License, or (at your option) any later version.
-+
-+   The GNU C Library is distributed in the hope that it will be useful,
-+   but WITHOUT ANY WARRANTY; without even the implied warranty of
-+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-+   Lesser General Public License for more details.
-+
-+   You should have received a copy of the GNU Lesser General Public
-+   License along with the GNU C Library; if not, see
-+   <http://www.gnu.org/licenses/>.  */
-+
-+#include <bits/wordsize.h>
-+
-+#define __TIMESIZE	64
-diff --git a/sysdeps/unix/sysv/linux/arc/c++-types.data b/sysdeps/unix/sysv/linux/arc/c++-types.data
-index 303f4570c8ee..0fb0143ae746 100644
---- a/sysdeps/unix/sysv/linux/arc/c++-types.data
-+++ b/sysdeps/unix/sysv/linux/arc/c++-types.data
-@@ -1,5 +1,5 @@
- blkcnt64_t:x
--blkcnt_t:l
-+blkcnt_t:x
- blksize_t:i
- caddr_t:Pc
- clockid_t:i
-@@ -8,14 +8,14 @@ daddr_t:i
- dev_t:y
- fd_mask:l
- fsblkcnt64_t:y
--fsblkcnt_t:m
-+fsblkcnt_t:y
- fsfilcnt64_t:y
--fsfilcnt_t:m
-+fsfilcnt_t:y
- fsid_t:8__fsid_t
- gid_t:j
- id_t:j
- ino64_t:y
--ino_t:m
-+ino_t:y
- int16_t:s
- int32_t:i
- int64_t:x
-@@ -26,7 +26,7 @@ loff_t:x
- mode_t:j
- nlink_t:j
- off64_t:x
--off_t:l
-+off_t:x
- pid_t:i
- pthread_attr_t:14pthread_attr_t
- pthread_barrier_t:17pthread_barrier_t
-@@ -44,13 +44,13 @@ pthread_t:m
- quad_t:x
- register_t:i
- rlim64_t:y
--rlim_t:m
-+rlim_t:y
- sigset_t:10__sigset_t
- size_t:j
- socklen_t:j
- ssize_t:i
--suseconds_t:l
--time_t:l
-+suseconds_t:x
-+time_t:x
- u_char:h
- uid_t:j
- uint:j
-diff --git a/sysdeps/unix/sysv/linux/arc/configure b/sysdeps/unix/sysv/linux/arc/configure
-index f74fa7cb0259..56ec14357507 100644
---- a/sysdeps/unix/sysv/linux/arc/configure
-+++ b/sysdeps/unix/sysv/linux/arc/configure
-@@ -1,4 +1,4 @@
- # This file is generated from configure.in by Autoconf.  DO NOT EDIT!
-  # Local configure fragment for sysdeps/unix/sysv/linux/arc.
- 
--arch_minimum_kernel=3.9.0
-+arch_minimum_kernel=5.1.0
-diff --git a/sysdeps/unix/sysv/linux/arc/configure.ac b/sysdeps/unix/sysv/linux/arc/configure.ac
-index a9528032d32a..8af5a12cc248 100644
---- a/sysdeps/unix/sysv/linux/arc/configure.ac
-+++ b/sysdeps/unix/sysv/linux/arc/configure.ac
-@@ -1,4 +1,4 @@
- GLIBC_PROVIDES dnl See aclocal.m4 in the top level source directory.
- # Local configure fragment for sysdeps/unix/sysv/linux/arc.
- 
--arch_minimum_kernel=3.9.0
-+arch_minimum_kernel=5.1.0
-diff --git a/sysdeps/unix/sysv/linux/arc/kernel_stat.h b/sysdeps/unix/sysv/linux/arc/kernel_stat.h
-new file mode 100644
-index 000000000000..8fdd86b9e843
---- /dev/null
-+++ b/sysdeps/unix/sysv/linux/arc/kernel_stat.h
-@@ -0,0 +1,26 @@
-+/* Copyright (C) 2020 Free Software Foundation, Inc.
-+   This file is part of the GNU C Library.
-+
-+   The GNU C Library is free software; you can redistribute it and/or
-+   modify it under the terms of the GNU Lesser General Public
-+   License as published by the Free Software Foundation; either
-+   version 2.1 of the License, or (at your option) any later version.
-+
-+   The GNU C Library is distributed in the hope that it will be useful,
-+   but WITHOUT ANY WARRANTY; without even the implied warranty of
-+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-+   Lesser General Public License for more details.
-+
-+   You should have received a copy of the GNU Lesser General Public
-+   License along with the GNU C Library.  If not, see
-+   <https://www.gnu.org/licenses/>.  */
-+
-+#include <bits/wordsize.h>
-+
-+/* Needed to elide the itemized copy code in common xstatconv.c.  */
-+#define STAT_IS_KERNEL_STAT 1
-+
-+/* Nice side-effect of 64-bit time_t switch is these are same.  */
-+#define XSTAT_IS_XSTAT64 1
-+
-+#define STATFS_IS_STATFS64 0
-diff --git a/sysdeps/unix/sysv/linux/arc/libc.abilist b/sysdeps/unix/sysv/linux/arc/libc.abilist
-index a95b31434496..1e554c5be072 100644
---- a/sysdeps/unix/sysv/linux/arc/libc.abilist
-+++ b/sysdeps/unix/sysv/linux/arc/libc.abilist
-@@ -1,7 +1,7 @@
- GLIBC_2.32 _Exit F
--GLIBC_2.32 _IO_2_1_stderr_ D 0x98
--GLIBC_2.32 _IO_2_1_stdin_ D 0x98
--GLIBC_2.32 _IO_2_1_stdout_ D 0x98
-+GLIBC_2.32 _IO_2_1_stderr_ D 0x9c
-+GLIBC_2.32 _IO_2_1_stdin_ D 0x9c
-+GLIBC_2.32 _IO_2_1_stdout_ D 0x9c
- GLIBC_2.32 _IO_adjust_column F
- GLIBC_2.32 _IO_adjust_wcolumn F
- GLIBC_2.32 _IO_default_doallocate F
-diff --git a/sysdeps/unix/sysv/linux/arc/sysdep.h b/sysdeps/unix/sysv/linux/arc/sysdep.h
-index 77d815e882e5..9cd12a86a950 100644
---- a/sysdeps/unix/sysv/linux/arc/sysdep.h
-+++ b/sysdeps/unix/sysv/linux/arc/sysdep.h
-@@ -22,6 +22,18 @@
- #include <sysdeps/arc/sysdep.h>
- #include <sysdeps/unix/sysv/linux/generic/sysdep.h>
- 
-+/* ARC's version of asm-generic syscall ABI does provide fstat64 and fstatat64
-+   but it not compatible with glibc 64-bit time_t based stat64. So undef them
-+   to allow generic code to pick up statx syscall based wrappers which do the
-+   explict interworking.
-+   Similarly futex32 exists and works but we'd rather use futex64. But lll code
-+   using futex expects __NR_futex hence the forced redefine
-+   */
-+#undef __NR_fstat64
-+#undef __NR_fstatat64
-+#undef __NR_futex
-+#define __NR_futex __NR_futex_time64
-+
- /* For RTLD_PRIVATE_ERRNO.  */
- #include <dl-sysdep.h>
- 
--- 
-2.20.1
-
-
-_______________________________________________
-linux-snps-arc mailing list
-linux-snps-arc@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-snps-arc
+T24gRnJpLCAyMDIwLTAzLTA2IGF0IDA1OjI3ICswNTMwLCBBbnNodW1hbiBLaGFuZHVhbCB3cm90
+ZToKPiBUaGlzIGFkZHMgdGVzdHMgd2hpY2ggd2lsbCB2YWxpZGF0ZSBhcmNoaXRlY3R1cmUgcGFn
+ZSB0YWJsZSBoZWxwZXJzIGFuZAo+IG90aGVyIGFjY2Vzc29ycyBpbiB0aGVpciBjb21wbGlhbmNl
+IHdpdGggZXhwZWN0ZWQgZ2VuZXJpYyBNTSBzZW1hbnRpY3MuCj4gVGhpcyB3aWxsIGhlbHAgdmFy
+aW91cyBhcmNoaXRlY3R1cmVzIGluIHZhbGlkYXRpbmcgY2hhbmdlcyB0byBleGlzdGluZwo+IHBh
+Z2UgdGFibGUgaGVscGVycyBvciBhZGRpdGlvbiBvZiBuZXcgb25lcy4KPiAKPiBUaGlzIHRlc3Qg
+Y292ZXJzIGJhc2ljIHBhZ2UgdGFibGUgZW50cnkgdHJhbnNmb3JtYXRpb25zIGluY2x1ZGluZyBi
+dXQgbm90Cj4gbGltaXRlZCB0byBvbGQsIHlvdW5nLCBkaXJ0eSwgY2xlYW4sIHdyaXRlLCB3cml0
+ZSBwcm90ZWN0IGV0YyBhdCB2YXJpb3VzCj4gbGV2ZWwgYWxvbmcgd2l0aCBwb3B1bGF0aW5nIGlu
+dGVybWVkaWF0ZSBlbnRyaWVzIHdpdGggbmV4dCBwYWdlIHRhYmxlIHBhZ2UKPiBhbmQgdmFsaWRh
+dGluZyB0aGVtLgo+IAo+IFRlc3QgcGFnZSB0YWJsZSBwYWdlcyBhcmUgYWxsb2NhdGVkIGZyb20g
+c3lzdGVtIG1lbW9yeSB3aXRoIHJlcXVpcmVkIHNpemUKPiBhbmQgYWxpZ25tZW50cy4gVGhlIG1h
+cHBlZCBwZm5zIGF0IHBhZ2UgdGFibGUgbGV2ZWxzIGFyZSBkZXJpdmVkIGZyb20gYQo+IHJlYWwg
+cGZuIHJlcHJlc2VudGluZyBhIHZhbGlkIGtlcm5lbCB0ZXh0IHN5bWJvbC4gVGhpcyB0ZXN0IGdl
+dHMgY2FsbGVkCj4gaW5zaWRlIGtlcm5lbF9pbml0KCkgcmlnaHQgYWZ0ZXIgYXN5bmNfc3luY2hy
+b25pemVfZnVsbCgpLgo+IAo+IFRoaXMgdGVzdCBnZXRzIGJ1aWx0IGFuZCBydW4gd2hlbiBDT05G
+SUdfREVCVUdfVk1fUEdUQUJMRSBpcyBzZWxlY3RlZC4gQW55Cj4gYXJjaGl0ZWN0dXJlLCB3aGlj
+aCBpcyB3aWxsaW5nIHRvIHN1YnNjcmliZSB0aGlzIHRlc3Qgd2lsbCBuZWVkIHRvIHNlbGVjdAo+
+IEFSQ0hfSEFTX0RFQlVHX1ZNX1BHVEFCTEUuIEZvciBub3cgdGhpcyBpcyBsaW1pdGVkIHRvIGFy
+YywgYXJtNjQsIHg4NiwgczM5MAo+IGFuZCBwcGMzMiBwbGF0Zm9ybXMgd2hlcmUgdGhlIHRlc3Qg
+aXMga25vd24gdG8gYnVpbGQgYW5kIHJ1biBzdWNjZXNzZnVsbHkuCj4gR29pbmcgZm9yd2FyZCwg
+b3RoZXIgYXJjaGl0ZWN0dXJlcyB0b28gY2FuIHN1YnNjcmliZSB0aGUgdGVzdCBhZnRlciBmaXhp
+bmcKPiBhbnkgYnVpbGQgb3IgcnVudGltZSBwcm9ibGVtcyB3aXRoIHRoZWlyIHBhZ2UgdGFibGUg
+aGVscGVycy4gTWVhbndoaWxlIGZvcgo+IGJldHRlciBwbGF0Zm9ybSBjb3ZlcmFnZSwgdGhlIHRl
+c3QgY2FuIGFsc28gYmUgZW5hYmxlZCB3aXRoIENPTkZJR19FWFBFUlQKPiBldmVuIHdpdGhvdXQg
+QVJDSF9IQVNfREVCVUdfVk1fUEdUQUJMRS4KPiAKPiBGb2xrcyBpbnRlcmVzdGVkIGluIG1ha2lu
+ZyBzdXJlIHRoYXQgYSBnaXZlbiBwbGF0Zm9ybSdzIHBhZ2UgdGFibGUgaGVscGVycwo+IGNvbmZv
+cm0gdG8gZXhwZWN0ZWQgZ2VuZXJpYyBNTSBzZW1hbnRpY3Mgc2hvdWxkIGVuYWJsZSB0aGUgYWJv
+dmUgY29uZmlnCj4gd2hpY2ggd2lsbCBqdXN0IHRyaWdnZXIgdGhpcyB0ZXN0IGR1cmluZyBib290
+LiBBbnkgbm9uIGNvbmZvcm1pdHkgaGVyZSB3aWxsCj4gYmUgcmVwb3J0ZWQgYXMgYW4gd2Fybmlu
+ZyB3aGljaCB3b3VsZCBuZWVkIHRvIGJlIGZpeGVkLiBUaGlzIHRlc3Qgd2lsbCBoZWxwCj4gY2F0
+Y2ggYW55IGNoYW5nZXMgdG8gdGhlIGFncmVlZCB1cG9uIHNlbWFudGljcyBleHBlY3RlZCBmcm9t
+IGdlbmVyaWMgTU0gYW5kCj4gZW5hYmxlIHBsYXRmb3JtcyB0byBhY2NvbW1vZGF0ZSBpdCB0aGVy
+ZWFmdGVyLgoKT0ssIEkgZ2V0IHRoaXMgd29ya2luZyBvbiBwb3dlcnBjIGhhc2ggTU1VIGFzIHdl
+bGwsIHNvIHRoaXM/CgpkaWZmIC0tZ2l0IGEvRG9jdW1lbnRhdGlvbi9mZWF0dXJlcy9kZWJ1Zy9k
+ZWJ1Zy12bS1wZ3RhYmxlL2FyY2gtc3VwcG9ydC50eHQKYi9Eb2N1bWVudGF0aW9uL2ZlYXR1cmVz
+L2RlYnVnL2RlYnVnLXZtLXBndGFibGUvYXJjaC1zdXBwb3J0LnR4dAppbmRleCA2NGQwZjliMTVj
+NDkuLmM1MjdkMDVjMDQ1OSAxMDA2NDQKLS0tIGEvRG9jdW1lbnRhdGlvbi9mZWF0dXJlcy9kZWJ1
+Zy9kZWJ1Zy12bS1wZ3RhYmxlL2FyY2gtc3VwcG9ydC50eHQKKysrIGIvRG9jdW1lbnRhdGlvbi9m
+ZWF0dXJlcy9kZWJ1Zy9kZWJ1Zy12bS1wZ3RhYmxlL2FyY2gtc3VwcG9ydC50eHQKQEAgLTIyLDgg
+KzIyLDcgQEAKwqDCoMKgwqDCoHzCoMKgwqDCoMKgwqDCoG5pb3MyOiB8IFRPRE8gfArCoMKgwqDC
+oMKgfMKgwqDCoMKgb3BlbnJpc2M6IHwgVE9ETyB8CsKgwqDCoMKgwqB8wqDCoMKgwqDCoMKgcGFy
+aXNjOiB8IFRPRE8gfAotwqDCoMKgwqB8wqDCoHBvd2VycGMvMzI6IHzCoMKgb2vCoMKgfAotwqDC
+oMKgwqB8wqDCoHBvd2VycGMvNjQ6IHwgVE9ETyB8CivCoMKgwqDCoHzCoMKgwqDCoMKgcG93ZXJw
+YzogfMKgwqBva8KgwqB8CsKgwqDCoMKgwqB8wqDCoMKgwqDCoMKgwqByaXNjdjogfCBUT0RPIHwK
+wqDCoMKgwqDCoHzCoMKgwqDCoMKgwqDCoMKgczM5MDogfMKgwqBva8KgwqB8CsKgwqDCoMKgwqB8
+wqDCoMKgwqDCoMKgwqDCoMKgwqBzaDogfCBUT0RPIHwKZGlmZiAtLWdpdCBhL2FyY2gvcG93ZXJw
+Yy9LY29uZmlnIGIvYXJjaC9wb3dlcnBjL0tjb25maWcKaW5kZXggMmU3ZWVlNTIzYmExLi4xNzY5
+MzBmNDBlMDcgMTAwNjQ0Ci0tLSBhL2FyY2gvcG93ZXJwYy9LY29uZmlnCisrKyBiL2FyY2gvcG93
+ZXJwYy9LY29uZmlnCkBAIC0xMTYsNyArMTE2LDcgQEAgY29uZmlnIFBQQwrCoAkjCsKgCXNlbGVj
+dCBBUkNIXzMyQklUX09GRl9UIGlmIFBQQzMyCsKgCXNlbGVjdCBBUkNIX0hBU19ERUJVR19WSVJU
+VUFMCi0Jc2VsZWN0IEFSQ0hfSEFTX0RFQlVHX1ZNX1BHVEFCTEUgaWYgUFBDMzIKKwlzZWxlY3Qg
+QVJDSF9IQVNfREVCVUdfVk1fUEdUQUJMRQrCoAlzZWxlY3QgQVJDSF9IQVNfREVWTUVNX0lTX0FM
+TE9XRUQKwqAJc2VsZWN0IEFSQ0hfSEFTX0VMRl9SQU5ET01JWkUKwqAJc2VsZWN0IEFSQ0hfSEFT
+X0ZPUlRJRllfU09VUkNFCmRpZmYgLS1naXQgYS9tbS9kZWJ1Z192bV9wZ3RhYmxlLmMgYi9tbS9k
+ZWJ1Z192bV9wZ3RhYmxlLmMKaW5kZXggOTZhOTFiZGEzYTg1Li45ODk5MGE1MTUyNjggMTAwNjQ0
+Ci0tLSBhL21tL2RlYnVnX3ZtX3BndGFibGUuYworKysgYi9tbS9kZWJ1Z192bV9wZ3RhYmxlLmMK
+QEAgLTI1Niw3ICsyNTYsOCBAQCBzdGF0aWMgdm9pZCBfX2luaXQgcHRlX2NsZWFyX3Rlc3RzKHN0
+cnVjdCBtbV9zdHJ1Y3QgKm1tLApwdGVfdCAqcHRlcCwKwqAJcHRlX3QgcHRlID0gUkVBRF9PTkNF
+KCpwdGVwKTsKwqAKwqAJcHRlID0gX19wdGUocHRlX3ZhbChwdGUpIHwgUkFORE9NX09SVkFMVUUp
+OwotCVdSSVRFX09OQ0UoKnB0ZXAsIHB0ZSk7CisJc2V0X3B0ZV9hdChtbSwgdmFkZHIsIHB0ZXAs
+IHB0ZSk7CisJYmFycmllcigpOwrCoAlwdGVfY2xlYXIobW0sIHZhZGRyLCBwdGVwKTsKwqAJcHRl
+ID0gUkVBRF9PTkNFKCpwdGVwKTsKwqAJV0FSTl9PTighcHRlX25vbmUocHRlKSk7CgpfX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1zbnBzLWFyYyBt
+YWlsaW5nIGxpc3QKbGludXgtc25wcy1hcmNAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlz
+dHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXNucHMtYXJjCg==
