@@ -2,56 +2,57 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9D8021819FF
+	by mail.lfdr.de (Postfix) with ESMTPS id 98DEE1819FE
 	for <lists+linux-snps-arc@lfdr.de>; Wed, 11 Mar 2020 14:41:25 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=LGKUjeMQijiXGCOE0sWt2UvtbEr9shNav4Qb3O7HE2Q=; b=pIiT4UENS4gd0o
-	vkKvJ9XKTxvEiK416KXVPqZU4nw775MllHIAoptJqq159cYqDbIevyX5bhC9aN2Qpl21Qej/hfkJ+
-	uBxyX6Ej+z1uGOJwALtNesO/T5WhBL6lxB3wqJO/0VXmycYTHONVpogU+Ki+UWyuT2XqFXPV1s1dQ
-	w9hQF5NuVuDpgn4MxOeSJhJZBJoVfYojhlUBuD3nE40bDBZQ/vq+xGi09Op09S7AzoEFFNAfuWRuY
-	5RasC7L+r+BAgYmrWXpwNqIrSFtcY+PDs32OemJBwbueY9NaIAsmr/RWkj0qheo8K1g6/kZKwVq6q
-	d14LHYiIGU52qiWwv53w==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=or1Hd0W6rALrn2yL/j+UfBzp5nF8Wndw55XQni8xifg=; b=ep9oKfQ4U1Bzad
+	Pfl5ZL9gB6FAHAPYDNurhwkApia0GBGCdANmnxoDq79W7g4RQUGwmsAFIgbdRPHBZwimHTz+eJdA2
+	XTAUJyXWEv2AQ8Wrgu1tvEnqYkaKa11pb7SaSn4hzUz4MrrAAy74YY3w2PpNc+BIv4Q7A/x94PKvZ
+	379kB5oI7/aZEAQ4vhDSPja7v6B6VfZ7MJuul/F6obrt9f37ckkoxgPH+rRioOsuoB2a0lvFu6j86
+	zMcp/IEuscenuDqwINyAPXFWPBPYQYsUyX3GbeFUqGMgm1NZM8BCLd853Ce9WH05ZT16lmGiy1sR0
+	1YUuToqH5htLqmiWS1gg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jC1bw-0002a7-7U; Wed, 11 Mar 2020 13:41:24 +0000
+	id 1jC1bw-0002aF-C1; Wed, 11 Mar 2020 13:41:24 +0000
 Received: from smtprelay-out1.synopsys.com ([149.117.73.133])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jC1bt-0002Yz-EJ
+ id 1jC1bt-0002Z0-EI
  for linux-snps-arc@lists.infradead.org; Wed, 11 Mar 2020 13:41:22 +0000
 Received: from mailhost.synopsys.com (mdc-mailhost1.synopsys.com
  [10.225.0.209])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
  (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 16D254080F;
- Wed, 11 Mar 2020 13:41:19 +0000 (UTC)
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 3383643B13;
+ Wed, 11 Mar 2020 13:41:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1583934080; bh=lw1x64akbq/Rtsh3xZ/yvfvvJN+tyISDQ0cHYFcOvKI=;
- h=From:To:Cc:Subject:Date:From;
- b=WOUvTtDfIQ6p2Ojn18nwqGHf9dfTVW3shEfaKo+QCNdOdO0cI8ADlOSTRKDX3TEu1
- hSIeV0u6fxnz4G20O5NGK8LE1AxnoOI2dsisYcSMI0YAu+mr5+SO8nIjSKSzbGNa+A
- 7vPKLpwJ0f6poG8NHYfGoQ1TGJOHIyAWx+w4ot1NTZZ2YO7QwP19i+Mu/228ndHi3i
- Lr4OimaqA9iiaECho4LZb0vid5iSWWpPEYU2M8xgHtdO39ZUPiz7FVn4JZsS7mLtuZ
- 7Ynr6ETASmJzgn72iLXTlvOyDOsk7E2AnWGjoT+3jLOzhnJCkSw6lwG9T6fkAjQzHg
- d3GMBsx7XoYcA==
+ t=1583934080; bh=Jsae6YmAanO4z9FCcsjbrAEHTLrNXGOZPwk43q6ik60=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=jzc8SlbhBKj3TbiyL2YRoFTe5fhXmG1Z0VAoSeJbljwzo/7pZuO533oHLT1M8RNoZ
+ TABbi9Pza/pL5Y2fJpzD6/cH5X8yaBSI+NJ1e/8P8bFUvLVoQvTmUzwA3KlRfhzc/7
+ 7zSLlza3k2qtD15FVKjXgigCzRH+gOoCDHg5Z42yg7TXRJc68nDVAUHhg5FBzJBnOA
+ qVQ6Li/zeCIlTIhKaZrL4gQn4itl3tNz9DS8HX+rld77XFmNfKyqPC3rZzocq7bdu0
+ W89agejxYGrlH/bmhkip6R8VOvaS1zOU9iMqXzCz5asMeX/gQWGAIVrtKMbk44LX49
+ 8CzvI7N1QzUWg==
 Received: from paltsev-e7480.internal.synopsys.com (unknown [10.121.8.79])
- by mailhost.synopsys.com (Postfix) with ESMTP id 5D154A005D;
- Wed, 11 Mar 2020 13:41:17 +0000 (UTC)
+ by mailhost.synopsys.com (Postfix) with ESMTP id 5A381A0062;
+ Wed, 11 Mar 2020 13:41:18 +0000 (UTC)
 From: Eugeniy Paltsev <Eugeniy.Paltsev@synopsys.com>
 To: linux-clk@vger.kernel.org
-Subject: [PATCH 0/3] CLK: HSDK: CGU: updates for HSDK clock management
-Date: Wed, 11 Mar 2020 16:41:12 +0300
-Message-Id: <20200311134115.13257-1-Eugeniy.Paltsev@synopsys.com>
+Subject: [PATCH 1/3] CLK: HSDK: CGU: check if PLL is bypassed first
+Date: Wed, 11 Mar 2020 16:41:13 +0300
+Message-Id: <20200311134115.13257-2-Eugeniy.Paltsev@synopsys.com>
 X-Mailer: git-send-email 2.21.1
+In-Reply-To: <20200311134115.13257-1-Eugeniy.Paltsev@synopsys.com>
+References: <20200311134115.13257-1-Eugeniy.Paltsev@synopsys.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200311_064121_494465_AB542622 
-X-CRM114-Status: UNSURE (   6.21  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200311_064121_492800_7BF9D565 
+X-CRM114-Status: GOOD (  10.11  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -87,16 +88,37 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-snps-arc" <linux-snps-arc-bounces@lists.infradead.org>
 Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org
 
-Bunch of updates for HSDK clock generation unit (CGU) driver.
+If PLL is bypassed the EN (enable) bit has no effect on
+output clock.
 
-Eugeniy Paltsev (3):
-  CLK: HSDK: CGU: check if PLL is bypassed first
-  CLK: HSDK: CGU: support PLL bypassing
-  CLK: HSDK: CGU: add support for 148.5MHz clock
+Signed-off-by: Eugeniy Paltsev <Eugeniy.Paltsev@synopsys.com>
+---
+ drivers/clk/clk-hsdk-pll.c | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
 
- drivers/clk/clk-hsdk-pll.c | 70 +++++++++++++++++++++-----------------
- 1 file changed, 39 insertions(+), 31 deletions(-)
-
+diff --git a/drivers/clk/clk-hsdk-pll.c b/drivers/clk/clk-hsdk-pll.c
+index 97d1e8c35b71..b47a559f3528 100644
+--- a/drivers/clk/clk-hsdk-pll.c
++++ b/drivers/clk/clk-hsdk-pll.c
+@@ -172,14 +172,14 @@ static unsigned long hsdk_pll_recalc_rate(struct clk_hw *hw,
+ 
+ 	dev_dbg(clk->dev, "current configuration: %#x\n", val);
+ 
+-	/* Check if PLL is disabled */
+-	if (val & CGU_PLL_CTRL_PD)
+-		return 0;
+-
+ 	/* Check if PLL is bypassed */
+ 	if (val & CGU_PLL_CTRL_BYPASS)
+ 		return parent_rate;
+ 
++	/* Check if PLL is disabled */
++	if (val & CGU_PLL_CTRL_PD)
++		return 0;
++
+ 	/* input divider = reg.idiv + 1 */
+ 	idiv = 1 + ((val & CGU_PLL_CTRL_IDIV_MASK) >> CGU_PLL_CTRL_IDIV_SHIFT);
+ 	/* fb divider = 2*(reg.fbdiv + 1) */
 -- 
 2.21.1
 
