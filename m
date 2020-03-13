@@ -2,60 +2,58 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E1C1B183F44
-	for <lists+linux-snps-arc@lfdr.de>; Fri, 13 Mar 2020 04:04:45 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A800F183F45
+	for <lists+linux-snps-arc@lfdr.de>; Fri, 13 Mar 2020 04:04:46 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=43mW2paKCewFTLM5NhUGGblAWOHvyCp6jYmm6QvLL5g=; b=FDumxwDdpr9yNx
-	6Sj+nX3Hr6X1XIYQf8b5jOTYvqTiHYR1fBk+HxJaTWifApp1yS/t74lMGI6/QMGrOPQpm+0Vb/DYK
-	9A1SQHL/mwCEv/9RVi1Dz0AM+bQ8l3L8jbmzesTIZE2zHo/KW9tID1wNvJoxyQnmPfpfKz+A8qKs9
-	G+CFEyT8xeiLAVv7oj5ckOgS/g4GOKU/pw8lQyJ9GpDbNnBWKdO6NkOniNB1gn6Y6FQm6vqcBNHbi
-	wHqyq31/Ru7vhJbQKfP+LCxr9ga/uAsQKXCZKG2e+ZEGOiNYjj9jIyI5ahuvv4FEpYPd1wEeoFTPp
-	2NKaEMc2X3B0/v7nAd5g==;
+	List-Owner; bh=ewxmxbGQgYEOJpC36OZWIC9BoOLc1dO5IAp7aVZq2hs=; b=Z+qZGnBKQv/VQh
+	t0Az9Rp5u+3Gl8ey4eosCYlKHJ2n3GMPYQRJf1kLuxAdqK4kUyiBzEW/DdOJ9nNimmUpCCqFsvp1P
+	eCUQWo33v+FME1kezOjf4Zq8ygsNsYvqvap9SuOuNniy975pVRIm73UaP02+WGO7eHqyk1Ll+ZfTX
+	F9pGJcHX4nndG/TCLT0KjU45ONYkdH2eo58y1a0QwPYdTrZE7Jj3RcqmPn+3istiqiRLtZWdrtAdE
+	ATijYSJ7kYciW32PW/tkiX0mcTRXQ6c6t6GxDdYKSTih0KeYp3T9wGFJNln1D3LPB2kqd8Y24TIs3
+	zWDSdlpgTutZipWWo/Ng==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCacu-0003Zl-1G; Fri, 13 Mar 2020 03:04:44 +0000
+	id 1jCacv-0003ad-38; Fri, 13 Mar 2020 03:04:45 +0000
 Received: from smtprelay-out1.synopsys.com ([149.117.73.133])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCaci-0003Tm-FE
- for linux-snps-arc@lists.infradead.org; Fri, 13 Mar 2020 03:04:40 +0000
+ id 1jCaci-0003U6-KM
+ for linux-snps-arc@lists.infradead.org; Fri, 13 Mar 2020 03:04:42 +0000
 Received: from mailhost.synopsys.com (sv1-mailhost2.synopsys.com
  [10.205.2.132])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
  (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 530D140255;
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 7BED440269;
  Fri, 13 Mar 2020 03:04:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1584068672; bh=FpzH26+XHhQ4MnRVPEvTRe9J5/GD/h8nVipsmT0AXRY=;
+ t=1584068672; bh=NgK76Fh0cy9slg+dAwdh4+4ehDcRbjQEuuvQSgheNlQ=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=YhFa2nOEcK90bofVUuLodLnkwgiuDZZT36rSD1zE4AuTP5/rej1qNWCyiZrnKFIcz
- xyolsRK0rU4ouVfYEndn4iC6SnPEhGxLQ5lDmpSO1RwHMAcau56v4TSvclIsO7a2FN
- BOIlvTZQmnItfilKOuivhe6S0ioWZ+ZWrqWu7SyHG38mHpAPDmxqSERafLOWa3tqv2
- Sjneet7RF12IOVoIempuOgJeDe58AMevP/Fp7K9fKpQTQJGg80tLcdIPWS+xPPJwmN
- 3/MMW0pi0PXozF/WFZw9aKPHugyaX3WJYJC2nHOuNPj2QlyGMVC8BsZF1Qe/YYNFwL
- wxbf/pLCNDk2Q==
+ b=dZGq1pUK0YyhLCUopPfnWwqwpCYiD9yzp5RFjqV8hjV+FBVOGslUhrTO0GzD8haQT
+ wso//xscBVfnbRRSiwiZtul2qw95vvcla2XWE84cF4bhEURifHcX33J5et8Sp4yKw4
+ OvkOEM3YL7hr8Aq0HNRdwnZf9apPsTl/kVQtA2YOB5CnGO8WwfUU2bWSGOXodJ11Dd
+ G2bb+++8rTFX1Ctpwm4MQc+7bd3MrezdJOIZ8fCUwKajouTO4mAfwrgF6YINLX6HNz
+ Yf8TkLPiZduksP6g36t1NSqp3P9C2FobhRek6JfnEVySKAxsuUvPQxeA3RO1E9FFrA
+ IX5RrUO6WmdPA==
 Received: from vineetg-Latitude-E7450.internal.synopsys.com (unknown
  [10.13.182.230])
- by mailhost.synopsys.com (Postfix) with ESMTP id 16318A0080;
+ by mailhost.synopsys.com (Postfix) with ESMTP id 50C86A0072;
  Fri, 13 Mar 2020 03:04:32 +0000 (UTC)
 From: Vineet Gupta <Vineet.Gupta1@synopsys.com>
 To: libc-alpha@sourceware.org
-Subject: [PATCH v4 12/15] ARC: Update syscall-names.list for ARC specific
- syscalls
-Date: Thu, 12 Mar 2020 20:04:16 -0700
-Message-Id: <20200313030419.15843-13-vgupta@synopsys.com>
+Subject: [PATCH v4 13/15] ARC: Build Infrastructure
+Date: Thu, 12 Mar 2020 20:04:17 -0700
+Message-Id: <20200313030419.15843-14-vgupta@synopsys.com>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200313030419.15843-1-vgupta@synopsys.com>
 References: <20200313030419.15843-1-vgupta@synopsys.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200312_200432_529961_FE4746A3 
-X-CRM114-Status: UNSURE (   6.91  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200312_200432_671422_CB588EA2 
+X-CRM114-Status: GOOD (  13.70  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -90,23 +88,257 @@ Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.o
 
 Signed-off-by: Vineet Gupta <vgupta@synopsys.com>
 ---
- sysdeps/unix/sysv/linux/syscall-names.list | 3 +++
- 1 file changed, 3 insertions(+)
+ sysdeps/arc/Implies                        |  3 +++
+ sysdeps/arc/Makefile                       | 25 ++++++++++++++++++++++
+ sysdeps/arc/Versions                       |  6 ++++++
+ sysdeps/arc/configure                      | 14 ++++++++++++
+ sysdeps/arc/configure.ac                   | 11 ++++++++++
+ sysdeps/arc/nptl/Makefile                  | 22 +++++++++++++++++++
+ sysdeps/arc/preconfigure                   | 15 +++++++++++++
+ sysdeps/unix/sysv/linux/arc/Implies        |  3 +++
+ sysdeps/unix/sysv/linux/arc/Makefile       | 20 +++++++++++++++++
+ sysdeps/unix/sysv/linux/arc/Versions       | 16 ++++++++++++++
+ sysdeps/unix/sysv/linux/arc/configure      |  4 ++++
+ sysdeps/unix/sysv/linux/arc/configure.ac   |  4 ++++
+ sysdeps/unix/sysv/linux/arc/shlib-versions |  2 ++
+ 13 files changed, 145 insertions(+)
+ create mode 100644 sysdeps/arc/Implies
+ create mode 100644 sysdeps/arc/Makefile
+ create mode 100644 sysdeps/arc/Versions
+ create mode 100644 sysdeps/arc/configure
+ create mode 100644 sysdeps/arc/configure.ac
+ create mode 100644 sysdeps/arc/nptl/Makefile
+ create mode 100644 sysdeps/arc/preconfigure
+ create mode 100644 sysdeps/unix/sysv/linux/arc/Implies
+ create mode 100644 sysdeps/unix/sysv/linux/arc/Makefile
+ create mode 100644 sysdeps/unix/sysv/linux/arc/Versions
+ create mode 100644 sysdeps/unix/sysv/linux/arc/configure
+ create mode 100644 sysdeps/unix/sysv/linux/arc/configure.ac
+ create mode 100644 sysdeps/unix/sysv/linux/arc/shlib-versions
 
-diff --git a/sysdeps/unix/sysv/linux/syscall-names.list b/sysdeps/unix/sysv/linux/syscall-names.list
-index 3d89814003a2..758b50164103 100644
---- a/sysdeps/unix/sysv/linux/syscall-names.list
-+++ b/sysdeps/unix/sysv/linux/syscall-names.list
-@@ -41,6 +41,9 @@ adjtimex
- afs_syscall
- alarm
- alloc_hugepages
-+arc_gettls
-+arc_settls
-+arc_usr_cmpxchg
- arch_prctl
- arm_fadvise64_64
- arm_sync_file_range
+diff --git a/sysdeps/arc/Implies b/sysdeps/arc/Implies
+new file mode 100644
+index 000000000000..780c4e246769
+--- /dev/null
++++ b/sysdeps/arc/Implies
+@@ -0,0 +1,3 @@
++wordsize-32
++ieee754/flt-32
++ieee754/dbl-64
+diff --git a/sysdeps/arc/Makefile b/sysdeps/arc/Makefile
+new file mode 100644
+index 000000000000..92f90798355b
+--- /dev/null
++++ b/sysdeps/arc/Makefile
+@@ -0,0 +1,25 @@
++# ARC Makefile
++# Copyright (C) 1993-2020 Free Software Foundation, Inc.
++# This file is part of the GNU C Library.
++
++# The GNU C Library is free software; you can redistribute it and/or
++# modify it under the terms of the GNU Lesser General Public
++# License as published by the Free Software Foundation; either
++# version 2.1 of the License, or (at your option) any later version.
++
++# The GNU C Library is distributed in the hope that it will be useful,
++# but WITHOUT ANY WARRANTY; without even the implied warranty of
++# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
++# Lesser General Public License for more details.
++
++# You should have received a copy of the GNU Lesser General Public
++# License along with the GNU C Library.  If not, see
++# <https://www.gnu.org/licenses/>.
++
++# We don't support long doubles as a distinct type.  We don't need to set
++# this variable; it's here mostly for documentational purposes.
++long-double-fcts = no
++
++ifeq ($(subdir),debug)
++CFLAGS-backtrace.c += -funwind-tables
++endif
+diff --git a/sysdeps/arc/Versions b/sysdeps/arc/Versions
+new file mode 100644
+index 000000000000..2d0f534b2aba
+--- /dev/null
++++ b/sysdeps/arc/Versions
+@@ -0,0 +1,6 @@
++libc {
++  GLIBC_2.32 {
++    __syscall_error;
++    __mcount;
++  }
++}
+diff --git a/sysdeps/arc/configure b/sysdeps/arc/configure
+new file mode 100644
+index 000000000000..52e286da2ebb
+--- /dev/null
++++ b/sysdeps/arc/configure
+@@ -0,0 +1,14 @@
++# This file is generated from configure.ac by Autoconf.  DO NOT EDIT!
++ # Local configure fragment for sysdeps/arc.
++
++$as_echo "#define PI_STATIC_AND_HIDDEN 1" >>confdefs.h
++
++libc_cv_have_sdata_section=no
++
++# For ARC, historically ; was used for comments and not newline
++# Later # also got added to comment list, but ; couldn't be switched to
++# canonical newline as there's lots of code out there which will break
++libc_cv_asm_line_sep='`'
++cat >>confdefs.h <<_ACEOF
++#define ASM_LINE_SEP $libc_cv_asm_line_sep
++_ACEOF
+diff --git a/sysdeps/arc/configure.ac b/sysdeps/arc/configure.ac
+new file mode 100644
+index 000000000000..1074d312f033
+--- /dev/null
++++ b/sysdeps/arc/configure.ac
+@@ -0,0 +1,11 @@
++GLIBC_PROVIDES dnl See aclocal.m4 in the top level source directory.
++# Local configure fragment for sysdeps/arc.
++
++AC_DEFINE(PI_STATIC_AND_HIDDEN)
++libc_cv_have_sdata_section=no
++
++# For ARC, historically ; was used for comments and not newline
++# Later # also got added to comment list, but ; couldn't be switched to
++# canonical newline as there's lots of code out there which will break
++libc_cv_asm_line_sep='`'
++AC_DEFINE_UNQUOTED(ASM_LINE_SEP, $libc_cv_asm_line_sep)
+diff --git a/sysdeps/arc/nptl/Makefile b/sysdeps/arc/nptl/Makefile
+new file mode 100644
+index 000000000000..6f387c53905d
+--- /dev/null
++++ b/sysdeps/arc/nptl/Makefile
+@@ -0,0 +1,22 @@
++# NPTL makefile fragment for ARC.
++# Copyright (C) 2005-2020 Free Software Foundation, Inc.
++#
++# This file is part of the GNU C Library.
++#
++# The GNU C Library is free software; you can redistribute it and/or
++# modify it under the terms of the GNU Lesser General Public
++# License as published by the Free Software Foundation; either
++# version 2.1 of the License, or (at your option) any later version.
++#
++# The GNU C Library is distributed in the hope that it will be useful,
++# but WITHOUT ANY WARRANTY; without even the implied warranty of
++# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
++# Lesser General Public License for more details.
++#
++# You should have received a copy of the GNU Lesser General Public
++# License along with the GNU C Library.  If not, see
++# <https://www.gnu.org/licenses/>.
++
++ifeq ($(subdir),csu)
++gen-as-const-headers += tcb-offsets.sym
++endif
+diff --git a/sysdeps/arc/preconfigure b/sysdeps/arc/preconfigure
+new file mode 100644
+index 000000000000..d9c5429f4050
+--- /dev/null
++++ b/sysdeps/arc/preconfigure
+@@ -0,0 +1,15 @@
++case "$machine" in
++arc*)
++  base_machine=arc
++  machine=arc
++
++  gccfloat=`$CC $CFLAGS $CPPFLAGS -E -dM -xc /dev/null | grep __ARC_FPU_| wc -l`
++  if test "$gccfloat" != "0"; then
++    echo "glibc being configured for double precision floating point"
++    with_fp_cond=1
++  else
++    with_fp_cond=0
++  fi
++  ;;
++
++esac
+diff --git a/sysdeps/unix/sysv/linux/arc/Implies b/sysdeps/unix/sysv/linux/arc/Implies
+new file mode 100644
+index 000000000000..7f739a0340b6
+--- /dev/null
++++ b/sysdeps/unix/sysv/linux/arc/Implies
+@@ -0,0 +1,3 @@
++arc/nptl
++unix/sysv/linux/generic/wordsize-32
++unix/sysv/linux/generic
+diff --git a/sysdeps/unix/sysv/linux/arc/Makefile b/sysdeps/unix/sysv/linux/arc/Makefile
+new file mode 100644
+index 000000000000..a6c6dfc6ec64
+--- /dev/null
++++ b/sysdeps/unix/sysv/linux/arc/Makefile
+@@ -0,0 +1,20 @@
++ifeq ($(subdir),stdlib)
++gen-as-const-headers += ucontext_i.sym
++endif
++
++ifeq ($(subdir),signal)
++sysdep_routines += sigrestorer
++endif
++
++ifeq ($(subdir),misc)
++# MIPS/Tile-style cacheflush routine
++sysdep_headers += sys/cachectl.h
++sysdep_routines += cacheflush
++endif
++
++ifeq ($(subdir),elf)
++ifeq ($(build-shared),yes)
++# This is needed for DSO loading from static binaries.
++sysdep-dl-routines += dl-static
++endif
++endif
+diff --git a/sysdeps/unix/sysv/linux/arc/Versions b/sysdeps/unix/sysv/linux/arc/Versions
+new file mode 100644
+index 000000000000..292f1974b02a
+--- /dev/null
++++ b/sysdeps/unix/sysv/linux/arc/Versions
+@@ -0,0 +1,16 @@
++ld {
++  GLIBC_PRIVATE {
++    # used for loading by static libraries
++    _dl_var_init;
++  }
++}
++libc {
++  GLIBC_2.32 {
++    _flush_cache;
++    cacheflush;
++  }
++  GLIBC_PRIVATE {
++    # A copy of sigaction lives in libpthread, and needs these.
++    __default_rt_sa_restorer;
++  }
++}
+diff --git a/sysdeps/unix/sysv/linux/arc/configure b/sysdeps/unix/sysv/linux/arc/configure
+new file mode 100644
+index 000000000000..56ec14357507
+--- /dev/null
++++ b/sysdeps/unix/sysv/linux/arc/configure
+@@ -0,0 +1,4 @@
++# This file is generated from configure.in by Autoconf.  DO NOT EDIT!
++ # Local configure fragment for sysdeps/unix/sysv/linux/arc.
++
++arch_minimum_kernel=5.1.0
+diff --git a/sysdeps/unix/sysv/linux/arc/configure.ac b/sysdeps/unix/sysv/linux/arc/configure.ac
+new file mode 100644
+index 000000000000..8af5a12cc248
+--- /dev/null
++++ b/sysdeps/unix/sysv/linux/arc/configure.ac
+@@ -0,0 +1,4 @@
++GLIBC_PROVIDES dnl See aclocal.m4 in the top level source directory.
++# Local configure fragment for sysdeps/unix/sysv/linux/arc.
++
++arch_minimum_kernel=5.1.0
+diff --git a/sysdeps/unix/sysv/linux/arc/shlib-versions b/sysdeps/unix/sysv/linux/arc/shlib-versions
+new file mode 100644
+index 000000000000..a4b961583e95
+--- /dev/null
++++ b/sysdeps/unix/sysv/linux/arc/shlib-versions
+@@ -0,0 +1,2 @@
++DEFAULT                 GLIBC_2.32
++ld=ld-linux-arc.so.2
 -- 
 2.20.1
 
