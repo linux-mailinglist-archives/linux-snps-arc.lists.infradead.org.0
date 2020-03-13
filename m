@@ -2,7 +2,7 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 71FB5183F40
+	by mail.lfdr.de (Postfix) with ESMTPS id 01189183F3F
 	for <lists+linux-snps-arc@lfdr.de>; Fri, 13 Mar 2020 04:04:40 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
@@ -10,50 +10,50 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2SZ0huhoyMyGY7S+WhOJNs8fAEivpqyYGeXig9Zs04E=; b=IrF5qEVNir997n
-	Nwn4gdcbkWwWCnp8dNoobluIn0tkMcKlpbMKkhrhBg6mRug54OSrQsB6BEFE1vmpCFd1UMLm7jvKN
-	72gm1NUzB+gmnIV9xX0CxBCTmuSjhFSJ+D+PfB/rzigWnQNA3TatiR7eY9ZSOQ/mImvcXrZcadTyO
-	FLS9bkp2wtQE3BG8359Z0rvCZKjNqcVC3CnptNg/BEgywTcuEMuNQhuUcdLPPctjlY9wsl45IgrA8
-	tZmlqnK34bvPDN2zmkJ2OWqEgI2OyWQs1RepGc44silnNeic0pJypIwmyBorVB+hSpaNpPu2M+//g
-	ijKgLadbA2EQcy54ryCw==;
+	List-Owner; bh=NRsZhRU8ddkgFj8G4r7UaEVeyg3y4+HE37wL7o9Ifio=; b=baD40noGuT0Aib
+	RKNE77Qk8QHb+1SaLqhaKlIXYWOvvepDKqLnV1mtO3rIq/e2SiMSaDClLmkUpnus2tTRuRQnwmZyH
+	OsqtiLVT7J7s0n4QzFkY0UZQRCNxtTvIgTveuC4QdWCQJrPeInqG8dNWCv0vOWHjfEyjm0MSaWRXl
+	c8E+v2jTTmqDyfbSnG2y0nqysX38QcjReTtWI5bNbUlZomi/3qXAkIWihQ/hZcx/6O8pRGnZSZyLa
+	0tohOCclLbUFy9MlvkCobNPVVkkvh3wOCIITiNUn9ufGzzhjkpxvv8lVt0JBDoQiYKGUP6JlMzvLd
+	HI2mFROgAPLiogDn58BQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCaco-0003WG-VC; Fri, 13 Mar 2020 03:04:38 +0000
+	id 1jCaco-0003Vw-2O; Fri, 13 Mar 2020 03:04:38 +0000
 Received: from smtprelay-out1.synopsys.com ([149.117.87.133])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCaci-0003RS-1Y
- for linux-snps-arc@lists.infradead.org; Fri, 13 Mar 2020 03:04:36 +0000
+ id 1jCaci-0003RV-1X
+ for linux-snps-arc@lists.infradead.org; Fri, 13 Mar 2020 03:04:35 +0000
 Received: from mailhost.synopsys.com (sv1-mailhost2.synopsys.com
  [10.205.2.132])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
  (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 6B589C0F8F;
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 90289C0F93;
  Fri, 13 Mar 2020 03:04:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1584068670; bh=4AlUyp9Gy05/nBjVrbfQw6uZ0IX488PXO+y2JFDS0qE=;
+ t=1584068670; bh=XzFb4IuvvCGoe9eR97CdUcms/QcI3Ijj19X3a+vZnB8=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=dW3id18YcZorBWnESDQFmbdf1D2sJZEImt+eq4Cksn608kvq/aHOcDdJwjFZjHoAI
- a6GYLoQ49Zsza6obYLRKErMzWah8aYaOCvMd3wENwPfrjFdgQXNS7uE3O66FrKp/Wv
- Nl9fmLIDyJMJrGra9EAPyXSDZQGUBc2ZIp2JSUjSrKY6YArIuFECYbZSnR3YVCIjgV
- jGZZc6BP4JwRj0m8MemdXlUyS+qHlI+hEQMd9d8GRQorTtVFdDrXkYdPbL0nt5G1pc
- rvQbsQ4zbs+V3cb/v/EXfDpjqSNEfea0aDav1PuJ7XN4gncjlFn9iNPltvrV+VBv8W
- ZuS1v+pgcgGYA==
+ b=ln/bH/m+/vZEpiayKE+Hscd7F+m9wU/Z92k0knFWCx8Sv/y6wUWtMZnJhMxK1N10G
+ ger1qZZZdchTa3x3MjRqVvho5/tCeRtlu3t3wDE/xg8wwDI6jk+msd29imClOQarVd
+ KO0AaM5hCbcU6BCw2F1nShsQJ21fqsxF/td/C6HRneIpKCrV8axwBIVD9RBQnOfBHx
+ xyBvEoDTwJ/wR9Y6UTnjmCHCs15FiW5J383NsSm5aLeVszIFMIAV0I6a3yMrhXu98o
+ I6jMCSNh4QXwXiZUmNGCaDnb9ryvrs6FMlxgizHc+ZImEh0DhoJ5DKt6XgoHIgimx8
+ JQbXp657Yvl4w==
 Received: from vineetg-Latitude-E7450.internal.synopsys.com (unknown
  [10.13.182.230])
- by mailhost.synopsys.com (Postfix) with ESMTP id 1F066A007A;
+ by mailhost.synopsys.com (Postfix) with ESMTP id 4AB72A007D;
  Fri, 13 Mar 2020 03:04:30 +0000 (UTC)
 From: Vineet Gupta <Vineet.Gupta1@synopsys.com>
 To: libc-alpha@sourceware.org
-Subject: [PATCH v4 04/15] ARC: Thread Local Storage support
-Date: Thu, 12 Mar 2020 20:04:08 -0700
-Message-Id: <20200313030419.15843-5-vgupta@synopsys.com>
+Subject: [PATCH v4 05/15] ARC: Atomics and Locking primitives
+Date: Thu, 12 Mar 2020 20:04:09 -0700
+Message-Id: <20200313030419.15843-6-vgupta@synopsys.com>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200313030419.15843-1-vgupta@synopsys.com>
 References: <20200313030419.15843-1-vgupta@synopsys.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200312_200432_182089_02D8A9AA 
-X-CRM114-Status: GOOD (  16.24  )
+X-CRM114-CacheID: sfid-20200312_200432_162374_B83E145D 
+X-CRM114-Status: GOOD (  12.72  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -86,29 +86,21 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-snps-arc" <linux-snps-arc-bounces@lists.infradead.org>
 Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org
 
-This includes all 4 TLS addressing models
-
 Signed-off-by: Vineet Gupta <vgupta@synopsys.com>
 ---
- sysdeps/arc/dl-tls.h             |  30 +++++++
- sysdeps/arc/libc-tls.c           |  27 ++++++
- sysdeps/arc/nptl/tcb-offsets.sym |  11 +++
- sysdeps/arc/nptl/tls.h           | 150 +++++++++++++++++++++++++++++++
- sysdeps/arc/stackinfo.h          |  33 +++++++
- 5 files changed, 251 insertions(+)
- create mode 100644 sysdeps/arc/dl-tls.h
- create mode 100644 sysdeps/arc/libc-tls.c
- create mode 100644 sysdeps/arc/nptl/tcb-offsets.sym
- create mode 100644 sysdeps/arc/nptl/tls.h
- create mode 100644 sysdeps/arc/stackinfo.h
+ sysdeps/arc/atomic-machine.h      | 73 +++++++++++++++++++++++++++++++
+ sysdeps/arc/nptl/bits/semaphore.h | 32 ++++++++++++++
+ 2 files changed, 105 insertions(+)
+ create mode 100644 sysdeps/arc/atomic-machine.h
+ create mode 100644 sysdeps/arc/nptl/bits/semaphore.h
 
-diff --git a/sysdeps/arc/dl-tls.h b/sysdeps/arc/dl-tls.h
+diff --git a/sysdeps/arc/atomic-machine.h b/sysdeps/arc/atomic-machine.h
 new file mode 100644
-index 000000000000..2269ac6c3daa
+index 000000000000..ae16c607dcc4
 --- /dev/null
-+++ b/sysdeps/arc/dl-tls.h
-@@ -0,0 +1,30 @@
-+/* Thread-local storage handling in the ELF dynamic linker.  ARC version.
++++ b/sysdeps/arc/atomic-machine.h
+@@ -0,0 +1,73 @@
++/* Low-level functions for atomic operations. ARC version.
 +   Copyright (C) 2012-2020 Free Software Foundation, Inc.
 +   This file is part of the GNU C Library.
 +
@@ -126,232 +118,69 @@ index 000000000000..2269ac6c3daa
 +   License along with the GNU C Library.  If not, see
 +   <https://www.gnu.org/licenses/>.  */
 +
++#ifndef _ARC_BITS_ATOMIC_H
++#define _ARC_BITS_ATOMIC_H 1
 +
-+/* Type used for the representation of TLS information in the GOT.  */
-+typedef struct
-+{
-+  unsigned long int ti_module;
-+  unsigned long int ti_offset;
-+} tls_index;
++#include <stdint.h>
 +
-+extern void *__tls_get_addr (tls_index *ti);
++typedef int32_t atomic32_t;
++typedef uint32_t uatomic32_t;
++typedef int_fast32_t atomic_fast32_t;
++typedef uint_fast32_t uatomic_fast32_t;
 +
-+/* Value used for dtv entries for which the allocation is delayed.  */
-+#define TLS_DTV_UNALLOCATED	((void *) -1l)
-diff --git a/sysdeps/arc/libc-tls.c b/sysdeps/arc/libc-tls.c
-new file mode 100644
-index 000000000000..ec88282de60e
---- /dev/null
-+++ b/sysdeps/arc/libc-tls.c
-@@ -0,0 +1,27 @@
-+/* Thread-local storage handling in the ELF dynamic linker.  ARC version.
-+   Copyright (C) 2005-2020 Free Software Foundation, Inc.
-+   This file is part of the GNU C Library.
++typedef intptr_t atomicptr_t;
++typedef uintptr_t uatomicptr_t;
++typedef intmax_t atomic_max_t;
++typedef uintmax_t uatomic_max_t;
 +
-+   The GNU C Library is free software; you can redistribute it and/or
-+   modify it under the terms of the GNU Lesser General Public
-+   License as published by the Free Software Foundation; either
-+   version 2.1 of the License, or (at your option) any later version.
++#define __HAVE_64B_ATOMICS 0
++#define USE_ATOMIC_COMPILER_BUILTINS 1
 +
-+   The GNU C Library is distributed in the hope that it will be useful,
-+   but WITHOUT ANY WARRANTY; without even the implied warranty of
-+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-+   Lesser General Public License for more details.
++/* ARC does have legacy atomic EX reg, [mem] instruction but the micro-arch
++   is not as optimal as LLOCK/SCOND specially for SMP.  */
++#define ATOMIC_EXCHANGE_USES_CAS 1
 +
-+   You should have received a copy of the GNU Lesser General Public
-+   License along with the GNU C Library.  If not, see
-+   <https://www.gnu.org/licenses/>.  */
++#define __arch_compare_and_exchange_bool_8_acq(mem, newval, oldval)	\
++  (abort (), 0)
++#define __arch_compare_and_exchange_bool_16_acq(mem, newval, oldval)	\
++  (abort (), 0)
++#define __arch_compare_and_exchange_bool_64_acq(mem, newval, oldval)	\
++  (abort (), 0)
 +
-+#include <csu/libc-tls.c>
-+#include <dl-tls.h>
++#define __arch_compare_and_exchange_val_8_int(mem, newval, oldval, model)	\
++  (abort (), (__typeof (*mem)) 0)
++#define __arch_compare_and_exchange_val_16_int(mem, newval, oldval, model)	\
++  (abort (), (__typeof (*mem)) 0)
++#define __arch_compare_and_exchange_val_64_int(mem, newval, oldval, model)	\
++  (abort (), (__typeof (*mem)) 0)
 +
-+void *
-+__tls_get_addr (tls_index *ti)
-+{
-+  dtv_t *dtv = THREAD_DTV ();
-+  return (char *) dtv[1].pointer.val + ti->ti_offset;
-+}
-diff --git a/sysdeps/arc/nptl/tcb-offsets.sym b/sysdeps/arc/nptl/tcb-offsets.sym
-new file mode 100644
-index 000000000000..56950e0676ed
---- /dev/null
-+++ b/sysdeps/arc/nptl/tcb-offsets.sym
-@@ -0,0 +1,11 @@
-+#include <sysdep.h>
-+#include <tls.h>
++#define __arch_compare_and_exchange_val_32_int(mem, newval, oldval, model)	\
++  ({										\
++    typeof (*mem) __oldval = (oldval);                                  	\
++    __atomic_compare_exchange_n (mem, (void *) &__oldval, newval, 0,    	\
++                                 model, __ATOMIC_RELAXED);              	\
++    __oldval;                                                           	\
++  })
 +
-+-- Derive offsets relative to the thread register.
-+#define thread_offsetof(mem)	(long)(offsetof(struct pthread, mem) - sizeof(struct pthread))
++#define atomic_compare_and_exchange_val_acq(mem, new, old)		\
++  __atomic_val_bysize (__arch_compare_and_exchange_val, int,		\
++		       mem, new, old, __ATOMIC_ACQUIRE)
 +
-+MULTIPLE_THREADS_OFFSET		offsetof (struct pthread, header.multiple_threads)
-+TLS_PRE_TCB_SIZE		sizeof (struct pthread)
-+TLS_TCB_SIZE            	sizeof(tcbhead_t)
-+
-+PTHREAD_TID			offsetof(struct pthread, tid)
-diff --git a/sysdeps/arc/nptl/tls.h b/sysdeps/arc/nptl/tls.h
-new file mode 100644
-index 000000000000..10c7117527ff
---- /dev/null
-+++ b/sysdeps/arc/nptl/tls.h
-@@ -0,0 +1,150 @@
-+/* Definition for thread-local data handling.  NPTL/ARC version.
-+   Copyright (C) 2012-2020 Free Software Foundation, Inc.
-+   This file is part of the GNU C Library.
-+
-+   The GNU C Library is free software; you can redistribute it and/or
-+   modify it under the terms of the GNU Lesser General Public
-+   License as published by the Free Software Foundation; either
-+   version 2.1 of the License, or (at your option) any later version.
-+
-+   The GNU C Library is distributed in the hope that it will be useful,
-+   but WITHOUT ANY WARRANTY; without even the implied warranty of
-+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-+   Lesser General Public License for more details.
-+
-+   You should have received a copy of the GNU Lesser General Public
-+   License along with the GNU C Library.  If not, see
-+   <https://www.gnu.org/licenses/>.  */
-+
-+#ifndef _ARC_NPTL_TLS_H
-+#define _ARC_NPTL_TLS_H	1
-+
-+#include <dl-sysdep.h>
-+
-+#ifndef __ASSEMBLER__
-+# include <stdbool.h>
-+# include <stddef.h>
-+# include <stdint.h>
-+
-+#include <dl-dtv.h>
-+
-+/* Get system call information.  */
-+# include <sysdep.h>
-+
-+/* The TLS blocks start right after the TCB.  */
-+# define TLS_DTV_AT_TP	1
-+# define TLS_TCB_AT_TP	0
-+
-+/* Get the thread descriptor definition.  */
-+# include <nptl/descr.h>
-+
-+typedef struct
-+{
-+  dtv_t *dtv;
-+  uintptr_t pointer_guard;
-+} tcbhead_t;
-+
-+register struct pthread *__thread_self __asm__("r25");
-+
-+/* This is the size of the initial TCB.  */
-+# define TLS_INIT_TCB_SIZE	sizeof (tcbhead_t)
-+
-+/* Alignment requirements for the initial TCB.  */
-+# define TLS_INIT_TCB_ALIGN	__alignof__ (struct pthread)
-+
-+/* This is the size of the TCB.  */
-+#ifndef TLS_TCB_SIZE
-+# define TLS_TCB_SIZE		sizeof (tcbhead_t)
++#ifdef __ARC700__
++#define atomic_full_barrier()  ({ asm volatile ("sync":::"memory"); })
++#else
++#define atomic_full_barrier()  ({ asm volatile ("dmb 3":::"memory"); })
 +#endif
 +
-+/* Alignment requirements for the TCB.  */
-+# define TLS_TCB_ALIGN		__alignof__ (struct pthread)
-+
-+/* This is the size we need before TCB.  */
-+# define TLS_PRE_TCB_SIZE	sizeof (struct pthread)
-+
-+/* Install the dtv pointer.  The pointer passed is to the element with
-+   index -1 which contain the length.  */
-+# define INSTALL_DTV(tcbp, dtvp) \
-+  (((tcbhead_t *) (tcbp))->dtv = (dtvp) + 1)
-+
-+/* Install new dtv for current thread.  */
-+# define INSTALL_NEW_DTV(dtv) \
-+  (THREAD_DTV() = (dtv))
-+
-+/* Return dtv of given thread descriptor.  */
-+# define GET_DTV(tcbp) \
-+  (((tcbhead_t *) (tcbp))->dtv)
-+
-+/* Code to initially initialize the thread pointer.  */
-+# define TLS_INIT_TP(tcbp)					\
-+  ({                                            		\
-+	long result_var;					\
-+	__builtin_set_thread_pointer(tcbp);     		\
-+	result_var = INTERNAL_SYSCALL (arc_settls, 1, (tcbp));	\
-+	INTERNAL_SYSCALL_ERROR_P (result_var)			\
-+	? "settls syscall error" : NULL;			\
-+   })
-+
-+/* Value passed to 'clone' for initialization of the thread register.  */
-+# define TLS_DEFINE_INIT_TP(tp, pd) void *tp = (pd) + 1
-+
-+/* Return the address of the dtv for the current thread.  */
-+# define THREAD_DTV() \
-+  (((tcbhead_t *) __builtin_thread_pointer ())->dtv)
-+
-+/* Return the thread descriptor for the current thread.  */
-+# define THREAD_SELF \
-+ ((struct pthread *)__builtin_thread_pointer () - 1)
-+
-+/* Magic for libthread_db to know how to do THREAD_SELF.  */
-+# define DB_THREAD_SELF \
-+  CONST_THREAD_AREA (32, sizeof (struct pthread))
-+
-+/* Access to data in the thread descriptor is easy.  */
-+# define THREAD_GETMEM(descr, member) \
-+  descr->member
-+# define THREAD_GETMEM_NC(descr, member, idx) \
-+  descr->member[idx]
-+# define THREAD_SETMEM(descr, member, value) \
-+  descr->member = (value)
-+# define THREAD_SETMEM_NC(descr, member, idx, value) \
-+  descr->member[idx] = (value)
-+
-+/* Get and set the global scope generation counter in struct pthread.  */
-+#define THREAD_GSCOPE_IN_TCB      1
-+#define THREAD_GSCOPE_FLAG_UNUSED 0
-+#define THREAD_GSCOPE_FLAG_USED   1
-+#define THREAD_GSCOPE_FLAG_WAIT   2
-+#define THREAD_GSCOPE_RESET_FLAG() \
-+  do									     \
-+    { int __res								     \
-+	= atomic_exchange_rel (&THREAD_SELF->header.gscope_flag,	     \
-+			       THREAD_GSCOPE_FLAG_UNUSED);		     \
-+      if (__res == THREAD_GSCOPE_FLAG_WAIT)				     \
-+	lll_futex_wake (&THREAD_SELF->header.gscope_flag, 1, LLL_PRIVATE);   \
-+    }									     \
-+  while (0)
-+#define THREAD_GSCOPE_SET_FLAG() \
-+  do									     \
-+    {									     \
-+      THREAD_SELF->header.gscope_flag = THREAD_GSCOPE_FLAG_USED;	     \
-+      atomic_write_barrier ();						     \
-+    }									     \
-+  while (0)
-+#define THREAD_GSCOPE_WAIT() \
-+  GL(dl_wait_lookup_done) ()
-+
-+#else
-+
-+# include <tcb-offsets.h>
-+
-+# r25 is dedicated TLS register for ARC
-+.macro THREAD_SELF reg
-+	# struct pthread is just ahead of TCB
-+	sub     \reg, r25, TLS_PRE_TCB_SIZE
-+.endm
-+
-+#endif /* __ASSEMBLER__ */
-+
-+#endif	/* tls.h */
-diff --git a/sysdeps/arc/stackinfo.h b/sysdeps/arc/stackinfo.h
++#endif /* _ARC_BITS_ATOMIC_H */
+diff --git a/sysdeps/arc/nptl/bits/semaphore.h b/sysdeps/arc/nptl/bits/semaphore.h
 new file mode 100644
-index 000000000000..911efd928675
+index 000000000000..772dc4cb9b01
 --- /dev/null
-+++ b/sysdeps/arc/stackinfo.h
-@@ -0,0 +1,33 @@
-+/* Stack environment definitions for ARC.
-+   Copyright (C) 2012-2020 Free Software Foundation, Inc.
++++ b/sysdeps/arc/nptl/bits/semaphore.h
+@@ -0,0 +1,32 @@
++/* Machine-specific POSIX semaphore type layouts.  ARC version.
++   Copyright (C) 2002-2020 Free Software Foundation, Inc.
 +   This file is part of the GNU C Library.
 +
 +   The GNU C Library is free software; you can redistribute it and/or
@@ -365,24 +194,23 @@ index 000000000000..911efd928675
 +   Lesser General Public License for more details.
 +
 +   You should have received a copy of the GNU Lesser General Public
-+   License along with the GNU C Library.  If not, see
++   License along with the GNU C Library; if not, see
 +   <https://www.gnu.org/licenses/>.  */
 +
-+/* This file contains a bit of information about the stack allocation
-+   of the processor.  */
++#ifndef _SEMAPHORE_H
++# error "Never use <bits/semaphore.h> directly; include <semaphore.h> instead."
++#endif
 +
-+#ifndef _STACKINFO_H
-+#define _STACKINFO_H	1
++#define __SIZEOF_SEM_T	16
 +
-+#include <elf.h>
++/* Value returned if `sem_open' failed.  */
++#define SEM_FAILED      ((sem_t *) 0)
 +
-+/* On ARC the stack grows down.  */
-+#define _STACK_GROWS_DOWN	1
-+
-+/* Default to a non-executable stack.  */
-+#define DEFAULT_STACK_PERMS (PF_R|PF_W)
-+
-+#endif	/* stackinfo.h */
++typedef union
++{
++  char __size[__SIZEOF_SEM_T];
++  long int __align;
++} sem_t;
 -- 
 2.20.1
 
