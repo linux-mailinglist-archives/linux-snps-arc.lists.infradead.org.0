@@ -2,72 +2,84 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0E91A183F49
-	for <lists+linux-snps-arc@lfdr.de>; Fri, 13 Mar 2020 04:04:49 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 863E3185582
+	for <lists+linux-snps-arc@lfdr.de>; Sat, 14 Mar 2020 11:59:56 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=My0+PbZf3mU72/D9tIkblZ+N7fPAeEHZdVbsJe0srUg=; b=bDBfN8I/apT3JY
-	kwwKvMJEkFILZQi7TDCGPkREVSWFmrwR4axHuMK4Kehm6ceUAV3jcIqHJpQwDwc9iykm6v5WYOyCF
-	oqcq4Twd1BiOOZ3F4sDGmTVkVd8MYkd6ed0uOPOc9LjoMAREsRaEqfNmNzQSMmtDP17fahCxcMDKL
-	DPLlDi4It84sorGZbNyDWf8sVCicqz+ntkTdc2cb6gNY1ipkVBagD2BBd9A5n0UeoX/IfTXtLlP2V
-	+tE+PFLmpwZ41RB2mwEV6qMaUjQ3ysWB4Lzlc9eo7lh0byblhfhHpwop3FZfxd6zJv/h36To+P71m
-	xB96kGjohbhEQa7x7XkA==;
+	List-Owner; bh=JKySEYvLwrC/g8jP+2XOAEpt8rl3eZ2GodTx7H2RyoE=; b=iJYvlF3nG5oIp2
+	5P0doamzRdIB2PLRNyRxXttNO0XmNfifvEC/0NFsiHS+fylm555GGl0Kq6DjnFWdLvgHowGRD1FbA
+	CZY8jdyAr+mB8Ga+TD5pHdWhCrg2tP2zs9WHfSnRdrDi1peBg7Jru33mA2LdQ1jKYXMPmJEiq/5MY
+	hr6p02LOarOYpiqZv5w91/3NnlZEReqY46OuGU8jbxaV39aCGhTMUS8d61oKmvoihdzI1YVB51YoF
+	4hNPimKKZyuv/VfCsywEKEv7yollaZ4y+1OYYc8awDb1MNPEAT6pfnRWxInXcTPbGIiFbcxp78QJ1
+	8FlHQEORv2UiV563lYqA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCacx-0003dK-HY; Fri, 13 Mar 2020 03:04:47 +0000
-Received: from smtprelay-out1.synopsys.com ([149.117.73.133])
+	id 1jD4WI-0000VW-HE; Sat, 14 Mar 2020 10:59:54 +0000
+Received: from mail-ed1-f67.google.com ([209.85.208.67])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCaci-0003UY-V6
- for linux-snps-arc@lists.infradead.org; Fri, 13 Mar 2020 03:04:44 +0000
-Received: from mailhost.synopsys.com (sv1-mailhost2.synopsys.com
- [10.205.2.132])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
- (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id D3057402BA;
- Fri, 13 Mar 2020 03:04:32 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1584068672; bh=gVDbc1axTHLQtEamB0vjSXSfACe83sRo/ds47b/jZ8o=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=Bhgvv8xgdZyFqOyj9oK07Tik4UR/SCXrbAE+KPA/QMFOfiyNQ/c9ZyP2ADVYK3PhT
- o4aCNtapErqlHPvGeDOo/ERtfWMaS1l8C1fl+aW5cV6we8x4gtSTNI01oBAxGqvT0s
- uuVTNhrPQeE7twT1RUEeQ9earqAdMr3eIu3jHwSoCHoBg1kyHL8wLEKGFpqjrwbd5I
- PMStYQfZzou7btw6NJ+pRRUjYTj5R+Br1Z6apqO5Y4QCV56+kHvlsWHxSpY9BEefcG
- CLuGwNoEe8gXzkGu0YFfryF8ZxMm5QjkYQv2Vpz/GfoQIzgQmV3O9VQPXMFASl7kBZ
- fHumzu2rHimag==
-Received: from vineetg-Latitude-E7450.internal.synopsys.com (unknown
- [10.13.182.230])
- by mailhost.synopsys.com (Postfix) with ESMTP id A5A4AA007C;
- Fri, 13 Mar 2020 03:04:32 +0000 (UTC)
-From: Vineet Gupta <Vineet.Gupta1@synopsys.com>
-To: libc-alpha@sourceware.org
-Subject: [PATCH v4 15/15] Documentation for ARC port
-Date: Thu, 12 Mar 2020 20:04:19 -0700
-Message-Id: <20200313030419.15843-16-vgupta@synopsys.com>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20200313030419.15843-1-vgupta@synopsys.com>
-References: <20200313030419.15843-1-vgupta@synopsys.com>
+ id 1jD4WF-0000VC-U3
+ for linux-snps-arc@lists.infradead.org; Sat, 14 Mar 2020 10:59:53 +0000
+Received: by mail-ed1-f67.google.com with SMTP id b23so15286366edx.4
+ for <linux-snps-arc@lists.infradead.org>; Sat, 14 Mar 2020 03:59:50 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=g01xlTcHoCeW8HA/Zoij0G1oenw325gwe1o5DluyjVk=;
+ b=FmCgH/ruISC23qW6imFCSC/MsAYPa7SDMUjYeOxLlbbHQnRNon6aedSmIpXfQ7SJA+
+ K8ycgWF/ljohtDhqWP6mzj6j0J98+bsMcbnNiAe4xPlyyX2Z+FtPVqr6lQzi6M/uL8E3
+ ACLeG8y0PfhzW/Mv/NfKfdxuHYoLPYz/KSbI+HpzQYdxyoLRN+du1WtnF077JJVjU8Vf
+ jUT/KD6rninc55h6rMshUio+GsNiMyIcLaCN8aUAMjP0gcPd+DChhKoi1Lgshx+rvwim
+ uxedtimqmnz0eHMoivANl3koR/eRuQ/JlwKBHhIGkO5ZXhzbOWIyI/exufKfdNfXLzeF
+ cUiQ==
+X-Gm-Message-State: ANhLgQ1ePGBLTqKLv/l/paKEAACjS0vQ9z/NguJfoKBIO2erW/YXwrL0
+ R1kahQVWpV8kuAZn5hPFSxw=
+X-Google-Smtp-Source: ADFU+vv1WkKB0u07WBdUm4ghC+dsxjEf7g/P9HdfFTe2RSYc3zQrfQ3xU1TFNHiCqZRBtceL52pXBQ==
+X-Received: by 2002:a17:906:2181:: with SMTP id
+ 1mr15328632eju.131.1584183589584; 
+ Sat, 14 Mar 2020 03:59:49 -0700 (PDT)
+Received: from kozik-lap ([194.230.155.125])
+ by smtp.googlemail.com with ESMTPSA id f21sm1538993ejx.41.2020.03.14.03.59.46
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Sat, 14 Mar 2020 03:59:48 -0700 (PDT)
+Date: Sat, 14 Mar 2020 11:59:44 +0100
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Thomas Zimmermann <tzimmermann@suse.de>
+Subject: Re: [RESEND PATCH v2 6/9] drm/mgag200: Constify ioreadX() iomem
+ argument (as in generic implementation)
+Message-ID: <20200314105944.GA16044@kozik-lap>
+References: <20200219175007.13627-1-krzk@kernel.org>
+ <20200219175007.13627-7-krzk@kernel.org>
+ <90baef2d-25fe-fac4-6a7e-b103b4b6721e@suse.de>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <90baef2d-25fe-fac4-6a7e-b103b4b6721e@suse.de>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200312_200433_007119_BFD245E2 
-X-CRM114-Status: GOOD (  10.93  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200314_035951_971355_5C6C6068 
+X-CRM114-Status: UNSURE (   8.96  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.208.67 listed in list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [k.kozlowski.k[at]gmail.com]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.208.67 listed in wl.mailspike.net]
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-snps-arc@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,79 +91,51 @@ List-Post: <mailto:linux-snps-arc@lists.infradead.org>
 List-Help: <mailto:linux-snps-arc-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-snps-arc>, 
  <mailto:linux-snps-arc-request@lists.infradead.org?subject=subscribe>
-Cc: Vineet Gupta <Vineet.Gupta1@synopsys.com>,
- linux-snps-arc@lists.infradead.org
+Cc: Rich Felker <dalias@libc.org>, Jiri Slaby <jirislaby@gmail.com>,
+ Geert Uytterhoeven <geert+renesas@glider.be>,
+ "Michael S. Tsirkin" <mst@redhat.com>, David Airlie <airlied@linux.ie>,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+ Jason Wang <jasowang@redhat.com>, dri-devel@lists.freedesktop.org,
+ virtualization@lists.linux-foundation.org,
+ "James E.J. Bottomley" <James.Bottomley@HansenPartnership.com>,
+ netdev@vger.kernel.org, Paul Mackerras <paulus@samba.org>,
+ linux-arch@vger.kernel.org, Dave Jiang <dave.jiang@intel.com>,
+ Yoshinori Sato <ysato@users.sourceforge.jp>,
+ Michael Ellerman <mpe@ellerman.id.au>, Helge Deller <deller@gmx.de>,
+ linux-sh@vger.kernel.org, Alexey Brodkin <abrodkin@synopsys.com>,
+ Ben Skeggs <bskeggs@redhat.com>, nouveau@lists.freedesktop.org,
+ Dave Airlie <airlied@redhat.com>, Matt Turner <mattst88@gmail.com>,
+ linux-snps-arc@lists.infradead.org, Nick Kossifidis <mickflemm@gmail.com>,
+ Allen Hubbe <allenbh@gmail.com>, Arnd Bergmann <arnd@arndb.de>,
+ linux-alpha@vger.kernel.org, Ivan Kokshaysky <ink@jurassic.park.msu.ru>,
+ Thomas Gleixner <tglx@linutronix.de>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>, Kalle Valo <kvalo@codeaurora.org>,
+ Richard Henderson <rth@twiddle.net>, linux-parisc@vger.kernel.org,
+ Vineet Gupta <vgupta@synopsys.com>, linux-wireless@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Luis Chamberlain <mcgrof@kernel.org>,
+ Daniel Vetter <daniel@ffwll.ch>, Jon Mason <jdmason@kudzu.us>,
+ linux-ntb@googlegroups.com, Andrew Morton <akpm@linux-foundation.org>,
+ linux-media@vger.kernel.org, linuxppc-dev@lists.ozlabs.org,
+ "David S. Miller" <davem@davemloft.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-snps-arc" <linux-snps-arc-bounces@lists.infradead.org>
 Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org
 
-Signed-off-by: Vineet Gupta <vgupta@synopsys.com>
----
- NEWS                | 11 +++++++++++
- README              |  1 +
- manual/install.texi |  5 +++++
- 3 files changed, 17 insertions(+)
+On Thu, Mar 12, 2020 at 11:49:05AM +0100, Thomas Zimmermann wrote:
+> Hi Krzysztof,
+> 
+> I just received a resend email from 3 weeks ago :/
+> 
+> Do you want me to merge the mgag200 patch into drm-misc-next?
 
-diff --git a/NEWS b/NEWS
-index b03681eb1462..fd1ef4f56429 100644
---- a/NEWS
-+++ b/NEWS
-@@ -17,6 +17,17 @@ Major new features:
-     - rv32imafdc ilp32
-     - rv32imafdc ilp32d
- 
-+* Support for ARC HS cores running Linux has been contributed by Synopsys.
-+
-+  Port requires atleast
-+    - binutils-2.32 (binutils-2_31-branch: commit 6ce881c15fc4, 2018-10-04)
-+    - gcc 8.3 (gcc-8-stable: commit 0d5ba57508c5, 2019-01-29)
-+    - Linux kernel 5.1+
-+
-+  ISA: ARCv2
-+  ABI: 32-bit, soft-float, LE: /lib/ld-linux-arc.so.2 (compatible with
-+       hard-float builds)
-+
- Deprecated and removed features, and other changes affecting compatibility:
- 
-   [Add deprecations, removals and changes affecting compatibility here]
-diff --git a/README b/README
-index cee86ab178cf..73b4f9f3c907 100644
---- a/README
-+++ b/README
-@@ -24,6 +24,7 @@ The GNU C Library supports these configurations for using Linux kernels:
- 
- 	aarch64*-*-linux-gnu
- 	alpha*-*-linux-gnu
-+	arc-*-linux-gnu
- 	arm-*-linux-gnueabi
- 	csky-*-linux-gnuabiv2
- 	hppa-*-linux-gnu
-diff --git a/manual/install.texi b/manual/install.texi
-index 71bf47cac659..c4b11e4e7973 100644
---- a/manual/install.texi
-+++ b/manual/install.texi
-@@ -507,6 +507,9 @@ the newest version of the compiler that is known to work for building
- release time, GCC 9.2.1 is the newest compiler verified to work to build
- @theglibc{}.
- 
-+For ARC architecture builds, GCC 8.3 is needed which has the necessary
-+fixes to support @theglibc{}.
-+
- For multi-arch support it is recommended to use a GCC which has been built with
- support for GNU indirect functions.  This ensures that correct debugging
- information is generated for functions selected by IFUNC resolvers.  This
-@@ -528,6 +531,8 @@ No other assembler or linker has the necessary functionality at the
- moment. As of release time, GNU @code{binutils} 2.32 is the newest
- verified to work to build @theglibc{}.
- 
-+ARC architecture needs @code{binutils} 2.32 for TLS related fixes.
-+
- @item
- GNU @code{texinfo} 4.7 or later
- 
--- 
-2.20.1
+Thanks but it depends on the first patch in the series so either it
+could go with your ack through other tree or I will send it later (once
+1st patch gets to mainline).
+
+
+Best regards,
+Krzysztof
 
 
 _______________________________________________
