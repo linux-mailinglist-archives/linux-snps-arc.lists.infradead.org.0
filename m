@@ -2,60 +2,58 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 30CB81A2DBD
-	for <lists+linux-snps-arc@lfdr.de>; Thu,  9 Apr 2020 04:56:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AECAF1A2DC3
+	for <lists+linux-snps-arc@lfdr.de>; Thu,  9 Apr 2020 04:56:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=43mW2paKCewFTLM5NhUGGblAWOHvyCp6jYmm6QvLL5g=; b=ZIWsyV+0GjDPjC
-	pcjzRapVyl2EONLEaX4UNGYn7ltno5nmDiD+KFJAXfp51togXQtbhdocwQMCiPbj60xVpRKdG+K3v
-	BDm2zctnHKfea6l9zB7l6RW80uDS7f2X3wAMvoZeT2bCAU2aiLbJ/cIfRpwaZWMjSudcMAgpgeN92
-	y0qzm+ILrbO8r2LovTaJvCK0YfkLNrnmBVrPUZ4NXsSjSv8ptXaWzUNGoqEHyvAeRA8fsfsWp0cbA
-	GcCNkdoC47MAm5odYls5f8vtDiy/2QUS8ZYPU15XMcmQSCrwikpu9OTEBFuGpO0Ug/VRHPDi2Pwk/
-	TvNu5TgqcNn0SMxmUSXg==;
+	List-Owner; bh=PwGQSSV1c3M2Dvr6JeS7wIA2TjXVB29t7o5lGiI7Lco=; b=N2s+gUmsxvtuUk
+	68uGdgiNkk+aksk4kQNin8FAV8q3GrOF//oA5F9cPS/rHge7FHeT/VwON6KdHNFZ+b4wNHbohP8hy
+	SZwvBsiNWRr5jrR/CNfBPKD0E2kKQpTE6V0cJ5hGmLdbciZ+RwGEWmXMPWlasE1ZYbX0qhnA7UDd7
+	i2BBrfmYbE8MfLxxKKuldwr6JFDmLTp+ZYfeCOgBI+JVH9LT2CRxCRVtUBIdwLOH0/Q7RIxZm9m+B
+	aJJWOIRjdSBMheh7u7Vd67AwD4a5I0UKXBAmqEGXsD+RPkfaXPmdoNr1aPIIQT3fQ5N4XvhX8+6SA
+	Q/pBaN0PdyyN1SiV6fhg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMNMw-0005cq-N8; Thu, 09 Apr 2020 02:56:42 +0000
+	id 1jMNN3-0005hP-Bc; Thu, 09 Apr 2020 02:56:49 +0000
 Received: from smtprelay-out1.synopsys.com ([149.117.73.133])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMNMp-0005Yb-Nq
- for linux-snps-arc@lists.infradead.org; Thu, 09 Apr 2020 02:56:40 +0000
+ id 1jMNMq-0005Yu-CH
+ for linux-snps-arc@lists.infradead.org; Thu, 09 Apr 2020 02:56:45 +0000
 Received: from mailhost.synopsys.com (sv2-mailhost1.synopsys.com
  [10.205.2.133])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
  (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 99750406C6;
- Thu,  9 Apr 2020 02:56:35 +0000 (UTC)
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 4573340658;
+ Thu,  9 Apr 2020 02:56:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1586400995; bh=FpzH26+XHhQ4MnRVPEvTRe9J5/GD/h8nVipsmT0AXRY=;
+ t=1586400996; bh=09wsIJR4GSpOKhDoLcWQlJEy7PUqkkkXOh+3Ts8DIk4=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=MGUjuwuHTEf2Lnh0nm4CBXFuvJ847MQ0Vy+5oRVZaYqmZjtM+8MSd/Q3Zsi93vbYh
- XtqkY4O0SDCyi1wwgkwb61gV/yVLM0J7OSZghgdHj8d9P5tYrG61+jpIdkcr5c9wj4
- KISqbwuzrDnPY/FC7i/XrN76XT+hidNiIxASn6sgJw4uvJ2K8pH+cNDp92RCuF21Cg
- 8u8LQH0eiFMnJfIjI1DYNr8cxUV8aKuv6xg7MCOcFSoc+beHmTqjyTKfqKlQ32wD76
- zRMrq4jgRcs9ON+kw9yJFSGc8X0TZVw1ojJmje2nhdEA/+tqxURIWSc6pubRNEtrCd
- sN+1SYYJbx8wg==
+ b=PZklu0irX/dtbJqst2BqrB1LX9FFfZqgf9o/oKxC8/aWfGm81SLiOliXBV6zIxyUT
+ eDTvpS9sB9gBqkMFxvqc5yNsJLHt2Wu/0q0pjbJj/+ONEZO4WS7V7fHgTmU4bmQ3d0
+ n8mcmwdLqXsJXiuT4B+cpoa3Etc+MkQ9dqOTQLNsKBE8a04tZPpg7PTXsKGar7ItgH
+ dcvas73YRz+Ft0cP3sIaN3GV+LavH/2Idxrbbqm9kxA/NQg9LFF7Y/UXvJG49tPEqp
+ Sq4UWKqK9KpPizsOgBS5uEtdLIjTN4AHD4ZV4YK419OHE80aZO1OqDYf7bLKeynyAZ
+ a8x/cDctBPjww==
 Received: from vineetg-Latitude-7400.internal.synopsys.com (unknown
  [10.13.183.89])
- by mailhost.synopsys.com (Postfix) with ESMTP id 620FEA00C5;
+ by mailhost.synopsys.com (Postfix) with ESMTP id 9A0BAA00BD;
  Thu,  9 Apr 2020 02:56:35 +0000 (UTC)
 From: Vineet Gupta <Vineet.Gupta1@synopsys.com>
 To: libc-alpha@sourceware.org
-Subject: [PATCH v5 11/14] ARC: Update syscall-names.list for ARC specific
- syscalls
-Date: Wed,  8 Apr 2020 19:56:12 -0700
-Message-Id: <20200409025615.27003-12-vgupta@synopsys.com>
+Subject: [PATCH v5 12/14] ARC: Build Infrastructure
+Date: Wed,  8 Apr 2020 19:56:13 -0700
+Message-Id: <20200409025615.27003-13-vgupta@synopsys.com>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200409025615.27003-1-vgupta@synopsys.com>
 References: <20200409025615.27003-1-vgupta@synopsys.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200408_195635_772856_8DCA431F 
-X-CRM114-Status: UNSURE (   7.44  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200408_195636_448446_BBEF765E 
+X-CRM114-Status: GOOD (  18.45  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -90,23 +88,522 @@ Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.o
 
 Signed-off-by: Vineet Gupta <vgupta@synopsys.com>
 ---
- sysdeps/unix/sysv/linux/syscall-names.list | 3 +++
- 1 file changed, 3 insertions(+)
+ config.h.in                                |   3 +
+ scripts/build-many-glibcs.py               |   9 +
+ sysdeps/arc/Implies                        |   3 +
+ sysdeps/arc/Makefile                       |  21 +++
+ sysdeps/arc/Versions                       |   8 +
+ sysdeps/arc/configure                      | 182 +++++++++++++++++++++
+ sysdeps/arc/configure.ac                   |  26 +++
+ sysdeps/arc/nptl/Makefile                  |  22 +++
+ sysdeps/arc/preconfigure                   |  14 ++
+ sysdeps/unix/sysv/linux/arc/Implies        |   3 +
+ sysdeps/unix/sysv/linux/arc/Makefile       |  29 ++++
+ sysdeps/unix/sysv/linux/arc/Versions       |  16 ++
+ sysdeps/unix/sysv/linux/arc/configure      |   4 +
+ sysdeps/unix/sysv/linux/arc/configure.ac   |   4 +
+ sysdeps/unix/sysv/linux/arc/ldconfig.h     |  27 +++
+ sysdeps/unix/sysv/linux/arc/shlib-versions |   7 +
+ 16 files changed, 378 insertions(+)
+ create mode 100644 sysdeps/arc/Implies
+ create mode 100644 sysdeps/arc/Makefile
+ create mode 100644 sysdeps/arc/Versions
+ create mode 100644 sysdeps/arc/configure
+ create mode 100644 sysdeps/arc/configure.ac
+ create mode 100644 sysdeps/arc/nptl/Makefile
+ create mode 100644 sysdeps/arc/preconfigure
+ create mode 100644 sysdeps/unix/sysv/linux/arc/Implies
+ create mode 100644 sysdeps/unix/sysv/linux/arc/Makefile
+ create mode 100644 sysdeps/unix/sysv/linux/arc/Versions
+ create mode 100644 sysdeps/unix/sysv/linux/arc/configure
+ create mode 100644 sysdeps/unix/sysv/linux/arc/configure.ac
+ create mode 100644 sysdeps/unix/sysv/linux/arc/ldconfig.h
+ create mode 100644 sysdeps/unix/sysv/linux/arc/shlib-versions
 
-diff --git a/sysdeps/unix/sysv/linux/syscall-names.list b/sysdeps/unix/sysv/linux/syscall-names.list
-index 3d89814003a2..758b50164103 100644
---- a/sysdeps/unix/sysv/linux/syscall-names.list
-+++ b/sysdeps/unix/sysv/linux/syscall-names.list
-@@ -41,6 +41,9 @@ adjtimex
- afs_syscall
- alarm
- alloc_hugepages
-+arc_gettls
-+arc_settls
-+arc_usr_cmpxchg
- arch_prctl
- arm_fadvise64_64
- arm_sync_file_range
+diff --git a/config.h.in b/config.h.in
+index dea43df438f6..08962dfed075 100644
+--- a/config.h.in
++++ b/config.h.in
+@@ -109,6 +109,9 @@
+ /* AArch64 big endian ABI */
+ #undef HAVE_AARCH64_BE
+ 
++/* ARC big endian ABI */
++#undef HAVE_ARC_BE
++
+ /* C-SKY ABI version.  */
+ #undef CSKYABI
+ 
+diff --git a/scripts/build-many-glibcs.py b/scripts/build-many-glibcs.py
+index 942a2227806a..64a836c52ea9 100755
+--- a/scripts/build-many-glibcs.py
++++ b/scripts/build-many-glibcs.py
+@@ -162,6 +162,15 @@ class Context(object):
+                                        'cfg': ['--disable-multi-arch']}])
+         self.add_config(arch='aarch64_be',
+                         os_name='linux-gnu')
++        self.add_config(arch='arc',
++                        os_name='linux-gnu',
++                        gcc_cfg=['--disable-multilib', '--with-cpu=hs38'])
++        self.add_config(arch='arc',
++                        os_name='linux-gnuhf',
++                        gcc_cfg=['--disable-multilib', '--with-cpu=hs38_linux'])
++        self.add_config(arch='arceb',
++                        os_name='linux-gnu',
++                        gcc_cfg=['--disable-multilib', '--with-cpu=hs38'])
+         self.add_config(arch='alpha',
+                         os_name='linux-gnu')
+         self.add_config(arch='arm',
+diff --git a/sysdeps/arc/Implies b/sysdeps/arc/Implies
+new file mode 100644
+index 000000000000..780c4e246769
+--- /dev/null
++++ b/sysdeps/arc/Implies
+@@ -0,0 +1,3 @@
++wordsize-32
++ieee754/flt-32
++ieee754/dbl-64
+diff --git a/sysdeps/arc/Makefile b/sysdeps/arc/Makefile
+new file mode 100644
+index 000000000000..56ac503bfe43
+--- /dev/null
++++ b/sysdeps/arc/Makefile
+@@ -0,0 +1,21 @@
++# ARC Makefile
++# Copyright (C) 1993-2020 Free Software Foundation, Inc.
++# This file is part of the GNU C Library.
++
++# The GNU C Library is free software; you can redistribute it and/or
++# modify it under the terms of the GNU Lesser General Public
++# License as published by the Free Software Foundation; either
++# version 2.1 of the License, or (at your option) any later version.
++
++# The GNU C Library is distributed in the hope that it will be useful,
++# but WITHOUT ANY WARRANTY; without even the implied warranty of
++# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
++# Lesser General Public License for more details.
++
++# You should have received a copy of the GNU Lesser General Public
++# License along with the GNU C Library.  If not, see
++# <https://www.gnu.org/licenses/>.
++
++# We don't support long doubles as a distinct type.  We don't need to set
++# this variable; it's here mostly for documentational purposes.
++long-double-fcts = no
+diff --git a/sysdeps/arc/Versions b/sysdeps/arc/Versions
+new file mode 100644
+index 000000000000..6ac7b8e49505
+--- /dev/null
++++ b/sysdeps/arc/Versions
+@@ -0,0 +1,8 @@
++libc {
++  GLIBC_2.32 {
++    __mcount;
++  }
++  GLIBC_PRIVATE {
++    __syscall_error;
++  }
++}
+diff --git a/sysdeps/arc/configure b/sysdeps/arc/configure
+new file mode 100644
+index 000000000000..5820017d6505
+--- /dev/null
++++ b/sysdeps/arc/configure
+@@ -0,0 +1,182 @@
++# This file is generated from configure.ac by Autoconf.  DO NOT EDIT!
++ # Local configure fragment for sysdeps/arc.
++
++$as_echo "#define PI_STATIC_AND_HIDDEN 1" >>confdefs.h
++
++libc_cv_have_sdata_section=no
++
++# For ARC, historically ; was used for comments and not newline
++# Later # also got added to comment list, but ; couldn't be switched to
++# canonical newline as there's lots of code out there which will break
++libc_cv_asm_line_sep='`'
++cat >>confdefs.h <<_ACEOF
++#define ASM_LINE_SEP $libc_cv_asm_line_sep
++_ACEOF
++
++
++# For big endian ABI, generate a symbol for selecting right dynamic linker
++
++
++{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for grep that handles long lines and -e" >&5
++$as_echo_n "checking for grep that handles long lines and -e... " >&6; }
++if ${ac_cv_path_GREP+:} false; then :
++  $as_echo_n "(cached) " >&6
++else
++  if test -z "$GREP"; then
++  ac_path_GREP_found=false
++  # Loop through the user's path and test for each of PROGNAME-LIST
++  as_save_IFS=$IFS; IFS=$PATH_SEPARATOR
++for as_dir in $PATH$PATH_SEPARATOR/usr/xpg4/bin
++do
++  IFS=$as_save_IFS
++  test -z "$as_dir" && as_dir=.
++    for ac_prog in grep ggrep; do
++    for ac_exec_ext in '' $ac_executable_extensions; do
++      ac_path_GREP="$as_dir/$ac_prog$ac_exec_ext"
++      as_fn_executable_p "$ac_path_GREP" || continue
++# Check for GNU ac_path_GREP and select it if it is found.
++  # Check for GNU $ac_path_GREP
++case `"$ac_path_GREP" --version 2>&1` in
++*GNU*)
++  ac_cv_path_GREP="$ac_path_GREP" ac_path_GREP_found=:;;
++*)
++  ac_count=0
++  $as_echo_n 0123456789 >"conftest.in"
++  while :
++  do
++    cat "conftest.in" "conftest.in" >"conftest.tmp"
++    mv "conftest.tmp" "conftest.in"
++    cp "conftest.in" "conftest.nl"
++    $as_echo 'GREP' >> "conftest.nl"
++    "$ac_path_GREP" -e 'GREP$' -e '-(cannot match)-' < "conftest.nl" >"conftest.out" 2>/dev/null || break
++    diff "conftest.out" "conftest.nl" >/dev/null 2>&1 || break
++    as_fn_arith $ac_count + 1 && ac_count=$as_val
++    if test $ac_count -gt ${ac_path_GREP_max-0}; then
++      # Best one so far, save it but keep looking for a better one
++      ac_cv_path_GREP="$ac_path_GREP"
++      ac_path_GREP_max=$ac_count
++    fi
++    # 10*(2^10) chars as input seems more than enough
++    test $ac_count -gt 10 && break
++  done
++  rm -f conftest.in conftest.tmp conftest.nl conftest.out;;
++esac
++
++      $ac_path_GREP_found && break 3
++    done
++  done
++  done
++IFS=$as_save_IFS
++  if test -z "$ac_cv_path_GREP"; then
++    as_fn_error $? "no acceptable grep could be found in $PATH$PATH_SEPARATOR/usr/xpg4/bin" "$LINENO" 5
++  fi
++else
++  ac_cv_path_GREP=$GREP
++fi
++
++fi
++{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_path_GREP" >&5
++$as_echo "$ac_cv_path_GREP" >&6; }
++ GREP="$ac_cv_path_GREP"
++
++
++{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for egrep" >&5
++$as_echo_n "checking for egrep... " >&6; }
++if ${ac_cv_path_EGREP+:} false; then :
++  $as_echo_n "(cached) " >&6
++else
++  if echo a | $GREP -E '(a|b)' >/dev/null 2>&1
++   then ac_cv_path_EGREP="$GREP -E"
++   else
++     if test -z "$EGREP"; then
++  ac_path_EGREP_found=false
++  # Loop through the user's path and test for each of PROGNAME-LIST
++  as_save_IFS=$IFS; IFS=$PATH_SEPARATOR
++for as_dir in $PATH$PATH_SEPARATOR/usr/xpg4/bin
++do
++  IFS=$as_save_IFS
++  test -z "$as_dir" && as_dir=.
++    for ac_prog in egrep; do
++    for ac_exec_ext in '' $ac_executable_extensions; do
++      ac_path_EGREP="$as_dir/$ac_prog$ac_exec_ext"
++      as_fn_executable_p "$ac_path_EGREP" || continue
++# Check for GNU ac_path_EGREP and select it if it is found.
++  # Check for GNU $ac_path_EGREP
++case `"$ac_path_EGREP" --version 2>&1` in
++*GNU*)
++  ac_cv_path_EGREP="$ac_path_EGREP" ac_path_EGREP_found=:;;
++*)
++  ac_count=0
++  $as_echo_n 0123456789 >"conftest.in"
++  while :
++  do
++    cat "conftest.in" "conftest.in" >"conftest.tmp"
++    mv "conftest.tmp" "conftest.in"
++    cp "conftest.in" "conftest.nl"
++    $as_echo 'EGREP' >> "conftest.nl"
++    "$ac_path_EGREP" 'EGREP$' < "conftest.nl" >"conftest.out" 2>/dev/null || break
++    diff "conftest.out" "conftest.nl" >/dev/null 2>&1 || break
++    as_fn_arith $ac_count + 1 && ac_count=$as_val
++    if test $ac_count -gt ${ac_path_EGREP_max-0}; then
++      # Best one so far, save it but keep looking for a better one
++      ac_cv_path_EGREP="$ac_path_EGREP"
++      ac_path_EGREP_max=$ac_count
++    fi
++    # 10*(2^10) chars as input seems more than enough
++    test $ac_count -gt 10 && break
++  done
++  rm -f conftest.in conftest.tmp conftest.nl conftest.out;;
++esac
++
++      $ac_path_EGREP_found && break 3
++    done
++  done
++  done
++IFS=$as_save_IFS
++  if test -z "$ac_cv_path_EGREP"; then
++    as_fn_error $? "no acceptable egrep could be found in $PATH$PATH_SEPARATOR/usr/xpg4/bin" "$LINENO" 5
++  fi
++else
++  ac_cv_path_EGREP=$EGREP
++fi
++
++   fi
++fi
++{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_path_EGREP" >&5
++$as_echo "$ac_cv_path_EGREP" >&6; }
++ EGREP="$ac_cv_path_EGREP"
++
++
++{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for big endian" >&5
++$as_echo_n "checking for big endian... " >&6; }
++if ${libc_cv_arc_be+:} false; then :
++  $as_echo_n "(cached) " >&6
++else
++  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
++/* end confdefs.h.  */
++#ifdef __BIG_ENDIAN__
++                      yes
++                     #endif
++
++_ACEOF
++if (eval "$ac_cpp conftest.$ac_ext") 2>&5 |
++  $EGREP "yes" >/dev/null 2>&1; then :
++  libc_cv_arc_be=yes
++else
++  libc_cv_arc_be=no
++fi
++rm -f conftest*
++
++fi
++{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $libc_cv_arc_be" >&5
++$as_echo "$libc_cv_arc_be" >&6; }
++if test $libc_cv_arc_be = yes; then
++  # For shlib-versions.
++  $as_echo "#define HAVE_ARC_BE 1" >>confdefs.h
++
++  config_vars="$config_vars
++default-abi = ilp32_be"
++else
++  config_vars="$config_vars
++default-abi = ilp32"
++fi
+diff --git a/sysdeps/arc/configure.ac b/sysdeps/arc/configure.ac
+new file mode 100644
+index 000000000000..d5bcd2a58cdc
+--- /dev/null
++++ b/sysdeps/arc/configure.ac
+@@ -0,0 +1,26 @@
++GLIBC_PROVIDES dnl See aclocal.m4 in the top level source directory.
++# Local configure fragment for sysdeps/arc.
++
++AC_DEFINE(PI_STATIC_AND_HIDDEN)
++libc_cv_have_sdata_section=no
++
++# For ARC, historically ; was used for comments and not newline
++# Later # also got added to comment list, but ; couldn't be switched to
++# canonical newline as there's lots of code out there which will break
++libc_cv_asm_line_sep='`'
++AC_DEFINE_UNQUOTED(ASM_LINE_SEP, $libc_cv_asm_line_sep)
++
++# For big endian ABI, generate a symbol for selecting right dynamic linker
++AC_CACHE_CHECK([for big endian],
++  [libc_cv_arc_be],
++  [AC_EGREP_CPP(yes,[#ifdef __BIG_ENDIAN__
++                      yes
++                     #endif
++  ], libc_cv_arc_be=yes, libc_cv_arc_be=no)])
++if test $libc_cv_arc_be = yes; then
++  # For shlib-versions.
++  AC_DEFINE(HAVE_ARC_BE)
++  LIBC_CONFIG_VAR([default-abi], [ilp32_be])
++else
++  LIBC_CONFIG_VAR([default-abi], [ilp32])
++fi
+diff --git a/sysdeps/arc/nptl/Makefile b/sysdeps/arc/nptl/Makefile
+new file mode 100644
+index 000000000000..6f387c53905d
+--- /dev/null
++++ b/sysdeps/arc/nptl/Makefile
+@@ -0,0 +1,22 @@
++# NPTL makefile fragment for ARC.
++# Copyright (C) 2005-2020 Free Software Foundation, Inc.
++#
++# This file is part of the GNU C Library.
++#
++# The GNU C Library is free software; you can redistribute it and/or
++# modify it under the terms of the GNU Lesser General Public
++# License as published by the Free Software Foundation; either
++# version 2.1 of the License, or (at your option) any later version.
++#
++# The GNU C Library is distributed in the hope that it will be useful,
++# but WITHOUT ANY WARRANTY; without even the implied warranty of
++# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
++# Lesser General Public License for more details.
++#
++# You should have received a copy of the GNU Lesser General Public
++# License along with the GNU C Library.  If not, see
++# <https://www.gnu.org/licenses/>.
++
++ifeq ($(subdir),csu)
++gen-as-const-headers += tcb-offsets.sym
++endif
+diff --git a/sysdeps/arc/preconfigure b/sysdeps/arc/preconfigure
+new file mode 100644
+index 000000000000..a79db0239ae6
+--- /dev/null
++++ b/sysdeps/arc/preconfigure
+@@ -0,0 +1,14 @@
++case "$machine" in
++arc*)
++  base_machine=arc
++  machine=arc
++
++  gccfloat=`$CC $CFLAGS $CPPFLAGS -E -dM -xc /dev/null | grep __ARC_FPU_| wc -l`
++  if test "$gccfloat" != "0"; then
++    with_fp_cond=1
++  else
++    with_fp_cond=0
++  fi
++  ;;
++
++esac
+diff --git a/sysdeps/unix/sysv/linux/arc/Implies b/sysdeps/unix/sysv/linux/arc/Implies
+new file mode 100644
+index 000000000000..7f739a0340b6
+--- /dev/null
++++ b/sysdeps/unix/sysv/linux/arc/Implies
+@@ -0,0 +1,3 @@
++arc/nptl
++unix/sysv/linux/generic/wordsize-32
++unix/sysv/linux/generic
+diff --git a/sysdeps/unix/sysv/linux/arc/Makefile b/sysdeps/unix/sysv/linux/arc/Makefile
+new file mode 100644
+index 000000000000..7958625f6d5c
+--- /dev/null
++++ b/sysdeps/unix/sysv/linux/arc/Makefile
+@@ -0,0 +1,29 @@
++ifeq ($(subdir),stdlib)
++gen-as-const-headers += ucontext_i.sym
++endif
++
++ifeq ($(subdir),signal)
++sysdep_routines += sigrestorer
++endif
++
++ifeq ($(subdir),misc)
++# MIPS/Tile-style cacheflush routine
++sysdep_headers += sys/cachectl.h
++sysdep_routines += cacheflush
++endif
++
++ifeq ($(subdir),elf)
++ifeq ($(build-shared),yes)
++# This is needed for DSO loading from static binaries.
++sysdep-dl-routines += dl-static
++endif
++endif
++
++abi-variants := ilp32 ilp32_be
++
++ifeq (,$(filter $(default-abi),$(abi-variants)))
++$(error Unknown ABI $(default-abi), must be one of $(abi-variants))
++endif
++
++abi-ilp32-condition	:= !defined __BIG_ENDIAN__
++abi-ilp32_be-condition	:= defined __BIG_ENDIAN__
+diff --git a/sysdeps/unix/sysv/linux/arc/Versions b/sysdeps/unix/sysv/linux/arc/Versions
+new file mode 100644
+index 000000000000..292f1974b02a
+--- /dev/null
++++ b/sysdeps/unix/sysv/linux/arc/Versions
+@@ -0,0 +1,16 @@
++ld {
++  GLIBC_PRIVATE {
++    # used for loading by static libraries
++    _dl_var_init;
++  }
++}
++libc {
++  GLIBC_2.32 {
++    _flush_cache;
++    cacheflush;
++  }
++  GLIBC_PRIVATE {
++    # A copy of sigaction lives in libpthread, and needs these.
++    __default_rt_sa_restorer;
++  }
++}
+diff --git a/sysdeps/unix/sysv/linux/arc/configure b/sysdeps/unix/sysv/linux/arc/configure
+new file mode 100644
+index 000000000000..56ec14357507
+--- /dev/null
++++ b/sysdeps/unix/sysv/linux/arc/configure
+@@ -0,0 +1,4 @@
++# This file is generated from configure.in by Autoconf.  DO NOT EDIT!
++ # Local configure fragment for sysdeps/unix/sysv/linux/arc.
++
++arch_minimum_kernel=5.1.0
+diff --git a/sysdeps/unix/sysv/linux/arc/configure.ac b/sysdeps/unix/sysv/linux/arc/configure.ac
+new file mode 100644
+index 000000000000..8af5a12cc248
+--- /dev/null
++++ b/sysdeps/unix/sysv/linux/arc/configure.ac
+@@ -0,0 +1,4 @@
++GLIBC_PROVIDES dnl See aclocal.m4 in the top level source directory.
++# Local configure fragment for sysdeps/unix/sysv/linux/arc.
++
++arch_minimum_kernel=5.1.0
+diff --git a/sysdeps/unix/sysv/linux/arc/ldconfig.h b/sysdeps/unix/sysv/linux/arc/ldconfig.h
+new file mode 100644
+index 000000000000..4896ec005c8e
+--- /dev/null
++++ b/sysdeps/unix/sysv/linux/arc/ldconfig.h
+@@ -0,0 +1,27 @@
++/* ldconfig default paths and libraries.  Linux/RISC-V version.
++   Copyright (C) 2001-2020 Free Software Foundation, Inc.
++   This file is part of the GNU C Library.
++
++   The GNU C Library is free software; you can redistribute it and/or
++   modify it under the terms of the GNU Lesser General Public
++   License as published by the Free Software Foundation; either
++   version 2.1 of the License, or (at your option) any later version.
++
++   The GNU C Library is distributed in the hope that it will be useful,
++   but WITHOUT ANY WARRANTY; without even the implied warranty of
++   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
++   Lesser General Public License for more details.
++
++   You should have received a copy of the GNU Lesser General Public
++   License along with the GNU C Library.  If not, see
++   <https://www.gnu.org/licenses/>.  */
++
++#include <sysdeps/generic/ldconfig.h>
++
++#define SYSDEP_KNOWN_INTERPRETER_NAMES 		\
++  { "/lib/ld-linux-arc.so.2", FLAG_ELF_LIBC6 },	\
++  { "/lib/ld-linux-arceb.so.2", FLAG_ELF_LIBC6 },
++
++#define SYSDEP_KNOWN_LIBRARY_NAMES 	\
++  { "libc.so.6", FLAG_ELF_LIBC6 },	\
++  { "libm.so.6", FLAG_ELF_LIBC6 },
+diff --git a/sysdeps/unix/sysv/linux/arc/shlib-versions b/sysdeps/unix/sysv/linux/arc/shlib-versions
+new file mode 100644
+index 000000000000..343c0a04500e
+--- /dev/null
++++ b/sysdeps/unix/sysv/linux/arc/shlib-versions
+@@ -0,0 +1,7 @@
++DEFAULT                 GLIBC_2.32
++
++%ifdef HAVE_ARC_BE
++ld=ld-linux-arceb.so.2
++%else
++ld=ld-linux-arc.so.2
++%endif
 -- 
 2.20.1
 
