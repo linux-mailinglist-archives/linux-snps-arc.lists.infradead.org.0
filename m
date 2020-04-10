@@ -2,71 +2,86 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7D16D1A2DC2
-	for <lists+linux-snps-arc@lfdr.de>; Thu,  9 Apr 2020 04:56:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9F0731A4639
+	for <lists+linux-snps-arc@lfdr.de>; Fri, 10 Apr 2020 14:26:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BlaMQe8LGntulhsw6/oePGybj4G/vkJXCCeB/ej2aRY=; b=r0TaWx9/yWz3jr
-	CVbL9ce39kzWcyFLj8ogEXq3ZfuK1AJ+0MhxHOQR9c5kdun5nXiwPR359fqohN+WZI3bxAe3UXV0i
-	VMoscvIK1H31rdjf2lydSb+KYGlwSA+qm8kExRDYjg4U2ay5/kmTsRCzezwzXEPeR93Kr3ZC2+7Yg
-	7ZWgMEO5Aff6VXbkSCV4ExjLgxpi5brwz+xqhTpu8ImJ9RrXtmR0NjwYg7UPEVDzSZ0qZln1gb8ih
-	Q7uPV5lhgKzvUgyx9Zjvi3AfyznEfmpz1kp3UsRYNonHzrLUB2zAIa35klL0iJkqHkDGWB6utFzUH
-	Pw/VRSUq46i79YEiVRDQ==;
+	List-Owner; bh=UtMW5f5Qe4wGrWUkyZBqbydcO1gjPE9F89hQf4wWC/U=; b=GCT7wcKPXs2zoN
+	SdbLoZGmwsf3P0k/3fd6W2L/T1INAPDp+rNt5L95Xmc8r+fclhNrTTVNiiRUdSVxMOsL97s/dQdvU
+	41FeGDA6gT/iSZMU6WOzdBJXhNSSqTnhvGDJsUjL7r9fYzmJT51Yf8lzFpD+TB/Wr4E4O4tJF8j6B
+	vvqxH5B69oigY5aHDZE/e5wLAb8q78/LIf9e60Vz5IK0lix+3eW0oU9TqIEmen8rnEKvrSN+0ciDW
+	LPSHyT/+xRy6YgodO7d552bVDqgyVxRpdCBPqaqK7KL0O0gAeSvcpnfwM5o8aCpVnqXOwCmnRkBkU
+	bTq6aZccnCgjU9q0J9hg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMNN1-0005fo-6S; Thu, 09 Apr 2020 02:56:47 +0000
-Received: from smtprelay-out1.synopsys.com ([149.117.87.133])
+	id 1jMsjP-0005aX-Ot; Fri, 10 Apr 2020 12:25:59 +0000
+Received: from mail-ua1-x935.google.com ([2607:f8b0:4864:20::935])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMNMs-0005ah-Rg
- for linux-snps-arc@lists.infradead.org; Thu, 09 Apr 2020 02:56:43 +0000
-Received: from mailhost.synopsys.com (sv2-mailhost1.synopsys.com
- [10.205.2.133])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
- (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 61356C033A;
- Thu,  9 Apr 2020 02:56:38 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1586400998; bh=suG7++ULhYbWo32rp7/PdPKe61AuMNz+ING7DthPshM=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=gxi7yXdOdkGoH0sOHl1iWmin15ux9sCGEHkOWzJdp6QeqqxVpvJMlk/Ro7w9K/79z
- t8p7QIOaOmWsR5QKrv4QQkdXOnrTE5dlLAQCnMf4inpCIGU9Mv1Jn301W8++gdydBj
- EsGdb93F6GxquHpSgpRk1dah2awz1uW5jehsHWmM0C+ZkhMwxW41+2HkQkJrencEXi
- AGNNTDqsx2JnUYX+pmrK1Oujxi92TnUAQ8MQTBkgap+7e8iHPZGJrIPAuT1r6JHaZi
- dTowhNpBmLhsZai6nd7GHAQIMR2BbAsql5clcJy26SmuIt7H+D9F6QtqzGLpgZ3K5u
- eXCUERAIX8xbg==
-Received: from vineetg-Latitude-7400.internal.synopsys.com (unknown
- [10.13.183.89])
- by mailhost.synopsys.com (Postfix) with ESMTP id 94031A00BB;
- Thu,  9 Apr 2020 02:56:37 +0000 (UTC)
-From: Vineet Gupta <Vineet.Gupta1@synopsys.com>
-To: libc-alpha@sourceware.org
-Subject: [PATCH v5 14/14] Documentation for ARC port
-Date: Wed,  8 Apr 2020 19:56:15 -0700
-Message-Id: <20200409025615.27003-15-vgupta@synopsys.com>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20200409025615.27003-1-vgupta@synopsys.com>
-References: <20200409025615.27003-1-vgupta@synopsys.com>
+ id 1jMsjM-0005Zq-Hx
+ for linux-snps-arc@lists.infradead.org; Fri, 10 Apr 2020 12:25:58 +0000
+Received: by mail-ua1-x935.google.com with SMTP id a6so565693uao.2
+ for <linux-snps-arc@lists.infradead.org>; Fri, 10 Apr 2020 05:25:54 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc:content-transfer-encoding;
+ bh=jKuDLDsHWshF5yvY0jgeiyAmI7igCf0RSWzymhUvYJ8=;
+ b=dXEOrXhG/oeMd/eZVegN+2O9DhLaP2bdAScBNkpTifozjirQtF7vAFm7XMS67mHFjz
+ V0QRR0aKDaCVKEH53Q1GzPRX45nGprJRtP2yKpv8tfLnVU12I4k9PTPqjpEDQsFPoZgy
+ rqD2og145qksMih3VTA+fCZbehtBot8025VzygKCGo92NARvgeAAl8a2nyO7gekLIWMN
+ wtWC5xfl2pZmUHzM61ClbAfFrpXVb/cJ4jyMGJMsnrAFh263RXwYsETwvXOeRMqRh8xy
+ athdct+KO19LI+7cnYewLAGH973bYzhukUH0qXsO0kQZ65mX0IEpnxOm8CB/CntALrot
+ XJ2A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=jKuDLDsHWshF5yvY0jgeiyAmI7igCf0RSWzymhUvYJ8=;
+ b=sqEC2Ffc1Xx9kfhF4ZJQ8mTTUxBKH8SUTSd0incrM0nn77MOlnHDu2PBZa250LWaqv
+ DXmxxFaThRGbYEnnvWFKUySIauzJOkq8MwxsKvVMtjoXCFVQKTQPlo9Gyud8pUJfAFre
+ sCxH5Pb4qS7aJwHgNhT5RcwxVUwczjPbmxdCT8c+H/CARoZxqnJvSZ5wJZTwLZBz8mSz
+ SEge/s83BHD0qG3kOS3ps1o6DVVwKC7+t9F5i4uoXF/+WQ7w29xBQ+zL2XHvNiN7Jv62
+ Wz1HY9qemvG00IO7tqQeHhdI2YOfxKdOF5nv27zvp9gFFGV75x9qpqc/uyWrmorp/uKd
+ 2egw==
+X-Gm-Message-State: AGi0PubXn6+vNJFsQwyjQIgP5Gb8JWqJs25mDl/cFQ9wJZz5enuR+Mr7
+ GfGrmReeQ16MlU6LbYB3Zquw+sij6zjQFOxQIfZ2+rAC
+X-Google-Smtp-Source: APiQypLRxPVIgyH3kmsT0zKj9IpKiWvIJsnuVWLGlpOQ6vhVoebG8D9QNVvachQZIve03PX0xZfDjXNbP5w9Cyiedv8=
+X-Received: by 2002:ab0:1331:: with SMTP id g46mr2876163uae.72.1586521553775; 
+ Fri, 10 Apr 2020 05:25:53 -0700 (PDT)
 MIME-Version: 1.0
+References: <20200329000503.27897-1-vgupta@synopsys.com>
+ <CAL0iMy0f0tt6UtBRyT1hn=FsvF5tBYVKmcxHq57rDbc9YEtO0A@mail.gmail.com>
+ <7f81729a-6912-dc79-848b-4cdfa821d93b@synopsys.com>
+In-Reply-To: <7f81729a-6912-dc79-848b-4cdfa821d93b@synopsys.com>
+From: Claudiu Zissulescu Ianculescu <claziss@gmail.com>
+Date: Fri, 10 Apr 2020 15:25:41 +0300
+Message-ID: <CAL0iMy2A1mj3HHg3s2OHqriDTCmPqU3TNLHvqULjDz5tEvkH9w@mail.gmail.com>
+Subject: Re: [PATCH] [ARC] Allow more ABIs in GLIBC_DYNAMIC_LINKER
+To: Vineet Gupta <Vineet.Gupta1@synopsys.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200408_195638_933648_F965FD35 
-X-CRM114-Status: GOOD (  11.44  )
+X-CRM114-CacheID: sfid-20200410_052556_618491_4C5AD6A6 
+X-CRM114-Status: GOOD (  13.72  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:935 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [claziss[at]gmail.com]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-snps-arc@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -79,78 +94,85 @@ List-Post: <mailto:linux-snps-arc@lists.infradead.org>
 List-Help: <mailto:linux-snps-arc-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-snps-arc>, 
  <mailto:linux-snps-arc-request@lists.infradead.org?subject=subscribe>
-Cc: Vineet Gupta <Vineet.Gupta1@synopsys.com>,
- linux-snps-arc@lists.infradead.org
+Cc: "linux-snps-arc@lists.infradead.org" <linux-snps-arc@lists.infradead.org>,
+ "gcc-patches@gcc.gnu.org" <gcc-patches@gcc.gnu.org>,
+ Claudiu Zissulescu <Claudiu.Zissulescu@synopsys.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-snps-arc" <linux-snps-arc-bounces@lists.infradead.org>
 Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org
 
-Signed-off-by: Vineet Gupta <vgupta@synopsys.com>
----
- NEWS                | 9 +++++++++
- README              | 1 +
- manual/install.texi | 5 +++++
- 3 files changed, 15 insertions(+)
+Done.
 
-diff --git a/NEWS b/NEWS
-index 14fd59a16a2d..6d17b6a0a087 100644
---- a/NEWS
-+++ b/NEWS
-@@ -17,6 +17,15 @@ Major new features:
-     - rv32imafdc ilp32
-     - rv32imafdc ilp32d
- 
-+* Support for Synpsys ARC HS cores (ARCv2 ISA) running Linux.
-+
-+  Port requires atleast
-+    - binutils-2.32 (binutils-2_31-branch: commit 6ce881c15fc4, 2018-10-04)
-+    - gcc 8.3 (gcc-8-stable: commit 0d5ba57508c5, 2019-01-29)
-+    - Linux kernel 5.1+ (64-bit time and offsets)
-+
-+  Both Little and Big-Endian supported
-+
- Deprecated and removed features, and other changes affecting compatibility:
- 
-   [Add deprecations, removals and changes affecting compatibility here]
-diff --git a/README b/README
-index cee86ab178cf..d0f0edb3930a 100644
---- a/README
-+++ b/README
-@@ -24,6 +24,7 @@ The GNU C Library supports these configurations for using Linux kernels:
- 
- 	aarch64*-*-linux-gnu
- 	alpha*-*-linux-gnu
-+	arc*-*-linux-gnu
- 	arm-*-linux-gnueabi
- 	csky-*-linux-gnuabiv2
- 	hppa-*-linux-gnu
-diff --git a/manual/install.texi b/manual/install.texi
-index 71bf47cac659..c4b11e4e7973 100644
---- a/manual/install.texi
-+++ b/manual/install.texi
-@@ -507,6 +507,9 @@ the newest version of the compiler that is known to work for building
- release time, GCC 9.2.1 is the newest compiler verified to work to build
- @theglibc{}.
- 
-+For ARC architecture builds, GCC 8.3 is needed which has the necessary
-+fixes to support @theglibc{}.
-+
- For multi-arch support it is recommended to use a GCC which has been built with
- support for GNU indirect functions.  This ensures that correct debugging
- information is generated for functions selected by IFUNC resolvers.  This
-@@ -528,6 +531,8 @@ No other assembler or linker has the necessary functionality at the
- moment. As of release time, GNU @code{binutils} 2.32 is the newest
- verified to work to build @theglibc{}.
- 
-+ARC architecture needs @code{binutils} 2.32 for TLS related fixes.
-+
- @item
- GNU @code{texinfo} 4.7 or later
- 
--- 
-2.20.1
+Thank you for your support,
+Claudiu
 
+On Thu, Apr 9, 2020 at 2:38 AM Vineet Gupta <Vineet.Gupta1@synopsys.com> wrote:
+>
+> Hi Claudiu,
+>
+> For glibc needs can this be backported to gcc-9 please !
+>
+> Thx,
+> -Vineet
+>
+> On 3/31/20 3:06 AM, Claudiu Zissulescu Ianculescu wrote:
+> > Pushed.
+> >
+> > Thank you,
+> > Claudiu
+> >
+> > On Sun, Mar 29, 2020 at 2:05 AM Vineet Gupta via Gcc-patches
+> > <gcc-patches@gcc.gnu.org> wrote:
+> >> Enable big-endian suffixed dynamic linker per glibc multi-abi support.
+> >>
+> >> And to avoid a future churn and version pairingi hassles, also allow
+> >> arc700 although glibc for ARC currently doesn't support it.
+> >>
+> >> gcc/
+> >> xxxx-xx-xx  Vineet Gupta <vgupta@synopsys.com>
+> >> +
+> >> +       * config/arc/linux.h: GLIBC_DYNAMIC_LINKER support BE/arc700
+> >>
+> >> Signed-off-by: Vineet Gupta <vgupta@synopsys.com>
+> >> ---
+> >>  gcc/ChangeLog          | 4 ++++
+> >>  gcc/config/arc/linux.h | 2 +-
+> >>  2 files changed, 5 insertions(+), 1 deletion(-)
+> >>
+> >> diff --git a/gcc/ChangeLog b/gcc/ChangeLog
+> >> index 86ad683a6cb0..c26a748fd51b 100644
+> >> --- a/gcc/ChangeLog
+> >> +++ b/gcc/ChangeLog
+> >> @@ -1,3 +1,7 @@
+> >> +2020-03-28  Vineet Gupta <vgupta@synopsys.com>
+> >> +
+> >> +       * config/arc/linux.h: GLIBC_DYNAMIC_LINKER support BE/arc700
+> >> +
+> >>  2020-03-28  Jakub Jelinek  <jakub@redhat.com>
+> >>
+> >>         PR c/93573
+> >> diff --git a/gcc/config/arc/linux.h b/gcc/config/arc/linux.h
+> >> index 0b99da3fcdaf..1bbeccee7115 100644
+> >> --- a/gcc/config/arc/linux.h
+> >> +++ b/gcc/config/arc/linux.h
+> >> @@ -29,7 +29,7 @@ along with GCC; see the file COPYING3.  If not see
+> >>      }                                          \
+> >>    while (0)
+> >>
+> >> -#define GLIBC_DYNAMIC_LINKER   "/lib/ld-linux-arc.so.2"
+> >> +#define GLIBC_DYNAMIC_LINKER   "/lib/ld-linux-arc%{mbig-endian:eb}%{mcpu=arc700:700}.so.2"
+> >>  #define UCLIBC_DYNAMIC_LINKER  "/lib/ld-uClibc.so.0"
+> >>
+> >>  /* Note that the default is to link against dynamic libraries, if they are
+> >> --
+> >> 2.20.1
+> >>
+> > _______________________________________________
+> > linux-snps-arc mailing list
+> > linux-snps-arc@lists.infradead.org
+> > https://urldefense.proofpoint.com/v2/url?u=http-3A__lists.infradead.org_mailman_listinfo_linux-2Dsnps-2Darc&d=DwICAg&c=DPL6_X_6JkXFx7AXWqB0tg&r=7FgpX6o3vAhwMrMhLh-4ZJey5kjdNUwOL2CWsFwR4T8&m=MrObyH2ki95_7m_xHpnWX-k9eIMOsxMuSa48qhxYOCY&s=3ggbGwaiJuSFnFECy0ItuwBBMDAcriwCdSc3GA0UFig&e=
+>
 
 _______________________________________________
 linux-snps-arc mailing list
