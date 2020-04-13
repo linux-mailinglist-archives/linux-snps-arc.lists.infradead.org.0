@@ -2,67 +2,66 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8FA581A6056
-	for <lists+linux-snps-arc@lfdr.de>; Sun, 12 Apr 2020 21:54:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6F7301A6157
+	for <lists+linux-snps-arc@lfdr.de>; Mon, 13 Apr 2020 03:33:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dkrwhlS7D/uX7sKkxNBpvLYDmf5cg8FDl4ORBveurMc=; b=mw1Hwm3W91rTKO
-	cpu6EXQjbZuJ8jco1vINqB33xdxTSfEKgzhwtXrxhnAms/77i7JiUAdyipNOBtFTjC3OF+dL19x6z
-	Fc8RinXuNqp92sKj56wqO58f6mG65I605GY1Mff+V9Dczb6osuf8UdaV9ixElHrOSORCwo6qqmnyY
-	AgCgAsM6+nN5MOCsIh0gveS90rG5He8+6sPftU1/5eRSxWpdU1wWJ1H7XTa3zWPHIGUkpRgKItsQj
-	Sq/j134K8+0HAUJOGcA9SCJUfve+JRbJvZ+vCnWtS0heprbyCxf+3zYKnTYM2oJ/oxxNVsGCdPhrq
-	bLptc6rIU9KyparThMyg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=KyTXtEc7+hP1B7U+pT1GM6UzBolYK936vf0O0363mYg=; b=X3UBIljJXSi6nC
+	/wKiqBPY16F6HxBS1VF+M2voECaDTUzdJxTXVitNm19no1JYyOpIZOrFPOnxEg6l90ISJPT7uyK/h
+	+wghuwtwc3TnwQ9QNuY/zhDzm0BtQC1FYEm3P4gup2VBJCxSE6XQRe6xDhui2xcFlf3PLhTguOkKv
+	h2P8LTxCTds73b3Nt6poQhuAp0YQJITWAIQukTT/+2gP0fOKS1mJB7JEpb+f/b7XRVk1wjk4A5JtU
+	sl5u2IVvd1QivC8GdhfILUJA0bPepwO4XXgsdyqjgiXGyjM83N26tNZH5U7pKfJoH6gd7cSCGEdn7
+	z1dV6YVEWC6WZXwmm51A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jNiga-0005PL-6L; Sun, 12 Apr 2020 19:54:32 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jNnye-0001N6-9B; Mon, 13 Apr 2020 01:33:32 +0000
+Received: from conuserg-08.nifty.com ([210.131.2.75])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jNigW-0005N5-2s; Sun, 12 Apr 2020 19:54:29 +0000
-Received: from aquarius.haifa.ibm.com (nesher1.haifa.il.ibm.com [195.110.40.7])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id B2DF521569;
- Sun, 12 Apr 2020 19:54:13 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1586721267;
- bh=1RVcfnAVVy1AOFZedJzROhTSSnKRoGcShhyioeaCXqE=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=u+cDL9Ay57g0t0AmxzSf1s9ge6PHXPdoiABBA+FnntFugxZQ3ay62Fn/wxvhA46ys
- LvgHJZQQQMChrWXoV7Loga6rBUNnWEZZY/bl8oZkZda++jqcfs7SGJJqgA6ZnwPRPa
- Szh9qdEAYeTz2OcNdts2q+xOIGjdhJ6Uok1Jog6A=
-From: Mike Rapoport <rppt@kernel.org>
-To: linux-kernel@vger.kernel.org
-Subject: [PATCH 21/21] docs/vm: update memory-models documentation
-Date: Sun, 12 Apr 2020 22:48:59 +0300
-Message-Id: <20200412194859.12663-22-rppt@kernel.org>
+ id 1jNnyb-0001Lp-84
+ for linux-snps-arc@lists.infradead.org; Mon, 13 Apr 2020 01:33:30 +0000
+Received: from oscar.flets-west.jp (softbank060142179096.bbtec.net
+ [60.142.179.96]) (authenticated)
+ by conuserg-08.nifty.com with ESMTP id 03D1WsFq003537;
+ Mon, 13 Apr 2020 10:32:54 +0900
+DKIM-Filter: OpenDKIM Filter v2.10.3 conuserg-08.nifty.com 03D1WsFq003537
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nifty.com;
+ s=dec2015msa; t=1586741575;
+ bh=BJbt349d1GFRoVaxKRMr2OOu2ZIUsOrtI77b0u4o6KI=;
+ h=From:To:Cc:Subject:Date:From;
+ b=fmTKMsW7Mb4qSZ2Qxx5qs13u7Bhatv1VPfUDo7caOIskmNiRX99kycLGcIUCS+iHP
+ dAueM0zk/+G+Kzk0lcDQEH2//DFrSSZgRuW5TF6JfglS8MCTHGaHA3LiFUbGCf2GLJ
+ zJY98yrO9zh2g+/KN7lKM02K3Wp+ygRIBhN7JjD82fLph7g1d7uJKnSwX1E22wRyq+
+ H6tI0cNUzbVAQbX3Kul0o6itC2IKOEIiFwNQc0uU9LbX9qXzNWyFSp9l8fyByqyxkx
+ zE2MtyDojqOQUQx1mm/AgnUk9pxQRE7NlW7A/I7nSxi1OSRCQxxtzwhU8wHJoqvcfz
+ +/U/ER6ceLAAQ==
+X-Nifty-SrcIP: [60.142.179.96]
+From: Masahiro Yamada <masahiroy@kernel.org>
+To: Vineet Gupta <vgupta@synopsys.com>, linux-snps-arc@lists.infradead.org
+Subject: [PATCH] arc: ptrace: hard-code "arc" instead of UTS_MACHINE
+Date: Mon, 13 Apr 2020 10:32:40 +0900
+Message-Id: <20200413013240.8659-1-masahiroy@kernel.org>
 X-Mailer: git-send-email 2.25.1
-In-Reply-To: <20200412194859.12663-1-rppt@kernel.org>
-References: <20200412194859.12663-1-rppt@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200412_125428_167106_C4E80781 
-X-CRM114-Status: GOOD (  10.77  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200412_183329_504237_83355BEB 
+X-CRM114-Status: UNSURE (   8.28  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [210.131.2.75 listed in list.dnswl.org]
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-snps-arc@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,71 +73,58 @@ List-Post: <mailto:linux-snps-arc@lists.infradead.org>
 List-Help: <mailto:linux-snps-arc-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-snps-arc>, 
  <mailto:linux-snps-arc-request@lists.infradead.org?subject=subscribe>
-Cc: Rich Felker <dalias@libc.org>, linux-ia64@vger.kernel.org,
- linux-doc@vger.kernel.org, Catalin Marinas <catalin.marinas@arm.com>,
- Heiko Carstens <heiko.carstens@de.ibm.com>, Michal Hocko <mhocko@kernel.org>,
- "James E.J. Bottomley" <James.Bottomley@HansenPartnership.com>,
- Max Filippov <jcmvbkbc@gmail.com>, Guo Ren <guoren@kernel.org>,
- linux-csky@vger.kernel.org, linux-parisc@vger.kernel.org,
- sparclinux@vger.kernel.org, linux-hexagon@vger.kernel.org,
- linux-riscv@lists.infradead.org, Mike Rapoport <rppt@linux.ibm.com>,
- Greg Ungerer <gerg@linux-m68k.org>, linux-arch@vger.kernel.org,
- linux-s390@vger.kernel.org, linux-c6x-dev@linux-c6x.org,
- Baoquan He <bhe@redhat.com>, Jonathan Corbet <corbet@lwn.net>,
- linux-sh@vger.kernel.org, Michael Ellerman <mpe@ellerman.id.au>,
- Helge Deller <deller@gmx.de>, x86@kernel.org,
- Russell King <linux@armlinux.org.uk>, Ley Foon Tan <ley.foon.tan@intel.com>,
- Yoshinori Sato <ysato@users.sourceforge.jp>,
- Geert Uytterhoeven <geert@linux-m68k.org>,
- linux-arm-kernel@lists.infradead.org, Mark Salter <msalter@redhat.com>,
- Matt Turner <mattst88@gmail.com>, linux-snps-arc@lists.infradead.org,
- uclinux-h8-devel@lists.sourceforge.jp, linux-xtensa@linux-xtensa.org,
- linux-alpha@vger.kernel.org, linux-um@lists.infradead.org,
- linux-m68k@lists.linux-m68k.org, Tony Luck <tony.luck@intel.com>,
- Greentime Hu <green.hu@gmail.com>, Paul Walmsley <paul.walmsley@sifive.com>,
- Stafford Horne <shorne@gmail.com>, Guan Xuetao <gxt@pku.edu.cn>,
- Hoan Tran <Hoan@os.amperecomputing.com>, Michal Simek <monstr@monstr.eu>,
- Thomas Bogendoerfer <tsbogend@alpha.franken.de>,
- Brian Cain <bcain@codeaurora.org>, Nick Hu <nickhu@andestech.com>,
- linux-mm@kvack.org, Vineet Gupta <vgupta@synopsys.com>,
- linux-mips@vger.kernel.org, openrisc@lists.librecores.org,
- Richard Weinberger <richard@nod.at>, Andrew Morton <akpm@linux-foundation.org>,
- linuxppc-dev@lists.ozlabs.org, "David S. Miller" <davem@davemloft.net>,
- Mike Rapoport <rppt@kernel.org>
+Cc: Enrico Weigelt <info@metux.net>, Masahiro Yamada <masahiroy@kernel.org>,
+ Oleg Nesterov <oleg@redhat.com>, linux-kernel@vger.kernel.org,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Thomas Gleixner <tglx@linutronix.de>,
+ Eugeniy Paltsev <Eugeniy.Paltsev@synopsys.com>,
+ Allison Randal <allison@lohutok.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-snps-arc" <linux-snps-arc-bounces@lists.infradead.org>
 Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org
 
-From: Mike Rapoport <rppt@linux.ibm.com>
+ARC uses the UTS_MACHINE defined in the top Makefile as follows:
 
-to reflect the updates to free_area_init() family of functions.
+  UTS_MACHINE     := $(ARCH)
 
-Signed-off-by: Mike Rapoport <rppt@linux.ibm.com>
+We know it is "arc" when we are building the kernel for ARC.
+Hard-code user_regset_view::name, like many other architectures do.
+
+Signed-off-by: Masahiro Yamada <masahiroy@kernel.org>
 ---
- Documentation/vm/memory-model.rst | 9 ++++-----
- 1 file changed, 4 insertions(+), 5 deletions(-)
 
-diff --git a/Documentation/vm/memory-model.rst b/Documentation/vm/memory-model.rst
-index 58a12376b7df..91228044ed16 100644
---- a/Documentation/vm/memory-model.rst
-+++ b/Documentation/vm/memory-model.rst
-@@ -46,11 +46,10 @@ maps the entire physical memory. For most architectures, the holes
- have entries in the `mem_map` array. The `struct page` objects
- corresponding to the holes are never fully initialized.
+ arch/arc/kernel/Makefile | 3 ---
+ arch/arc/kernel/ptrace.c | 2 +-
+ 2 files changed, 1 insertion(+), 4 deletions(-)
+
+diff --git a/arch/arc/kernel/Makefile b/arch/arc/kernel/Makefile
+index 75539670431a..8c4fc4b54c14 100644
+--- a/arch/arc/kernel/Makefile
++++ b/arch/arc/kernel/Makefile
+@@ -3,9 +3,6 @@
+ # Copyright (C) 2004, 2007-2010, 2011-2012 Synopsys, Inc. (www.synopsys.com)
+ #
  
--To allocate the `mem_map` array, architecture specific setup code
--should call :c:func:`free_area_init_node` function or its convenience
--wrapper :c:func:`free_area_init`. Yet, the mappings array is not
--usable until the call to :c:func:`memblock_free_all` that hands all
--the memory to the page allocator.
-+To allocate the `mem_map` array, architecture specific setup code should
-+call :c:func:`free_area_init` function. Yet, the mappings array is not
-+usable until the call to :c:func:`memblock_free_all` that hands all the
-+memory to the page allocator.
+-# Pass UTS_MACHINE for user_regset definition
+-CFLAGS_ptrace.o		+= -DUTS_MACHINE='"$(UTS_MACHINE)"'
+-
+ obj-y	:= arcksyms.o setup.o irq.o reset.o ptrace.o process.o devtree.o
+ obj-y	+= signal.o traps.o sys.o troubleshoot.o stacktrace.o disasm.o
+ obj-$(CONFIG_ISA_ARCOMPACT)		+= entry-compact.o intc-compact.o
+diff --git a/arch/arc/kernel/ptrace.c b/arch/arc/kernel/ptrace.c
+index d5f3fcf273b5..f49a054a1016 100644
+--- a/arch/arc/kernel/ptrace.c
++++ b/arch/arc/kernel/ptrace.c
+@@ -253,7 +253,7 @@ static const struct user_regset arc_regsets[] = {
+ };
  
- If an architecture enables `CONFIG_ARCH_HAS_HOLES_MEMORYMODEL` option,
- it may free parts of the `mem_map` array that do not cover the
+ static const struct user_regset_view user_arc_view = {
+-	.name		= UTS_MACHINE,
++	.name		= "arc",
+ 	.e_machine	= EM_ARC_INUSE,
+ 	.regsets	= arc_regsets,
+ 	.n		= ARRAY_SIZE(arc_regsets)
 -- 
 2.25.1
 
