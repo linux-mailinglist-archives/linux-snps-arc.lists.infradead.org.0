@@ -2,57 +2,57 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 06C811AE84F
-	for <lists+linux-snps-arc@lfdr.de>; Sat, 18 Apr 2020 00:42:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 56A881AE859
+	for <lists+linux-snps-arc@lfdr.de>; Sat, 18 Apr 2020 00:44:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:
 	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dLMfosQWVa9Hx/N9SMttxOQok5uydYWKhE3SdEafT24=; b=EU3G8gPz7XA2v7
-	S1vwHNOC7StNzeiQtdKgPgbK9g1zfsafmdOqGzh3U+aNtm2Gp3GLahrm9WugMGNxed4rO0Ug4uNgD
-	sbsyJTmYX8GAHF3dnGxZPScxzesHL7wiIYygc/rTrfI1rw6NLH/pnV3+Ms+lLbb7eU4JZGBRSRvTM
-	GLbLPfuepR9b3zEGv+9oRPjYgxThWZxNvOSU2Ehcv1XrqNWbQzML2OygbphInRQD0JiXYKAT1uCk5
-	Z4qptXjZpCl6YJFrZoMbBo7XLBWg7ZOoHep7fP6LJZOTIyBWheHRhQdVbHoA+te3ISxRGo8hofUkq
-	8vE8qAGCx19xmyeMCb1g==;
+	List-Owner; bh=SCPRiUBV/8hyGMguWwjCJsCmSn+Zwx/YAQj6p0RFmro=; b=P+Gk2sKRwxHBj7
+	UefQM170aAdpFrmutxWhbDQZ9TpPMh2Upv8d8OaKJoMxZnzgSHTsPqRSTEhyGg+5Z4J3mSZvxjZ7W
+	P/zzQ4ftfi5Ag4MzabFchXFyDRq6SbefsVdQksNVKt5c4Uc5MNYZ2Wa419MvOYQ9gpLimM/ta6tBt
+	8xEbsHUWVwzZBrrNeMnvlJQ5tvH4uNcGRR4PP8xmSwnMqyzwx6S52kjticjdRQ+uQvGi+9+XhIWvl
+	aF93PLNes0MoIefUYXnvGO7wRd2WbhDL6pCvfaP5c7QMJIwsUz8e1ab6Zu+g0OEeT0tLa4j88ZFND
+	qwUPt4OuN+GnAoyvLc/Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jPZgr-0000GO-IY; Fri, 17 Apr 2020 22:42:29 +0000
-Received: from esa3.mentor.iphmx.com ([68.232.137.180])
+	id 1jPZiY-0000MI-Uv; Fri, 17 Apr 2020 22:44:14 +0000
+Received: from esa4.mentor.iphmx.com ([68.232.137.252])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jPZgo-0000G7-Tj
- for linux-snps-arc@lists.infradead.org; Fri, 17 Apr 2020 22:42:28 +0000
-IronPort-SDR: NhZ1N53ii0jaTWwSmndJbIMJ1wd53oqJ8FOZP6AF6NfiqlP3Tbg7y4CP/tSWn7N+NkahK/ObIV
- i8jZtHRqHwbUA/otQpXuynQBmoGXHMHLudsu0ICDjPQHRKaHlVgJwHM+m7aGfdNpu6+V216sm1
- H2/ZT5WbgbKjcZilmS9oUpP1VSy02y3Buw+jkIOOBu9uYjwQ+DgfMGw7kbxTz2tf7DNt2fbvpR
- d35Sx6kfoF/7g18RQZ4psTPe9TDzb//+xJtE7xHPJnYgaWBGrWNyuhfE0VX3fke+luM6XgWFhG
- fec=
-X-IronPort-AV: E=Sophos;i="5.72,395,1580803200"; d="scan'208";a="47929494"
+ id 1jPZiV-0000Lq-Ap
+ for linux-snps-arc@lists.infradead.org; Fri, 17 Apr 2020 22:44:13 +0000
+IronPort-SDR: sfrpCimAGJpIWVnN0PqkarPslzkjvbVKnyKOw1QZfsIuYAM555x3Nfb8pI5xgIKg0kev6YhREj
+ 9FE8HvVOIkLYzBO76zXo3S9oHxxj+PBDNbclpFUXZ9gWZeRb/0af4aclq3HTjp0chJq2YcnRKd
+ QehxImIiEP9dDp6EeXwFrFrKKEfq7rKg4OgTEV6MndYoP/AzNYYfMnDuhas7x6lttjOlG2UQ82
+ yH6ecjJF66ZVebJ/g74nOgQrEYZ/CyqtDMYloT0gaxYAEiO6R11dlEFe2apJgP+JHTAQMf0u5O
+ TsU=
+X-IronPort-AV: E=Sophos;i="5.72,395,1580803200"; d="scan'208";a="47987225"
 Received: from orw-gwy-01-in.mentorg.com ([192.94.38.165])
- by esa3.mentor.iphmx.com with ESMTP; 17 Apr 2020 14:42:26 -0800
-IronPort-SDR: ttPJ8Grd1YHdyL7ZLQnyselq50OQ/Rl/23LVAzdoHgth6q4ZHMVbgwnBRhHKbjt1NLoidBqUnt
- 2/rMn0NVXmgi/uNJYnTjI/JhT6IWGsudRtVSs8lv6yomWcsV8zGJie+kx/V4E4pBDKCTJZl1oi
- nv9Q8FSPsg1S9DPyl4Xy+7RiQ27OcLAV7vddUUML/JlLVqn0fmeAJy75FWqr5EGQBhvciVh8S9
- JKluK0RdI49fqAs+o41K/X+hvjq0DGHNkUorVdMu+eDYK9ilinom/R1nQj6/sXWhXedhWvl6ey
- 9v8=
-Date: Fri, 17 Apr 2020 22:42:20 +0000
+ by esa4.mentor.iphmx.com with ESMTP; 17 Apr 2020 14:44:06 -0800
+IronPort-SDR: 9Vlhw3+eQ6uQaEeXSlTIrcl/CH4HA05WNsH4aAYhsPhDfVBxi1ASQv+D8pxHeAEQPBcKGetowx
+ q2wSvX2BBn0ELR+P5iOsjgYsW6xTD9VWsMe2YTvyVhcpTbki5ZZR7u6PDUld2uLSBCZgfDz4pL
+ OrPeHpgePpfafgEy+OHpdBlWXJfGI0GgqdrTTuoShRvbgYLwojJ5WVJorOa06v/IIxub9roYFw
+ PCw1be4p65RrVuPCFuXVr/bhVXI1x/xCz97qulyw+z7Kr0LHRoJcPo5Swth//ygiUfyp5W8S0h
+ f0E=
+Date: Fri, 17 Apr 2020 22:44:00 +0000
 From: Joseph Myers <joseph@codesourcery.com>
 X-X-Sender: jsm28@digraph.polyomino.org.uk
 To: Vineet Gupta <Vineet.Gupta1@synopsys.com>
-Subject: Re: [PATCH v5 02/14] ARC: startup and dynamic linking code
-In-Reply-To: <20200409025615.27003-3-vgupta@synopsys.com>
-Message-ID: <alpine.DEB.2.21.2004172239120.1082@digraph.polyomino.org.uk>
+Subject: Re: [PATCH v5 03/14] ARC: Thread Local Storage support
+In-Reply-To: <20200409025615.27003-4-vgupta@synopsys.com>
+Message-ID: <alpine.DEB.2.21.2004172242490.1082@digraph.polyomino.org.uk>
 References: <20200409025615.27003-1-vgupta@synopsys.com>
- <20200409025615.27003-3-vgupta@synopsys.com>
+ <20200409025615.27003-4-vgupta@synopsys.com>
 User-Agent: Alpine 2.21 (DEB 202 2017-01-01)
 MIME-Version: 1.0
 X-Originating-IP: [137.202.0.90]
-X-ClientProxiedBy: svr-ies-mbx-02.mgc.mentorg.com (139.181.222.2) To
+X-ClientProxiedBy: svr-ies-mbx-01.mgc.mentorg.com (139.181.222.1) To
  svr-ies-mbx-01.mgc.mentorg.com (139.181.222.1)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200417_154227_039847_90AB7436 
-X-CRM114-Status: UNSURE (   4.84  )
+X-CRM114-CacheID: sfid-20200417_154411_454881_D35C3C08 
+X-CRM114-Status: UNSURE (   2.87  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.0 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -60,7 +60,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [68.232.137.180 listed in list.dnswl.org]
+ medium trust [68.232.137.252 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
@@ -84,23 +84,13 @@ Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.o
 
 On Wed, 8 Apr 2020, Vineet Gupta via Libc-alpha wrote:
 
-> +/* What this code does:
-> +    -ldso starts execution here when kernel returns from execve()
-> +    -calls into generic ldso entry point _dl_start( )
+> +/* Code to initially initialize the thread pointer.  */
+> +# define TLS_INIT_TP(tcbp)					\
+> +  ({                                            		\
+> +	long result_var;					\
+> +	__builtin_set_thread_pointer(tcbp);     		\
 
-Avoid use of parentheses to indicate that a name is a function.
-
-> +auto inline void
-> +__attribute__ ((always_inline))
-> +elf_machine_rela_relative (ElfW(Addr) l_addr, const ElfW(Rela) *reloc,
-> +			   void *const reloc_addr_arg)
-> +{
-> +  ElfW(Addr) *const reloc_addr = reloc_addr_arg;
-> +  *reloc_addr += l_addr; // + reloc->r_addend;
-
-This comment seems unhelpful.  If you want to comment on the addend not 
-being added, write a comment that says *why* it's not being added, not 
-just a commented-out addition.
+Missing space before '(' in call to __builtin_set_thread_pointer.
 
 -- 
 Joseph S. Myers
