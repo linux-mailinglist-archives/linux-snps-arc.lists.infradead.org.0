@@ -2,7 +2,7 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 677951B520F
+	by mail.lfdr.de (Postfix) with ESMTPS id F36241B5211
 	for <lists+linux-snps-arc@lfdr.de>; Thu, 23 Apr 2020 03:41:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
@@ -10,51 +10,50 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Egiy2crPyJElKw0Dqs18r6v/LUg7qTbYWUlNH9woKC8=; b=k+1t33xnGmvSjs
-	BxbZ6dh3lzWApBmRn5lbpJt4nlQTUadZxPn2G2R2U7u0zACJKI2C71ono/hAANbTmD8JyhWRxjvGI
-	s4qi0MGlwb5hHNbrntXjlRpgXDeIHB7MMFf5YCPqvmFLg5yFGDDcmFLNpuJYzmsk7pzKhDSeFttKG
-	0449vTt8ilYlmjuBuhGRLx7MuGxOSjGZzzaSBW4tvqfnaft5ShTd7Ht7B5AgjU5HiSBgi80UIDGV9
-	Jng7fcVb5xzW7JdN5v3SxzQYJenAoblefIE+2YkSXVO/5X4YS18Ch3pAcosXVy5RXdjYgvf4TxvR2
-	7HpiNz6BenH6pcXti8Fg==;
+	List-Owner; bh=dRPMIG0ItWIAdU0zTF40f4udBalkAdANB+VQ/A2rKlM=; b=HOnmHADKzdvhoF
+	useI2wEZdiUlTdwZOOu13Ymh0n/lqzXdEPB69PJtaFocsZr67sqarWfVLDbg0t38TgqGVgn/EdkBF
+	a+Jy3rHiq97qwt4ivRe1tRnx3yzFDB4gQG6BXr+hE9ttD8tU/pN7iAKb172azfD12uhRcsVFQj12G
+	wmTdgROGjPuTj76H+roZOfWRIx12knRxtEcJeUGGh4liwVdYcY90VlhgMPQurv49DBlfZX/ljuyfr
+	PjxrQmFop7p61RMRCLWb4773kwlUevscpF/C0hFb6V5IqzrL/RCP7R7UhYzlSPzKtWlLMnjoSl4EV
+	gyJZwfTRkKXOG4BgzNeQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jRQs4-0004rc-VM; Thu, 23 Apr 2020 01:41:44 +0000
+	id 1jRQs5-0004sM-I1; Thu, 23 Apr 2020 01:41:45 +0000
 Received: from smtprelay-out1.synopsys.com ([149.117.73.133])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jRQrt-0004k0-UV
- for linux-snps-arc@lists.infradead.org; Thu, 23 Apr 2020 01:41:41 +0000
+ id 1jRQru-0004kG-48
+ for linux-snps-arc@lists.infradead.org; Thu, 23 Apr 2020 01:41:42 +0000
 Received: from mailhost.synopsys.com (sv2-mailhost2.synopsys.com
  [10.205.2.134])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
  (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id CCEDA4016E;
- Thu, 23 Apr 2020 01:41:33 +0000 (UTC)
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 03D1C4016F;
+ Thu, 23 Apr 2020 01:41:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1587606093; bh=uVw+mUc/q6hJBD19HdXYxghwS4dnMpjI0QooiKPBY/c=;
+ t=1587606094; bh=D6Htm9wYYrFl/K82tNzHjwXnK/0bBgOemEKiQqOSasE=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=jfm149340Kbxb9MOa92E5GeDVzHOp9BnjkSxnPgNczQZZOR+DRaXVOdkLC2PC0gSh
- aFF+GpwNua6VHxXWq4v5NTMz3TMkL6J9AfbghMXQ8DCmaKf51DagJNMEt52WtLNctb
- ggyC0rm/M6f0kJIOdT90G8PIaEESjGaS6gty3Mbxk4KLv3XQMKiDKnFW3ahD0Egw/n
- uRUIMRfKLG3kiju6o6F3demZcXgoHpq5tfi3wJNwlBqn7kygcMIRJq5nOJMIm9Dq1q
- r0oh+BdAAFZT7m4p/P7mGFJv8jAkbYFYokoAYNupJX6xZ9QnVDKVWB9D9F2gn38AxS
- sxJhN/tXyz8JA==
+ b=BxNm+2tgcR06NCfCnJdmv3cGgqjDSXH+Qgp5xaOXrBMnhaFGPZbMQhldzsY5Z2K2n
+ JkCJ8+xsg8R2lyxvVRG/lglwDkL1Uz5pWLehVRjAqaRs7MaWzQxu5hhGub8o2UhVq8
+ 7C/Lw455p9PzP16mNJe3w94j1VXyu1Rwb91DFgjVtQlca93xw4L2ezIp5+/5C/S7+J
+ p83ffCMrC181Ueap5QtsMZcYdO9e+Ej88MqaWVOe+EqUchfKV1fJAWam5aq90IHspG
+ K1MDErMa2Eq3pE5oNqGGVAH1exwBTxiGPNNhYsYWHoif8A9C/4sVRjP+lLIlQhNfr2
+ +CY5XP3xFsKCg==
 Received: from vineetg-Latitude-7400.internal.synopsys.com (unknown
  [10.13.183.89])
- by mailhost.synopsys.com (Postfix) with ESMTP id 95323A009D;
+ by mailhost.synopsys.com (Postfix) with ESMTP id CA4C2A009C;
  Thu, 23 Apr 2020 01:41:33 +0000 (UTC)
 From: Vineet Gupta <Vineet.Gupta1@synopsys.com>
 To: libc-alpha@sourceware.org
-Subject: [PATCH v6 12/13] build-many-glibcs.py: Enable ARC builds
-Date: Wed, 22 Apr 2020 18:41:25 -0700
-Message-Id: <20200423014126.10417-13-vgupta@synopsys.com>
+Subject: [PATCH v6 13/13] Documentation for ARC port
+Date: Wed, 22 Apr 2020 18:41:26 -0700
+Message-Id: <20200423014126.10417-14-vgupta@synopsys.com>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200423014126.10417-1-vgupta@synopsys.com>
 References: <20200423014126.10417-1-vgupta@synopsys.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200422_184133_980014_E116C5FD 
-X-CRM114-Status: UNSURE (   8.04  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200422_184134_164172_797D92F3 
+X-CRM114-Status: GOOD (  10.79  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -89,37 +88,65 @@ Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.o
 
 Signed-off-by: Vineet Gupta <vgupta@synopsys.com>
 ---
- scripts/build-many-glibcs.py | 10 ++++++++++
- 1 file changed, 10 insertions(+)
+ NEWS                | 9 +++++++++
+ README              | 1 +
+ manual/install.texi | 4 ++++
+ 3 files changed, 14 insertions(+)
 
-diff --git a/scripts/build-many-glibcs.py b/scripts/build-many-glibcs.py
-index 4832912b28b9..752da3657a01 100755
---- a/scripts/build-many-glibcs.py
-+++ b/scripts/build-many-glibcs.py
-@@ -162,6 +162,15 @@ class Context(object):
-                                        'cfg': ['--disable-multi-arch']}])
-         self.add_config(arch='aarch64_be',
-                         os_name='linux-gnu')
-+        self.add_config(arch='arc',
-+                        os_name='linux-gnu',
-+                        gcc_cfg=['--disable-multilib', '--with-cpu=hs38'])
-+        self.add_config(arch='arc',
-+                        os_name='linux-gnuhf',
-+                        gcc_cfg=['--disable-multilib', '--with-cpu=hs38_linux'])
-+        self.add_config(arch='arceb',
-+                        os_name='linux-gnu',
-+                        gcc_cfg=['--disable-multilib', '--with-cpu=hs38'])
-         self.add_config(arch='alpha',
-                         os_name='linux-gnu')
-         self.add_config(arch='arm',
-@@ -1224,6 +1233,7 @@ def install_linux_headers(policy, cmdlist):
-     """Install Linux kernel headers."""
-     arch_map = {'aarch64': 'arm64',
-                 'alpha': 'alpha',
-+                'arc': 'arc',
-                 'arm': 'arm',
-                 'csky': 'csky',
-                 'hppa': 'parisc',
+diff --git a/NEWS b/NEWS
+index 0e627b34057d..d59c1ffb96e1 100644
+--- a/NEWS
++++ b/NEWS
+@@ -15,6 +15,15 @@ Major new features:
+ 
+ * New locale added: ckb_IQ (Kurdish/Sorani spoken in Iraq)
+ 
++* Support for Synopsys ARC HS cores (ARCv2 ISA) running Linux.
++
++  Port requires at least
++    - binutils-2.32 (binutils-2_31-branch: commit 6ce881c15fc4, 2018-10-04)
++    - gcc 8.3 (gcc-8-stable: commit 0d5ba57508c5, 2019-01-29)
++    - Linux kernel 5.1+ (64-bit time and offsets)
++
++  Both Little and Big-Endian supported
++
+ * The GNU C Library now loads audit modules listed in the DT_AUDIT and
+   DT_DEPAUDIT dynamic section entries of the main executable.
+ 
+diff --git a/README b/README
+index 31c5da0405bd..903f07e4840a 100644
+--- a/README
++++ b/README
+@@ -24,6 +24,7 @@ The GNU C Library supports these configurations for using Linux kernels:
+ 
+ 	aarch64*-*-linux-gnu
+ 	alpha*-*-linux-gnu
++	arc*-*-linux-gnu
+ 	arm-*-linux-gnueabi
+ 	csky-*-linux-gnuabiv2
+ 	hppa-*-linux-gnu
+diff --git a/manual/install.texi b/manual/install.texi
+index 71bf47cac659..e1f15656cdc0 100644
+--- a/manual/install.texi
++++ b/manual/install.texi
+@@ -507,6 +507,8 @@ the newest version of the compiler that is known to work for building
+ release time, GCC 9.2.1 is the newest compiler verified to work to build
+ @theglibc{}.
+ 
++For ARC architecture builds, GCC 8.3 or higher is needed.
++
+ For multi-arch support it is recommended to use a GCC which has been built with
+ support for GNU indirect functions.  This ensures that correct debugging
+ information is generated for functions selected by IFUNC resolvers.  This
+@@ -528,6 +530,8 @@ No other assembler or linker has the necessary functionality at the
+ moment. As of release time, GNU @code{binutils} 2.32 is the newest
+ verified to work to build @theglibc{}.
+ 
++ARC architecture needs @code{binutils} 2.32 or higher for TLS related fixes.
++
+ @item
+ GNU @code{texinfo} 4.7 or later
+ 
 -- 
 2.20.1
 
