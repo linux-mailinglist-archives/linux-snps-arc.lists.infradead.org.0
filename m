@@ -2,35 +2,35 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7A3741B8D33
-	for <lists+linux-snps-arc@lfdr.de>; Sun, 26 Apr 2020 09:17:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0B96D1B8D63
+	for <lists+linux-snps-arc@lfdr.de>; Sun, 26 Apr 2020 09:26:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+w1x3/nQpgmkT6/BkW8tOxuFbcCiscB39Eg2QqafgnM=; b=pGMKEFyYjEg1yS
-	325QY6/Wg1jPM/Cfm6sCRVV1dMdvCoNHYIufLerH5qaeWIXD9y6YLvfy+vTbBzxV0V3XIHwZQiVe5
-	Z+gnNFv4vIV51V0FfAXfcj2CLoudOOnFF5dGT3jxBEF4Lk4lBRMA1zrlk+Zoimg/myBrBBrM7qx+1
-	nWpV+XkcIizrzJNStrbP1ir+RY7NzPnafhvrfNpwDKDbuOOMqaiFrjj3Z71aoqC+3JBa2NvMzFUfo
-	Q8T4OidBMrnI43JswCxcnd+PscNYJfsTt3J+J5uR3JLsU+PQFvuRDo2K/8zD1+CHo0tltmAojSZBb
-	4FEQ8wL1qQKhev1dz5rw==;
+	List-Owner; bh=OENs1M/tg4vHJBZS1yEvCCt4ahpwb3vA/XGM2WMOEE8=; b=E6UTxZ8EAW9Reu
+	cc96RjJu1fFUIWYTTUIQXfj10zffSgfobIup/pG9y+q8V7JI+fm/vzqpXEZTysIGl+7FYSiueHKPG
+	z42TLAR+tCdiU8v7zF3zhP9RD1Zshc+0I1QsQlCzrDA7yAct0spQI9Cm6VEheQS4IyfBbsfW7in86
+	1f2tfnnUZi2NmHgkwyDWWkU8m53HlpqS8nPE3RefojGfZvDsk9aMiGd0eXZgznBIj2BsWm5yn4B8M
+	IIX4j0NfIjovKwkose8XiL7WxJRGJjCHt07Qzoq48kmHidFjtE8wqsqPlyhNweRt4MBY/wDbJtg84
+	o3CnJINY0K5NiL3aTY2A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jSbXW-0000Je-Du; Sun, 26 Apr 2020 07:17:22 +0000
+	id 1jSbga-00048e-EZ; Sun, 26 Apr 2020 07:26:44 +0000
 Received: from hch by bombadil.infradead.org with local (Exim 4.92.3 #3 (Red
- Hat Linux)) id 1jSbXP-0000Io-H8; Sun, 26 Apr 2020 07:17:15 +0000
-Date: Sun, 26 Apr 2020 00:17:15 -0700
+ Hat Linux)) id 1jSbgY-00048J-Cx; Sun, 26 Apr 2020 07:26:42 +0000
+Date: Sun, 26 Apr 2020 00:26:42 -0700
 From: Christoph Hellwig <hch@infradead.org>
 To: ira.weiny@intel.com
-Subject: Re: [PATCH 2/5] arch/kmap: Remove redundant arch specific kmaps
-Message-ID: <20200426071715.GA22024@infradead.org>
+Subject: Re: [PATCH 4/5] arch/kmap_atomic: Consolidate duplicate code
+Message-ID: <20200426072642.GB22024@infradead.org>
 References: <20200426055406.134198-1-ira.weiny@intel.com>
- <20200426055406.134198-3-ira.weiny@intel.com>
+ <20200426055406.134198-5-ira.weiny@intel.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200426055406.134198-3-ira.weiny@intel.com>
+In-Reply-To: <20200426055406.134198-5-ira.weiny@intel.com>
 X-BeenThere: linux-snps-arc@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,16 +62,28 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-snps-arc" <linux-snps-arc-bounces@lists.infradead.org>
 Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org
 
-On Sat, Apr 25, 2020 at 10:54:03PM -0700, ira.weiny@intel.com wrote:
-> From: Ira Weiny <ira.weiny@intel.com>
-> 
-> The kmap code for all the architectures is almost 100% identical.
-> 
-> Lift the common code to the core.  Use ARCH_HAS_KMAP to indicate if an
-> arch needs a special kmap.
+> diff --git a/arch/arc/mm/highmem.c b/arch/arc/mm/highmem.c
+> index 4db13a6b9f3b..1cae4b911a33 100644
+> --- a/arch/arc/mm/highmem.c
+> +++ b/arch/arc/mm/highmem.c
+> @@ -53,11 +53,10 @@ void *kmap_atomic(struct page *page)
+>  {
+>  	int idx, cpu_idx;
+>  	unsigned long vaddr;
+> +	void *addr = kmap_atomic_fast(page);
+>  
+> -	preempt_disable();
+> -	pagefault_disable();
+> -	if (!PageHighMem(page))
+> -		return page_address(page);
+> +	if (addr)
+> +		return addr;
 
-Can you add a kmap_flush_tlb hook that csky and mips define, and the
-just entirely consolidate the code instead?
+Wouldn't it make sense to just move kmap_atomic itelf to common code,
+and call out to a kmap_atomic_high for the highmem case, following the
+scheme in kmap?  Same for the unmap side.  That might require to support
+kmap_atomic_prot everywhere first, which sounds like a really good
+idea anyway, and would avoid the need for strange workaround in drm.
 
 _______________________________________________
 linux-snps-arc mailing list
