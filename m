@@ -2,36 +2,35 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D252F1C0FDD
-	for <lists+linux-snps-arc@lfdr.de>; Fri,  1 May 2020 10:44:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0C4C31C0FE6
+	for <lists+linux-snps-arc@lfdr.de>; Fri,  1 May 2020 10:47:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eLw5ioW87XVIm3unOV+mZwWvLFF+036BNZmvYEHHD6g=; b=LrGSCKbFf/JOeW
-	751v7P+vOy607/jGimgkIJFcx40wIwG26TwvVprSGU2kD9nNlyByJxK8dxoMRPqJmnxJda5x3jS/n
-	KYGDr7TUY40iiUd/g21yEFmEs9/ylZPfmRKHlHk23QnxoRng61wLCes7o1ukMj6TdHqx9Xj5njw4u
-	jt0UMTy3tZ0z6f7aRib93B9cRrXEcOIukYExVM5OAkUSKpJmbEMZDoS31xjJZzrBr35eChHSPlMPr
-	svoXCO/N6HooC8tc9/7COi+QPcvjYHqgnb2U00s7SniiVSW8NmHKAoqkUyYD/WBCGvyblaZfIVOVU
-	Cr2sqw9bC6O3m8Znko5g==;
+	List-Owner; bh=YCxfHQeLHDuwdzFWsldxQYdAzC9+cvfDkLWtviOnR90=; b=ANcMEDoNlQfb5m
+	S8jcpi+JyYl/eom3n3/F/bRoj8FIv5OlKZn8HpxlEjTlkRo6V1/rZEn0wlz+jQPLaYZHKHjmE50xH
+	lAwffkk7ltcBtMunnOUuto+gVU4y75JHBQEiG6m28Azu7Js3xAPPZ8wKmLPYa0D1fJ1jTtGqjDeTp
+	e6WJs2OZFj7m6oxQZFZQLCxZWkLBD396QwOFQp4qdw7LpO+UCcLWTXaHC5pdGIHqOixveM9losOGl
+	fPYtBlM3BT2T0tFJ63i63Gbd5xaXZkGRtLJ5dHt8AQQxn2278/8+0DiwrNjtymTWkC+J6oR9Eiwhs
+	ZI6HOs5YMu7gbfpo+DpA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jURHs-00009B-EQ; Fri, 01 May 2020 08:44:48 +0000
+	id 1jURKL-00036T-Ii; Fri, 01 May 2020 08:47:21 +0000
 Received: from hch by bombadil.infradead.org with local (Exim 4.92.3 #3 (Red
- Hat Linux)) id 1jURHq-00008h-NO; Fri, 01 May 2020 08:44:46 +0000
-Date: Fri, 1 May 2020 01:44:46 -0700
+ Hat Linux)) id 1jURKJ-00035y-Uv; Fri, 01 May 2020 08:47:19 +0000
+Date: Fri, 1 May 2020 01:47:19 -0700
 From: Christoph Hellwig <hch@infradead.org>
 To: ira.weiny@intel.com
-Subject: sparc-related comment, to Re: [PATCH V1 07/10] arch/kmap: Ensure
- kmap_prot visibility
-Message-ID: <20200501084446.GG27858@infradead.org>
+Subject: Re: [PATCH V1 08/10] arch/kmap: Don't hard code kmap_prot values
+Message-ID: <20200501084719.GI27858@infradead.org>
 References: <20200430203845.582900-1-ira.weiny@intel.com>
- <20200430203845.582900-8-ira.weiny@intel.com>
+ <20200430203845.582900-9-ira.weiny@intel.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200430203845.582900-8-ira.weiny@intel.com>
+In-Reply-To: <20200430203845.582900-9-ira.weiny@intel.com>
 X-BeenThere: linux-snps-arc@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,20 +63,18 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-snps-arc" <linux-snps-arc-bounces@lists.infradead.org>
 Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org
 
-> --- a/arch/sparc/mm/highmem.c
-> +++ b/arch/sparc/mm/highmem.c
-> @@ -33,6 +33,7 @@
->  #include <asm/vaddrs.h>
->  
->  pgprot_t kmap_prot;
-> +EXPORT_SYMBOL(kmap_prot);
+On Thu, Apr 30, 2020 at 01:38:43PM -0700, ira.weiny@intel.com wrote:
+> From: Ira Weiny <ira.weiny@intel.com>
+> 
+> To support kmap_atomic_prot() on all architectures each arch must
+> support protections passed in to them.
+> 
+> Change csky, mips, nds32 and xtensa to use their global kmap_prot value
+> rather than a hard coded value which was equal.
 
-Btw, I don't see why sparc needs this as a variable, as there is just
-a single assignment to it.
+Looks good,
 
-If sparc is sorted out we can always make it a define, and use a define
-for kmap_prot that defaults to PAGE_KERNEL, avoiding a little
-more duplication.
+Reviewed-by: Christoph Hellwig <hch@lst.de>
 
 _______________________________________________
 linux-snps-arc mailing list
