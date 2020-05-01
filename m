@@ -2,34 +2,66 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 341751C1014
-	for <lists+linux-snps-arc@lfdr.de>; Fri,  1 May 2020 10:55:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 77F321C19AC
+	for <lists+linux-snps-arc@lfdr.de>; Fri,  1 May 2020 17:36:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WqHFHqftRNnrhiBdSWg+U0crd/SOGgDnFTGffIXdwX8=; b=OJ16Ic8ePBoPlo
-	1CEJ+XCUf9Zdd1eKnfV6nroQSvplNT58da2MCxbAdfAVJQsMMxXNYE1W5D7y1I9fxfXfwSpxSUufv
-	Ox45u5MPHEC8GvXE9Fp3a03QKk6sNl3WnvVp58sDOxePK0+8fJjMPFI3q6E32CRAcI2QdnSFVAECX
-	Az4xggapsVQQfyfTCrpQdlBb3ANmxeW6HgZXR2HiDYUjz/QcINMuIG1Yb4vX3NY6Xc/blBjbUcL/C
-	w+nCN6jptMMO9URkNAYOSTr2WAeuYQvT/doCywkEIrk0G25qFIpWkTJ4YJa+T+jwDZPA33jevzvhe
-	2JWLAv1vIfgoONMeTJUA==;
+	List-Owner; bh=3vSm+AuktW30C8ZxVAHA+vCsWtgSL7/ql9PKTVVRMgc=; b=pn/+OB1rlakq1g
+	u7SmtPArLp7cBOg/51usTPK4P/deYTsxpT1mjHuFpT1gEw9Bvn+kCIdFIhHp5IjMiwjXSe9B4Kb/c
+	c82tF5470WZgtKnvOcjNvORC/BIiAZjPqhN61YzIEWeVLfO2diZv565885omX06OXRkyEn/6RTDbo
+	LkLB50rQo8Nwme+nyV+fpf+6n0Rju+XTA0PLph34oWs8Z3HYGxTpEB5XqdQKrPKzK+a6PJSa9IqK6
+	XmSV6jSGOri9pNuJb4enLiqKG4XOwKnQu2TIx5gKldEGLOr44F42r++WNwZMsbJT6uMyMqDgjw4NW
+	yd+OCGjPAsy0u/He9x5A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jURRi-0007ju-RE; Fri, 01 May 2020 08:54:58 +0000
-Received: from hch by bombadil.infradead.org with local (Exim 4.92.3 #3 (Red
- Hat Linux)) id 1jURRg-0007jI-Hu; Fri, 01 May 2020 08:54:56 +0000
-Date: Fri, 1 May 2020 01:54:56 -0700
-From: Christoph Hellwig <hch@infradead.org>
-To: ira.weiny@intel.com
-Subject: Re: [PATCH V1 00/10] Remove duplicated kmap code
-Message-ID: <20200501085456.GL27858@infradead.org>
+	id 1jUXht-0006sc-1Q; Fri, 01 May 2020 15:36:05 +0000
+Received: from mga07.intel.com ([134.134.136.100])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jUXhi-0006e9-4p; Fri, 01 May 2020 15:35:55 +0000
+IronPort-SDR: yOd3a9LxZxyXr+FBnH7fP0+GBno2+UKwwNsJcMy7vKv0kGvNbuu8mTHYmuAZbyV7TkS2oQvTAI
+ dQJnFSpcVY5w==
+X-Amp-Result: SKIPPED(no attachment in message)
+X-Amp-File-Uploaded: False
+Received: from fmsmga006.fm.intel.com ([10.253.24.20])
+ by orsmga105.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
+ 01 May 2020 08:35:52 -0700
+IronPort-SDR: eiOWyZIKI7vO19DR7OCFr64BqstCK2TpjbIFtfZ8MAqSSlMpCoVlOTcj7hUJ1GBJabMYzWffE+
+ Y8JGzvryIPoA==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.73,339,1583222400"; d="scan'208";a="460295055"
+Received: from iweiny-desk2.sc.intel.com ([10.3.52.147])
+ by fmsmga006.fm.intel.com with ESMTP; 01 May 2020 08:35:52 -0700
+Date: Fri, 1 May 2020 08:35:52 -0700
+From: Ira Weiny <ira.weiny@intel.com>
+To: Christoph Hellwig <hch@infradead.org>
+Subject: Re: sparc-related comment, to Re: [PATCH V1 07/10] arch/kmap: Ensure
+ kmap_prot visibility
+Message-ID: <20200501153551.GA673107@iweiny-DESK2.sc.intel.com>
 References: <20200430203845.582900-1-ira.weiny@intel.com>
+ <20200430203845.582900-8-ira.weiny@intel.com>
+ <20200501084446.GG27858@infradead.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200430203845.582900-1-ira.weiny@intel.com>
+In-Reply-To: <20200501084446.GG27858@infradead.org>
+User-Agent: Mutt/1.11.1 (2018-12-01)
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20200501_083554_236639_EE4DBC54 
+X-CRM114-Status: GOOD (  14.56  )
+X-Spam-Score: -2.3 (--)
+X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
+ Content analysis details:   (-2.3 points)
+ pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [134.134.136.100 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [134.134.136.100 listed in wl.mailspike.net]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-snps-arc@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,18 +94,41 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-snps-arc" <linux-snps-arc-bounces@lists.infradead.org>
 Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org
 
-In addition to the work already it the series, it seems like
-LAST_PKMAP_MASK, PKMAP_ADDR and PKMAP_NR can also be consolidated
-to common code.
+On Fri, May 01, 2020 at 01:44:46AM -0700, Christoph Hellwig wrote:
+> > --- a/arch/sparc/mm/highmem.c
+> > +++ b/arch/sparc/mm/highmem.c
+> > @@ -33,6 +33,7 @@
+> >  #include <asm/vaddrs.h>
+> >  
+> >  pgprot_t kmap_prot;
+> > +EXPORT_SYMBOL(kmap_prot);
+> 
+> Btw, I don't see why sparc needs this as a variable, as there is just
+> a single assignment to it.
 
-Also kmap_atomic_high_prot / kmap_atomic_pfn could move into common
-code, maybe keyed off a symbol selected by the actual users that
-need it.  It also seems like it doesn't actually ever need to be
-exported.
+Because sparc uses non-standard defines which I'm not familiar with.
 
-This in turn would lead to being able to allow io_mapping_map_atomic_wc
-on all architectures, which might make nouveau and qxl happy, but maybe
-that can be left for another series.
+        kmap_prot = __pgprot(SRMMU_ET_PTE | SRMMU_PRIV | SRMMU_CACHE);
+
+SRMMU_ET_PTE and friends are defined in 
+
+arch/sparc/include/asm/pgtsrmmu.h
+
+Since I can't readily test sparc this was easier to put out than let 0-day
+crank on the entire series checking if including that header in the common
+header chain would be an issue.
+
+> 
+> If sparc is sorted out we can always make it a define, and use a define
+> for kmap_prot that defaults to PAGE_KERNEL, avoiding a little
+> more duplication.
+
+Agreed.  But it seems easier as a follow up (for me with 0-day).  Perhaps
+someone from sparc can weigh in on the specifics of those defines and why they
+are different from the normal ones?  Or even provide a follow on patch?
+
+Ira
+
 
 _______________________________________________
 linux-snps-arc mailing list
