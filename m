@@ -2,35 +2,36 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1B9AD1C0FB6
-	for <lists+linux-snps-arc@lfdr.de>; Fri,  1 May 2020 10:37:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6AF861C0FBE
+	for <lists+linux-snps-arc@lfdr.de>; Fri,  1 May 2020 10:38:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DAFe1aEIz+amqn3twxmx3wbD1YQFopEIYBcRHS17M5w=; b=CF2g5NOmFoOvSk
-	M24fsKczp8bJ5ztjRQ8C62/tI/dZUwCGXnD0Cw+ybGPTHphIFqxMJvBsItBorNSzeTmWmYJIYzaN8
-	9ElXJXkXmU0U/wdI1tEBUVtrCc0VNGJhxLbK6rNL5tHN4VWvEY61O3xlEfY2gi+1Tp34RxXcRKEPl
-	+Wd47V9xIdFZf72gm2wXdwoE5tOgwKbQU9VOkqtsoLXFxcLgD5o2BMluTkJL0+qG69RUdilK+mFTd
-	YdUsnsbg1r6QiP2UQc3tIQc3hfLCK9luJmsxJ1LpNwN6+/uvqYa2vthsdGDqghcFAHiFXZppMXaQ0
-	I1gXOO8uOWoM58qu4aWg==;
+	List-Owner; bh=+Oc85ZLB+mZLdXBg0GxffCsNkVThqPpRyeQQN8w2Vwo=; b=Mnf3ITnu1FHOoi
+	GT8YwTFlRYk20x4MsrntKGPRHqzkrCea9e7h457oDkqUSN9yotBMZ4PfIzNC4XTIem/TiB4tUxL3J
+	HI0Gy1tmgHySoRxsuP9RVv3jMfLznb4sJ8b8Ccx5lPtkK2mo9Xbbg2MBN2SKsN0CiVl++W+YjPRlM
+	Mvj5l13eOo8rGDYmWt29FJ7/a1JZgIaQum/d5nphNZNYw7Zz0/n0T6E1WOjAGm/dAeGHJbOExaoAt
+	bcEXmOoJaI+HazL90gg2iQmsRH8oPRfIlJxHOaaNj8b7h6kk1kceX7zvAa0ofYK6Xf0hFWcM3qSRB
+	CdInTyKmaIQJB1b8QCbQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jURAg-0004CZ-KD; Fri, 01 May 2020 08:37:22 +0000
+	id 1jURBp-0004Z6-Kr; Fri, 01 May 2020 08:38:33 +0000
 Received: from hch by bombadil.infradead.org with local (Exim 4.92.3 #3 (Red
- Hat Linux)) id 1jURAf-0004CK-DI; Fri, 01 May 2020 08:37:21 +0000
-Date: Fri, 1 May 2020 01:37:21 -0700
+ Hat Linux)) id 1jURBn-0004Yp-69; Fri, 01 May 2020 08:38:31 +0000
+Date: Fri, 1 May 2020 01:38:31 -0700
 From: Christoph Hellwig <hch@infradead.org>
 To: ira.weiny@intel.com
-Subject: Re: [PATCH V1 03/10] arch/kmap: Remove redundant arch specific kmaps
-Message-ID: <20200501083721.GC27858@infradead.org>
+Subject: Re: [PATCH V1 04/10] arch/kunmap: Remove duplicate kunmap
+ implementations
+Message-ID: <20200501083831.GD27858@infradead.org>
 References: <20200430203845.582900-1-ira.weiny@intel.com>
- <20200430203845.582900-4-ira.weiny@intel.com>
+ <20200430203845.582900-5-ira.weiny@intel.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200430203845.582900-4-ira.weiny@intel.com>
+In-Reply-To: <20200430203845.582900-5-ira.weiny@intel.com>
 X-BeenThere: linux-snps-arc@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,6 +63,17 @@ Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-snps-arc" <linux-snps-arc-bounces@lists.infradead.org>
 Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org
+
+On Thu, Apr 30, 2020 at 01:38:39PM -0700, ira.weiny@intel.com wrote:
+> From: Ira Weiny <ira.weiny@intel.com>
+> 
+> All architectures do exactly the same thing for kunmap(); remove all the
+> duplicate definitions and lift the call to the core.
+> 
+> This also has the benefit of changing kmap_unmap() on a number of
+> architectures to be an inline call rather than an actual function.
+> 
+> Signed-off-by: Ira Weiny <ira.weiny@intel.com>
 
 Looks good,
 
