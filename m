@@ -2,35 +2,35 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 766431C0FAE
-	for <lists+linux-snps-arc@lfdr.de>; Fri,  1 May 2020 10:36:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1B9AD1C0FB6
+	for <lists+linux-snps-arc@lfdr.de>; Fri,  1 May 2020 10:37:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DLF7xN253C9q7L9rKR8e0nueE7b4iap7WfuGbl8FjXE=; b=oO/j5jW9iO86Uw
-	ibBtsX27Uj3fkI9BxyFVzmz1Wf9iT/x81merPfT3ntpZ8txl+Hlfiycjh/FM8/9FCgWEQoAeOJ5cz
-	jA2KaXZ8mBWK3UjLao68wKTjutvKnxG/lc/h8GdegqreLZakTmiQZp+4DfkWQU2vsXwB0+2vvll8E
-	hG3QxAVQJZhS8arb8Eu9Krdz1mmt7CVtaoWZySITZzQAbhHR1q0iNKru4+puJro3NMA9ioilAVHkU
-	ZlsTxzEMdOwxg/e6LyzgsHMX2YZqhbWSIBigx5jIdi6Wx0xqt4lxkyRSVHkojqRwGCac1zIZEO5sV
-	tt4NYuI6WZgWqUoe/3mQ==;
+	List-Owner; bh=DAFe1aEIz+amqn3twxmx3wbD1YQFopEIYBcRHS17M5w=; b=CF2g5NOmFoOvSk
+	M24fsKczp8bJ5ztjRQ8C62/tI/dZUwCGXnD0Cw+ybGPTHphIFqxMJvBsItBorNSzeTmWmYJIYzaN8
+	9ElXJXkXmU0U/wdI1tEBUVtrCc0VNGJhxLbK6rNL5tHN4VWvEY61O3xlEfY2gi+1Tp34RxXcRKEPl
+	+Wd47V9xIdFZf72gm2wXdwoE5tOgwKbQU9VOkqtsoLXFxcLgD5o2BMluTkJL0+qG69RUdilK+mFTd
+	YdUsnsbg1r6QiP2UQc3tIQc3hfLCK9luJmsxJ1LpNwN6+/uvqYa2vthsdGDqghcFAHiFXZppMXaQ0
+	I1gXOO8uOWoM58qu4aWg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jURAC-0003tf-Ro; Fri, 01 May 2020 08:36:52 +0000
+	id 1jURAg-0004CZ-KD; Fri, 01 May 2020 08:37:22 +0000
 Received: from hch by bombadil.infradead.org with local (Exim 4.92.3 #3 (Red
- Hat Linux)) id 1jURAB-0003tJ-II; Fri, 01 May 2020 08:36:51 +0000
-Date: Fri, 1 May 2020 01:36:51 -0700
+ Hat Linux)) id 1jURAf-0004CK-DI; Fri, 01 May 2020 08:37:21 +0000
+Date: Fri, 1 May 2020 01:37:21 -0700
 From: Christoph Hellwig <hch@infradead.org>
 To: ira.weiny@intel.com
-Subject: Re: [PATCH V1 02/10] arch/xtensa: Move kmap build bug out of the way
-Message-ID: <20200501083651.GB27858@infradead.org>
+Subject: Re: [PATCH V1 03/10] arch/kmap: Remove redundant arch specific kmaps
+Message-ID: <20200501083721.GC27858@infradead.org>
 References: <20200430203845.582900-1-ira.weiny@intel.com>
- <20200430203845.582900-3-ira.weiny@intel.com>
+ <20200430203845.582900-4-ira.weiny@intel.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200430203845.582900-3-ira.weiny@intel.com>
+In-Reply-To: <20200430203845.582900-4-ira.weiny@intel.com>
 X-BeenThere: linux-snps-arc@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,18 +63,7 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-snps-arc" <linux-snps-arc-bounces@lists.infradead.org>
 Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org
 
-On Thu, Apr 30, 2020 at 01:38:37PM -0700, ira.weiny@intel.com wrote:
-> @@ -88,6 +88,11 @@ void __init kmap_init(void)
->  {
->  	unsigned long kmap_vstart;
->  
-> +	/* Check if this memory layout is broken because PKMAP overlaps
-> +	 * page table.
-> +	 */
-> +	BUILD_BUG_ON(PKMAP_BASE <
-> +		     TLBTEMP_BASE_1 + TLBTEMP_SIZE);
-
-This can fit on a single line.  Otherwise looks good:
+Looks good,
 
 Reviewed-by: Christoph Hellwig <hch@lst.de>
 
