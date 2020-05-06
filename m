@@ -2,35 +2,35 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 708151C6801
-	for <lists+linux-snps-arc@lfdr.de>; Wed,  6 May 2020 08:12:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F064E1C682B
+	for <lists+linux-snps-arc@lfdr.de>; Wed,  6 May 2020 08:14:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Kel4bATCpi+EYuR65uVbJ04QlLgvs6306VogqyiIkF0=; b=pJ/hmSpRU4L1aQ
-	Ua1rYNGrBNMI3N+WhPAHN/JvD6LRg4NVVqnePHH6KI7i6hnhZlYY/n7XdgvqT/WqVjmsdOcMFAGOz
-	XwMIp7Ov2Sjh03kJyIu5bsOImojpilSpfqPoZa7FX54PBsO56y1B1ATMSwQKNoasm+osb+I5Eytcn
-	NZkMC5f2atDTqeWoD/TqJncz1yR+1z659OXagLc+vsUyKgyDdD99wAKSremFRhXrkjrkVKtup+KUW
-	zpFNEyersqO/mi+f5kPJqdsvjqmY0aUyE10D1EDkuz4/eoqNqefVo+zfXPcPfLWe7uAt8CeMdjgfw
-	r9rRcGgEAF9cX6cVvXxw==;
+	List-Owner; bh=/ubHmY3W/exK2oT+9PN7I7v4R1RSZLD1uKBkP76uptk=; b=XbotjgPCW/KUJk
+	Om+YBvt64w2hyFdhC8GHV0VtJjLso2BLoZKTm4y7+qHEIg5VD8N3UI1cP+ylPVcxjgZJ6V5tST8+x
+	qlDJ1aKq09WqQjeOjCkJ1tNqDMYxDHwuJozSFSaioaUTU4P/yeGB6J3ggoO9UFMazf8SyQw98MSew
+	8hSjcedGhpkkqoLg11FGK92zSIFRdEUogev3rG4b4tAlaz3s/FC11WoSbTB35BFSBPwBAMs+rFDFF
+	xhj1DYGTiShJgh1T5tf1tipl3K0tu8e4XwT+Zd8LW8hIgd/ZZdsqd3kEF/LeXrEeCFEr36//Evbsy
+	g5W4OgEJ/oo7r8HpSMag==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWDIH-0004cq-Vw; Wed, 06 May 2020 06:12:33 +0000
+	id 1jWDJf-0005oq-IM; Wed, 06 May 2020 06:13:59 +0000
 Received: from hch by bombadil.infradead.org with local (Exim 4.92.3 #3 (Red
- Hat Linux)) id 1jWDIF-0004bp-TW; Wed, 06 May 2020 06:12:31 +0000
-Date: Tue, 5 May 2020 23:12:31 -0700
+ Hat Linux)) id 1jWDJ8-0005JQ-4V; Wed, 06 May 2020 06:13:26 +0000
+Date: Tue, 5 May 2020 23:13:26 -0700
 From: Christoph Hellwig <hch@infradead.org>
 To: ira.weiny@intel.com
-Subject: Re: [PATCH V2 07/11] arch/kunmap_atomic: Consolidate duplicate code
-Message-ID: <20200506061231.GC5192@infradead.org>
+Subject: Re: [PATCH V2 08/11] arch/kmap: Ensure kmap_prot visibility
+Message-ID: <20200506061326.GD5192@infradead.org>
 References: <20200504010912.982044-1-ira.weiny@intel.com>
- <20200504010912.982044-8-ira.weiny@intel.com>
+ <20200504010912.982044-9-ira.weiny@intel.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200504010912.982044-8-ira.weiny@intel.com>
+In-Reply-To: <20200504010912.982044-9-ira.weiny@intel.com>
 X-BeenThere: linux-snps-arc@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,25 +64,23 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-snps-arc" <linux-snps-arc-bounces@lists.infradead.org>
 Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org
 
-On Sun, May 03, 2020 at 06:09:08PM -0700, ira.weiny@intel.com wrote:
+On Sun, May 03, 2020 at 06:09:09PM -0700, ira.weiny@intel.com wrote:
 > From: Ira Weiny <ira.weiny@intel.com>
 > 
-> Every single architecture (including !CONFIG_HIGHMEM) calls...
+> We want to support kmap_atomic_prot() on all architectures and it makes
+> sense to define kmap_atomic() to use the default kmap_prot.
 > 
-> 	pagefault_enable();
-> 	preempt_enable();
-> 
-> ... before returning from __kunmap_atomic().  Lift this code into the
-> kunmap_atomic() macro.
-> 
-> While we are at it rename __kunmap_atomic() to kunmap_atomic_high() to
-> be consistent.
-> 
-> Signed-off-by: Ira Weiny <ira.weiny@intel.com>
+> So we ensure all arch's have a globally available kmap_prot either as a
+> define or exported symbol.
 
-Looks good,
+FYI, I still think a
 
-Reviewed-by: Christoph Hellwig <hch@lst.de>
+#ifndef kmap_prot
+#define kmap_prot PAGE_KERNEL
+#endif
+
+in linux/highmem.h would be nicer.  Then only xtensa and sparc need
+to override it and clearly stand out.
 
 _______________________________________________
 linux-snps-arc mailing list
