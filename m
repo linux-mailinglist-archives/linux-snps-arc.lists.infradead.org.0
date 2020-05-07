@@ -2,65 +2,66 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 76C941C9CC0
-	for <lists+linux-snps-arc@lfdr.de>; Thu,  7 May 2020 22:53:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2B4801C9EB3
+	for <lists+linux-snps-arc@lfdr.de>; Fri,  8 May 2020 00:50:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
-	Message-Id:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qBQsxl+QeZLQe1IsIIba7/I/RrTEH2jMCDltTIXlcLM=; b=uW9gVt8o90oIca
-	0jwgxbaKLBkhb1BPEFPs7v25d01uvQKw0bjLz3cQqNig8ZLms9LAlJpno7qwN1H06ZVxK9Pi2PcDf
-	rWbDaPmu72mmubAPYI1rvt5RdUQN0uNnsiJVdaGTuJtON4QBQa290jwhIalU7KxMdnIv1Zx4YOaz8
-	YEYownJtJBQdLKaeVmJQa5WhZS+CAkO9AJsfpXFWKv45VCHDGMlolbrQMHHg+qpFosWzQlqWMP2jt
-	eoQxNKBMRBou9RDUr/57t/nOGGf1zzMQ4oXqrMVq/0dbgfA5DvZuzpNk9qpj2R9vn+KRQBjKA0SBo
-	EADxEYHKMPBJ9G8WzROw==;
+	List-Owner; bh=OzkP+/vH8KW8JY8Z0IuvSYK5D644n/S59vUktDiEjLI=; b=E0up7TcMgqtjjR
+	r9D0U9wSOGX6rWfd210xWbmKrgerNIVJx2FSFBHRpjcXLYIQa4MdbUyRvT2Ff8K2doRMPh+5bb0zX
+	A1760WQx7cenG+QswdXEOrC4PB6n364BZVx/DmG194MTz8mmL+GmoOeCISRHCHuyWQY14nXTbGVOQ
+	S1th7IbB9mu+eoOcT+PPAFZ6CsDERrvGDkP8HQicnh6ukBbvVmQak6E2CLHsVMv05FSUVGi29I5EU
+	y1xiSVYzHsYCz/VwRxkEsU0tXugpYIVQB+S+DcEMRZ+e4QBFm4JTlJ1z3rYvmzka4UG9Zbq9aoOUC
+	RXEwuOLHvvzQlrvfTsWQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWnWI-0000KU-UO; Thu, 07 May 2020 20:53:26 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jWpLz-0006bg-B6; Thu, 07 May 2020 22:50:55 +0000
+Received: from mga01.intel.com ([192.55.52.88])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWnW2-0008Tn-6p; Thu, 07 May 2020 20:53:11 +0000
-Received: from localhost.localdomain (c-73-231-172-41.hsd1.ca.comcast.net
- [73.231.172.41])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 635C4208D6;
- Thu,  7 May 2020 20:53:08 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1588884789;
- bh=hMm94zV9WGH7Tl9oZXIOfH3+eFqjMiH47dainavvzmQ=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=Xo0uB0jzEa+6RQj31qDV5iepwWr5b+doPXcry4uWKXnR6W6xL9I88EI0MA39g9SuS
- 5U/3zuoJRDt8b6/Q0n2onWLVPdRnd11VRA3YS2nqAKv/QZZqRC8GdpFAaS/d7ESL7c
- ZnKJEnreBWqqWrZToty2CxiWaRWmtHuPnx6/3ffI=
-Date: Thu, 7 May 2020 13:53:07 -0700
-From: Andrew Morton <akpm@linux-foundation.org>
-To: ira.weiny@intel.com
-Subject: Re: [PATCH V3 15/15] kmap: Consolidate kmap_prot definitions
-Message-Id: <20200507135307.4ba10d99c611f17beab31751@linux-foundation.org>
-In-Reply-To: <20200507150004.1423069-16-ira.weiny@intel.com>
+ id 1jWpLq-0006Td-Iv; Thu, 07 May 2020 22:50:47 +0000
+IronPort-SDR: i9H0+9svt0VH/bF4iwLqq5qgM+Y+JqQw0VhMmzu6o4KmboXGySKCbIojqJMpzUfRojSUcFItFC
+ 9d+zsiuSQSUA==
+X-Amp-Result: SKIPPED(no attachment in message)
+X-Amp-File-Uploaded: False
+Received: from orsmga002.jf.intel.com ([10.7.209.21])
+ by fmsmga101.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
+ 07 May 2020 15:50:41 -0700
+IronPort-SDR: A94YOimG+GBTCtRnotihIHXo/4uYOm9rsXy8xtuLX5Aw2+CVkRWX3diLimU1sfCOXtFd1OcX1r
+ bTWfMT7evkVA==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.73,365,1583222400"; d="scan'208";a="278753786"
+Received: from iweiny-desk2.sc.intel.com ([10.3.52.147])
+ by orsmga002.jf.intel.com with ESMTP; 07 May 2020 15:50:40 -0700
+Date: Thu, 7 May 2020 15:50:40 -0700
+From: Ira Weiny <ira.weiny@intel.com>
+To: Andrew Morton <akpm@linux-foundation.org>
+Subject: Re: [PATCH V3 13/15] parisc/kmap: Remove duplicate kmap code
+Message-ID: <20200507225039.GA1428632@iweiny-DESK2.sc.intel.com>
 References: <20200507150004.1423069-1-ira.weiny@intel.com>
- <20200507150004.1423069-16-ira.weiny@intel.com>
-X-Mailer: Sylpheed 3.5.1 (GTK+ 2.24.31; x86_64-pc-linux-gnu)
-Mime-Version: 1.0
+ <20200507150004.1423069-14-ira.weiny@intel.com>
+ <20200507135258.f430182578c0d63b7488916e@linux-foundation.org>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200507135258.f430182578c0d63b7488916e@linux-foundation.org>
+User-Agent: Mutt/1.11.1 (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200507_135310_316183_9C5E6FAD 
-X-CRM114-Status: GOOD (  14.36  )
+X-CRM114-CacheID: sfid-20200507_155046_633903_1EDA0A2B 
+X-CRM114-Status: GOOD (  15.28  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [192.55.52.88 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [192.55.52.88 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-snps-arc@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,13 +80,13 @@ Cc: Peter Zijlstra <peterz@infradead.org>,
  "James E.J. Bottomley" <James.Bottomley@HansenPartnership.com>,
  Max Filippov <jcmvbkbc@gmail.com>, Paul Mackerras <paulus@samba.org>,
  "H. Peter Anvin" <hpa@zytor.com>, sparclinux@vger.kernel.org,
- Dan Williams <dan.j.williams@intel.com>, Helge Deller <deller@gmx.de>,
+ Thomas Gleixner <tglx@linutronix.de>, Helge Deller <deller@gmx.de>,
  x86@kernel.org, linux-csky@vger.kernel.org, Christoph Hellwig <hch@lst.de>,
- Christoph Hellwig <hch@infradead.org>, Ingo Molnar <mingo@redhat.com>,
- linux-snps-arc@lists.infradead.org, linux-xtensa@linux-xtensa.org,
- Borislav Petkov <bp@alien8.de>, Al Viro <viro@zeniv.linux.org.uk>,
- Andy Lutomirski <luto@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
- linux-arm-kernel@lists.infradead.org, Chris Zankel <chris@zankel.net>,
+ Ingo Molnar <mingo@redhat.com>, linux-snps-arc@lists.infradead.org,
+ linux-xtensa@linux-xtensa.org, Borislav Petkov <bp@alien8.de>,
+ Al Viro <viro@zeniv.linux.org.uk>, Andy Lutomirski <luto@kernel.org>,
+ Dan Williams <dan.j.williams@intel.com>, linux-arm-kernel@lists.infradead.org,
+ Chris Zankel <chris@zankel.net>,
  Thomas Bogendoerfer <tsbogend@alpha.franken.de>, linux-parisc@vger.kernel.org,
  linux-kernel@vger.kernel.org, Christian Koenig <christian.koenig@amd.com>,
  linuxppc-dev@lists.ozlabs.org, "David S. Miller" <davem@davemloft.net>
@@ -94,57 +95,59 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-snps-arc" <linux-snps-arc-bounces@lists.infradead.org>
 Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org
 
-On Thu,  7 May 2020 08:00:03 -0700 ira.weiny@intel.com wrote:
-
-> From: Ira Weiny <ira.weiny@intel.com>
+On Thu, May 07, 2020 at 01:52:58PM -0700, Andrew Morton wrote:
+> On Thu,  7 May 2020 08:00:01 -0700 ira.weiny@intel.com wrote:
 > 
-> Most architectures define kmap_prot to be PAGE_KERNEL.
+> > parisc reimplements the kmap calls except to flush it's dcache.  This is
+> > arguably an abuse of kmap but regardless it is messy and confusing.
+> > 
+> > Remove the duplicate code and have parisc define
+> > ARCH_HAS_FLUSH_ON_KUNMAP for a kunmap_flush_on_unmap() architecture
+> > specific call to flush the cache.
 > 
-> Let sparc and xtensa define there own and define PAGE_KERNEL as the
-> default if not overridden.
+> checkpatch says:
 > 
+> ERROR: #define of 'ARCH_HAS_FLUSH_ON_KUNMAP' is wrong - use Kconfig variables or standard guards instead
+> #69: FILE: arch/parisc/include/asm/cacheflush.h:103:
+> +#define ARCH_HAS_FLUSH_ON_KUNMAP
+> 
+> which is fair enough, I guess.  More conventional would be
+> 
+> arch/parisc/include/asm/cacheflush.h:
+> 
+> static inline void kunmap_flush_on_unmap(void *addr)
+> {
+> 	...
+> }
+> #define kunmap_flush_on_unmap kunmap_flush_on_unmap
+> 
+> 
+> include/linux/highmem.h:
+> 
+> #ifndef kunmap_flush_on_unmap
+> static inline void kunmap_flush_on_unmap(void *addr)
+> {
+> }
+> #define kunmap_flush_on_unmap kunmap_flush_on_unmap
+> #endif
+> 
+> 
+> static inline void kunmap_atomic_high(void *addr)
+> {
+> 	/* Mostly nothing to do in the CONFIG_HIGHMEM=n case as kunmap_atomic()
+> 	 * handles re-enabling faults + preemption */
+> 	kunmap_flush_on_unmap(addr);
+> }
+> 
+> 
+> but I don't really think it's worth bothering changing it.	
+> 
+> (Ditto patch 3/15)
 
-checkpatch considered useful ;)
+Yes I was following the pattern already there.
 
-
-From: Andrew Morton <akpm@linux-foundation.org>
-Subject: kmap-consolidate-kmap_prot-definitions-checkpatch-fixes
-
-WARNING: macros should not use a trailing semicolon
-#134: FILE: arch/sparc/include/asm/highmem.h:33:
-+#define kmap_prot __pgprot(SRMMU_ET_PTE | SRMMU_PRIV | SRMMU_CACHE);
-
-total: 0 errors, 1 warnings, 100 lines checked
-
-NOTE: For some of the reported defects, checkpatch may be able to
-      mechanically convert to the typical style using --fix or --fix-inplace.
-
-./patches/kmap-consolidate-kmap_prot-definitions.patch has style problems, please review.
-
-NOTE: If any of the errors are false positives, please report
-      them to the maintainer, see CHECKPATCH in MAINTAINERS.
-
-Please run checkpatch prior to sending patches
-
-Cc: Ira Weiny <ira.weiny@intel.com>
-Signed-off-by: Andrew Morton <akpm@linux-foundation.org>
----
-
- arch/sparc/include/asm/highmem.h |    2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
---- a/arch/sparc/include/asm/highmem.h~kmap-consolidate-kmap_prot-definitions-checkpatch-fixes
-+++ a/arch/sparc/include/asm/highmem.h
-@@ -30,7 +30,7 @@
- /* declarations for highmem.c */
- extern unsigned long highstart_pfn, highend_pfn;
- 
--#define kmap_prot __pgprot(SRMMU_ET_PTE | SRMMU_PRIV | SRMMU_CACHE);
-+#define kmap_prot __pgprot(SRMMU_ET_PTE | SRMMU_PRIV | SRMMU_CACHE)
- extern pte_t *pkmap_page_table;
- 
- void kmap_init(void) __init;
-_
+I'll fix up the last patch now.
+Ira
 
 
 _______________________________________________
