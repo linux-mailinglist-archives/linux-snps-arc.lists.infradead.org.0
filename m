@@ -2,36 +2,36 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 01D9F1CFE24
-	for <lists+linux-snps-arc@lfdr.de>; Tue, 12 May 2020 21:20:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 47FC51CFE34
+	for <lists+linux-snps-arc@lfdr.de>; Tue, 12 May 2020 21:24:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lkWWBA4YdyYixTmR2wBjnWwuz7Xkkybb1vRB/psrQ5U=; b=q413OnLci9UU1Z
-	2dKm5aAvoJNGXJymIJBuZyVtVEu7nVZ/Z3WscnFeGvH6tIgu2G0zpCoZZXGx+CTGMCQl6EbdmtGSl
-	XmDEQMWVBwz4Bdy5/BtqA3mLCu52RZjv6c9JnhQCGg4RBi0a0QAsn6Srsc0AG4AIW2Ic8E/vrYZMq
-	Wt+FhKkHrofBzbCoWX1Zw8GNGEcp3oyG4OdXEvSb6pMKjzqZ/356OVEIrELuzNcsOWQoIScNvKvIG
-	ZuRZFwjva8wMdawlAjTcGb6LdE4+Lsa1wIimzkbsQwmZ0qayIOuIRGGGx/duMaEjO1G+MjjiK9WQM
-	P9nyrOWj9QUn6Pclbhmw==;
+	List-Owner; bh=M5L59npbP6DAmqI8JAc2O/DvS/BF5UlxipsHdFyHNPc=; b=C3I/2h02zwe3Lk
+	gdBwwkMV4qfukV9sZCpKQ7uLE64fwOyfkqXlhpRHR9nfKGJAYrlM3wk+G7HsLA2eh4NDK+RecdoPw
+	OIKsrwleDBczt0pmf/JMX3M5Ti/GqkhEUBeP6++18F8ac+MPaK7ofb46yrINsJUNGWUAROYpJ46kg
+	yVZX3hMG2MMD2Fh0WOtY2+IdoW94v+nQsL3rHsBV2riiGl04h+cACfikDIyFCGP/PpDsyyToRHXIl
+	fXP/LG75uNLCn7mt5sPt5mZzDMGucM241406VS3hq70RdOz4wi2D2AQHdp9O5oKzrudY7R5ntgi3i
+	eRK//OTDlX0AWaE35+kw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYaS5-0001Eo-69; Tue, 12 May 2020 19:20:29 +0000
+	id 1jYaWC-00028V-TH; Tue, 12 May 2020 19:24:44 +0000
 Received: from willy by bombadil.infradead.org with local (Exim 4.92.3 #3 (Red
- Hat Linux)) id 1jYaRp-00018p-Bh; Tue, 12 May 2020 19:20:13 +0000
-Date: Tue, 12 May 2020 12:20:13 -0700
+ Hat Linux)) id 1jYaW9-00026f-44; Tue, 12 May 2020 19:24:41 +0000
+Date: Tue, 12 May 2020 12:24:41 -0700
 From: Matthew Wilcox <willy@infradead.org>
 To: Mike Rapoport <rppt@kernel.org>
-Subject: Re: [PATCH 03/12] mm: reorder includes after introduction of
- linux/pgtable.h
-Message-ID: <20200512192013.GY16070@bombadil.infradead.org>
+Subject: Re: [PATCH 08/12] mm: pgtable: add shortcuts for accessing kernel
+ PMD and PTE
+Message-ID: <20200512192441.GZ16070@bombadil.infradead.org>
 References: <20200512184422.12418-1-rppt@kernel.org>
- <20200512184422.12418-4-rppt@kernel.org>
+ <20200512184422.12418-9-rppt@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200512184422.12418-4-rppt@kernel.org>
+In-Reply-To: <20200512184422.12418-9-rppt@kernel.org>
 X-BeenThere: linux-snps-arc@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,24 +78,20 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-snps-arc" <linux-snps-arc-bounces@lists.infradead.org>
 Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org
 
-On Tue, May 12, 2020 at 09:44:13PM +0300, Mike Rapoport wrote:
-> diff --git a/arch/alpha/kernel/proto.h b/arch/alpha/kernel/proto.h
-> index a093cd45ec79..701a05090141 100644
-> --- a/arch/alpha/kernel/proto.h
-> +++ b/arch/alpha/kernel/proto.h
-> @@ -2,8 +2,6 @@
->  #include <linux/interrupt.h>
->  #include <linux/io.h>
+On Tue, May 12, 2020 at 09:44:18PM +0300, Mike Rapoport wrote:
+> +++ b/include/linux/pgtable.h
+> @@ -28,6 +28,24 @@
+>  #define USER_PGTABLES_CEILING	0UL
+>  #endif
 >  
-> -#include <linux/pgtable.h>
-> -
->  /* Prototypes of functions used across modules here in this directory.  */
->  
->  #define vucp	volatile unsigned char  *
+> +/* FIXME: */
 
-Looks like your script has a bug if linux/pgtable.h is the last include
-in the file?
+Fix you what?  Add documentation?
 
+> +static inline pmd_t *pmd_off(struct mm_struct *mm, unsigned long va)
+> +{
+> +	return pmd_offset(pud_offset(p4d_offset(pgd_offset(mm, va), va), va), va);
+> +}
 
 _______________________________________________
 linux-snps-arc mailing list
