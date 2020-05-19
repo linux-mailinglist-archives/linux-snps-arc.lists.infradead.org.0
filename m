@@ -2,97 +2,64 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7890D1D9D3C
-	for <lists+linux-snps-arc@lfdr.de>; Tue, 19 May 2020 18:54:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3ED591D9FB2
+	for <lists+linux-snps-arc@lfdr.de>; Tue, 19 May 2020 20:40:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RlMtMQpG4HdDfrPjObCd9Mx0gAxDamI7FS9YKjfhph4=; b=o/gd09BVzdpC/g
-	h/xi24uGKgBHQcyqWPFNfSKzwkuXKN5PNN0kTZYfczxRWCo2AuCR9wFcHfkgXsa2VlLZzH5ZKcWK/
-	f7JJhpU7LojHpKiY4KnFAf+gTWowODrXx3ECw8RjGYv25yun15plG5ixYRIGnsZendt9yN5lsLlPh
-	bRuU3sNXsfkx5zajHrvFD05OC/exVP5/qlIeUwiRVssQiUBLb12fg/aplz/xwflLnwGO2ROOJKlBY
-	JlgjWdnxLH7KLl1d3xwQMtkt4Pd/jGR7/U7nCez9HZZHhj/i6XWB/LhqPU5uzLdj0T1tlwJGfIjJf
-	6ngCkkXYM19CnHSyfqlQ==;
+	List-Owner; bh=Ty4LEh8nowAMu41hcutPAh32+YplNIlESwWJu/v9dtc=; b=k+xetx9XBViRa5
+	siGLzBWGcvl6yA9h8fXNLsb6+2XgYnTF7r1p4+2ETWmVhbG1CaO0LaUfzP2wIzRVZPH7h1dwYZro0
+	uY8f/LsJSIdBdXpK658P+cFvCUpw7Hu2JildiCv7HEL3SsMpXS+1OwC7by/6IF8cuMvvDo63Gbur4
+	Gr3nKzstFZuu05hNVtJBLWYUMBo2zQkXPFSpjpKVEtDQQMQw6fSl/i8iV1e7rwtKvztguqjx24fGn
+	hmymVnKZD/9IrIpsyN4KT8KUKxFVg/G3DJmu0KothXSLbindnWKBkg0Gzm3g/OFF9DA55DvRpGjOu
+	Sx1xWv/QkNrh5AiShuFg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jb5Vb-0005z4-Nn; Tue, 19 May 2020 16:54:27 +0000
-Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
+	id 1jb7AY-0008VA-PM; Tue, 19 May 2020 18:40:50 +0000
+Received: from mga11.intel.com ([192.55.52.93])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jb5VZ-0005y0-5y; Tue, 19 May 2020 16:54:26 +0000
-Received: by mail-pf1-x442.google.com with SMTP id y198so189511pfb.4;
- Tue, 19 May 2020 09:54:24 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=sender:date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=xmBBbLK3vjWE/EyjvUc68p3tw/EXGXu0OK+6vpkbzqQ=;
- b=US3KTRvNcsr1JQ3EhzPolHH5YLTbLmBZ8QACOxRX4DSdLWVJ77w+ufdLjru2exOJj5
- cGgDdNSpGJSLCToXHOYtummYRYMikc607MQTtZw3CIAeMX52xLfkzXJFnqV++/4JZPBX
- TkfA6bA2OQ/tBu0verEpOr/8yTMghh7JOJnq8blVosibdSwn9t4VGf6TTFO3jl9Ku+S6
- us7ewjcIE1yEdgRycst8zGi/M73AaWLcbuldE63QokhOzCU4Lv6vQlzl3U74bTRQpiDW
- 76aVV76mP+yZNV5Arg3qVa0f6SZeHYOumZT/8SZvPzqHfkPYn2L9uFwTaop85+0WCxz9
- dP/Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:sender:date:from:to:cc:subject:message-id
- :references:mime-version:content-disposition:in-reply-to:user-agent;
- bh=xmBBbLK3vjWE/EyjvUc68p3tw/EXGXu0OK+6vpkbzqQ=;
- b=TG4ROQeGgGXYqYz9V9rWAKNWxpyxmYUtGttGOqm+O9V29H1aWc+QRiPFIrf9CpDllN
- e9Z78ldRum3JofOV+iRj0W7/DKc9LO9yGXuNJqxJ7yQqQ0TXM2BYZw/wnqdYGrvT0Epy
- fOJP0eNmWVoi684BSvaEa0yIFa7o+9nHSPRQny0j8YaxhwJ3Q1pntGdspM2c6bWl2GRb
- cBrEfJHmqIylsHCVmiMFaUxpbxrv7JDap8RmKKf5EJWzNQfoHlw03zV+WBn2SmFLgRdk
- N0X2gWyE5EANbX7EO4A7z4o/ccfzIV4wEh4Yf0xxSCsJJVeUZXeAbx8PfyOu9Fq3WJgP
- v7vg==
-X-Gm-Message-State: AOAM530MAWhBO7pxJ7VQws23MAsHng0R2rFexlRCSHRqzQgbOY9rCZ1P
- QIfY8H2Z4dFQPLdylcXlFSI=
-X-Google-Smtp-Source: ABdhPJyjXg6Tl4Trqy/ovTHZ7agsZDG2QZ23n+CG2Df9YrHRxk8WNFN4fKgw/J0SX04nl9fKvZEDwg==
-X-Received: by 2002:aa7:9297:: with SMTP id j23mr36511pfa.15.1589907263910;
- Tue, 19 May 2020 09:54:23 -0700 (PDT)
-Received: from localhost ([2600:1700:e321:62f0:329c:23ff:fee3:9d7c])
- by smtp.gmail.com with ESMTPSA id go14sm111069pjb.42.2020.05.19.09.54.23
- (version=TLS1_2 cipher=ECDHE-ECDSA-CHACHA20-POLY1305 bits=256/256);
- Tue, 19 May 2020 09:54:23 -0700 (PDT)
-Date: Tue, 19 May 2020 09:54:22 -0700
-From: Guenter Roeck <linux@roeck-us.net>
-To: ira.weiny@intel.com
+ id 1jb7AI-0008EM-St; Tue, 19 May 2020 18:40:36 +0000
+IronPort-SDR: as9sXKXcdzs2sUB85Wp5QkfnI1RPgjeU3+6nXzs/bqy5Qkk0eTYmyfz9Vw1D32B/276UKlgDe4
+ zAhh6fB8Hp+w==
+X-Amp-Result: SKIPPED(no attachment in message)
+X-Amp-File-Uploaded: False
+Received: from orsmga003.jf.intel.com ([10.7.209.27])
+ by fmsmga102.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
+ 19 May 2020 11:40:33 -0700
+IronPort-SDR: D+jm1xpsdiPApGucH8RonxhW2osAHv0gYp6yWvUx7peRxHsoQ0vFEHwV7Czh/gp76Png2rfKJj
+ 4SSgNhc/QOEA==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.73,410,1583222400"; d="scan'208";a="264403264"
+Received: from iweiny-desk2.sc.intel.com ([10.3.52.147])
+ by orsmga003.jf.intel.com with ESMTP; 19 May 2020 11:40:32 -0700
+Date: Tue, 19 May 2020 11:40:32 -0700
+From: Ira Weiny <ira.weiny@intel.com>
+To: Guenter Roeck <linux@roeck-us.net>
 Subject: Re: [PATCH] arch/{mips,sparc,microblaze,powerpc}: Don't enable
  pagefault/preempt twice
-Message-ID: <20200519165422.GA5838@roeck-us.net>
+Message-ID: <20200519184031.GB3356843@iweiny-DESK2.sc.intel.com>
 References: <20200507150004.1423069-8-ira.weiny@intel.com>
  <20200518184843.3029640-1-ira.weiny@intel.com>
+ <20200519165422.GA5838@roeck-us.net>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200518184843.3029640-1-ira.weiny@intel.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <20200519165422.GA5838@roeck-us.net>
+User-Agent: Mutt/1.11.1 (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200519_095425_240096_1FAFC3FB 
-X-CRM114-Status: GOOD (  11.93  )
-X-Spam-Score: 1.7 (+)
+X-CRM114-CacheID: sfid-20200519_114034_954632_0FB07709 
+X-CRM114-Status: GOOD (  15.42  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (1.7 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [192.55.52.93 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [groeck7[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [groeck7[at]gmail.com]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 1.1 DKIMWL_BL              DKIMwl.org - Blacklisted sender
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-snps-arc@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -127,47 +94,56 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-snps-arc" <linux-snps-arc-bounces@lists.infradead.org>
 Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org
 
-On Mon, May 18, 2020 at 11:48:43AM -0700, ira.weiny@intel.com wrote:
-> From: Ira Weiny <ira.weiny@intel.com>
+On Tue, May 19, 2020 at 09:54:22AM -0700, Guenter Roeck wrote:
+> On Mon, May 18, 2020 at 11:48:43AM -0700, ira.weiny@intel.com wrote:
+> > From: Ira Weiny <ira.weiny@intel.com>
+> > 
+> > The kunmap_atomic clean up failed to remove one set of pagefault/preempt
+> > enables when vaddr is not in the fixmap.
+> > 
+> > Fixes: bee2128a09e6 ("arch/kunmap_atomic: consolidate duplicate code")
+> > Signed-off-by: Ira Weiny <ira.weiny@intel.com>
 > 
-> The kunmap_atomic clean up failed to remove one set of pagefault/preempt
-> enables when vaddr is not in the fixmap.
+> microblazeel works with this patch,
+
+Awesome...  Andrew in my rush yesterday I should have put a reported by on the
+patch for Guenter as well.
+
+Sorry about that Guenter,
+Ira
+
+> as do the nosmp sparc32 boot tests,
+> but sparc32 boot tests with SMP enabled still fail with lots of messages
+> such as:
 > 
-> Fixes: bee2128a09e6 ("arch/kunmap_atomic: consolidate duplicate code")
-> Signed-off-by: Ira Weiny <ira.weiny@intel.com>
-
-microblazeel works with this patch, as do the nosmp sparc32 boot tests,
-but sparc32 boot tests with SMP enabled still fail with lots of messages
-such as:
-
-BUG: Bad page state in process swapper/0  pfn:006a1
-page:f0933420 refcount:0 mapcount:1 mapping:(ptrval) index:0x1
-flags: 0x0()
-raw: 00000000 00000100 00000122 00000000 00000001 00000000 00000000 00000000
-page dumped because: nonzero mapcount
-Modules linked in:
-CPU: 0 PID: 1 Comm: swapper/0 Tainted: G    B             5.7.0-rc6-next-20200518-00002-gb178d2d56f29 #1
-[f00e7ab8 :
-bad_page+0xa8/0x108 ]
-[f00e8b54 :
-free_pcppages_bulk+0x154/0x52c ]
-[f00ea024 :
-free_unref_page+0x54/0x6c ]
-[f00ed864 :
-free_reserved_area+0x58/0xec ]
-[f0527104 :
-kernel_init+0x14/0x110 ]
-[f000b77c :
-ret_from_kernel_thread+0xc/0x38 ]
-[00000000 :
-0x0 ]
-
-Code path leading to that message is different but always the same
-from free_unref_page().
-
-Still testing ppc images.
-
-Guenter
+> BUG: Bad page state in process swapper/0  pfn:006a1
+> page:f0933420 refcount:0 mapcount:1 mapping:(ptrval) index:0x1
+> flags: 0x0()
+> raw: 00000000 00000100 00000122 00000000 00000001 00000000 00000000 00000000
+> page dumped because: nonzero mapcount
+> Modules linked in:
+> CPU: 0 PID: 1 Comm: swapper/0 Tainted: G    B             5.7.0-rc6-next-20200518-00002-gb178d2d56f29 #1
+> [f00e7ab8 :
+> bad_page+0xa8/0x108 ]
+> [f00e8b54 :
+> free_pcppages_bulk+0x154/0x52c ]
+> [f00ea024 :
+> free_unref_page+0x54/0x6c ]
+> [f00ed864 :
+> free_reserved_area+0x58/0xec ]
+> [f0527104 :
+> kernel_init+0x14/0x110 ]
+> [f000b77c :
+> ret_from_kernel_thread+0xc/0x38 ]
+> [00000000 :
+> 0x0 ]
+> 
+> Code path leading to that message is different but always the same
+> from free_unref_page().
+> 
+> Still testing ppc images.
+> 
+> Guenter
 
 _______________________________________________
 linux-snps-arc mailing list
