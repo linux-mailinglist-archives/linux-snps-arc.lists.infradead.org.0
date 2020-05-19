@@ -2,67 +2,97 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 862AB1D9CB1
-	for <lists+linux-snps-arc@lfdr.de>; Tue, 19 May 2020 18:30:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7890D1D9D3C
+	for <lists+linux-snps-arc@lfdr.de>; Tue, 19 May 2020 18:54:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=p21CA+9CTlKsyorvA2IzvHtuwASxCMXRLNjLwBPy/XY=; b=i+zXgpu+WBNUiQ
-	MyEUi5peCxpNE0TuPnthZAWL8rUpz0Ggw05uDzIM3+d2FyZx7waVCxNE5D5U8/1P1aOCvgPmF+FXm
-	eOgxs4bXOiu+1bRUg5+AP47ZUYWJZFxmtPAVq+bvYp4h72HoY5w+rWg9yQWXPx2ZGQ8xZgh50xbdy
-	oqppxORYKmUbdpmbA2cuW0Bciohlwyueg6XWEMUkCvgkmNlaKX5iPzyFEbz9V9M44gC8ZVleleqz7
-	pc3Sc3lzAJWqJJZLFmpCMR6P7dmXtvqyNVvoxxgWj+bxOusWsrWVEo0X+WORYZtMANCcKZ2LHp5Wa
-	H1Zy1WONxv0/cJwXfcTw==;
+	List-Owner; bh=RlMtMQpG4HdDfrPjObCd9Mx0gAxDamI7FS9YKjfhph4=; b=o/gd09BVzdpC/g
+	h/xi24uGKgBHQcyqWPFNfSKzwkuXKN5PNN0kTZYfczxRWCo2AuCR9wFcHfkgXsa2VlLZzH5ZKcWK/
+	f7JJhpU7LojHpKiY4KnFAf+gTWowODrXx3ECw8RjGYv25yun15plG5ixYRIGnsZendt9yN5lsLlPh
+	bRuU3sNXsfkx5zajHrvFD05OC/exVP5/qlIeUwiRVssQiUBLb12fg/aplz/xwflLnwGO2ROOJKlBY
+	JlgjWdnxLH7KLl1d3xwQMtkt4Pd/jGR7/U7nCez9HZZHhj/i6XWB/LhqPU5uzLdj0T1tlwJGfIjJf
+	6ngCkkXYM19CnHSyfqlQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jb58K-0000wk-Jf; Tue, 19 May 2020 16:30:24 +0000
-Received: from mga04.intel.com ([192.55.52.120])
+	id 1jb5Vb-0005z4-Nn; Tue, 19 May 2020 16:54:27 +0000
+Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jb578-0005ut-NP; Tue, 19 May 2020 16:29:13 +0000
-IronPort-SDR: qzCZPZac9iI8/b2rMrwci462/T9k3ZmQSP7iaKk97TmVV8ZkzZYp0TWUwHhnLEO24TAKZ0OTzQ
- /nktjbM4vSdg==
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from orsmga001.jf.intel.com ([10.7.209.18])
- by fmsmga104.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 19 May 2020 09:29:06 -0700
-IronPort-SDR: wMgiwHen2OPFlYyzOEz7g2rJdzh5JJtN4dIY2VFB92QqQMm8kp4VvGIH/smvNQpDVMcoLkKqX3
- R44n5eaK0YwQ==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.73,410,1583222400"; d="scan'208";a="343188490"
-Received: from iweiny-desk2.sc.intel.com ([10.3.52.147])
- by orsmga001.jf.intel.com with ESMTP; 19 May 2020 09:29:05 -0700
-Date: Tue, 19 May 2020 09:29:05 -0700
-From: Ira Weiny <ira.weiny@intel.com>
-To: Guenter Roeck <linux@roeck-us.net>
-Subject: Re: [PATCH V3 07/15] arch/kunmap_atomic: Consolidate duplicate code
-Message-ID: <20200519162904.GA3356843@iweiny-DESK2.sc.intel.com>
-References: <20200507150004.1423069-1-ira.weiny@intel.com>
- <20200507150004.1423069-8-ira.weiny@intel.com>
- <20200516223306.GA161252@roeck-us.net>
- <20200518034938.GA3023182@iweiny-DESK2.sc.intel.com>
- <20200518042932.GA59205@roeck-us.net>
- <20200519000352.GF3025231@iweiny-DESK2.sc.intel.com>
- <47757f51-15f2-3abe-9035-abdb3ba5816e@roeck-us.net>
+ id 1jb5VZ-0005y0-5y; Tue, 19 May 2020 16:54:26 +0000
+Received: by mail-pf1-x442.google.com with SMTP id y198so189511pfb.4;
+ Tue, 19 May 2020 09:54:24 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=sender:date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=xmBBbLK3vjWE/EyjvUc68p3tw/EXGXu0OK+6vpkbzqQ=;
+ b=US3KTRvNcsr1JQ3EhzPolHH5YLTbLmBZ8QACOxRX4DSdLWVJ77w+ufdLjru2exOJj5
+ cGgDdNSpGJSLCToXHOYtummYRYMikc607MQTtZw3CIAeMX52xLfkzXJFnqV++/4JZPBX
+ TkfA6bA2OQ/tBu0verEpOr/8yTMghh7JOJnq8blVosibdSwn9t4VGf6TTFO3jl9Ku+S6
+ us7ewjcIE1yEdgRycst8zGi/M73AaWLcbuldE63QokhOzCU4Lv6vQlzl3U74bTRQpiDW
+ 76aVV76mP+yZNV5Arg3qVa0f6SZeHYOumZT/8SZvPzqHfkPYn2L9uFwTaop85+0WCxz9
+ dP/Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:sender:date:from:to:cc:subject:message-id
+ :references:mime-version:content-disposition:in-reply-to:user-agent;
+ bh=xmBBbLK3vjWE/EyjvUc68p3tw/EXGXu0OK+6vpkbzqQ=;
+ b=TG4ROQeGgGXYqYz9V9rWAKNWxpyxmYUtGttGOqm+O9V29H1aWc+QRiPFIrf9CpDllN
+ e9Z78ldRum3JofOV+iRj0W7/DKc9LO9yGXuNJqxJ7yQqQ0TXM2BYZw/wnqdYGrvT0Epy
+ fOJP0eNmWVoi684BSvaEa0yIFa7o+9nHSPRQny0j8YaxhwJ3Q1pntGdspM2c6bWl2GRb
+ cBrEfJHmqIylsHCVmiMFaUxpbxrv7JDap8RmKKf5EJWzNQfoHlw03zV+WBn2SmFLgRdk
+ N0X2gWyE5EANbX7EO4A7z4o/ccfzIV4wEh4Yf0xxSCsJJVeUZXeAbx8PfyOu9Fq3WJgP
+ v7vg==
+X-Gm-Message-State: AOAM530MAWhBO7pxJ7VQws23MAsHng0R2rFexlRCSHRqzQgbOY9rCZ1P
+ QIfY8H2Z4dFQPLdylcXlFSI=
+X-Google-Smtp-Source: ABdhPJyjXg6Tl4Trqy/ovTHZ7agsZDG2QZ23n+CG2Df9YrHRxk8WNFN4fKgw/J0SX04nl9fKvZEDwg==
+X-Received: by 2002:aa7:9297:: with SMTP id j23mr36511pfa.15.1589907263910;
+ Tue, 19 May 2020 09:54:23 -0700 (PDT)
+Received: from localhost ([2600:1700:e321:62f0:329c:23ff:fee3:9d7c])
+ by smtp.gmail.com with ESMTPSA id go14sm111069pjb.42.2020.05.19.09.54.23
+ (version=TLS1_2 cipher=ECDHE-ECDSA-CHACHA20-POLY1305 bits=256/256);
+ Tue, 19 May 2020 09:54:23 -0700 (PDT)
+Date: Tue, 19 May 2020 09:54:22 -0700
+From: Guenter Roeck <linux@roeck-us.net>
+To: ira.weiny@intel.com
+Subject: Re: [PATCH] arch/{mips,sparc,microblaze,powerpc}: Don't enable
+ pagefault/preempt twice
+Message-ID: <20200519165422.GA5838@roeck-us.net>
+References: <20200507150004.1423069-8-ira.weiny@intel.com>
+ <20200518184843.3029640-1-ira.weiny@intel.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <47757f51-15f2-3abe-9035-abdb3ba5816e@roeck-us.net>
-User-Agent: Mutt/1.11.1 (2018-12-01)
+In-Reply-To: <20200518184843.3029640-1-ira.weiny@intel.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200519_092910_808753_F7F8680F 
-X-CRM114-Status: GOOD (  26.75  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200519_095425_240096_1FAFC3FB 
+X-CRM114-Status: GOOD (  11.93  )
+X-Spam-Score: 1.7 (+)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (1.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [192.55.52.120 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [groeck7[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [groeck7[at]gmail.com]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 1.1 DKIMWL_BL              DKIMwl.org - Blacklisted sender
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-snps-arc@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,113 +127,47 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-snps-arc" <linux-snps-arc-bounces@lists.infradead.org>
 Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org
 
-On Mon, May 18, 2020 at 07:50:36PM -0700, Guenter Roeck wrote:
-> Hi Ira,
+On Mon, May 18, 2020 at 11:48:43AM -0700, ira.weiny@intel.com wrote:
+> From: Ira Weiny <ira.weiny@intel.com>
 > 
-> On 5/18/20 5:03 PM, Ira Weiny wrote:
-> > On Sun, May 17, 2020 at 09:29:32PM -0700, Guenter Roeck wrote:
-> >> On Sun, May 17, 2020 at 08:49:39PM -0700, Ira Weiny wrote:
-> >>> On Sat, May 16, 2020 at 03:33:06PM -0700, Guenter Roeck wrote:
-> >>>> On Thu, May 07, 2020 at 07:59:55AM -0700, ira.weiny@intel.com wrote:
-> >>>>> From: Ira Weiny <ira.weiny@intel.com>
-> >>>>>
-> >>>
-
-Sorry for the delay I missed this email last night...  I blame outlook...  ;-)
-
-...
-
-> >>> Do you have a kernel config?  Specifically is CONFIG_HIGHMEM set?
-> >>>
-> >> See below. Yes, CONFIG_HIGHMEM is set.
-> >>
-> >> The scripts used to build and boot the image are at:
-> >>
-> >> https://github.com/groeck/linux-build-test/tree/master/rootfs/microblazeel
-> > 
-> > Despite finding the obvious error earlier today I've still been trying to get
-> > this to work.
-> > 
-> > I had to make some slight modifications to use the 0-day cross compile build
-> > and my local qemu build.  But those were pretty minor modifications.  I'm
-> > running on x86_64 host.
-> > 
-> > With those slight mods to the scripts I get the following error even without my
-> > patch set on 5.7-rc4.  I have 1 cpu pegged at 100% while it is running...  Is
-> > there anything I can do to get more debug output?  Perhaps I just need to let
-> > it run longer?
-> > 
+> The kunmap_atomic clean up failed to remove one set of pagefault/preempt
+> enables when vaddr is not in the fixmap.
 > 
-> I don't think so. Try running it with "-d" parameter (run-qemu-microblazeel.sh
-> -d petalogix-s3adsp1800); that gives you the qemu command line. Once it says
-> "running", abort the script and execute qemu directly.
+> Fixes: bee2128a09e6 ("arch/kunmap_atomic: consolidate duplicate code")
+> Signed-off-by: Ira Weiny <ira.weiny@intel.com>
 
-FYI Minor nit...  a simple copy/paste failed...  that print of the cmd line
-did not include quotes around the -append text:
+microblazeel works with this patch, as do the nosmp sparc32 boot tests,
+but sparc32 boot tests with SMP enabled still fail with lots of messages
+such as:
 
-09:06:03 > /home/iweiny/dev/qemu/microblazeel-softmmu/qemu-system-microblazeel
-   -M petalogix-s3adsp1800 -m 256 -kernel arch/microblaze/boot/linux.bin
-   -no-reboot -initrd /tmp/buildbot-cache/microblazeel/rootfs.cpio -append
-   panic=-1 slub_debug=FZPUA rdinit=/sbin/init console=ttyUL0,115200 -monitor
-   none -serial stdio -nographic
+BUG: Bad page state in process swapper/0  pfn:006a1
+page:f0933420 refcount:0 mapcount:1 mapping:(ptrval) index:0x1
+flags: 0x0()
+raw: 00000000 00000100 00000122 00000000 00000001 00000000 00000000 00000000
+page dumped because: nonzero mapcount
+Modules linked in:
+CPU: 0 PID: 1 Comm: swapper/0 Tainted: G    B             5.7.0-rc6-next-20200518-00002-gb178d2d56f29 #1
+[f00e7ab8 :
+bad_page+0xa8/0x108 ]
+[f00e8b54 :
+free_pcppages_bulk+0x154/0x52c ]
+[f00ea024 :
+free_unref_page+0x54/0x6c ]
+[f00ed864 :
+free_reserved_area+0x58/0xec ]
+[f0527104 :
+kernel_init+0x14/0x110 ]
+[f000b77c :
+ret_from_kernel_thread+0xc/0x38 ]
+[00000000 :
+0x0 ]
 
-qemu-system-microblazeel: slub_debug=FZPUA: Could not open 'slub_debug=FZPUA': No such file or directory
+Code path leading to that message is different but always the same
+from free_unref_page().
 
-> Oh, and please update
-> the repository; turns out I didn't push for a while and made a number of
-> changes.
+Still testing ppc images.
 
-Cool beans...  I've updated.
-
-> 
-> My compiler was compiled with buildroot (a long time ago). I don't recall if
-> it needed something special in the configuration, unfortunately.
-
-AFAICT the compile is working...  It is running from the command line now...  I
-expected it to be slow so I have also increased the timeouts last night.  So
-far it still fails.  I did notice that there is a new 'R' in the wait output.
-
-<quote>
-.........................R......................... failed (silent)
-------------
-qemu log:
-qemu-system-microblazeel: terminating on signal 15 from pid 3357146 (/bin/bash)
-</quote>
-
-I was hoping that meant it found qemu 'running' but looks like that was just a
-retry...  :-(
-
-Last night I increased some of the timeouts I could find.
-
-<quote>
- LOOPTIME=5     # Wait time before checking status
- -MAXTIME=150    # Maximum wait time for qemu session to complete
- -MAXSTIME=60    # Maximum wait time for qemu session to generate output
- +#MAXTIME=150   # Maximum wait time for qemu session to complete
- +#MAXSTIME=60   # Maximum wait time for qemu session to generate output
- +MAXTIME=300    # Maximum wait time for qemu session to complete
- +MAXSTIME=120   # Maximum wait time for qemu session to generate output
-</quote>
-
-But thanks to the qemu command line hint I can see these were not nearly
-enough...  (It has been running for > 20 minutes...  and I'm not getting
-output...)  Or I've done something really wrong.  Shouldn't qemu be at least
-showing something on the terminal by now?  I normally run qemu with different
-display options (and my qemu foo is weak) so I'm not sure what I should be
-seeing with this command line.
-
-09:06:28 > /home/iweiny/dev/qemu/microblazeel-softmmu/qemu-system-microblazeel
-  -M petalogix-s3adsp1800 -m 256 -kernel arch/microblaze/boot/linux.bin
-  -no-reboot -initrd /tmp/buildbot-cache/microblazeel/rootfs.cpio -append
-  "panic=-1 slub_debug=FZPUA rdinit=/sbin/init console=ttyUL0,115200" -monitor
-  none -serial stdio -nographic
-
-Maybe I just have too slow of a machine...  :-/
-
-My qemu was built back in March.  I'm updating that now...
-
-Sorry for being so dense...
-Ira
+Guenter
 
 _______________________________________________
 linux-snps-arc mailing list
