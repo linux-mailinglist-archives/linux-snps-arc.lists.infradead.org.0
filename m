@@ -2,69 +2,138 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B83701E7C65
-	for <lists+linux-snps-arc@lfdr.de>; Fri, 29 May 2020 13:56:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 533C51E7CD4
+	for <lists+linux-snps-arc@lfdr.de>; Fri, 29 May 2020 14:11:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NFydY0oSxMh4KWO3HSITwjVgtyhfdPAul+rnI57+iis=; b=SeB4MEX/4xx6hd
-	DFIEH0d0I15P3Mx9OxWTNmfgdyEGNcurMLvEqRUljtGaTRKIAWAefm+44t4JW6hNzLVfAOC0QJh6X
-	uvH9UGs79+ZhJ6QKjV/xi8rWI8kqgR3Up/kzFrt6JQ70naZU+OMqcBkVyxqq0RZlXs2sXyG5UmsmB
-	o/5hrgzmlGplPO6fOGdyWrjxVAnkL3nmZrjup+kvSR4ADhUmJqF099TcqKBvDJ9J2b/d1pDzPrCfs
-	l3N4VMWOdstBQOQEqHD1lC6sQeS7W4GkXexoxHvETZ5mUxu74JXeh1Z1j6FQt8du0k+nqp6Fkywav
-	xh+2us6NwecMdJggCqjw==;
+	List-Owner; bh=ozm/AdB3aI6Eu5fp9n12bhvv+7RSU8FJ3ijmVX3fhcQ=; b=sePftFWcgYLqDB
+	UeYXHE9ReW2TOsjm0U4Zb9VWXleEWyOabDFZIg7rZgBdc7kJrlgqrec2ITM1meyeane/bJvV8wfl4
+	ngs37oTs2myY4vT3rOjrCtUT2lsKZlCkagYATwTR7D8vNI4IaeoUdkiP9cwT5kzMVSYKP3PDlOBQS
+	9oA6WqqXc2WnluRKtsv5pV2ecV2UUjLtMkIeMdhjAg2ZYHLSYPzojt8kikeu66wCleW9B8IelgeP7
+	1inirvNVkIq/oqyekS+H+gW5xnzWHOyelGytJpQTrMgEcKK7tE1u8Za2Ebca1bhLGjaOp26cLVi3u
+	8r2jxzly+6/yZ5oYIqsA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jedcH-0007p5-Fz; Fri, 29 May 2020 11:56:01 +0000
+	id 1jedqq-0000Uu-UU; Fri, 29 May 2020 12:11:04 +0000
 Received: from smtprelay-out1.synopsys.com ([149.117.73.133])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jedcE-0007nN-Hj
- for linux-snps-arc@lists.infradead.org; Fri, 29 May 2020 11:56:00 +0000
-Received: from mailhost.synopsys.com (mdc-mailhost2.synopsys.com
- [10.225.0.210])
+ id 1jedqo-0000UQ-Dm
+ for linux-snps-arc@lists.infradead.org; Fri, 29 May 2020 12:11:03 +0000
+Received: from mailhost.synopsys.com (badc-mailhost1.synopsys.com
+ [10.192.0.17])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
  (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id F1D8640927;
- Fri, 29 May 2020 11:55:55 +0000 (UTC)
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id A8F43400C5;
+ Fri, 29 May 2020 12:11:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1590753358; bh=FtC46Qmf9xRcoC10wgo8niOmHqAhur18Riie5Y8E/G8=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=lJpjaOYzor8X3O3Ra5B1g6WkHT9JPMpP2AgUkV4bD17+5q6RnYi/UyRsIn39tqX3+
- 1/raBMr5iOJa0NjvhDQqwsAd4epC08FN2WNvGgqpzHYS9sAfT6u2EqlMAgEGdy9hu9
- U32jrCi115TJ8KZnPmtoDlbpl7PHdl21ZWQE1nf1fP3W5/ORYHGgDgRi8Jo1PMRqII
- v1ZyF5rO+ioJVOueZLaqavNchwwZ25tH2xLlYi/36jDYJj2gdYRYD1EbPvlTH8dlr3
- KHFr4YEAOIr6JKsP2afkXAhL3QrT/OpDIBe8keceUc7Iou5wNVDE+WSbOioHdrG/E/
- Ql/1pJImd3gPA==
-Received: from paltsev-e7480.internal.synopsys.com
- (ru20-e7250.internal.synopsys.com [10.225.50.16])
- by mailhost.synopsys.com (Postfix) with ESMTP id DE82CA0070;
- Fri, 29 May 2020 11:55:53 +0000 (UTC)
+ t=1590754261; bh=+55pFRiW4soVyXlol/9RbbKCR7NNoqJSnWQfcQT3YJQ=;
+ h=From:To:CC:Subject:Date:References:In-Reply-To:From;
+ b=a79vdBoUQsfQLbcYkxVktUBPqrT2FEfunqkFNCzw9gHLZ7euIn6P5CwefOuwXcmYO
+ 8UpDbZpX13JQ82EN2IT/JtfMMpiGLlV5yscPocJq7NSz4XncDWt1JLqZNvPacZ4ojC
+ x8128UWtEqQsptq9m7kWlY7Ebajnwk2MTiDifK3r2GTG5VVx23sf6kHThFmdncXcv8
+ JljUc5nu0ELD8Szmy3BD37x8oTQqdL0v2FZlWUZ4Ki7uf26aenGSnjkeF9yNCaYdO5
+ /Xz5xGAAEHnKP/rJlvbUfavCM96oZNtEmdz/yjaDO8oFmvb3rC2e/PrWywabulrk7L
+ x7yEp/37KIHSw==
+Received: from US01WEHTC3.internal.synopsys.com
+ (us01wehtc3.internal.synopsys.com [10.15.84.232])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mailhost.synopsys.com (Postfix) with ESMTPS id 3740BA0079;
+ Fri, 29 May 2020 12:10:57 +0000 (UTC)
+Received: from US01HYBRID2.internal.synopsys.com (10.15.246.24) by
+ US01WEHTC3.internal.synopsys.com (10.15.84.232) with Microsoft SMTP Server
+ (TLS) id 14.3.408.0; Fri, 29 May 2020 05:10:23 -0700
+Received: from NAM12-MW2-obe.outbound.protection.outlook.com (10.202.3.67) by
+ mrs.synopsys.com (10.15.246.24) with Microsoft SMTP Server (TLS) id
+ 14.3.487.0; Fri, 29 May 2020 05:10:23 -0700
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=aEd669l4XSwcZZsYU3BiMD467REERbUVa3TsRI4P/6w0Q4s6nybIu3QkUVV66ehzPYxVYs4MVAJvG/Ba47OtdKqDeRiTPciePc23nXV7AI8xFlV94yL+XzFN1tA3k3NWNyBA7RCOyJIFcDuJpUdHiJTRySkwosJ53WtQGHm0zM/9zXWJ9BKVX8VIuUM8g5gLXK0F3JVhNuz+eO9DLJpfLsbfbUcJZMggzrm+ygcrpDHgocUOPqIhAI06HBUsZYDwKBpd97qYbl68rR5PiUKnHputQMRNgtxAlvhATO9LJk1GxxOy5G/hJ12S32gncRGLpWqVv/NU6vT9Bhf4I0ly2w==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=gTDPNJwEQlV1kzk4zw/bPZ2maPd0nwfHnvckKZW+HfM=;
+ b=KNWmKysu+V2C5NekT134Tq7xLMGa2XumRmqRRFaohk2F/tpVVRb7OeOVvbK7sS1OPtRS2H3/Y4haeq/qKI/VTOdiGzFnG/U3ODhisPlYTR/KiNIxaoZnw4HRP3IiNLL88gh4K8c3Wj8S7nkz7IhPS+IQTqBF91n4a8ri0xWj3Q+eDUqUk7yvwFPdpTGdANfmAT/BQjkMZr4Yno2RaTSkKkVW6Be/5q7gNPTfvo/O78LeHr9Itd4z4T97UjNIHvGfufgJNQlI6BgGRgHmgVfJy18orJrVpdsgO/5/P3FWCr4qU6dvanR5M22rEk/3h8CJHVA9G2wFbvIz7Cm4xMve1A==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=synopsys.com; dmarc=pass action=none header.from=synopsys.com;
+ dkim=pass header.d=synopsys.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=synopsys.com;
+ s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=gTDPNJwEQlV1kzk4zw/bPZ2maPd0nwfHnvckKZW+HfM=;
+ b=rf0OM4U0SOExGI98kG23ewQy9FJxcYpyLvkhnwnKoXrD2gklrxtMmjyM3Loh4Qe4mipJK+YklLgK1sj0RfzgYRHdnh1eEaKzWd1OIqqzIXD5hmvbe/XjGXF0PmYYNdvrJ19uSb+l22onJJujYBybYIC0sY7z6JhXb70520pndLw=
+Received: from CY4PR1201MB0136.namprd12.prod.outlook.com
+ (2603:10b6:910:1a::19) by CY4PR1201MB2469.namprd12.prod.outlook.com
+ (2603:10b6:903:d5::20) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3045.21; Fri, 29 May
+ 2020 12:10:22 +0000
+Received: from CY4PR1201MB0136.namprd12.prod.outlook.com
+ ([fe80::b1bf:dda1:dd1e:8e30]) by CY4PR1201MB0136.namprd12.prod.outlook.com
+ ([fe80::b1bf:dda1:dd1e:8e30%5]) with mapi id 15.20.3045.018; Fri, 29 May 2020
+ 12:10:22 +0000
 X-SNPS-Relay: synopsys.com
 From: Eugeniy Paltsev <Eugeniy.Paltsev@synopsys.com>
-To: linux-snps-arc@lists.infradead.org,
+To: "linux-snps-arc@lists.infradead.org" <linux-snps-arc@lists.infradead.org>, 
  Vineet Gupta <Vineet.Gupta1@synopsys.com>
-Subject: [PATCH 3/3] ARC: [plat-hsdk-4xd] initial port for HSDK-4xD board
-Date: Fri, 29 May 2020 14:55:34 +0300
-Message-Id: <20200529115534.22883-5-Eugeniy.Paltsev@synopsys.com>
-X-Mailer: git-send-email 2.21.3
-In-Reply-To: <20200529115534.22883-1-Eugeniy.Paltsev@synopsys.com>
-References: <20200529115534.22883-1-Eugeniy.Paltsev@synopsys.com>
+Subject: Re: [PATCH private 1/3] ARC: allow to overwrite default mcpu compiler
+ flag
+Thread-Topic: [PATCH private 1/3] ARC: allow to overwrite default mcpu
+ compiler flag
+Thread-Index: AQHWNbAtvWfDMoTb5Eu1W2a2wecORai+9ZDP
+Date: Fri, 29 May 2020 12:10:21 +0000
+Message-ID: <CY4PR1201MB01368C541FED4F50C3ECF8DDDE8F0@CY4PR1201MB0136.namprd12.prod.outlook.com>
+References: <20200529115534.22883-1-Eugeniy.Paltsev@synopsys.com>,
+ <20200529115534.22883-3-Eugeniy.Paltsev@synopsys.com>
+In-Reply-To: <20200529115534.22883-3-Eugeniy.Paltsev@synopsys.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: lists.infradead.org; dkim=none (message not signed)
+ header.d=none;lists.infradead.org; dmarc=none action=none
+ header.from=synopsys.com;
+x-originating-ip: [198.182.37.200]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: f3793a6e-1285-4917-4341-08d803c94309
+x-ms-traffictypediagnostic: CY4PR1201MB2469:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <CY4PR1201MB2469030A6260271B105DE8E1DE8F0@CY4PR1201MB2469.namprd12.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:9508;
+x-forefront-prvs: 04180B6720
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: /ApZypS48TI8qu/ddNKYDajdKtmbci2/0fb1QX0/MtQ9PYm+sbEoDyulqsoaemF8/cDQsK5h15DGed9kTWCLjvjXVokSoFQKLcSdSwh+HU+BcZXBkoxAutykjJiMdPxTvSQCwHY1ajF/jv16Pcu4J0PJcG2fuimIbiDWmOZ7moOxyRavt62J/T+Th5cKt+T0l1p1lF0u0BeIHYKSbNoICYyTizpuOdvtR/euC9ndmjN6E4c+Thn7da3yv7PxJBgyROczmAPApUjSQN7vvofi2VRlcxDYtQ1GgVUWX2mYaXiTPiaGVVp31foX0fg4nUZ8cI/8rcJ8YUDPggHkIaBBGPBEHZFy4plxaz8iVFEPDvQCX5M8wUrWAskTdZpWayIN
+x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:CY4PR1201MB0136.namprd12.prod.outlook.com; PTR:; CAT:NONE;
+ SFTY:;
+ SFS:(346002)(366004)(136003)(396003)(376002)(39860400002)(5660300002)(66476007)(66946007)(7696005)(66556008)(64756008)(66446008)(8676002)(8936002)(33656002)(55016002)(52536014)(4326008)(76116006)(9686003)(91956017)(107886003)(186003)(110136005)(2906002)(71200400001)(478600001)(86362001)(83380400001)(6506007)(53546011)(6636002)(316002)(26005)(54906003)(21314003);
+ DIR:OUT; SFP:1102; 
+x-ms-exchange-antispam-messagedata: eiCIVS6+1YQUqJOft9xw9XVFt0XMfd/ZloBeFqHuar83AcLyjdUlNTWCdDTG7xb8E4xOvOMwK2FWc8wbz+SdHQXjqxAWTBJkIvTW/q0BNoQUgmEfOwdYQXgLfMhcERSYC+ywviMGG0Nog6TIYCwRKQ4CvWDsw+9fJFFINjoBEn7v+TI9S6GRDm/4b53M4Ow8C9G1+S15kXd522yVJaE2JxSEv5J6EfydBGksXw0rkzOI5qE+kzMNY7G3buXgN00s2Kri+Et3iV+bS/5TLHUlgnbw93B4Ahz7pKJeMAUJ4cewF99En2Q1aOI0hw7LtsNfBMvnQw9Jkkdja/HmACuF+E2GPhoTdM7dbwdcbRX+xov++q08C/ceWlUNxoURXd5N5Zpib1V4v/FJVPvaqn7Y6A0fDm/ThHaDTfioUiM/anpjWvwp4t3oHvdPEKOAr/mVDIVwJLJ4Yqm38yv4jfTX4CPbMuUWeXFji6+EDgT89y/hJXC9FaKt2uSd+4XPTl/Y
 MIME-Version: 1.0
+X-MS-Exchange-CrossTenant-Network-Message-Id: f3793a6e-1285-4917-4341-08d803c94309
+X-MS-Exchange-CrossTenant-originalarrivaltime: 29 May 2020 12:10:21.9046 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: c33c9f88-1eb7-4099-9700-16013fd9e8aa
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: vBuz5g+coKSmOWZSqVzv51GgsnmYOyQknZ5yHpZsArOyeZ1Y0oc8rIBFYduyo0e1e8OYzfKHeugmMNM4pKlA3Q==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: CY4PR1201MB2469
+X-OriginatorOrg: synopsys.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200529_045558_596654_2B580E56 
-X-CRM114-Status: GOOD (  21.38  )
+X-CRM114-CacheID: sfid-20200529_051102_555010_965068C0 
+X-CRM114-Status: UNSURE (   9.74  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
- [149.117.73.133 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
+ [149.117.73.133 listed in wl.mailspike.net]
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -84,548 +153,79 @@ List-Post: <mailto:linux-snps-arc@lists.infradead.org>
 List-Help: <mailto:linux-snps-arc-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-snps-arc>, 
  <mailto:linux-snps-arc-request@lists.infradead.org?subject=subscribe>
-Cc: Alexey Brodkin <Alexey.Brodkin@synopsys.com>,
- Eugeniy Paltsev <Eugeniy.Paltsev@synopsys.com>, linux-kernel@vger.kernel.org
+Cc: Alexey  Brodkin <Alexey.Brodkin@synopsys.com>,
+ Eugeniy Paltsev <Eugeniy.Paltsev@synopsys.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-snps-arc" <linux-snps-arc-bounces@lists.infradead.org>
 Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org
 
-This initial port adds support of ARC HS4x/HS4xD Development Kit board with some
-basic features such serial port, USB, SD/MMC, SPI flash, Ethernet and others.
+Oooops, this one is duplicate and should be dropped.
 
-The HSDK-4xD board has much in common with its predecessor - HSDK board.
-However HSDK-4xD has some differences in comparison with its predecessor:
- * based on quad core ARC HS48/HS47D processor (instead of quad core ARC HS38)
- * has ThinkSilicon GPU (instead of Vivante GPU)
- * has ARC PGU and HDMI output
- * has separate SDIO controller for WiFi module
- * has additional timers with clocksource independent from CPU clocksource
-   (required for DVFS)
- * has performance counters interrupt
- * other minor stuff
+---
+ Eugeniy Paltsev
 
-NOTE:
-HSDK-4xD and HSDK may share significant part of DTS so we can move this common
-part to one .dtsi file (as we have done it in U-boot). However we have quite
-enough out of the tree patches for tweaking HSDK DTS (patches in out
-verification flow, patches for run in simulation, etc...), so I'd prefer to
-keep HSDK DTS untouched. That's why HSDK-4xD DTS is created as an separate file.
 
-Cc: Rob Herring <robh+dt@kernel.org>
+________________________________________
+From: Eugeniy Paltsev <Eugeniy.Paltsev@synopsys.com>
+Sent: Friday, May 29, 2020 14:55
+To: linux-snps-arc@lists.infradead.org; Vineet Gupta
+Cc: linux-kernel@vger.kernel.org; Alexey Brodkin; Eugeniy Paltsev
+Subject: [PATCH private 1/3] ARC: allow to overwrite default mcpu compiler flag
+
+By default we set -mcpu=xxx compiler flag depending on the CPU ISA
+version. It's good starting point, however that may be not enough
+as for some platforms we may want to use some specific 'mcpu'
+options for better optimization or to workaround HW issues.
+
+We are going to use this option for HSDK-4xD board support.
+In addition it also allows to awoid patching 'mcpu' in ARC Makefile
+when we building Linux for some non-standard simulation or FPGA-based
+platforms.
+
 Signed-off-by: Eugeniy Paltsev <Eugeniy.Paltsev@synopsys.com>
 ---
- arch/arc/boot/dts/hsdk-4xd.dts      | 322 ++++++++++++++++++++++++++++
- arch/arc/configs/hsdk_4xd_defconfig |  99 +++++++++
- arch/arc/kernel/devtree.c           |   1 +
- arch/arc/plat-hsdk/Kconfig          |  24 ++-
- arch/arc/plat-hsdk/platform.c       |   6 +
- 5 files changed, 451 insertions(+), 1 deletion(-)
- create mode 100644 arch/arc/boot/dts/hsdk-4xd.dts
- create mode 100644 arch/arc/configs/hsdk_4xd_defconfig
+ arch/arc/Kconfig  | 7 +++++++
+ arch/arc/Makefile | 4 ++++
+ 2 files changed, 11 insertions(+)
 
-diff --git a/arch/arc/boot/dts/hsdk-4xd.dts b/arch/arc/boot/dts/hsdk-4xd.dts
-new file mode 100644
-index 000000000000..2b7f76a01e3e
---- /dev/null
-+++ b/arch/arc/boot/dts/hsdk-4xd.dts
-@@ -0,0 +1,322 @@
-+// SPDX-License-Identifier: GPL-2.0-only
-+/*
-+ * Copyright (C) 2020 Synopsys, Inc. (www.synopsys.com)
-+ */
+diff --git a/arch/arc/Kconfig b/arch/arc/Kconfig
+index ff306246d0f8..e7805db10f7a 100644
+--- a/arch/arc/Kconfig
++++ b/arch/arc/Kconfig
+@@ -377,6 +377,13 @@ config ARC_HAS_SWAPE
+        bool "Insn: SWAPE (endian-swap)"
+        default y
+
++config ARC_MCPU_OVERWRITE
++       string "Overwrite default -mcpu compiler flag"
++       default ""
++       help
++         Overwrite default -mcpu=xxx compiler flag (which is set depending on
++         the ISA version) with the specified value.
 +
-+/*
-+ * Device Tree for ARC HS4x/HS4xD Development Kit
-+ */
-+/dts-v1/;
-+
-+#include <dt-bindings/gpio/gpio.h>
-+#include <dt-bindings/reset/snps,hsdk-reset.h>
-+
-+/ {
-+	model = "snps,hsdk-4xd";
-+	compatible = "snps,hsdk-4xd";
-+
-+	#address-cells = <2>;
-+	#size-cells = <2>;
-+
-+	chosen {
-+		bootargs = "earlycon=uart8250,mmio32,0xf0005000,115200n8 console=ttyS0,115200n8 debug print-fatal-signals=1";
-+	};
-+
-+	aliases {
-+		ethernet = &gmac;
-+	};
-+
-+	cpus {
-+		#address-cells = <1>;
-+		#size-cells = <0>;
-+
-+		cpu@0 {
-+			device_type = "cpu";
-+			compatible = "snps,archs48";
-+			reg = <0>;
-+			clocks = <&core_clk>;
-+		};
-+
-+		cpu@1 {
-+			device_type = "cpu";
-+			compatible = "snps,archs48";
-+			reg = <1>;
-+			clocks = <&core_clk>;
-+		};
-+
-+		cpu@2 {
-+			device_type = "cpu";
-+			compatible = "snps,archs48";
-+			reg = <2>;
-+			clocks = <&core_clk>;
-+		};
-+
-+		cpu@3 {
-+			device_type = "cpu";
-+			compatible = "snps,archs48";
-+			reg = <3>;
-+			clocks = <&core_clk>;
-+		};
-+	};
-+
-+	input_clk: input-clk {
-+		#clock-cells = <0>;
-+		compatible = "fixed-clock";
-+		clock-frequency = <33333333>;
-+	};
-+
-+	reg_5v0: regulator-5v0 {
-+		compatible = "regulator-fixed";
-+
-+		regulator-name = "5v0-supply";
-+		regulator-min-microvolt = <5000000>;
-+		regulator-max-microvolt = <5000000>;
-+	};
-+
-+	cpu_intc: cpu-interrupt-controller {
-+		compatible = "snps,archs-intc";
-+		interrupt-controller;
-+		#interrupt-cells = <1>;
-+	};
-+
-+	idu_intc: idu-interrupt-controller {
-+		compatible = "snps,archs-idu-intc";
-+		interrupt-controller;
-+		#interrupt-cells = <1>;
-+		interrupt-parent = <&cpu_intc>;
-+	};
-+
-+	arcpct: pct {
-+		compatible = "snps,archs-pct";
-+		interrupt-parent = <&cpu_intc>;
-+		interrupts = <20>;
-+	};
-+
-+	/* TIMER0 with interrupt for clockevent */
-+	timer {
-+		compatible = "snps,arc-timer";
-+		interrupts = <16>;
-+		interrupt-parent = <&cpu_intc>;
-+		clocks = <&core_clk>;
-+	};
-+
-+	/* 64-bit Global Free Running Counter */
-+	gfrc {
-+		compatible = "snps,archs-timer-gfrc";
-+		clocks = <&core_clk>;
-+	};
-+
-+	soc {
-+		compatible = "simple-bus";
-+		#address-cells = <1>;
-+		#size-cells = <1>;
-+		interrupt-parent = <&idu_intc>;
-+
-+		ranges = <0x00000000 0x0 0xf0000000 0x10000000>;
-+
-+		cgu_rst: reset-controller@8a0 {
-+			compatible = "snps,hsdk-reset";
-+			#reset-cells = <1>;
-+			reg = <0x8a0 0x4>, <0xff0 0x4>;
-+		};
-+
-+		core_clk: core-clk@0 {
-+			compatible = "snps,hsdk-core-pll-clock";
-+			reg = <0x00 0x10>, <0x14b8 0x4>;
-+			#clock-cells = <0>;
-+			clocks = <&input_clk>;
-+
-+			/*
-+			 * Set initial core pll output frequency to 1GHz.
-+			 * It will be applied at the core pll driver probing
-+			 * on early boot.
-+			 */
-+			assigned-clocks = <&core_clk>;
-+			assigned-clock-rates = <1000000000>;
-+		};
-+
-+		serial: serial@5000 {
-+			compatible = "snps,dw-apb-uart";
-+			reg = <0x5000 0x100>;
-+			clock-frequency = <33330000>;
-+			interrupts = <6>;
-+			baud = <115200>;
-+			reg-shift = <2>;
-+			reg-io-width = <4>;
-+		};
-+
-+		gmacclk: gmacclk {
-+			compatible = "fixed-clock";
-+			clock-frequency = <400000000>;
-+			#clock-cells = <0>;
-+		};
-+
-+		mmcclk_ciu: mmcclk-ciu {
-+			compatible = "fixed-clock";
-+			/*
-+			 * DW sdio controller has external ciu clock divider
-+			 * controlled via register in SDIO IP. Due to its
-+			 * unexpected default value (it should divide by 1
-+			 * but it divides by 8) SDIO IP uses wrong clock and
-+			 * works unstable (see STAR 9001204800)
-+			 * We switched to the minimum possible value of the
-+			 * divisor (div-by-2) in HSDK platform code.
-+			 * So add temporary fix and change clock frequency
-+			 * to 50000000 Hz until we fix dw sdio driver itself.
-+			 */
-+			clock-frequency = <50000000>;
-+			#clock-cells = <0>;
-+		};
-+
-+		mmcclk_biu: mmcclk-biu {
-+			compatible = "fixed-clock";
-+			clock-frequency = <400000000>;
-+			#clock-cells = <0>;
-+		};
-+
-+		dmac_core_clk: dmac-core-clk {
-+			compatible = "fixed-clock";
-+			clock-frequency = <400000000>;
-+			#clock-cells = <0>;
-+		};
-+
-+		dmac_cfg_clk: dmac-gpu-cfg-clk {
-+			compatible = "fixed-clock";
-+			clock-frequency = <200000000>;
-+			#clock-cells = <0>;
-+		};
-+
-+		gmac: ethernet@8000 {
-+			#interrupt-cells = <1>;
-+			compatible = "snps,dwmac";
-+			reg = <0x8000 0x2000>;
-+			interrupts = <10>;
-+			interrupt-names = "macirq";
-+			phy-mode = "rgmii";
-+			snps,pbl = <32>;
-+			snps,multicast-filter-bins = <256>;
-+			clocks = <&gmacclk>;
-+			clock-names = "stmmaceth";
-+			phy-handle = <&phy0>;
-+			resets = <&cgu_rst HSDK_ETH_RESET>;
-+			reset-names = "stmmaceth";
-+			mac-address = [00 00 00 00 00 00]; /* Filled in by U-Boot */
-+			dma-coherent;
-+
-+			tx-fifo-depth = <4096>;
-+			rx-fifo-depth = <4096>;
-+
-+			mdio {
-+				#address-cells = <1>;
-+				#size-cells = <0>;
-+				compatible = "snps,dwmac-mdio";
-+				phy0: ethernet-phy@0 {
-+					reg = <0>;
-+				};
-+			};
-+		};
-+
-+		ohci@60000 {
-+			compatible = "snps,hsdk-v1.0-ohci", "generic-ohci";
-+			reg = <0x60000 0x100>;
-+			interrupts = <15>;
-+			resets = <&cgu_rst HSDK_USB_RESET>;
-+			dma-coherent;
-+		};
-+
-+		ehci@40000 {
-+			compatible = "snps,hsdk-v1.0-ehci", "generic-ehci";
-+			reg = <0x40000 0x100>;
-+			interrupts = <15>;
-+			resets = <&cgu_rst HSDK_USB_RESET>;
-+			dma-coherent;
-+		};
-+
-+		mmc@a000 {
-+			compatible = "altr,socfpga-dw-mshc";
-+			reg = <0xa000 0x400>;
-+			num-slots = <1>;
-+			fifo-depth = <16>;
-+			card-detect-delay = <200>;
-+			clocks = <&mmcclk_biu>, <&mmcclk_ciu>;
-+			clock-names = "biu", "ciu";
-+			interrupts = <12>;
-+			bus-width = <4>;
-+			dma-coherent;
-+		};
-+
-+		spi0: spi@20000 {
-+			compatible = "snps,dw-apb-ssi";
-+			reg = <0x20000 0x100>;
-+			#address-cells = <1>;
-+			#size-cells = <0>;
-+			interrupts = <16>;
-+			num-cs = <2>;
-+			reg-io-width = <4>;
-+			clocks = <&input_clk>;
-+			cs-gpios = <&creg_gpio 0 GPIO_ACTIVE_LOW>,
-+				   <&creg_gpio 1 GPIO_ACTIVE_LOW>;
-+
-+			spi-flash@0 {
-+				compatible = "sst26wf016b", "jedec,spi-nor";
-+				reg = <0>;
-+				#address-cells = <1>;
-+				#size-cells = <1>;
-+				spi-max-frequency = <4000000>;
-+			};
-+
-+			adc@1 {
-+				compatible = "ti,adc108s102";
-+				reg = <1>;
-+				vref-supply = <&reg_5v0>;
-+				spi-max-frequency = <1000000>;
-+			};
-+		};
-+
-+		creg_gpio: gpio@14b0 {
-+			compatible = "snps,creg-gpio-hsdk";
-+			reg = <0x14b0 0x4>;
-+			gpio-controller;
-+			#gpio-cells = <2>;
-+			ngpios = <2>;
-+		};
-+
-+		gpio: gpio@3000 {
-+			compatible = "snps,dw-apb-gpio";
-+			reg = <0x3000 0x20>;
-+			#address-cells = <1>;
-+			#size-cells = <0>;
-+
-+			gpio_port_a: gpio-controller@0 {
-+				compatible = "snps,dw-apb-gpio-port";
-+				gpio-controller;
-+				#gpio-cells = <2>;
-+				snps,nr-gpios = <24>;
-+				reg = <0>;
-+			};
-+		};
-+
-+		dmac: dmac@80000 {
-+			compatible = "snps,axi-dma-1.01a";
-+			reg = <0x80000 0x400>;
-+			interrupts = <27>;
-+			clocks = <&dmac_core_clk>, <&dmac_cfg_clk>;
-+			clock-names = "core-clk", "cfgr-clk";
-+
-+			dma-channels = <4>;
-+			snps,dma-masters = <2>;
-+			snps,data-width = <3>;
-+			snps,block-size = <4096 4096 4096 4096>;
-+			snps,priority = <0 1 2 3>;
-+			snps,axi-max-burst-len = <16>;
-+		};
-+	};
-+
-+	memory@80000000 {
-+		#address-cells = <2>;
-+		#size-cells = <2>;
-+		device_type = "memory";
-+		reg = <0x0 0x80000000 0x0 0x40000000>;  /* 1 GB lowmem */
-+		/*     0x1 0x00000000 0x0 0x40000000>;     1 GB highmem */
-+	};
-+};
-diff --git a/arch/arc/configs/hsdk_4xd_defconfig b/arch/arc/configs/hsdk_4xd_defconfig
-new file mode 100644
-index 000000000000..bf78f745a0f6
---- /dev/null
-+++ b/arch/arc/configs/hsdk_4xd_defconfig
-@@ -0,0 +1,99 @@
-+CONFIG_SYSVIPC=y
-+# CONFIG_CROSS_MEMORY_ATTACH is not set
-+CONFIG_NO_HZ_IDLE=y
-+CONFIG_HIGH_RES_TIMERS=y
-+CONFIG_PREEMPT=y
-+CONFIG_IKCONFIG=y
-+CONFIG_IKCONFIG_PROC=y
-+CONFIG_NAMESPACES=y
-+# CONFIG_UTS_NS is not set
-+# CONFIG_PID_NS is not set
-+CONFIG_BLK_DEV_INITRD=y
-+CONFIG_CC_OPTIMIZE_FOR_PERFORMANCE_O3=y
-+CONFIG_EMBEDDED=y
-+CONFIG_PERF_EVENTS=y
-+# CONFIG_VM_EVENT_COUNTERS is not set
-+# CONFIG_COMPAT_BRK is not set
-+CONFIG_SLAB=y
-+CONFIG_ARC_SOC_HSDK=y
-+CONFIG_ARC_BOARD_HSDK_4XD=y
-+CONFIG_SMP=y
-+CONFIG_ARC_TUNE_MCPU="-mcpu=hs4x_rel31"
-+CONFIG_ARC_DSP_KERNEL=y
-+CONFIG_LINUX_LINK_BASE=0x90000000
-+CONFIG_LINUX_RAM_BASE=0x80000000
-+CONFIG_ARC_BUILTIN_DTB_NAME="hsdk-4xd"
-+CONFIG_JUMP_LABEL=y
-+CONFIG_MODULES=y
-+CONFIG_MODULE_UNLOAD=y
-+# CONFIG_COMPACTION is not set
-+CONFIG_NET=y
-+CONFIG_PACKET=y
-+CONFIG_UNIX=y
-+CONFIG_INET=y
-+CONFIG_DEVTMPFS=y
-+# CONFIG_STANDALONE is not set
-+# CONFIG_PREVENT_FIRMWARE_BUILD is not set
-+CONFIG_MTD=y
-+CONFIG_MTD_SPI_NOR=y
-+CONFIG_BLK_DEV_RAM=y
-+CONFIG_SCSI=y
-+CONFIG_BLK_DEV_SD=y
-+CONFIG_NETDEVICES=y
-+CONFIG_STMMAC_ETH=y
-+CONFIG_MICREL_PHY=y
-+CONFIG_INPUT_EVDEV=y
-+# CONFIG_INPUT_KEYBOARD is not set
-+# CONFIG_INPUT_MOUSE is not set
-+# CONFIG_SERIO is not set
-+# CONFIG_LEGACY_PTYS is not set
-+CONFIG_SERIAL_8250=y
-+CONFIG_SERIAL_8250_CONSOLE=y
-+CONFIG_SERIAL_8250_DW=y
-+CONFIG_SERIAL_OF_PLATFORM=y
-+# CONFIG_HW_RANDOM is not set
-+CONFIG_SPI=y
-+CONFIG_SPI_DESIGNWARE=y
-+CONFIG_SPI_DW_MMIO=y
-+CONFIG_GPIOLIB=y
-+CONFIG_GPIO_SYSFS=y
-+CONFIG_GPIO_DWAPB=y
-+CONFIG_GPIO_SNPS_CREG=y
-+# CONFIG_HWMON is not set
-+CONFIG_THERMAL=y
-+CONFIG_REGULATOR=y
-+CONFIG_REGULATOR_FIXED_VOLTAGE=y
-+CONFIG_DRM=y
-+# CONFIG_DRM_FBDEV_EMULATION is not set
-+CONFIG_DRM_UDL=y
-+CONFIG_FB=y
-+CONFIG_FRAMEBUFFER_CONSOLE=y
-+CONFIG_USB=y
-+CONFIG_USB_EHCI_HCD=y
-+CONFIG_USB_EHCI_HCD_PLATFORM=y
-+CONFIG_USB_OHCI_HCD=y
-+CONFIG_USB_OHCI_HCD_PLATFORM=y
-+CONFIG_USB_STORAGE=y
-+CONFIG_MMC=y
-+CONFIG_MMC_SDHCI=y
-+CONFIG_MMC_SDHCI_PLTFM=y
-+CONFIG_MMC_DW=y
-+CONFIG_DMADEVICES=y
-+CONFIG_DW_AXI_DMAC=y
-+CONFIG_IIO=y
-+CONFIG_TI_ADC108S102=y
-+CONFIG_EXT3_FS=y
-+CONFIG_VFAT_FS=y
-+CONFIG_TMPFS=y
-+CONFIG_NFS_FS=y
-+CONFIG_NFS_V3_ACL=y
-+CONFIG_NLS_CODEPAGE_437=y
-+CONFIG_NLS_ISO8859_1=y
-+CONFIG_CRYPTO_ECHAINIV=y
-+# CONFIG_ENABLE_MUST_CHECK is not set
-+CONFIG_STRIP_ASM_SYMS=y
-+CONFIG_SOFTLOCKUP_DETECTOR=y
-+CONFIG_DEFAULT_HUNG_TASK_TIMEOUT=10
-+# CONFIG_SCHED_DEBUG is not set
-+# CONFIG_DEBUG_PREEMPT is not set
-+# CONFIG_FTRACE is not set
-diff --git a/arch/arc/kernel/devtree.c b/arch/arc/kernel/devtree.c
-index fa86d13df5ed..81f881af7356 100644
---- a/arch/arc/kernel/devtree.c
-+++ b/arch/arc/kernel/devtree.c
-@@ -27,6 +27,7 @@ static void __init arc_set_early_base_baud(unsigned long dt_root)
- 	if (of_flat_dt_is_compatible(dt_root, "abilis,arc-tb10x"))
- 		arc_base_baud = 166666666;	/* Fixed 166.6MHz clk (TB10x) */
- 	else if (of_flat_dt_is_compatible(dt_root, "snps,arc-sdp") ||
-+		 of_flat_dt_is_compatible(dt_root, "snps,hsdk-4xd") ||
- 		 of_flat_dt_is_compatible(dt_root, "snps,hsdk"))
- 		arc_base_baud = 33333333;	/* Fixed 33MHz clk (AXS10x & HSDK) */
- 	else if (of_flat_dt_is_compatible(dt_root, "ezchip,arc-nps"))
-diff --git a/arch/arc/plat-hsdk/Kconfig b/arch/arc/plat-hsdk/Kconfig
-index ce8101834518..3bf80eceebae 100644
---- a/arch/arc/plat-hsdk/Kconfig
-+++ b/arch/arc/plat-hsdk/Kconfig
-@@ -3,10 +3,32 @@
- #
- 
- menuconfig ARC_SOC_HSDK
--	bool "ARC HS Development Kit SOC"
-+	bool "ARC HSDK or HSDK-4xD SoCs"
- 	depends on ISA_ARCV2
- 	select ARC_HAS_ACCL_REGS
- 	select ARC_IRQ_NO_AUTOSAVE
- 	select CLK_HSDK
- 	select RESET_HSDK
- 	select HAVE_PCI
-+
-+menu "HSDK / HSDK-4xD options"
-+	visible if ARC_SOC_HSDK
-+
-+choice
-+	prompt "HSDK board type"
-+
-+config ARC_BOARD_HSDK
-+	bool "ARC HS Development Kit"
-+	help
-+	  ARC HS Development Kit based on quad core ARC HS38 processor
-+
-+config ARC_BOARD_HSDK_4XD
-+	bool "ARC HS4x/HS4xD Development Kit"
-+	select ARC_LPB_DISABLE
-+	help
-+	  ARC HS4x/HS4xD Development Kit based on quad core ARC HS48/HS47D
-+	  processor
-+
-+endchoice
-+
-+endmenu
-diff --git a/arch/arc/plat-hsdk/platform.c b/arch/arc/plat-hsdk/platform.c
-index 0b961a2a10b8..74e2508cfd1e 100644
---- a/arch/arc/plat-hsdk/platform.c
-+++ b/arch/arc/plat-hsdk/platform.c
-@@ -331,7 +331,13 @@ static void __init hsdk_init_early(void)
- 	hsdk_enable_gpio_intc_wire();
- }
- 
-+/*
-+ * As we aren't going to run HSDK-4xD Linux image on HSDK and vise versa let's
-+ * don't add additional machine entry but instead add new compatible to existing one and
-+ * resolve all differences in compile time with #ifdef's.
-+ */
- static const char *hsdk_compat[] __initconst = {
-+	"snps,hsdk-4xd",
- 	"snps,hsdk",
- 	NULL,
- };
--- 
+ if ISA_ARCV2
+
+ config ARC_USE_UNALIGNED_MEM_ACCESS
+diff --git a/arch/arc/Makefile b/arch/arc/Makefile
+index 20e9ab6cc521..1b37e44d9b57 100644
+--- a/arch/arc/Makefile
++++ b/arch/arc/Makefile
+@@ -10,8 +10,12 @@ CROSS_COMPILE := $(call cc-cross-prefix, arc-linux- arceb-linux-)
+ endif
+
+ cflags-y       += -fno-common -pipe -fno-builtin -mmedium-calls -D__linux__
++ifeq ($(CONFIG_ARC_MCPU_OVERWRITE),"")
+ cflags-$(CONFIG_ISA_ARCOMPACT) += -mA7
+ cflags-$(CONFIG_ISA_ARCV2)     += -mcpu=hs38
++else
++cflags-y                       += $(shell echo $(CONFIG_ARC_MCPU_OVERWRITE))
++endif
+
+ ifdef CONFIG_ARC_CURR_IN_REG
+ # For a global register defintion, make sure it gets passed to every file
+--
 2.21.3
 
 
