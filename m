@@ -2,81 +2,65 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B32BA1EB183
-	for <lists+linux-snps-arc@lfdr.de>; Tue,  2 Jun 2020 00:08:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 035501EB199
+	for <lists+linux-snps-arc@lfdr.de>; Tue,  2 Jun 2020 00:18:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0CLh8FkBIQqP32pxz0WcfrJnzxd1lfSFtE27YlYw3fQ=; b=cSBP5YVf5iuWgr
-	O0/qpNeJnC77ZnRpDSyKc3vfX0hhtD5e8I1cCDSfMtP4Z7tJCfR48YA262AAmIrROcLGal6MZpcL/
-	cIulTn/nHxogTauyEzjHcsgRyQ2drXJGJ6pcHF0AByGL3mQzWIji4pRdPeoE11GTvvobQqa9U5kRf
-	w2z1WFIYKX4DfJuXgN8qBCtraA9Wn+AiNLQXmpSQzRV7wb/NoySnENiqQAjCSlZmOrezqYtOa6SiW
-	ZevD8m7DFs2CzXFSU108ejq5Scu7nAthih90RlthGiWQgusfXEtvNXrzgbiTPkHWKbiEL8Dzqs5kC
-	3RT4oPiEHHx5P2/iln5w==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Co/SvwnW+i6CyOaP6F5W/98hX55LOjfSFeRHZ/kB7ns=; b=estnoi/tsnVraf
+	cKGIvgrtyIxSNQhON4TTjsaM04HwIuMRCS2Dl5gTbxWOhRGDnBlgQRXumt/zc3iYDWOd41o+mVwQD
+	DL+GLkiQrfXBTG6tpkpckaCwz8HzaEjXt8LsuXr2kkkH2TnNJbnGMrGbzLbavdr5xLnri6hJwC9EE
+	wZ0UxxrFPBhxoaw/ht/oV2Z7V9WQA0lwcAmymjGfpJa14Tm8bKX6altDvSbYKaAReNmARoE2Ovly9
+	oJOfUVdgRUJ1CALH496Btb7DznnuOW2FHFg06aUdk4X28kFi6nO/oMdtqfvIFKIRyUbr+exEd1pzK
+	VN+MSdXjGCFXqHtTasBA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jfsbV-0006Cz-Uc; Mon, 01 Jun 2020 22:08:21 +0000
-Received: from mail-ua1-x942.google.com ([2607:f8b0:4864:20::942])
+	id 1jfslQ-0004ID-19; Mon, 01 Jun 2020 22:18:36 +0000
+Received: from smtprelay-out1.synopsys.com ([149.117.73.133])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jfsbT-00069x-HB
- for linux-snps-arc@lists.infradead.org; Mon, 01 Jun 2020 22:08:20 +0000
-Received: by mail-ua1-x942.google.com with SMTP id a10so546310uan.8
- for <linux-snps-arc@lists.infradead.org>; Mon, 01 Jun 2020 15:08:16 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=googlemail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=QS7rF6uzPZOkX5aqApv4muf6Ex9QlNvIVzFKmYTGDPs=;
- b=cAas/Qxo7gaHk4h9RCh40Ya9/pLA/d+KSfXnQ4Q1BciGvwfftOWxXf+LJ8bD/YHDDY
- aJFH/pS8iU7u2g1eryl3KnIrky1rzl7YccdOYTac61urYCgM7lJUeDKp8TVyZt8ibUwu
- xxfVtMTXLm5lvgLskAk/3nhzDp2c33R29WtS5u7aBvEwvFr/XMegEgFcSM3o/TJTcNSZ
- ufkMEPjde3cA8mdfvF7DdiD7pZdP6jnc2BoBK/3Nexs/g6vLpbNgybf2I8YBKyV8T4xK
- ohljlL+AaWIAgirJdD+F7vkjyC+BheZV9ST68vYWA4h0YhzgUKfYRTZXLzjyxgnXww5I
- prCw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=QS7rF6uzPZOkX5aqApv4muf6Ex9QlNvIVzFKmYTGDPs=;
- b=T1/8I2/I9nLtdj9nlEAr5yhT/rKn4D/yP24zL/7EnQvlo0bJF6i5W+I26sKc7wsyPp
- Fb2UNmseUXnqrCI7BmGBYsaxiROjLvb5sPeJv35xXEbwNOCnbaJQXKBqnemtcT+k3eqB
- CSh7r7YxQ5MiyZb3pQccirRCN39N/MkiY3ppgTZnWyUbM480i8lQFNjFRFFo75tebLLz
- GSkoLaD1b0Zj56RvzSWWn/KoIfWhy6pgfltEOKMQIeYcoqKY2QTYdi76u5ogTaR9MOAh
- p7lyETHW9lJXLELLTJeZ+h3VATXg9g+zJRyF9AvR746iTP2nWOfFegrNEgIn3SydUAdZ
- es4g==
-X-Gm-Message-State: AOAM530favkUpY41fEFHacGayIX/rZ4qTTmWRuP6pWYdwuwnNwCA5nyy
- OlAsHL4Nl1xIkYfap3cBXE+hjBV1f30GSVh7ltw=
-X-Google-Smtp-Source: ABdhPJzvcFuJ1gg4Q6cbaO8cclNmnysul0PUrs6D9T5Ckr875tps8KiZc7hg45oZnp7R7/rdYO/e+IKNsOqZwIFGB2s=
-X-Received: by 2002:ab0:300c:: with SMTP id f12mr43612ual.76.1591049296077;
- Mon, 01 Jun 2020 15:08:16 -0700 (PDT)
+ id 1jfslN-0004H6-7l
+ for linux-snps-arc@lists.infradead.org; Mon, 01 Jun 2020 22:18:34 +0000
+Received: from mailhost.synopsys.com (sv2-mailhost1.synopsys.com
+ [10.205.2.133])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
+ (No client certificate requested)
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id B241A401AA;
+ Mon,  1 Jun 2020 22:18:32 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
+ t=1591049912; bh=8c8TVcatNexrT8oALkq2vn8LVC3OoT0MQr7SGaPuX+o=;
+ h=From:To:Cc:Subject:Date:From;
+ b=c2Eq12NzWo4PX1ao7PVdCYhEmTHTj4yDSM2e8VeNPu6Oq3IXg7z7BfcRGil8dOS/C
+ FAk7ozgYZWPBVbJYxJZzMEphLk4WU3tdtv2GlcQSWqNNzaxEgtuootY3V0TokRGzyz
+ 1cutjGg5NvPR4IuWUgdaBOybEFWwwtB+7buzJUt4t6v6kvsFw1DaHIIWA+DpyyAPJS
+ fv48oOdACMBa0H3nSKKn12ZUYYIP4nPPVaW5IjaEgREKo+ovPZGPP2BWUZU7t2wv1W
+ lY6HEqZjBrTEyLm3lLGP94O7QkCVz8m7s2ba3OO67EesV6OTQCriFy4dfKRTGM5OFB
+ qECWCBWklXSNw==
+Received: from vineetg-Latitude-7400.internal.synopsys.com (unknown
+ [10.13.183.89])
+ by mailhost.synopsys.com (Postfix) with ESMTP id 53B72A009A;
+ Mon,  1 Jun 2020 22:18:29 +0000 (UTC)
+X-SNPS-Relay: synopsys.com
+From: Vineet Gupta <Vineet.Gupta1@synopsys.com>
+To: libc-alpha@sourceware.org
+Subject: [PATCH v2 0/2] rework dl-runtime: reloc_{offset,index}
+Date: Mon,  1 Jun 2020 15:18:21 -0700
+Message-Id: <20200601221823.17861-1-vgupta@synopsys.com>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-References: <20200530020047.5490-1-vgupta@synopsys.com>
- <20200530020047.5490-5-vgupta@synopsys.com>
- <c20755dc-bd3c-2ef6-c0ce-665529a62243@linaro.org>
- <e6b5ba39-dfd4-abe3-5743-ae1bf1b8e9a9@synopsys.com>
-In-Reply-To: <e6b5ba39-dfd4-abe3-5743-ae1bf1b8e9a9@synopsys.com>
-From: Ramana Radhakrishnan <ramana.gcc@googlemail.com>
-Date: Mon, 1 Jun 2020 23:08:04 +0100
-Message-ID: <CAJA7tRYHtnNks=aWCTe890kTvd9PjXCOf-q-6uK2ZnAho0j1KA@mail.gmail.com>
-Subject: Re: [PATCH 4/5] aarch/fpu: use generic sqrt, fma functions
-To: Vineet Gupta <Vineet.Gupta1@synopsys.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200601_150819_616069_F9FF1637 
-X-CRM114-Status: GOOD (  18.54  )
+X-CRM114-CacheID: sfid-20200601_151833_285766_E1CCCFC6 
+X-CRM114-Status: UNSURE (   7.17  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:942 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [ramana.gcc[at]googlemail.com]
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -84,6 +68,9 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
+ [149.117.73.133 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-snps-arc@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,160 +82,35 @@ List-Post: <mailto:linux-snps-arc@lists.infradead.org>
 List-Help: <mailto:linux-snps-arc-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-snps-arc>, 
  <mailto:linux-snps-arc-request@lists.infradead.org?subject=subscribe>
-Cc: Szabolcs Nagy <szabolcs.nagy@arm.com>,
- "linux-snps-arc@lists.infradead.org" <linux-snps-arc@lists.infradead.org>,
- "libc-alpha@sourceware.org" <libc-alpha@sourceware.org>,
+Cc: Vineet Gupta <Vineet.Gupta1@synopsys.com>,
+ linux-snps-arc@lists.infradead.org,
  Adhemerval Zanella <adhemerval.zanella@linaro.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-snps-arc" <linux-snps-arc-bounces@lists.infradead.org>
 Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org
 
-On Mon, Jun 1, 2020 at 10:45 PM Vineet Gupta via Libc-alpha
-<libc-alpha@sourceware.org> wrote:
->
-> On 6/1/20 9:38 AM, Adhemerval Zanella via Libc-alpha wrote:
-> >
-> >
-> > On 29/05/2020 23:00, Vineet Gupta wrote:
-> >> Signed-off-by: Vineet Gupta <vgupta@synopsys.com>
-> >
-> > LGTM, some comments below.
-> >
-> >> -#include <math_private.h>
-> >> -#include <libm-alias-finite.h>
-> >> -
-> >> -double
-> >> -__ieee754_sqrt (double d)
-> >> -{
-> >> -  return __builtin_sqrt (d);
-> >> -}
-> >> -libm_alias_finite (__ieee754_sqrt, __sqrt)
-> >
-> > Ok.
->
-> How is one to test aarch64 port with hard-float. build-many-glibc doesn't have a
-> hf variant and hacking one didn't do the right thing either.
+Vineet Gupta (2):
+  dl-runtime: reloc_{offset,index} now functions arch overide'able
+  ARC/dl-runtime helper macros
 
-AArch64 is hard-float by default : there is no soft-float variant.
+ elf/dl-runtime.c            | 28 +++++++++++++++----------
+ elf/dl-runtime.h            | 30 ++++++++++++++++++++++++++
+ sysdeps/arc/dl-runtime.h    | 42 +++++++++++++++++++++++++++++++++++++
+ sysdeps/hppa/dl-runtime.c   |  4 ----
+ sysdeps/hppa/dl-runtime.h   | 31 +++++++++++++++++++++++++++
+ sysdeps/x86_64/dl-runtime.c |  9 --------
+ sysdeps/x86_64/dl-runtime.h | 35 +++++++++++++++++++++++++++++++
+ 7 files changed, 155 insertions(+), 24 deletions(-)
+ create mode 100644 elf/dl-runtime.h
+ create mode 100644 sysdeps/arc/dl-runtime.h
+ create mode 100644 sysdeps/hppa/dl-runtime.h
+ delete mode 100644 sysdeps/x86_64/dl-runtime.c
+ create mode 100644 sysdeps/x86_64/dl-runtime.h
 
-regards
-Ramana
+-- 
+2.20.1
 
->
-> >> diff --git a/sysdeps/aarch64/fpu/math-use-builtins.h b/sysdeps/aarch64/fpu/math-use-builtins.h
-> >> new file mode 100644
-> >> index 000000000000..52f0a0dad6dd
-> >> --- /dev/null
-> >> +++ b/sysdeps/aarch64/fpu/math-use-builtins.h
-> >> @@ -0,0 +1,70 @@
-> >> +/* Using math gcc builtins instead of generic implementation.  aarch64 version.
-> >> +   Copyright (C) 2019-2020 Free Software Foundation, Inc.
-> >
-> > I think it should be just 2020 here.
->
-> Fixed.
->
-> >> +
-> >> +/* Define these macros to 1 to use __builtin_xyz instead of the
-> >> +   generic implementation.  */
-> >> +#define USE_NEARBYINT_BUILTIN 0
-> >> +#define USE_NEARBYINTF_BUILTIN 0
-> >> +#define USE_NEARBYINTL_BUILTIN 0
-> >> +#define USE_NEARBYINTF128_BUILTIN 0
-> >
-> > Since we are adding this new file for aarch64, we could also enable it fo
-> > nearbyint{f} and remove sysdeps/aarch64/fpu/s_nearbyint{f}.c as well.
->
-> OK, but only
->
-> +#define USE_NEARBYINT_BUILTIN 1
-> +#define USE_NEARBYINTF_BUILTIN 1
->
-> The other 2 are not defined currently. If they are, then I prefer they be enabled
-> as a separate commit for bisectability.
->
->
-> >> +#define USE_RINT_BUILTIN 0
-> >> +#define USE_RINTF_BUILTIN 0
-> >> +#define USE_RINTL_BUILTIN 0
-> >> +#define USE_RINTF128_BUILTIN 0
-> >
-> > Ditto.
->
-> OK and again only RINT and RINTF.
-> Also I don't understand one thing. Both the generic and aarch64 code have this
->
-> float
-> __rintf (float x)
-> ...
-> libm_alias_float (__rint, rint)
->
-> The alias arg 1 __rint seems to lack suffix 'f' ?
->
->
-> >> +
-> >> +#define USE_FLOOR_BUILTIN 0
-> >> +#define USE_FLOORF_BUILTIN 0
->
-> Again FLOOR, FLOORF only
->
-> >> +#define USE_FLOORL_BUILTIN 0
-> >> +#define USE_FLOORF128_BUILTIN 0
-> >
-> > Ditto.
->
-> Ditto
->
->
-> >> +
-> >> +#define USE_CEIL_BUILTIN 0
-> >> +#define USE_CEILF_BUILTIN 0
-> >> +#define USE_CEILL_BUILTIN 0
-> >> +#define USE_CEILF128_BUILTIN 0
-> >
-> > Ditto.
->
-> Ditto
->
-> >
-> >> +
-> >> +#define USE_TRUNC_BUILTIN 0
-> >> +#define USE_TRUNCF_BUILTIN 0
-> >> +#define USE_TRUNCL_BUILTIN 0
-> >> +#define USE_TRUNCF128_BUILTIN 0
-> >
-> > Ditto.
->
-> Ditto
->
-> >> +
-> >> +#define USE_ROUND_BUILTIN 0
-> >> +#define USE_ROUNDF_BUILTIN 0
-> >> +#define USE_ROUNDL_BUILTIN 0
-> >> +#define USE_ROUNDF128_BUILTIN 0
-> >
-> > Ditto.
->
-> Ditto
->
-> >> +
-> >> +#define USE_COPYSIGNL_BUILTIN 1
-> >> +#if __GNUC_PREREQ (7, 0)
-> >> +# define USE_COPYSIGNF128_BUILTIN 1
-> >> +#else
-> >> +# define USE_COPYSIGNF128_BUILTIN 0
-> >> +#endif
-> >> +
-> >
-> > It should be described in commit message as well (although generated
-> > instruction are essentially the same).
->
-> Well this one is even more special as it was already using the same code, except
-> that the math-use-builtins.h was generic vs. aarch64 specific one.
->
-> Thx
-> -Vineet
 
 _______________________________________________
 linux-snps-arc mailing list
