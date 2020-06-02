@@ -2,59 +2,58 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A63CE1EB19C
-	for <lists+linux-snps-arc@lfdr.de>; Tue,  2 Jun 2020 00:18:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 567411EB2BE
+	for <lists+linux-snps-arc@lfdr.de>; Tue,  2 Jun 2020 02:35:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/NVEoVEYd/ZjbY21JDgdpmG+SATVhyikfsDvbpLXFSU=; b=Zwy+dlnfWhH0HM
-	PPq7Vt3tgMWqnbI2U6yp4sg3crEXp2VFoy3ilVlfEsekY8EFSVNz0IG9wmxKg0zxHCNhlKBZ8rcBR
-	ewo8BJMBSOdVqioz/i3msKmAuMyD+hD/I3kVt3LCox7FoXxwZQfIQm4oEmGrmK0YRS2VSMFsyDh7G
-	36HNyNCheTrkdb/+0VV2NLSR+lj5t5SHDXlPFjaleS6OHHlY50xyA4KkkLDNCTwGKiDZE3Jt0fPvm
-	7YiajJ7pD09XFg9yHakRgqOMhwS31sZS+4Rpu9sw9bRLseSzBWs0GP/WH8c1d7J03Agjf7E1ghNKM
-	5etSeomzfagnYSNv5ZfQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=lzqZ37V3lX2t49uKgKGqpc5RdmIIBw5PKekUIH/62to=; b=csvWR9tWOMG8GN
+	5JAu9TZLDGg75iyV5aKj25uN19fTAAE48HLzLNVYb/NAncLP6W8Q/Z80ITQBGdCvadV4uouknRnsI
+	gZG4YoOe1ci6WWi+Bl8ciYxuatkWX3VHzBmrubKH+r1oMaMCq2+xINF0pNerG8gEYnHqSKQc4ZTb4
+	TuPzHm1sCsIgfk+8kUvIzhV/SAE5u+vpzjEaeMrnXGsUCBWSptYBzxRinSxQraWyoqoKpxN63fvwL
+	XgTL7uZJpBoufJFN13ejP1MCVT9lzJO5rfTKnLatexxuBbmBSAc4fAxlmqEozl6UxrCX1VdX0OpQX
+	N73WfCYdnmniyF76DiEA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jfslS-0004JP-DH; Mon, 01 Jun 2020 22:18:38 +0000
-Received: from smtprelay-out1.synopsys.com ([149.117.87.133])
+	id 1jfuuH-00075D-75; Tue, 02 Jun 2020 00:35:53 +0000
+Received: from smtprelay-out1.synopsys.com ([149.117.73.133])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jfslP-0004Hw-PY
- for linux-snps-arc@lists.infradead.org; Mon, 01 Jun 2020 22:18:37 +0000
-Received: from mailhost.synopsys.com (sv2-mailhost1.synopsys.com
- [10.205.2.133])
+ id 1jfuuE-00073r-2g
+ for linux-snps-arc@lists.infradead.org; Tue, 02 Jun 2020 00:35:51 +0000
+Received: from mailhost.synopsys.com (sv2-mailhost2.synopsys.com
+ [10.205.2.134])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
  (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 17760C008F;
- Mon,  1 Jun 2020 22:18:34 +0000 (UTC)
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id AA8CF40184;
+ Tue,  2 Jun 2020 00:35:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1591049914; bh=WLMDaLYk+VaGwQnVbai8+RKJhjtZBX5u/DprBnEp/6k=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=PVGJXWlDCpVVECQWRHnqCOEMxY8sINi1WdCH7VD5s1Oy4Ui4DucAb3OU/JwaHh/ih
- 1NmtqVTByUbTZFJnqtHtsqX/vaE0hpdCUyJ/562ShzCmGOQfkgqp6bQFJ+PDZUz8MX
- 51PQp7+FSsmlIzHmNbg4q+Z7K2Bb+oKMUF71qWpssGvCSBWbgXHHDEM9A1w682hHf4
- /1AKm7eTn0Za/0YdKiwTieFXCcP/lm6agtIR99KNVA6T4x2OvF7FEvWEyeqGjppnL7
- ucc9emrvelnokWBRBvxQSAjbO2ENFpIcAfrnjWoGG+a3NlCNcVT3MIOqOtZkuLUUvG
- U3Mmcxdp9HMkg==
+ t=1591058149; bh=w/mUGJ7MjDhKUbRckPZG1W1CIY4EZWK6CACmIJx7864=;
+ h=From:To:Cc:Subject:Date:From;
+ b=Fz9oXsA2bmeKWe+LeQMF1q2D/oAARUfPkZj08raVYaYYc7tD7vLujNnwjXyv+RFs1
+ aZZnxk4fDR4AALS9EWR55LLz+dbFlE2vV+JT96Vyfd3VCNNosD7cagN04GrrCSWDJg
+ jzsJb9lkMSLm3geBlxX/BjxmvBQuQ4eOLQJ8LXRSzj8/DFCYgFdRNHtuLAhwROU7zs
+ SgBqG7XsDHvjwwRg4sVm6XWWGlOJ86HOi6S7hmajPt481M+onp64nsCAnEAH6AuZLy
+ wFZseZ+GS60iDcdD/HeY2Flsx4GlbbLr3zxSDluelj4PsobJwCz/te6ShYsIdJ/xzi
+ XL2A5UKwjo8vg==
 Received: from vineetg-Latitude-7400.internal.synopsys.com (unknown
  [10.13.183.89])
- by mailhost.synopsys.com (Postfix) with ESMTP id 591F5A025E;
- Mon,  1 Jun 2020 22:18:33 +0000 (UTC)
+ by mailhost.synopsys.com (Postfix) with ESMTP id DCFFAA009C;
+ Tue,  2 Jun 2020 00:35:43 +0000 (UTC)
 X-SNPS-Relay: synopsys.com
 From: Vineet Gupta <Vineet.Gupta1@synopsys.com>
 To: libc-alpha@sourceware.org
-Subject: [PATCH v2 2/2] ARC/dl-runtime helper macros
-Date: Mon,  1 Jun 2020 15:18:23 -0700
-Message-Id: <20200601221823.17861-3-vgupta@synopsys.com>
+Subject: [PATCH v2 0/4] Enable generic math code for more arches
+Date: Mon,  1 Jun 2020 17:35:37 -0700
+Message-Id: <20200602003541.21005-1-vgupta@synopsys.com>
 X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20200601221823.17861-1-vgupta@synopsys.com>
-References: <20200601221823.17861-1-vgupta@synopsys.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200601_151835_863241_190C12DA 
-X-CRM114-Status: GOOD (  12.63  )
+X-CRM114-CacheID: sfid-20200601_173550_133042_8EB36B0A 
+X-CRM114-Status: UNSURE (   7.28  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -63,7 +62,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
- [149.117.87.133 listed in wl.mailspike.net]
+ [149.117.73.133 listed in wl.mailspike.net]
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -91,61 +90,71 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-snps-arc" <linux-snps-arc-bounces@lists.infradead.org>
 Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org
 
-This is purely for review purposes to attest the interface defined
-in prior patch
----
- sysdeps/arc/dl-runtime.h | 42 ++++++++++++++++++++++++++++++++++++++++
- 1 file changed, 42 insertions(+)
- create mode 100644 sysdeps/arc/dl-runtime.h
+Hi,
 
-diff --git a/sysdeps/arc/dl-runtime.h b/sysdeps/arc/dl-runtime.h
-new file mode 100644
-index 000000000000..529d49f5d0a1
---- /dev/null
-+++ b/sysdeps/arc/dl-runtime.h
-@@ -0,0 +1,42 @@
-+/* Helpers for On-demand PLT fixup for shared objects. ARC version.
-+   Copyright (C) 2017-2020 Free Software Foundation, Inc.
-+   This file is part of the GNU C Library.
-+
-+   The GNU C Library is free software; you can redistribute it and/or
-+   modify it under the terms of the GNU Lesser General Public License as
-+   published by the Free Software Foundation; either version 2.1 of the
-+   License, or (at your option) any later version.
-+
-+   The GNU C Library is distributed in the hope that it will be useful,
-+   but WITHOUT ANY WARRANTY; without even the implied warranty of
-+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-+   Lesser General Public License for more details.
-+
-+   You should have received a copy of the GNU Lesser General Public
-+   License along with the GNU C Library.  If not, see
-+   <https://www.gnu.org/licenses/>.  */
-+
-+/* PLT jump into resolver passes PC of PLTn, while _dl_fixup expects the
-+   address of corresponding .rela.plt entry.
-+
-+    - @plt0: runtime pc of first plt entry (DT_PLTGOT)
-+    - @pltn: runtime pc of plt entry being resolved
-+    - @size: size of .plt.rela entry (unused).  */
-+static inline uintptr_t
-+reloc_index (uintptr_t plt0, uintptr_t pltn, size_t size)
-+{
-+  unsigned long int idx = (unsigned long)pltn - (unsigned long)plt0;
-+
-+  /* PLT trampoline is 16 bytes. */
-+  idx /= 16;
-+
-+  /* Exclude PLT0 and PLT1.  */
-+  return idx - 2;
-+}
-+
-+static inline uintptr_t
-+reloc_offset (uintptr_t plt0, uintptr_t pltn)
-+{
-+  size_t sz = sizeof (ElfW(Rela));
-+  return reloc_index(plt0, pltn, sz) * sz;
-+}
+This was suggested by Adhemerval Zanella as part of ARC hard float
+review.
+
+There was testing snafu last time around (wrong branch on build server).
+Although only relevant configs are aarch64 and PPC, the series passes
+build-many-glibcs for following:
+
+ARCH="aarch64-linux-gnu arm-linux-gnueabi arm-linux-gnueabihf hppa-linux-gnu x86_64-linux-gnu arm-linux-gnueabihf riscv64-linux-gnu-rv64imac-lp64 riscv64-linux-gnu-rv64imafdc-lp64 powerpc-linux-gnu microblaze-linux-gnu nios2-linux-gnu hppa-linux-gnu"
+
+Thx,
+-Vineet
+
+Vineet Gupta (4):
+  iee754: provide gcc builtins based generic sqrt functions
+  iee754: provide gcc builtins based generic fma functions
+  aarch/fpu: use generic sqrt{,f}, fma{,f}, nearbyint{,f} functions
+  powerpc/fpu: use generic fma functions
+
+ sysdeps/aarch64/fpu/e_sqrt.c                | 27 --------
+ sysdeps/aarch64/fpu/e_sqrtf.c               | 27 --------
+ sysdeps/aarch64/fpu/math-use-builtins.h     | 71 +++++++++++++++++++++
+ sysdeps/aarch64/fpu/s_floor.c               | 29 ---------
+ sysdeps/aarch64/fpu/s_floorf.c              | 29 ---------
+ sysdeps/aarch64/fpu/s_fma.c                 | 28 --------
+ sysdeps/aarch64/fpu/s_fmaf.c                | 28 --------
+ sysdeps/aarch64/fpu/s_nearbyint.c           | 28 --------
+ sysdeps/aarch64/fpu/s_nearbyintf.c          | 28 --------
+ sysdeps/aarch64/fpu/s_rint.c                | 29 ---------
+ sysdeps/aarch64/fpu/s_rintf.c               | 29 ---------
+ sysdeps/aarch64/fpu/s_round.c               | 29 ---------
+ sysdeps/aarch64/fpu/s_roundf.c              | 29 ---------
+ sysdeps/aarch64/fpu/s_trunc.c               | 29 ---------
+ sysdeps/aarch64/fpu/s_truncf.c              | 29 ---------
+ sysdeps/generic/math-use-builtins.h         |  8 +++
+ sysdeps/ieee754/dbl-64/e_sqrt.c             |  6 ++
+ sysdeps/ieee754/dbl-64/s_fma.c              |  6 ++
+ sysdeps/ieee754/dbl-64/s_fmaf.c             |  6 ++
+ sysdeps/ieee754/float128/float128_private.h |  2 +
+ sysdeps/ieee754/flt-32/e_sqrtf.c            | 16 +++--
+ sysdeps/ieee754/ldbl-128/s_fmal.c           |  5 ++
+ sysdeps/powerpc/fpu/math-use-builtins.h     | 69 ++++++++++++++++++++
+ sysdeps/powerpc/fpu/s_fma.c                 | 27 --------
+ sysdeps/powerpc/fpu/s_fmaf.c                | 27 --------
+ 25 files changed, 183 insertions(+), 458 deletions(-)
+ delete mode 100644 sysdeps/aarch64/fpu/e_sqrt.c
+ delete mode 100644 sysdeps/aarch64/fpu/e_sqrtf.c
+ create mode 100644 sysdeps/aarch64/fpu/math-use-builtins.h
+ delete mode 100644 sysdeps/aarch64/fpu/s_floor.c
+ delete mode 100644 sysdeps/aarch64/fpu/s_floorf.c
+ delete mode 100644 sysdeps/aarch64/fpu/s_fma.c
+ delete mode 100644 sysdeps/aarch64/fpu/s_fmaf.c
+ delete mode 100644 sysdeps/aarch64/fpu/s_nearbyint.c
+ delete mode 100644 sysdeps/aarch64/fpu/s_nearbyintf.c
+ delete mode 100644 sysdeps/aarch64/fpu/s_rint.c
+ delete mode 100644 sysdeps/aarch64/fpu/s_rintf.c
+ delete mode 100644 sysdeps/aarch64/fpu/s_round.c
+ delete mode 100644 sysdeps/aarch64/fpu/s_roundf.c
+ delete mode 100644 sysdeps/aarch64/fpu/s_trunc.c
+ delete mode 100644 sysdeps/aarch64/fpu/s_truncf.c
+ create mode 100644 sysdeps/powerpc/fpu/math-use-builtins.h
+ delete mode 100644 sysdeps/powerpc/fpu/s_fma.c
+ delete mode 100644 sysdeps/powerpc/fpu/s_fmaf.c
+
 -- 
 2.20.1
 
