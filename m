@@ -2,67 +2,69 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 567411EB2BE
+	by mail.lfdr.de (Postfix) with ESMTPS id 514201EB2BD
 	for <lists+linux-snps-arc@lfdr.de>; Tue,  2 Jun 2020 02:35:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=lzqZ37V3lX2t49uKgKGqpc5RdmIIBw5PKekUIH/62to=; b=csvWR9tWOMG8GN
-	5JAu9TZLDGg75iyV5aKj25uN19fTAAE48HLzLNVYb/NAncLP6W8Q/Z80ITQBGdCvadV4uouknRnsI
-	gZG4YoOe1ci6WWi+Bl8ciYxuatkWX3VHzBmrubKH+r1oMaMCq2+xINF0pNerG8gEYnHqSKQc4ZTb4
-	TuPzHm1sCsIgfk+8kUvIzhV/SAE5u+vpzjEaeMrnXGsUCBWSptYBzxRinSxQraWyoqoKpxN63fvwL
-	XgTL7uZJpBoufJFN13ejP1MCVT9lzJO5rfTKnLatexxuBbmBSAc4fAxlmqEozl6UxrCX1VdX0OpQX
-	N73WfCYdnmniyF76DiEA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=o1LCSZIN9mg0jS9WSU3MJgEXRbzcPaK/F7dQQNEIfYE=; b=RQcOj40fLv+GGV
+	m+izyawkidwjVIYTQM9PvzkqOuJAOQRwGnLUX9zF9yxFTiMU9EaOyLoAc6w/QgFdDLqFI/ZS5iG+z
+	OnCpex6DGsVTvxXFG6SPYGUl51IFFmO3K5/1U37R13hX0VGWz1rxzpcSzWoC2+e6YideEWuGrFuzt
+	BM1xod7MpIj5RL1vjCFRBjzQ5ZSC5YdbtwM2kHLI2i02Xrp5W5mcVPfiO1RmYr5wapvVRMjVt0VzH
+	s6i9c+p8hszxO/zVRREWBTC3PhyCM+Ukbp+tbDIt3DYcrbr4jarzQ2duQYBDdWFwCjSZfepMLvvwT
+	Q2dwygCeF5EWjjHq+4jg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jfuuH-00075D-75; Tue, 02 Jun 2020 00:35:53 +0000
+	id 1jfuuI-00075v-Gv; Tue, 02 Jun 2020 00:35:54 +0000
 Received: from smtprelay-out1.synopsys.com ([149.117.73.133])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jfuuE-00073r-2g
- for linux-snps-arc@lists.infradead.org; Tue, 02 Jun 2020 00:35:51 +0000
+ id 1jfuuE-00073s-2g
+ for linux-snps-arc@lists.infradead.org; Tue, 02 Jun 2020 00:35:52 +0000
 Received: from mailhost.synopsys.com (sv2-mailhost2.synopsys.com
  [10.205.2.134])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
  (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id AA8CF40184;
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id D4A74401C8;
  Tue,  2 Jun 2020 00:35:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1591058149; bh=w/mUGJ7MjDhKUbRckPZG1W1CIY4EZWK6CACmIJx7864=;
- h=From:To:Cc:Subject:Date:From;
- b=Fz9oXsA2bmeKWe+LeQMF1q2D/oAARUfPkZj08raVYaYYc7tD7vLujNnwjXyv+RFs1
- aZZnxk4fDR4AALS9EWR55LLz+dbFlE2vV+JT96Vyfd3VCNNosD7cagN04GrrCSWDJg
- jzsJb9lkMSLm3geBlxX/BjxmvBQuQ4eOLQJ8LXRSzj8/DFCYgFdRNHtuLAhwROU7zs
- SgBqG7XsDHvjwwRg4sVm6XWWGlOJ86HOi6S7hmajPt481M+onp64nsCAnEAH6AuZLy
- wFZseZ+GS60iDcdD/HeY2Flsx4GlbbLr3zxSDluelj4PsobJwCz/te6ShYsIdJ/xzi
- XL2A5UKwjo8vg==
+ t=1591058149; bh=heNLZmSKqBDSdlcK826frAh4nR+lUT2bZAG0KWyCfBA=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=PdnwHYXQw9/1tgFqHIDzmVaRGwMJarF6mUaUQKfX0OCNa7XMTKqmQNcbizCejlXym
+ 2SJUsqBSYlovidjrh+FjTEPm6Eyrl8PLrqVDd69KlHv3wauUMbl2fauMeoOBwMFeZm
+ ie13YCi4faLLnBcBkjRGCIiKGJkHV84B6gpgkhg7U4QKJVUY1J2NM5IpYV+fxIw7Aj
+ dDogrz3JQY3kUPM5hNQ4qRi4PDyhxeAoK1gG/CNYa60AXQRhfXGrhuEu0H12nqH4L/
+ tvSMKNW5qI4M8drdtScEpfHSzEyzhM3eO8qiiJ+gaYeQkxmf3+l9QssAZPeXuHKEVq
+ zKk7GVEiuEyxQ==
 Received: from vineetg-Latitude-7400.internal.synopsys.com (unknown
  [10.13.183.89])
- by mailhost.synopsys.com (Postfix) with ESMTP id DCFFAA009C;
- Tue,  2 Jun 2020 00:35:43 +0000 (UTC)
+ by mailhost.synopsys.com (Postfix) with ESMTP id 84299A00A2;
+ Tue,  2 Jun 2020 00:35:48 +0000 (UTC)
 X-SNPS-Relay: synopsys.com
 From: Vineet Gupta <Vineet.Gupta1@synopsys.com>
 To: libc-alpha@sourceware.org
-Subject: [PATCH v2 0/4] Enable generic math code for more arches
-Date: Mon,  1 Jun 2020 17:35:37 -0700
-Message-Id: <20200602003541.21005-1-vgupta@synopsys.com>
+Subject: [PATCH v2 1/4] iee754: provide gcc builtins based generic sqrt
+ functions
+Date: Mon,  1 Jun 2020 17:35:38 -0700
+Message-Id: <20200602003541.21005-2-vgupta@synopsys.com>
 X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20200602003541.21005-1-vgupta@synopsys.com>
+References: <20200602003541.21005-1-vgupta@synopsys.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200601_173550_133042_8EB36B0A 
-X-CRM114-Status: UNSURE (   7.28  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200601_173550_132901_8387057A 
+X-CRM114-Status: GOOD (  11.55  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
  [149.117.73.133 listed in wl.mailspike.net]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -90,71 +92,101 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-snps-arc" <linux-snps-arc-bounces@lists.infradead.org>
 Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org
 
-Hi,
+Reviewed-by: Adhemerval Zanella  <adhemerval.zanella@linaro.org>
+---
+ sysdeps/generic/math-use-builtins.h |  3 +++
+ sysdeps/ieee754/dbl-64/e_sqrt.c     |  6 ++++++
+ sysdeps/ieee754/flt-32/e_sqrtf.c    | 16 ++++++++++------
+ 3 files changed, 19 insertions(+), 6 deletions(-)
 
-This was suggested by Adhemerval Zanella as part of ARC hard float
-review.
-
-There was testing snafu last time around (wrong branch on build server).
-Although only relevant configs are aarch64 and PPC, the series passes
-build-many-glibcs for following:
-
-ARCH="aarch64-linux-gnu arm-linux-gnueabi arm-linux-gnueabihf hppa-linux-gnu x86_64-linux-gnu arm-linux-gnueabihf riscv64-linux-gnu-rv64imac-lp64 riscv64-linux-gnu-rv64imafdc-lp64 powerpc-linux-gnu microblaze-linux-gnu nios2-linux-gnu hppa-linux-gnu"
-
-Thx,
--Vineet
-
-Vineet Gupta (4):
-  iee754: provide gcc builtins based generic sqrt functions
-  iee754: provide gcc builtins based generic fma functions
-  aarch/fpu: use generic sqrt{,f}, fma{,f}, nearbyint{,f} functions
-  powerpc/fpu: use generic fma functions
-
- sysdeps/aarch64/fpu/e_sqrt.c                | 27 --------
- sysdeps/aarch64/fpu/e_sqrtf.c               | 27 --------
- sysdeps/aarch64/fpu/math-use-builtins.h     | 71 +++++++++++++++++++++
- sysdeps/aarch64/fpu/s_floor.c               | 29 ---------
- sysdeps/aarch64/fpu/s_floorf.c              | 29 ---------
- sysdeps/aarch64/fpu/s_fma.c                 | 28 --------
- sysdeps/aarch64/fpu/s_fmaf.c                | 28 --------
- sysdeps/aarch64/fpu/s_nearbyint.c           | 28 --------
- sysdeps/aarch64/fpu/s_nearbyintf.c          | 28 --------
- sysdeps/aarch64/fpu/s_rint.c                | 29 ---------
- sysdeps/aarch64/fpu/s_rintf.c               | 29 ---------
- sysdeps/aarch64/fpu/s_round.c               | 29 ---------
- sysdeps/aarch64/fpu/s_roundf.c              | 29 ---------
- sysdeps/aarch64/fpu/s_trunc.c               | 29 ---------
- sysdeps/aarch64/fpu/s_truncf.c              | 29 ---------
- sysdeps/generic/math-use-builtins.h         |  8 +++
- sysdeps/ieee754/dbl-64/e_sqrt.c             |  6 ++
- sysdeps/ieee754/dbl-64/s_fma.c              |  6 ++
- sysdeps/ieee754/dbl-64/s_fmaf.c             |  6 ++
- sysdeps/ieee754/float128/float128_private.h |  2 +
- sysdeps/ieee754/flt-32/e_sqrtf.c            | 16 +++--
- sysdeps/ieee754/ldbl-128/s_fmal.c           |  5 ++
- sysdeps/powerpc/fpu/math-use-builtins.h     | 69 ++++++++++++++++++++
- sysdeps/powerpc/fpu/s_fma.c                 | 27 --------
- sysdeps/powerpc/fpu/s_fmaf.c                | 27 --------
- 25 files changed, 183 insertions(+), 458 deletions(-)
- delete mode 100644 sysdeps/aarch64/fpu/e_sqrt.c
- delete mode 100644 sysdeps/aarch64/fpu/e_sqrtf.c
- create mode 100644 sysdeps/aarch64/fpu/math-use-builtins.h
- delete mode 100644 sysdeps/aarch64/fpu/s_floor.c
- delete mode 100644 sysdeps/aarch64/fpu/s_floorf.c
- delete mode 100644 sysdeps/aarch64/fpu/s_fma.c
- delete mode 100644 sysdeps/aarch64/fpu/s_fmaf.c
- delete mode 100644 sysdeps/aarch64/fpu/s_nearbyint.c
- delete mode 100644 sysdeps/aarch64/fpu/s_nearbyintf.c
- delete mode 100644 sysdeps/aarch64/fpu/s_rint.c
- delete mode 100644 sysdeps/aarch64/fpu/s_rintf.c
- delete mode 100644 sysdeps/aarch64/fpu/s_round.c
- delete mode 100644 sysdeps/aarch64/fpu/s_roundf.c
- delete mode 100644 sysdeps/aarch64/fpu/s_trunc.c
- delete mode 100644 sysdeps/aarch64/fpu/s_truncf.c
- create mode 100644 sysdeps/powerpc/fpu/math-use-builtins.h
- delete mode 100644 sysdeps/powerpc/fpu/s_fma.c
- delete mode 100644 sysdeps/powerpc/fpu/s_fmaf.c
-
+diff --git a/sysdeps/generic/math-use-builtins.h b/sysdeps/generic/math-use-builtins.h
+index 8a39ef58bc95..fc724c824a17 100644
+--- a/sysdeps/generic/math-use-builtins.h
++++ b/sysdeps/generic/math-use-builtins.h
+@@ -60,4 +60,7 @@
+ # define USE_COPYSIGNF128_BUILTIN 0
+ #endif
+ 
++#define USE_SQRT_BUILTIN 0
++#define USE_SQRTF_BUILTIN 0
++
+ #endif /* math-use-builtins.h */
+diff --git a/sysdeps/ieee754/dbl-64/e_sqrt.c b/sysdeps/ieee754/dbl-64/e_sqrt.c
+index d42a1a4eb6e9..518a8ae5cdaf 100644
+--- a/sysdeps/ieee754/dbl-64/e_sqrt.c
++++ b/sysdeps/ieee754/dbl-64/e_sqrt.c
+@@ -41,6 +41,7 @@
+ #include <math_private.h>
+ #include <fenv_private.h>
+ #include <libm-alias-finite.h>
++#include <math-use-builtins.h>
+ 
+ /*********************************************************************/
+ /* An ultimate sqrt routine. Given an IEEE double machine number x   */
+@@ -50,6 +51,10 @@
+ double
+ __ieee754_sqrt (double x)
+ {
++#if USE_SQRT_BUILTIN
++  return __builtin_sqrt (x);
++#else
++  /* Use generic implementation.  */
+   static const double
+     rt0 = 9.99999999859990725855365213134618E-01,
+     rt1 = 4.99999999495955425917856814202739E-01,
+@@ -138,6 +143,7 @@ __ieee754_sqrt (double x)
+ 	return (x - x) / (x - x); /* sqrt(-ve)=sNaN */
+       return 0x1p-256 * __ieee754_sqrt (x * 0x1p512);
+     }
++#endif /* ! USE_SQRT_BUILTIN  */
+ }
+ #ifndef __ieee754_sqrt
+ libm_alias_finite (__ieee754_sqrt, __sqrt)
+diff --git a/sysdeps/ieee754/flt-32/e_sqrtf.c b/sysdeps/ieee754/flt-32/e_sqrtf.c
+index b339444301aa..d85a04162983 100644
+--- a/sysdeps/ieee754/flt-32/e_sqrtf.c
++++ b/sysdeps/ieee754/flt-32/e_sqrtf.c
+@@ -16,12 +16,15 @@
+ #include <math.h>
+ #include <math_private.h>
+ #include <libm-alias-finite.h>
+-
+-static	const float	one	= 1.0, tiny=1.0e-30;
++#include <math-use-builtins.h>
+ 
+ float
+ __ieee754_sqrtf(float x)
+ {
++#if USE_SQRTF_BUILTIN
++	return __builtin_sqrtf (x);
++#else
++	/* Use generic implementation.  */
+ 	float z;
+ 	int32_t sign = (int)0x80000000;
+ 	int32_t ix,s,q,m,t,i;
+@@ -70,10 +73,10 @@ __ieee754_sqrtf(float x)
+ 
+     /* use floating add to find out rounding direction */
+ 	if(ix!=0) {
+-	    z = one-tiny; /* trigger inexact flag */
+-	    if (z>=one) {
+-		z = one+tiny;
+-		if (z>one)
++	    z = 0x1p0 - 0x1.4484cp-100; /* trigger inexact flag */
++	    if (z >= 0x1p0) {
++		z = 0x1p0 + 0x1.4484cp-100;
++		if (z > 0x1p0)
+ 		    q += 2;
+ 		else
+ 		    q += (q&1);
+@@ -83,6 +86,7 @@ __ieee754_sqrtf(float x)
+ 	ix += (m <<23);
+ 	SET_FLOAT_WORD(z,ix);
+ 	return z;
++#endif /* ! USE_SQRTF_BUILTIN  */
+ }
+ #ifndef __ieee754_sqrtf
+ libm_alias_finite (__ieee754_sqrtf, __sqrtf)
 -- 
 2.20.1
 
