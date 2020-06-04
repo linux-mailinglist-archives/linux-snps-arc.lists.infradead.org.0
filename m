@@ -2,60 +2,128 @@ Return-Path: <linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradea
 X-Original-To: lists+linux-snps-arc@lfdr.de
 Delivered-To: lists+linux-snps-arc@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 99F9F1EE990
-	for <lists+linux-snps-arc@lfdr.de>; Thu,  4 Jun 2020 19:39:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 452DE1EEA45
+	for <lists+linux-snps-arc@lfdr.de>; Thu,  4 Jun 2020 20:27:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TqbHg8Qxjf4MBtri5LbJTeXO/LkU4QPlUCd4wUin25M=; b=K9xxtUREAKkWpb
-	URwrRrR1FBKlZi0wUaSNaHCTEDj60qY4XdAuy9cGWn/H85FEXsxKAe+lpC8N/Ct5j4Wf9q1w+Bh0v
-	Ce5zs+F5f4wH8uiwtrluiuqpBg5cAuEMJfnnsrmluVaIaZjb3ubl1gIjSgtzJytLqaT19N1snv0oz
-	6wwHujki+U6hMEUvSM4RoPMjkCZ44dVAdFIst6yLjBSMQZw2DLEPlFp4zDi89fjQQ339jFjpVX39U
-	z8BebB0mLTftZC+81iopz0jqBE0XCZ1k2oG5UgFGhxfPdjPOWZqUGwvzA46aNC3hVzcdiOSZeODqO
-	sEAM03V4hDJvxdcBUlxw==;
+	List-Owner; bh=SHSgpz4HfeI4ErowAvKHkRb47/QLIuWyF2mILb+Sg4Q=; b=nsiG78EvAb/wCR
+	SC7atHQZymI2cfk+lDk2VUGmU/26Xgefx5w05e+HNOHKEgfgX2WkkTjd+miWfPQkL73hs3OgvSjoM
+	9jarCiTb459fvwfTyo5keajew1C6ePVWiN3n2/pIBBq9H93ySzLYZLJWIsBPVcFktTpz80d+HVuKE
+	8Je9LUF486Y7xq+2LhA6gN1u1ZQTqWDtbSG9Q2XRxQpsAkd+drnpGYPIiyvB+0G0Gomp2T24UlSny
+	U1QowxUD2h7u2RlKZRuFRUCpN1hhtDnjA7xoFQUG1iOpg0J2cl6IfThHgW9rRaZc21hGfURUJW6VC
+	IU5twh1fbCmP4XSwwPGw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jgtqQ-0001IO-9Z; Thu, 04 Jun 2020 17:39:58 +0000
-Received: from smtprelay-out1.synopsys.com ([149.117.87.133])
+	id 1jguab-00071j-Iy; Thu, 04 Jun 2020 18:27:41 +0000
+Received: from smtprelay-out1.synopsys.com ([149.117.73.133])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jgtqN-0001Fr-Oc
- for linux-snps-arc@lists.infradead.org; Thu, 04 Jun 2020 17:39:57 +0000
-Received: from mailhost.synopsys.com (mdc-mailhost2.synopsys.com
- [10.225.0.210])
+ id 1jguaY-00071I-Uw
+ for linux-snps-arc@lists.infradead.org; Thu, 04 Jun 2020 18:27:40 +0000
+Received: from mailhost.synopsys.com (badc-mailhost1.synopsys.com
+ [10.192.0.17])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
  (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 19668C007F;
- Thu,  4 Jun 2020 17:39:52 +0000 (UTC)
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 98884400DA;
+ Thu,  4 Jun 2020 18:27:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1591292394; bh=vr/az6MfiBirfILNrjnYt+VLOecopVaBBPoxvJZYCes=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=WVJqusIyEi1kg1CoaLRikleQKxsxAZAUtMQpn2N6GLvCIj2q2d5lUSDvl6f8lBGYp
- SUNrgUGAYkH4HIwBxr7NJ3qafYQUXGILsd/l1MJ9qmlZeZtZkie5v7wyBYrxYV1hWU
- /1+QUg9HVoCceSLcdXx+T2g16YvhdzPwmPrHZwqn1GcdxtM0BiHnPPBGaGjGPkYAT1
- e3q8rmel3U5w3J7ZZYW9GFhfP1uUEaItfw+ynVqziKwSkUcJR/hPdtg7KiK/Zic3QI
- IlkrXk3lnOzznvuNunFYBsE+li3BkssSAHbtbr0huH81gNXtcvgEs3/mZ3My7yNbzF
- NdybOtcXMJqBA==
-Received: from paltsev-e7480.internal.synopsys.com
- (ru20-e7250.internal.synopsys.com [10.225.49.234])
- by mailhost.synopsys.com (Postfix) with ESMTP id 6D5B9A006D;
- Thu,  4 Jun 2020 17:39:50 +0000 (UTC)
+ t=1591295256; bh=QNEPunEl+WDnQNwbHGib6+7CUT29mbNjGTFyn5YUx7o=;
+ h=From:To:CC:Subject:Date:References:In-Reply-To:From;
+ b=IKr0BFbIQN+wjZvz4Bvi34YpOkL+N21q+cDKpbqBEdlGactSVWTiD809Y3BCqm5UE
+ 97l28fqZYStzQCqKyW+j1u7Rgvv3pm7X+gk8WMaHHAqnJhdp0CWxLprV3HcyaEQQ0n
+ vT5NGSb81q5gtRwhEGRuwMgz1DpIdrFtbYMaAZIqNqLDlzg7a9fx56008BIYLxcrmj
+ zom8rReVJdUbHvEB5tZ/UBJPpGuzK9E5TDKGNQFqYjYN+NmAWcisQy9ihrWD3TPNHt
+ Du+t8bAIphIXCeOqGwO5yufylJ4NOb1aGIYCUxAwNmwO7ok17rhOEDbllcGmRBmAtO
+ SHVzzwAb50WMQ==
+Received: from US01WEHTC3.internal.synopsys.com
+ (us01wehtc3.internal.synopsys.com [10.15.84.232])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mailhost.synopsys.com (Postfix) with ESMTPS id 4BB48A0071;
+ Thu,  4 Jun 2020 18:27:36 +0000 (UTC)
+Received: from US01HYBRID2.internal.synopsys.com (10.15.246.24) by
+ US01WEHTC3.internal.synopsys.com (10.15.84.232) with Microsoft SMTP Server
+ (TLS) id 14.3.408.0; Thu, 4 Jun 2020 11:27:36 -0700
+Received: from NAM11-DM6-obe.outbound.protection.outlook.com (10.202.3.67) by
+ mrs.synopsys.com (10.15.246.24) with Microsoft SMTP Server (TLS) id
+ 14.3.487.0; Thu, 4 Jun 2020 11:27:35 -0700
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=YZ2+81Utw0mZePRrE7fPrmPWWMa4FPYuW0FP2ODxoDBwIBczH61gZhu3J0KKaTNOJS+uVrNr0gj2suv7epk2zXPsmCBXvVc0PF6Nxs+wYAif537cR73jvN6jkpBjpoPHem/QgZ9wCUhlBX0oz2jsUrF3LvuCuhV/HhU1cDUemMoOvM8PrW1rZ8VcamDOdeGdo6x0t8Aey4mzZb3wvyww3JHWxeY/LyYYx1PmpXokOf07B9ytzxn22t2w3E/cHWo8keP7W9/ligeq9BuIFzVO5qJKaixHmjA4fiCOT7C9b5Hd35IxIhOfNY9Ucz0+Q3f5bWxTzc16OOHCPLAYkU6BCQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=QNEPunEl+WDnQNwbHGib6+7CUT29mbNjGTFyn5YUx7o=;
+ b=C2vwcu805hA+tsYyJITTmT9fpzx6Z1PMTK3a6fx20xoEz+R8FCong7lwNPhsyO0hIIrOz2UHBBnIAb2igG069YJvihqKk3Ydjd4XtFudt6coRIWhNXvQ9zywCJ3gyj01cUyIUQ3W1Ko1sEc0hX7us9kej7lUsGI/SI4fC2L8GxlA+Pwk6295NKEgQ/OEiFKet3sQZHmmMmII/7SnSuGF+Mq/Sp8uOd8XsRLcCNTFa3DQoxbq6gJJDFnZld2Vw6xFCUMw7rc/VRVdt15Gt6GYjigVKF8HUwKBqIt/6CNB/+JQGqDc3j+CmlTu0TXyYf107lM6Cb8ZRHfGXgJudQxxZg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=synopsys.com; dmarc=pass action=none header.from=synopsys.com;
+ dkim=pass header.d=synopsys.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=synopsys.com;
+ s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=QNEPunEl+WDnQNwbHGib6+7CUT29mbNjGTFyn5YUx7o=;
+ b=Ant75qQaynSPl9xP0q6PplWDKJR4vLRy58p+pKKOqSi3YV5ISI0NSEV422o0EoJ2IX7SnMUNpYC34xI2l4DOutqSjINABt8dNySSrTNugDM8usms4yODGdKytO7aY50o7TlHMFJzmFsg9KCbXowrxm3uH7nt+f3IQdIw2oHTNqM=
+Received: from BYAPR12MB3479.namprd12.prod.outlook.com (2603:10b6:a03:dc::26)
+ by BYAPR12MB3464.namprd12.prod.outlook.com (2603:10b6:a03:d9::16)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3066.20; Thu, 4 Jun
+ 2020 18:27:34 +0000
+Received: from BYAPR12MB3479.namprd12.prod.outlook.com
+ ([fe80::a43a:7392:6fa:c6af]) by BYAPR12MB3479.namprd12.prod.outlook.com
+ ([fe80::a43a:7392:6fa:c6af%6]) with mapi id 15.20.3045.024; Thu, 4 Jun 2020
+ 18:27:34 +0000
 X-SNPS-Relay: synopsys.com
-From: Eugeniy Paltsev <Eugeniy.Paltsev@synopsys.com>
-To: linux-snps-arc@lists.infradead.org,
- Vineet Gupta <Vineet.Gupta1@synopsys.com>
-Subject: [PATCH v2 4/4] ARC: [plat-hsdk*] document HSDK-4xD board/SoC bindings
-Date: Thu,  4 Jun 2020 20:39:27 +0300
-Message-Id: <20200604173927.23127-5-Eugeniy.Paltsev@synopsys.com>
-X-Mailer: git-send-email 2.21.3
-In-Reply-To: <20200604173927.23127-1-Eugeniy.Paltsev@synopsys.com>
+From: Vineet Gupta <Vineet.Gupta1@synopsys.com>
+To: Eugeniy Paltsev <Eugeniy.Paltsev@synopsys.com>,
+ "linux-snps-arc@lists.infradead.org" <linux-snps-arc@lists.infradead.org>
+Subject: Re: [PATCH v2 1/4] ARC: allow to override default mcpu compiler flag
+Thread-Topic: [PATCH v2 1/4] ARC: allow to override default mcpu compiler flag
+Thread-Index: AQHWOpc7/dFMmbTnfUuNOuuCbmnhSajIxnGA
+Date: Thu, 4 Jun 2020 18:27:34 +0000
+Message-ID: <50cb0c1f-a6df-1edb-af8c-7eb7c738493e@synopsys.com>
 References: <20200604173927.23127-1-Eugeniy.Paltsev@synopsys.com>
+ <20200604173927.23127-2-Eugeniy.Paltsev@synopsys.com>
+In-Reply-To: <20200604173927.23127-2-Eugeniy.Paltsev@synopsys.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+user-agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.8.0
+authentication-results: synopsys.com; dkim=none (message not signed)
+ header.d=none;synopsys.com; dmarc=none action=none header.from=synopsys.com;
+x-originating-ip: [2601:641:c100:83a0:fee2:8ed0:e900:96d1]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 7b82a415-9e25-4250-78b9-08d808b4f363
+x-ms-traffictypediagnostic: BYAPR12MB3464:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <BYAPR12MB346411878951965D02B367ECB6890@BYAPR12MB3464.namprd12.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:8882;
+x-forefront-prvs: 04244E0DC5
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: GpYrjENn0u9W+qO81mvRT1miGFO4ltU4yJziXhTIA3n/AuqtRd+VeKr/dqXaYmqgKm5uNLxnhk/C2SP05qh3eY/66Yd57ww2lkTcux2j3PdxU73efV9XwQq+uLsiPvQvLFqWzjHSWfifRvXC198ZH6RIcUj5OmYmaeSGft2TJ3YTcs/UMFSE4YyiQ1ddeOpkad1xQ1t4FLBScIc6qBI6kw9csDu051j/RNVr9Fs5XuUGGVAg1nSB/ZLBQ69wu7cdBS3Wcq5XH8HIcozsPSUrstciUOANPRG8xDUdfOOKtANi4gXVO5a/NBqqDAN5NIFbJYCCXS9N1YGMagANadoTC9aBxei+HPCnh6vJvdQ84sUICxf31VmmFZJjjhPgPWQatf0AyFQBDjYPz6yoTymeDQ==
+x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:BYAPR12MB3479.namprd12.prod.outlook.com; PTR:; CAT:NONE;
+ SFTY:;
+ SFS:(376002)(346002)(39860400002)(366004)(396003)(136003)(110136005)(54906003)(316002)(6512007)(6506007)(53546011)(83380400001)(6486002)(2616005)(86362001)(66556008)(478600001)(4326008)(71200400001)(31696002)(31686004)(36756003)(66446008)(8676002)(66476007)(186003)(2906002)(66946007)(64756008)(76116006)(5660300002)(8936002)(21314003)(43740500002);
+ DIR:OUT; SFP:1102; 
+x-ms-exchange-antispam-messagedata: x8glcJX/YPIoYlT8wDPCkgcqbw7rsmAnSZ7nFOB5T9PIxjCabdqcrqdTZcL/KqXg6PWCG6SMUSqo+vZP1BzYdCxhLwmb6dWeHOdOglbqFsTV0qWBeWmQoN/F1WckriVJ04EOmN2uMhRIcYjWp5MtXfA4FZygjA4eG/c/fMGBC/turTGeSeH7+Dy4hbgZLgWNuVrYJv5PaqNurCuIOJGVQ5VwNwyNKUDtQx8pNVtWxfEY+5EjQyXns9b4tRMR9aZXJJGiBq/tw9Uts90Hjn0noXO2HbYyWcmYGe6Ws3XFXnRX3R1vEnUNN+j+5QQICmTa5T8SluI4at4A63gXOhkvxhs1DQCuEZWNKd8kKicqLF1Lst6LPyYOL9UUXfJWM69dMNcD2yJDYLcpnvH4yrmb0NtJIRNo1uwr1jXm79wQus3plkhfAJVySP694RQSK21yDCi0RyjW4B/USbA2LWLsaXIF6e66t37kMYF4MTbj2H3OFqhxW9J3O/vZm5Yoe7gtEWoigNnmbLSzPb0ccahxVfQADw/TpDMQmgja7Wqle+HrLKWUGIgMUZ4jAnJpHIQd
+Content-ID: <0939EA13FBE4B545895064B6D0A8FD07@namprd12.prod.outlook.com>
 MIME-Version: 1.0
+X-MS-Exchange-CrossTenant-Network-Message-Id: 7b82a415-9e25-4250-78b9-08d808b4f363
+X-MS-Exchange-CrossTenant-originalarrivaltime: 04 Jun 2020 18:27:34.1953 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: c33c9f88-1eb7-4099-9700-16013fd9e8aa
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: 7BnBIqu+2oqrqNHZxZ8x3b3nqqFklo8Ojj+jQuqkpQwyUo11th7ncUuSu6b1DI6/6cKmsGAjx9h1Y9qgpzCKbA==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: BYAPR12MB3464
+X-OriginatorOrg: synopsys.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200604_103955_833324_872E61EE 
-X-CRM114-Status: GOOD (  10.55  )
+X-CRM114-CacheID: sfid-20200604_112739_034024_E07E14E6 
+X-CRM114-Status: GOOD (  18.48  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -64,7 +132,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
- [149.117.87.133 listed in wl.mailspike.net]
+ [149.117.73.133 listed in wl.mailspike.net]
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -85,75 +153,82 @@ List-Help: <mailto:linux-snps-arc-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-snps-arc>, 
  <mailto:linux-snps-arc-request@lists.infradead.org?subject=subscribe>
 Cc: Alexey Brodkin <Alexey.Brodkin@synopsys.com>,
- Eugeniy Paltsev <Eugeniy.Paltsev@synopsys.com>, linux-kernel@vger.kernel.org,
- Rob Herring <robh+dt@kernel.org>
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-snps-arc" <linux-snps-arc-bounces@lists.infradead.org>
 Errors-To: linux-snps-arc-bounces+lists+linux-snps-arc=lfdr.de@lists.infradead.org
 
-Add documentation for HSDK-4xD board/SoC bindings. While I'm at it
-convert HSDK board/SoC bindings to DT schema format using
-json-schema.
+On 6/4/20 10:39 AM, Eugeniy Paltsev wrote:
+> Kernel builds set their own default -mcpu for a given ISA build.
+> But that gets in the way of "custom" -mcpu flags from propagating
+> into kernel build.
+> 
+> This will also be used in next patches for HSDK-4xD board support which
+> uses a different -mcpu to effect dual issue scheduling.
+> 
+> Signed-off-by: Eugeniy Paltsev <Eugeniy.Paltsev@synopsys.com>
 
-Cc: Rob Herring <robh+dt@kernel.org>
-Signed-off-by: Eugeniy Paltsev <Eugeniy.Paltsev@synopsys.com>
----
- .../devicetree/bindings/arc/hsdk.txt          |  7 -----
- .../devicetree/bindings/arc/hsdk.yaml         | 26 +++++++++++++++++++
- 2 files changed, 26 insertions(+), 7 deletions(-)
- delete mode 100644 Documentation/devicetree/bindings/arc/hsdk.txt
- create mode 100644 Documentation/devicetree/bindings/arc/hsdk.yaml
+Much better. Ack with nit below.
 
-diff --git a/Documentation/devicetree/bindings/arc/hsdk.txt b/Documentation/devicetree/bindings/arc/hsdk.txt
-deleted file mode 100644
-index be50654bbf61..000000000000
---- a/Documentation/devicetree/bindings/arc/hsdk.txt
-+++ /dev/null
-@@ -1,7 +0,0 @@
--Synopsys DesignWare ARC HS Development Kit Device Tree Bindings
-----------------------------------------------------------------------------
--
--ARC HSDK Board with quad-core ARC HS38x4 in silicon.
--
--Required root node properties:
--    - compatible = "snps,hsdk";
-diff --git a/Documentation/devicetree/bindings/arc/hsdk.yaml b/Documentation/devicetree/bindings/arc/hsdk.yaml
-new file mode 100644
-index 000000000000..3a269423b3d3
---- /dev/null
-+++ b/Documentation/devicetree/bindings/arc/hsdk.yaml
-@@ -0,0 +1,26 @@
-+# SPDX-License-Identifier: GPL-2.0
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/arc/hsdk.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
-+
-+title: Synopsys DesignWare ARC HS Development Kits device tree bindings.
-+
-+maintainers:
-+  - Eugeniy Paltsev <Eugeniy.Paltsev@synopsys.com>
-+
-+properties:
-+  $nodename:
-+    const: '/'
-+  compatible:
-+    oneOf:
-+      - description: ARC HS Development Kit based on quad core ARC HS38
-+          processor in silicon
-+        items:
-+          - const: snps,hsdk
-+      - description: ARC HS4x/HS4xD Development Kit based on quad core
-+          ARC HS48/HS47D processor in silicon
-+        items:
-+          - const: snps,hsdk-4xd
-+
-+...
--- 
-2.21.3
+> ---
+>  arch/arc/Kconfig  |  9 +++++++++
+>  arch/arc/Makefile | 21 +++++++++++++++++++--
+>  2 files changed, 28 insertions(+), 2 deletions(-)
+> 
+> diff --git a/arch/arc/Kconfig b/arch/arc/Kconfig
+> index ff306246d0f8..7034c217708f 100644
+> --- a/arch/arc/Kconfig
+> +++ b/arch/arc/Kconfig
+> @@ -377,6 +377,15 @@ config ARC_HAS_SWAPE
+>  	bool "Insn: SWAPE (endian-swap)"
+>  	default y
+>  
+> +config ARC_TUNE_MCPU
+> +	string "Override default -mcpu compiler flag"
+> +	default ""
+> +	help
+> +	  Override default -mcpu=xxx compiler flag (which is set depending on
+> +	  the ISA version) with the specified value.
+> +	  NOTE: If specified flag isn't supported by current compiler the
+> +	  ISA default value will be used as a fallback.
+> +
+>  if ISA_ARCV2
+>  
+>  config ARC_USE_UNALIGNED_MEM_ACCESS
+> diff --git a/arch/arc/Makefile b/arch/arc/Makefile
+> index 20e9ab6cc521..2b66e8264174 100644
+> --- a/arch/arc/Makefile
+> +++ b/arch/arc/Makefile
+> @@ -10,8 +10,25 @@ CROSS_COMPILE := $(call cc-cross-prefix, arc-linux- arceb-linux-)
+>  endif
+>  
+>  cflags-y	+= -fno-common -pipe -fno-builtin -mmedium-calls -D__linux__
+> -cflags-$(CONFIG_ISA_ARCOMPACT)	+= -mA7
+> -cflags-$(CONFIG_ISA_ARCV2)	+= -mcpu=hs38
+> +
+> +tune-mcpu-def-$(CONFIG_ISA_ARCOMPACT)	:= -mA7
+> +tune-mcpu-def-$(CONFIG_ISA_ARCV2)	:= -mcpu=hs38
+> +
+> +ifeq ($(CONFIG_ARC_TUNE_MCPU),"")
+> +cflags-y				+= $(tune-mcpu-def-y)
+> +else
+> +tune-mcpu				:= $(shell echo $(CONFIG_ARC_TUNE_MCPU))
+> +tune-mcpu-ok 				:= $(call cc-option-yn, $(tune-mcpu))
+> +ifeq ($(tune-mcpu-ok),y)
+> +cflags-y				+= $(tune-mcpu)
+> +else
+> +# The flag provided by 'CONFIG_ARC_TUNE_MCPU' option isn't known by this compiler
+> +# (probably the compiler is too old). Use ISA default mcpu flag instead as a safe option.
 
+It is obvious what is done here and the comments can be skipped (no need to repost).
 
+> +$(warning ** WARNING ** CONFIG_ARC_TUNE_MCPU flag '$(tune-mcpu)' is unknown, fallback to '$(tune-mcpu-def-y)')
+> +cflags-y				+= $(tune-mcpu-def-y)
+> +endif
+> +endif
+
+-Vineet
 _______________________________________________
 linux-snps-arc mailing list
 linux-snps-arc@lists.infradead.org
